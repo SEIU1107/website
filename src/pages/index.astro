@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Showcase from '../components/Showcase.astro';
+import Benefits from '../components/Benefits.astro';
+import CycleText from '../components/CycleText.astro';
+
+
+const words = ['Nurses', 'Doctors', 'Homecare Workers', 'Lab Techs', 'Drivers', 'Medical Assistants',
+'Sales Reps', 'EVS Aides', 'Pharmacy Technicians', 'Custodians', 'Food Service Workers']
+
+---
+
+<Layout>
+    <video id="video" autoplay muted loop>
+        <source src="https://seiu99.org/wp-content/uploads/2018/08/herovid.mp4" type="video/mp4">
+    </video>
+    <div id="videoMessage">
+        <h1>We are</h1>
+        <h1><CycleText words={words} interval=1000 /></h1>
+        <h1>United!</h1>
+    </div>
+    <Showcase />
+    <h1 style="text-align: center; padding: 10px;">Why should I join a union?</h1>
+    <Benefits />
+</Layout>
+
+<style>
+
+    #video {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 0;
+        width: 100%;
+        max-width: 100%;
+        max-height: 1000px;
+        object-fit: cover;
+        margin: auto;
+        display: block;
+    }
+
+    #videoMessage {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+
+
+    }
+
+    h1 {
+        font-family: Verdana;
+        color: white;
+    }
+
+</style>

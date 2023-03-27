@@ -1,0 +1,42 @@
+---
+export interface Props {
+    backImg: string; // Image source by default with no mouse hover
+    frontImg: string; // Image source when the mouse is hovered over
+    urlDest: string; // Where the Steward Card points to when clicked on.
+}
+
+const {backImg, frontImg, urlDest} = Astro.props as Props;
+---
+
+<div class="card-container">
+    <a href={urlDest}>
+        <img src={backImg} alt="Back">
+        <img src={frontImg} class="card-upper-image" alt="Front">
+    </a>
+</div>
+
+<style>
+
+    .card-container {
+        max-height: 350px;
+        max-width: 350px;
+        position: relative;
+        padding: 10px;
+        contain-intrinsic-size: 350px;
+    }
+
+    .card-upper-image {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition: opacity 0.3s;
+        padding: 10px;
+        opacity: 0;
+    }
+
+    .card-upper-image:hover {
+        opacity: 1;
+    }
+
+</style>

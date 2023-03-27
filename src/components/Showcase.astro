@@ -1,0 +1,66 @@
+---
+import protest from '../images/protest.jpg';
+---
+
+<section class="showcase">
+    <div class="showcase-text">
+        <h1>UMC Members Protest Management's Unreasonable 8-Hour Call Out!</h1>
+        <p>
+            Hospital management is requiring workers to call in sick at least eight hours before the beginning of their shift.
+            <b>Workers who don’t meet the eight-hour threshold are being disciplined!</b>
+        </p>
+    </div>
+    <div class="showcase-img">
+        <img class="protest" src={protest} alt="" />
+    </div>
+
+    <p class="showcase-demo">
+        <small>This is a test website.</small>
+    </p>
+</section>
+
+<style>
+    .showcase {
+        height: auto;
+        background-color: var(--color-secondary);
+        background-image: linear-gradient(to bottom, var(--color-primary), rgb(15 23 42 / 0));
+        padding: 30px;
+    }
+
+    .showcase-blog {
+        min-height: 300px;
+    }
+
+    .showcase-text {
+        max-width: 500px;
+        color: #fff;
+        text-align: center;
+        margin: 50px auto;
+    }
+
+    .showcase h1 {
+        font-size: 45px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+
+    .showcase p {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .showcase-img {
+        text-align: center;
+    }
+
+    .showcase-img img {
+        border-radius: 10px;
+        margin: auto;
+    }
+
+    .showcase-demo {
+        color: #fff;
+        text-align: center;
+        font-weight: 300;
+    }
+</style>

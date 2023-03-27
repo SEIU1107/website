@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ProfileCard from '../components/ProfileCard.astro'
+
+import Yarleny from '../images/executive_board/Yarleny-1024x1024.png'
+
+const peopleData = [
+    {profileImg: Yarleny, name: 'Yarleny Roa-Dugan', title: 'SEIU 1107 Secretary-Treasurer', desc: 'Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor’s Steve Sisolak’s Patient Protection Commission as a Patient Advocate.'}
+]
+---
+
+<Layout>
+    <h1 style="text-align: center; padding: 5px">Meet the Local 1107 Executive Board</h1>
+    <section class="grid">
+        <div class="container">
+            {peopleData.map(person => (
+                <ProfileCard profileImg={person.profileImg} name={person.name} title={person.title} desc={person.desc}/>
+            ))}
+        </div>
+    </section>
+</Layout>
+
+<style>
+    .grid .container {
+        display: grid;
+        grid-template-columns: repeat(3,3fr);
+        margin: auto
+    }
+</style>

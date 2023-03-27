@@ -1,0 +1,74 @@
+---
+import Layout from '../layouts/Layout.astro'
+import ShopCard from '../components/ShopCard.astro'
+
+
+// Images
+import CCBack from '../images/shop_imgs/Clark-County-Button.png'
+import CCFront from '../images/shop_imgs/Clark-County-Solid-Button.png'
+
+import LVCVABack from '../images/shop_imgs/LVCVA-Button.png'
+import LVCVAFront from '../images/shop_imgs/LVCVA-Solid-Button.png'
+
+import RenownBack from '../images/shop_imgs/Renown-Button.png'
+import RenownFront from '../images/shop_imgs/Renown-Solid-Button.png'
+
+import RTCBack from '../images/shop_imgs/RTC-Button.png'
+import RTCFront from '../images/shop_imgs/RTC-Solid-Button.png'
+
+import SNHDBack from '../images/shop_imgs/SNHD-Button.png'
+import SNHDFront from '../images/shop_imgs/SNHD-Solid-Button.png'
+
+import SNRHABack from '../images/shop_imgs/SNRHA-Button.png'
+import SNRHAFront from '../images/shop_imgs/SNRHA-Solid-Button.png'
+
+import StRoseBack from '../images/shop_imgs/St-Rose-Button.png'
+import StRoseFront from '../images/shop_imgs/St-Rose-Big-Button.png'
+
+import SunriseBack from '../images/shop_imgs/Sunrise-Button-1.png'
+import SunriseFront from '../images/shop_imgs/Sunrise-Solid-Button.png'
+
+import UMCBack from '../images/shop_imgs/UMC-Button.png'
+import UMCFront from '../images/shop_imgs/UMC-Solid-Button.png'
+
+
+const shopCardData = [
+    {backImg: CCBack, frontImg: CCFront, urlDest: "/"}, // Clark County
+    {backImg: LVCVABack, frontImg: LVCVAFront, urlDest: "/"}, // LVCVA
+    {backImg: RenownBack, frontImg: RenownFront, urlDest: "/"}, // Renown
+    {backImg: RTCBack, frontImg: RTCFront, urlDest: "/"}, // RTC
+    {backImg: SNHDBack, frontImg: SNHDFront, urlDest: "/"},
+    {backImg: SNRHABack, frontImg: SNRHAFront, urlDest: "/"},
+    {backImg: StRoseBack, frontImg: StRoseFront, urlDest: "/"},
+    {backImg: SunriseBack, frontImg: SunriseFront, urlDest: "/"},
+    {backImg: UMCBack, frontImg: UMCFront, urlDest: "/"}
+]
+---
+<Layout>
+    <h1 style="text-align: center; padding: 10px">My Stewards</h1>
+    <p style="text-align: center; font-size: 20px"><i><b>Select your shop</b></i></p>
+    <section class="shopGrid">
+        <div class="container">
+            {shopCardData.map(shop => (
+                    <ShopCard backImg={shop.backImg} frontImg={shop.frontImg} urlDest={shop.urlDest}/>
+            ))}
+        </div>
+    </section>
+</Layout>
+
+
+<style>
+
+    .shopGrid .container {
+        vertical-align: center;
+        display: grid;
+        grid-template-columns: repeat(3,3fr);
+        margin: auto;
+    }
+
+    @media (max-width: 500px){
+        .features .container {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
