@@ -1,29 +1,114 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import ProfileCard from '../components/ProfileCard.astro'
+import ProfileCardBig from '../components/ProfileCardBig.astro'
+import ProfileCardSmall from '../components/ProfileCardSmall.astro'
 
+// Big Profiles
 import Yarleny from '../images/executive_board/Yarleny-1024x1024.png'
+import Grace from '../images/executive_board/Grace-1-1024x1024.png'
+import Michelle from '../images/executive_board/Michelle-1-1024x1024.png'
+import Deb from '../images/executive_board/Debbie-1024x1024.png'
+import Zavia from '../images/executive_board/Zavia-1024x1024.png'
 
-const peopleData = [
-    {profileImg: Yarleny, name: 'Yarleny Roa-Dugan', title: 'SEIU 1107 Secretary-Treasurer', desc: 'Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor’s Steve Sisolak’s Patient Protection Commission as a Patient Advocate.'}
+// Small Profiles
+import Patricia from '../images/executive_board/Patricia.png'
+import Joe from '../images/executive_board/Joe.png'
+import Nicole from '../images/executive_board/Nicole.png'
+import Jody from '../images/executive_board/Jody.png'
+import Saki from '../images/executive_board/Saki.png'
+import Hodge from '../images/executive_board/Hodge.png'
+import Pam from '../images/executive_board/Pam.png'
+import Audrey from '../images/executive_board/Audrey.png'
+import Theresa from '../images/executive_board/Theresa.png'
+import Karla from '../images/executive_board/Karla.png'
+import Rick from '../images/executive_board/Rick.png'
+import Erika from '../images/executive_board/Erika.png'
+
+const bigProfPeopleData = [
+    // Big Profiles
+    {profileImg: Grace, name: 'Grace Vergara-Mactal', title: 'SEIU 1107 Executive Director', desc: 'Grace has committed her life to mobilizing workers to fight for economic and social justice and raising standards for all working families. She is a former hospital worker, SEIU member leader, and brings 25 years of experience as an SEIU Organizer, Organizing Director, Chief of Staff, Local 1107 Trustee, a member of the Asian Pacific American Labor Alliance of Nevada, and the Executive Board of the Nevada AFL-CIO.'},
+    {profileImg: Michelle, name: 'Michelle Maese', title: 'SEIU 1107 President', desc: 'County Department of Family Services (DF). She is Chief Steward for the Clark County Supervisory Unit. She Chairs the SEIU 1107 Political Organizing Committee (POC) and also serves on the Finance and Racial Justice Committees.'},
+    {profileImg: Yarleny, name: 'Yarleny Roa-Dugan', title: 'SEIU 1107 Secretary-Treasurer', desc: 'Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor’s Steve Sisolak’s Patient Protection Commission as a Patient Advocate.'},
+    {profileImg: Deb, name: 'Deb Springer', title: 'SEIU 1107 Vice President Public Sector', desc: 'Debbie works at Clark County District Attorney Family Support (DAFS). She is Co-Chair of the Political Organizing Committee (POC).'},
+    {profileImg: Zavia, name: 'Zavia Norman', title: 'SEIU 1107 Vice President Private Sector', desc: 'Zavia is a Respiratory Therapist at Sunrise Hospital. She is also Co-Chair of the Political Organizing Committee. '}
+]
+
+const smallProfPeopleData = [
+    {profileImg: Patricia, name: 'Patricia Armstrong', shop: 'Clark County'},
+    {profileImg: Joe, name: 'Joe Campbell', shop: 'Clark County'},
+    {profileImg: Nicole, name: 'Nicole Courts-Wolf', shop: 'Renown Medical/NNRH'},
+    {profileImg: Jody, name: 'Jody Domineck', shop: 'Sunrise Hospital'},
+    {profileImg: Saki, name: 'Ashaki "Saki" Hardy', shop: 'Clark County District Attorney Family Support (DAFS)'},
+    {profileImg: Hodge, name: 'Richard Hodgson', shop: 'Clark County'},
+    {profileImg: Pam, name: 'Pam Jahan', shop: 'Dignity Health'},
+    {profileImg: Audrey, name: 'Audrey Johnson', shop: 'University Medical Center'},
+    {profileImg: Theresa, name: 'Theresa King', shop: 'University Medical Center'},
+    {profileImg: Karla, name: 'Karla Nolan', shop: 'Las Vegas Convention and Visitors Authority (LVCVA)'},
+    {profileImg: Rick, name: 'Rick Prieto', shop: 'Clark County'},
+    {profileImg: Erika, name: 'Erika Watanabe', shop: 'Sunrise Hospital'}
 ]
 ---
 
 <Layout>
-    <h1 style="text-align: center; padding: 5px">Meet the Local 1107 Executive Board</h1>
+    <h1 style="text-align: center; padding-top: 20px; font-family: 'Engravers MT',sans-serif; font-size: 40px">Meet the Local 1107 Executive Board</h1>
+    <div class="statement">
+        <p>This is where we should put the Executive Board mission statement language. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante a felis consectetur sollicitudin. Quisque tincidunt et magna luctus feugiat. Ut ultricies condimentum nunc eu volutpat. Fusce nec odio tincidunt, posuere nisl sed, auctor ipsum. Maecenas nec posuere justo. Cras non lorem ante. Suspendisse tristique maximus tellus, in maximus est vulputate in. Cras sodales varius cursus.</p>
+    </div>
     <section class="grid">
         <div class="container">
-            {peopleData.map(person => (
-                <ProfileCard profileImg={person.profileImg} name={person.name} title={person.title} desc={person.desc}/>
+            <!-- use the latest version -->
+            {bigProfPeopleData.map(person => (
+                <ProfileCardBig profileImg={person.profileImg} name={person.name} title={person.title} desc={person.desc}/>
             ))}
         </div>
     </section>
+    <section class="small-grid">
+        <div class="container">
+            {smallProfPeopleData.map(person => (
+                <ProfileCardSmall profileImg={person.profileImg} name={person.name} shop={person.shop}/>
+            ))}
+        </div>
+    </section>
+
 </Layout>
 
 <style>
     .grid .container {
         display: grid;
-        grid-template-columns: repeat(3,3fr);
+        grid-template-columns: repeat(3,1fr);
+        grid-column-gap: 0;
         margin: auto
     }
+
+    .small-grid .container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 0;
+        margin: auto
+    }
+
+
+    .statement {
+        display: flex;
+        justify-content: center;
+        justify-items: center;
+        text-align: center;
+        color: black;
+        font-size: 20px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .statement p {
+        max-width: 1200px;
+    }
+
+    @media (max-width: 500px) {
+        .grid .container {
+            grid-template-columns: 1fr;
+        }
+        .small-grid .container {
+            grid-template-columns: 1fr;
+        }
+    }
+
 </style>
