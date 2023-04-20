@@ -1,0 +1,32 @@
+---
+export interface Props {
+    profileImg: string; // Image of the portrait; a square
+    name: string;
+    title: string;
+    desc: string; // Text description
+}
+
+const {profileImg,name, title, desc} = Astro.props as Props;
+---
+
+<div class="card-container" >
+    <img src={profileImg} alt="">
+    <h2 style="font-family: Georgia, sans-serif"><strong>
+        {name}
+    </strong></h2>
+    <p style="font-size: 16px; color: #582C83;"><i><b>{title}</b></i></p>
+    <p style="padding: 0">{desc}</p>
+</div>
+
+<style>
+    .card-container {
+        max-width: 500px;
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+
+    img {
+        border-radius: 5%;
+    }
+</style>
