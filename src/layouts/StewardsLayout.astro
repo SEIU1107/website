@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/global.css'
+
+import RaisingTheStakes from '../images/raising-the-stakes.png'
+
+export interface Props {
+    shop_name: string;
+}
+
+const { title = 'Enter Shop Name'} = Astro.props as Props;
+---
+<Layout>
+    <img class="banner" src={RaisingTheStakes} alt="">
+    <h1 class="title-text">{title}</h1>
+    <slot />
+</Layout>
+
+<style>
+
+    .banner {
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        text-align: center;
+        max-width: 800px;
+        padding-top: 20px;
+    }
+
+    .title-text {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+    }
+
+
+
+</style>

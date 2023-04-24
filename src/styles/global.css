@@ -71,6 +71,13 @@ h3 {
     display: none;
 }
 
+.title-text {
+    text-align: center;
+    padding-top: 20px;
+    font-family: 'Engravers MT',sans-serif;
+    font-size: 40px
+}
+
 @media (max-width: 960px) {
     .logos-small {
         display: block;

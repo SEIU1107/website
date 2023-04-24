@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro'
 import ProfileCardBig from '../components/ProfileCardBig.astro'
 import ProfileCardSmall from '../components/ProfileCardSmall.astro'
 
+import '../styles/global.css'
+
 // Big Profiles
 import Yarleny from '../images/executive_board/Yarleny-1024x1024.png'
 import Grace from '../images/executive_board/Grace-1-1024x1024.png'
@@ -47,10 +49,12 @@ const smallProfPeopleData = [
     {profileImg: Rick, name: 'Rick Prieto', shop: 'Clark County'},
     {profileImg: Erika, name: 'Erika Watanabe', shop: 'Sunrise Hospital'}
 ]
+
+
 ---
 
 <Layout>
-    <h1 style="text-align: center; padding-top: 20px; font-family: 'Engravers MT',sans-serif; font-size: 40px">Meet the Local 1107 Executive Board</h1>
+    <h1 class="title-text">Meet the Local 1107 Executive Board</h1>
     <div class="statement">
         <p>This is where we should put the Executive Board mission statement language. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante a felis consectetur sollicitudin. Quisque tincidunt et magna luctus feugiat. Ut ultricies condimentum nunc eu volutpat. Fusce nec odio tincidunt, posuere nisl sed, auctor ipsum. Maecenas nec posuere justo. Cras non lorem ante. Suspendisse tristique maximus tellus, in maximus est vulputate in. Cras sodales varius cursus.</p>
     </div>
