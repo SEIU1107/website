@@ -1,0 +1,96 @@
+---
+export interface Props {
+    data: {
+        name: string;
+        profileImg: string;
+        [key: string]: string;
+    }[];
+}
+
+const {data} = Astro.props as Props;
+
+---
+
+
+
+<div class="card-container">
+    {data.map((person) => (
+            <div class="card">
+                <img src={person.profileImg} alt="" />
+                <h2 class="name">
+                    <strong>{person.name}</strong>
+                </h2>
+                <div class="info">
+                    {Object.keys(person).map((key) => (
+                        key !== 'profileImg' &&
+                        key !== 'name' &&
+                        key !== 'id' && (
+                            key === 'Email' ? (
+                                    <div>
+                                        <b>{key}:</b> <a href={`mailto:${person[key]}`}>{person[key]}</a>
+                                    </div>
+                            ) : (
+                                    <div>
+                                        <b>{key}:</b> {person[key]}
+                                    </div>
+                            )
+                        )
+                    ))}
+                </div>
+            </div>
+    ))}
+</div>
+
+
+<style>
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(4,1fr);
+        grid-column-gap: 0;
+        margin: auto;
+        justify-content: center;
+        justify-items: center;
+        max-width: 375px;
+        padding: 10px;
+        font-family: 'Roboto', sans-serif;
+    }
+
+    .card {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+    }
+
+    .info {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-family: Verdana, sans-serif;
+    }
+    .name {
+        font-family: Georgia, sans-serif;
+        font-weight: bold;
+        color: #000;
+        padding-bottom: 10px;
+    }
+    img {
+        max-width: 300px;
+        border-radius: 5%;
+    }
+
+    @media (max-width: 1400px) {
+        .card-container {
+            grid-template-columns: repeat(3,1fr);
+        }
+    }
+
+    @media (max-width: 767px) {
+        .card-container {
+            grid-template-columns: 1fr;
+        }
+    }
+
+
+</style>

@@ -12,7 +12,7 @@ const { title = 'Enter Shop Name'} = Astro.props as Props;
 ---
 <Layout>
     <img class="banner" src={RaisingTheStakes} alt="">
-    <h1 class="title-text">{title}</h1>
+    <h1 class="title-text"><span>{title}</span></h1>
     <slot />
 </Layout>
 
@@ -33,6 +33,17 @@ const { title = 'Enter Shop Name'} = Astro.props as Props;
         justify-content: center;
 
     }
+
+    .title-text span {
+        background-color: #FECD01;
+        font-weight: bold;
+        border-radius: 20px;
+        width: auto;
+        height: auto;
+        padding: 10px 30px 10px 30px;
+        background-clip: padding-box;
+    }
+
 
 
 

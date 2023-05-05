@@ -9,11 +9,11 @@ const {profileImg, name, shop} = Astro.props as Props;
 ---
 
 <div class="card-container">
-    <img src={profileImg}, alt="">
+    <img src={profileImg} alt="">
     <h2 style="font-family: Georgia, sans-serif"><strong>
         {name}
     </strong></h2>
-    <p style="font-size: 16px; color: #582C83; padding: 0"><i><b>SEIU 1107 Executive Board Member</b></i></p>
+    <p style="font-size: 16px; color: #582C83; padding: 0; text-align: center"><i><b>SEIU 1107 Executive Board Member</b></i></p>
     <p style="font-size: 20px; padding: 0; text-align: center"><i>{shop}</i></p>
 </div>
 

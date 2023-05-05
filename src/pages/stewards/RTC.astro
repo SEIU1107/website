@@ -1,7 +1,60 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/Stewards/StewardGrid.astro'
+
+import Placeholder from '../../images/PlaceholderProfileImg.png'
+
+const profileData = [
+    {
+        profileImg: Placeholder,
+        name: 'Deitra Atkinson',
+        Title: 'Bargaining Unit VP',
+        Department: 'Fixed Route Transit Service',
+        Phone: '(702) 301 - 9805',
+        Email: 'deitra@centurylink.com'
+    },
+
+    {
+        profileImg: Placeholder,
+        name: 'Albert Ruvalcaba',
+        Title: 'Steward',
+        Department: 'Admin Building',
+        Phone: '(702) 355 - 1776',
+        Email: 'sfmission24@yahoo.com'
+    },
+
+    {
+        profileImg: Placeholder,
+        name: 'Charles "Scott" Edelblute',
+        Title: 'Steward',
+        Department: 'Transit Amenities Technician',
+        Phone: '(702) 769 - 3617',
+        Email: 'cedelblute@cox.net'
+    },
+
+    {
+        profileImg: Placeholder,
+        name: 'Ramona Horton',
+        Title: 'Steward',
+        Department: 'Call Center',
+        Phone: '(702) 610 - 8382',
+        Email: 'monaoshort@aol.com'
+    },
+
+    {
+        profileImg: Placeholder,
+        name: 'Raphael Charlie Carrasco',
+        Title: 'Steward',
+        Department: 'Admin Building',
+        Phone: '(702) 572 - 2167',
+        Email: 'cacarr@aol.com'
+    },
+]
+
 ---
 
 <StewardsLayout title="Regional Transportation Commission (RTC)">
-    This is the slot.
+
+    <StewardGrid data={profileData}/>
+
 </StewardsLayout>
