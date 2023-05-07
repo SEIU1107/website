@@ -1,0 +1,34 @@
+---
+import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/Stewards/StewardGrid.astro'
+
+import Placeholder from '../../images/PlaceholderProfileImg.png'
+
+const profileData = [
+    {
+        name: 'Martha Floyd',
+        profileImg: Placeholder,
+        Title: 'Chief Steward',
+        Unit: 'Supervisory',
+        Department: 'Supportive Services',
+        Phone: '(702) 743 - 5549',
+        Email: 'rosemafa@yahoo.com'
+    },
+    {
+        name: 'Brandy Foreman',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Eligibility',
+        Phone: '(702) 334 - 5112',
+        Email: 'bforeman84@gmail.com'
+    }
+]
+
+---
+
+<StewardsLayout title="Southern Nevada Regional Housing Authority (SNRHA)">
+
+    <StewardGrid data={profileData} />
+
+</StewardsLayout>
