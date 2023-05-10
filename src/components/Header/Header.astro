@@ -1,0 +1,162 @@
+---
+import logo from '../../images/seiu-WEBSITE-LOGO-1t.png'
+import Dropdown from '../Header/Dropdown.astro'
+
+
+/* About Us Dropdown */
+const dropdownAboutUs = [
+    {
+        pageName: 'Who We Are',
+        href: '/'
+    },
+    {
+        pageName: 'Executive Board',
+        href: '/executive_board'
+    },
+    {
+        pageName: 'Constitution & Bylaws',
+        href: '/'
+    },
+    {
+        pageName: 'Staff',
+        href: '/'
+    },
+    {
+        pageName: 'Contact Us',
+        href: '/'
+    },
+    {
+        pageName: 'Careers',
+        href: '/'
+    },
+
+
+]
+
+/* My 1107 Dropdown */
+const dropdownMy1107 = [
+    {
+        pageName: 'My Contract',
+        href: '/'
+    },
+    {
+        pageName: 'Shop Stewards',
+        href: '/stewards'
+    },
+    {
+        pageName: 'Member Benefits',
+        href: '/'
+    },
+    {
+        pageName: 'Committees',
+        href: '/'
+    },
+    {
+        pageName: 'Training & Education',
+        href: '/'
+    },
+]
+
+/* Resources Dropdown */
+const dropdownResources = [
+    {
+        pageName: 'Become A Member',
+        href: '/'
+    },
+    {
+        pageName: 'The Union Difference',
+        href: '/'
+    },
+    {
+        pageName: 'Know Your Rights',
+        href: '/'
+    },
+    {
+        pageName: 'FAQ',
+        href: '/'
+    },
+]
+
+/* Action Center Dropdown */
+const dropdownActionCenter = [
+    {
+        pageName: 'Political Action',
+        href: '/'
+    },
+    {
+        pageName: 'Communities United',
+        href: '/'
+    },
+    {
+        pageName: 'New Organizing',
+        href: '/'
+    },
+    {
+        pageName: 'Events',
+        href: '/'
+    },
+]
+
+const dropdownNews = [
+    {
+        pageName: 'Press Releases',
+        href: '/'
+    },
+    {
+        pageName: 'Latest News',
+        href: '/'
+    },
+]
+---
+
+<header class="header">
+    <div class="container">
+        <div class="logo">
+            <a href="/public">
+                <img src={logo} alt="" />
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><Dropdown title="About Us" content={dropdownAboutUs}/></li>
+                <li><Dropdown title="My 1107" content={dropdownMy1107} /></li>
+                <li><Dropdown title="Resources" content={dropdownResources} /></li>
+                <li><Dropdown title="Action Center" content={dropdownActionCenter} /></li>
+                <li><Dropdown title="News" content={dropdownNews} /></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+<style>
+    .header {
+        height: 70px;
+        background: var(--color-primary);
+    }
+
+    .header .container {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 20px;
+    }
+
+    .header img {
+        height: 35px;
+        vertical-align: middle;
+    }
+
+    .header nav ul {
+        display: flex;
+    }
+
+    .header nav ul li {
+        padding: 0 5px;
+    }
+
+    .header nav ul li a {
+        color: #fff;
+    }
+</style>

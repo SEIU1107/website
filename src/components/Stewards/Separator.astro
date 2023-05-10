@@ -1,0 +1,39 @@
+---
+export interface Props {
+    text: string;
+}
+
+const {text = 'Separator'} = Astro.props as Props;
+---
+
+<div class="separator">
+    <span>{text}</span>
+</div>
+
+
+<style>
+    .separator {
+        color: #582C83;
+        font-size: 40px;
+        font-family: "Copperplate Gothic Light", sans-serif;
+        font-weight: bold;
+        font-style: italic;
+        text-decoration-line: underline;
+        text-align: center;
+        max-width: 1500px;
+        margin:0 auto;
+
+    }
+    .separator span {
+        background: #FECD01;
+        border-radius: 20px;
+        width: auto;
+        height: auto;
+        padding: 10px 30px 10px 30px;
+        background-clip: padding-box;
+
+        -webkit-box-decoration-break: clone;
+        -o-box-decoration-break: clone;
+        box-decoration-break: clone;
+    }
+</style>

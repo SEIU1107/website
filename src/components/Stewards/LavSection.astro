@@ -1,0 +1,28 @@
+---
+export interface Props {
+    title: string;
+}
+
+const {title = ''} = Astro.props as Props;
+---
+
+<div class="lav">
+    <div class="title">{title}</div>
+    <slot />
+</div>
+
+<style>
+    .lav {
+        background: #E6DAF3;
+    }
+
+    .title {
+        text-shadow: 2px 2px 7px #522C79;
+        color: #000;
+        font-family: "Engravers MT", sans-serif;
+        font-weight: bolder;
+        text-align: center;
+        padding: 40px;
+        font-size: 40px;
+    }
+</style>

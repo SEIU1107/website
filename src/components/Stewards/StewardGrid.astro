@@ -12,8 +12,7 @@ const {data} = Astro.props as Props;
 ---
 
 
-
-<div class="card-container">
+<div class="card-grid">
     {data.map((person) => (
             <div class="card">
                 <img src={person.profileImg} alt="" />
@@ -43,7 +42,7 @@ const {data} = Astro.props as Props;
 
 
 <style>
-    .card-container {
+    .card-grid {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-column-gap: 0;
@@ -56,6 +55,8 @@ const {data} = Astro.props as Props;
     }
 
     .card {
+        display: flex;
+        flex-direction: column;
         background: #fff;
         padding: 20px;
         border-radius: 10px;
@@ -74,6 +75,7 @@ const {data} = Astro.props as Props;
         font-weight: bold;
         color: #000;
         padding-bottom: 10px;
+        padding-top: 10px;
     }
     img {
         max-width: 300px;
@@ -81,13 +83,13 @@ const {data} = Astro.props as Props;
     }
 
     @media (max-width: 1400px) {
-        .card-container {
+        .card-grid {
             grid-template-columns: repeat(3,1fr);
         }
     }
 
     @media (max-width: 767px) {
-        .card-container {
+        .card-grid {
             grid-template-columns: 1fr;
         }
     }

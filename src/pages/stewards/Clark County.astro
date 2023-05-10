@@ -1,18 +1,430 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
 import StewardGrid from '../../components/Stewards/StewardGrid.astro'
+import PurpleSection from '../../components/Stewards/PurpleSection.astro'
+import LavSection from '../../components/Stewards/LavSection.astro'
+import Separator from '../../components/Stewards/Separator.astro'
 
 import Placeholder from '../../images/PlaceholderProfileImg.png'
 
+import Michelle from '../../images/stewards/CC/Michelle-1-1024x1024.png'
+import Debbie from '../../images/stewards/CC/Debbie-1024x1024.png'
+import Rick from '../../images/stewards/CC/Rick.png'
+import Patricia from '../../images/stewards/CC/Patricia.png'
+import Anissa from '../../images/stewards/CC/Anissa.png'
+import Joe from '../../images/stewards/CC/Joe.png'
+import Kevin from '../../images/stewards/CC/Kevin-Carey-Clark-County-1.jpg'
+import MichelleUpton from '../../images/stewards/CC/Michelle-Upton-CC.png'
+import Nirvana from '../../images/stewards/CC/Nirvana-Hamilton.png'
+import Saki from '../../images/stewards/CC/Saki.png'
+import JohnBishop from '../../images/stewards/CC/John-Bishop-DOA-non-sup.png'
+import JohnWarthan from '../../images/stewards/CC/John-W.png'
+import Hodge from '../../images/stewards/CC/Hodge.png'
+import TomSharpe from '../../images/stewards/CC/Tom-Sharpe.png'
+import NicoleMiller from '../../images/stewards/CC/Nicole-Miller-CC.png'
+import MikelleCieri from '../../images/stewards/CC/mikelle-cieri.png'
+import SaraEvans from '../../images/stewards/CC/Sara-Evans.png'
+import MarkMatthews from '../../images/stewards/CC/Mark-Matthews.png'
+import Mihanee from '../../images/stewards/CC/Mihanee-Williams.png'
+import RobinFranklin from '../../images/stewards/CC/Robin-Franklin-CC.png'
 
-const profileData = [
+
+const topData = [
     {
-
+        name: 'Michelle Maese',
+        profileImg: Michelle,
+        Title: 'SEIU 1107 President',
+        Unit: 'Supervisory',
+        Department: 'DFS/Permanency',
+        Phone: '(702) 755 - 7614',
+        Email: 'mmaese@seiunv.org'
+    },
+    {
+        name: 'Debbie Springer',
+        profileImg: Debbie,
+        Title: 'SEIU 1107 Executive VP Public Sector',
+        Unit: 'General',
+        Department: 'DAFS',
+        Phone: '(702) 575 - 9596',
+        Email: 'dspringer@seiunv.org'
     }
+]
+
+const dataGeneralUnit = [
+    {
+        name: 'Brent Miller',
+        profileImg: Placeholder,
+        Title: 'Chief Steward',
+        Unit: 'General Unit',
+        Department: 'Public Works/Road Division',
+        Phone: '(702) 542 - 6952',
+        Email: 'bmiller@seiunv.org'
+    },
+    {
+        name: 'Rick Prieto',
+        profileImg: Rick,
+        Title: 'Chief Steward / Executive Board Member',
+        Unit: 'General Unit',
+        Department: 'RPM / Facilities',
+        Phone: '(928) 925 - 0439',
+        Email: 'rprietoseiunv@gmail.com'
+    },
+    {
+        name: 'Alexis Esparza',
+        profileImg: Placeholder,
+        Title: 'Chief Steward',
+        Unit: 'General Unit',
+        Department: 'DAFS',
+        Phone: '(504) 508 - 0246',
+        Email: 'alexisesparza@gmail.com'
+    },
+    {
+        name: 'Patricia Armstrong',
+        profileImg: Patricia,
+        Title: 'Bargaining Unit VP / Steward / Executive Board Member',
+        Unit: 'General Unit',
+        Department: 'Fire / Building & Permit',
+        Phone: '(702) 372 - 6999',
+        Email: 'armstropa@yahoo.com'
+    },
+    {
+        name: 'Adella Logan',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Treasurer\'s Office',
+        Phone: '(702) 845 - 7198',
+        Email: 'kiknitwjesus@aol.com'
+    },
+    {
+        name: 'Anissa Simmons',
+        profileImg: Anissa,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Bldg. & Safety',
+        Phone: '(702) 488 - 5989',
+        Email: 'anissa88@hotmail.com'
+    },
+    {
+        name: 'Arturo Espino',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Facilities',
+        Phone: '(702) 624 - 0892',
+        Email: 'arturoeg10@gmail.com'
+    },
+    {
+        name: 'Fab Pavel',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'RPM / Housekeeping',
+        Phone: '(702) 335 - 7939',
+        Email: 'fabpavel@gmail.com'
+    },
+    {
+        name: 'Joe Campbell',
+        profileImg: Joe,
+        Title: 'Steward / Executive Board Member',
+        Unit: 'General Unit',
+        Department: 'Road Department',
+        Phone: '(702) 768 - 7007',
+        Email: 'josephcampbell1974@gmail.com'
+    },
+    {
+        name: 'John Montgomery',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'District Attorney',
+        Phone: '(702) 897 - 2176',
+        Email: 'webble690@yahoo.com'
+    },
+    {
+        name: 'Judy Perrillo',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DAFS',
+        Phone: '(702) 592 - 5641',
+        Email: 'j_perillo@yahoo.com'
+    },
+    {
+        name: 'Kevin Carey',
+        profileImg: Kevin,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Code Enforcement',
+        Phone: '(702) 592 - 5641',
+        Email: 'j_perillo@yahoo.com'
+    },
+    {
+        name: 'Melinda Regules',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Juvenile Prosecution',
+        Phone: '(702) 343 - 4045',
+        Email: 'melindaregules@gmail.com'
+    },
+    {
+        name: 'Michelle Upton',
+        profileImg: MichelleUpton,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Social Services',
+        Phone: '(925) 783 - 1149',
+        Email: 'mechelle0518@gmail.com'
+    },
+    {
+        name: 'Nirvana Hamilton',
+        profileImg: Nirvana,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DA / Administration / DAFS',
+        Phone: '(702) 326 - 8326',
+        Email: 'edge982@yahoo.com'
+    },
+    {
+        name: 'Richmond Warnke',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Criminal Prosecution / Juvenile',
+        Phone: '(702) 448 - 0219',
+        Email: 'remingtonofnevada@yahoo.com'
+    }
+]
+
+const dataDOA = [
+    {
+        name: 'Ahsaki "Saki" Hardy',
+        profileImg: Saki,
+        Title: 'Chief Steward / Executive Board Member',
+        Unit: 'General Unit / DOA',
+        Department: 'DAFS',
+        Phone: '(614) 710 - 8908',
+        Email: 'dkjshardy@gmail.com'
+    },
+    {
+        name: 'Alicia Laurent',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DAFS',
+        Phone: '(702) 332 - 7177',
+        Email: 'alicia.james.aj.aj@gmail.com'
+    },
+    {
+        name: 'Gerald Green',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA / Custodian',
+        Phone: '(702) 423 - 6015',
+        Email: 'gggdog5000@yahoo.com'
+    },
+    {
+        name: 'John Bishop',
+        profileImg: JohnBishop,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA / BHS',
+        Phone: '(702) 622 - 5280',
+        Email: 'jhnhbshp@gmail.com'
+    },
+    {
+        name: 'John Warthan',
+        profileImg: JohnWarthan,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA',
+        Phone: '(702) 492 - 1963',
+        Email: 'j.warthan@yahoo.com'
+    },
+    {
+        name: 'Richard "Hodge" Hodgson',
+        profileImg: Hodge,
+        Title: 'Steward / Executive Board Member',
+        Unit: 'General Unit',
+        Department: 'Facilities / DOA',
+        Phone: '(702) 810 - 8947',
+        Email: 'rhodgson@seiunv.org'
+    },
+    {
+        name: 'Sheila Grain',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA / Business Office',
+        Phone: '(310) 890 - 5785',
+        Email: 'shgrain@hotmail.com'
+    },
+    {
+        name: 'Tom Sharpe',
+        profileImg: TomSharpe,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA / Finance',
+        Phone: '(702) 539 - 8017',
+        Email: 'tsharpe.seiunv@gmail.com'
+    },
+    {
+        name: 'Victor Camargo',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'DOA / Electrician',
+        Phone: '(909) 731 - 1473',
+    }
+]
+
+const dataDFSDJJS = [
+    {
+        name: 'Earl "EJ" Barnes',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'DFS',
+        Department: 'Emergency Response Team',
+        Phone: '(562) 271 - 2192',
+        Email: 'earlbrns@yahoo.com'
+    },
+    {
+        name: 'Howard Stone',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Juvenile Justice Detention',
+        Phone: '(702) 204 - 5373',
+        Email: 'stonehoward@yahoo.com'
+    },
+    {
+        name: 'Michelle Brown',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Specialized Services / DFS',
+        Phone: '(702) 301 - 4950',
+        Email: 'mbrownb7@aol.com'
+    },
+    {
+        name: 'Nicole Miller',
+        profileImg: NicoleMiller,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Child Haven / DFS',
+        Phone: '(702) 604 - 6624',
+        Email: 'nmiller474@gmail.com'
+    },
+]
+
+const dataWRD = [
+    {
+        name: 'Jim Cowan',
+        profileImg: Placeholder,
+        Title: 'Chief Steward',
+        Unit: 'General Unit',
+        Department: 'Developer Inspectors',
+        Phone: '(702) 292 - 8451',
+        Email: 'jcowan@seiunv.org'
+    },
+    {
+        name: 'William "Bill" Supple',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'WRD',
+        Phone: '(516) 639 - 5605',
+        Email: 'WilliamSupple@rocketmail.com'
+    },
+]
+
+const dataSupervisory = [
+    {
+        name: 'Mikelle Cieri',
+        profileImg: MikelleCieri,
+        Title: 'Chief Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'DFS / Permanency',
+        Phone: '(702) 328 - 5354',
+        Email: 'heymikelle@gmail.com'
+    },
+    {
+        name: 'Marla McPherson',
+        profileImg: Placeholder,
+        Title: 'Chief Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'DOA / Air Trans System',
+        Phone: '(415) 713 - 4952',
+        Email: 'Marlamseiu@gmail.com'
+    },
+    {
+        name: 'Sara Evans',
+        profileImg: SaraEvans,
+        Title: 'Bargaining Unit VP',
+        Unit: 'Supervisory Unit',
+        Department: 'DFS',
+        Phone: '(702) 569 - 9339',
+        Email: 'sara.evans3214@gmail.com'
+    },
+    {
+        name: 'James Reynolds',
+        profileImg: Placeholder,
+        Title: 'Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'WRD',
+        Phone: '(702) 528 - 7247',
+        Email: 'jamesr3726@gmail.com'
+    },
+    {
+        name: 'Mark Matthews',
+        profileImg: MarkMatthews,
+        Title: 'Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'IT',
+        Phone: '(702) 455 - 0875',
+        Email: 'markmatthews@usa.net'
+    },
+    {
+        name: 'Mihanee Williams',
+        profileImg: Mihanee,
+        Title: 'Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'DFS',
+        Phone: '(702) 339 - 4145',
+        Email: 'mihaneeseiu1107@gmail.com'
+    },
+    {
+        name: 'Robin Franklin',
+        profileImg: RobinFranklin,
+        Title: 'Steward',
+        Unit: 'Supervisory Unit',
+        Department: 'DFS / Investigations',
+        Phone: '(702) 460 - 5714',
+        Email: 'msrobin9797@yahoo.com'
+    },
+
 ]
 
 ---
 
 <StewardsLayout title="Clark County">
+    <StewardGrid data={topData} />
+
+    <PurpleSection title="Non-Supervisory Unit">
+        <Separator text="General Unit" id="GENERAL_UNIT"/>
+        <StewardGrid data={dataGeneralUnit} />
+        <Separator text="Department of Aviation (DOA)"/>
+        <StewardGrid data={dataDOA} />
+        <Separator text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)" />
+        <StewardGrid data={dataDFSDJJS} />
+        <Separator text="Water Reclamation District (WRD)" />
+        <StewardGrid data={dataWRD} />
+    </PurpleSection>
+
+    <LavSection title="Supervisory Unit">
+        <StewardGrid data={dataSupervisory} />
+    </LavSection>
 
 </StewardsLayout>
