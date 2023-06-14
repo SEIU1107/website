@@ -2,6 +2,7 @@
     --color-primary: #582C83;
     --color-secondary: #8d30ee;
     --color-tertiary: #FECD01;
+    --color-lavender: #EADEF7;
 }
 
 *,
@@ -20,7 +21,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background: #EADEF7;
+    background: var(--color-lavender);
     color: #333;
 }
 
@@ -53,14 +54,14 @@ h3 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 30px;
+    padding: 0px 30px;
 }
 
 .btn {
     display: inline-block;
     padding: 0.5rem 1rem;
     border-radius: 5px;
-    background: #333;
+    background: var(--color-primary);
     color: #fff;
     text-transform: uppercase;
     font-size: 0.8rem;
