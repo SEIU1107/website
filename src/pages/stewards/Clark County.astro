@@ -1,11 +1,9 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import StewardGrid from '../../components/Stewards/StewardGrid.astro'
+import StewardGrid from '../../components/ProfileGrid.astro'
 import PurpleSection from '../../components/Stewards/PurpleSection.astro'
 import LavSection from '../../components/Stewards/LavSection.astro'
 import Separator from '../../components/Stewards/Separator.astro'
-
-import Placeholder from '../../images/PlaceholderProfileImg.png'
 
 import Michelle from '../../images/stewards/CC/Michelle-1-1024x1024.png'
 import Debbie from '../../images/stewards/CC/Debbie-1024x1024.png'
@@ -53,7 +51,6 @@ const topData = [
 const dataGeneralUnit = [
     {
         name: 'Brent Miller',
-        profileImg: Placeholder,
         Title: 'Chief Steward',
         Unit: 'General Unit',
         Department: 'Public Works/Road Division',
@@ -71,7 +68,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Alexis Esparza',
-        profileImg: Placeholder,
         Title: 'Chief Steward',
         Unit: 'General Unit',
         Department: 'DAFS',
@@ -89,7 +85,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Adella Logan',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Treasurer\'s Office',
@@ -107,7 +102,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Arturo Espino',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Facilities',
@@ -116,7 +110,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Fab Pavel',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'RPM / Housekeeping',
@@ -134,7 +127,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'John Montgomery',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'District Attorney',
@@ -143,7 +135,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Judy Perrillo',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'DAFS',
@@ -161,7 +152,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Melinda Regules',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Juvenile Prosecution',
@@ -188,7 +178,6 @@ const dataGeneralUnit = [
     },
     {
         name: 'Richmond Warnke',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Criminal Prosecution / Juvenile',
@@ -209,7 +198,6 @@ const dataDOA = [
     },
     {
         name: 'Alicia Laurent',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'DAFS',
@@ -218,7 +206,6 @@ const dataDOA = [
     },
     {
         name: 'Gerald Green',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'DOA / Custodian',
@@ -254,7 +241,6 @@ const dataDOA = [
     },
     {
         name: 'Sheila Grain',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'DOA / Business Office',
@@ -272,7 +258,6 @@ const dataDOA = [
     },
     {
         name: 'Victor Camargo',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'DOA / Electrician',
@@ -283,7 +268,6 @@ const dataDOA = [
 const dataDFSDJJS = [
     {
         name: 'Earl "EJ" Barnes',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'DFS',
         Department: 'Emergency Response Team',
@@ -292,7 +276,6 @@ const dataDFSDJJS = [
     },
     {
         name: 'Howard Stone',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Juvenile Justice Detention',
@@ -301,7 +284,6 @@ const dataDFSDJJS = [
     },
     {
         name: 'Michelle Brown',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'Specialized Services / DFS',
@@ -322,7 +304,6 @@ const dataDFSDJJS = [
 const dataWRD = [
     {
         name: 'Jim Cowan',
-        profileImg: Placeholder,
         Title: 'Chief Steward',
         Unit: 'General Unit',
         Department: 'Developer Inspectors',
@@ -331,7 +312,6 @@ const dataWRD = [
     },
     {
         name: 'William "Bill" Supple',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'General Unit',
         Department: 'WRD',
@@ -352,7 +332,6 @@ const dataSupervisory = [
     },
     {
         name: 'Marla McPherson',
-        profileImg: Placeholder,
         Title: 'Chief Steward',
         Unit: 'Supervisory Unit',
         Department: 'DOA / Air Trans System',
@@ -370,7 +349,6 @@ const dataSupervisory = [
     },
     {
         name: 'James Reynolds',
-        profileImg: Placeholder,
         Title: 'Steward',
         Unit: 'Supervisory Unit',
         Department: 'WRD',

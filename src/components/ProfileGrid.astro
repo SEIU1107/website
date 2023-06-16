@@ -1,21 +1,24 @@
 ---
+import Placeholder from '../images/PlaceholderProfileImg.png'
+
 export interface Props {
     data: {
         name: string;
-        profileImg: string;
+        profileImg: string; /* Picture of the Steward, if any. Otherwise, a placeholder is put instead */
         [key: string]: string;
     }[];
+    className: string;
 }
 
-const {data} = Astro.props as Props;
+const {data, className = "card-grid"} = Astro.props as Props;
 
 ---
 
 
-<div class="card-grid">
+<div class={className}>
     {data.map((person) => (
             <div class="card">
-                <img src={person.profileImg} alt="" />
+                <img src={person.profileImg ? person.profileImg : Placeholder} alt="" />
                 <h2 class="name">
                     <strong>{person.name}</strong>
                 </h2>
