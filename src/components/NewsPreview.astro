@@ -1,0 +1,39 @@
+---
+import Placeholder from '../images/protest.jpg'
+export interface Props {
+    featuredImg: string; /* Picture for the preview */
+    title: string;
+    excerpt: string;
+    date: string;
+}
+
+const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01'} = Astro.props as Props;
+---
+
+<div class="card">
+    <img src={featuredImg ? featuredImg : Placeholder} alt="" />
+    <div class="info">
+        <h2>{title}</h2>
+        <p>{new Date(date).toLocaleDateString()}</p>
+    </div>
+</div>
+
+
+<style>
+    .card {
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: 20px;
+    }
+
+    .info {
+        margin: 10px;
+    }
+
+    img {
+        border-radius: 10px;
+    }
+</style>
