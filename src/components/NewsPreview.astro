@@ -1,26 +1,43 @@
 ---
 import Placeholder from '../images/protest.jpg'
+import Purple from '../images/purple_transparent.png'
 export interface Props {
     featuredImg: string; /* Picture for the preview */
     title: string;
     excerpt: string;
     date: string;
+    url: string;
 }
 
-const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01'} = Astro.props as Props;
+const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01', url = '/'} = Astro.props as Props;
 ---
 
 <div class="card">
-    <img src={featuredImg ? featuredImg : Placeholder} alt="" />
+    <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
+
+
+    <div class="transparent">
+        <img src={Purple} alt="" id="thumb"/>
+    </div>
     <div class="info">
         <h2>{title}</h2>
         <p>{new Date(date).toLocaleDateString()}</p>
+        <p>{except}</p>
+        <a href={url} class="btn" id="readmore">Read More</a>
     </div>
 </div>
 
 
 <style>
+
+    .info {
+        font-family: 'Roboto', sans-serif;
+        padding: 10px;
+    }
+
     .card {
+        position: relative;
+        max-width: 400px;
         display: flex;
         flex-direction: column;
         background: #fff;
@@ -29,11 +46,35 @@ const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply 
         margin: 20px;
     }
 
-    .info {
-        margin: 10px;
-    }
 
-    img {
+    .featuredImg {
         border-radius: 10px;
     }
+
+    .transparent > .featuredImg:hover {
+        filter: grayscale(100%);
+    }
+
+    .transparent {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        transition: opacity 0.3s;
+        opacity: 0;
+    }
+
+    .transparent:hover {
+        opacity: 1;
+
+    }
+
+    #thumb:hover {
+        cursor: pointer;
+    }
+
+    #readmore:hover {
+        cursor: pointer;
+    }
+
 </style>

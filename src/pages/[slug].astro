@@ -25,7 +25,6 @@ const { Content, frontmatter } = Astro.props.post;
                 <img alt='' src={frontmatter.image} />
                 <div><i>{new Date(frontmatter.date).toLocaleDateString()}</i></div>
                 <Content />
-                <a class="btn" href="/">Go Back</a>
             </Card>
         </div>
     </section>

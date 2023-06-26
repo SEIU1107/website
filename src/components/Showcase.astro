@@ -7,7 +7,12 @@ import NewsPreview from '../components/NewsPreview.astro'
         <h1>Latest News</h1>
     </div>
 
-    <NewsPreview />
+    <div class="previews">
+        <NewsPreview />
+        <NewsPreview title="Test Story 2"/>
+        <NewsPreview title="Test Story 3"/>
+    </div>
+
 
     <p class="showcase-demo">
         <small>This is a test website.</small>
@@ -15,6 +20,14 @@ import NewsPreview from '../components/NewsPreview.astro'
 </section>
 
 <style>
+
+    .previews {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+    }
+
     .showcase {
         height: auto;
         background-color: var(--color-secondary);
