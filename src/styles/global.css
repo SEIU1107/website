@@ -1,5 +1,6 @@
 :root {
     --color-primary: #582C83;
+    --color-primary-darker: #432163;
     --color-secondary: #8d30ee;
     --color-tertiary: #FECD01;
     --color-lavender: #EADEF7;
@@ -54,7 +55,7 @@ h3 {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0px 30px;
+    padding: 0 30px;
 }
 
 .btn {

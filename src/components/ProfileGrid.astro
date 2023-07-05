@@ -7,15 +7,12 @@ export interface Props {
         profileImg: string; /* Picture of the Steward, if any. Otherwise, a placeholder is put instead */
         [key: string]: string;
     }[];
-    className: string;
 }
 
-const {data, className = "card-grid"} = Astro.props as Props;
+const {data} = Astro.props as Props;
 
 ---
-
-
-<div class={className}>
+<div class="card-grid">
     {data.map((person) => (
             <div class="card">
                 <img src={person.profileImg ? person.profileImg : Placeholder} alt="" />
@@ -45,16 +42,12 @@ const {data, className = "card-grid"} = Astro.props as Props;
 
 
 <style>
+
     .card-grid {
         display: grid;
         grid-template-columns: repeat(4,1fr);
         grid-column-gap: 0;
         margin: auto;
-        justify-content: center;
-        justify-items: center;
-        max-width: 375px;
-        padding: 10px;
-        font-family: 'Roboto', sans-serif;
     }
 
     .card {

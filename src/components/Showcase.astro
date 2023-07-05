@@ -1,5 +1,7 @@
 ---
 import NewsPreview from '../components/NewsPreview.astro'
+
+const posts = await Astro.glob('../posts/*.md')
 ---
 
 <section class="showcase">
@@ -8,9 +10,18 @@ import NewsPreview from '../components/NewsPreview.astro'
     </div>
 
     <div class="previews">
-        <NewsPreview />
-        <NewsPreview title="Test Story 2"/>
-        <NewsPreview title="Test Story 3"/>
+        {posts
+            .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
+            .slice(0,3)
+            .map(post => (
+            <NewsPreview
+                    featuredImg = {post.frontmatter.featuredImg}
+                    title = {post.frontmatter.title}
+                    excerpt = {post.frontmatter.excerpt}
+                    date = {post.frontmatter.date}
+                    url = {post.frontmatter.slug}
+            />
+        ))}
     </div>
 
 

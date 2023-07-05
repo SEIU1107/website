@@ -1,7 +1,7 @@
 ---
 title: 'Post 0'
 slug: 'test-post-0'
-excerpt: Post 0 Excerpt Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+excerpt: Post 0 Excerpt Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. Even more text for the preview! This is a very long one.
 date: 2022-05-13
 author: John Doe
 ---

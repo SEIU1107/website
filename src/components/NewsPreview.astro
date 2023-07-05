@@ -1,6 +1,9 @@
 ---
+import Button from '../components/Button.astro'
+
 import Placeholder from '../images/protest.jpg'
 import Purple from '../images/purple_transparent.png'
+
 export interface Props {
     featuredImg: string; /* Picture for the preview */
     title: string;
@@ -9,30 +12,43 @@ export interface Props {
     url: string;
 }
 
-const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01', url = '/'} = Astro.props as Props;
+const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01', url = '/'} = Astro.props as Props;
 ---
 
 <div class="card">
-    <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
+    <a href={url}>
+        <div class="thumb">
+            <div class="readMore">
+                <h1><b>Read More</b></h1>
+            </div>
+            <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
+            <div class="transparent">
+                <img src={Purple} alt=""/>
+            </div>
+        </div>
+    </a>
 
 
-    <div class="transparent">
-        <img src={Purple} alt="" id="thumb"/>
-    </div>
     <div class="info">
         <h2>{title}</h2>
         <p>{new Date(date).toLocaleDateString()}</p>
-        <p>{except}</p>
-        <a href={url} class="btn" id="readmore">Read More</a>
+        <p>{excerpt}</p>
+        <Button text="Read More" href={url} />
     </div>
+
+
+
 </div>
 
 
 <style>
 
+
     .info {
         font-family: 'Roboto', sans-serif;
-        padding: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;
+        z-index: 2;
     }
 
     .card {
@@ -48,15 +64,14 @@ const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply 
 
 
     .featuredImg {
-        border-radius: 10px;
+        filter: grayscale(0);
+        transition: 0.3s;
     }
 
-    .transparent > .featuredImg:hover {
-        filter: grayscale(100%);
-    }
 
     .transparent {
         position: absolute;
+        z-index: 0;
         top: 0;
         bottom: 0;
         left: 0;
@@ -64,17 +79,41 @@ const {featuredImg, title = 'News Story Title', except = 'Lorem Ipsum is simply 
         opacity: 0;
     }
 
-    .transparent:hover {
+    .readMore h1 {
+        z-index: 2;
+        font-family: "Trebuchet MS", serif;
+        text-align: center;
+        font-size: 40px;
+        position: absolute;
+        color: #ffffff;
+        top: 25%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+
+    }
+
+    .thumb img {
+        border-radius: 10px 10px 0 0;
+    }
+
+    .thumb:hover {
+        cursor: pointer;
+    }
+
+    .thumb:hover > .featuredImg {
+        filter: grayscale(100%);
+        transition: 0.3s;
+    }
+
+    .thumb:hover > .transparent {
         opacity: 1;
-
     }
 
-    #thumb:hover {
-        cursor: pointer;
+    .thumb:hover > .readMore h1 {
+        opacity: 1;
+        transition: opacity 0.6s;
     }
 
-    #readmore:hover {
-        cursor: pointer;
-    }
 
 </style>
