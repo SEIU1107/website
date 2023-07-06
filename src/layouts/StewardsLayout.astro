@@ -5,12 +5,15 @@ import '../styles/global.css'
 import RaisingTheStakes from '../images/raising-the-stakes.png'
 
 export interface Props {
-    shop_name: string;
+    title: string;
+    short_name?: string;
 }
 
-const { title = 'Enter Shop Name'} = Astro.props as Props;
+const { title = 'Enter Shop Name', short_name} = Astro.props as Props;
+
+const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
-<Layout>
+<Layout title = {page_title}>
     <img class="banner" src={RaisingTheStakes} alt="">
     <h1 class="title-text"><span>{title}</span></h1>
     <slot />
