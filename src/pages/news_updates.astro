@@ -1,21 +1,21 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Card from '../components/Card.astro'
+import NewsPreview from '../components/NewsPreview.astro'
 
 const posts = await Astro.glob('../posts/*.md')
+
+
 ---
 
 <Layout title="News Updates">
-    <section class="page-content">
-        <div class="container">
-            {posts.map(post => (
-              <Card>
-                  <h3>{post.frontmatter.title}</h3>
-                  <p><i>{post.frontmatter.date}</i></p>
-                  <p>{post.frontmatter.excerpt}</p>
-                  <a href={`/${post.frontmatter.slug}`} class="btn">Read More</a>
-              </Card>
-            ))}
-        </div>
-    </section>
+
 </Layout>
+
+<style>
+    .previews {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        margin: auto;
+    }
+</style>
