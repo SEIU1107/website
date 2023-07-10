@@ -18,12 +18,12 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
 <div class="card">
     <a href={url}>
         <div class="thumb">
-            <div class="readMore">
-                <h1><b>Read More</b></h1>
-            </div>
             <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
             <div class="transparent">
                 <img src={Purple} alt=""/>
+            </div>
+            <div class="readMore">
+                <h1><b>Read More</b></h1>
             </div>
         </div>
     </a>
@@ -71,7 +71,7 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
 
     .transparent {
         position: absolute;
-        z-index: 0;
+        z-index: 1;
         top: 0;
         bottom: 0;
         left: 0;
@@ -79,18 +79,24 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         opacity: 0;
     }
 
-    .readMore h1 {
-        z-index: 2;
-        font-family: "Trebuchet MS", serif;
-        text-align: center;
-        font-size: 40px;
+    .readMore {
+        display: flex;
+        justify-content: center;
+        top: 20%;
+        left: 20%;
         position: absolute;
-        color: #ffffff;
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
         opacity: 0;
+        z-index: 3;
+        margin: auto;
 
+
+    }
+
+    .readMore h1 {
+        font-family: "Trebuchet MS", serif;
+
+        font-size: 40px;
+        color: #000;
     }
 
     .thumb img {
@@ -110,7 +116,7 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         opacity: 1;
     }
 
-    .thumb:hover > .readMore h1 {
+    .thumb:hover > .readMore {
         opacity: 1;
         transition: opacity 0.6s;
     }
