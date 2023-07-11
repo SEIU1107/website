@@ -7,7 +7,21 @@ export interface Props {
 const {text = 'Enter Text', href = '/'} = Astro.props as Props;
 ---
 
-<a href={href} class="button">{text}</a>
+<a href={href}
+   class="
+   inline-block
+   rounded-md
+   px-2
+   py-2
+   bg-purple-primary
+   text-white
+   uppercase
+   tracking-wide
+   hover:bg-purple-darker
+   active:bg-purple-darkest
+   focus:outline-none
+   focus:ring
+   focus:ring-offset-white">{text}</a>
 
 <style>
     .button {

@@ -23,16 +23,16 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
                 <img src={Purple} alt=""/>
             </div>
             <div class="readMore">
-                <h1><b>Read More</b></h1>
+                <h1 class="text-white font-Trebuchet text-4xl"><b>Read More</b></h1>
             </div>
         </div>
     </a>
 
 
     <div class="info">
-        <h2>{title}</h2>
-        <p>{new Date(date).toLocaleDateString()}</p>
-        <p>{excerpt}</p>
+        <h2 class="font-Verdana font-bold text-xl py-2">{title}</h2>
+        <p class="py-1 font-bold">{new Date(date).toLocaleDateString()}</p>
+        <p class="py-1">{excerpt}</p>
         <Button text="Read More" href={url} />
     </div>
 
@@ -42,7 +42,6 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
 
 
 <style>
-
 
     .info {
         font-family: 'Roboto', sans-serif;
@@ -88,15 +87,10 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         opacity: 0;
         z-index: 3;
         margin: auto;
-
-
     }
 
-    .readMore h1 {
-        font-family: "Trebuchet MS", serif;
-
-        font-size: 40px;
-        color: #000;
+    .thumb {
+        z-index: 1;
     }
 
     .thumb img {
