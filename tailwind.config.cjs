@@ -6,7 +6,8 @@ module.exports = {
 			fontFamily: {
 				'Roboto': 'Roboto, sans-serif',
 				'Verdana': 'Verdana, serif',
-				'Trebuchet': '"Trebuchet MS", serif'
+				'Trebuchet': '"Trebuchet MS", serif',
+				'EngraversMT': '"Engravers MT", sans-serif'
 			},
 			colors: {
 				'purple': {

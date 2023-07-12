@@ -4,27 +4,63 @@ import NewsPreview from '../components/NewsPreview.astro'
 
 const posts = await Astro.glob('../posts/*.md')
 
+const years = posts
+    .reduce((acc, post) => {
+        acc[new Date(post.frontmatter.date).getFullYear()] =
+            posts.filter(function (el) {
+                return new Date(el.frontmatter.date).getFullYear() === new Date(post.frontmatter.date).getFullYear();
+            })
+        return acc
+    }, {});
+
+const sorted_years = Object.keys(years)
+    .sort((a,b) => (a > b ? 1 : -1))
+    .reduce((obj, key) => {
+        obj[key] = years[key];
+        return obj
+        }, {});
+
+console.log(sorted_years)
 
 ---
 
 <Layout title="News Updates">
-    <section class="flex justify-center">
-        <div class="grid grid-cols-3 gap-0">
-            {posts
-                .sort((a,b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-                .slice(0,3)
-                .map(post => (
-                        <NewsPreview
-                                featuredImg = {post.frontmatter.featuredImg}
-                                title = {post.frontmatter.title}
-                                excerpt = {post.frontmatter.excerpt}
-                                date = {post.frontmatter.date}
-                                url = {post.frontmatter.slug}
-                        />
-                ))
-            }
-        </div>
+
+    <h1 class="
+    py-5 m-auto
+    text-purple-primary text-5xl text-center
+    font-EngraversMT font-bold">
+        News Updates
+    </h1>
+
+    <section class="py-5">
+        {Object.entries(sorted_years).reverse().map(([year, posts], i) => (
+                <h1 class="
+                m-auto
+                text-purple-primary text-5xl text-center
+                italic font-Trebuchet font-bold">
+                    {year}
+                </h1>
+                <section class="flex justify-center">
+                    <div class="grid grid-cols-3 gap-0">
+                        {posts
+                            .sort((a,b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
+                            .map(post => (
+                                    <NewsPreview
+                                            featuredImg = {post.frontmatter.featuredImg}
+                                            title = {post.frontmatter.title}
+                                            excerpt = {post.frontmatter.excerpt}
+                                            date = {post.frontmatter.date}
+                                            url = {post.frontmatter.slug}
+                                    />
+                            ))}
+                    </div>
+                </section>
+        ))}
     </section>
+
+
+
 </Layout>
 
 <style>
