@@ -5,8 +5,9 @@ const posts = await Astro.glob('../posts/*.md')
 ---
 
 <section class="showcase">
+    <h1 class="text-yellow text-5xl m-auto text-center font-Trebuchet font-bold">Latest News</h1>
     <div class="showcase-text">
-        <h1>Latest News</h1>
+
     </div>
 
     <div class="previews">
@@ -58,9 +59,6 @@ const posts = await Astro.glob('../posts/*.md')
     }
 
     .showcase h1 {
-        font-size: 45px;
-        color: var(--color-tertiary);
-        margin-bottom: 20px;
     }
 
     .showcase p {

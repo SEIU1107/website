@@ -20,14 +20,15 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         <div class="thumb">
             <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
             <div class="transparent">
-                <img src={Purple} alt=""/>
+                <img class="absolute top-0 left-0" src={Purple} alt=""/>
             </div>
+
             <div class="readMore">
-                <h1 class="text-white font-Trebuchet text-4xl"><b>Read More</b></h1>
+                <h1 class="text-white text-center font-Trebuchet text-4xl absolute top-[100px] left-1/2 -translate-x-1/2"><b>Read More</b></h1>
             </div>
+
         </div>
     </a>
-
 
     <div class="info">
         <h2 class="font-Verdana font-bold text-xl py-2">{title}</h2>
@@ -61,36 +62,25 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         margin: 20px;
     }
 
+    .transparent {
+        opacity: 0;
+        transition: 0.3s;
+    }
+
 
     .featuredImg {
         filter: grayscale(0);
         transition: 0.3s;
     }
 
-
-    .transparent {
-        position: absolute;
-        z-index: 1;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        transition: opacity 0.3s;
-        opacity: 0;
-    }
-
     .readMore {
-        display: flex;
-        justify-content: center;
-        top: 20%;
-        left: 20%;
-        position: absolute;
         opacity: 0;
-        z-index: 3;
+        z-index: 0;
         margin: auto;
     }
 
     .thumb {
-        z-index: 1;
+        z-index: 6;
     }
 
     .thumb img {
@@ -101,13 +91,14 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         cursor: pointer;
     }
 
-    .thumb:hover > .featuredImg {
-        filter: grayscale(100%);
+    .thumb:hover > .transparent {
+        opacity: 100;
         transition: 0.3s;
     }
 
-    .thumb:hover > .transparent {
-        opacity: 1;
+    .thumb:hover > .featuredImg {
+        filter: grayscale(100%);
+        transition: 0.3s;
     }
 
     .thumb:hover > .readMore {
