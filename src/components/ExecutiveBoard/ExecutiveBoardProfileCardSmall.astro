@@ -8,13 +8,11 @@ export interface Props {
 const {profileImg, name, shop} = Astro.props as Props;
 ---
 
-<div class="card-container">
+<div class="max-w-xl bg-purple-primary p-5 m-5 rounded-md shadow-sm shadow-black">
     <img src={profileImg} alt="">
-    <h2 style="font-family: Georgia, sans-serif"><strong>
-        {name}
-    </strong></h2>
-    <p style="font-size: 16px; color: #582C83; padding: 0; text-align: center"><i><b>SEIU 1107 Executive Board Member</b></i></p>
-    <p style="font-size: 20px; padding: 0; text-align: center"><i>{shop}</i></p>
+    <h2 class="text-lg font-Georgia font-bold text-center text-white py-2.5">{name}</h2>
+    <p class="text-lg py-2.5 italic font-bold text-yellow text-center">SEIU 1107 Executive Board Member</p>
+    <p class="text-xl font-Roboto text-white italic text-center">{shop}</p>
 </div>
 
 <style>
