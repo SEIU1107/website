@@ -10,19 +10,12 @@ const {profileImg, name, shop} = Astro.props as Props;
 
 <div class="max-w-xl bg-purple-primary p-5 m-5 rounded-md shadow-sm shadow-black">
     <img src={profileImg} alt="">
-    <h2 class="text-lg font-Georgia font-bold text-center text-white py-2.5">{name}</h2>
-    <p class="text-lg py-2.5 italic font-bold text-yellow text-center">SEIU 1107 Executive Board Member</p>
-    <p class="text-xl font-Roboto text-white italic text-center">{shop}</p>
+    <h2 class="text-xl font-Georgia font-bold text-center text-white py-2.5">{name}</h2>
+    <p class="text-lg py-1 font-Trebuchet italic font-bold text-yellow text-center">SEIU 1107 Executive Board Member</p>
+    <p class="text-lg font-Roboto text-white italic text-center">{shop}</p>
 </div>
 
 <style>
-    .card-container {
-        max-width: 375px;
-        padding: 10px;
-        font-family: 'Roboto', sans-serif;
-
-    }
-
     img {
         border-radius: 5%;
     }

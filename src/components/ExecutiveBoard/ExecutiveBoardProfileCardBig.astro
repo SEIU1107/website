@@ -11,11 +11,9 @@ const {profileImg,name, title, desc} = Astro.props as Props;
 
 <div class="card-container" >
     <img src={profileImg} alt="">
-    <h2 style="font-family: Georgia, sans-serif"><strong>
-        {name}
-    </strong></h2>
-    <p style="font-size: 16px; color: #582C83;"><i><b>{title}</b></i></p>
-    <p style="padding: 0">{desc}</p>
+    <p class="font-Georgia text-purple-primary italic font-bold text-2xl py-2 text-center">{name}</p>
+    <p class="font-Roboto text-purple-primary italic text-xl text-center">{title}</p>
+    <p class="py-1.5">{desc}</p>
 </div>
 
 <style>

@@ -8,7 +8,7 @@ module.exports = {
 				'Verdana': 'Verdana, serif',
 				'Trebuchet': '"Trebuchet MS", serif',
 				'EngraversMT': '"Engravers MT", sans-serif',
-				'Georgia' : 'font-family: Georgia, sans-serif'
+				'Georgia' : 'Georgia, sans-serif'
 			},
 			colors: {
 				'purple': {
