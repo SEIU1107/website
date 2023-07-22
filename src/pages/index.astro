@@ -5,8 +5,7 @@ import Benefits from '../components/Benefits.astro';
 import CycleText from '../components/CycleText.astro';
 
 
-const words = ['Nurses', 'Doctors', 'Homecare Workers', 'Lab Techs', 'Drivers', 'Medical Assistants',
-'Sales Reps', 'EVS Aides', 'Pharmacy Technicians', 'Custodians', 'Food Service Workers']
+const words = ['Hospital Workers', 'Clark County Workers', 'Housing Authority Workers', 'Health District Workers', 'Water Reclamation Workers', 'Homecare Workers', 'Disability Care Workers', 'Region Transportation Workers', 'LVCVA Workers', 'Harry Reid I.A. Workers']
 
 ---
 
@@ -16,7 +15,7 @@ const words = ['Nurses', 'Doctors', 'Homecare Workers', 'Lab Techs', 'Drivers', 
 
         <div class="absolute font-Verdana font-bold top-0 left-0 w-[100%] h-[100%] flex flex-col justify-center text-5xl text-center">
             <h1>We are</h1>
-            <h1><CycleText words={words} interval=1000 /></h1>
+            <h1 class="py-5"><CycleText words={words} interval=1000 /></h1>
             <h1>United!</h1>
         </div>
 

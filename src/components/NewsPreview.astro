@@ -1,8 +1,8 @@
 ---
 import Button from '../components/Button.astro'
 
-import Placeholder from '../images/protest.jpg'
-import Purple from '../images/purple_transparent.png'
+import Placeholder from '../../public/images/protest.jpg'
+import Purple from '../../public/images/purple_transparent.png'
 
 export interface Props {
     featuredImg: string; /* Picture for the preview */
@@ -71,6 +71,12 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
     .featuredImg {
         filter: grayscale(0);
         transition: 0.3s;
+    }
+
+    img {
+        max-height: 267px;
+        object-fit: contain;
+        object-position: center;
     }
 
     .readMore {

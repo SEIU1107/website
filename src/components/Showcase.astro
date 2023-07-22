@@ -6,9 +6,6 @@ const posts = await Astro.glob('../posts/*.md')
 
 <section class="showcase">
     <h1 class="text-yellow text-5xl m-auto text-center font-Trebuchet font-bold">Latest News</h1>
-    <div class="showcase-text">
-
-    </div>
 
     <div class="previews">
         {posts
@@ -25,10 +22,6 @@ const posts = await Astro.glob('../posts/*.md')
         ))}
     </div>
 
-
-    <p class="showcase-demo">
-        <small>This is a test website.</small>
-    </p>
 </section>
 
 <style>
@@ -47,10 +40,6 @@ const posts = await Astro.glob('../posts/*.md')
         padding: 30px;
     }
 
-    .showcase-blog {
-        min-height: 300px;
-    }
-
     .showcase-text {
         max-width: 500px;
         color: #fff;
@@ -58,26 +47,9 @@ const posts = await Astro.glob('../posts/*.md')
         margin: auto;
     }
 
-    .showcase h1 {
-    }
-
     .showcase p {
         font-size: 24px;
         margin-bottom: 20px;
     }
 
-    .showcase-img {
-        text-align: center;
-    }
-
-    .showcase-img img {
-        border-radius: 10px;
-        margin: auto;
-    }
-
-    .showcase-demo {
-        color: #fff;
-        text-align: center;
-        font-weight: 300;
-    }
 </style>
