@@ -12,7 +12,7 @@ export interface Props {
 const {person} = Astro.props as Props;
 ---
 
-<div class="max-w-xl bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex-col">
+<div class="max-w-xl bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex-col ">
     <img class="rounded-md" src={person.profileImg ? person.profileImg : Placeholder} alt="" />
     <h2 class="font-Georgia font-bold text-black py-2 text-lg">
         <strong>{person.name}</strong>

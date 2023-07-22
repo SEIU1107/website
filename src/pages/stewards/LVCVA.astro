@@ -1,0 +1,90 @@
+---
+import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/ProfileGrid.astro'
+
+const nonSupData = [
+    {
+        name: 'Richard Brooks',
+        Title: 'Chief Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Security',
+        Phone: '(702) 419 - 8117',
+        Email: 'rb9260@gmail.com'
+    },
+    {
+        name: 'Karla Nolan',
+        profileImg: '/images/executive_board/Karla.png',
+        Title: 'Bargaining Unit VP / Executive Board Member',
+        Unit: 'Non-Supervisory',
+        Department: 'Business Sales',
+        Phone: '(702) 203 - 9613',
+        Email: 'karla.nolan66@gmail.com'
+    },
+    {
+        name: 'Jeff Ray',
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Client Services',
+        Phone: '(702) 525 - 7961',
+        Email: 'jryogibear555@gmail.com'
+    },
+    {
+        name: 'Keith Vierra',
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'LVCC',
+        Phone: '(702) 686 - 2215',
+        Email: 'keithvierra@icloud.com'
+    },
+    {
+        name: 'Kristin Bollinger',
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Security Dispatch',
+        Phone: '(702) 249 - 4977',
+        Email: 'kristinbollinger.lvcc@gmail.com'
+    },
+    {
+        name: 'Stephen Nolan',
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Client Services',
+        Phone: '(702) 587 - 0016',
+        Email: 'nolanunion1107@gmail.com'
+    },
+    {
+        name: 'Barbrajean Washington',
+        Title: 'Steward',
+        Unit: 'Non-Supervisory',
+        Department: 'Customer Safety',
+        Phone: '(702) 581 - 9715',
+        Email: 'jeano531@yahoo.com'
+    },
+
+]
+
+const SupData = [
+    {
+        name: 'Geno Jahrling',
+        Title: 'Steward',
+        Unit: 'Supervisory',
+        Department: 'Security',
+        Phone: '(702) 884 - 1542',
+        Email: 'geno_jahrling@hotmail.com'
+    },
+]
+---
+
+<StewardsLayout title="Las Vegas Convention & Visitor Authority (LVCVA)" short_name="LVCVA">
+
+    <h1 class="py-5 font-Trebuchet font-bold text-center text-purple-primary text-4xl">
+        Non-Supervisory
+    </h1>
+    <StewardGrid data={nonSupData} />
+    <h1 class="py-5 font-Verdana font-bold text-center text-purple-primary text-4xl">
+        Supervisory
+    </h1>
+    <StewardGrid data={SupData} />
+
+
+</StewardsLayout>

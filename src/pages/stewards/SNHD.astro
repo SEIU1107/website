@@ -1,0 +1,45 @@
+---
+import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/ProfileGrid.astro'
+
+const profileData = [
+    {
+        name: 'Victoria Harding',
+        Title: 'Chief Steward',
+        Unit: 'General Unit',
+        Department: 'Organizational Development Team',
+        Phone: '(818) 404 - 6392',
+        Email: 'harding_victoria@hotmail.com'
+    },
+    {
+        name: 'Regena Ellis',
+        Title: 'Bargaining Unit VP',
+        Unit: 'General Unit',
+        Department: 'Tuberculosis Clinic',
+        Phone: '(708) 299 - 5623',
+        Email: 'regena.m.ellis@gmail.com'
+    },
+    {
+        name: 'Jennifer Bowers',
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Community Health ODES',
+        Phone: '(702) 759 - 0675',
+        Email: 'bowers@snhd.org'
+    },
+    {
+        name: 'Rosemary Ensign',
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Food Handler Cards Training Program',
+        Phone: '(702) 759 - 1000',
+        Email: 'ensign@snhd.org'
+    },
+]
+---
+
+<StewardsLayout title="Southern Nevada Health District (SNHD)" short_name="SNHD">
+
+    <StewardGrid data={profileData} />
+
+</StewardsLayout>

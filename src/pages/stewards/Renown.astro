@@ -1,0 +1,19 @@
+---
+import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/ProfileGrid.astro'
+
+const data = [
+    {
+        name: 'Nicole Courts',
+        Title: 'SEIU 1107 Executive Board Member',
+        Department: 'RN / General Surgical',
+        Phone: '(775) 303 - 7692',
+        Email: 'nic' +
+            'olecourts1@gmail.com'
+    },
+]
+---
+
+<StewardsLayout title="Renown Hospital">
+    <StewardGrid data={data} />
+</StewardsLayout>

@@ -1,0 +1,127 @@
+---
+import StewardsLayout from '../../layouts/StewardsLayout.astro'
+import StewardGrid from '../../components/ProfileGrid.astro'
+
+const sienaData = [
+    {
+        name: 'Jessica Rivas-Rocha',
+        Title: 'Chief Steward',
+        Department: 'CNA',
+        Phone: '(702) 771 - 2311',
+        Email: 'jrivas-rocha@hotmail.com'
+    },
+    {
+        name: 'Sharon Savoy-Durisseau',
+        Title: 'Bargaining Unit VP',
+        Department: 'Laboratory',
+        Phone: '(702) 596 - 8996',
+        Email: 'sharondurisseau@yahoo.com'
+    },
+    {
+        name: 'Gina Stone',
+        Title: 'Steward',
+        Department: 'Critical Care',
+        Phone: '(561) 324 - 6404',
+        Email: 'ginaprt38@yahoo.com'
+    },
+    {
+        name: 'James Lynch',
+        Title: 'Steward',
+        Department: 'EVS',
+        Phone: '(702) 239 - 4966',
+        Email: 'lynchjames32@yahoo.com'
+    },
+    {
+        name: 'Johnsie Petite',
+        Title: 'Steward',
+        Department: 'Admitting',
+        Phone: '(202) 386 - 1949',
+        Email: 'loubilld@yahoo.com'
+    },
+    {
+        name: 'Olga Bradley',
+        Title: 'Steward',
+        Department: 'Surg Intensive Care',
+        Phone: '(702) 738 - 5612',
+        Email: 'diazbradley@aol.com'
+    },
+    {
+        name: 'Raymond Garcia',
+        Title: 'Steward',
+        Department: 'EVS',
+        Phone: '(702) 494 - 8052',
+        Email: 'rayslittleangel@aol.com'
+    },
+    {
+        name: 'Sean Taggart',
+        Title: 'Steward',
+        Department: 'Nuclear Med',
+        Phone: '(702) 510 - 8904',
+        Email: 'ginaprt38@yahoo.com'
+    },
+    {
+        name: 'Sione Lapauho',
+        Title: 'Steward',
+        Department: 'Environmental Services',
+        Phone: '(702) 630 - 9070',
+        Email: 'lapuahos@yahoo.com'
+    },
+    {
+        name: 'Stephanie Pilette',
+        Title: 'Steward',
+        Department: 'EVS',
+        Phone: '(702) 241 - 0775',
+        Email: 'knsp2000@yahoo.com'
+    },
+]
+
+const sanMartinData = [
+    {
+        name: 'Krystal Shen',
+        Title: 'Steward',
+        Department: 'Nuclear Med',
+        Phone: '(702) 510 - 8904',
+        Email: 'ginaprt38@yahoo.com'
+    },
+    {
+        name: 'Cherie Mancini',
+        Title: 'Steward',
+        Department: 'Surgery',
+        Phone: '(702) 321 - 9388',
+        Email: 'labormatters_66@yahoo.com'
+    },
+    {
+        name: 'Shawna Ornelas',
+        Title: 'Steward',
+        Department: 'Care Coordination',
+        Phone: '(702) 334 - 2550',
+        Email: 'shawna.tagaca808@gmail.com'
+    },
+]
+
+const deLimaData = [
+    {
+        name: 'Pam Jahan-Shahi',
+        profileImg: '/images/executive_board/Pam.png',
+        Title: 'Steward / Executive Board Member',
+        Department: 'Computed Tomographic Scanner',
+        Phone: '(702) 417 - 8785',
+        Email: 'pamjahan@yahoo.com'
+    },
+]
+---
+
+<StewardsLayout title="Dignity St. Rose">
+    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
+        Siena
+    </h1>
+    <StewardGrid data={sienaData} />
+    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
+        San Martin
+    </h1>
+    <StewardGrid data={sanMartinData} />
+    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
+        De Lima
+    </h1>
+    <StewardGrid data={deLimaData}/>
+</StewardsLayout>
