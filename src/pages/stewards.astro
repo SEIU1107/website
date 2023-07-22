@@ -33,27 +33,30 @@ import UMCFront from '../../public/images/shop_imgs/UMC-Solid-Button.png'
 
 
 const shopCardData = [
-    {backImg: CCBack, frontImg: CCFront, urlDest: "/stewards/Clark County"}, // Clark County
+    {backImg: CCBack, frontImg: CCFront, urlDest: "./stewards/Clark County"}, // Clark County
     {backImg: LVCVABack, frontImg: LVCVAFront, urlDest: "/"}, // LVCVA
     {backImg: RenownBack, frontImg: RenownFront, urlDest: "/"}, // Renown
-    {backImg: RTCBack, frontImg: RTCFront, urlDest: "/stewards/RTC"}, // RTC
+    {backImg: RTCBack, frontImg: RTCFront, urlDest: "./stewards/RTC"}, // RTC
     {backImg: SNHDBack, frontImg: SNHDFront, urlDest: "/"},
-    {backImg: SNRHABack, frontImg: SNRHAFront, urlDest: "/stewards/SNRHA"},
-    {backImg: StRoseBack, frontImg: StRoseFront, urlDest: "/"},
-    {backImg: SunriseBack, frontImg: SunriseFront, urlDest: "/stewards/Sunrise"},
-    {backImg: UMCBack, frontImg: UMCFront, urlDest: "/stewards/UMC"}
+    {backImg: SNRHABack, frontImg: SNRHAFront, urlDest: "./stewards/SNRHA"},
+    {backImg: StRoseBack, frontImg: StRoseFront, urlDest: "./"},
+    {backImg: SunriseBack, frontImg: SunriseFront, urlDest: "./stewards/Sunrise"},
+    {backImg: UMCBack, frontImg: UMCFront, urlDest: "./stewards/UMC"}
 ]
 ---
 <Layout title = "SEIU 1107 Stewards">
     <HeadingTitle text="SEIU 1107 Stewards"></HeadingTitle>
     <p style="text-align: center; font-size: 20px"><i><b>Select your shop</b></i></p>
-    <section class="shopGrid">
-        <div class="container">
-            {shopCardData.map(shop => (
-                    <ShopCard backImg={shop.backImg} frontImg={shop.frontImg} urlDest={shop.urlDest}/>
-            ))}
-        </div>
+    <section class="flex justify-center">
+        <section class="shopGrid">
+            <div class="container">
+                {shopCardData.map(shop => (
+                        <ShopCard backImg={shop.backImg} frontImg={shop.frontImg} urlDest={shop.urlDest}/>
+                ))}
+            </div>
+        </section>
     </section>
+
 </Layout>
 
 

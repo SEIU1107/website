@@ -5,24 +5,30 @@ import Benefits from '../components/Benefits.astro';
 import CycleText from '../components/CycleText.astro';
 
 
-const words = ['Hospital Workers', 'Clark County Workers', 'Housing Authority Workers', 'Health District Workers', 'Water Reclamation Workers', 'Homecare Workers', 'Disability Care Workers', 'Region Transportation Workers', 'LVCVA Workers', 'Harry Reid I.A. Workers']
+const words = [
+    'Hospital Workers',
+    'Clark County Workers',
+    'Housing Authority Workers',
+    'Health District Workers',
+    'Water Reclamation Workers',
+    'Homecare Workers',
+    'Developmental Disability Care Workers',
+    'Regional Transportation Workers',
+    'LV Convention Center Workers',
+    "Harry Reid Int'l Airport Workers"]
 
 ---
 
 <Layout>
     <div class="vidshowcase">
         <video src="https://seiu99.org/wp-content/uploads/2018/08/herovid.mp4" type="video/mp4" autoplay muted loop></video>
-
+        <h1 class="absolute top-[10%] left-0 w-[100%] m-auto font-Roboto font-bold text-center text-lavender text-4xl drop-shadow-2xl">Welcome to SEIU Local 1107 Nevada!</h1>
         <div class="absolute font-Verdana font-bold top-0 left-0 w-[100%] h-[100%] flex flex-col justify-center text-5xl text-center">
-            <h1>We are</h1>
-            <h1 class="py-5"><CycleText words={words} interval=1000 /></h1>
-            <h1>United!</h1>
+            <h1 class="text-white">We are</h1>
+            <h1 class="py-5 text-yellow"><CycleText words={words} interval=1500 /></h1>
+            <h1 class="text-white">United!</h1>
         </div>
 
-        <div class="cycletext">
-
-
-        </div>
     </div>
 
     <Showcase />
@@ -48,7 +54,7 @@ const words = ['Hospital Workers', 'Clark County Workers', 'Housing Authority Wo
         position: relative;
         right: 0;
         width: 100%;
-        min-height: 50vh;
+        min-height: 60vh;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -63,10 +69,6 @@ const words = ['Hospital Workers', 'Clark County Workers', 'Housing Authority Wo
         height: 100%;
         object-fit: cover;
         z-index: 0;
-    }
-
-    .vidshowcase h1 {
-        color: white;
     }
 
     .vidshowcase p {

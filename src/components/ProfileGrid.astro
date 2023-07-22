@@ -13,15 +13,17 @@ const {data} = Astro.props as Props;
 
 ---
 
-
-
-<section class="grid">
-    <div class="container">
-        {data.map((curPerson) => (
-            <ProfileCard person={curPerson} />
-        ))}
+<section class="flex justify-center">
+    <div class="grid">
+        <div class="container">
+            {data.map((curPerson) => (
+                    <ProfileCard person={curPerson} />
+            ))}
+        </div>
     </div>
 </section>
+
+
 
 <style>
 

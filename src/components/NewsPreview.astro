@@ -31,7 +31,7 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
     </a>
 
     <div class="info">
-        <h2 class="font-Verdana font-bold text-xl py-2">{title}</h2>
+        <h2 class="font-Verdana font-bold text-xl py-2 text-ellipsis whitespace-nowrap overflow-hidden">{title}</h2>
         <p class="py-1 font-bold">{new Date(date).toLocaleDateString()}</p>
         <p class="py-1">{excerpt}</p>
         <Button text="Read More" href={url} />
@@ -73,11 +73,6 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         transition: 0.3s;
     }
 
-    img {
-        max-height: 267px;
-        object-fit: contain;
-        object-position: center;
-    }
 
     .readMore {
         opacity: 0;
@@ -91,6 +86,8 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
 
     .thumb img {
         border-radius: 10px 10px 0 0;
+        aspect-ratio: 3/2;
+        object-fit: cover;
     }
 
     .thumb:hover {
