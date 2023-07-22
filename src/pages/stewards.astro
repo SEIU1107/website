@@ -1,8 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import ShopCard from '../components/Stewards/ShopCard.astro'
-
-import '../styles/global.css'
+import HeadingTitle from '../components/HeadingTitle.astro'
 
 // Images
 import CCBack from '../../public/images/shop_imgs/Clark-County-Button.png'
@@ -46,7 +45,7 @@ const shopCardData = [
 ]
 ---
 <Layout title = "SEIU 1107 Stewards">
-    <h1 class="text-5xl font-EngraversMT font-bold text-center py-5">My Stewards</h1>
+    <HeadingTitle text="SEIU 1107 Stewards"></HeadingTitle>
     <p style="text-align: center; font-size: 20px"><i><b>Select your shop</b></i></p>
     <section class="shopGrid">
         <div class="container">

@@ -20,8 +20,6 @@ const sorted_years = Object.keys(years)
         return obj
         }, {});
 
-console.log(sorted_years)
-
 ---
 
 <Layout title="News Updates">
@@ -34,7 +32,7 @@ console.log(sorted_years)
     </h1>
 
     <section class="py-5">
-        {Object.entries(sorted_years).reverse().map(([year, posts], i) => (
+        {Object.entries(sorted_years).reverse().map(([year, posts]) => (
                 <h1 class="
                 m-auto
                 text-purple-primary text-5xl text-center
