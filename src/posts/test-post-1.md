@@ -1,21 +1,55 @@
 ---
-title: 'Post 1'
-slug: 'test-post-1'
-excerpt: Post 1 Excerpt Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-date: 2022-04-13
-author: John Doe
-image: 'https://static.javatpoint.com/tutorial/markdown/images/images-in-markdown.png'
+title: 'Our Unstoppable Purple Wave Floods Carson City!'
+featuredImg: '/images/post_imgs/2023/Lobby-Day.png'
+slug: '2023-04-27-Lobby-Day'
+excerpt: On April 20th, 70 SEIU 1107 members made the trip up to Nevada’s capital, Carson City, to visit the state legislature. Members joined their elected Assemblymembers and Senators on the Chamber floors and were recognized by the Legislature. 
+date: 2023-04-27
+author: SEIU
 ---
 
+## **SEIU 1107 Members Made Our Voices Heard with Elected Officials During Our Recent Lobby Day!**
+<br>
+<br>
 
-Post 1 Body Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ipsum leo, maximus vel vehicula a, fermentum dignissim tellus. Sed pulvinar sed augue nec suscipit. Suspendisse potenti. Quisque non accumsan turpis. Nulla nec bibendum quam. In in lacus eget ante pulvinar lobortis. Aliquam urna metus, venenatis vel eros at, sollicitudin hendrerit ipsum. Pellentesque a egestas enim. Donec cursus dolor in turpis bibendum auctor.
+![](../../public/images/post_imgs/2023/Lobby-Day/carson-city.png)
 
-![Javatpoint](https://static.javatpoint.com/tutorial/markdown/images/images-in-markdown.png)
+<br>
 
-Aliquam efficitur velit id arcu viverra dapibus. Morbi ac fermentum leo. Ut posuere mauris quis diam auctor, sit amet aliquet dui tempus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sit amet tempor odio, a condimentum ex. Nullam tempor, orci quis gravida varius, lectus magna hendrerit arcu, sed tempus quam dolor sed eros. Sed eleifend nisl ut scelerisque venenatis. Vestibulum ornare lobortis neque eu eleifend. Ut lacus diam, facilisis eu neque in, viverra accumsan velit. Curabitur hendrerit aliquam felis, in viverra nunc ultricies quis. Pellentesque ut elit vulputate, viverra sapien eu, aliquam magna. Phasellus nec malesuada lectus, id sodales nisl. Phasellus sed eros fringilla, laoreet eros eu, ultrices metus. Nunc eget enim lorem.
+On April 20th, 70 SEIU 1107 members made the trip up to Nevada’s capital, Carson City, to visit the state legislature. Members joined their elected Assemblymembers and Senators on the Chamber floors and were recognized by the Legislature.
+<br>
+<br>
+![](../../public/images/post_imgs/2023/Lobby-Day/floor.png)
 
-Donec sagittis ut augue ut posuere. Phasellus porttitor eu velit in blandit. Etiam id venenatis magna. Lorem ipsum dolor sit amet, consectetur adipiscing elit. In non congue risus. Curabitur eros ligula, finibus non accumsan et, sagittis non augue. In hac habitasse platea dictumst. Phasellus consectetur vestibulum elit, imperdiet lobortis velit luctus eget. Donec sodales enim in ex placerat suscipit a at felis. Mauris ullamcorper justo quis risus aliquet molestie. Nunc gravida dui neque, sed convallis lorem dignissim et.
+<br>
 
-Nunc at felis vehicula, dictum enim vitae, sollicitudin mauris. Mauris suscipit semper dolor congue cursus. Sed auctor in erat non facilisis. Proin aliquam sapien sit amet augue luctus iaculis. Nunc sapien tortor, dignissim sit amet consectetur ut, commodo a lacus. Sed sit amet semper turpis. Quisque in dictum augue. Aliquam et urna ornare, dictum ipsum a, consectetur eros. Morbi aliquam nulla quis erat porta ultricies. Suspendisse potenti. Fusce lobortis eu leo et egestas. Phasellus arcu risus, efficitur id dolor vel, elementum commodo ipsum. Suspendisse porta turpis odio, ac elementum dolor vulputate vitae. Phasellus et ipsum cursus, dictum odio eu, feugiat augue. Vivamus vitae urna luctus, accumsan enim in, vestibulum nulla.
+After the floor session, members began their meetings with Assemblymembers and Senators at their offices to advocate for our priorities. Members spoke passionately about the need to raise wages for home care workers, increase funding for home care, make Juneteenth a paid state holiday, and other bills that support working Nevadans.
+<br>
+<br>
 
-Vestibulum blandit metus vel malesuada venenatis. Pellentesque congue purus ligula, ac maximus tellus venenatis eu. Ut commodo iaculis venenatis. Praesent suscipit felis nec neque pretium feugiat. In finibus cursus lacus in vulputate. Phasellus sit amet mauris eget ligula fermentum finibus. Cras magna libero, ornare eu justo sit amet, pulvinar ultricies nisi. Vestibulum in est accumsan, venenatis dolor quis, accumsan ante. Cras ultrices facilisis lacinia.
+
+![](../../public/images/post_imgs/2023/Lobby-Day/floor-1.png) ![](../../public/images/post_imgs/2023/Lobby-Day/floor-2.png)
+
+<br>
+
+In addition to meeting legislators, members took part in a tour of the Stewart Indian School. This tour educated members on the dark, sad, and untold history of forced assimilation for Native Americans in the United States. SEIU 1107 is a proudly anti-racist organization and believes this experience will further our racial justice work
+<br>
+<br>
+![](../../public/images/post_imgs/2023/Lobby-Day/floor-1.png) ![](../../public/images/post_imgs/2023/Lobby-Day/school-2.png)
+
+<br>
+
+SEIU’s 2023 Lobby Day was a major success and legislators now, more than ever, understand the power and priorities of our union, our workplaces, and our communities. Get involved early and often with our upcoming political events throughout the year. We will continue to build on the success of Lobby Day as we move closer to the 2024 elections.
+<br>
+<br>
+
+## **Our 2023 Priorities Update**
+<br>
+
+# *Creating Juneteenth as a paid State Holiday, Assembly Bill 140*
+* Celebrates the day when federal troops arrived in Galveston, Texas and ensured the freeing of all enslaved people, marking the official end of slavery in the United States.
+* Paid day off or holiday pay for our members.
+* Celebrated on June 19th (day off occurs on Friday or Monday if the 19th lands on a weekend).
+* **Update:** AB 140 has passed unanimously out of the Assembly Government Affairs Committee and was heard in the Assembly Ways & Means Committee on April 20th! 
+
+<br>
+<br>
