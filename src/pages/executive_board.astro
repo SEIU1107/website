@@ -1,4 +1,5 @@
 ---
+import HeadingTitle from '../components/HeadingTitle.astro'
 import Layout from '../layouts/Layout.astro'
 import ProfileCardBig from '../components/ExecutiveBoard/ExecutiveBoardProfileCardBig.astro'
 import ProfileCardSmall from '../components/ExecutiveBoard/ExecutiveBoardProfileCardSmall.astro'
@@ -56,7 +57,7 @@ const smallProfPeopleData = [
 ---
 
 <Layout title = "SEIU Local 1107 Executive Board">
-    <h1 class="m-auto font-EngraversMT font-bold text-center text-purple-primary py-5 text-5xl">Meet the Local 1107 Executive Board</h1>
+    <HeadingTitle text="Meet the Local 1107 Executive Board" />
     <div class="statement">
         <p>This is where we should put the Executive Board mission statement language. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at ante a felis consectetur sollicitudin. Quisque tincidunt et magna luctus feugiat. Ut ultricies condimentum nunc eu volutpat. Fusce nec odio tincidunt, posuere nisl sed, auctor ipsum. Maecenas nec posuere justo. Cras non lorem ante. Suspendisse tristique maximus tellus, in maximus est vulputate in. Cras sodales varius cursus.</p>
     </div>
@@ -81,14 +82,14 @@ const smallProfPeopleData = [
 <style>
     .grid .container {
         display: grid;
-        grid-template-columns: repeat(3,1fr);
+        grid-template-columns: repeat(3, 1fr);
         grid-column-gap: 0;
         margin: auto
     }
 
     .small-grid .container {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-column-gap: 0;
         margin: auto
     }
@@ -108,7 +109,7 @@ const smallProfPeopleData = [
         max-width: 1200px;
     }
 
-    @media (max-width: 500px) {
+    @media (max-width: 800px) {
         .grid .container {
             grid-template-columns: 1fr;
         }

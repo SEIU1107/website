@@ -1,5 +1,5 @@
 ---
-import Placeholder from '../images/PlaceholderProfileImg.png'
+import ProfileCard from './ProfileCard.astro'
 
 export interface Props {
     data: {
@@ -12,90 +12,32 @@ export interface Props {
 const {data} = Astro.props as Props;
 
 ---
-<div class="card-grid">
-    {data.map((person) => (
-            <div class="card">
-                <img src={person.profileImg ? person.profileImg : Placeholder} alt="" />
-                <h2 class="name">
-                    <strong>{person.name}</strong>
-                </h2>
-                <div class="info">
-                    {Object.keys(person).map((key) => (
-                        key !== 'profileImg' &&
-                        key !== 'name' &&
-                        key !== 'id' && (
-                            key === 'Email' ? (
-                                    <div>
-                                        <b>{key}:</b> <a href={`mailto:${person[key]}`}>{person[key]}</a>
-                                    </div>
-                            ) : (
-                                    <div>
-                                        <b>{key}:</b> {person[key]}
-                                    </div>
-                            )
-                        )
-                    ))}
-                </div>
-            </div>
-    ))}
-</div>
 
+
+
+<section class="grid">
+    <div class="container">
+        {data.map((curPerson) => (
+            <ProfileCard person={curPerson} />
+        ))}
+    </div>
+</section>
 
 <style>
 
-    .card-grid {
+    .grid .container {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-column-gap: 0;
-        margin-right: 40px;
-        margin-left: 40px;
-        justify-content: center;
+        margin: auto
     }
 
-    .card {
-        display: flex;
-        flex-direction: column;
-        background: #fff;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin: 20px;
-        max-width: 320px;
-    }
-
-    .info {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        font-family: Verdana, sans-serif;
-    }
-    .name {
-        font-family: Georgia, sans-serif;
-        font-weight: bold;
-        color: #000;
-        padding-bottom: 10px;
-        padding-top: 10px;
-    }
-    img {
-
-        border-radius: 5%;
-    }
-
-    @media (max-width: 1400px) {
-        .card-grid {
-            grid-template-columns: repeat(3,1fr);
-        }
-    }
-
-    @media (max-width: 1000px) {
-        .card-grid {
-            grid-template-columns: repeat(2,1fr);
-        }
-    }
-
-    @media (max-width: 700px) {
-        .card-grid {
+    @media (max-width: 550px) {
+        .grid .container {
+            display: grid;
             grid-template-columns: 1fr;
+            grid-column-gap: 0;
+            margin: auto
         }
     }
 
