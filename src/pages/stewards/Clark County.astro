@@ -1,6 +1,7 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
 import StewardGrid from '../../components/ProfileGrid.astro'
+import Button from '../../components/Button.astro'
 import PurpleSection from '../../components/Stewards/PurpleSection.astro'
 import LavSection from '../../components/Stewards/LavSection.astro'
 import Separator from '../../components/Stewards/Separator.astro'
@@ -388,20 +389,34 @@ const dataSupervisory = [
 ---
 
 <StewardsLayout title="Clark County">
-    <StewardGrid data={topData} />
+
+    <div class="flex flex-row justify-center w-max m-auto p-5 items-center">
+        <div class="px-2.5"><Button text="General Unit" href="#GENERAL_UNIT" /></div>
+        <div class="px-2.5"><Button text="DOA" href="#DOA"/></div>
+        <div class="px-2.5"><Button text="DFS / DJJS" href="#DFS"/></div>
+        <div class="px-2.5"><Button text="WRD" href="#WRD"/></div>
+        <div class="px-2.5"><Button text="Supervisory" href="#Supervisory"/></div>
+    </div>
+
+    <section class="flex-row justify-center max-w-4xl m-auto">
+        <StewardGrid data={topData} />
+    </section>
+
 
     <PurpleSection title="Non-Supervisory Unit">
-        <Separator text="General Unit" id="GENERAL_UNIT"/>
+        <div id="GENERAL_UNIT"><Separator text="General Unit" /></div>
         <StewardGrid data={dataGeneralUnit} />
-        <Separator text="Department of Aviation (DOA)"/>
+        <div id="DOA"><Separator text="Department of Aviation (DOA)"/></div>
         <StewardGrid data={dataDOA} />
-        <Separator text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)" />
+        <div id="DFS"><Separator text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)" /></div>
         <StewardGrid data={dataDFSDJJS} />
-        <Separator text="Water Reclamation District (WRD)" />
+        <div id="WRD"><Separator text="Water Reclamation District (WRD)" /></div>
         <StewardGrid data={dataWRD} />
     </PurpleSection>
 
-    <LavSection title="Supervisory Unit">
-        <StewardGrid data={dataSupervisory} />
-    </LavSection>
+    <div id="Supervisory">
+        <LavSection title="Supervisory Unit">
+            <StewardGrid data={dataSupervisory} />
+        </LavSection>
+    </div>
 </StewardsLayout>
