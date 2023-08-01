@@ -322,7 +322,7 @@ const dataWRD = [
         Unit: 'General Unit',
         Department: 'Developer Inspectors',
         Phone: '(702) 292 - 8451',
-        Email: 'jcowan@seiunv.org'
+        Email: 'jimcowan@seiunv.org'
     },
     {
         name: '"Donald" Scott Moden',
@@ -460,9 +460,8 @@ const dataSupervisory = [
         <StewardGrid data={dataWRD} />
     </PurpleSection>
 
-    <div id="Supervisory">
-        <LavSection title="Supervisory Unit">
-            <StewardGrid data={dataSupervisory} />
-        </LavSection>
-    </div>
+    <LavSection title="Supervisory Unit">
+        <StewardGrid data={dataSupervisory} />
+    </LavSection>
+
 </StewardsLayout>

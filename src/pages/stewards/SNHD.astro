@@ -1,18 +1,14 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
 import StewardGrid from '../../components/ProfileGrid.astro'
+import PurpleSection from '../../components/Stewards/PurpleSection.astro'
+import LavSection from '../../components/Stewards/LavSection.astro'
 
-const profileData = [
-    {
-        name: 'Victoria Harding',
-        Title: 'Chief Steward',
-        Unit: 'General Unit',
-        Department: 'Organizational Development Team',
-        Phone: '(818) 404 - 6392',
-        Email: 'harding_victoria@hotmail.com'
-    },
+const nonSupData = [
+
     {
         name: 'Regena Ellis',
+        profileImg: '/images/stewards/SNHD/Regena.jpg',
         Title: 'Bargaining Unit VP',
         Unit: 'General Unit',
         Department: 'Tuberculosis Clinic',
@@ -20,12 +16,11 @@ const profileData = [
         Email: 'regena.m.ellis@gmail.com'
     },
     {
-        name: 'Jennifer Bowers',
+        name: 'Mallory Jett-Edwards',
         Title: 'Steward',
-        Unit: 'General Unit',
-        Department: 'Community Health ODES',
-        Phone: '(702) 759 - 0675',
-        Email: 'bowers@snhd.org'
+        Department: 'Solid Waste',
+        Phone: '(702) 759 - 0656',
+        Email: 'jett-edwards@snhd.org'
     },
     {
         name: 'Rosemary Ensign',
@@ -36,10 +31,28 @@ const profileData = [
         Email: 'ensign@snhd.org'
     },
 ]
+
+const supData = [
+    {
+        name: 'Jennifer Bowers',
+        Title: 'Steward',
+        Unit: 'General Unit',
+        Department: 'Community Health ODES',
+        Phone: '(702) 759 - 0675',
+        Email: 'bowers@snhd.org'
+    },
+]
 ---
 
 <StewardsLayout title="Southern Nevada Health District (SNHD)" short_name="SNHD">
 
-    <StewardGrid data={profileData} />
+
+    <LavSection title="Non-Supervisory Unit">
+        <StewardGrid data={nonSupData} />
+    </LavSection>
+
+    <PurpleSection title="Supervisory Unit">
+        <StewardGrid data={supData} />
+    </PurpleSection>
 
 </StewardsLayout>
