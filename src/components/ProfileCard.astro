@@ -17,7 +17,7 @@ const {person} = Astro.props as Props;
     <h2 class="font-Georgia font-bold text-black py-2 text-lg">
         <strong>{person.name}</strong>
     </h2>
-    <div class="flex justify-center flex-col font-Verdana">
+    <div class="flex justify-center flex-col font-Roboto">
         {Object.keys(person).map((key) => (
             key !== 'profileImg' &&
             key !== 'name' &&

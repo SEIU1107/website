@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import NewsPreview from '../components/NewsPreview.astro'
+import HeadingTitle from '../components/HeadingTitle.astro'
 
 const posts = await Astro.glob('../posts/*.md')
 
@@ -24,12 +25,7 @@ const sorted_years = Object.keys(years)
 
 <Layout title="News Updates">
 
-    <h1 class="
-    py-5 m-auto
-    text-purple-primary text-5xl text-center
-    font-EngraversMT font-bold">
-        News Updates
-    </h1>
+    <HeadingTitle text="News Updates" />
 
     <section class="py-5">
         {Object.entries(sorted_years).reverse().map(([year, posts]) => (

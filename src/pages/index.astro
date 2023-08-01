@@ -23,10 +23,10 @@ const words = [
     <div class="vidshowcase">
         <video src="https://seiu99.org/wp-content/uploads/2018/08/herovid.mp4" type="video/mp4" autoplay muted loop></video>
         <h1 class="absolute top-[10%] left-0 w-[100%] m-auto font-Roboto font-bold text-center text-lavender text-4xl drop-shadow-2xl">Welcome to SEIU Local 1107 Nevada!</h1>
-        <div class="absolute font-Verdana font-bold top-0 left-0 w-[100%] h-[100%] flex flex-col justify-center text-5xl text-center">
-            <h1 class="text-white">We are</h1>
-            <h1 class="py-5 text-yellow"><CycleText words={words} interval=1500 /></h1>
-            <h1 class="text-white">United!</h1>
+        <div class="absolute font-bold top-0 left-0 w-[100%] h-[100%] flex flex-col justify-center text-5xl text-center">
+            <h1 class="text-white font-Trebuchet">We are</h1>
+            <h1 class="py-5 text-yellow font-Trebuchet"><CycleText words={words} interval=1500 /></h1>
+            <h1 class="text-white font-Trebuchet">United!</h1>
         </div>
 
     </div>
@@ -76,10 +76,5 @@ const words = [
         z-index: 2;
     }
 
-    h1 {
-        font-family: Verdana, sans-serif;
-        color: black;
-
-    }
 
 </style>
