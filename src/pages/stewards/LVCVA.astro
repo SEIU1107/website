@@ -1,10 +1,13 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
 import StewardGrid from '../../components/ProfileGrid.astro'
+import PurpleSection from '../../components/Stewards/PurpleSection.astro'
+import LavSection from '../../components/Stewards/LavSection.astro'
 
 const nonSupData = [
     {
         name: 'Richard Brooks',
+        profileImg: '/images/stewards/LVCVA/RichardBrooks.jpg',
         Title: 'Chief Steward',
         Unit: 'Non-Supervisory',
         Department: 'Security',
@@ -22,6 +25,7 @@ const nonSupData = [
     },
     {
         name: 'Jeff Ray',
+        profileImg: '/images/stewards/LVCVA/JeffRay.jpg',
         Title: 'Steward',
         Unit: 'Non-Supervisory',
         Department: 'Client Services',
@@ -30,6 +34,7 @@ const nonSupData = [
     },
     {
         name: 'Keith Vierra',
+        profileImg: '/images/stewards/LVCVA/KeithVierra.jpg',
         Title: 'Steward',
         Unit: 'Non-Supervisory',
         Department: 'LVCC',
@@ -38,6 +43,7 @@ const nonSupData = [
     },
     {
         name: 'Kristin Bollinger',
+        profileImg: '/images/stewards/LVCVA/KristinBollinger.JPG',
         Title: 'Steward',
         Unit: 'Non-Supervisory',
         Department: 'Security Dispatch',
@@ -66,6 +72,7 @@ const nonSupData = [
 const SupData = [
     {
         name: 'Geno Jahrling',
+        profileImg: '/images/stewards/LVCVA/Geno.jpg',
         Title: 'Steward',
         Unit: 'Supervisory',
         Department: 'Security',
@@ -77,14 +84,14 @@ const SupData = [
 
 <StewardsLayout title="Las Vegas Convention & Visitor Authority (LVCVA)" short_name="LVCVA">
 
-    <h1 class="py-5 font-Verdana font-bold text-center text-purple-primary text-4xl">
-        Non-Supervisory
-    </h1>
-    <StewardGrid data={nonSupData} />
-    <h1 class="py-5 font-Verdana font-bold text-center text-purple-primary text-4xl">
-        Supervisory
-    </h1>
-    <StewardGrid data={SupData} />
+    <LavSection title="Non-Supervisory">
+        <StewardGrid data={nonSupData} />
+    </LavSection>
+
+    <PurpleSection title="Supervisory">
+        <StewardGrid data={SupData} />
+    </PurpleSection>
+
 
 
 </StewardsLayout>

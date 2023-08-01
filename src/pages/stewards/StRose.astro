@@ -1,6 +1,8 @@
 ---
 import StewardsLayout from '../../layouts/StewardsLayout.astro'
 import StewardGrid from '../../components/ProfileGrid.astro'
+import PurpleSection from '../../components/Stewards/PurpleSection.astro'
+import LavSection from '../../components/Stewards/LavSection.astro'
 
 const sienaData = [
     {
@@ -18,11 +20,25 @@ const sienaData = [
         Email: 'sharondurisseau@yahoo.com'
     },
     {
+        name: 'Amelia Gayton',
+        Title: 'Steward',
+        Department: 'Admitting',
+        Phone: '(702) 689 - 7444',
+        Email: 'ameliagayton@yahoo.com'
+    },
+    {
         name: 'Gina Stone',
         Title: 'Steward',
         Department: 'Critical Care',
         Phone: '(561) 324 - 6404',
         Email: 'ginaprt38@yahoo.com'
+    },
+    {
+        name: 'Fatima "Tima" Prieto',
+        Title: 'Steward',
+        Department: 'Radiology',
+        Phone: '(702) 494 - 7608',
+        Email: 'radcttp@yahoo.com'
     },
     {
         name: 'James Lynch',
@@ -40,6 +56,7 @@ const sienaData = [
     },
     {
         name: 'Olga Bradley',
+        profileImg: '/images/stewards/StRose/Olga.png',
         Title: 'Steward',
         Department: 'Surg Intensive Care',
         Phone: '(702) 738 - 5612',
@@ -91,6 +108,13 @@ const sanMartinData = [
         Email: 'labormatters_66@yahoo.com'
     },
     {
+        name: 'Robin Torres',
+        Title: 'Steward',
+        Department: 'CNA',
+        Phone: '(702) 265 - 0990',
+        Email: 'robinstorres@gmail.com'
+    },
+    {
         name: 'Shawna Ornelas',
         Title: 'Steward',
         Department: 'Care Coordination',
@@ -112,16 +136,16 @@ const deLimaData = [
 ---
 
 <StewardsLayout title="Dignity St. Rose" short_name="St Rose">
-    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
-        Siena
-    </h1>
-    <StewardGrid data={sienaData} />
-    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
-        San Martin
-    </h1>
-    <StewardGrid data={sanMartinData} />
-    <h1 class="py-5 italic font-Trebuchet font-bold text-center text-purple-primary text-4xl">
-        De Lima
-    </h1>
-    <StewardGrid data={deLimaData}/>
+    <LavSection title="Siena">
+        <StewardGrid data={sienaData} />
+    </LavSection>
+
+    <PurpleSection title="San Martin">
+        <StewardGrid data={sanMartinData} />
+    </PurpleSection>
+
+    <LavSection title="De Lima">
+        <StewardGrid data={deLimaData}/>
+    </LavSection>
+
 </StewardsLayout>
