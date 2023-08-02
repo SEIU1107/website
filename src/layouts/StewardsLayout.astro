@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import '../styles/global.css'
 
-import RaisingTheStakes from '../../public/images/raising-the-stakes.png'
+import RaisingTheStakes from '/images/raising-the-stakes.png'
 
 export interface Props {
     title: string;
@@ -15,6 +15,7 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
 <Layout title = {page_title}>
     <img class="banner" src={RaisingTheStakes} alt="">
+
     <h1 class="title-text"><span>{title}</span></h1>
     <slot />
 </Layout>

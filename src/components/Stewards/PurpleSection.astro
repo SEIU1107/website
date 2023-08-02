@@ -6,17 +6,13 @@ export interface Props {
 const {title = ''} = Astro.props as Props;
 ---
 
-<div class="purple">
+<div class="bg-gradient-to-b from-purple-primary to-purple-secondary">
     <div class="title">{title}</div>
     <slot />
 </div>
 
 
 <style>
-
-    .purple {
-        background: #582C83;
-    }
     .title {
         text-shadow: 3px 3px 3px #000;
         color: #ffffff;

@@ -19,6 +19,9 @@ module.exports = {
 				'lavender': '#EADEF7',
 				'white': '#ffffff',
 				'black': '#000000'
+			},
+			backgroundImage: {
+				'raising-the-stakes': "url('/images/raising-the-stakes.png')"
 			}
 		},
 	},
