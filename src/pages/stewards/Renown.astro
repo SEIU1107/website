@@ -1,20 +1,21 @@
 ---
-import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import StewardGrid from '../../components/ProfileGrid.astro'
+import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
 
-const data = [
+import type { Entry } from "../../components/ProfileGrid.astro";
+
+const data: Entry[] = [
     {
-        name: 'Nicole Courts',
-        profileImg: '/images/executive_board/Nicole.png',
-        Title: 'SEIU 1107 Executive Board Member',
-        Department: 'RN / General Surgical',
-        Phone: '(775) 303 - 7692',
-        Email: 'nic' +
-            'olecourts1@gmail.com'
+        name: "Nicole Courts",
+        profileImg: "/images/executive_board/Nicole.png",
+        Title: "SEIU 1107 Executive Board Member",
+        Department: "RN / General Surgical",
+        Phone: "(775) 303 - 7692",
+        Email: "nic" + "olecourts1@gmail.com",
     },
-]
+];
 ---
 
 <StewardsLayout title="Renown Hospital" short_name="Renown">
-    <StewardGrid data={data} />
+    <ProfileGrid data={data} />
 </StewardsLayout>

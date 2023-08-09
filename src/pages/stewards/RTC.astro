@@ -1,47 +1,49 @@
 ---
-import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import StewardGrid from '../../components/ProfileGrid.astro'
+import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
 
-const profileData = [
+import type { Entry } from "../../components/ProfileGrid.astro";
+
+const profileData: Entry[] = [
     {
-        name: 'Danielle Leland',
-        profileImg: '/images/stewards/RTC/Danielle.jpg',
-        Title: 'Chief Steward',
-        Department: 'Call Center',
-        Phone: '(702) 981 - 1939',
-        Email: 'danielleleland@gmail.com'
+        name: "Danielle Leland",
+        profileImg: "/images/stewards/RTC/Danielle.jpg",
+        Title: "Chief Steward",
+        Department: "Call Center",
+        Phone: "(702) 981 - 1939",
+        Email: "danielleleland@gmail.com",
     },
     {
-        name: 'Deitra Atkinson',
-        profileImg: '/images/stewards/RTC/Deitra.png',
-        Title: 'Bargaining Unit VP',
-        Department: 'Fixed Route Transit Service',
-        Phone: '(702) 301 - 9805',
-        Email: 'deitra@centurylink.com'
+        name: "Deitra Atkinson",
+        profileImg: "/images/stewards/RTC/Deitra.png",
+        Title: "Bargaining Unit VP",
+        Department: "Fixed Route Transit Service",
+        Phone: "(702) 301 - 9805",
+        Email: "deitra@centurylink.com",
     },
 
     {
-        name: 'Albert Ruvalcaba',
-        profileImg: '/images/stewards/RTC/Albert.jpg',
-        Title: 'Steward',
-        Department: 'Admin Building',
-        Phone: '(702) 355 - 1776',
-        Email: 'sfmission24@yahoo.com'
+        name: "Albert Ruvalcaba",
+        profileImg: "/images/stewards/RTC/Albert.jpg",
+        Title: "Steward",
+        Department: "Admin Building",
+        Phone: "(702) 355 - 1776",
+        Email: "sfmission24@yahoo.com",
     },
 
     {
         name: 'Charles "Scott" Edelblute',
-        Title: 'Steward',
-        Department: 'Transit Amenities Tech',
-        Phone: '(702) 769 - 3617',
-        Email: 'cedelblute@cox.net'
+        Title: "Steward",
+        Department: "Transit Amenities Tech",
+        Phone: "(702) 769 - 3617",
+        Email: "cedelblute@cox.net",
     },
-]
-
+];
 ---
 
-<StewardsLayout title="Regional Transportation Commission (RTC)" short_name="RTC">
-
-    <StewardGrid data={profileData}/>
-
+<StewardsLayout
+    title="Regional Transportation Commission (RTC)"
+    short_name="RTC"
+>
+    <ProfileGrid data={profileData} />
 </StewardsLayout>

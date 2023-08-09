@@ -1,38 +1,40 @@
 ---
-import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import StewardGrid from '../../components/ProfileGrid.astro'
+import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
 
-const profileData = [
+import type { Entry } from "../../components/ProfileGrid.astro";
+
+const profileData: Entry[] = [
     {
-        name: 'Martha Floyd',
-        Title: 'Chief Steward',
-        Unit: 'Supervisory',
-        Department: 'Supportive Services',
-        Phone: '(702) 743 - 5549',
-        Email: 'rosemafa@yahoo.com'
+        name: "Martha Floyd",
+        Title: "Chief Steward",
+        Unit: "Supervisory",
+        Department: "Supportive Services",
+        Phone: "(702) 743 - 5549",
+        Email: "rosemafa@yahoo.com",
     },
     {
-        name: 'Brandy Foreman',
-        profileImg: '/images/stewards/SNRHA/Brandy.jpeg',
-        Title: 'Steward',
-        Unit: 'Non-Supervisory',
-        Department: 'Eligibility',
-        Phone: '(702) 334 - 5112',
-        Email: 'bforeman84@gmail.com'
+        name: "Brandy Foreman",
+        profileImg: "/images/stewards/SNRHA/Brandy.jpeg",
+        Title: "Steward",
+        Unit: "Non-Supervisory",
+        Department: "Eligibility",
+        Phone: "(702) 334 - 5112",
+        Email: "bforeman84@gmail.com",
     },
     {
-        name: 'Stephanie Hughes',
-        Title: 'Steward',
-        Department: 'Occupancy Specialist',
-        Phone: '510-704-3286',
-        Email: 'stephaniehughes702@gmail.com'
-    }
-]
-
+        name: "Stephanie Hughes",
+        Title: "Steward",
+        Department: "Occupancy Specialist",
+        Phone: "510-704-3286",
+        Email: "stephaniehughes702@gmail.com",
+    },
+];
 ---
 
-<StewardsLayout title="Southern Nevada Regional Housing Authority (SNRHA)" short_name="SNRHA">
-
-    <StewardGrid data={profileData} />
-
+<StewardsLayout
+    title="Southern Nevada Regional Housing Authority (SNRHA)"
+    short_name="SNRHA"
+>
+    <ProfileGrid data={profileData} />
 </StewardsLayout>

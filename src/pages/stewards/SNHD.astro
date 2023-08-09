@@ -1,59 +1,60 @@
 ---
-import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import StewardGrid from '../../components/ProfileGrid.astro'
-import PurpleSection from '../../components/Stewards/PurpleSection.astro'
-import LavSection from '../../components/Stewards/LavSection.astro'
+import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
+import PurpleSection from "../../components/Stewards/PurpleSection.astro";
+import LavSection from "../../components/Stewards/LavSection.astro";
 
-const nonSupData = [
+import type { Entry } from "../../components/ProfileGrid.astro";
 
+const nonSupData: Entry[] = [
     {
-        name: 'Regena Ellis',
-        profileImg: '/images/stewards/SNHD/Regena.jpg',
-        Title: 'Bargaining Unit VP',
-        Unit: 'General Unit',
-        Department: 'Tuberculosis Clinic',
-        Phone: '(708) 299 - 5623',
-        Email: 'regena.m.ellis@gmail.com'
+        name: "Regena Ellis",
+        profileImg: "/images/stewards/SNHD/Regena.jpg",
+        Title: "Bargaining Unit VP",
+        Unit: "General Unit",
+        Department: "Tuberculosis Clinic",
+        Phone: "(708) 299 - 5623",
+        Email: "regena.m.ellis@gmail.com",
     },
     {
-        name: 'Mallory Jett-Edwards',
-        Title: 'Steward',
-        Department: 'Solid Waste',
-        Phone: '(702) 759 - 0656',
-        Email: 'jett-edwards@snhd.org'
+        name: "Mallory Jett-Edwards",
+        Title: "Steward",
+        Department: "Solid Waste",
+        Phone: "(702) 759 - 0656",
+        Email: "jett-edwards@snhd.org",
     },
     {
-        name: 'Rosemary Ensign',
-        Title: 'Steward',
-        Unit: 'General Unit',
-        Department: 'Food Handler Cards Training Program',
-        Phone: '(702) 759 - 1000',
-        Email: 'ensign@snhd.org'
+        name: "Rosemary Ensign",
+        Title: "Steward",
+        Unit: "General Unit",
+        Department: "Food Handler Cards Training Program",
+        Phone: "(702) 759 - 1000",
+        Email: "ensign@snhd.org",
     },
-]
+];
 
-const supData = [
+const supData: Entry[] = [
     {
-        name: 'Jennifer Bowers',
-        Title: 'Steward',
-        Unit: 'General Unit',
-        Department: 'Community Health ODES',
-        Phone: '(702) 759 - 0675',
-        Mobile: '702-460-2105',
-        Email: 'jenndbowers@gmail.com'
+        name: "Jennifer Bowers",
+        Title: "Steward",
+        Unit: "General Unit",
+        Department: "Community Health ODES",
+        Phone: "(702) 759 - 0675",
+        Mobile: "702-460-2105",
+        Email: "jenndbowers@gmail.com",
     },
-]
+];
 ---
 
-<StewardsLayout title="Southern Nevada Health District (SNHD)" short_name="SNHD">
-
-
+<StewardsLayout
+    title="Southern Nevada Health District (SNHD)"
+    short_name="SNHD"
+>
     <LavSection title="NON-SUPERVISORY UNIT">
-        <StewardGrid data={nonSupData} />
+        <ProfileGrid data={nonSupData} />
     </LavSection>
 
     <PurpleSection title="SUPERVISORY UNIT">
-        <StewardGrid data={supData} />
+        <ProfileGrid data={supData} />
     </PurpleSection>
-
 </StewardsLayout>
