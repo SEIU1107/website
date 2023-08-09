@@ -1,40 +1,48 @@
 ---
+import ProfileGrid from "./ProfileGrid.astro";
+import Placeholder from "/images/PlaceholderProfileImg.png";
+import type { Entry } from "./ProfileGrid.astro";
 
-import Placeholder from '/images/PlaceholderProfileImg.png'
 export interface Props {
-    person: {
-        name: string;
-        profileImg: string;
-        [key: string]: string; /* Contains info */
-    }
+    person: Entry;
 }
 
-const {person} = Astro.props as Props;
+const { person } = Astro.props as Props;
 ---
 
-<div class="max-w-xl bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex-col ">
-    <img class="rounded-md w-full aspect-square object-cover" src={person.profileImg ? person.profileImg : Placeholder} alt="" />
+<div
+    class="max-w-xl bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex-col"
+>
+    <img
+        class="rounded-md w-full aspect-square object-cover"
+        src={person.profileImg ? person.profileImg : Placeholder}
+        alt=""
+    />
     <h2 class="font-Georgia font-bold text-black py-2 text-lg">
         <strong>{person.name}</strong>
     </h2>
     <div class="flex justify-center flex-col font-Roboto">
-        {Object.keys(person).map((key) => (
-            key !== 'profileImg' &&
-            key !== 'name' &&
-            key !== 'id' && (
-                key === 'Email' ? (
+        {
+            Object.keys(person).map(
+                (key) =>
+                    key !== "profileImg" &&
+                    key !== "name" &&
+                    key !== "id" &&
+                    (key === "Email" ? (
                         <div>
                             <b>{key}:</b>
                             <span class="hover:underline active:no-underline">
-                                <a href={`mailto:${person[key]}`}>{person[key]}</a>
+                                <a href={`mailto:${person[key]}`}>
+                                    {person[key]}
+                                </a>
                             </span>
                         </div>
-                ) : (
+                    ) : (
                         <div>
                             <b>{key}:</b> {person[key]}
                         </div>
-                )
+                    ))
             )
-        ))}
+        }
     </div>
 </div>

@@ -1,37 +1,32 @@
 ---
-import ProfileCard from './ProfileCard.astro'
+import ProfileCard from "./ProfileCard.astro";
+
+export type Entry = {
+    name: string;
+    profileImg?: string;
+} & Record<string, string>;
 
 export interface Props {
-    data: {
-        name: string;
-        profileImg: string; /* Picture of the Steward, if any. Otherwise, a placeholder is put instead */
-        [key: string]: string;
-    }[];
+    data: Entry[];
 }
 
-const {data} = Astro.props as Props;
-
+const { data } = Astro.props as Props;
 ---
 
 <section class="flex justify-center">
     <div class="grid">
         <div class="container">
-            {data.map((curPerson) => (
-                    <ProfileCard person={curPerson} />
-            ))}
+            {data.map((curPerson) => <ProfileCard person={curPerson} />)}
         </div>
     </div>
 </section>
 
-
-
 <style>
-
     .grid .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         grid-column-gap: 0;
-        margin: auto
+        margin: auto;
     }
 
     @media (max-width: 550px) {
@@ -39,9 +34,7 @@ const {data} = Astro.props as Props;
             display: grid;
             grid-template-columns: 1fr;
             grid-column-gap: 0;
-            margin: auto
+            margin: auto;
         }
     }
-
-
 </style>

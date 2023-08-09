@@ -1,172 +1,171 @@
 ---
-import StewardsLayout from '../../layouts/StewardsLayout.astro'
-import ProfileGrid from '../../components/ProfileGrid.astro'
+import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
 
-import Yarleny from '/images/stewards/UMC/Yarleny-1024x1024.png'
-import Elizabeth from '/images/stewards/UMC/elizabeth bolhouse.png'
-import TheresaMcGowan from '/images/stewards/UMC/Theresa-McGowan-UMC.png'
-import Audrey from '/images/stewards/UMC/Audrey.png'
-import Barb from '/images/stewards/UMC/Barb-UMC.png'
-import Phyllis from '/images/stewards/UMC/phyllis.png'
-import TheresaKing from '/images/stewards/UMC/TheresaKing.png'
-import Glenn from '/images/stewards/UMC/Glenn.png'
+import Yarleny from "/images/stewards/UMC/Yarleny-1024x1024.png";
+import Elizabeth from "/images/stewards/UMC/elizabeth bolhouse.png";
+import TheresaMcGowan from "/images/stewards/UMC/Theresa-McGowan-UMC.png";
+import Audrey from "/images/stewards/UMC/Audrey.png";
+import Barb from "/images/stewards/UMC/Barb-UMC.png";
+import Phyllis from "/images/stewards/UMC/phyllis.png";
+import TheresaKing from "/images/stewards/UMC/TheresaKing.png";
+import Glenn from "/images/stewards/UMC/Glenn.png";
 
-const profileData = [
+import type { Entry } from "../../components/ProfileGrid.astro";
+
+const profileData: Entry[] = [
     {
-        name: 'Yarleny Roa-Dugan',
+        name: "Yarleny Roa-Dugan",
         profileImg: Yarleny,
-        Title: 'SEIU 1107 Secretary-Treasurer',
-        Unit: 'Nursing',
-        Department: 'Labor & Delivery',
-        Phone: '(702) 413 - 8321',
-        Email: 'yarlerd@gmail.com'
+        Title: "SEIU 1107 Secretary-Treasurer",
+        Unit: "Nursing",
+        Department: "Labor & Delivery",
+        Phone: "(702) 413 - 8321",
+        Email: "yarlerd@gmail.com",
     },
     {
-        name: 'Elizabeth Bolhouse',
+        name: "Elizabeth Bolhouse",
         profileImg: Elizabeth,
-        Title: 'Chief Steward / Executive Board Member',
-        Unit: 'Nursing',
-        Department: 'PICU',
-        Phone: '(702) 360 - 9213',
-        Email: 'lizzard32@hotmail.com'
+        Title: "Chief Steward / Executive Board Member",
+        Unit: "Nursing",
+        Department: "PICU",
+        Phone: "(702) 360 - 9213",
+        Email: "lizzard32@hotmail.com",
     },
     {
-        name: 'Theresa McGowan',
+        name: "Theresa McGowan",
         profileImg: TheresaMcGowan,
-        Title: 'Chief Steward',
-        Unit: 'Ancillary',
-        Department: 'EVS',
-        Phone: '(702) 666 - 5012',
-        Email: 'theresamcgowan62@gmail.com'
+        Title: "Chief Steward",
+        Unit: "Ancillary",
+        Department: "EVS",
+        Phone: "(702) 666 - 5012",
+        Email: "theresamcgowan62@gmail.com",
     },
     {
-        name: 'Audrey Johnson',
+        name: "Audrey Johnson",
         profileImg: Audrey,
-        Title: 'Steward / Bargaining Unit VP / Executive Board Member',
-        Unit: 'Nursing / OSL',
-        Department: 'Emergency Room (ER)',
-        Phone: '(702) 884 - 7184',
-        Email: 'educate1107@gmail.com'
+        Title: "Steward / Bargaining Unit VP / Executive Board Member",
+        Unit: "Nursing / OSL",
+        Department: "Emergency Room (ER)",
+        Phone: "(702) 884 - 7184",
+        Email: "educate1107@gmail.com",
     },
     {
-        name: 'Theresa King',
+        name: "Theresa King",
         profileImg: TheresaKing,
-        Title: 'Steward / Executive Board Member',
-        Unit: 'Ancillary',
-        Department: 'Financial Eligibility',
-        Phone: '(702) 561 - 7889',
-        Email: 'Miss1tressa@gmail.com'
+        Title: "Steward / Executive Board Member",
+        Unit: "Ancillary",
+        Department: "Financial Eligibility",
+        Phone: "(702) 561 - 7889",
+        Email: "Miss1tressa@gmail.com",
     },
     {
-        name: 'Barb Miller',
+        name: "Barb Miller",
         profileImg: Barb,
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Radiology',
-        Phone: '(702) 715 - 3602',
-        Email: 'barbmiller71@gmail.com'
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Radiology",
+        Phone: "(702) 715 - 3602",
+        Email: "barbmiller71@gmail.com",
     },
     {
-        name: 'Dana Williams',
-        Title: 'Steward',
-        Department: 'Pathology',
-        Phone: '(702) 722 - 8280',
-        Email: 'dwilliams5715@gmail.com'
+        name: "Dana Williams",
+        Title: "Steward",
+        Department: "Pathology",
+        Phone: "(702) 722 - 8280",
+        Email: "dwilliams5715@gmail.com",
     },
     {
-        name: 'Darlene Mamon',
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Sterile Processing',
-        Phone: '(702) 772 - 5652',
-        Email: 'early_darlene@yahoo.com'
+        name: "Darlene Mamon",
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Sterile Processing",
+        Phone: "(702) 772 - 5652",
+        Email: "early_darlene@yahoo.com",
     },
     {
-        name: 'Diane Scott-Thompson',
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Respiratory Care Unit',
-        Phone: '(702) 461 - 8144',
-        Email: 'dscottthompson@ymail.com'
+        name: "Diane Scott-Thompson",
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Respiratory Care Unit",
+        Phone: "(702) 461 - 8144",
+        Email: "dscottthompson@ymail.com",
     },
     {
-        name: 'Eric Grasper',
-        profileImg: '/images/stewards/UMC/EricGasper.jpg',
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Nuc Med',
-        Phone: '(702) 803 - 6214',
-        Email: 'ericgasper@yahoo.com'
+        name: "Eric Grasper",
+        profileImg: "/images/stewards/UMC/EricGasper.jpg",
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Nuc Med",
+        Phone: "(702) 803 - 6214",
+        Email: "ericgasper@yahoo.com",
     },
     {
-        name: 'Glenn Alexander Sr.',
+        name: "Glenn Alexander Sr.",
         profileImg: Glenn,
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Public Safety',
-        Phone: '(702) 815 - 9818',
-        Email: 'twobizzy2play@yahoo.com'
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Public Safety",
+        Phone: "(702) 815 - 9818",
+        Email: "twobizzy2play@yahoo.com",
     },
     {
-        name: 'Leroy Jones',
-        Title: 'Steward',
-        Department: 'Supply Chain Services',
-        Phone: '(619) 602 - 7412',
-        Email: 'leroykjones@aol.com'
+        name: "Leroy Jones",
+        Title: "Steward",
+        Department: "Supply Chain Services",
+        Phone: "(619) 602 - 7412",
+        Email: "leroykjones@aol.com",
     },
     {
-        name: 'Kenneth Melancon',
-        Title: 'Steward',
-        Department: 'Unit Clerk - L&D',
-        Phone: '(702) 768 - 1410',
-        Email: 'bothu7@aol.com'
+        name: "Kenneth Melancon",
+        Title: "Steward",
+        Department: "Unit Clerk - L&D",
+        Phone: "(702) 768 - 1410",
+        Email: "bothu7@aol.com",
     },
     {
-        name: 'Maria Carmen Aguilar-Perez',
-        profileImg: '/images/stewards/UMC/MariaPerez.jpg',
-        Title: 'Steward',
-        Department: 'Patient Access',
-        Phone: '(702) 538 - 3395',
-        Email: 'maria0321aguilar@icloud.com'
+        name: "Maria Carmen Aguilar-Perez",
+        profileImg: "/images/stewards/UMC/MariaPerez.jpg",
+        Title: "Steward",
+        Department: "Patient Access",
+        Phone: "(702) 538 - 3395",
+        Email: "maria0321aguilar@icloud.com",
     },
     {
-        name: 'Marisela Sandoval',
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Financial Eligibility',
-        Phone: '(702) 326 - 0181',
-        Email: 'medina.mari@rocketmail.com'
+        name: "Marisela Sandoval",
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Financial Eligibility",
+        Phone: "(702) 326 - 0181",
+        Email: "medina.mari@rocketmail.com",
     },
     {
-        name: 'Phyllis Mallory-Edmonson',
+        name: "Phyllis Mallory-Edmonson",
         profileImg: Phyllis,
-        Title: 'Steward',
-        Department: 'Unit Clerk - 5S',
-        Phone: '(702) 499 - 5452',
-        Email: 'phyllisae@gmail.com'
+        Title: "Steward",
+        Department: "Unit Clerk - 5S",
+        Phone: "(702) 499 - 5452",
+        Email: "phyllisae@gmail.com",
     },
     {
-        name: 'Ryan Gustafson',
-        profileImg: '/images/stewards/UMC/Ryan.png',
-        Title: 'Steward',
-        Unit: 'Ancillary',
-        Department: 'Radiology',
-        Phone: '(702) 278 - 6902',
-        Email: 'regus619@gmail.com'
+        name: "Ryan Gustafson",
+        profileImg: "/images/stewards/UMC/Ryan.png",
+        Title: "Steward",
+        Unit: "Ancillary",
+        Department: "Radiology",
+        Phone: "(702) 278 - 6902",
+        Email: "regus619@gmail.com",
     },
     {
-        name: 'Vanessa Pryor',
-        Title: 'Steward',
-        Department: 'Pathology',
-        Phone: '(702) 370 - 9800',
-        Email: 'vpryor37@gmail.com'
-    }
-]
-
+        name: "Vanessa Pryor",
+        Title: "Steward",
+        Department: "Pathology",
+        Phone: "(702) 370 - 9800",
+        Email: "vpryor37@gmail.com",
+    },
+];
 ---
 
 <StewardsLayout title="University Medical Center (UMC)" short_name="UMC">
-
     <ProfileGrid data={profileData} />
-
 </StewardsLayout>
