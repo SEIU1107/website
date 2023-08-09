@@ -1,10 +1,10 @@
 ---
 import ProfileGrid from "./ProfileGrid.astro";
 import Placeholder from "/images/PlaceholderProfileImg.png";
-import type { Entry } from "./ProfileGrid.astro";
+import type { Profile } from "../components/Profile";
 
 export interface Props {
-    person: Entry;
+    person: Profile;
 }
 
 const { person } = Astro.props as Props;

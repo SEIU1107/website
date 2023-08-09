@@ -4,9 +4,9 @@ import ProfileGrid from "../../components/ProfileGrid.astro";
 import PurpleSection from "../../components/Stewards/PurpleSection.astro";
 import LavSection from "../../components/Stewards/LavSection.astro";
 
-import type { Entry } from "../../components/ProfileGrid.astro";
+import type { Profile } from "../../components/Profile";
 
-const nonSupData: Entry[] = [
+const nonSupData: Profile[] = [
     {
         name: "Richard Brooks",
         profileImg: "/images/stewards/LVCVA/RichardBrooks.jpg",
@@ -71,7 +71,7 @@ const nonSupData: Entry[] = [
     },
 ];
 
-const SupData: Entry[] = [
+const SupData: Profile[] = [
     {
         name: "Geno Jahrling",
         profileImg: "/images/stewards/LVCVA/Geno.jpg",

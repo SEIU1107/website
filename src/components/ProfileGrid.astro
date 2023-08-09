@@ -1,13 +1,9 @@
 ---
 import ProfileCard from "./ProfileCard.astro";
 
-export type Entry = {
-    name: string;
-    profileImg?: string;
-} & Record<string, string>;
-
+import type { Profile } from "./Profile";
 export interface Props {
-    data: Entry[];
+    data: Profile[];
 }
 
 const { data } = Astro.props as Props;
