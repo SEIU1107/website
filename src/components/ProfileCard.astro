@@ -24,7 +24,10 @@ const {person} = Astro.props as Props;
             key !== 'id' && (
                 key === 'Email' ? (
                         <div>
-                            <b>{key}:</b> <a class="hover:underline active:no-underline" href={`mailto:${person[key]}`}>{person[key]}</a>
+                            <b>{key}:</b>
+                            <span class="hover:underline active:no-underline">
+                                <a href={`mailto:${person[key]}`}>{person[key]}</a>
+                            </span>
                         </div>
                 ) : (
                         <div>
