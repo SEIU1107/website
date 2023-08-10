@@ -1,33 +1,39 @@
 ---
 export interface Props {
-    title: string; /* Top Level Name of Dropdown */
-    titleHref: string; /* Path to page if button is clicked, if any. */
+    title: string /* Top Level Name of Dropdown */;
+    titleHref?: string /* Path to page if button is clicked, if any. */;
     content: {
-        pageName: string; /* Name of the content in dropdown */
-        href: string; /* Path to page when content clicked */
+        pageName: string /* Name of the content in dropdown */;
+        href: string /* Path to page when content clicked */;
     }[];
 }
 
-const {title = 'Dropdown', titleHref = '', content} = Astro.props as Props;
+const { title = "Dropdown", titleHref = "", content } = Astro.props as Props;
 ---
 
 <div class="dropdown">
-    {titleHref === '' ? (
+    {
+        titleHref === "" ? (
             <div class="dropbtn">{title}</div>
-    ) : (
-            <a href={titleHref}><div class="dropbtn">{title}</div></a>
-    )}
+        ) : (
+            <a href={titleHref}>
+                <div class="dropbtn">{title}</div>
+            </a>
+        )
+    }
     <div class="dropdown-content">
-        {content.map((content) => (
-            <a href={content.href}>{content.pageName}</a>
-        ))}
+        {
+            content.map((content) => (
+                <a href={content.href}>{content.pageName}</a>
+            ))
+        }
     </div>
 </div>
 
 <style>
     /* Style The Dropdown Button */
     .dropbtn {
-        background-color: #371E51;
+        background-color: #371e51;
         color: white;
         padding: 16px;
         font-size: 16px;
@@ -48,7 +54,7 @@ const {title = 'Dropdown', titleHref = '', content} = Astro.props as Props;
         position: absolute;
         background-color: var(--color-primary-darker);
         min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
         z-index: 1;
     }
 
@@ -73,7 +79,6 @@ const {title = 'Dropdown', titleHref = '', content} = Astro.props as Props;
 
     /* Change the background color of the dropdown button when the dropdown content is shown */
     .dropdown:hover .dropbtn {
-
         background-color: var(--color-tertiary);
         color: var(--color-primary-darker);
     }

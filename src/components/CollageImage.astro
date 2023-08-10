@@ -1,20 +1,28 @@
 ---
 export interface Props {
-    title: string;
+    title?: string;
     src: string;
-    alt: string;
-    pos: string; /* Is the image on the left or right? */
+    alt?: string;
+    pos?: string /* Is the image on the left or right? */;
 }
 
-const {title = 'Title Text', src, alt = '', pos = 'left'} = Astro.props as Props;
+const {
+    title = "Title Text",
+    src,
+    alt = "",
+    pos = "left",
+} = Astro.props as Props;
 ---
 
 <div class="flex flex-row py-2.5">
-    <div class="flex flex-row content-center justify-items-center justify-center m-auto max-w-7xl">
+    <div
+        class="flex flex-row content-center justify-items-center justify-center m-auto max-w-7xl"
+    >
         {
-            pos === 'left' ? (
+            pos === "left" ? (
+                <>
                     <div class="px-10">
-                        <img alt={alt} src={src}>
+                        <img alt={alt} src={src} />
                     </div>
                     <div>
                         <h1 class="font-Trebuchet font-bold text-xl py-2">
@@ -22,7 +30,9 @@ const {title = 'Title Text', src, alt = '', pos = 'left'} = Astro.props as Props
                         </h1>
                         <slot />
                     </div>
-            )  : (
+                </>
+            ) : (
+                <>
                     <div>
                         <h1 class="font-Trebuchet font-bold text-xl py-2">
                             {title}
@@ -30,10 +40,10 @@ const {title = 'Title Text', src, alt = '', pos = 'left'} = Astro.props as Props
                         <slot />
                     </div>
                     <div class="px-10 min-w-[35vh]">
-                        <img alt={alt} src={src}>
+                        <img alt={alt} src={src} />
                     </div>
+                </>
             )
-
         }
     </div>
 </div>
