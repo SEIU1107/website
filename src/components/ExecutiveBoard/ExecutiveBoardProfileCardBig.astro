@@ -6,13 +6,19 @@ export interface Props {
     desc: string; // Text description
 }
 
-const {profileImg,name, title, desc} = Astro.props as Props;
+const { profileImg, name, title, desc } = Astro.props as Props;
 ---
 
-<div class="card-container" >
-    <img src={profileImg} alt="">
-    <p class="font-Georgia text-purple-primary italic font-bold text-2xl py-2 text-center">{name}</p>
-    <p class="font-Roboto text-purple-primary italic text-xl text-center">{title}</p>
+<div class="card-container">
+    <img src={profileImg} alt="" />
+    <p
+        class="font-Georgia text-purple-primary italic font-bold text-2xl py-2 text-center"
+    >
+        {name}
+    </p>
+    <p class="font-Roboto text-purple-primary italic text-xl text-center">
+        {title}
+    </p>
     <p class="py-1.5 font-Roboto">{desc}</p>
 </div>
 
@@ -20,9 +26,8 @@ const {profileImg,name, title, desc} = Astro.props as Props;
     .card-container {
         max-width: 500px;
         padding: 10px;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
     }
-
 
     img {
         border-radius: 5%;
