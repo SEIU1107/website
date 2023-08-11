@@ -1,215 +1,210 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import StaffGrid from '../components/ProfileGrid.astro'
-import HeadingTitle from '../components/HeadingTitle.astro'
+import Layout from "../layouts/Layout.astro";
+import StaffGrid from "../components/ProfileGrid.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
 
 const profileData = [
     {
-        name: 'Grace Mactal',
-        profileImg: '/images/executive_board/Grace-1-1024x1024.png',
-        Title: 'Executive Director',
-        Cell: '702-540-2834',
-        Email: 'gvergara@seiunv.org'
+        name: "Grace Mactal",
+        profileImg: "/images/executive_board/Grace-1-1024x1024.png",
+        Title: "Executive Director",
+        Cell: "702-540-2834",
+        Email: "gvergara@seiunv.org",
     },
     {
-        name: 'Michelle Maese',
-        profileImg: '/images/stewards/CC/Michelle-1-1024x1024.png',
-        Title: 'President',
-        Cell: '702-755-7614',
-        Email: 'mmaese@seiunv.org'
+        name: "Michelle Maese",
+        profileImg: "/images/stewards/CC/Michelle-1-1024x1024.png",
+        Title: "President",
+        Cell: "702-755-7614",
+        Email: "mmaese@seiunv.org",
     },
     {
-        name: 'Sam Shaw',
-        Title: 'Chief of Staff',
-        Cell: '725-221-1205',
-        Email: 'sshaw@seiunv.org'
+        name: "Sam Shaw",
+        profileImg: "/images/staff/Sam.jpg",
+        Title: "Chief of Staff",
+        Cell: "725-221-1205",
+        Email: "sshaw@seiunv.org",
     },
     {
-        name: 'Fabiola Morales',
-        Title: 'Organizing Director',
-        Cell: '702-378-7768',
-        Email: 'fmorales@seiunv.org'
+        name: "Fabiola Morales",
+        profileImg: "/images/staff/Fab.jpg",
+        Title: "Organizing Director",
+        Cell: "702-378-7768",
+        Email: "fmorales@seiunv.org",
     },
     {
-        name: 'Felipe Danglapin',
-        Title: 'Director, Finance & Administration',
-        Cell: '702-278-5509',
-        Email: 'fdanglapin@seiunv.org'
+        name: "Felipe Danglapin",
+        Title: "Director, Finance & Administration",
+        Cell: "702-278-5509",
+        Email: "fdanglapin@seiunv.org",
     },
     {
-        name: 'Patrick O\'Connor',
-        Title: 'Organizing Coordinator',
-        Assignment: 'Southern Hills',
-        Cell: '702-934-4961',
-        Email: 'poconnor@seiunv.org'
+        name: "Patrick O'Connor",
+        profileImg: "/images/staff/Patrick.jpg",
+        Title: "Organizing Coordinator",
+        Assignment: "Southern Hills",
+        Cell: "702-934-4961",
+        Email: "poconnor@seiunv.org",
     },
     {
-        name: 'Brenda Marzan',
-        Title: 'Contract Representative',
-        Cell: '702-296-6470',
-        Email: 'bmarzan@seiunv.org'
+        name: "Brenda Marzan",
+        profileImg: "/images/staff/Brenda.jpg",
+        Title: "Contract Representative",
+        Cell: "702-296-6470",
+        Email: "bmarzan@seiunv.org",
     },
     {
-        name: 'Christopher Hilton',
-        Title: 'Organizer',
-        Assignment: 'Mountain View Hospital',
-        Cell: '702-690-8046',
-        Email: 'chilton@seiunv.org'
+        name: "Jocelyn White",
+        profileImg: "/images/staff/Jocelyn.jpg",
+        Title: "Contract Representative",
+        Cell: "702-296-6416",
+        Email: "jwhite@seiunv.org",
     },
     {
-        name: 'Gloria Madrid',
-        Title: 'Organizer',
-        Assignment: 'Home Care',
-        Cell: '702-506-3082',
-        Email: 'gmadrid@seiunv.org'
+        name: "Christopher Hilton",
+        profileImg: "images/staff/Chris.jpg",
+        Title: "Organizer",
+        Assignment: "Mountain View Hospital",
+        Cell: "702-690-8046",
+        Email: "chilton@seiunv.org",
     },
     {
-        name: 'Marcus Osuigwe',
-        Title: 'Organizer',
-        Cell: '702-849-2308',
-        Email: 'mosuigwe@seiunv.org'
+        name: "Gloria Madrid",
+        profileImg: "images/staff/GloriaMadrid.jpg",
+        Title: "Organizer",
+        Assignment: "Home Care",
+        Cell: "702-506-3082",
+        Email: "gmadrid@seiunv.org",
     },
     {
-        name: 'Michelle Dominguez',
-        Title: 'Organizer',
-        Assignment: 'Sunrise Hospital',
-        Cell: '702-934-1541',
-        Email: 'mdominguez@seiunv.org'
+        name: "Marcus Osuigwe",
+        profileImg: "images/staff/Marcus.jpg",
+        Title: "Organizer",
+        Cell: "702-849-2308",
+        Email: "mosuigwe@seiunv.org",
     },
     {
-        name: 'Rosy Salinas',
-        Title: 'Organizer',
-        Assignment: 'Renown, NNRH, CC-GU, SNHD, SNRHA',
-        Cell: '702-274-3171',
-        Email: 'rsalinas@seiunv.org'
+        name: "Rosy Salinas",
+        profileImg: "images/staff/Rosy.jpg",
+        Title: "Organizer",
+        Assignment: "Renown, NNRH, CC-GU, SNHD, SNRHA",
+        Cell: "702-274-3171",
+        Email: "rsalinas@seiunv.org",
     },
     {
-        name: 'Salah El-Amin',
-        Title: 'Organizer',
-        Assignment: 'DOA & CC General Unit',
-        Cell: '702-793-7057',
-        Email: 'selamin@seiunv.org'
+        name: "Salah El-Amin",
+        profileImg: "images/staff/Salah.jpg",
+        Title: "Organizer",
+        Assignment: "DOA & CC General Unit",
+        Cell: "702-793-7057",
+        Email: "selamin@seiunv.org",
     },
     {
-        name: 'Melissa Pinnick',
-        Title: 'IU Organizer',
-        Assignment: 'Home Care',
-        Cell: '202-823-1737',
-        Email: 'melissa.pinnick@seiu.org'
+        name: "Melissa Pinnick",
+        Title: "IU Organizer",
+        Assignment: "Home Care",
+        Cell: "202-823-1737",
+        Email: "melissa.pinnick@seiu.org",
     },
     {
-        name: 'Carlo Enterline',
-        Title: 'Organizer-In-Training',
-        Assignment: 'LVCVA, DFS, WRD, CC-GU,RTC',
-        Cell: '702-344-3774',
-        Email: 'centerline@seiunv.org',
+        name: "Carlo Enterline",
+        profileImg: "images/staff/Carlo.jpg",
+        Title: "Organizer-In-Training",
+        Assignment: "LVCVA, DFS, WRD, CC-GU,RTC",
+        Cell: "702-344-3774",
+        Email: "centerline@seiunv.org",
     },
     {
-        name: 'Karissa Johnson',
-        Title: 'Organizer-In-Training',
-        Assignment: 'UMC, Dignity',
-        Cell: '702-890-0739',
-        Email: 'kjohnson@seiunv.org'
+        name: "Cody Hoskins",
+        profileImg: "images/staff/Cody.jpg",
+        Title: "Political Director",
+        Cell: "702-296-6414",
+        Email: "choskins@seiunv.org",
     },
     {
-        name: 'Cody Hoskins',
-        Title: 'Political Director',
-        Cell: '702-296-6414',
-        Email: 'choskins@seiunv.org'
+        name: "Jason Klumb",
+        profileImg: "images/staff/JasonKlumb.jpg",
+        Title: "Representation Director",
+        Cell: "702-533-6077",
+        Email: "jklumb@seiunv.org",
     },
     {
-        name: 'Gersam Lopez',
-        Title: 'IT Support Specialist',
-        Cell: '702-849-2831',
-        Email: 'glopez@seiunv.org'
+        name: "Jennifer Valdecantos",
+        Title: "Representation Administrative Assistant",
+        Cell: "702-378-0030",
+        Email: "jvaldecantos@seiunv.org",
     },
     {
-        name: 'Jason Klumb',
-        Title: 'Representation Director',
-        Cell: '702-533-6077',
-        Email: 'jklumb@seiunv.org'
+        name: "Nilda Mason",
+        profileImg: "images/staff/Nilda.jpg",
+        Title: "Executive Assistant",
+        Cell: "702-715-8592",
+        Email: "nmason@seiunv.org",
     },
     {
-        name: 'Jennifer Valdecantos',
-        Title: 'Representation Administrative Assistant',
-        Cell: '702-378-0030',
-        Email: 'jvaldecantos@seiunv.org'
+        name: "Mimi Wahdat",
+        profileImg: "images/staff/Mimi.jpg",
+        Title: "Admin Assistant",
+        Cell: "702-934-1541",
+        Email: "mwahdat@seiunv.org",
     },
     {
-        name: 'Jocelyn White',
-        Title: 'Contract Representative',
-        Cell: '702-296-6416',
-        Email: 'jwhite@seiunv.org'
+        name: "Gersam Lopez",
+        profileImg: "images/staff/Gersam.jpg",
+        Title: "IT Support Specialist",
+        Cell: "702-849-2831",
+        Email: "glopez@seiunv.org",
     },
     {
-        name: 'Kathleen Flores',
-        Title: 'Civic Engagement',
-        Cell: '702-695-0454',
-        Email: 'kflores@seiunv.org'
+        name: "Patti Curry",
+        profileImg: "images/staff/Patti.jpg",
+        Title: "Database and Finance Coordinator",
+        Cell: "775-870-0604",
+        Email: "pcurry@seiunv.org",
     },
     {
-        name: 'Mimi Wahdat',
-        Title: 'Admin Assistant',
-        Cell: '702-934-1541',
-        Email: 'mwahdat@seiunv.org'
+        name: "Kathleen Flores",
+        Title: "Civic Engagement",
+        Cell: "702-695-0454",
+        Email: "kflores@seiunv.org",
     },
     {
-        name: 'Nilda Mason',
-        Title: 'Executive Assistant',
-        Cell: '702-715-8592',
-        Email: 'nmason@seiunv.org'
+        name: "Alicia Baker",
+        Assignment: "Education Fund",
+        Cell: "(323) 363-4632",
+        Email: "abaker@theedfund.org",
     },
     {
-        name: 'Patti Curry',
-        Title: 'Database and Finance Coordinator',
-        Cell: '775-870-0604',
-        Email: 'pcurry@seiunv.org'
+        name: "Nathan Mactal",
+        profileImg: "images/staff/Nathan.jpg",
+        Title: "Data & Technology Specialist",
+        Cell: "702-757-7191",
+        Email: "nmactal@seiunv.org",
     },
-    {
-        name: 'Alicia Baker',
-        Assignment: 'Education Fund',
-        Cell: '(323) 363-4632',
-        Email: 'abaker@theedfund.org',
-    },
-    {
-        name: 'Carl Zablotny',
-        Assignment: 'Life Insurance',
-        Cell: '(305) 588-0000',
-        Email: 'czablotny@ailife.org'
-    },
-    {
-        name: 'Nathan Mactal',
-        Title: 'Data & Technology Specialist',
-        Cell: '702-757-7191',
-        Email: 'nmactal@seiunv.org'
-    },
-
-
-
-]
+];
 ---
 
-<Layout title = "SEIU Local 1107 Staff">
-    <HeadingTitle text="SEIU Local 1107 Staff"/>
-    <StaffGrid data={profileData} className="staff-grid"/>
+<Layout title="SEIU Local 1107 Staff">
+    <HeadingTitle text="SEIU Local 1107 Staff" />
+    <StaffGrid data={profileData} className="staff-grid" />
 </Layout>
 
 <style>
     .staff-grid {
         display: grid;
-        grid-template-columns: repeat(4,1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-column-gap: 0;
         margin: auto;
         justify-content: center;
         justify-items: center;
         max-width: 375px;
         padding: 10px;
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
     }
 
     @media (max-width: 1400px) {
         .staff-grid {
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
