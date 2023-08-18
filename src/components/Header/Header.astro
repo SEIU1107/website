@@ -5,10 +5,6 @@ import Dropdown from "../Header/Dropdown.astro";
 /* About Us Dropdown */
 const dropdownAboutUs = [
     {
-        pageName: "Who We Are",
-        href: "/about_us",
-    },
-    {
         pageName: "The Union Difference",
         href: "/",
     },
@@ -33,15 +29,11 @@ const dropdownAboutUs = [
 /* My Union */
 const myUnion = [
     {
-        pageName: "My Workplace",
-        href: "/",
-    },
-    {
-        pageName: "Stewards",
+        pageName: "My Stewards",
         href: "/stewards",
     },
     {
-        pageName: "Member Benefits",
+        pageName: "My Member Benefits",
         href: "/",
     },
     {
@@ -58,11 +50,8 @@ const myUnion = [
     },
 ];
 
-const actionCenter = [
-    {
-        pageName: "Get Involved",
-        href: "/",
-    },
+const getInvolved = [
+    
     {
         pageName: "Events Calendar",
         href: "/events_calendar",
@@ -96,17 +85,13 @@ const actionCenter = [
         <nav>
             <ul class="font-Trebuchet">
                 <li>
-                    <Dropdown
-                        title="About Us"
-                        content={dropdownAboutUs}
-                        titleHref="/about_us"
-                    />
+                    <Dropdown title="About Us" content={dropdownAboutUs} titleHref="/about_us"/>
                 </li>
                 <li>
-                    <Dropdown title="My Union" content={myUnion} />
+                    <Dropdown title="My Union" content={myUnion} titleHref="/"/>
                 </li>
                 <li>
-                    <Dropdown title="Action Center" content={actionCenter} />
+                    <Dropdown title="Get Involved" content={getInvolved} titleHref="/"/>
                 </li>
                 <li>
                     <Dropdown title="News" titleHref="/news_updates" />
