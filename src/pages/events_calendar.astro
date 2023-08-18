@@ -1,11 +1,19 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import HeadingTitle from '../components/HeadingTitle.astro'
+import Layout from "../layouts/Layout.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
 
-import '../styles/global.css'
+import "../styles/global.css";
 ---
 
 <Layout title="SEIU 1107 Events Calendar">
     <HeadingTitle text="SEIU 1107 Events Calendar" />
-
+    <div class="border-0 overflow-hidden m-auto flex justify-center">
+        <iframe
+            src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%239a7cb7&ctz=America%2FLos_Angeles&src=YTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB"
+            style="border:solid 1px #777"
+            width="800"
+            height="600"
+        >
+        </iframe>
+    </div>
 </Layout>
