@@ -2,7 +2,7 @@
 export interface Props {
     title: string /* Top Level Name of Dropdown */;
     titleHref?: string /* Path to page if button is clicked, if any. */;
-    content: {
+    content?: {
         pageName: string /* Name of the content in dropdown */;
         href: string /* Path to page when content clicked */;
     }[];
@@ -21,13 +21,17 @@ const { title = "Dropdown", titleHref = "", content } = Astro.props as Props;
             </a>
         )
     }
-    <div class="dropdown-content">
-        {
-            content.map((content) => (
-                <a href={content.href}>{content.pageName}</a>
-            ))
-        }
-    </div>
+    {
+        content ? (
+            <div class="dropdown-content">
+                {content.map((content) => (
+                    <a href={content.href}>{content.pageName}</a>
+                ))}
+            </div>
+        ) : (
+            <div />
+        )
+    }
 </div>
 
 <style>

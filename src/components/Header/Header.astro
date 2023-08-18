@@ -9,12 +9,12 @@ const dropdownAboutUs = [
         href: "/about_us",
     },
     {
-        pageName: "Executive Board",
-        href: "/executive_board",
+        pageName: "The Union Difference",
+        href: "/",
     },
     {
-        pageName: "Constitution & Bylaws",
-        href: "/",
+        pageName: "Executive Board",
+        href: "/executive_board",
     },
     {
         pageName: "Staff",
@@ -30,14 +30,14 @@ const dropdownAboutUs = [
     },
 ];
 
-/* My 1107 Dropdown */
-const dropdownMy1107 = [
+/* My Union */
+const myUnion = [
     {
-        pageName: "My Contract",
+        pageName: "My Workplace",
         href: "/",
     },
     {
-        pageName: "Shop Stewards",
+        pageName: "Stewards",
         href: "/stewards",
     },
     {
@@ -45,23 +45,26 @@ const dropdownMy1107 = [
         href: "/",
     },
     {
+        pageName: "Constituion & Bylaws",
+        href: "/",
+    },
+    {
         pageName: "Committees",
         href: "/",
     },
     {
-        pageName: "Training & Education",
+        pageName: "Caucuses",
         href: "/",
     },
 ];
 
-/* Resources Dropdown */
-const dropdownResources = [
+const actionCenter = [
     {
-        pageName: "Become A Member",
+        pageName: "Get Involved",
         href: "/",
     },
     {
-        pageName: "The Union Difference",
+        pageName: "Events Calendar",
         href: "/",
     },
     {
@@ -69,39 +72,16 @@ const dropdownResources = [
         href: "/",
     },
     {
-        pageName: "FAQ",
+        pageName: "Power of Politics",
         href: "/",
-    },
-];
-
-/* Action Center Dropdown */
-const dropdownActionCenter = [
-    {
-        pageName: "Members in Action",
-        href: "/members_in_action",
     },
     {
         pageName: "Communities United",
         href: "/",
     },
     {
-        pageName: "New Organizing",
+        pageName: "Home Care Workers United",
         href: "/",
-    },
-    {
-        pageName: "Event Calendar",
-        href: "/events_calendar",
-    },
-];
-
-const dropdownNews = [
-    {
-        pageName: "Press Releases",
-        href: "/",
-    },
-    {
-        pageName: "News Updates",
-        href: "/news_updates",
     },
 ];
 ---
@@ -115,18 +95,25 @@ const dropdownNews = [
         </div>
         <nav>
             <ul class="font-Trebuchet">
-                <li><Dropdown title="About Us" content={dropdownAboutUs} /></li>
-                <li><Dropdown title="My 1107" content={dropdownMy1107} /></li>
-                <li>
-                    <Dropdown title="Resources" content={dropdownResources} />
-                </li>
                 <li>
                     <Dropdown
-                        title="Action Center"
-                        content={dropdownActionCenter}
+                        title="About Us"
+                        content={dropdownAboutUs}
+                        titleHref="/about_us"
                     />
                 </li>
-                <li><Dropdown title="News" content={dropdownNews} /></li>
+                <li>
+                    <Dropdown title="My Union" content={myUnion} />
+                </li>
+                <li>
+                    <Dropdown title="Action Center" content={actionCenter} />
+                </li>
+                <li>
+                    <Dropdown title="News" titleHref="/news_updates" />
+                </li>
+                <li>
+                    <Dropdown title="Join Now!" titleHref="/" />
+                </li>
             </ul>
         </nav>
     </div>
