@@ -1,42 +1,46 @@
 ---
-import NewsPreview from '../components/NewsPreview.astro'
+import NewsPreview from "../components/NewsPreview.astro";
 
-const posts = await Astro.glob('../posts/*.md')
+const posts = await Astro.glob("../posts/*.md");
 ---
 
 <section class="showcase">
-    <h1 class="text-yellow text-5xl m-auto text-center font-Trebuchet font-bold">Latest News</h1>
+    <h1
+        class="text-yellow-primary text-5xl m-auto text-center font-Trebuchet font-bold"
+    >
+        Latest News
+    </h1>
 
     <section class="flex justify-center">
         <div class="grid-minmax">
             <div class="container">
-                {posts
-                    .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-                    .slice(0,3)
-                    .map(post => (
+                {
+                    posts
+                        .sort((a, b) =>
+                            a.frontmatter.date < b.frontmatter.date ? 1 : -1
+                        )
+                        .slice(0, 3)
+                        .map((post) => (
                             <NewsPreview
-                                    featuredImg = {post.frontmatter.featuredImg}
-                                    title = {post.frontmatter.title}
-                                    excerpt = {post.frontmatter.excerpt}
-                                    date = {post.frontmatter.date}
-                                    url = {post.frontmatter.slug}
+                                featuredImg={post.frontmatter.featuredImg}
+                                title={post.frontmatter.title}
+                                excerpt={post.frontmatter.excerpt}
+                                date={post.frontmatter.date}
+                                url={post.frontmatter.slug}
                             />
-                    ))}
+                        ))
+                }
             </div>
-
         </div>
     </section>
-
-
 </section>
 
 <style>
-
     .grid-minmax .container {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
         grid-column-gap: 0;
-        margin: auto
+        margin: auto;
     }
 
     @media (max-width: 550px) {
@@ -44,7 +48,7 @@ const posts = await Astro.glob('../posts/*.md')
             display: grid;
             grid-template-columns: 1fr;
             grid-column-gap: 0;
-            margin: auto
+            margin: auto;
         }
     }
 
@@ -58,7 +62,11 @@ const posts = await Astro.glob('../posts/*.md')
     .showcase {
         height: auto;
         background-color: var(--color-secondary);
-        background-image: linear-gradient(to bottom, var(--color-primary), rgb(15 23 42 / 0));
+        background-image: linear-gradient(
+            to bottom,
+            var(--color-primary),
+            rgb(15 23 42 / 0)
+        );
         padding: 30px;
     }
 
@@ -73,5 +81,4 @@ const posts = await Astro.glob('../posts/*.md')
         font-size: 24px;
         margin-bottom: 20px;
     }
-
 </style>
