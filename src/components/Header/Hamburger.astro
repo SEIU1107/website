@@ -19,10 +19,10 @@ const { dropdowns } = Astro.props as Props;
 <label>
     <input type="checkbox" />
     <span class="menu"><span class="hamburger"></span></span>
-    <ul class="py-5 fixed h-[100vh] overflow-auto font-Trebuchet">
+    <ul class="py-10 fixed h-[100vh] overflow-auto font-Trebuchet">
         {
             dropdowns.map((dd) => (
-                <div class="flex flex-col justify-center content-center z-50">
+                <div class="flex flex-col justify-center content-start z-50">
                     {dd.titleHref === "" ? (
                         <div class="flex justify-center bg-purple-darker text-white p-4 text-base border-none no-underline">
                             {dd.title}
@@ -65,7 +65,7 @@ const { dropdowns } = Astro.props as Props;
     label .menu {
         position: absolute;
         right: -10vh;
-        top: -100px;
+        top: -10vh;
         z-index: 100;
         width: 200px;
         height: 200px;
@@ -116,8 +116,10 @@ const { dropdowns } = Astro.props as Props;
     }
 
     label input:checked + .menu {
-        box-shadow: 0 0 0 80vw #582c83, 0 0 0 120vh #582c83;
+        box-shadow: 0 0 0 80vw #582c83, 0 0 0 999vh #582c83;
         border-radius: 0;
+        overflow-y: hidden;
+        position: fixed;
     }
 
     label input:checked + .menu .hamburger {
