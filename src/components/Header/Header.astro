@@ -128,7 +128,9 @@ const all_dropdowns = [
 <!-- Mobile (smaller screens) -->
 <header class="h-32 bg-purple-primary block md:hidden">
     <a href="/">
-        <img class="h-24 flex pt-5 flex-col m-auto z-[100]" src={logo} alt="" />
+        <img class="h-24 flex pt-5 flex-col m-auto" src={logo} alt="" />
     </a>
-    <Hamburger dropdowns={all_dropdowns} />
+    <div>
+        <Hamburger dropdowns={all_dropdowns} />
+    </div>
 </header>
