@@ -1,0 +1,169 @@
+---
+import Dropdown from "../Header/Dropdown.astro";
+import { clickable } from "../Header/Dropdown.astro";
+
+export interface Props {
+    dropdowns: {
+        title: string /* Top Level Name of Dropdown */;
+        titleHref?: string /* Path to page if button is clicked, if any. */;
+        content?: {
+            pageName: string /* Name of the content in dropdown */;
+            href: string /* Path to page when content clicked */;
+        }[];
+    }[];
+}
+
+const { dropdowns } = Astro.props as Props;
+---
+
+<label>
+    <input type="checkbox" />
+    <span class="menu"><span class="hamburger"></span></span>
+    <ul class="fixed h-[100vh] overflow-auto font-Trebuchet">
+        {
+            dropdowns.map((dd) => (
+                <div class="flex flex-col justify-center content-center z-50">
+                    {dd.titleHref === "" ? (
+                        <div class="flex justify-center bg-purple-darker text-white p-4 text-base border-none no-underline">
+                            {dd.title}
+                        </div>
+                    ) : (
+                        <a href={dd.titleHref}>
+                            <div class="bg-purple-darker text-white p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow hover:text-purple-darker active:no-underline">
+                                {dd.title}
+                            </div>
+                        </a>
+                    )}
+                    {dd.content ? (
+                        <nav>
+                            {dd.content.map((content) => (
+                                <a
+                                    class="flex text-yellow p-4 text-base border-none cursor-pointer hover:underline hover:bg-purple-darker active:no-underline active:bg-purple-darkest"
+                                    href={content.href}
+                                >
+                                    {content.pageName}
+                                </a>
+                            ))}
+                        </nav>
+                    ) : (
+                        <div />
+                    )}
+                </div>
+            ))
+        }
+        <div class="absolute h-screen"></div>
+    </ul>
+</label>
+
+<style>
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+    }
+
+    label .menu {
+        position: fixed;
+        right: -100px;
+        top: -100px;
+        z-index: 100;
+        width: 200px;
+        height: 200px;
+        background: #582c83;
+        border-radius: 50% 50% 50% 50%;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        box-shadow: 0 0 0 0 #582c83, 0 0 0 0 #582c83;
+        cursor: pointer;
+    }
+
+    label .hamburger {
+        position: absolute;
+        top: 135px;
+        left: 50px;
+        width: 30px;
+        height: 2px;
+        background: #69d2e7;
+        display: block;
+        -webkit-transform-origin: center;
+        transform-origin: center;
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+    }
+
+    label .hamburger:after,
+    label .hamburger:before {
+        -webkit-transition: 0.5s ease-in-out;
+        transition: 0.5s ease-in-out;
+        content: "";
+        position: absolute;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: #69d2e7;
+    }
+
+    label .hamburger:before {
+        top: -10px;
+    }
+
+    label .hamburger:after {
+        bottom: -10px;
+    }
+
+    label input {
+        display: none;
+    }
+
+    label input:checked + .menu {
+        box-shadow: 0 0 0 100vw #582c83, 0 0 0 100vh #582c83;
+        border-radius: 0;
+    }
+
+    label input:checked + .menu .hamburger {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    label input:checked + .menu .hamburger:after {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        bottom: 0;
+    }
+
+    label input:checked + .menu .hamburger:before {
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        top: 0;
+    }
+
+    label input:checked + .menu + ul {
+        opacity: 1;
+    }
+
+    label ul {
+        z-index: 200;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        -webkit-transition: 0.25s 0s ease-in-out;
+        transition: 0.25s 0s ease-in-out;
+        color: #fff;
+        -ms-overflow-style: none; /* Internet Explorer 10+ */
+        scrollbar-width: none; /* Firefox */
+    }
+
+    label ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    label a {
+        margin-bottom: 1em;
+        display: block;
+        color: #f8e221;
+        text-decoration: none;
+    }
+</style>

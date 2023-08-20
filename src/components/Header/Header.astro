@@ -1,6 +1,7 @@
 ---
 import logo from "/images/seiu-WEBSITE-LOGO-1t.png";
 import Dropdown from "../Header/Dropdown.astro";
+import Hamburger from "../Header/Hamburger.astro";
 
 /* About Us Dropdown */
 const dropdownAboutUs = [
@@ -51,7 +52,6 @@ const myUnion = [
 ];
 
 const getInvolved = [
-    
     {
         pageName: "Events Calendar",
         href: "/events_calendar",
@@ -73,6 +73,32 @@ const getInvolved = [
         href: "/",
     },
 ];
+
+const all_dropdowns = [
+    {
+        title: "About Us",
+        titleHref: "/about_us",
+        content: dropdownAboutUs,
+    },
+    {
+        title: "My Union",
+        titleHref: "/",
+        content: myUnion,
+    },
+    {
+        title: "Get Involved",
+        titleHref: "/",
+        content: getInvolved,
+    },
+    {
+        title: "News",
+        titleHref: "/news_updates",
+    },
+    {
+        title: "Join Now!",
+        titleHref: "/",
+    },
+];
 ---
 
 <header class="header">
@@ -84,24 +110,21 @@ const getInvolved = [
         </div>
         <nav>
             <ul class="font-Trebuchet">
-                <li>
-                    <Dropdown title="About Us" content={dropdownAboutUs} titleHref="/about_us"/>
-                </li>
-                <li>
-                    <Dropdown title="My Union" content={myUnion} titleHref="/"/>
-                </li>
-                <li>
-                    <Dropdown title="Get Involved" content={getInvolved} titleHref="/"/>
-                </li>
-                <li>
-                    <Dropdown title="News" titleHref="/news_updates" />
-                </li>
-                <li>
-                    <Dropdown title="Join Now!" titleHref="/" />
-                </li>
+                {
+                    all_dropdowns.map((dd) => (
+                        <li>
+                            <Dropdown
+                                title={dd.title}
+                                content={dd.content ?? null}
+                                titleHref={dd.titleHref ?? null}
+                            />
+                        </li>
+                    ))
+                }
             </ul>
         </nav>
     </div>
+    <Hamburger dropdowns={all_dropdowns} />
 </header>
 
 <style>

@@ -2,19 +2,19 @@
 export interface Props {
     title: string /* Top Level Name of Dropdown */;
     titleHref?: string /* Path to page if button is clicked, if any. */;
-    content?: {
-        pageName: string /* Name of the content in dropdown */;
-        href: string /* Path to page when content clicked */;
-    }[];
+    content?:
+        | {
+              pageName: string /* Name of the content in dropdown */;
+              href: string /* Path to page when content clicked */;
+          }[]
+        | null;
 }
 
 const { title = "Dropdown", titleHref = "", content } = Astro.props as Props;
 
 /* Tailwind Classes */
-const clickable =
+export const clickable =
     "bg-purple-darker text-white p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow hover:text-purple-darker active:no-underline";
-
-const dropdown_content = ""
 ---
 
 <div class="group relative inline-block z-50">
@@ -31,10 +31,14 @@ const dropdown_content = ""
     }
     {
         content ? (
-            <div class="hidden absolute text-white bg-purple-darker min-w-[160px] shadow-lg z-1 group-hover:block">
+            <div class=" hidden absolute text-white bg-purple-darker min-w-[160px] shadow-lg z-1 group-hover:block">
                 {content.map((content) => (
-                    <a class="bg-purple-darker text-white p-4 text-base block hover:underline hover:bg-yellow hover:text-purple-darker active:no-underline" href={content.href}>{content.pageName}</a>
-                    
+                    <a
+                        class="bg-purple-darker text-white p-4 text-base block hover:underline hover:bg-yellow hover:text-purple-darker active:no-underline"
+                        href={content.href}
+                    >
+                        {content.pageName}
+                    </a>
                 ))}
             </div>
         ) : (
@@ -42,43 +46,3 @@ const dropdown_content = ""
         )
     }
 </div>
-
-<style>
-
-    /* The container <div> - needed to position the dropdown content */
-    .dropdown {
-        z-index: 50;
-        position: relative;
-        display: inline-block;
-    }
-
-    /* Dropdown Content (Hidden by Default) */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: var(--color-primary-darker);
-        min-width: 160px;
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        z-index: 1;
-    }
-
-    /* Links inside the dropdown */
-    .dropdown-content a {
-        color: white;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    /* Change color of dropdown links on hover */
-    .dropdown-content a:hover {
-        background-color: var(--color-tertiary);
-        color: var(--color-primary-darker);
-    }
-
-    /* Show the dropdown menu on hover */
-    .dropdown:hover .dropdown-content {
-        display: block;
-    }
-
-</style>
