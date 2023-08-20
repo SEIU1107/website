@@ -101,16 +101,17 @@ const all_dropdowns = [
 ];
 ---
 
-<header class="header">
-    <div class="container">
+<!-- Non-Mobile (Desktop, larger screens) -->
+<header class="h-20 bg-purple-primary hidden md:block">
+    <div class="h-full flex items-center justify-between py-5">
         <a href="/">
-            <img src={logo} alt="" />
+            <img class="h-9 align-middle m-5" src={logo} alt="" />
         </a>
-        <nav class="hidden md:block">
-            <ul class="font-Trebuchet">
+        <nav>
+            <ul class="flex flex-row m-5 font-Trebuchet">
                 {
                     all_dropdowns.map((dd) => (
-                        <li>
+                        <li class="px-2">
                             <Dropdown
                                 title={dd.title}
                                 content={dd.content ?? null}
@@ -122,39 +123,12 @@ const all_dropdowns = [
             </ul>
         </nav>
     </div>
-    <div class="block md:hidden">
-        <Hamburger dropdowns={all_dropdowns} />
-    </div>
 </header>
 
-<style>
-    .header {
-        height: 70px;
-        background: var(--color-primary);
-    }
-
-    .header .container {
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 20px;
-    }
-
-    .header img {
-        height: 35px;
-        vertical-align: middle;
-    }
-
-    .header nav ul {
-        display: flex;
-    }
-
-    .header nav ul li {
-        padding: 0 5px;
-    }
-
-    .header nav ul li a {
-        color: #fff;
-    }
-</style>
+<!-- Mobile (smaller screens) -->
+<header class="h-28 bg-purple-primary block md:hidden">
+    <a href="/">
+        <img class="h-20 flex pt-5 flex-col m-auto" src={logo} alt="" />
+    </a>
+    <Hamburger dropdowns={all_dropdowns} />
+</header>
