@@ -66,7 +66,7 @@ const { dropdowns } = Astro.props as Props;
         position: absolute;
         right: -10vh;
         top: -10vh;
-        z-index: 100; /* Right under the logo with z-index 100 lmao. See Header.astro */
+        z-index: 100;
         width: 200px;
         height: 200px;
         -webkit-transition: 0.5s ease-in-out;
@@ -153,12 +153,12 @@ const { dropdowns } = Astro.props as Props;
         -webkit-transition: 0.25s 0s ease-in-out;
         transition: 0.25s 0s ease-in-out;
         color: #fff;
-        -ms-overflow-style: none; /* Internet Explorer 10+ */
-        scrollbar-width: none; /* Firefox */
+        -ms-overflow-style: none; /* Hide Scrollbar for Internet Explorer 10+ */
+        scrollbar-width: none; /* Hide Scrollbar for Firefox */
     }
 
     label ul::-webkit-scrollbar {
-        display: none;
+        display: none; /* Hide Scrollbar */
     }
 
     label a {
