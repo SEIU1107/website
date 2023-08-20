@@ -29,7 +29,7 @@ const { dropdowns } = Astro.props as Props;
                         </div>
                     ) : (
                         <a href={dd.titleHref}>
-                            <div class="bg-purple-darker text-white p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow hover:text-purple-darker active:no-underline">
+                            <div class="bg-purple-darker text-white p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow-primary active:bg-yellow-darker hover:text-purple-darker active:no-underline">
                                 {dd.title}
                             </div>
                         </a>
@@ -38,7 +38,7 @@ const { dropdowns } = Astro.props as Props;
                         <nav>
                             {dd.content.map((content) => (
                                 <a
-                                    class="flex text-yellow p-4 text-base border-none cursor-pointer hover:underline hover:bg-purple-darker active:no-underline active:bg-purple-darkest"
+                                    class="flex text-yellow-primary p-4 text-base border-none cursor-pointer hover:underline hover:bg-purple-darker active:no-underline active:bg-purple-darkest"
                                     href={content.href}
                                 >
                                     {content.pageName}

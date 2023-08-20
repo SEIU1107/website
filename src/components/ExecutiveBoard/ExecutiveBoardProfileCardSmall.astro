@@ -5,13 +5,21 @@ export interface Props {
     shop: string; // Name of the shop they work at
 }
 
-const {profileImg, name, shop} = Astro.props as Props;
+const { profileImg, name, shop } = Astro.props as Props;
 ---
 
-<div class="max-w-xl bg-purple-primary p-5 m-5 rounded-md shadow-sm shadow-black">
-    <img src={profileImg} alt="">
-    <h2 class="text-xl font-Georgia font-bold text-center text-white py-2.5">{name}</h2>
-    <p class="text-lg py-1 font-Trebuchet italic font-bold text-yellow text-center">SEIU 1107 Executive Board Member</p>
+<div
+    class="max-w-xl bg-purple-primary p-5 m-5 rounded-md shadow-sm shadow-black"
+>
+    <img src={profileImg} alt="" />
+    <h2 class="text-xl font-Georgia font-bold text-center text-white py-2.5">
+        {name}
+    </h2>
+    <p
+        class="text-lg py-1 font-Trebuchet italic font-bold text-yellow-primary text-center"
+    >
+        SEIU 1107 Executive Board Member
+    </p>
     <p class="text-lg font-Roboto text-white italic text-center">{shop}</p>
 </div>
 
