@@ -103,12 +103,10 @@ const all_dropdowns = [
 
 <header class="header">
     <div class="container">
-        <div class="logo">
-            <a href="/">
-                <img src={logo} alt="" />
-            </a>
-        </div>
-        <nav>
+        <a href="/">
+            <img src={logo} alt="" />
+        </a>
+        <nav class="hidden md:block">
             <ul class="font-Trebuchet">
                 {
                     all_dropdowns.map((dd) => (
@@ -124,7 +122,9 @@ const all_dropdowns = [
             </ul>
         </nav>
     </div>
-    <Hamburger dropdowns={all_dropdowns} />
+    <div class="block md:hidden">
+        <Hamburger dropdowns={all_dropdowns} />
+    </div>
 </header>
 
 <style>
