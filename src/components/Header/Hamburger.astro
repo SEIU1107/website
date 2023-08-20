@@ -153,9 +153,12 @@ const { dropdowns } = Astro.props as Props;
         -webkit-transition: 0.25s 0s ease-in-out;
         transition: 0.25s 0s ease-in-out;
         color: #fff;
+        -ms-overflow-style: none; /* Hide Scrollbar for Internet Explorer 10+ */
+        scrollbar-width: none; /* Hide Scrollbar for Firefox */
     }
 
     label ul::-webkit-scrollbar {
+        display: none; /* Hide Scrollbar */
     }
 
     label a {
