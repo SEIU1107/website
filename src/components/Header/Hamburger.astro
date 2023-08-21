@@ -1,6 +1,7 @@
 ---
 import Dropdown from "../Header/Dropdown.astro";
 import { clickable } from "../Header/Dropdown.astro";
+import logo from "/images/seiu-WEBSITE-LOGO-1t.png";
 
 export interface Props {
     dropdowns: {
@@ -18,11 +19,20 @@ const { dropdowns } = Astro.props as Props;
 
 <label>
     <input type="checkbox" />
-    <span class="menu"><span class="hamburger"></span></span>
-    <ul class="py-10 fixed h-[100vh] overflow-auto font-Trebuchet">
+    <span onclick="
+    window.scrollTo(0, 0);
+    " class="menu"
+        ><span class="hamburger"></span></span
+    >
+    <ul
+        class="bg-purple-primary fixed h-[100vh] overflow-auto font-Trebuchet w-full"
+    >
+        <a href="/">
+            <img class="h-24 flex pt-5 flex-col m-auto" src={logo} alt="" />
+        </a>
         {
             dropdowns.map((dd) => (
-                <div class="flex flex-col justify-center content-start z-50">
+                <div class="flex flex-col justify-center content-start">
                     {dd.titleHref === "" ? (
                         <div class="flex justify-center bg-purple-darker text-white p-4 text-base border-none no-underline">
                             {dd.title}
@@ -62,15 +72,15 @@ const { dropdowns } = Astro.props as Props;
     }
 
     label .menu {
+        z-index: 55;
         position: absolute;
         top: 0;
         right: 0;
-        z-index: 100;
         width: 128px;
         height: 128px;
 
-        -webkit-transition: 0.4s ease-in-out;
-        transition: 0.4s ease-in-out;
+        overflow-y: hidden;
+
         box-shadow: 0 0 0 0 #582c83, 0 0 0 0 #582c83;
         cursor: pointer;
     }
@@ -114,8 +124,6 @@ const { dropdowns } = Astro.props as Props;
     }
 
     label input:checked + .menu {
-        box-shadow: 0 0 0 80vw #582c83, 0 0 0 999vh #582c83;
-        background: #582c83;
         border-radius: 0;
         overflow-y: hidden;
         position: fixed;
@@ -143,7 +151,7 @@ const { dropdowns } = Astro.props as Props;
     }
 
     label ul {
-        z-index: 200;
+        z-index: 50;
         position: absolute;
         top: 50%;
         left: 50%;

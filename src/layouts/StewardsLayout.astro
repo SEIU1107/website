@@ -1,27 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import '../styles/global.css'
+import Layout from "../layouts/Layout.astro";
+import "../styles/global.css";
 
-import RaisingTheStakes from '/images/raising-the-stakes.png'
+import RaisingTheStakes from "/images/raising-the-stakes.png";
 
 export interface Props {
     title: string;
     short_name?: string;
 }
 
-const { title = 'Enter Shop Name', short_name} = Astro.props as Props;
+const { title = "Enter Shop Name", short_name } = Astro.props as Props;
 
 const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
-<Layout title = {page_title}>
-    <img class="banner" src={RaisingTheStakes} alt="">
+
+<Layout title={page_title}>
+    <img class="flex justify-center m-auto" src={RaisingTheStakes} alt="" />
 
     <h1 class="title-text"><span>{title}</span></h1>
     <slot />
 </Layout>
 
 <style>
-
     .banner {
         display: flex;
         justify-content: center;
@@ -42,7 +42,7 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 
     .title-text span {
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        background-color: #FECD01;
+        background-color: #fecd01;
         font-weight: bold;
         border-radius: 20px;
         width: auto;
@@ -52,8 +52,4 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
         margin-left: 100px;
         margin-right: 100px;
     }
-
-
-
-
 </style>

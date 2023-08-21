@@ -1,6 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import StaffGrid from "../components/ProfileGrid.astro";
+import ProfileGrid from "../components/ProfileGrid.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 
 import type { Profile } from "../Profile";
@@ -198,31 +198,5 @@ const profileData: Profile[] = [
             maximus est vulputate in. Cras sodales varius cursus.
         </p>
     </div>
-    <StaffGrid data={profileData} />
+    <ProfileGrid data={profileData} />
 </Layout>
-
-<style>
-    .staff-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 0;
-        margin: auto;
-        justify-content: center;
-        justify-items: center;
-        max-width: 375px;
-        padding: 10px;
-        font-family: "Roboto", sans-serif;
-    }
-
-    @media (max-width: 1400px) {
-        .staff-grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media (max-width: 767px) {
-        .staff-grid {
-            grid-template-columns: 1fr;
-        }
-    }
-</style>

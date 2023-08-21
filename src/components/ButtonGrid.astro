@@ -1,0 +1,24 @@
+---
+import Button from "./Button.astro";
+
+export interface Props {
+    buttons: {
+        text: string;
+        href: string;
+    }[];
+}
+
+const { buttons } = Astro.props as Props;
+---
+
+<div class="flex justify-center content-center m-auto">
+    <div
+        class="mx-7 grid justify-center gap-4 grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5"
+    >
+        {
+            buttons.map((button) => (
+                <Button text={button.text} href={button.href} />
+            ))
+        }
+    </div>
+</div>
