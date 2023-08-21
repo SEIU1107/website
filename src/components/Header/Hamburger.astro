@@ -51,7 +51,6 @@ const { dropdowns } = Astro.props as Props;
                 </div>
             ))
         }
-        <div class="absolute h-screen"></div>
     </ul>
 </label>
 
@@ -64,11 +63,12 @@ const { dropdowns } = Astro.props as Props;
 
     label .menu {
         position: absolute;
-        right: -10vh;
-        top: -10vh;
+        top: 0;
+        right: 0;
         z-index: 100;
-        width: 200px;
-        height: 200px;
+        width: 128px;
+        height: 128px;
+
         -webkit-transition: 0.4s ease-in-out;
         transition: 0.4s ease-in-out;
         box-shadow: 0 0 0 0 #582c83, 0 0 0 0 #582c83;
@@ -77,8 +77,8 @@ const { dropdowns } = Astro.props as Props;
 
     label .hamburger {
         position: absolute;
-        top: 135px;
-        left: 50px;
+        top: 64px;
+        left: 64px;
         width: 30px;
         height: 2px;
         background: #fecd01;
