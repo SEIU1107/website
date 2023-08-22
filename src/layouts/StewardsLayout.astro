@@ -15,7 +15,11 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
 
 <Layout title={page_title}>
-    <img class="flex justify-center m-auto" src={RaisingTheStakes} alt="" />
+    <img
+        class="flex justify-center m-auto max-h-[25vh]"
+        src={RaisingTheStakes}
+        alt=""
+    />
 
     <h1 class="title-text"><span>{title}</span></h1>
     <slot />

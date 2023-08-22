@@ -1,0 +1,39 @@
+---
+import NewsPreview from "./NewsPreview.astro";
+import NewsGrid from "./NewsGrid.astro";
+
+const posts = await Astro.glob("../posts/*.md");
+---
+
+<section class="NewsGrid">
+    <h1
+        class="text-yellow-primary text-5xl m-auto text-center font-Trebuchet font-bold"
+    >
+        Latest News
+    </h1>
+    {
+        (
+            <NewsGrid
+                previews={posts
+                    .sort((a, b) =>
+                        a.frontmatter.date < b.frontmatter.date ? 1 : -1
+                    )
+                    .slice(0, 3)}
+                breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+            />
+        )
+    }
+</section>
+
+<style>
+    .NewsGrid {
+        height: auto;
+        background-color: var(--color-secondary);
+        background-image: linear-gradient(
+            to bottom,
+            var(--color-primary),
+            rgb(15 23 42 / 0)
+        );
+        padding: 30px;
+    }
+</style>

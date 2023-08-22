@@ -1,86 +1,60 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import NewsPreview from '../components/NewsPreview.astro'
-import HeadingTitle from '../components/HeadingTitle.astro'
+import Layout from "../layouts/Layout.astro";
+import NewsPreview from "../components/NewsPreview.astro";
+import NewsGrid from "../components/NewsGrid.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
 
-const posts = await Astro.glob('../posts/*.md')
+const posts = await Astro.glob("../posts/*.md");
 
-const years = posts
-    .reduce((acc, post) => {
-        acc[new Date(post.frontmatter.date).getFullYear()] =
-            posts.filter(function (el) {
-                return new Date(el.frontmatter.date).getFullYear() === new Date(post.frontmatter.date).getFullYear();
-            })
-        return acc
-    }, {});
+const years = posts.reduce((acc, post) => {
+    acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(function (
+        el
+    ) {
+        return (
+            new Date(el.frontmatter.date).getFullYear() ===
+            new Date(post.frontmatter.date).getFullYear()
+        );
+    });
+    return acc;
+}, {});
 
 const sorted_years = Object.keys(years)
-    .sort((a,b) => (a > b ? 1 : -1))
+    .sort((a, b) => (a > b ? 1 : -1))
     .reduce((obj, key) => {
         obj[key] = years[key];
-        return obj
-        }, {});
-
+        return obj;
+    }, {});
 ---
 
 <Layout title="News Updates">
-
     <HeadingTitle text="News Updates" />
 
     <section class="py-5">
-        {Object.entries(sorted_years).reverse().map(([year, posts]) => (
-                <h1 class="
+        {
+            Object.entries(sorted_years)
+                .reverse()
+                .map(([year, posts]) => (
+                    <>
+                        <h1
+                            class="
                 m-auto
                 text-purple-primary text-5xl text-center
-                italic font-Trebuchet font-bold">
-                    {year}
-                </h1>
-                <section class="flex justify-center">
-                    <div class="grid-minmax">
-                        <div class="container">
-                            {posts
-                                .sort((a,b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-                                .map(post => (
-                                        <NewsPreview
-                                                featuredImg = {post.frontmatter.featuredImg}
-                                                title = {post.frontmatter.title}
-                                                excerpt = {post.frontmatter.excerpt}
-                                                date = {post.frontmatter.date}
-                                                url = {post.frontmatter.slug}
-                                        />
-                                ))}
-                        </div>
-                    </div>
-                </section>
-        ))}
-    </section>
-
-
-
-</Layout>
-
-<style>
-
-    .grid-minmax .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        grid-column-gap: 0;
-        margin: auto
-    }
-
-    @media (max-width: 550px) {
-        .grid-minmax .container {
-            display: grid;
-            grid-template-columns: 1fr;
-            grid-column-gap: 0;
-            margin: auto
+                italic font-Trebuchet font-bold"
+                        >
+                            {year}
+                        </h1>
+                        {
+                            <NewsGrid
+                                previews={posts.sort((a, b) =>
+                                    a.frontmatter.date < b.frontmatter.date
+                                        ? 1
+                                        : -1
+                                )}
+                                breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+                            />
+                        }
+                    </>
+                ))
         }
-    }
-
-    .previews {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        margin: auto;
-    }
-</style>
+    </section>
+</Layout>

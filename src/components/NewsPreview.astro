@@ -1,51 +1,75 @@
 ---
-import Button from '../components/Button.astro'
+import Button from "../components/Button.astro";
 
-import Placeholder from '/images/protest.jpg'
-import Purple from '/images/purple_transparent.png'
+import Placeholder from "/images/protest.jpg";
+import Purple from "/images/purple_transparent.png";
 
 export interface Props {
-    featuredImg: string; /* Picture for the preview */
+    featuredImg: string /* Picture for the preview */;
     title: string;
     excerpt: string;
     date: string;
     url: string;
 }
 
-const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.', date = '2023-01-01', url = '/'} = Astro.props as Props;
+const {
+    featuredImg,
+    title = "News Story Title",
+    excerpt = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    date = "2023-01-01",
+    url = "/",
+} = Astro.props as Props;
 ---
 
-<div class="card">
-    <a href={'/'+ url}>
-        <div class="thumb">
-            <img class="featuredImg" src={featuredImg ? featuredImg : Placeholder} alt="" />
-            <div class="transparent">
-                <img class="absolute top-0 left-0" src={Purple} alt=""/>
+<div
+    class="relative flex flex-col max-w-[95vw] bg-white rounded-lg shadow-md m-5"
+>
+    <a href={"/" + url}>
+        <div class="group rounded-lg z-6">
+            <img
+                class="rounded-t-lg aspect-[3/2] object-cover transition grayscale-0 group-hover:grayscale duration-300"
+                src={featuredImg ? featuredImg : Placeholder}
+                alt=""
+            />
+            <div
+                class="transition-opacity opacity-0 group-hover:opacity-100 duration-300"
+            >
+                <img
+                    class="absolute top-0 left-0 rounded-t-lg"
+                    src={Purple}
+                    alt=""
+                />
             </div>
 
-            <div class="readMore">
-                <h1 class="text-white text-center font-Trebuchet text-4xl absolute top-[100px] left-1/2 -translate-x-1/2"><b>Read More</b></h1>
+            <div
+                class="transition-opacity opacity-0 group-hover:opacity-100 duration-300"
+            >
+                <h1
+                    class="text-white text-center font-Trebuchet text-4xl absolute top-[100px] left-1/2 -translate-x-1/2"
+                >
+                    <b>Read More</b>
+                </h1>
             </div>
-
         </div>
     </a>
 
-    <div class="info">
-        <h2 class="font-Trebuchet font-bold text-xl py-2 text-ellipsis whitespace-nowrap overflow-hidden">{title}</h2>
-        <p class="py-1 font-bold font-Roboto">{new Date(date).toLocaleDateString()}</p>
+    <div class="px-2.5 pb-2.5">
+        <h2
+            class="font-Trebuchet font-bold text-xl py-2 text-ellipsis whitespace-nowrap overflow-hidden"
+        >
+            {title}
+        </h2>
+        <p class="py-1 font-bold font-Roboto">
+            {new Date(date).toLocaleDateString()}
+        </p>
         <p class="py-1 font-Roboto">{excerpt}</p>
         <Button text="Read More" href={url} />
     </div>
-
-
-
 </div>
 
-
 <style>
-
     .info {
-        font-family: 'Roboto', sans-serif;
+        font-family: "Roboto", sans-serif;
         padding-left: 10px;
         padding-bottom: 10px;
         z-index: 2;
@@ -59,7 +83,7 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         background: #fff;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin: 20px;
+        margin: 5vw;
     }
 
     .transparent {
@@ -67,12 +91,10 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         transition: 0.3s;
     }
 
-
     .featuredImg {
         filter: grayscale(0);
         transition: 0.3s;
     }
-
 
     .readMore {
         opacity: 0;
@@ -95,7 +117,7 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
     }
 
     .thumb:hover > .transparent {
-        opacity: 100;
+        opacity: 1;
         transition: 0.3s;
     }
 
@@ -108,6 +130,4 @@ const {featuredImg, title = 'News Story Title', excerpt = 'Lorem Ipsum is simply
         opacity: 1;
         transition: opacity 0.6s;
     }
-
-
 </style>

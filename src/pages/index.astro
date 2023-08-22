@@ -1,8 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Showcase from "../components/Showcase.astro";
 import Benefits from "../components/Benefits.astro";
 import CycleText from "../components/CycleText.astro";
+import LatestNews from "../components/LatestNews.astro";
 
 const words = [
     "Hospital Workers",
@@ -19,7 +19,7 @@ const words = [
 ---
 
 <Layout>
-    <div class="vidshowcase">
+    <div class="vidNewsGrid">
         <video
             src="https://seiu99.org/wp-content/uploads/2018/08/herovid.mp4"
             autoplay
@@ -41,7 +41,7 @@ const words = [
         </div>
     </div>
 
-    <Showcase />
+    <LatestNews />
     <h1
         class="m-auto font-Trebuchet font-bold text-center text-black py-5 text-5xl"
     >
@@ -63,7 +63,7 @@ const words = [
         height: 100%;
     }
 
-    .vidshowcase {
+    .vidNewsGrid {
         position: relative;
         right: 0;
         width: 100%;
@@ -74,7 +74,7 @@ const words = [
         color: #fff;
     }
 
-    .vidshowcase video {
+    .vidNewsGrid video {
         position: absolute;
         top: 0;
         left: 0;
@@ -84,7 +84,7 @@ const words = [
         z-index: 0;
     }
 
-    .vidshowcase p {
+    .vidNewsGrid p {
         color: white;
         z-index: 2;
     }

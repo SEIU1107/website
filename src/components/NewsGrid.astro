@@ -1,0 +1,31 @@
+---
+import type { MarkdownInstance } from "astro";
+import NewsPreview from "./NewsPreview.astro";
+
+export interface Props {
+    previews: MarkdownInstance<Record<string, any>>[];
+    breakpoints?: string /* Targeting breakpoints */;
+}
+
+const { previews, breakpoints } = Astro.props as Props;
+
+const gridClass = "mx-7 grid gap-4 justify-center grid-cols-1".concat(
+    breakpoints ?? ""
+);
+---
+
+<div class="flex justify-center content-center m-auto">
+    <div class={gridClass}>
+        {
+            previews.map((post) => (
+                <NewsPreview
+                    featuredImg={post.frontmatter.featuredImg}
+                    title={post.frontmatter.title}
+                    excerpt={post.frontmatter.excerpt}
+                    date={post.frontmatter.date}
+                    url={post.frontmatter.slug}
+                />
+            ))
+        }
+    </div>
+</div>
