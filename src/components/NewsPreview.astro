@@ -22,7 +22,7 @@ const {
 ---
 
 <div
-    class="relative flex flex-col max-w-[90vw] bg-white rounded-lg shadow-md m-5"
+    class="relative flex flex-col max-w-[min(420px,_90vw)] bg-white rounded-lg shadow-md m-5"
 >
     <a href={"/" + url}>
         <div class="group rounded-lg z-6">
@@ -63,7 +63,7 @@ const {
             {new Date(date).toLocaleDateString()}
         </p>
         <p class="py-1 font-Roboto">{excerpt}</p>
-        <Button text="Read More" href={url} />
+        <Button text="Read More" href={"/" + url} />
     </div>
 </div>
 
