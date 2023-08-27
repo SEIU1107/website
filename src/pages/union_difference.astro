@@ -1,0 +1,54 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
+
+const paragraph_class = "font-Roboto text-md";
+---
+
+<Layout>
+    <div class="flex mx-[2.5vw]">
+        <HeadingTitle text="The Union Difference" />
+    </div>
+    <div
+        class="flex flex-col max-w-screen-lg align-middle mx-[2.5vw] lg:mx-auto"
+    >
+        <p class={paragraph_class}>
+            When workers stand together, the direction of our lives changes
+            dramatically for the better. From wages to paid leave, from safety
+            to retirement, studies prove over and over how much of a difference
+            unions make for workers who raise their voices as one.
+            <br />
+            <br />
+            The key difference is that when workers have a union, we are able to
+            share decision making power with our employer and are able to negotiate
+            a contract that spells out all our wages, benefits and working conditions.
+            But without a union, the employer maintains all the power and we have
+            little say in our jobs.
+            <br />
+            <br />
+        </p>
+        <p class={paragraph_class}>
+            <b
+                >SEIU Local 1107 members have shown over and over again that we
+                can win contracts with the highest standards, including:</b
+            >
+        </p>
+        <ul class="list-disc pl-4">
+            <li>Fair wages with guaranteed yearly raises.</li>
+            <li>
+                Pay scales with step increases that reward years of experience.
+            </li>
+            <li>Affordable healthcare or ourselves and our families.</li>
+            <li>Substantial paid time off and holiday pay.</li>
+            <li>Retirement with dignity.</li>
+            <li>Job training and career advancement opportunities.</li>
+            <li>Pay differentials for different shifts asnd certifications.</li>
+            <li>Health and safety at work.</li>
+            <li>
+                A fair disciplinary process with a neutral arbitrator to make
+                final decisions.
+            </li>
+            <li>A real voice on the job!</li>
+        </ul>
+    </div>
+</Layout>
