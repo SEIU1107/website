@@ -1,35 +1,29 @@
 ---
-
-const {words, interval} = Astro.props;
+const { words, interval } = Astro.props;
 const uniqueID = Math.random().toString(36).substring(7);
 ---
 
 <p class="fade-text" id={uniqueID}>{words[0]}</p>
 <script define:vars={{ words, interval, uniqueID }}>
+let count = 0;
+let occurence = 0;
+const fadeText = document.getElementById(uniqueID);
+fadeText.style.transition = `opacity ${interval / 2}ms ease-in-out`;
 
-    let count = 0;
-    let occurence = 0;
-    const fadeText = document.getElementById(uniqueID);
-    fadeText.style.transition = `opacity ${interval/2}ms ease-in-out`
-
-    setInterval(() => {
-        occurence += 1;
-        if (occurence % 2 === 0){
-            count += 1;
-            fadeText.style.opacity = '1';
-            fadeText.innerHTML = words[count % words.length];
-        } else {
-            fadeText.style.opacity = '0';
-        }
-
-    }, interval);
-
+setInterval(() => {
+    occurence += 1;
+    if (occurence % 2 === 0) {
+        count += 1;
+        fadeText.style.opacity = "1";
+        fadeText.innerHTML = words[count % words.length];
+    } else {
+        fadeText.style.opacity = "0";
+    }
+}, interval);
 </script>
 
 <style>
-
     .fade-text {
         opacity: 1;
     }
-
 </style>
