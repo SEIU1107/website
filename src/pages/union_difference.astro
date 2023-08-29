@@ -2,13 +2,37 @@
 import Layout from "../layouts/Layout.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 import ImageCarousel from "../components/ImageCarousel.svelte";
+import WhyJoinCards from "../components/WhyJoinCards.astro";
 
-const paragraph_class = "font-Roboto text-md";
+const paragraphClass = "font-Roboto text-md";
 
 const images = [
     "/images/members_in_action/img-1.jpg",
     "/images/members_in_action/img-2.jpg",
     "/images/members_in_action/img-3.jpg",
+];
+
+const whyJoin = [
+    {
+        title: "Unions Improve Wages",
+        body: "Data show time and again that unions raise wages for workers. In fact, union workers make an average of nearly $10,000 more than non-unionized workers. (Source: Bureau of Labor Statics)",
+    },
+    {
+        title: "Better Working Conditions",
+        body: "Working together, union members have the strength to win better wages, affordable health care, a secure retirement, and safer workplaces. The “union advantage” is substantial. According to the U.S. Department of Labor, union members are much more likely to have health benefits and pensions.",
+    },
+    {
+        title: "Together, We Have a Voice",
+        body: "Joining a union will give you a voice in your workplace. Without representation, the employer can change wages, benefits and work conditions without listening to the workers. Forming a union will ensure that workers have the power to bargain for a fair contract and the strength to protect that contract.",
+    },
+    {
+        title: "Unions Protect the Marginalized",
+        body: "For people of color and women workers, the union impact is even greater. Women workers who are union members earn nearly $9,000 a year more than their non-union counterparts. For African-American workers, the union differential is also about $9,000, and for Latino workers the yearly advantage is more than $11,000.",
+    },
+    {
+        title: "Protect Working Families",
+        body: "In addition to helping workers win better wages and benefits, unions help all workers by giving working families a stronger voice in our communities, in the political arena, and in the global economy. By joining together, we can build the strength to hold elected officials accountable, stop the “race to the bottom” by employers who cut wages and benefits in favor of bigger profits, and win improvements such as affordable, quality health care for all.",
+    },
 ];
 ---
 
@@ -19,7 +43,7 @@ const images = [
     <div
         class="flex flex-col max-w-screen-lg align-middle mx-[2.5vw] lg:mx-auto"
     >
-        <p class={paragraph_class}>
+        <p class={paragraphClass}>
             When workers stand together, the direction of our lives changes
             dramatically for the better. From wages to paid leave, from safety
             to retirement, studies prove over and over how much of a difference
@@ -39,7 +63,7 @@ const images = [
                 <ImageCarousel client:visible images={images} />
             </div>
             <div class="justify-end px-2.5">
-                <p class={paragraph_class}>
+                <p class={paragraphClass}>
                     <b
                         >SEIU Local 1107 members have shown over and over again
                         that we can win contracts with the highest standards,
@@ -71,11 +95,15 @@ const images = [
                 </ul>
             </div>
         </div>
-
+    </div>
+    <div
+        class="flex flex-col max-w-screen-xl align-middle mx-[2.5vw] lg:mx-auto"
+    >
         <div
             class="m-auto font-Trebuchet font-bold text-center text-black py-5 text-5xl"
         >
             Why You Should Join a Union
         </div>
+        <WhyJoinCards />
     </div>
 </Layout>

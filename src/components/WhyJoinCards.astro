@@ -1,0 +1,77 @@
+---
+import InfoCardGridLayout from "./InfoCardGridLayout.astro";
+import InfoCard from "./InfoCard.astro";
+const linkStyling =
+    "text-blue-500 no-underline hover:underline active:no-underline";
+---
+
+<InfoCardGridLayout
+    styling="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto max-w-5xl sm:max-w-[90vw]"
+>
+    <InfoCard title="Unions Improve Wages">
+        Data show time and again that unions raise wages for workers. In fact,
+        union workers make an average of nearly $10,000 more than non-unionized
+        workers. (Source: <a
+            class={linkStyling}
+            href="https://www.bls.gov/news.release/pdf/union2.pdf"
+            >Bureau of Labor Statics</a
+        >)
+    </InfoCard>
+    <InfoCard title="Unions Improve Benefits and Working Conditions">
+        Working together, union members have the strength to win affordable
+        health care, a secure retirement, and safer workplaces. The “union
+        advantage” is substantial. Union workers are far more likely to have
+        workplace benefits like retirement plans and health insurance. Union
+        workers are also more likely to have paid leave, including sick leave
+        and vacation. Unionized workplaces are also more likely to faithfully
+        follow health and safety laws. (Source: <a
+            class={linkStyling}
+            href="https://www.bls.gov/news.release/pdf/union2.pdf"
+            >Bureau of Labor Statics</a
+        >, <a
+            class={linkStyling}
+            href="https://www.fissuredworkplace.net/assets/Weil.Enforcing-OSHA-Role-of-Unions.IR.1991.pdf"
+            >OSHA</a
+        >)
+    </InfoCard>
+
+    <InfoCard title="We Have Power Together">
+        Joining a union will give you a voice in your workplace. Without
+        representation, the employer can change wages, benefits, and work
+        conditions without listening to the workers. Forming a union will ensure
+        that workers have the power to bargain for a fair contract and the
+        strength to protect that contract. Collective bargaining also helps
+        close the pay gap between the private and public sectors. (Source: <a
+            class={linkStyling}
+            href="https://www.dol.gov/general/workcenter/data"
+            >U.S. Department of Labor</a
+        >)
+    </InfoCard>
+
+    <InfoCard title="Unions Protect the Marginalized">
+        Unions fight for fair pay for <b><i>all</i></b> workers, which is especially
+        critical for chronically underpaid workers, including women and people of
+        color. Women workers who are union members earn nearly $9,000 a year more
+        than their non-union counterparts. For Black workers, the union differential
+        is also about $9,000, and for Latino workers the yearly advantage is more
+        than $11,000.
+    </InfoCard>
+
+    <InfoCard title="Together, We Have a Voice">
+        In addition to helping workers win better wages and benefits, unions
+        help all workers by giving working families a stronger voice in our
+        communities, in the government, and in the global economy. By joining
+        together, we can build the strength to hold elected officials
+        accountable, stop the “race to the bottom” by employers who cut wages
+        and benefits in favor of bigger profits, and win improvements such as
+        affordable, quality health care for all.
+    </InfoCard>
+
+    <InfoCard title="Retire With Dignity">
+        Union membership directly correlates with retirement plans. In private
+        sector jobs, 93% of unionized workers have an employee-sponsored
+        retirement plan, compared to only 66% of non-union workers. All workers
+        deserve to retire with dignity after a lifetime of service, and unions
+        are a huge factor in delivering on that promise.
+    </InfoCard>
+</InfoCardGridLayout>

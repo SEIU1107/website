@@ -1,0 +1,15 @@
+---
+export interface Props {
+    styling?: string;
+}
+
+const {
+    styling = "grid grid-cols-1 sm:grid-cols-2 gap-0 py-0 px-5 my-7 mx-auto max-w-5xl sm:max-w-[90vw]",
+} = Astro.props as Props;
+---
+
+<div class="flex justify-center m-auto">
+    <div class={styling}>
+        <slot />
+    </div>
+</div>
