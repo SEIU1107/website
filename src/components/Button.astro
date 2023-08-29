@@ -2,13 +2,19 @@
 export interface Props {
     text: string;
     href: string;
+    color?: string;
 }
 
-const { text = "Enter Text", href = "/" } = Astro.props as Props;
+const {
+    text = "Enter Text",
+    href = "/",
+    color = "bg-purple-primary text-white hover:bg-purple-darker active:bg-purple-darkest",
+} = Astro.props as Props;
+
+const classString =
+    "inline-block rounded-md px-2 py-2 text-center uppercase tracking-wide focus:outline-none focus:ring focus:ring-offset-white".concat(
+        " ".concat(color)
+    );
 ---
 
-<a
-    href={href}
-    class="inline-block rounded-md px-2 py-2 bg-purple-primary text-white text-center uppercase tracking-wide hover:bg-purple-darker active:bg-purple-darkest focus:outline-none focus:ring focus:ring-offset-white"
-    >{text}</a
->
+<a href={href} class={classString}>{text}</a>

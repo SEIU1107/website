@@ -1,28 +1,33 @@
 ---
-import NewsPreview from "./NewsPreview.astro";
 import NewsGrid from "./NewsGrid.astro";
-
+import Button from "./Button.astro";
 const posts = await Astro.glob("../posts/*.md");
+const previews = posts
+    .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
+    .slice(0, 6);
 ---
 
 <section class="NewsGrid">
-    <h1
-        class="text-yellow-primary text-5xl m-auto text-center font-Trebuchet font-bold"
-    >
-        Latest News
-    </h1>
-    {
-        (
-            <NewsGrid
-                previews={posts
-                    .sort((a, b) =>
-                        a.frontmatter.date < b.frontmatter.date ? 1 : -1
-                    )
-                    .slice(0, 3)}
-                breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-            />
-        )
-    }
+    <a href="/news_updates/">
+        <h1
+            class="text-yellow-primary text-5xl m-auto text-center font-Trebuchet font-bold active:no-underline hover:underline"
+        >
+            Latest News
+        </h1>
+    </a>
+
+    <NewsGrid
+        previews={previews}
+        breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    />
+
+    <div class="flex m-auto justify-center flex-col max-w-[min(320px,_90vw)]">
+        <Button
+            text="View All Press Releases"
+            href="/news_updates/"
+            color="bg-yellow-primary hover:bg-yellow-darker text-purple-primary"
+        />
+    </div>
 </section>
 
 <style>
