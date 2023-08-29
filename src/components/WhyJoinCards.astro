@@ -1,21 +1,25 @@
 ---
 import InfoCardGridLayout from "./InfoCardGridLayout.astro";
 import InfoCard from "./InfoCard.astro";
+import Button from "./Button.astro";
 const linkStyling =
     "text-blue-500 no-underline hover:underline active:no-underline";
+const paraStyling = "font-Roboto text-md";
 ---
 
 <InfoCardGridLayout
     styling="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto max-w-5xl sm:max-w-[90vw]"
 >
     <InfoCard title="Unions Improve Wages">
-        Data show time and again that unions raise wages for workers. In fact,
-        union workers make an average of nearly $10,000 more than non-unionized
-        workers. (Source: <a
-            class={linkStyling}
-            href="https://www.bls.gov/news.release/pdf/union2.pdf"
-            >Bureau of Labor Statics</a
-        >)
+        <p class={paraStyling}>
+            Data show time and again that unions raise wages for workers. In
+            fact, union workers make an average of nearly $10,000 more than
+            non-unionized workers. (Source: <a
+                class={linkStyling}
+                href="https://www.bls.gov/news.release/pdf/union2.pdf"
+                >Bureau of Labor Statics</a
+            >)
+        </p>
     </InfoCard>
     <InfoCard title="Unions Improve Benefits and Working Conditions">
         Working together, union members have the strength to win affordable
@@ -75,3 +79,10 @@ const linkStyling =
         are a huge factor in delivering on that promise.
     </InfoCard>
 </InfoCardGridLayout>
+<div class="flex m-auto justify-center flex-col max-w-[min(640px,_90vw)]">
+    <Button
+        text="Join Today!"
+        href="/join/"
+        color="bg-purple-primary hover:bg-purple-darker active:bg-purple-darkest text-white"
+    />
+</div>
