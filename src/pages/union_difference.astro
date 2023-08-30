@@ -60,7 +60,7 @@ const whyJoin = [
         </p>
         <div class="flex flex-row">
             <div class="hidden md:inline-block max-w-[55%] px-2.5">
-                <ImageCarousel client:visible images={images} />
+                <ImageCarousel client:only="svelte" images={images} />
             </div>
             <div class="justify-end px-2.5">
                 <p class={paragraphClass}>
