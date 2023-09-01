@@ -1,5 +1,6 @@
 ---
-import logo from "/images/seiu-WEBSITE-LOGO-1t.png";
+import { Image } from "astro:assets";
+import logo from "../../images/seiu-WEBSITE-LOGO-1t.png";
 import Dropdown from "../Header/Dropdown.astro";
 import Hamburger from "../Header/Hamburger.astro";
 
@@ -104,8 +105,8 @@ const all_dropdowns = [
 <!-- Non-Mobile (Desktop, larger screens) -->
 <header class="h-20 bg-purple-primary hidden md:block">
     <div class="h-full flex items-center justify-between py-5">
-        <a href="/">
-            <img class="h-9 align-middle m-5" src={logo} alt="" />
+        <a href="/" class="h-9 align-middle m-5"
+            ><Image class="w-24 m-auto" src={logo} alt="SEIU Local 1107" />
         </a>
         <nav>
             <ul class="flex flex-row m-5 font-Trebuchet">
@@ -127,9 +128,7 @@ const all_dropdowns = [
 
 <!-- Mobile (smaller screens) -->
 <header class="h-32 bg-purple-primary block md:hidden">
-    <a href="/">
-        <img class="h-24 flex pt-5 flex-col m-auto" src={logo} alt="" />
-    </a>
+    <a href="/"> </a>
 
     <div>
         <Hamburger dropdowns={all_dropdowns} />
