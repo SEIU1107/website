@@ -5,26 +5,11 @@ import ProfileCardBig from "../components/ExecutiveBoard/ExecutiveBoardProfileCa
 import ProfileCardSmall from "../components/ExecutiveBoard/ExecutiveBoardProfileCardSmall.astro";
 
 // Big Profiles
-import Yarleny from "/images/stewards/UMC/Yarleny-1024x1024.png";
-import Grace from "/images/executive_board/Grace-1-1024x1024.png";
-import Michelle from "/images/stewards/CC/Michelle-1-1024x1024.png";
-import Deb from "/images/stewards/CC/Debbie-1024x1024.png";
-import Zavia from "/images/stewards/Sunrise/Zavia-1024x1024.png";
-
-// Small Profiles
-import Patricia from "/images/stewards/CC/Patricia.png";
-import Elizabeth from "/images/stewards/UMC/elizabeth bolhouse.png";
-import Joe from "/images/stewards/CC/Joe.png";
-import Nicole from "/images/executive_board/Nicole.png";
-import Jody from "/images/stewards/Sunrise/Jody.png";
-import Saki from "/images/stewards/CC/Saki.png";
-import Hodge from "/images/stewards/CC/Hodge.png";
-import Pam from "/images/executive_board/Pam.png";
-import Audrey from "/images/stewards/UMC/Audrey.png";
-import Theresa from "/images/stewards/UMC/TheresaKing.png";
-import Karla from "/images/executive_board/Karla.png";
-import Rick from "/images/stewards/CC/Rick.png";
-import Erika from "/images/stewards/Sunrise/Erika.png";
+import Yarleny from "/src/images/stewards/UMC/Yarleny-1024x1024.png";
+import Grace from "/src/images/executive_board/Grace-1-1024x1024.png";
+import Michelle from "/src/images/stewards/CC/Michelle-1-1024x1024.png";
+import Deb from "/src/images/stewards/CC/Debbie-1024x1024.png";
+import Zavia from "/src/images/stewards/Sunrise/Zavia-1024x1024.png";
 
 const bigProfPeopleData = [
     // Big Profiles
@@ -60,27 +45,62 @@ const bigProfPeopleData = [
     },
 ];
 
+// Small Profiles
+import Patricia from "/src/images/stewards/CC/Patricia.png";
+import Elizabeth from "/src/images/stewards/UMC/elizabeth bolhouse.png";
+import Joe from "/src/images/stewards/CC/Joe.png";
+import Nicole from "/src/images/executive_board/Nicole.png";
+import Jody from "/src/images/stewards/Sunrise/Jody.png";
+import Saki from "/src/images/stewards/CC/Saki.png";
+import Hodge from "/src/images/stewards/CC/Hodge.png";
+import Pam from "/src/images/executive_board/Pam.png";
+import Audrey from "/src/images/stewards/UMC/Audrey.png";
+import Theresa from "/src/images/stewards/UMC/TheresaKing.png";
+import Karla from "/src/images/executive_board/Karla.png";
+import Rick from "/src/images/stewards/CC/Rick.png";
+import Erika from "/src/images/stewards/Sunrise/Erika.png";
+
 const smallProfPeopleData = [
-    { profileImg: Patricia, name: "Patricia Armstrong", shop: "Clark County" },
+    {
+        profileImg: Patricia,
+        name: "Patricia Armstrong",
+        shop: "Clark County",
+    },
     {
         profileImg: Elizabeth,
         name: "Elizabeth Bolhouse",
         shop: "University Medical Center",
     },
-    { profileImg: Joe, name: "Joe Campbell", shop: "Clark County" },
+    {
+        profileImg: Joe,
+        name: "Joe Campbell",
+        shop: "Clark County",
+    },
     {
         profileImg: Nicole,
         name: "Nicole Courts-Wolf",
         shop: "Renown Medical/NNRH",
     },
-    { profileImg: Jody, name: "Jody Domineck", shop: "Sunrise Hospital" },
+    {
+        profileImg: Jody,
+        name: "Jody Domineck",
+        shop: "Sunrise Hospital",
+    },
     {
         profileImg: Saki,
         name: 'Ashaki "Saki" Hardy',
         shop: "Clark County District Attorney Family Support (DAFS)",
     },
-    { profileImg: Hodge, name: "Richard Hodgson", shop: "Clark County" },
-    { profileImg: Pam, name: "Pam Jahan", shop: "Dignity Health" },
+    {
+        profileImg: Hodge,
+        name: "Richard Hodgson",
+        shop: "Clark County",
+    },
+    {
+        profileImg: Pam,
+        name: "Pam Jahan",
+        shop: "Dignity Health",
+    },
     {
         profileImg: Audrey,
         name: "Audrey Johnson",
@@ -103,7 +123,7 @@ const smallProfPeopleData = [
 
 <Layout title="SEIU Local 1107 Executive Board">
     <HeadingTitle text="Meet the Local 1107 Executive Board" />
-    <div class="py-2.5 m-auto max-w-7xl">
+    <div class="py-2.5 m-auto max-w-screen-lg">
         <p class="text-center font-Roboto text-black text-xl">
             This is where we should put the Executive Board mission statement
             language. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -115,9 +135,10 @@ const smallProfPeopleData = [
             cursus.
         </p>
     </div>
-    <section class="grid">
-        <div class="container">
-            <!-- use the latest version -->
+    <div class="flex justify-center content-center m-auto max-w-screen-xl">
+        <div
+            class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+        >
             {
                 bigProfPeopleData.map((person) => (
                     <ProfileCardBig
@@ -129,9 +150,11 @@ const smallProfPeopleData = [
                 ))
             }
         </div>
-    </section>
-    <section class="small-grid">
-        <div class="container">
+    </div>
+    <div class="flex justify-center content-center m-auto max-w-screen-xl">
+        <div
+            class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        >
             {
                 smallProfPeopleData.map((person) => (
                     <ProfileCardSmall
@@ -142,7 +165,7 @@ const smallProfPeopleData = [
                 ))
             }
         </div>
-    </section>
+    </div>
 </Layout>
 
 <style>

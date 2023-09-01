@@ -1,8 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
+import Purple from "/src/images/purple_transparent.png";
 
-const Placeholder = "/images/protest.jpg";
-const Purple = "/images/purple_transparent.png";
+const Placeholder = "../images/protest.jpg";
 
 export interface Props {
     featuredImg: string /* Picture for the preview */;
@@ -25,16 +26,17 @@ const {
     class="relative flex flex-col max-w-[min(420px,_90vw)] bg-white rounded-lg shadow-md m-5"
 >
     <a href={"/" + url}>
-        <div class="group rounded-lg z-6">
+        <div class="relative group rounded-lg z-6">
             <img
-                class="rounded-t-lg aspect-[3/2] object-cover transition grayscale-0 group-hover:grayscale duration-300"
                 src={featuredImg ? featuredImg : Placeholder}
-                alt=""
+                alt="Featured Image"
+                class="rounded-t-lg aspect-[3/2] object-cover transition grayscale-0 group-hover:grayscale duration-300"
             />
+
             <div
                 class="transition-opacity opacity-0 group-hover:opacity-100 duration-300"
             >
-                <img
+                <Image
                     class="absolute top-0 left-0 rounded-t-lg"
                     src={Purple}
                     alt=""
@@ -45,7 +47,7 @@ const {
                 class="transition-opacity opacity-0 group-hover:opacity-100 duration-300"
             >
                 <h1
-                    class="text-white text-center font-Trebuchet text-4xl absolute top-[100px] left-1/2 -translate-x-1/2"
+                    class="text-white text-center font-Trebuchet text-4xl absolute top-1/3 left-1/2 -translate-x-1/2"
                 >
                     <b>Read More</b>
                 </h1>

@@ -1,6 +1,7 @@
 ---
+import { Image } from "astro:assets";
 export interface Props {
-    profileImg: string; // Image of the portrait; a square
+    profileImg: ImageMetadata; // Image of the portrait; a square
     name: string;
     title: string;
     desc: string; // Text description
@@ -10,7 +11,7 @@ const { profileImg, name, title, desc } = Astro.props as Props;
 ---
 
 <div class="card-container">
-    <img src={profileImg} alt="" />
+    <Image src={profileImg} alt={name} />
     <p
         class="font-Georgia text-purple-primary italic font-bold text-2xl py-2 text-center"
     >

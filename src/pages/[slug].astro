@@ -18,7 +18,9 @@ const { Content, frontmatter } = Astro.props.post;
 ---
 
 <Layout title={frontmatter.title}>
-    <InfoCard>
+    <div
+        class="max-w-screen-xl bg-white p-5 rounded-md shadow-sm shadow-black flex-col my-5 mx-auto"
+    >
         <h1
             class="m-auto font-Georgia text-purple-primary text-center py-5 text-4xl font-bold"
         >
@@ -28,6 +30,8 @@ const { Content, frontmatter } = Astro.props.post;
         <div class="py-5 font-bold">
             {new Date(frontmatter.date).toLocaleDateString()}
         </div>
-        <Content />
-    </InfoCard>
+        <div class="leading-normal">
+            <Content />
+        </div>
+    </div>
 </Layout>

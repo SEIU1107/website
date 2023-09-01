@@ -4,7 +4,7 @@ import Button from "./Button.astro";
 const posts = await Astro.glob("../posts/*.md");
 const previews = posts
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-    .slice(0, 6);
+    .slice(0, 3);
 ---
 
 <section class="NewsGrid">
