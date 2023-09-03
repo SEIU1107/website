@@ -6,43 +6,54 @@ import LavSection from "../../components/Stewards/LavSection.astro";
 
 import type { Profile } from "../../Profile";
 
+import RegenaEllis from "/src/images/stewards/SNHD/Regena.jpg";
+import MalloryJettEdwards from "/src/images/stewards/SNHD/MalloryJett.jpg";
+
 const nonSupData: Profile[] = [
     {
         name: "Regena Ellis",
-        profileImg: "/src/images/stewards/SNHD/Regena.jpg",
-        Title: "Bargaining Unit VP",
-        Unit: "General Unit",
-        Department: "Tuberculosis Clinic",
-        Phone: "(708) 299 - 5623",
-        Email: "regena.m.ellis@gmail.com",
+        profileImg: RegenaEllis,
+        data: [
+            ["Title", "Bargaining Unit VP"],
+            ["Unit", "General Unit"],
+            ["Department", "Tuberculosis Clinic"],
+            ["Phone", "(708) 299 - 5623"],
+            ["Email", "regena.m.ellis@gmail.com"],
+        ],
     },
     {
         name: "Mallory Jett-Edwards",
-        profileImg: "/src/images/stewards/SNHD/MalloryJett.jpg",
-        Title: "Steward",
-        Department: "Solid Waste",
-        Phone: "(702) 759 - 0656",
-        Email: "jett-edwards@snhd.org",
+        profileImg: MalloryJettEdwards,
+        data: [
+            ["Title", "Steward"],
+            ["Department", "Solid Waste"],
+            ["Phone", "(702) 759 - 0656"],
+            ["Email", "jett-edwards@snhd.org"],
+        ],
     },
     {
         name: "Rosemary Ensign",
-        Title: "Steward",
-        Unit: "General Unit",
-        Department: "Food Handler Cards Training Program",
-        Phone: "(702) 759 - 1000",
-        Email: "ensign@snhd.org",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "Food Handler Cards Training Program"],
+            ["Phone", "(702) 759 - 1000"],
+            ["Email", "ensign@snhd.org"],
+        ],
     },
 ];
 
 const supData: Profile[] = [
     {
         name: "Jennifer Bowers",
-        Title: "Steward",
-        Unit: "General Unit",
-        Department: "Community Health ODES",
-        Phone: "(702) 759 - 0675",
-        Mobile: "702-460-2105",
-        Email: "jenndbowers@gmail.com",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "Community Health ODES"],
+            ["Phone", "(702) 759 - 0675"],
+            ["Mobile", "702-460-2105"],
+            ["Email", "jenndbowers@gmail.com"],
+        ],
     },
 ];
 ---

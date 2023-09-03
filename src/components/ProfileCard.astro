@@ -1,6 +1,7 @@
 ---
-import Placeholder from "/images/PlaceholderProfileImg.png";
+import Placeholder from "/src/images/PlaceholderProfileImg.png";
 import type { Profile } from "../Profile";
+import { Image } from "astro:assets";
 
 export interface Props {
     person: Profile;
@@ -12,35 +13,30 @@ const { person } = Astro.props as Props;
 <div
     class="max-w-md bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex-col"
 >
-    <img
-        class="rounded-md w-full aspect-square object-cover"
+    <Image
         src={person.profileImg ? person.profileImg : Placeholder}
-        alt=""
+        alt={person.name}
+        class="rounded-md w-full aspect-square object-cover"
     />
+
     <h2 class="font-Georgia font-bold text-black py-2 text-lg">
         <strong>{person.name}</strong>
     </h2>
     <div class="flex justify-center flex-col font-Roboto">
         {
-            Object.keys(person).map(
-                (key) =>
-                    key !== "profileImg" &&
-                    key !== "name" &&
-                    key !== "id" &&
-                    (key === "Email" ? (
-                        <div>
-                            <b>{key}:</b>
-                            <span class="hover:underline active:no-underline">
-                                <a href={`mailto:${person[key]}`}>
-                                    {person[key]}
-                                </a>
-                            </span>
-                        </div>
-                    ) : (
-                        <div>
-                            <b>{key}:</b> {person[key]}
-                        </div>
-                    ))
+            person.data.map((field) =>
+                field[0] === "Email" ? (
+                    <div>
+                        <b>{field[0]}: </b>
+                        <span class="hover:underline active:no-underline">
+                            <a href={`mailto:${field[1]}`}>{field[1]}</a>
+                        </span>
+                    </div>
+                ) : (
+                    <div>
+                        <b>{field[0]}: </b> {field[1]}
+                    </div>
+                )
             )
         }
     </div>

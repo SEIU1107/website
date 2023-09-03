@@ -6,72 +6,95 @@ import LavSection from "../../components/Stewards/LavSection.astro";
 
 import type { Profile } from "../../Profile";
 
+import RichardBrooks from "/src/images/stewards/LVCVA/RichardBrooks.jpg";
+import KarlaNolan from "/src/images/stewards/LVCVA/Karla Nolan.jpg";
+import JeffRay from "/src/images/stewards/LVCVA/JeffRay.jpg";
+import KeithVierra from "/src/images/stewards/LVCVA/KeithVierra.jpg";
+import KristinBollinger from "/src/images/stewards/LVCVA/KristinBollinger.jpg";
+import StephenNolan from "/src/images/stewards/LVCVA/Stephen Nolan.jpg";
+
 const nonSupData: Profile[] = [
     {
         name: "Richard Brooks",
-        profileImg: "/src/images/stewards/LVCVA/RichardBrooks.jpg",
-        Title: "Chief Steward",
-        Unit: "Non-Supervisory",
-        Department: "Security",
-        Phone: "(702) 419 - 8117",
-        Email: "rb9260@gmail.com",
+        profileImg: RichardBrooks,
+        data: [
+            ["Title", "Chief Steward"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "Security"],
+            ["Phone", "(702) 419 - 8117"],
+            ["Email", "rb9260@gmail.com"],
+        ],
     },
     {
         name: "Karla Nolan",
-        profileImg: "/src/images/stewards/LVCVA/Karla Nolan.jpg",
-        Title: "Bargaining Unit VP / Executive Board Member",
-        Unit: "Non-Supervisory",
-        Department: "Business Sales",
-        Phone: "(702) 203 - 9613",
-        Email: "karla.nolan66@gmail.com",
+        profileImg: KarlaNolan,
+        data: [
+            ["Title", "Bargaining Unit VP / Executive Board Member"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "Business Sales"],
+            ["Phone", "(702) 203 - 9613"],
+            ["Email", "karla.nolan66@gmail.com"],
+        ],
     },
     {
         name: "Jeff Ray",
-        profileImg: "/src/images/stewards/LVCVA/JeffRay.jpg",
-        Title: "Steward",
-        Unit: "Non-Supervisory",
-        Department: "Client Services",
-        Phone: "(702) 525 - 7961",
-        Email: "jryogibear555@gmail.com",
+        profileImg: JeffRay,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "Client Services"],
+            ["Phone", "(702) 525 - 7961"],
+            ["Email", "jryogibear555@gmail.com"],
+        ],
     },
     {
         name: "Keith Vierra",
-        profileImg: "/src/images/stewards/LVCVA/KeithVierra.jpg",
-        Title: "Steward",
-        Unit: "Non-Supervisory",
-        Department: "LVCC",
-        Phone: "(702) 686 - 2215",
-        Email: "keithvierra@icloud.com",
+        profileImg: KeithVierra,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "LVCC"],
+            ["Phone", "(702) 686 - 2215"],
+            ["Email", "keithvierra@icloud.com"],
+        ],
     },
     {
         name: "Kristin Bollinger",
-        profileImg: "/src/images/stewards/LVCVA/KristinBollinger.JPG",
-        Title: "Steward",
-        Unit: "Non-Supervisory",
-        Department: "Security Dispatch",
-        Phone: "(702) 249 - 4977",
-        Email: "kristinbollinger.lvcc@gmail.com",
+        profileImg: KristinBollinger,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "Security Dispatch"],
+            ["Phone", "(702) 249 - 4977"],
+            ["Email", "kristinbollinger.lvcc@gmail.com"],
+        ],
     },
     {
         name: "Stephen Nolan",
-        profileImg: "/src/images/stewards/LVCVA/Stephen Nolan.jpg",
-        Title: "Steward",
-        Unit: "Non-Supervisory",
-        Department: "Client Services",
-        Phone: "(702) 587 - 0016",
-        Email: "nolanunion1107@gmail.com",
+        profileImg: StephenNolan,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Non-Supervisory"],
+            ["Department", "Client Services"],
+            ["Phone", "(702) 587 - 0016"],
+            ["Email", "nolanunion1107@gmail.com"],
+        ],
     },
 ];
+
+import GenoJahrling from "/src/images/stewards/LVCVA/Geno.jpg";
 
 const SupData: Profile[] = [
     {
         name: "Geno Jahrling",
-        profileImg: "/src/images/stewards/LVCVA/Geno.jpg",
-        Title: "Steward",
-        Unit: "Supervisory",
-        Department: "Security",
-        Phone: "(702) 884 - 1542",
-        Email: "geno_jahrling@hotmail.com",
+        profileImg: GenoJahrling,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Supervisory"],
+            ["Department", "Security"],
+            ["Phone", "(702) 884 - 1542"],
+            ["Email", "geno_jahrling@hotmail.com"],
+        ],
     },
 ];
 ---

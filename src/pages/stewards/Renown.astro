@@ -4,14 +4,18 @@ import ProfileGrid from "../../components/ProfileGrid.astro";
 
 import type { Profile } from "../../Profile";
 
+import NicoleCourts from "/src/images/executive_board/Nicole.png";
+
 const data: Profile[] = [
     {
         name: "Nicole Courts",
-        profileImg: "/src/images/executive_board/Nicole.png",
-        Title: "SEIU 1107 Executive Board Member",
-        Department: "RN / General Surgical",
-        Phone: "(775) 843 - 8898",
-        Email: "nicolecourts1@gmail.com",
+        profileImg: NicoleCourts,
+        data: [
+            ["Title", "SEIU 1107 Executive Board Member"],
+            ["Department", "RN / General Surgical"],
+            ["Phone", "(775) 843 - 8898"],
+            ["Email", "nicolecourts1@gmail.com"],
+        ],
     },
 ];
 ---

@@ -2,109 +2,135 @@
 import StewardsLayout from "../../layouts/StewardsLayout.astro";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 
-import Bridgett from "/src/images/stewards/Sunrise/BRIDGETT HOLLIS.png";
-import Erika from "/src/images/stewards/Sunrise/Erika.png";
-import Jody from "/src/images/stewards/Sunrise/Jody.png";
-import Ralaya from "/src/images/stewards/Sunrise/Ralaya.png";
-
 import type { Profile } from "../../Profile";
+
+import Erika from "/src/images/stewards/Sunrise/Erika.png";
+import Ralaya from "/src/images/stewards/Sunrise/Ralaya.png";
+import Jody from "/src/images/stewards/Sunrise/Jody.png";
+import MarielaCastellanos from "/src/images/stewards/Sunrise/Mariela.jpeg";
+import MikeForson from "/src/images/stewards/Sunrise/MikeForson.jpg";
+import Bridgett from "/src/images/stewards/Sunrise/BRIDGETT HOLLIS.png";
+import ReinaGuzman from "/src/images/stewards/Sunrise/ReinaGuzman.png";
+import SharonDubreus from "/src/images/stewards/Sunrise/SharonDuBreus.png";
 
 const profileData: Profile[] = [
     {
         name: "Erika Watanabe",
         profileImg: Erika,
-        Title: "Chief Steward / Executive Board Member",
-        Unit: "Ancillary",
-        Department: "Surgery",
-        Phone: "(702) 275 - 5304",
-        Email: "ewatanabe2@mac.com",
+        data: [
+            ["Title", "Chief Steward / Executive Board Member"],
+            ["Unit", "Ancillary"],
+            ["Department", "Surgery"],
+            ["Phone", "(702) 275 - 5304"],
+            ["Email", "ewatanabe2@mac.com"],
+        ],
     },
     {
         name: "Ralaya Allen",
         profileImg: Ralaya,
-        Title: "Chief Steward",
-        Unit: "Nursing",
-        Department: "Emergency Room (ER)",
-        Phone: "(702) 493 - 2099",
-        Email: "ralaya@gmail.com",
+        data: [
+            ["Title", "Chief Steward"],
+            ["Unit", "Nursing"],
+            ["Department", "Emergency Room (ER)"],
+            ["Phone", "(702) 493 - 2099"],
+            ["Email", "ralaya@gmail.com"],
+        ],
     },
     {
         name: "Mariela Castellanos",
-        profileImg: "/src/images/stewards/Sunrise/Mariela.jpeg",
-        Title: "Steward / Bargaining Unit VP",
-        Unit: "Ancillary",
-        Department: "Housekeeping",
-        Phone: "(702) 200 - 9299",
-        Email: "marielacastellanos014@gmail.com",
+        profileImg: MarielaCastellanos,
+        data: [
+            ["Title", "Steward / Bargaining Unit VP"],
+            ["Unit", "Ancillary"],
+            ["Department", "Housekeeping"],
+            ["Phone", "(702) 200 - 9299"],
+            ["Email", "marielacastellanos014@gmail.com"],
+        ],
     },
     {
         name: "Mike Forson",
-        profileImg: "/src/images/stewards/Sunrise/MikeForson.jpg",
-        Title: "Steward / Bargaining Unit",
-        Unit: "Nursing",
-        Department: "PICU",
-        Phone: "(702) 497 - 7490",
-        Email: "mforson@embarqmail.com",
+        profileImg: MikeForson,
+        data: [
+            ["Title", "Steward / Bargaining Unit"],
+            ["Unit", "Nursing"],
+            ["Department", "PICU"],
+            ["Phone", "(702) 497 - 7490"],
+            ["Email", "mforson@embarqmail.com"],
+        ],
     },
     {
         name: "Jody Domineck",
         profileImg: Jody,
-        Title: "Steward / Executive Board Member",
-        Unit: "Nursing",
-        Department: "Registered Nurse (RN)",
-        Phone: "(702) 812 - 1528",
-        Email: "jodydomineck@gmail.com",
+        data: [
+            ["Title", "Steward / Executive Board Member"],
+            ["Unit", "Nursing"],
+            ["Department", "Registered Nurse (RN)"],
+            ["Phone", "(702) 812 - 1528"],
+            ["Email", "jodydomineck@gmail.com"],
+        ],
     },
     {
         name: "Ana Esquivel",
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "EVS",
-        Phone: "(702) 691 - 8100",
-        Email: "anaesquivel762@gmail.com",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "EVS"],
+            ["Phone", "(702) 691 - 8100"],
+            ["Email", "anaesquivel762@gmail.com"],
+        ],
     },
     {
         name: "Brandi Giles",
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "Surgery",
-        Phone: "(702) 832 - 6789",
-        Email: "bgiles96@yahoo.com",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "Surgery"],
+            ["Phone", "(702) 832 - 6789"],
+            ["Email", "bgiles96@yahoo.com"],
+        ],
     },
     {
         name: "Bridgett Hollis",
         profileImg: Bridgett,
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "Admitting",
-        Phone: "(702) 813 - 7482",
-        Email: "hollisbridgett@yahoo.com",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "Admitting"],
+            ["Phone", "(702) 813 - 7482"],
+            ["Email", "hollisbridgett@yahoo.com"],
+        ],
     },
     {
         name: "Lili Tovar",
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "Food & Nutrition",
-        Phone: "(702) 335 - 7205",
-        Email: "Tovarlili10@gmail.com",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "Food & Nutrition"],
+            ["Phone", "(702) 335 - 7205"],
+            ["Email", "Tovarlili10@gmail.com"],
+        ],
     },
     {
         name: "Reina Guzman",
-        profileImg: "/src/images/stewards/Sunrise/ReinaGuzman.PNG",
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "EVS",
-        Phone: "(702) 985 - 9761",
-        Email: "five.angels32@hotmail.com",
+        profileImg: ReinaGuzman,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "EVS"],
+            ["Phone", "(702) 985 - 9761"],
+            ["Email", "five.angels32@hotmail.com"],
+        ],
     },
     {
         name: "Sharon Dubreus",
-        profileImg: "/src/images/stewards/Sunrise/SharonDuBreus.PNG",
-        Title: "Steward",
-        Unit: "Ancillary",
-        Department: "EVS",
-        Phone: "(702) 467 - 9470",
-        Email: "sharonrene73@yahoo.com",
+        profileImg: SharonDubreus,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "Ancillary"],
+            ["Department", "EVS"],
+            ["Phone", "(702) 467 - 9470"],
+            ["Email", "sharonrene73@yahoo.com"],
+        ],
     },
 ];
 ---

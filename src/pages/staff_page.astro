@@ -4,183 +4,255 @@ import ProfileGrid from "../components/ProfileGrid.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 
 import type { Profile } from "../Profile";
+
+import Sam from "/src/images/staff/Sam.jpg";
+import Fabiola from "/src/images/staff/Fab.jpg";
+import Patrick from "/src/images/staff/Patrick.jpg";
+import Brenda from "/src/images/staff/Brenda.jpg";
+import Jocelyn from "/src/images/staff/Jocelyn.jpg";
+import Chris from "/src/images/staff/Chris.jpg";
+import GloriaM from "/src/images/staff/GloriaMadrid.jpg";
+import Marcus from "/src/images/staff/Marcus.jpg";
+import Rosy from "/src/images/staff/Rosy.jpg";
+import Salah from "/src/images/staff/Salah.jpg";
+import Carlo from "/src/images/staff/Carlo.jpg";
+import Krystal from "/src/images/staff/Krystal.jpg";
+import Quentinn from "/src/images/staff/Quentinn.jpg";
+import Cody from "/src/images/staff/Cody.jpg";
+import JasonK from "/src/images/staff/JasonKlumb.jpg";
+import Nilda from "/src/images/staff/Nilda.jpg";
+import Mimi from "/src/images/staff/Mimi.jpg";
+import Gersam from "/src/images/staff/Gersam.jpg";
+import Patti from "/src/images/staff/Patti.jpg";
+import Nathan from "/src/images/staff/Nathan.jpg";
+
 const profileData: Profile[] = [
     {
         name: "Sam Shaw",
-        profileImg: "/src/images/staff/Sam.jpg",
-        Title: "Chief of Staff",
-        Cell: "725-221-1205",
-        Email: "sshaw@seiunv.org",
+        profileImg: Sam,
+        data: [
+            ["Title", "Chief of Staff"],
+            ["Cell", "725-221-1205"],
+            ["Email", "sshaw@seiunv.org"],
+        ],
     },
     {
         name: "Fabiola Morales",
-        profileImg: "/src/images/staff/Fab.jpg",
-        Title: "Organizing Director",
-        Cell: "702-378-7768",
-        Email: "fmorales@seiunv.org",
+        profileImg: Fabiola,
+        data: [
+            ["Title", "Organizing Director"],
+            ["Cell", "702-378-7768"],
+            ["Email", "fmorales@seiunv.org"],
+        ],
     },
     {
         name: "Felipe Danglapin",
-        Title: "Director, Finance & Administration",
-        Cell: "702-278-5509",
-        Email: "fdanglapin@seiunv.org",
+        data: [
+            ["Title", "Director, Finance & Administration"],
+            ["Cell", "702-278-5509"],
+            ["Email", "fdanglapin@seiunv.org"],
+        ],
     },
     {
         name: "Patrick O'Connor",
-        profileImg: "/src/images/staff/Patrick.jpg",
-        Title: "Organizing Coordinator",
-        Assignment: "Southern Hills",
-        Cell: "702-934-4961",
-        Email: "poconnor@seiunv.org",
+        profileImg: Patrick,
+        data: [
+            ["Title", "Organizing Coordinator"],
+            ["Assignment", "Southern Hills"],
+            ["Cell", "702-934-4961"],
+            ["Email", "poconnor@seiunv.org"],
+        ],
     },
     {
         name: "Brenda Marzan",
-        profileImg: "/src/images/staff/Brenda.jpg",
-        Title: "Contract Representative",
-        Cell: "702-296-6470",
-        Email: "bmarzan@seiunv.org",
+        profileImg: Brenda,
+        data: [
+            ["Title", "Contract Representative"],
+            ["Cell", "702-296-6470"],
+            ["Email", "bmarzan@seiunv.org"],
+        ],
     },
     {
         name: "Jocelyn White",
-        profileImg: "/src/images/staff/Jocelyn.jpg",
-        Title: "Contract Representative",
-        Cell: "702-296-6416",
-        Email: "jwhite@seiunv.org",
+        profileImg: Jocelyn,
+        data: [
+            ["Title", "Contract Representative"],
+            ["Cell", "702-296-6416"],
+            ["Email", "jwhite@seiunv.org"],
+        ],
     },
     {
         name: "Christopher Hilton",
-        profileImg: "/src/images/staff/Chris.jpg",
-        Title: "Organizer",
-        Assignment: "Mountain View Hospital",
-        Cell: "702-690-8046",
-        Email: "chilton@seiunv.org",
+        profileImg: Chris,
+        data: [
+            ["Title", "Organizer"],
+            ["Assignment", "Mountain View Hospital"],
+            ["Cell", "702-690-8046"],
+            ["Email", "chilton@seiunv.org"],
+        ],
     },
     {
         name: "Gloria Madrid",
-        profileImg: "/src/images/staff/GloriaMadrid.jpg",
-        Title: "Organizer",
-        Assignment: "Home Care",
-        Cell: "702-506-3082",
-        Email: "gmadrid@seiunv.org",
+        profileImg: GloriaM,
+        data: [
+            ["Title", "Organizer"],
+            ["Assignment", "Home Care"],
+            ["Cell", "702-506-3082"],
+            ["Email", "gmadrid@seiunv.org"],
+        ],
     },
     {
         name: "Marcus Osuigwe",
-        profileImg: "/src/images/staff/Marcus.jpg",
-        Title: "Organizer",
-        Cell: "702-849-2308",
-        Email: "mosuigwe@seiunv.org",
-    },
-    {
-        name: "Rosy Salinas",
-        profileImg: "/src/images/staff/Rosy.jpg",
-        Title: "Organizer",
-        Assignment: "Renown, NNRH, CC-GU, SNHD, SNRHA",
-        Cell: "702-274-3171",
-        Email: "rsalinas@seiunv.org",
-    },
-    {
-        name: "Salah El-Amin",
-        profileImg: "/src/images/staff/Salah.jpg",
-        Title: "Organizer",
-        Assignment: "DOA & CC General Unit",
-        Cell: "702-793-7057",
-        Email: "selamin@seiunv.org",
-    },
-    {
-        name: "Melissa Pinnick",
-        Title: "IU Organizer",
-        Assignment: "Home Care",
-        Cell: "202-823-1737",
-        Email: "melissa.pinnick@seiu.org",
-    },
-    {
-        name: "Carlo Enterline",
-        profileImg: "/src/images/staff/Carlo.jpg",
-        Title: "Organizer-In-Training",
-        Assignment: "LVCVA, DFS, WRD, CC-GU,RTC",
-        Cell: "702-344-3774",
-        Email: "centerline@seiunv.org",
-    },
-    {
-        name: "Krystal Velez",
-        profileImg: "/src/images/staff/Krystal.jpg",
-        Title: "Organizer-In-Training",
-        Cell: "702-935-1541",
-        Email: "kvelez@seiunv.org",
+        profileImg: Marcus,
+        data: [
+            ["Title", "Organizer"],
+            ["Cell", "702-849-2308"],
+            ["Email", "mosuigwe@seiunv.org"],
+        ],
     },
     {
         name: "Quentinn Macklin",
-        profileImg: "/src/images/staff/Quentinn.jpg",
-        Title: "Organizer-In-Training",
-        Cell: "702-296-6409",
-        Email: "qmacklin@seiunv.org",
+        profileImg: Quentinn,
+        data: [
+            ["Title", "Organizer"],
+            ["Cell", "702-296-6409"],
+            ["Email", "qmacklin@seiunv.org"],
+        ],
+    },
+    {
+        name: "Rosy Salinas",
+        profileImg: Rosy,
+        data: [
+            ["Title", "Organizer"],
+            ["Assignment", "Renown, NNRH, CC-GU, SNHD, SNRHA"],
+            ["Cell", "702-274-3171"],
+            ["Email", "rsalinas@seiunv.org"],
+        ],
+    },
+    {
+        name: "Salah El-Amin",
+        profileImg: Salah,
+        data: [
+            ["Title", "Organizer"],
+            ["Assignment", "DOA & CC General Unit"],
+            ["Cell", "702-793-7057"],
+            ["Email", "selamin@seiunv.org"],
+        ],
+    },
+    {
+        name: "Melissa Pinnick",
+        data: [
+            ["Title", "IU Organizer"],
+            ["Assignment", "Home Care"],
+            ["Cell", "202-823-1737"],
+            ["Email", "melissa.pinnick@seiu.org"],
+        ],
+    },
+    {
+        name: "Carlo Enterline",
+        profileImg: Carlo,
+        data: [
+            ["Title", "Organizer-In-Training"],
+            ["Assignment", "LVCVA, DFS, WRD, CC-GU,RTC"],
+            ["Cell", "702-344-3774"],
+            ["Email", "centerline@seiunv.org"],
+        ],
+    },
+    {
+        name: "Krystal Velez",
+        profileImg: Krystal,
+        data: [
+            ["Title", "Organizer-In-Training"],
+            ["Cell", "702-935-1541"],
+            ["Email", "kvelez@seiunv.org"],
+        ],
     },
     {
         name: "Cody Hoskins",
-        profileImg: "/src/images/staff/Cody.jpg",
-        Title: "Political Director",
-        Cell: "702-296-6414",
-        Email: "choskins@seiunv.org",
+        profileImg: Cody,
+        data: [
+            ["Title", "Political Director"],
+            ["Cell", "702-296-6414"],
+            ["Email", "choskins@seiunv.org"],
+        ],
     },
     {
         name: "Jason Klumb",
-        profileImg: "/src/images/staff/JasonKlumb.jpg",
-        Title: "Representation Director",
-        Cell: "702-533-6077",
-        Email: "jklumb@seiunv.org",
+        profileImg: JasonK,
+        data: [
+            ["Title", "Representation Director"],
+            ["Cell", "702-533-6077"],
+            ["Email", "jklumb@seiunv.org"],
+        ],
     },
     {
         name: "Jennifer Valdecantos",
-        Title: "Representation Administrative Assistant",
-        Cell: "702-378-0030",
-        Email: "jvaldecantos@seiunv.org",
+        data: [
+            ["Title", "Representation Administrative Assistant"],
+            ["Cell", "702-378-0030"],
+            ["Email", "jvaldecantos@seiunv.org"],
+        ],
     },
     {
         name: "Nilda Mason",
-        profileImg: "/src/images/staff/Nilda.jpg",
-        Title: "Executive Assistant",
-        Cell: "702-715-8592",
-        Email: "nmason@seiunv.org",
+        profileImg: Nilda,
+        data: [
+            ["Title", "Executive Assistant"],
+            ["Cell", "702-715-8592"],
+            ["Email", "nmason@seiunv.org"],
+        ],
     },
     {
         name: "Mimi Wahdat",
-        profileImg: "/src/images/staff/Mimi.jpg",
-        Title: "Admin Assistant",
-        Cell: "702-934-1541",
-        Email: "mwahdat@seiunv.org",
+        profileImg: Mimi,
+        data: [
+            ["Title", "Admin Assistant"],
+            ["Cell", "702-934-1541"],
+            ["Email", "mwahdat@seiunv.org"],
+        ],
     },
     {
         name: "Gersam Lopez",
-        profileImg: "/src/images/staff/Gersam.jpg",
-        Title: "IT Support Specialist",
-        Cell: "702-849-2831",
-        Email: "glopez@seiunv.org",
+        profileImg: Gersam,
+        data: [
+            ["Title", "IT Support Specialist"],
+            ["Cell", "702-849-2831"],
+            ["Email", "glopez@seiunv.org"],
+        ],
     },
     {
         name: "Patti Curry",
-        profileImg: "/src/images/staff/Patti.jpg",
-        Title: "Database and Finance Coordinator",
-        Cell: "775-870-0604",
-        Email: "pcurry@seiunv.org",
+        profileImg: Patti,
+        data: [
+            ["Title", "Database and Finance Coordinator"],
+            ["Cell", "775-870-0604"],
+            ["Email", "pcurry@seiunv.org"],
+        ],
     },
     {
         name: "Kathleen Flores",
-        Title: "Civic Engagement",
-        Cell: "702-695-0454",
-        Email: "kflores@seiunv.org",
+        data: [
+            ["Title", "Civic Engagement"],
+            ["Cell", "702-695-0454"],
+            ["Email", "kflores@seiunv.org"],
+        ],
     },
     {
         name: "Alicia Baker",
-        Assignment: "Education Fund",
-        Cell: "(323) 363-4632",
-        Email: "abaker@theedfund.org",
+        data: [
+            ["Assignment", "Education Fund"],
+            ["Cell", "(323) 363-4632"],
+            ["Email", "abaker@theedfund.org"],
+        ],
     },
     {
         name: "Nathan Mactal",
-        profileImg: "/src/images/staff/Nathan.jpg",
-        Title: "Data & Technology Specialist",
-        Cell: "702-757-7191",
-        Email: "nmactal@seiunv.org",
+        profileImg: Nathan,
+        data: [
+            ["Title", "Data & Technology Specialist"],
+            ["Cell", "702-757-7191"],
+            ["Email", "nmactal@seiunv.org"],
+        ],
     },
 ];
 ---
