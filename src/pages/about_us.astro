@@ -1,45 +1,62 @@
 ---
+import Button from "../components/Button.astro";
 import CollageImage from "../components/CollageImage.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="About SEIU Local 1107">
-    <div class="flex flex-col max-w-6xl m-auto">
+    <div class="flex flex-col justify-center content-center max-w-screen-xl m-auto px-3">
         <HeadingTitle
             text="The Largest Movement of Healthcare & Public Workers in Nevada"
         />
         <h2
             class="pb-2.5 text-center text-purple-primary italic font-Trebuchet text-3xl"
         >
-            SEIU Nevada represents healthcare and public service employees
-            across the state.
+            United for good jobs and quality services for all!
         </h2>
 
         <p class="py-2.5">
-            We care for patients in hospitals in Elko, Reno, Las Vegas and
-            Henderson. We protect the quality of the drinking water, administer
-            benefits for low-income families, maintain Harry Reid International
-            Airport, protect our communities' most vulnerable members, maintain
-            the streets and parks, work with foster children, and provide many
-            other services that keep the region running.
+            SEIU Local 1107 is the largest healthcare and public service union in Nevada, representing nearly 20,000 workers. We're united by our mission to fight for good union jobs, quality services, and a better quality of life for all working Nevadans. 
         </p>
 
-        <h2 class="text-purple-primary font-Trebuchet font-bold text-3xl">
-            Who is SEIU Nevada?
+        <p class="py-2.5">
+            We hold both employers and elected leaders accountable for lifting Nevadans out of poverty, ensuring quality healthcare for all, advancing pro-worker policies, and reducing inequality.
+        </p>
+
+        <p class="py-2.5">
+            Our members care for hospital patients, protect water quality, assist low-income families, help operate Harry Reid International Airport, support the tourism economy, protect our most vulnerable community members, maintain streets and parks, work with foster children, and provide many other critical services. 
+        </p>
+
+        <p class="py-2.5">
+            <b>We keep Nevada running!</b>
+        </p>
+
+        <div class="flex m-auto justify-center flex-col max-w-[min(640px,_90vw)]">
+            <Button
+                text="My Union"
+                href="/my_union/"
+                color="bg-purple-primary hover:bg-purple-darker active:bg-purple-darkest text-white"
+            />
+        </div>
+        <h2 class="text-purple-primary font-Trebuchet font-bold text-3xl py-5 text-center">
+            Part of the International #UnionsForAllMovement
         </h2>
 
         <p class="py-2.5">
-            <b>SEIU Nevada</b> represents workers across Nevada. Our union is part
-            of the Service Employees International Union, which is the fastest-growing
-            union in the United States, with more than two million members.
+            We are part of the <a href="https://seiu.org/">Service Employees International Union</a>, the fastest-growing labor organization in the United States with more than 2 million members.
         </p>
+
         <p class="py-2.5">
-            <b>SEIU is building a 21st-century global union</b> to help ensure that
-            workers, not just corporations, and CEOs, benefit from today's global
-            economy. SEIU is working with unions in similar industries across the
-            globe to provide decent wages and benefits and allow workers in every
-            country the freedom to form unions.
+            SEIU is building a 21st-century union to ensure that workers — not just corporations, and CEOs — benefit from our global economy. SEIU is working with unions in similar industries around the world to advocate strongly for fair wages and benefits and allow workers in every country the freedom to unionize. 
         </p>
+
+        <div class="flex m-auto justify-center max-w-3xl">
+            <Button
+                text="The Union Difference"
+                href="/union_difference/"
+                color="bg-purple-primary hover:bg-purple-darker active:bg-purple-darkest text-white"
+            />
+
     </div>
 </Layout>
