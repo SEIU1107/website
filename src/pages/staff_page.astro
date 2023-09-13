@@ -25,6 +25,7 @@ import Mimi from "/src/images/staff/Mimi.jpg";
 import Gersam from "/src/images/staff/Gersam.jpg";
 import Patti from "/src/images/staff/Patti.jpg";
 import Nathan from "/src/images/staff/Nathan.jpg";
+import LinkText from "../components/LinkText.astro";
 
 const profileData: Profile[] = [
     {
@@ -265,11 +266,10 @@ const profileData: Profile[] = [
             bargaining, worker representation, and other crucial areas.
             Employees are dedicated to the mission of the union, solving
             problems on the job, and our other needs as members. Not sure who to
-            contact? <a
-                href="/contact_us/"
-                class="text-blue-500 hover:underline active:no-underline"
-                >Reach out to the union hall directly!
-            </a>
+            contact?
+            <LinkText href="/contact_us">
+                Reach out to the union hall directly!
+            </LinkText>
         </p>
     </div>
     <ProfileGrid data={profileData} />
