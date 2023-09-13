@@ -1,8 +1,9 @@
 ---
+import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
-import RaisingTheStakes from "/images/raising-the-stakes.png";
+import RaisingTheStakes from "../images/raising-the-stakes.png";
 
 export interface Props {
     title: string;
@@ -15,8 +16,8 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
 
 <Layout title={page_title}>
-    <img
-        class="flex justify-center m-auto max-h-[25vh]"
+    <Image
+        class="flex justify-center m-auto max-w-screen-xl"
         src={RaisingTheStakes}
         alt=""
     />

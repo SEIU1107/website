@@ -3,21 +3,17 @@ export interface Props {
     title: string;
 }
 
-const {title = ''} = Astro.props as Props;
+const { title = "" } = Astro.props as Props;
 ---
 
-<div class="lav">
+<div class="bg-lavender">
     <div class="title">{title}</div>
     <slot />
 </div>
 
 <style>
-    .lav {
-        background: #E6DAF3;
-    }
-
     .title {
-        text-shadow: 2px 2px 7px #522C79;
+        text-shadow: 2px 2px 7px #522c79;
         color: #000;
         font-family: Georgia, sans-serif;
         font-weight: bolder;
