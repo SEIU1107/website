@@ -37,6 +37,10 @@ package-lock.json
 
 # ignore top-level vscode settings
 /.vscode/settings.json
+.vscode
+
+# ignore netlify build stuff
+.netlify
 
 # do not commit .env files or any files that end with `.env`
 *.env

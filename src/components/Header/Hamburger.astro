@@ -1,7 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import Dropdown from "../Header/Dropdown.astro";
 import { clickable } from "../Header/Dropdown.astro";
-import logo from "/images/seiu-WEBSITE-LOGO-1t.png";
+import logo from "/src/images/seiu-WEBSITE-LOGO-1t.png";
 
 export interface Props {
     dropdowns: {
@@ -28,7 +29,11 @@ const { dropdowns } = Astro.props as Props;
         class="bg-purple-primary fixed h-[100vh] overflow-auto font-Trebuchet w-full"
     >
         <a href="/">
-            <img class="h-24 flex pt-5 flex-col m-auto" src={logo} alt="" />
+            <Image
+                class="h-24 flex pt-5 flex-col m-auto"
+                src={logo}
+                alt="SEIU 1107"
+            />
         </a>
         {
             dropdowns.map((dd) => (
@@ -81,7 +86,9 @@ const { dropdowns } = Astro.props as Props;
 
         overflow-y: hidden;
 
-        box-shadow: 0 0 0 0 #582c83, 0 0 0 0 #582c83;
+        box-shadow:
+            0 0 0 0 #582c83,
+            0 0 0 0 #582c83;
         cursor: pointer;
     }
 
