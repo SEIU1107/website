@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import ProfileCardBig from "../components/ExecutiveBoard/ExecutiveBoardProfileCardBig.astro";
 import ProfileCardSmall from "../components/ExecutiveBoard/ExecutiveBoardProfileCardSmall.astro";
 import PlaceholderProfileImg from "../images/PlaceholderProfileImg.png";
+import LinkText from "../components/LinkText.astro";
 
 // Big Profiles
 import Yarleny from "/src/images/stewards/UMC/Yarleny-1024x1024.png";
@@ -60,7 +61,8 @@ import Theresa from "/src/images/stewards/UMC/TheresaKing.png";
 import Karla from "/src/images/executive_board/Karla.png";
 import Rick from "/src/images/stewards/CC/Rick.png";
 import Erika from "/src/images/stewards/Sunrise/Erika.png";
-import LinkText from "../components/LinkText.astro";
+import Danielle from "/src/images/stewards/RTC/Danielle.jpg";
+import AliciaSmith from "/src/images/executive_board/alicia.png";
 
 const smallProfPeopleData = [
     {
@@ -114,6 +116,7 @@ const smallProfPeopleData = [
         shop: "University Medical Center",
     },
     {
+        profileImg: Danielle,
         name: "Danielle Leland",
         shop: "Regional Transportation Commission",
     },
@@ -126,6 +129,11 @@ const smallProfPeopleData = [
         profileImg: Rick,
         name: "Rick Prieto",
         shop: "Clark County",
+    },
+    {
+        profileImg: AliciaSmith,
+        name: "Alicia Smith",
+        shop: "Southern Nevada Regional Housing Authority",
     },
     {
         name: "Lisa Villasenor",

@@ -19,7 +19,7 @@ const nonSupData: Profile[] = [
         profileImg: RichardBrooks,
         data: [
             ["Title", "Chief Steward"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "Security"],
             ["Phone", "(702) 419 - 8117"],
             ["Email", "rb9260@gmail.com"],
@@ -30,7 +30,7 @@ const nonSupData: Profile[] = [
         profileImg: KarlaNolan,
         data: [
             ["Title", "Bargaining Unit VP / Executive Board Member"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "Business Sales"],
             ["Phone", "(702) 203 - 9613"],
             ["Email", "karla.nolan66@gmail.com"],
@@ -41,7 +41,7 @@ const nonSupData: Profile[] = [
         profileImg: JeffRay,
         data: [
             ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "Client Services"],
             ["Phone", "(702) 525 - 7961"],
             ["Email", "jryogibear555@gmail.com"],
@@ -52,7 +52,7 @@ const nonSupData: Profile[] = [
         profileImg: KeithVierra,
         data: [
             ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "LVCC"],
             ["Phone", "(702) 686 - 2215"],
             ["Email", "keithvierra@icloud.com"],
@@ -63,7 +63,7 @@ const nonSupData: Profile[] = [
         profileImg: KristinBollinger,
         data: [
             ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "Security Dispatch"],
             ["Phone", "(702) 249 - 4977"],
             ["Email", "kristinbollinger.lvcc@gmail.com"],
@@ -74,7 +74,7 @@ const nonSupData: Profile[] = [
         profileImg: StephenNolan,
         data: [
             ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
+            ["Unit", "Ambassador Unit"],
             ["Department", "Client Services"],
             ["Phone", "(702) 587 - 0016"],
             ["Email", "nolanunion1107@gmail.com"],
@@ -86,14 +86,24 @@ import GenoJahrling from "/src/images/stewards/LVCVA/Geno.jpg";
 
 const SupData: Profile[] = [
     {
-        name: "Geno Jahrling",
+        name: "Eugene 'Geno' Jahrling",
         profileImg: GenoJahrling,
         data: [
             ["Title", "Steward"],
-            ["Unit", "Supervisory"],
+            ["Unit", "Supervisory Ambassador Unit"],
             ["Department", "Security"],
             ["Phone", "(702) 884 - 1542"],
             ["Email", "geno_jahrling@hotmail.com"],
+        ],
+    },
+    {
+        name: "Steven Zahn",
+        data: [
+            ["Title", "Bargaining Unit Vice President"],
+            ["Unit", "Supervisory Ambassador Unit"],
+            ["Department", "Engineering"],
+            ["Phone", "(702) 808 - 9461"],
+            ["Email", "stevezahn@gmail.com"],
         ],
     },
 ];
@@ -103,11 +113,11 @@ const SupData: Profile[] = [
     title="Las Vegas Convention & Visitor Authority (LVCVA)"
     short_name="LVCVA"
 >
-    <LavSection title="NON-SUPERVISORY">
+    <LavSection title="AMBASSADOR UNIT">
         <ProfileGrid data={nonSupData} />
     </LavSection>
 
-    <PurpleSection title="SUPERVISORY">
+    <PurpleSection title="SUPERVISORY AMBASSADOR UNIT">
         <ProfileGrid data={SupData} />
     </PurpleSection>
 </StewardsLayout>

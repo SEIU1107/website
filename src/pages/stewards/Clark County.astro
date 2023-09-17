@@ -9,33 +9,6 @@ import Separator from "../../components/Stewards/Separator.astro";
 
 import type { Profile } from "../../Profile";
 
-import Michelle from "/src/images/stewards/CC/Michelle-1-1024x1024.png";
-import Debbie from "/src/images/stewards/CC/Debbie-1024x1024.png";
-const topData: Profile[] = [
-    {
-        name: "Michelle Maese",
-        profileImg: Michelle,
-        data: [
-            ["Title", "SEIU 1107 President"],
-            ["Unit", "Supervisory"],
-            ["Department", "DFS/Permanency"],
-            ["Phone", "(702) 755 - 7614"],
-            ["Email", "mmaese@seiunv.org"],
-        ],
-    },
-    {
-        name: "Debbie Springer",
-        profileImg: Debbie,
-        data: [
-            ["Title", "SEIU 1107 Executive VP Public Sector"],
-            ["Unit", "General"],
-            ["Department", "DAFS"],
-            ["Phone", "(702) 575 - 9596"],
-            ["Email", "dspringer@seiunv.org"],
-        ],
-    },
-];
-
 import Rick from "/src/images/stewards/CC/Rick.png";
 import Alexis from "/src/images/stewards/CC/Alexis.jpg";
 import Patricia from "/src/images/stewards/CC/Patricia.png";
@@ -588,9 +561,8 @@ const buttons = [
 ---
 
 <StewardsLayout title="Clark County">
-    <ButtonGrid buttons={buttons} />
-    <div class="flex justify-center m-auto">
-        <ProfileGrid data={topData} />
+    <div class="py-2">
+        <ButtonGrid buttons={buttons} />
     </div>
 
     <PurpleSection title="NON-SUPERVISORY UNIT">
