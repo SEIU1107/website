@@ -26,6 +26,7 @@ import Gersam from "/src/images/staff/Gersam.jpg";
 import Patti from "/src/images/staff/Patti.jpg";
 import Nathan from "/src/images/staff/Nathan.jpg";
 import LinkText from "../components/LinkText.astro";
+import Button from "../components/Button.astro";
 
 const profileData: Profile[] = [
     {
@@ -38,20 +39,47 @@ const profileData: Profile[] = [
         ],
     },
     {
+        name: "Jason Klumb",
+        profileImg: JasonK,
+        data: [
+            ["Title", "Representation Director"],
+            ["Cell", "702-533-6077"],
+            ["Email", "jklumb@seiunv.org"],
+        ],
+    },
+    {
+        name: "Jocelyn White",
+        profileImg: Jocelyn,
+        data: [
+            ["Title", "Contract Representative"],
+            ["Cell", "702-296-6416"],
+            ["Email", "jwhite@seiunv.org"],
+        ],
+    },
+    {
+        name: "Brenda Marzan",
+        profileImg: Brenda,
+        data: [
+            ["Title", "Contract Representative"],
+            ["Cell", "702-296-6470"],
+            ["Email", "bmarzan@seiunv.org"],
+        ],
+    },
+    {
+        name: "Jennifer Valdecantos",
+        data: [
+            ["Title", "Representation Administrative Assistant"],
+            ["Cell", "702-378-0030"],
+            ["Email", "jvaldecantos@seiunv.org"],
+        ],
+    },
+    {
         name: "Fabiola Morales",
         profileImg: Fabiola,
         data: [
             ["Title", "Organizing Director"],
             ["Cell", "702-378-7768"],
             ["Email", "fmorales@seiunv.org"],
-        ],
-    },
-    {
-        name: "Felipe Danglapin",
-        data: [
-            ["Title", "Director, Finance & Administration"],
-            ["Cell", "702-278-5509"],
-            ["Email", "fdanglapin@seiunv.org"],
         ],
     },
     {
@@ -65,21 +93,22 @@ const profileData: Profile[] = [
         ],
     },
     {
-        name: "Brenda Marzan",
-        profileImg: Brenda,
+        name: "Melissa Pinnick",
         data: [
-            ["Title", "Contract Representative"],
-            ["Cell", "702-296-6470"],
-            ["Email", "bmarzan@seiunv.org"],
+            ["Title", "Senior Campaign Coordinator, IU"],
+            ["Assignment", "Home Care"],
+            ["Cell", "202-823-1737"],
+            ["Email", "melissa.pinnick@seiu.org"],
         ],
     },
     {
-        name: "Jocelyn White",
-        profileImg: Jocelyn,
+        name: "Salah El-Amin",
+        profileImg: Salah,
         data: [
-            ["Title", "Contract Representative"],
-            ["Cell", "702-296-6416"],
-            ["Email", "jwhite@seiunv.org"],
+            ["Title", "Organizer"],
+            ["Assignment", "DOA & CC General Unit"],
+            ["Cell", "702-793-7057"],
+            ["Email", "selamin@seiunv.org"],
         ],
     },
     {
@@ -90,6 +119,15 @@ const profileData: Profile[] = [
             ["Assignment", "Mountain View Hospital"],
             ["Cell", "702-690-8046"],
             ["Email", "chilton@seiunv.org"],
+        ],
+    },
+    {
+        name: "Quentinn Macklin",
+        profileImg: Quentinn,
+        data: [
+            ["Title", "Organizer"],
+            ["Cell", "702-296-6409"],
+            ["Email", "qmacklin@seiunv.org"],
         ],
     },
     {
@@ -112,15 +150,6 @@ const profileData: Profile[] = [
         ],
     },
     {
-        name: "Quentinn Macklin",
-        profileImg: Quentinn,
-        data: [
-            ["Title", "Organizer"],
-            ["Cell", "702-296-6409"],
-            ["Email", "qmacklin@seiunv.org"],
-        ],
-    },
-    {
         name: "Rosy Salinas",
         profileImg: Rosy,
         data: [
@@ -128,35 +157,6 @@ const profileData: Profile[] = [
             ["Assignment", "Renown, NNRH, CC-GU, SNHD, SNRHA"],
             ["Cell", "702-274-3171"],
             ["Email", "rsalinas@seiunv.org"],
-        ],
-    },
-    {
-        name: "Salah El-Amin",
-        profileImg: Salah,
-        data: [
-            ["Title", "Organizer"],
-            ["Assignment", "DOA & CC General Unit"],
-            ["Cell", "702-793-7057"],
-            ["Email", "selamin@seiunv.org"],
-        ],
-    },
-    {
-        name: "Melissa Pinnick",
-        data: [
-            ["Title", "IU Organizer"],
-            ["Assignment", "Home Care"],
-            ["Cell", "202-823-1737"],
-            ["Email", "melissa.pinnick@seiu.org"],
-        ],
-    },
-    {
-        name: "Carlo Enterline",
-        profileImg: Carlo,
-        data: [
-            ["Title", "Organizer-In-Training"],
-            ["Assignment", "LVCVA, DFS, WRD, CC-GU,RTC"],
-            ["Cell", "702-344-3774"],
-            ["Email", "centerline@seiunv.org"],
         ],
     },
     {
@@ -169,29 +169,20 @@ const profileData: Profile[] = [
         ],
     },
     {
-        name: "Cody Hoskins",
-        profileImg: Cody,
+        name: "Felipe Danglapin",
         data: [
-            ["Title", "Political Director"],
-            ["Cell", "702-296-6414"],
-            ["Email", "choskins@seiunv.org"],
+            ["Title", "Director, Finance & Administration"],
+            ["Cell", "702-278-5509"],
+            ["Email", "fdanglapin@seiunv.org"],
         ],
     },
     {
-        name: "Jason Klumb",
-        profileImg: JasonK,
+        name: "Patti Curry",
+        profileImg: Patti,
         data: [
-            ["Title", "Representation Director"],
-            ["Cell", "702-533-6077"],
-            ["Email", "jklumb@seiunv.org"],
-        ],
-    },
-    {
-        name: "Jennifer Valdecantos",
-        data: [
-            ["Title", "Representation Administrative Assistant"],
-            ["Cell", "702-378-0030"],
-            ["Email", "jvaldecantos@seiunv.org"],
+            ["Title", "Database and Finance Coordinator"],
+            ["Cell", "775-870-0604"],
+            ["Email", "pcurry@seiunv.org"],
         ],
     },
     {
@@ -222,12 +213,21 @@ const profileData: Profile[] = [
         ],
     },
     {
-        name: "Patti Curry",
-        profileImg: Patti,
+        name: "Nathan Mactal",
+        profileImg: Nathan,
         data: [
-            ["Title", "Database and Finance Coordinator"],
-            ["Cell", "775-870-0604"],
-            ["Email", "pcurry@seiunv.org"],
+            ["Title", "Data & Technology Specialist"],
+            ["Cell", "702-757-7191"],
+            ["Email", "nmactal@seiunv.org"],
+        ],
+    },
+    {
+        name: "Cody Hoskins",
+        profileImg: Cody,
+        data: [
+            ["Title", "Political Director"],
+            ["Cell", "702-296-6414"],
+            ["Email", "choskins@seiunv.org"],
         ],
     },
     {
@@ -241,18 +241,9 @@ const profileData: Profile[] = [
     {
         name: "Alicia Baker",
         data: [
-            ["Assignment", "Education Fund"],
+            ["Title", "Regional Coordinator, Education Fund"],
             ["Cell", "(323) 363-4632"],
             ["Email", "abaker@theedfund.org"],
-        ],
-    },
-    {
-        name: "Nathan Mactal",
-        profileImg: Nathan,
-        data: [
-            ["Title", "Data & Technology Specialist"],
-            ["Cell", "702-757-7191"],
-            ["Email", "nmactal@seiunv.org"],
         ],
     },
 ];
@@ -273,4 +264,7 @@ const profileData: Profile[] = [
         </p>
     </div>
     <ProfileGrid data={profileData} />
+    <div class="max-w-lg flex m-auto justify-center">
+        <Button href="/careers" text="View Careers" />
+    </div>
 </Layout>

@@ -3,6 +3,7 @@ import HeadingTitle from "../components/HeadingTitle.astro";
 import Layout from "../layouts/Layout.astro";
 import ProfileCardBig from "../components/ExecutiveBoard/ExecutiveBoardProfileCardBig.astro";
 import ProfileCardSmall from "../components/ExecutiveBoard/ExecutiveBoardProfileCardSmall.astro";
+import PlaceholderProfileImg from "../images/PlaceholderProfileImg.png";
 
 // Big Profiles
 import Yarleny from "/src/images/stewards/UMC/Yarleny-1024x1024.png";
@@ -113,35 +114,48 @@ const smallProfPeopleData = [
         shop: "University Medical Center",
     },
     {
+        name: "Danielle Leland",
+        shop: "Regional Transportation Commission",
+    },
+    {
         profileImg: Karla,
         name: "Karla Nolan",
         shop: "Las Vegas Convention and Visitors Authority (LVCVA)",
     },
-    { profileImg: Rick, name: "Rick Prieto", shop: "Clark County" },
-    { profileImg: Erika, name: "Erika Watanabe", shop: "Sunrise Hospital" },
+    {
+        profileImg: Rick,
+        name: "Rick Prieto",
+        shop: "Clark County",
+    },
+    {
+        name: "Lisa Villasenor",
+        shop: "Educare",
+    },
+    {
+        profileImg: Erika,
+        name: "Erika Watanabe",
+        shop: "Sunrise Hospital",
+    },
 ];
 ---
 
 <Layout title="SEIU Local 1107 Executive Board">
     <HeadingTitle text="Meet the Local 1107 Executive Board" />
-    <div class="py-2.5 m-auto max-w-screen-lg">
-        <p class="text-center font-Roboto text-black text-xl py-2.5">
+    <div class="py-2 m-auto max-w-screen-lg">
+        <p class="text-center font-Roboto text-black text-xl py-2">
             SEIU Local 1107 is committed to democracy both inside and outside of
             our union. Our Executive Board is elected by fellow union members,
-            and their role to carry out the mission and work of our union. Some
-            of the duties are setting strategic goals, creating the budget, and
-            authoring policies.
+            and their role is to carry out the mission and work of our union.
         </p>
-        <p class="text-center font-Roboto text-black text-md">
-            Board members are elected to three-year terms, and the process is
-            outlined in Article VII of our union
-            <LinkText href="/constitution/">
-                <b>Constitution & Bylaws</b>
-            </LinkText>. The board has five officers: Executive Director,
-            President, Secretary-Treasurer, Vice President Public Sector, and
-            Vice President Private Sector. At-large members are elected based on
-            workplace, with every area earning at least one spot and larger
-            workplaces earning more.
+        <p class="text-center font-Roboto text-black text-xl py-2">
+            <b>Our Mission</b>
+            <br />
+            <i
+                >We are SEIU 1107, a community of members on a mission to unite
+                all working people for future generations by leading the path to
+                improve society with a diverse, effective, political, and just
+                organization.</i
+            >
         </p>
     </div>
     <div class="flex justify-center content-center m-auto max-w-screen-xl">
@@ -167,7 +181,7 @@ const smallProfPeopleData = [
             {
                 smallProfPeopleData.map((person) => (
                     <ProfileCardSmall
-                        profileImg={person.profileImg}
+                        profileImg={person.profileImg ?? PlaceholderProfileImg}
                         name={person.name}
                         shop={person.shop}
                     />
@@ -175,6 +189,18 @@ const smallProfPeopleData = [
             }
         </div>
     </div>
+    <p
+        class="text-center font-Roboto text-black text-md max-w-screen-lg m-auto"
+    >
+        Board members are elected to three-year terms, and the process is
+        outlined in Article VII of our union
+        <LinkText href="/constitution/">
+            <b>Constitution & Bylaws</b>
+        </LinkText>. The board has five officers: Executive Director, President,
+        Secretary-Treasurer, Vice President Public Sector, and Vice President
+        Private Sector. At-large members are elected based on workplace, with
+        every area earning at least one spot and larger workplaces earning more.
+    </p>
 </Layout>
 
 <style>

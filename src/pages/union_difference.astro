@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 import ImageCarousel from "../components/ImageCarousel.svelte";
 import WhyJoinCards from "../components/WhyJoinCards.astro";
+import Button from "../components/Button.astro";
 
 const paragraphClass = "font-Roboto text-md";
 
@@ -60,7 +61,13 @@ const whyJoin = [
         </p>
         <div class="flex flex-row">
             <div class="hidden md:inline-block max-w-[55%] px-2.5">
-                <ImageCarousel client:only="svelte" images={images} />
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/0KjQpKkYfFQ?si=W3AKbz7Z80BmUBaQ"
+                    title="YouTube video player"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
             <div class="justify-end px-2.5">
                 <p class={paragraphClass}>
@@ -96,6 +103,12 @@ const whyJoin = [
             </div>
         </div>
     </div>
+    <div class="flex m-auto py-1.5 justify-center md:hidden">
+        <Button
+            text="Learn More On Youtube"
+            href="https://youtu.be/0KjQpKkYfFQ?feature=shared"
+        />
+    </div>
     <div
         class="flex flex-col max-w-screen-xl align-middle mx-[2.5vw] lg:mx-auto"
     >
@@ -104,6 +117,13 @@ const whyJoin = [
         >
             Why You Should Join a Union
         </div>
+    </div>
+    <div class="flex m-auto justify-center flex-col max-w-[min(640px,_90vw)]">
+        <Button
+            text="Join Today!"
+            href="/join/"
+            color="bg-purple-primary hover:bg-purple-darker active:bg-purple-darkest text-white"
+        />
     </div>
     <WhyJoinCards />
 </Layout>
