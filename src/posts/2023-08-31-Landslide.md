@@ -10,7 +10,7 @@ author: SEIU
 
 <br>
 
-<img src="/src/images/post_imgs/2023/election-graphic-v4.jpg" alt="Election Graphic" width="40%" style="float: left; padding-right: 20px; ">
+<img src="/post_imgs/2023/election-graphic-v4.jpg" alt="Election Graphic" width="40%" style="float: left; padding-right: 20px; ">
 
 The explosion of organizing echoes a national trend in which [67% of Americans now approve of labor unions](https://news.gallup.com/poll/510281/unions-strengthening.aspx), at a time when the middle class is shrinking and workers are struggling with severe inequality, inflation and global economic changes. Tens of thousands of workers – including at corporate giants such as Starbucks, UPS and Amazon – have been standing up and demanding better pay, benefits and working conditions.
 
