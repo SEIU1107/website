@@ -1,6 +1,6 @@
 ---
 title: Over 1,000 Nevada Home Care Workers Take Part in Landslide Union Elections in one of the Biggest Organizing Drives in Recent History
-featuredImg: '/src/images/post_imgs/2023/election-graphic-v4.jpg'
+featuredImg: '/post_imgs/2023/election-graphic-v4.jpg'
 slug: '2023-08-31-Landslide'
 excerpt: In one of the biggest organizing drives in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need.
 date: 2023-08-31

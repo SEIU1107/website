@@ -1,6 +1,6 @@
 ---
 title: 'Filipino American Leaders Call for Justice and Proactive Safety Measures for Elderly Man Who Was Attacked, and Urgent Steps to End Asian Hate'
-featuredImg: '/src/images/post_imgs/Stop-Asian-Hate-2023.png'
+featuredImg: '/post_imgs/2023/Stop-Asian-Hate-2023.png'
 slug: '2023-06-14-Filipino-American-Leaders-Call-for-Justice'
 excerpt: Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes. 
 date: 2023-06-14

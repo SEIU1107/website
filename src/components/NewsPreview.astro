@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import Purple from "/src/images/purple_transparent.png";
 
-import Placeholder from '../images/PlaceholderProfileImg.png';
+import Placeholder from "../images/PlaceholderProfileImg.png";
 
 export interface Props {
     featuredImg: string /* Picture for the preview */;
@@ -28,7 +28,7 @@ const {
     <a href={"/" + url}>
         <div class="relative group rounded-lg z-6">
             <img
-                src={featuredImg ? featuredImg : Placeholder}
+                src={featuredImg}
                 alt="Featured Image"
                 class="rounded-t-lg aspect-[3/2] object-cover transition grayscale-0 group-hover:grayscale duration-300"
             />
