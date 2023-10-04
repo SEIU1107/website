@@ -2,116 +2,9 @@
 import { Image } from "astro:assets";
 import logo from "../../images/seiu-WEBSITE-LOGO-1t.png";
 import Dropdown from "../Header/Dropdown.astro";
-import Hamburger from "../Header/Hamburger.astro";
+import Menu from "./HamburgerMenu/Menu.svelte";
 
-/* About Us Dropdown */
-const dropdownAboutUs = [
-    {
-        pageName: "Why a Union?",
-        href: "/union_difference/",
-    },
-    {
-        pageName: "Executive Board",
-        href: "/executive_board",
-    },
-    {
-        pageName: "Staff",
-        href: "/staff_page",
-    },
-    {
-        pageName: "Contact Us",
-        href: "/contact_us/",
-    },
-    {
-        pageName: "Work with Us",
-        href: "/careers/",
-    },
-];
-
-/* My Union */
-const myUnion = [
-    {
-        pageName: "My Stewards",
-        href: "/stewards",
-    },
-    {
-        pageName: "My Member Benefits",
-        href: "https://www.seiumb.com/",
-    },
-    {
-        pageName: "Constitution & Bylaws",
-        href: "/constitution",
-    },
-    {
-        pageName: "Committees & Caucus",
-        href: "/",
-    },
-    {
-        pageName: "Training & Education",
-        href: "/",
-    },
-];
-
-const getInvolved = [
-    {
-        pageName: "Events Calendar",
-        href: "/events_calendar",
-    },
-    {
-        pageName: "Know Your Rights",
-        href: "/",
-    },
-    {
-        pageName: "Power of Politics",
-        href: "/",
-    },
-    {
-        pageName: "Communities United",
-        href: "/",
-    },
-    {
-        pageName: "Home Care Workers United",
-        href: "/",
-    },
-];
-
-const updatesPages = [
-    {
-        pageName: "Press Releases",
-        href: "/",
-    },
-    {
-        pageName: "In The News",
-        href: "/",
-    },
-];
-
-const all_dropdowns = [
-    {
-        title: "About Us",
-        titleHref: "/about_us",
-        content: dropdownAboutUs,
-    },
-    {
-        title: "My Union",
-        titleHref: "/",
-        content: myUnion,
-    },
-    {
-        title: "Get Involved",
-        titleHref: "/",
-        content: getInvolved,
-    },
-    {
-        title: "1107 Updates",
-        titleHref: "/news_updates",
-        content: updatesPages,
-    },
-    {
-        title: "Join Now!",
-        titleHref: "/join",
-    },
-];
+import { all_dropdowns } from "./NavData.ts";
 ---
 
 <!-- Non-Mobile (Desktop, larger screens) -->
@@ -139,12 +32,10 @@ const all_dropdowns = [
 </header>
 
 <!-- Mobile (smaller screens) -->
-<header class="h-32 bg-purple-primary block md:hidden">
-    <a href="/">
-        <Image class="pt-10 w-24 m-auto" src={logo} alt="SEIU Local 1107" />
-    </a>
+<header class="h-32 bg-purple-primary flex flex-row m-auto md:hidden">
+    <Menu client:visible />
 
-    <div>
-        <Hamburger dropdowns={all_dropdowns} />
+    <div class="absolute w-screen">
+        <Image class="pt-10 w-24 m-auto" src={logo} alt="SEIU Local 1107" />
     </div>
 </header>
