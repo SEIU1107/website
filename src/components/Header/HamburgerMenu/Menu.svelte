@@ -12,6 +12,7 @@
     import { all_dropdowns } from "../NavData.ts";
 
     let activeMenu = 'main';
+    let whiteText = "text-white hover:underline active:no-underline";
   </script>
   
   <header class="relative z-20">
@@ -34,8 +35,8 @@
                 </button>
                 {:else}
                 <button 
-                class="text-gray-50 h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 active:bg-purple-800 hover:underline active:no-underline">
-                    <a href={dropdown.titleHref}>{dropdown.title}</a>
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 active:bg-purple-900 hover:underline active:no-underline">
+                    <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
                 </button>
                 {/if}
                 {/each}    
@@ -51,14 +52,14 @@
                     Back
                 </button>
                 <button 
-                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-gray-50 bg-purple-950 active:bg-purple-800 hover:underline active:no-underline">
-                    <a href={dropdown.titleHref}>{dropdown.title}</a>
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 active:bg-purple-800 hover:underline active:no-underline">
+                    <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
                 </button>
                 {#if dropdown.content}
                 {#each dropdown.content as content}
                 <button 
-                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-gray-50 bg-purple-950 active:bg-purple-800 hover:underline active:no-underline">
-                    <a href={content.href}>{content.pageName}</a>
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-purple-950 active:bg-purple-800">
+                    <a class={whiteText} href={content.href}>{content.pageName}</a>
                 </button>
                 {/each}
                 {/if}
