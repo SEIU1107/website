@@ -1,0 +1,119 @@
+---
+import HeadingTitle from "../components/HeadingTitle.astro";
+import Layout from "../layouts/Layout.astro";
+import InfoCardGridLayout from "../components/InfoCardGridLayout.astro";
+import InfoCard from "../components/InfoCard.astro";
+import LinkText from "../components/LinkText.astro";
+import { Image } from "astro:assets";
+
+import bannerImg from "/src/images/homecare/banner.png";
+
+import Michelly from "/src/images/homecare/Michelly-Franco.jpg";
+---
+
+<Layout title="Homecare Workers United!" centered="true">
+    <HeadingTitle
+        text="Nevada Home Care Workers Are Winning a Better Future!"
+    />
+
+    <h2
+        class="pb-2.5 text-center text-purple-primary italic font-Trebuchet text-3xl m-auto"
+    >
+        By uniting together, caregivers have been able to achieve historic
+        change for themselves, their families and their clients.
+    </h2>
+    <Image
+        class="hidden lg:flex m-auto"
+        src={bannerImg}
+        alt="Homecare Workers United!"
+    />
+    <InfoCardGridLayout
+        styling="grid grid-cols-1 lg:grid-cols-2 gap-0 py-0 max-auto content-center"
+    >
+        <InfoCard>
+            If you're a non-union home care worker and want to join our
+            movement, fill out a union card <LinkText
+                href="https://bit.ly/nvhomecaresignup"
+            >
+                here.
+            </LinkText>
+        </InfoCard>
+        <InfoCard>
+            If you're a home care worker who's a member of our union and want
+            more info or to get involved, call our hotline at 702-755-4307.
+        </InfoCard>
+    </InfoCardGridLayout>
+
+    <div class="flex flex-col m-auto max-w-screen-lg">
+        <div>
+            <Image
+                src={Michelly}
+                alt="Dawn"
+                class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
+            />
+            <p class="py-2">
+                Home care workers are absolutely essential to seniors and people
+                with disabilities, empowering them to live in their homes with
+                well-being, safety and dignity. But despite their essential
+                jobs, home care workers have been treated as dispensable for far
+                too long.
+            </p>
+
+            <p class="py-2">
+                Wages have remained stagnant at around $11 an hour for over a
+                decade and home care funding has remained basically unchanged
+                for 20 years. Poverty pay and a lack of basic benefits have
+                created a crisis-level worker shortage at a time when demand is
+                soaring because Nevada's population is aging faster than the
+                rest of the country.
+            </p>
+            <p class="py-2">
+                These problems spurred home care workers to start organizing
+                their union several years ago. Caregivers began mobilizing
+                throughout the state, speaking out powerfully in the press and
+                on social media, and generating support among community allies.
+                In 2021, workers effectively advocated to pass state Senate Bill
+                340, which established a first-in-the nation Home Care
+                Employment Standards Board. Workers pushed the Standards Board
+                to pass a set of policy recommendations, including a minimum
+                wage and funding increase. Then, workers again directly lobbied
+                their legislators to pass those recommendations as part of the
+                2023 state budget.
+            </p>
+            <p class="py-2">
+                Now, thousands of home care workers have been voting in
+                landslide union elections to officially join SEIU Local 1107 and
+                make sure their employers invest the increased state funding in
+                better pay, benefits and client care!
+            </p>
+        </div>
+    </div>
+    <p class="py-2 flex m-auto text-xl font-bold">Read More</p>
+    <div class="flex flex-row max-w-xl m-auto">
+        <div class="flex flex-col">
+            <LinkText
+                href="https://www.reviewjournal.com/business/nevada-workers-in-growing-health-care-industry-are-unionizing-2896793/"
+            >
+                <b
+                    >Nevada workers in growing health care industry are
+                    unionizing</b
+                >
+            </LinkText>
+            <p>Las Vegas Review-Journal</p>
+            <p>Aug. 31, 2023</p>
+        </div>
+
+        <div class="flex flex-col">
+            <LinkText
+                href="https://lasvegassun.com/news/2023/sep/10/celebrate-historic-victories-for-good-jobs-and-qua/"
+            >
+                <b
+                    >Celebrate historic victories for good jobs and quality
+                    services</b
+                >
+            </LinkText>
+            <p>Las Vegas Sun</p>
+            <p>Sept. 10, 2023</p>
+        </div>
+    </div>
+</Layout>

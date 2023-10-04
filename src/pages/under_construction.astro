@@ -1,0 +1,33 @@
+---
+import { Image } from "astro:assets";
+import HeadingTitle from "../components/HeadingTitle.astro";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+import underConstruction from "/src/images/under_construction.png";
+---
+
+<Layout title="Under Construction" centered="true">
+    <HeadingTitle text="This Page is Under Construction!" />
+    <div class="flex flex-col justify-center m-auto lg:flex-row">
+        <Image
+            class="max-w-lg"
+            src={underConstruction}
+            alt="Purple and Yellow hard at work!"
+        />
+        <div class="flex flex-col justify-center px-2.5 m-auto">
+            <p class="text-2xl font-bold flex m-auto">
+                SEIU 1107's website is getting an upgrade!
+            </p>
+            <p class="flex m-auto max-w-md py-2">
+                SEIU 1107 is curently in the process of overhauling its' entire
+                website from scratch! As of right now, this page is currently a
+                work in progress. However, many other pages are up and running.
+                Check back again soon for more updates!
+            </p>
+            <div class="max-w-md">
+                <Button text="Back to Homepage" href="/" />
+            </div>
+        </div>
+    </div>
+</Layout>

@@ -17,13 +17,17 @@ const dropdownAboutUs = [
         href: "/contact_us/",
     },
     {
-        pageName: "Work with Us",
+        pageName: "Careers",
         href: "/careers/",
     },
 ];
 
 /* My Union */
 const myUnion = [
+    {
+        pageName: "My Contract",
+        href: "/under_construction"
+    },
     {
         pageName: "My Stewards",
         href: "/stewards",
@@ -38,11 +42,11 @@ const myUnion = [
     },
     {
         pageName: "Committees & Caucus",
-        href: "/",
+        href: "/under_construction",
     },
     {
         pageName: "Training & Education",
-        href: "/",
+        href: "/under_construction",
     },
 ];
 
@@ -53,30 +57,30 @@ const getInvolved = [
     },
     {
         pageName: "Know Your Rights",
-        href: "/",
+        href: "/under_construction",
     },
     {
         pageName: "Power of Politics",
-        href: "/",
+        href: "/under_construction",
     },
     {
         pageName: "Communities United",
-        href: "/",
+        href: "/under_construction",
     },
     {
         pageName: "Home Care Workers United",
-        href: "/",
+        href: "/homecare_workers_united",
     },
 ];
 
 const updatesPages = [
     {
         pageName: "Press Releases",
-        href: "/",
+        href: "/under_construction",
     },
     {
         pageName: "In The News",
-        href: "/",
+        href: "/under_construction",
     },
 ];
 
@@ -88,12 +92,12 @@ export const all_dropdowns = [
     },
     {
         title: "My Union",
-        titleHref: "/",
+        titleHref: "/under_construction",
         content: myUnion,
     },
     {
         title: "Get Involved",
-        titleHref: "/",
+        titleHref: "/under_construction",
         content: getInvolved,
     },
     {

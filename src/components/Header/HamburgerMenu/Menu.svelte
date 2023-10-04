@@ -22,7 +22,7 @@
   
     {#if open}
 
-        <div class="max-w-screen-xl bg-gray-200 p-5 m-5 rounded-md shadow-sm shadow-black flex-col" transition:fly={{ y: -200, duration: 400 }}>
+        <div class="max-w-screen-xl bg-gray-200 p-5 m-5 rounded-md shadow-sm shadow-black" transition:fly={{ y: -200, duration: 400 }}>
 
 
             {#if activeMenu === 'main'}
@@ -30,12 +30,12 @@
                 {#each all_dropdowns as dropdown}
                 {#if dropdown.content}
                 <button on:click={() => activeMenu = dropdown.title} transition:fly={{ y: -200, duration: 400 }} 
-                    class="h-12 grid grid-cols-1 gap-3 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-purple-700 active:bg-gray-300 hover:underline active:no-underline">
+                    class="h-12 grid grid-cols-1 gap-3 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-purple-700 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
                     {dropdown.title}
                 </button>
                 {:else}
                 <button 
-                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 active:bg-purple-900 hover:underline active:no-underline">
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 hover:bg-purple-900 hover:underline active:no-underline active:bg-purple-950">
                     <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
                 </button>
                 {/if}
@@ -48,17 +48,17 @@
             <div class="text-lg" in:fly={{ x: 300 }} out:fly={{ x: 300 }}>
                 <button 
                 on:click={() => activeMenu = 'main'} 
-                class="h-12 flex flex-col py-2 my-1 text-2xl font-bold align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-black active:bg-gray-300 hover:underline active:no-underline">
+                class="h-12 flex flex-col py-2 my-1 text-2xl font-bold align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-black hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
                     Back
                 </button>
                 <button 
-                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 active:bg-purple-800 hover:underline active:no-underline">
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 hover:bg-purple-800 active:bg-purple-950 hover:underline active:no-underline">
                     <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
                 </button>
                 {#if dropdown.content}
                 {#each dropdown.content as content}
                 <button 
-                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-purple-950 active:bg-purple-800">
+                class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-purple-950 hover:bg-purple-800 active:bg-purple-950">
                     <a class={whiteText} href={content.href}>{content.pageName}</a>
                 </button>
                 {/each}
