@@ -9,17 +9,19 @@ import underConstruction from "/src/images/under_construction.png";
 
 <Layout title="Under Construction" centered="true">
     <HeadingTitle text="This Page is Under Construction!" />
-    <div class="flex flex-col justify-center m-auto lg:flex-row">
+    <div
+        class="flex flex-col justify-center m-auto max-w-screen-sm lg:max-w-screen-lg lg:flex-row"
+    >
         <Image
-            class="max-w-lg"
+            class="max-w-sm lg:max-w-lg"
             src={underConstruction}
             alt="Purple and Yellow hard at work!"
         />
-        <div class="flex flex-col justify-center px-2.5 m-auto">
+        <div class="flex flex-col justify-center max-w-sm m-auto">
             <p class="text-2xl font-bold flex m-auto">
                 SEIU 1107's website is getting an upgrade!
             </p>
-            <p class="flex m-auto max-w-md py-2">
+            <p class="flex m-auto max-w-sm py-2">
                 SEIU 1107 is curently in the process of overhauling its' entire
                 website from scratch! As of right now, this page is currently a
                 work in progress. However, many other pages are up and running.

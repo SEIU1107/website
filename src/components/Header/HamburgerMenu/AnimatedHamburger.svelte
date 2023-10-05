@@ -13,7 +13,7 @@
       class:open
       viewBox="0 0 100 100"
       fill="none"
-      stroke="#FECD01"
+      stroke="#582C83"
       stroke-width="5"
       {width}
     >
@@ -44,7 +44,7 @@
     svg {
       transition: transform var(--transition-duration);
     }
-  
+    
     .top {
       stroke-dasharray: 40 160;
       transition: stroke-dashoffset var(--transition-duration);
@@ -72,4 +72,6 @@
     .open .middle {
       transform: rotate(90deg);
     }
+
+
   </style>
