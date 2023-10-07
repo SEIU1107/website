@@ -5,6 +5,7 @@
 
     export let open = false
     export let hamburgerShadow = false;
+
     export let onClick = (): void => {
       open = !open
       hamburgerShadow = !hamburgerShadow
@@ -17,22 +18,20 @@
     let whiteText = "text-white hover:underline active:no-underline";
 </script>
  
-<div class="fixed bg-gray-50 ml-2 rounded-3xl justify-between shadow-md shadow-black z-20" class:open class:hamburgerShadow>
+<div class="fixed bg-gray-50 ml-2 rounded-3xl right-5 shadow-md shadow-black z-20" class:hamburgerShadow>
     <AnimatedHamburger {open} {onClick} />
 </div>
 
-<div>
-
-</div>
-
-<aside class="fixed overflow-hidden min-w-[3/5] max-w-2xl h-fit bg-gray-50 rounded-e-lg shadow-md shadow-black z-10" class:open transition:slide>
-    <div class="flex justify-start mx-6 mt-20 mb-2">
+<aside class="fixed overflow-hidden max-w-2xl h-fit bg-gray-50 rounded-l-lg shadow-md shadow-black z-10" class:open transition:slide>
+    <div class="flex justify-end mx-6 mt-20 mb-2">
         {#if activeMenu === 'main'}
         <div class="text-2xl" in:fly={{ x: -300 }} >
             {#each all_dropdowns as dropdown}
             {#if dropdown.content}
-            <button on:click={() => activeMenu = dropdown.title} transition:fly={{ y: -200, duration: 200 }} 
-                class="h-12 grid grid-cols-1 gap-3 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-purple-700 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
+            <button 
+            on:click={() => activeMenu = dropdown.title} 
+            transition:fly={{ y: -200, duration: 200 }}
+            class="h-12 grid grid-cols-1 text-left gap-3 align-middle w-full rounded-md transition-colors ease-in-out duration-300 p-2 text-purple-700 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
                 {dropdown.title}
             </button>
             {:else}
@@ -78,13 +77,13 @@
 <style>
 
     aside {
-		left: -100%;
-		transition: left 0.3s ease-in-out;
+		right: -100%;
+		transition: right 0.3s ease-in-out;
         overflow-y: hidden;
 	}   
 	
 	.open {
-		left: 0;;
+		right: 0;
 	}
 
     .hamburgerShadow {

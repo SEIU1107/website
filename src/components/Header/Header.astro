@@ -33,10 +33,6 @@ import { all_dropdowns } from "./NavData.ts";
 
 <!-- Mobile (smaller screens) -->
 <header class="h-32 bg-purple-primary flex flex-row m-auto md:hidden">
-    <div class="relative top-5">
-        <Menu client:visible />
-    </div>
-
     <div class="absolute w-screen">
         <a href="/"
             ><Image
@@ -45,5 +41,8 @@ import { all_dropdowns } from "./NavData.ts";
                 alt="SEIU Local 1107"
             /></a
         >
+    </div>
+    <div class="relative top-5">
+        <Menu client:visible />
     </div>
 </header>
