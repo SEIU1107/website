@@ -4,6 +4,7 @@
     --color-secondary: #8d30ee;
     --color-tertiary: #FECD01;
     --color-lavender: #EADEF7;
+    --color-dark-mode: #18181B;
 }
 
 *,
@@ -22,7 +23,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 16px;
     line-height: 1.5;
-    background: var(--color-lavender);
+    background: var(--color-dark-mode);
     color: #333;
 }
 
