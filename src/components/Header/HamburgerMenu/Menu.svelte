@@ -31,12 +31,12 @@
             <button 
             on:click={() => activeMenu = dropdown.title} 
             transition:fly={{ y: -200, duration: 200 }}
-            class="h-12 grid grid-cols-1 text-left gap-3 align-middle w-full rounded-md transition-colors ease-in-out duration-300 p-2 text-purple-700 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
+            class="h-12 grid grid-cols-1 text-left gap-3 align-middle w-full rounded-md transition-colors ease-in-out duration-300 p-2 text-honey-flower-800 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
                 {dropdown.title}
             </button>
             {:else}
             <button 
-            class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 hover:bg-purple-900 hover:underline active:no-underline active:bg-purple-950">
+            class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-honey-flower-950 hover:bg-honey-flower-950 hover:underline active:no-underline active:bg-honey-flower-950">
                 <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
             </button>
             {/if}
@@ -53,13 +53,13 @@
             Back
         </button>
         <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-purple-950 hover:bg-purple-800 active:bg-purple-950 hover:underline active:no-underline">
+        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-honey-flower-950 hover:bg-honey-flower-800 active:bg-honey-flower-950 hover:underline active:no-underline">
             <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
         </button>
         {#if dropdown.content}
         {#each dropdown.content as content}
         <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-purple-950 hover:bg-purple-800 active:bg-purple-950">
+        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-honey-flower-950 hover:bg-honey-flower-800 active:bg-honey-flower-950">
             <a class={whiteText} href={content.href}>{content.pageName}</a>
         </button>
         {/each}

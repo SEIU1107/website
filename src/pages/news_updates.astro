@@ -6,14 +6,14 @@ import HeadingTitle from "../components/HeadingTitle.astro";
 const posts = await Astro.glob("../posts/*.md");
 
 const years = posts.reduce((acc, post) => {
-    acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(function (
-        el
-    ) {
-        return (
-            new Date(el.frontmatter.date).getFullYear() ===
-            new Date(post.frontmatter.date).getFullYear()
-        );
-    });
+    acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(
+        function (el) {
+            return (
+                new Date(el.frontmatter.date).getFullYear() ===
+                new Date(post.frontmatter.date).getFullYear()
+            );
+        }
+    );
     return acc;
 }, {});
 
@@ -37,7 +37,7 @@ const sorted_years = Object.keys(years)
                         <h1
                             class="
                 m-auto
-                text-purple-primary text-5xl text-center
+                text-honey-flower-800 text-5xl text-center
                 italic font-Trebuchet font-bold"
                         >
                             {year}

@@ -47,7 +47,7 @@ h1,
 h2,
 h3 {
     font-family: "Trebuchet MS", serif;
-    color: #582C83;
+    color: var(--color-primary);
     line-height: 1.2;
 }
 

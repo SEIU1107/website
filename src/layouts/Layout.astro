@@ -1,7 +1,6 @@
 ---
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer.astro";
-import "../styles/global.css";
 export interface Props {
     title?: string;
     centered?: string;
@@ -24,7 +23,9 @@ const { title = "SEIU Local 1107", centered = "false" } = Astro.props as Props;
         />
         <title>{title}</title>
     </head>
-    <body>
+    <body
+        class="font-Roboto leading-6 text-base text-neutral-800 bg-honey-flower-100"
+    >
         <Header />
         <div class="flex min-h-[100vh] flex-col justify-between">
             {
