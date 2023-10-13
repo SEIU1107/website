@@ -14,7 +14,7 @@ const { title = "Dropdown", titleHref = "", content } = Astro.props as Props;
 
 /* Tailwind Classes */
 export const clickable =
-    "text-white p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow-primary active:bg-yellow-darker hover:text-honey-flower-950 active:no-underline";
+    "text-white bg-honey-flower-950 transition ease-in-out duration-250 p-4 text-base border-none cursor-pointer hover:underline hover:bg-yellow-primary active:bg-yellow-darker hover:text-honey-flower-950 active:no-underline";
 ---
 
 <div class="group relative inline-block z-50">
@@ -31,10 +31,10 @@ export const clickable =
     }
     {
         content ? (
-            <div class=" hidden absolute text-white bg-honey-flower-950 min-w-[160px] shadow-lg z-1 group-hover:block">
+            <div class="hidden absolute text-white bg-honey-flower-950 min-w-[160px] shadow-lg z-1 group-hover:block">
                 {content.map((content) => (
                     <a
-                        class="bg-honey-flower-950 text-white p-4 text-base block hover:underline hover:bg-yellow-primary hover:text-honey-flower-950 active:no-underline"
+                        class="bg-honey-flower-950 text-white p-4 text-base block transition ease-in-out duration-250 hover:underline hover:bg-yellow-primary hover:text-honey-flower-950 active:no-underline"
                         href={content.href}
                     >
                         {content.pageName}

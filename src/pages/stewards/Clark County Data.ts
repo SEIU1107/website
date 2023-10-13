@@ -69,6 +69,16 @@ export const dataGeneralUnit: Profile[] = [
         ],
     },
     {
+        name: "Andra Johnson",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "Treasurer's Office"],
+            ["Phone", "(702) 455 - 2109"],
+            ["Email", "andra.johnson2019@gmail.com"],
+        ],
+    },
+    {
         name: "Anissa Simmons",
         profileImg: Anissa,
         data: [
@@ -97,6 +107,16 @@ export const dataGeneralUnit: Profile[] = [
             ["Department", "Building & Fire Prevention IT"],
             ["Phone", "(702) 285-2579"],
             ["Email", "brianlenihanpe@gmail.com"],
+        ],
+    },
+    {
+        name: "Brittany Randall",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "Treasurer's Office"],
+            ["Phone", "(702) 371 - 0922"],
+            ["Email", "brittanyrandall6@yahoo.com"],
         ],
     },
     {

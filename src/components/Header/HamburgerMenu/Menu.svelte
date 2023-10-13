@@ -23,15 +23,15 @@
 </div>
 
 <aside class="fixed overflow-hidden max-w-2xl h-fit bg-gray-50 rounded-l-lg shadow-md shadow-black z-10" class:open transition:slide>
-    <div class="flex justify-end mx-6 mt-20 mb-2">
+    <div class="flex justify-end mx-2 mt-20 mb-2">
         {#if activeMenu === 'main'}
-        <div class="text-2xl" in:fly={{ x: -300 }} >
+        <div class="text-2xl m-2" in:fly={{ x: -300 }} >
             {#each all_dropdowns as dropdown}
             {#if dropdown.content}
             <button 
             on:click={() => activeMenu = dropdown.title} 
             transition:fly={{ y: -200, duration: 200 }}
-            class="h-12 grid grid-cols-1 text-left gap-3 align-middle w-full rounded-md transition-colors ease-in-out duration-300 p-2 text-honey-flower-800 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
+            class="flex flex-col h-12 text-left align-middle w-full p-2 m-2 rounded-md transition-all ease-in-out duration-300 text-honey-flower-800 hover:scale-110 hover:bg-gray-300 hover:underline active:no-underline active:bg-gray-400">
                 {dropdown.title}
             </button>
             {:else}
@@ -46,20 +46,20 @@
     
     {#each all_dropdowns as dropdown}
     {#if activeMenu === dropdown.title}
-    <div class="text-lg" in:fly={{ x: 300 }} >
+    <div class="text-lg m-2" in:fly={{ x: 300 }} >
         <button 
         on:click={() => activeMenu = 'main'} 
-        class="h-12 flex flex-col py-2 my-1 text-2xl font-bold align-middle rounded-md transition-colors ease-in-out duration-300 p-2 text-black hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
+        class="h-12 flex flex-col py-2 my-1 text-2xl w-full font-bold align-middle rounded-md transition-all ease-in-out duration-300 p-2 text-black hover:scale-110 hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
             Back
         </button>
         <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-honey-flower-950 hover:bg-honey-flower-800 active:bg-honey-flower-950 hover:underline active:no-underline">
+        class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2 bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950 hover:underline active:no-underline">
             <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
         </button>
         {#if dropdown.content}
         {#each dropdown.content as content}
         <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2  bg-honey-flower-950 hover:bg-honey-flower-800 active:bg-honey-flower-950">
+        class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2  bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950">
             <a class={whiteText} href={content.href}>{content.pageName}</a>
         </button>
         {/each}
@@ -91,4 +91,5 @@
         transition: all;
         transition-duration: 300ms;
     }
+
 </style>
