@@ -29,7 +29,7 @@ const href = type === "News Article" ? url : "/" + url;
 <div
     class="relative flex flex-col max-w-[min(420px,_90vw)] bg-white rounded-lg shadow-md m-5"
 >
-    <a href={href}>
+    <a href={href} target={type === "News Article" ? "_blank" : ""}>
         <div class="relative group rounded-lg z-6">
             <img
                 src={featuredImg}
@@ -72,7 +72,7 @@ const href = type === "News Article" ? url : "/" + url;
             <div class="px-2 text-center">
                 {
                     type === "News Article" ? (
-                        <p class="text-green-600">News Article by {author}</p>
+                        <p class="text-green-600">Article by {author}</p>
                     ) : type === "Press Release" ? (
                         <p class="text-orange-600">Press Release</p>
                     ) : (
