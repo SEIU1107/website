@@ -1,8 +1,12 @@
 ---
 import NewsGrid from "../NewsGrid.astro";
 import Button from "../Button.astro";
-const posts = await Astro.glob("/src/posts/*.md");
-const previews = posts
+const updates = await Astro.glob("/src/posts/updates/*.md");
+const articles = await Astro.glob("/src/posts/news articles/*.md");
+const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
+const previews = updates
+    .concat(articles)
+    .concat(pressReleases)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
     .slice(0, 3);
 ---
@@ -12,7 +16,7 @@ const previews = posts
         <h1
             class="text-yellow-primary text-5xl m-auto text-center font-Trebuchet font-bold active:no-underline hover:underline"
         >
-            Latest News
+            Latest in SEIU 1107
         </h1>
     </a>
 
@@ -21,24 +25,29 @@ const previews = posts
         breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     />
 
-    <div class="flex m-auto justify-center flex-col max-w-[min(320px,_90vw)]">
-        <Button
-            text="View All Press Releases"
-            href="/news_updates/"
-            color="bg-yellow-primary hover:bg-yellow-darker text-honey-flower-800"
-        />
+    <div class="flex m-auto flex-col sm:flex-row justify-center">
+        <div class="p-2 flex justify-center">
+            <Button
+                text="Union Updates"
+                href="/posts/news_updates/"
+                color="bg-yellow-primary hover:bg-yellow-darker text-honey-flower-800"
+            />
+        </div>
+
+        <div class="p-2 flex justify-center">
+            <Button
+                text="Press Releases"
+                href="/posts/press_releases/"
+                color="bg-yellow-primary hover:bg-yellow-darker text-honey-flower-800"
+            />
+        </div>
+
+        <div class="p-2 flex justify-center">
+            <Button
+                text="SEIU In The News"
+                href="/posts/news_articles/"
+                color="bg-yellow-primary hover:bg-yellow-darker text-honey-flower-800"
+            />
+        </div>
     </div>
 </section>
-
-<style>
-    .NewsGrid {
-        height: auto;
-        background-color: var(--color-secondary);
-        background-image: linear-gradient(
-            to bottom,
-            var(--color-primary),
-            rgb(15 23 42 / 0)
-        );
-        padding: 30px;
-    }
-</style>

@@ -1,11 +1,11 @@
 ---
 import Layout from "../layouts/Layout.astro";
 export async function getStaticPaths() {
-    const posts = await Astro.glob("../posts/*.md");
-
-    return posts.map((post) => ({
+    const updates = await Astro.glob("/src/posts/updates/*.md");
+    const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
+    return updates.concat(pressReleases).map((post) => ({
         params: {
-            slug: post.frontmatter.slug,
+            slug: post.frontmatter.url,
         },
         props: {
             post,

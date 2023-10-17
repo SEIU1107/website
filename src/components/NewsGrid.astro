@@ -23,7 +23,9 @@ const gridClass = "mx-7 grid gap-0 justify-center grid-cols-1".concat(
                     title={post.frontmatter.title}
                     excerpt={post.frontmatter.excerpt}
                     date={post.frontmatter.date}
-                    url={post.frontmatter.slug}
+                    url={post.frontmatter.url}
+                    type={post.frontmatter.type}
+                    author={post.frontmatter.author}
                 />
             ))
         }

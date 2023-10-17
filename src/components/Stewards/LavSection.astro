@@ -7,18 +7,8 @@ const { title = "" } = Astro.props as Props;
 ---
 
 <div class="bg-honey-flower-100">
-    <div class="title">{title}</div>
+    <div class="text-black font-bold font-Trebuchet text-center py-10 text-5xl">
+        {title}
+    </div>
     <slot />
 </div>
-
-<style>
-    .title {
-        text-shadow: 2px 2px 7px #522c79;
-        color: #000;
-        font-family: Georgia, sans-serif;
-        font-weight: bolder;
-        text-align: center;
-        padding: 40px;
-        font-size: 40px;
-    }
-</style>

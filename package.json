@@ -14,7 +14,7 @@
 		"@astrojs/netlify": "^3.0.1",
 		"@astrojs/svelte": "^4.0.2",
 		"@astrojs/tailwind": "^5.0.0",
-		"@astrojs/vercel": "^5.0.0",
+		"@astrojs/vercel": "^5.0.2",
 		"astro": "^3.0.12",
 		"sheetjs": "^2.0.0",
 		"svelte": "^4.2.0",
