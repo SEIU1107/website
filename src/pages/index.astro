@@ -20,85 +20,51 @@ const words = [
 ---
 
 <Layout>
-    <main class="mx-auto max-w-screen-xl py-12 lg:py-16">
-        <h1
-            class="mx-5 font-bold font-Roboto text-left text-black text-5xl md:text-6xl drop-shadow-2xl"
-        >
-            Welcome to SEIU Local 1107 Nevada
-        </h1>
-        <ul
-            role="list"
-            class="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 p-0"
-        >
-            <StartingCard href="/union_difference" title="Why A Union?">
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-            <StartingCard href="/join" title="Join SEIU 1107">
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-            <StartingCard href="/stewards" title="My Stewards">
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-            <StartingCard
-                href="/under_construction"
-                title="Contact Representation"
+    <main
+        class="bg-gradient-to-b md:bg-gradient-to-br from-honey-flower-500 to-supernova-50 md:to-supernova-200 mx-auto w-full"
+    >
+        <div class="max-w-7xl m-auto py-12 lg:py-16">
+            <h1
+                class="mx-5 font-bold font-Roboto text-left text-black text-5xl md:text-6xl drop-shadow-2xl"
             >
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-            <StartingCard href="/about_us" title="Learn More About 1107">
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-            <StartingCard href="/staff" title="SEIU 1107 Staff">
-                <p>Lorem ipsum dolor</p>
-            </StartingCard>
-        </ul>
+                Welcome to SEIU Local 1107 Nevada
+            </h1>
+            <ul
+                role="list"
+                class="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 p-0"
+            >
+                <StartingCard href="/union_difference" title="Why A Union?">
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+                <StartingCard href="/join" title="Join SEIU 1107">
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+                <StartingCard href="/stewards" title="My Stewards">
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+                <StartingCard
+                    href="/under_construction"
+                    title="Contact Representation"
+                >
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+                <StartingCard href="/about_us" title="Learn More About 1107">
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+                <StartingCard href="/staff_page" title="SEIU 1107 Staff">
+                    <p>Lorem ipsum dolor</p>
+                </StartingCard>
+            </ul>
+        </div>
     </main>
 
-    <LatestNews />
-    <h1
-        class="m-auto font-Trebuchet font-bold text-center text-black py-5 text-5xl"
-    >
-        Why should I join a union?
-    </h1>
-    <WhyJoinCards />
+    <div>
+        <LatestNews />
+        <h1
+            class="m-auto font-Trebuchet font-bold text-center text-black py-5 text-5xl"
+        >
+            Why should I join a union?
+        </h1>
+        <WhyJoinCards />
+    </div>
 </Layout>
-
-<style>
-    .cycletext {
-        position: absolute;
-        top: 0;
-        left: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        height: 100%;
-    }
-
-    .vidNewsGrid {
-        position: relative;
-        right: 0;
-        width: 100%;
-        min-height: 60vh;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        color: #fff;
-    }
-
-    .vidNewsGrid video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: 0;
-    }
-
-    .vidNewsGrid p {
-        color: white;
-        z-index: 2;
-    }
-</style>
