@@ -34,7 +34,7 @@ const myUnion = [
     },
     {
         pageName: "My Member Benefits",
-        href: "https://www.seiumb.com/",
+        href: "/member_benefits",
     },
     {
         pageName: "Constitution & Bylaws",

@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import CycleText from "../components/CycleText.astro";
 import LatestNews from "../components/Index/LatestNews.astro";
 import WhyJoinCards from "../components/WhyJoinCards.astro";
+import StartingCard from "../components/Index/StartingCard.astro";
 
 const words = [
     "Hospital Workers",
@@ -19,29 +20,39 @@ const words = [
 ---
 
 <Layout>
-    <div class="vidNewsGrid">
-        <video
-            src="https://seiu99.org/wp-content/uploads/2018/08/herovid.mp4"
-            autoplay
-            muted
-            loop></video>
+    <main class="mx-auto max-w-screen-xl py-12 lg:py-16">
         <h1
-            class="absolute top-[10%] left-0 w-[100%] m-auto font-bold font-Roboto text-center text-lavender text-4xl drop-shadow-2xl"
+            class="mx-5 font-bold font-Roboto text-left text-black text-5xl md:text-6xl drop-shadow-2xl"
         >
-            Welcome to SEIU Local 1107 Nevada!
+            Welcome to SEIU Local 1107 Nevada
         </h1>
-        <div class="hidden lg:block">
-            <div
-                class="absolute font-bold top-0 left-0 w-[100%] h-[100%] flex flex-col justify-center text-5xl text-center"
+        <ul
+            role="list"
+            class="pt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-0 p-0"
+        >
+            <StartingCard href="/union_difference" title="Why A Union?">
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+            <StartingCard href="/join" title="Join SEIU 1107">
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+            <StartingCard href="/stewards" title="My Stewards">
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+            <StartingCard
+                href="/under_construction"
+                title="Contact Representation"
             >
-                <h1 class="text-white font-Trebuchet">We are</h1>
-                <h1 class="py-5 text-yellow-primary font-Trebuchet">
-                    <CycleText words={words} interval="1500" />
-                </h1>
-                <h1 class="text-white font-Trebuchet">United!</h1>
-            </div>
-        </div>
-    </div>
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+            <StartingCard href="/about_us" title="Learn More About 1107">
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+            <StartingCard href="/staff" title="SEIU 1107 Staff">
+                <p>Lorem ipsum dolor</p>
+            </StartingCard>
+        </ul>
+    </main>
 
     <LatestNews />
     <h1

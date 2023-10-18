@@ -3,37 +3,11 @@ export interface Props {
     text: string;
 }
 
-const {text = 'Separator'} = Astro.props as Props;
+const { text = "Separator" } = Astro.props as Props;
 ---
 
-<div class="separator">
+<div
+    class="bg-yellow-300 rounded-lg text-honey-flower-800 max-w-lg m-auto italic font-bold font-Trebuchet text-center p-2.5 text-4xl"
+>
     <span>{text}</span>
 </div>
-
-
-<style>
-    .separator {
-        color: #582C83;
-        font-size: 40px;
-        font-family: "Trebuchet MS", sans-serif;
-        font-weight: bold;
-        font-style: italic;
-        text-align: center;
-        max-width: 1500px;
-        margin:0 auto;
-        padding: 10px
-
-    }
-    .separator span {
-        background: #FECD01;
-        border-radius: 20px;
-        width: auto;
-        height: auto;
-        padding: 10px 30px 10px 30px;
-        background-clip: padding-box;
-
-        -webkit-box-decoration-break: clone;
-        -o-box-decoration-break: clone;
-        box-decoration-break: clone;
-    }
-</style>

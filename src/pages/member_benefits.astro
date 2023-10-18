@@ -1,6 +1,9 @@
 ---
 import HeadingTitle from "../components/HeadingTitle.astro";
+import InfoCardGridLayout from "../components/InfoCardGridLayout.astro";
+import InfoCard from "../components/InfoCard.astro";
 import Layout from "../layouts/Layout.astro";
+import LinkText from "../components/LinkText.astro";
 ---
 
 <Layout title="Member Benefits SEIU 1107" centered="true">
@@ -8,6 +11,20 @@ import Layout from "../layouts/Layout.astro";
     <p class="font-Trebuchet font-bold text-black py-5 text-3xl">
         SEIU Member Benefits
     </p>
+    <div>
+        <InfoCardGridLayout>
+            <InfoCard title="Notary Services">
+                <p>
+                    Set up an appointment to notarize documents with Patti
+                    Curry, our Database and Finanace Coordinator, at <LinkText
+                        href="pcurry@seiunv.org"
+                    >
+                        pcurry@seiunv.org
+                    </LinkText> or 775-870-0604.
+                </p>
+            </InfoCard>
+        </InfoCardGridLayout>
+    </div>
     <p class="font-Trebuchet font-bold text-black py-5 text-3xl">
         The SEIU 1107 Scholarship
     </p>
