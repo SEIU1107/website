@@ -25,7 +25,7 @@ const words = [
     >
         <div class="max-w-7xl m-auto py-12 lg:py-16">
             <h1
-                class="mx-5 font-bold font-Roboto text-left text-black text-5xl md:text-6xl drop-shadow-2xl"
+                class="shadowClass mx-5 font-bold font-Roboto text-left text-honey-flower-50 text-5xl md:text-6xl drop-shadow-2xl"
             >
                 Welcome to SEIU Local 1107 Nevada
             </h1>
@@ -58,13 +58,19 @@ const words = [
         </div>
     </main>
 
-    <div>
+    <div class="bg-gradient-to-b from-honey-flower-50 to-honey-flower-300 pb-2">
         <LatestNews />
         <h1
-            class="m-auto font-Trebuchet font-bold text-center text-black py-5 text-5xl"
+            class="m-auto font-Trebuchet font-bold text-center text-black pt-5 text-5xl"
         >
             Why should I join a union?
         </h1>
         <WhyJoinCards />
     </div>
 </Layout>
+
+<style>
+    .shadowClass {
+        text-shadow: 4px 4px 3px black;
+    }
+</style>
