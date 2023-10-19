@@ -2,20 +2,20 @@
 export interface Props {
     text: string;
     href: string;
-    color?: string;
+    styling?: string;
     target?: string;
 }
 
 const {
     text = "Enter Text",
     href = "/",
-    color = "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
+    styling = "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
     target,
 } = Astro.props as Props;
 
 const classString =
-    "inline-block rounded-md px-2 py-2 text-center uppercase tracking-wide focus:outline-none focus:ring focus:ring-offset-white transition-colors duration-200".concat(
-        " ".concat(color)
+    "inline-block rounded-md px-2 py-2 text-center uppercase tracking-wide focus:outline-none focus:ring focus:ring-offset-white transition duration-200".concat(
+        " ".concat(styling)
     );
 ---
 

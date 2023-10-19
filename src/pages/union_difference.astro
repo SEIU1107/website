@@ -7,7 +7,9 @@ import Button from "../components/Button.astro";
 const paragraphClass = "font-Roboto text-md";
 ---
 
-<Layout>
+<Layout
+    styling="bg-gradient-to-b from-honey-flower-200 from-40% to-supernova-300"
+>
     <div class="flex mx-[2.5vw]">
         <HeadingTitle text="The Union Difference" />
     </div>
@@ -92,8 +94,10 @@ const paragraphClass = "font-Roboto text-md";
         <Button
             text="Join Today!"
             href="/join/"
-            color="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
+            styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
         />
     </div>
-    <WhyJoinCards />
+    <div class="pb-4">
+        <WhyJoinCards />
+    </div>
 </Layout>

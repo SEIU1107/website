@@ -1,22 +1,8 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import CycleText from "../components/CycleText.astro";
 import LatestNews from "../components/Index/LatestNews.astro";
 import WhyJoinCards from "../components/WhyJoinCards.astro";
 import StartingCard from "../components/Index/StartingCard.astro";
-
-const words = [
-    "Hospital Workers",
-    "Clark County Workers",
-    "Housing Authority Workers",
-    "Health District Workers",
-    "Water Reclamation Workers",
-    "Homecare Workers",
-    "Developmental Disability Care Workers",
-    "Regional Transportation Workers",
-    "LV Convention Center Workers",
-    "Harry Reid Int'l Airport Workers",
-];
 ---
 
 <Layout>
@@ -25,7 +11,7 @@ const words = [
     >
         <div class="max-w-7xl m-auto py-12 lg:py-16">
             <h1
-                class="shadowClass mx-5 font-bold font-Roboto text-left text-honey-flower-50 text-5xl md:text-6xl drop-shadow-2xl"
+                class="shadowClass mx-5 font-bold font-Trebuchet text-left text-honey-flower-50 text-5xl md:text-6xl drop-shadow-2xl"
             >
                 Welcome to SEIU Local 1107 Nevada
             </h1>
@@ -58,7 +44,7 @@ const words = [
         </div>
     </main>
 
-    <div class="bg-gradient-to-b from-honey-flower-50 to-honey-flower-300 pb-2">
+    <div class="bg-gradient-to-b from-honey-flower-50 to-honey-flower-300 pb-4">
         <LatestNews />
         <h1
             class="m-auto font-Trebuchet font-bold text-center text-black pt-5 text-5xl"
@@ -71,6 +57,6 @@ const words = [
 
 <style>
     .shadowClass {
-        text-shadow: 4px 4px 3px black;
+        text-shadow: 5px 5px 3px black;
     }
 </style>
