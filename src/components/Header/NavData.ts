@@ -1,7 +1,7 @@
 /* About Us Dropdown */
 const dropdownAboutUs = [
     {
-        pageName: "Why a Union?",
+        pageName: "The Union Difference",
         href: "/union_difference/",
     },
     {

@@ -35,10 +35,13 @@
                 {dropdown.title}
             </button>
             {:else}
-            <button 
+            <a class={whiteText} href={dropdown.titleHref}>
+                <button 
             class="h-12 flex flex-col py-2 my-2 align-middle rounded-md transition-colors ease-in-out duration-300 p-2 bg-honey-flower-950 hover:bg-honey-flower-950 hover:underline active:no-underline active:bg-honey-flower-950">
-                <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
-            </button>
+                    {dropdown.title}
+                </button>
+            </a>
+            
             {/if}
             {/each}    
         </div>
@@ -49,19 +52,25 @@
     <div class="text-lg m-2" in:fly={{ x: 300 }} >
         <button 
         on:click={() => activeMenu = 'main'} 
-        class="h-12 flex flex-col py-2 my-1 text-2xl w-full font-bold align-middle rounded-md transition-all ease-in-out duration-300 p-2 text-black hover:scale-110 hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
-            Back
+        class="h-12 flex flex-row py-2 my-1 text-2xl w-full font-bold align-middle rounded-md transition-all ease-in-out duration-300 p-2 text-black hover:scale-110 hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
+            <span class="px-2">&larr;</span>Back
         </button>
-        <button 
+        <a class={whiteText} href={dropdown.titleHref}>
+            <button 
         class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2 bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950 hover:underline active:no-underline">
-            <a class={whiteText} href={dropdown.titleHref}>{dropdown.title}</a>
-        </button>
+                {dropdown.title}    
+            </button>
+        </a>
+        
         {#if dropdown.content}
         {#each dropdown.content as content}
-        <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2  bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950">
-            <a class={whiteText} href={content.href}>{content.pageName}</a>
-        </button>
+        <a class={whiteText} href={content.href}>
+            <button 
+            class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2  bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950">
+            {content.pageName}
+            </button>
+        </a>
+        
         {/each}
         {/if}
             
