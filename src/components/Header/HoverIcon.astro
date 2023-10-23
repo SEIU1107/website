@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 
 export interface Props {
     baseImg: ImageMetadata /* Image underneath, imported */;
-    hoverImg: ImageMetadata /* Image upon hover, imported */;
+    hoverImg?: ImageMetadata /* Image upon hover, imported */;
     href: string;
     sizing?: string /* Add the sizing attribute to the classes via TailwindCSS */;
     aStyling?: string /* TailwindCSS for the <a></a> block surrounding the icon */;
@@ -11,7 +11,7 @@ export interface Props {
 
 const {
     baseImg,
-    hoverImg,
+    hoverImg = baseImg,
     sizing = "",
     href,
     aStyling = "",
