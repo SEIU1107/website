@@ -7,20 +7,26 @@ import StartingCard from "../components/Index/StartingCard.astro";
 
 <Layout>
     <main
-        class="bg-gradient-to-b md:bg-gradient-to-br from-honey-flower-500 to-supernova-50 md:to-supernova-200 mx-auto w-full"
+        class="bg-[url(/src/images/IndexBanner.png)] bg-cover bg-center mx-auto w-full"
     >
         <div class="max-w-7xl m-auto py-12 lg:py-16">
             <h1
-                class="shadowClass mx-5 font-bold font-Trebuchet text-left text-honey-flower-50 text-5xl md:text-6xl drop-shadow-2xl"
+                class="shadowClass mx-5 font-bold font-Trebuchet text-left text-supernova-400 text-5xl md:text-6xl drop-shadow-2xl"
             >
                 Welcome to SEIU Local 1107
             </h1>
+            <div class="text-white mx-5 pt-2 tinyShadow text-left">
+                2250 S. Rancho Drive #165, Las Vegas, NV 89102
+            </div>
+            <div class="text-white mx-5 pt-2 tinyShadow text-left">
+                (702) 386 - 8849
+            </div>
             <ul
                 role="list"
-                class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-0 p-0"
+                class="pt-2 grid grid-cols-1 sm:grid-cols-2 gap-0 p-0"
             >
                 <StartingCard href="/join" title="Join SEIU 1107">
-                    <p>Lorem ipsum dolor</p>
+                    <p>Become a member of SEIU!</p>
                 </StartingCard>
                 <StartingCard href="/under_construction" title="My Union">
                     <p>View your stewards, contract, etc.</p>
@@ -40,7 +46,7 @@ import StartingCard from "../components/Index/StartingCard.astro";
         <h1
             class="m-auto font-Trebuchet font-bold text-center text-black pt-5 text-5xl"
         >
-            Why join?
+            Why Join?
         </h1>
         <WhyJoinCards />
     </div>
@@ -48,6 +54,10 @@ import StartingCard from "../components/Index/StartingCard.astro";
 
 <style>
     .shadowClass {
-        text-shadow: 5px 5px 3px black;
+        text-shadow: 5px 5px 2px black;
+    }
+
+    .tinyShadow {
+        text-shadow: 3px 3px 2px black;
     }
 </style>

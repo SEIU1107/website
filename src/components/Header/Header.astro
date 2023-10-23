@@ -3,6 +3,16 @@ import { Image } from "astro:assets";
 import logo from "../../images/seiu-WEBSITE-LOGO-1t.png";
 import Dropdown from "../Header/Dropdown.astro";
 import Menu from "./HamburgerMenu/Menu.svelte";
+import HoverIcon from "./HoverIcon.astro";
+
+import FacebookLogo from "/src/images/icons/Facebook.png";
+import FacebookHover from "/src/images/icons/FacebookHover.png";
+
+import TwitterLogo from "/src/images/icons/Twitter.png";
+import TwitterHover from "/src/images/icons/TwitterHover.png";
+
+import InstaLogo from "/src/images/icons/Insta.png";
+import InstaHover from "/src/images/icons/InstaHover.png";
 
 import { all_dropdowns } from "./NavData.ts";
 ---
@@ -10,9 +20,38 @@ import { all_dropdowns } from "./NavData.ts";
 <!-- Non-Mobile (Desktop, larger screens) -->
 <header class="h-20 bg-honey-flower-900 hidden md:block">
     <div class="h-full flex items-center justify-between py-5">
-        <a href="/" class="h-9 align-middle m-5"
-            ><Image class="w-24 m-auto" src={logo} alt="SEIU Local 1107" />
-        </a>
+        <div class="flex flex-row justify-center align-middle">
+            <a href="/" class="align-middle m-5"
+                ><Image
+                    class="w-24 m-auto hover:md:scale-110 transition ease-in-out duration-200"
+                    src={logo}
+                    alt="SEIU Local 1107"
+                />
+            </a>
+            <div class="flex flex-row my-7 justify-between">
+                <HoverIcon
+                    baseImg={FacebookLogo}
+                    hoverImg={FacebookHover}
+                    sizing="w-8"
+                    href="https://www.facebook.com/SEIU1107/"
+                    aStyling="align-middle px-5"
+                />
+                <HoverIcon
+                    baseImg={TwitterLogo}
+                    hoverImg={TwitterHover}
+                    sizing="w-8"
+                    href="https://twitter.com/seiu1107/"
+                    aStyling="align-middle py-1 px-5"
+                />
+                <HoverIcon
+                    baseImg={InstaLogo}
+                    hoverImg={InstaHover}
+                    sizing="w-7"
+                    href="https://www.instagram.com/seiu1107/"
+                    aStyling="align-middle py-0.5 px-5"
+                />
+            </div>
+        </div>
         <nav>
             <ul class="flex flex-row m-5 font-Trebuchet">
                 {

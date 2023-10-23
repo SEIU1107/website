@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+
+export interface Props {
+    baseImg: ImageMetadata /* Image underneath, imported */;
+    hoverImg: ImageMetadata /* Image upon hover, imported */;
+    href: string;
+    sizing?: string /* Add the sizing attribute to the classes via TailwindCSS */;
+    aStyling?: string /* TailwindCSS for the <a></a> block surrounding the icon */;
+}
+
+const {
+    baseImg,
+    hoverImg,
+    sizing = "",
+    href,
+    aStyling = "",
+} = Astro.props as Props;
+
+const firstClass =
+    "absolute m-auto transition ease-in-out duration-200 group-hover:opacity-0 ".concat(
+        sizing
+    );
+const secondClass =
+    "absolute m-auto opacity-0 group-hover:opacity-100 hover:scale-110 transition ease-in-out duration-200 ".concat(
+        sizing
+    );
+---
+
+<a href={href} class={aStyling}>
+    <div class="group">
+        <Image class={firstClass} src={baseImg} alt="SEIU Local 1107" />
+        <Image class={secondClass} src={hoverImg} alt="SEIU Local 1107" />
+    </div>
+</a>
