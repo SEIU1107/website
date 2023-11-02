@@ -1,0 +1,56 @@
+---
+import HeadingTitle from "../../components/HeadingTitle.astro";
+import Layout from "../../layouts/Layout.astro";
+export async function getStaticPaths() {
+    const updates = await Astro.glob("/src/posts/updates/*.md");
+    const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
+    return updates.concat(pressReleases).map((post) => ({
+        params: {
+            slug: post.frontmatter.url,
+        },
+        props: {
+            post,
+        },
+    }));
+}
+
+const { Content, frontmatter } = Astro.props.post;
+---
+
+<Layout
+    title={frontmatter.title}
+    backgroundStyling={frontmatter.type === "Press Release"
+        ? "bg-gradient-to-b from-supernova-200 to-80% to-honey-flower-500"
+        : "bg-gradient-to-b from-honey-flower-600 to-honey-flower-300"}
+>
+    <div
+        class="my-4 max-w-[90vw] md:max-w-screen-md pb-2 px-2 bg-honey-flower-50 shadow-lg shadow-black flex-col mx-auto"
+    >
+        <div
+            class="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 pt-2 text-2xl lg:text-3xl"
+        >
+        </div>
+        <HeadingTitle text={frontmatter.title} />
+        <div class="flex mx-auto justify-center pb-4">
+            <div class="text-center font-bold">
+                {
+                    new Date(frontmatter.date).toLocaleDateString("en-US", {
+                        timeZone: "UTC",
+                    })
+                }
+            </div>
+            <div class="px-2 font-bold">
+                {
+                    frontmatter.type === "Press Release" ? (
+                        <p class="text-supernova-600">Press Release</p>
+                    ) : (
+                        <p class="text-honey-flower-600">Union Update</p>
+                    )
+                }
+            </div>
+        </div>
+        <div class="leading-normal">
+            <Content />
+        </div>
+    </div>
+</Layout>

@@ -23,7 +23,7 @@ const {
     author = "SEIU",
 } = Astro.props as Props;
 
-const href = type === "News Article" ? url : "/" + url;
+const href = type === "News Article" ? url : "/posts/" + url;
 ---
 
 <div
@@ -67,14 +67,18 @@ const href = type === "News Article" ? url : "/" + url;
         </h2>
         <div class="flex flex-row font-bold py-1 text-lg">
             <p>
-                {new Date(date).toLocaleDateString()}
+                {
+                    new Date(date).toLocaleDateString("en-US", {
+                        timeZone: "UTC",
+                    })
+                }
             </p>
             <div class="px-2 text-center">
                 {
                     type === "News Article" ? (
                         <p class="text-green-600">Article by {author}</p>
                     ) : type === "Press Release" ? (
-                        <p class="text-orange-600">Press Release</p>
+                        <p class="text-supernova-600">Press Release</p>
                     ) : (
                         <p class="text-honey-flower-600">Union Update</p>
                     )
