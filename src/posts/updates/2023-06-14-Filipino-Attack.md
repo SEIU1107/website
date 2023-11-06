@@ -6,8 +6,6 @@ excerpt: Prominent leaders of the Filipino American community are calling for ju
 date: 2023-06-14
 author: SEIU
 ---
-<div class="prose mx-auto">
-
 Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes. The elderly Filipino American man, 75-year-old Amadeo Quindara, is living in fear for his life and safety as the attacker was recently released from jail and apparently continues to pose a threat to him. The perpetrator has only been charged with a misdemeanor and not for assault.
 
 The attack comes at a time when there is an alarming surge in hate crimes against Asian Americans nationally, and as Nevada’s Filipino American population is growing rapidly. There was a disturbing [167% increase](https://www.themarshallproject.org/2023/03/25/asian-hate-crime-fbi-black-lgbtq) in anti-Asian hate crimes during the first year of the pandemic alone, according to the FBI. There are now approximately [170,000](https://en.wikipedia.org/wiki/Demographics_of_Filipino_Americans) Filipino Americans in Nevada, who fill vital roles working in the healthcare industry, education, small business, and every profession and cross-section of society. Below are statements from prominent leaders of the Filipino American community:
@@ -21,4 +19,3 @@ The attack comes at a time when there is an alarming surge in hate crimes agains
 *The National Federation of Filipino American Associations (NaFFAA) – Nevada represents the over 170,000 Filipinos in the state. Nationally, NaFFAA works on behalf of the 4 million Filipinos across the United States, and their mission is to promote the welfare and well-being of Filipino Americans by amplifying their voices, advocating on behalf of their interests, and providing resources to facilitate their empowerment.*
 
 *SEIU Nevada Local 1107 is the largest healthcare and public service union in the state, representing nearly 20,000 workers. SEIU represents thousands of Asian American, Native Hawaiian and Pacific Islander members whose work is essential for our communities throughout Nevada and the nation. Together, SEIU 1107 members fight for good union jobs, quality services and a better quality of life for all working Nevadans.*
-</div>

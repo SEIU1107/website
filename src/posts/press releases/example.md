@@ -8,8 +8,6 @@ date: 2023-09-11
 author: SEIU
 ---
 
-<div class="prose mx-auto">
-
 This is an example press release.
 
 **Las Vegas, Nev.** — In one of the [biggest organizing drives](https://unionelections.org/data/national/) in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need. The series of elections have occurred since March of this year, with margins up to 95% in favor of joining SEIU Local 1107. Hundreds more workers will be heading toward elections in coming months. 
@@ -40,5 +38,3 @@ The $16 will be life changing, but caregivers say that much more has to be done 
 ---
 
 *SEIU Nevada Local 1107 is the largest healthcare and public service union in the state, representing nearly 20,000 workers. Together, SEIU 1107 members fight for good union jobs, quality services and a better quality of life for all working Nevadans.*
-
-</div>
