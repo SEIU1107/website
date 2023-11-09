@@ -1,6 +1,7 @@
 ---
 import Button from "../components/Button.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
+import JobPosting from "../components/JobPosting.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
@@ -23,50 +24,83 @@ import Layout from "../layouts/Layout.astro";
         />
     </div>
 
-    <p class="font-Trebuchet text-left font-bold text-black text-3xl py-5">
-        Communications Coordinator (Full-Time)
-    </p>
-
-    <p></p>
-    <p class="font-Roboto py-1.5">
-        The Communications Coordinator will provide strategic planning,
-        leadership, and supervision through message development, campaign
-        execution, member mobilization, and traditional and social media. The
-        position will coordinate communications strategies for union-wide
-        programs and campaigns. The coordinator will advise the Executive
-        Director and/or designees on all aspects of public relations and member
-        communications strategies and plays a key role in advocacy coalitions
-        and political campaigns.
-    </p>
-    <p class="font-Roboto py-1.5">
-        The position will oversee public relations, internal communications,
-        media relations, paid media, and digital and social media outreach and
-        advocacy. The position will lift up the voices and issues of our
-        membership, ensure that the union's message and narrative are front and
-        center in the media and community and train and develop members to be
-        union spokespeople and advocates.
-    </p>
-    <div class="max-w-lg flex justify-center m-auto">
-        <Button
-            text="View Full Job Description"
-            href="/PDFs/Communications Coordinator (Rev. 11-09-22).pdf"
-        />
-    </div>
-    <p class="font-Trebuchet text-left font-bold text-black text-3xl py-5">
-        Home Care Director (Full Time)
-    </p>
-    <p class="font-Roboto py-1.5">
-        This Director level position be responsible for leading the local
-        union's active home care organizing campaign. The Director will lead all
-        aspects of the program including membership representation, organizing
-        new bargaining units, identifying and determining the legislative and
-        political priorities of home care members, and integrating the local
-        program with the national union care agenda.
-    </p>
-    <div class="max-w-lg flex justify-center m-auto">
-        <Button
-            text="View Full Job Description"
-            href="/PDFs/Home Care Director (Posting 09-11-23).pdf"
-        />
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 pb-4">
+        <JobPosting
+            title="Chief of Staff"
+            jobDesc="/PDFs/Chief of Staff (Rev. 10-02-23).pdf"
+        >
+            <p>
+                The position is responsible for driving SEIU Local 1107's
+                high-priority projects and programs consistent with the union's
+                mission and goals. The Chief of Staff's role is critical in the
+                management of the daily operations and activities of the union
+                and will anticipate, identify, and problem-solve challenges. The
+                position supports organizational and leadership development and
+                operationalizes the union's strategic vision across all programs
+                and departments.
+            </p>
+        </JobPosting>
+        <JobPosting
+            title="Communications Specialist"
+            jobDesc="/PDFs/Communications Specialist (Rev. 10-30-23).pdf"
+        >
+            <p>
+                The Communications Specialist will play a vital role in building
+                a powerful program focused on effective, engaging communications
+                strategies that:
+            </p>
+            <div>
+                <ul class="list-disc">
+                    <li>Informs and mobilizes SEIU Local 1107 members.</li>
+                    <li>
+                        Amplifies the valuable work of our members to the public
+                        through digital and traditional media channels.
+                    </li>
+                    <li>
+                        Positions SEIU Nevada as a leading voice and authority
+                        on economic, racial, immigrant, and environmental
+                        justice issues in our communities.
+                    </li>
+                </ul>
+            </div>
+            <p>
+                The Communications Specialist will primarily focus on delivering
+                timely, frequent publications and digital content to SEIU Nevada
+                members and member leaders, community allies, and elected
+                officials. The position helps develop, manage, and extend a
+                consistent brand for the organization through all work products.
+            </p>
+        </JobPosting>
+        <JobPosting
+            title="Union Organizer"
+            jobDesc="/PDFs/Organizer (Revise 10-30-23).pdf"
+        >
+            <p>
+                The role of SEIU Nevada Organizer is to build a workers'
+                organization of motivated, empowered, and mobilized leaders, who
+                strategically act collectively, and powerfully to protect the
+                rights, and improve the quality of the work lives and the care
+                they provide for the community that is Nevada. The Union
+                Organizer provides effective leadership to carry out the goals
+                of the Union, through training and leadership development, new
+                organizing, internal and external organizing, and political
+                action. The position description is a guide to the critical
+                duties and essential functions of the job and is not an all-
+                inclusive list of responsibilities, qualifications, physical
+                demands, and work environment conditions.
+            </p>
+        </JobPosting>
+        <JobPosting
+            title="Political Organizer"
+            jobDesc="/PDFs/Political Organizer (Rev. 10-30-23).pdf"
+        >
+            <p>
+                The role of the SEIU 1107 Political Organizer is to educate,
+                train, and organize members around SEIU 1107's political work.
+                The Political Organizer will engage with members to participate
+                in political campaigns and the Committee On Political Education
+                (COPE), and will identify and develop member political leaders.
+            </p>
+        </JobPosting>
     </div>
 </Layout>
