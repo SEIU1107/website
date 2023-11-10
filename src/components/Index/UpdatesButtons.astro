@@ -1,0 +1,37 @@
+---
+import Button from "../Button.astro";
+const buttonStyling =
+    "bg-supernova-400 hover:bg-supernova-500 text-honey-flower-800 hover:scale-105 active:bg-supernova-600";
+---
+
+<p
+    class="font-bold font-Roboto text-white text-center pt-2 text-3xl shadowClass"
+>
+    Read All:
+</p>
+<div class="flex m-auto flex-col sm:flex-row sm:py-2 justify-center">
+    <div class="p-2 flex justify-center">
+        <Button text="Blog Posts" href="/posts/blog/" styling={buttonStyling} />
+    </div>
+
+    <div class="p-2 flex justify-center">
+        <Button
+            text="Press Releases"
+            href="/posts/press_releases/"
+            styling={buttonStyling}
+        />
+    </div>
+
+    <div class="p-2 flex justify-center">
+        <Button
+            text="SEIU In The News"
+            href="/posts/news_articles/"
+            styling={buttonStyling}
+        />
+    </div>
+</div>
+<style>
+    .shadowClass {
+        text-shadow: 3px 3px 1px black;
+    }
+</style>

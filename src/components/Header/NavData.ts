@@ -75,6 +75,10 @@ const getInvolved = [
 
 const updatesPages = [
     {
+        pageName: "Blog",
+        href: "/posts/blog"
+    },
+    {
         pageName: "Press Releases",
         href: "/posts/press_releases",
     },
@@ -101,8 +105,8 @@ export const all_dropdowns = [
         content: getInvolved,
     },
     {
-        title: "Union Updates",
-        titleHref: "/posts/news_updates",
+        title: "Updates",
+        titleHref: "/updates",
         content: updatesPages,
     },
     {

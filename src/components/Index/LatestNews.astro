@@ -1,6 +1,17 @@
 ---
 import NewsGrid from "../NewsGrid.astro";
 import Button from "../Button.astro";
+import UpdatesButtons from "./UpdatesButtons.astro";
+
+export interface Props {
+    numPosts?: number;
+    bgColor?: string;
+}
+
+const {
+    numPosts = 3,
+    bgColor = "bg-gradient-to-bl from-honey-flower-900 to-honey-flower-500",
+} = Astro.props as Props;
 const updates = await Astro.glob("/src/posts/updates/*.md");
 const articles = await Astro.glob("/src/posts/news articles/*.md");
 const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
@@ -8,51 +19,23 @@ const previews = updates
     .concat(articles)
     .concat(pressReleases)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-    .slice(0, 3);
+    .slice(0, numPosts);
 
-const buttonStyling =
-    "bg-supernova-400 hover:bg-supernova-500 text-honey-flower-800 hover:scale-105 active:bg-supernova-600";
+const sectionClass = "p-7 ".concat(bgColor);
 ---
 
-<section
-    class="p-7 bg-gradient-to-bl from-honey-flower-900 to-honey-flower-500"
->
+<section class={sectionClass}>
     <h1
         class="shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold"
     >
         Latest in SEIU 1107
     </h1>
-
+    <UpdatesButtons />
     <NewsGrid
         previews={previews}
         breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     />
-
-    <div class="flex m-auto flex-col sm:flex-row justify-center">
-        <div class="p-2 flex justify-center">
-            <Button
-                text="Union Updates"
-                href="/posts/news_updates/"
-                styling={buttonStyling}
-            />
-        </div>
-
-        <div class="p-2 flex justify-center">
-            <Button
-                text="Press Releases"
-                href="/posts/press_releases/"
-                styling={buttonStyling}
-            />
-        </div>
-
-        <div class="p-2 flex justify-center">
-            <Button
-                text="SEIU In The News"
-                href="/posts/news_articles/"
-                styling={buttonStyling}
-            />
-        </div>
-    </div>
+    <UpdatesButtons />
 </section>
 
 <style>

@@ -1,4 +1,5 @@
 ---
+import HeadingTitle from "../components/HeadingTitle.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
 
@@ -13,34 +14,7 @@ const page_title = "SEIU 1107 " + (short_name ?? title) + " Stewards";
 ---
 
 <Layout title={page_title}>
-    <h1
-        class="m-5 text-center p-2.5 font-Georgia text-4xl md:text-5xl lg:text-6xl justify-center font-bold"
-    >
-        <span>{title}</span>
-    </h1>
+    <HeadingTitle text={title} />
+
     <slot />
 </Layout>
-
-<style>
-    .title-text {
-        text-align: center;
-        font-family: Georgia, sans-serif;
-        display: flex;
-        justify-content: center;
-        font-size: 60px;
-        padding: 10px;
-    }
-
-    .title-text span {
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        background-color: #fecd01;
-        font-weight: bold;
-        border-radius: 20px;
-        width: auto;
-        height: auto;
-        padding: 10px 30px 10px 30px;
-        background-clip: padding-box;
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-</style>

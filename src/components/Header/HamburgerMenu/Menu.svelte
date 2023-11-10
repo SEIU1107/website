@@ -22,7 +22,7 @@
     <AnimatedHamburger {open} {onClick} />
 </div>
 
-<aside class="fixed overflow-hidden max-w-2xl h-fit bg-gray-50 rounded-l-lg shadow-md shadow-black z-10" class:open transition:slide>
+<aside class="fixed overflow-hidden max-w-2xl h-fit bg-gray-50 rounded-l-lg shadow-lg shadow-black z-10" class:open transition:slide>
     <div class="flex justify-end mx-2 mt-20 mb-2">
         {#if activeMenu === 'main'}
         <div class="text-2xl m-2" in:fly={{ x: -300 }} >
