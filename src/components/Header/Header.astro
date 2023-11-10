@@ -3,21 +3,9 @@ import { Image } from "astro:assets";
 import logo from "../../images/seiu-WEBSITE-LOGO-1t.png";
 import Dropdown from "../Header/Dropdown.astro";
 import Menu from "./HamburgerMenu/Menu.svelte";
-import HoverIcon from "./HoverIcon.astro";
-
-import FacebookLogo from "/src/images/icons/Facebook.png";
-import FacebookHover from "/src/images/icons/FacebookHover.png";
-
-import TwitterLogo from "/src/images/icons/Twitter.png";
-import TwitterHover from "/src/images/icons/TwitterHover.png";
-
-import InstaLogo from "/src/images/icons/Insta.png";
-import InstaHover from "/src/images/icons/InstaHover.png";
-
-import TikTok from "/src/images/icons/TikTok.png";
-import TikTokHover from "/src/images/icons/TikTokHover.png";
 
 import { all_dropdowns } from "./NavData.ts";
+import SocialMediaButtons from "./SocialMediaButtons.astro";
 ---
 
 <!-- Non-Mobile (Desktop, larger screens) -->
@@ -31,35 +19,8 @@ import { all_dropdowns } from "./NavData.ts";
                     alt="SEIU Local 1107"
                 />
             </a>
-            <div class="flex flex-row my-7 justify-between">
-                <HoverIcon
-                    baseImg={FacebookLogo}
-                    hoverImg={FacebookHover}
-                    sizing="w-8"
-                    href="https://www.facebook.com/SEIU1107/"
-                    aStyling="align-middle px-5"
-                />
-                <HoverIcon
-                    baseImg={TwitterLogo}
-                    hoverImg={TwitterHover}
-                    sizing="w-8"
-                    href="https://twitter.com/seiu1107/"
-                    aStyling="align-middle py-1 px-5"
-                />
-                <HoverIcon
-                    baseImg={InstaLogo}
-                    hoverImg={InstaHover}
-                    sizing="w-7"
-                    href="https://www.instagram.com/seiu1107/"
-                    aStyling="align-middle py-0.5 px-5"
-                />
-                <HoverIcon
-                    baseImg={TikTok}
-                    hoverImg={TikTokHover}
-                    sizing="w-7"
-                    href="https://www.tiktok.com/@seiu1107"
-                    aStyling="align-middle py-0 px-4"
-                />
+            <div class="my-7">
+                <SocialMediaButtons />
             </div>
         </div>
         <nav>
