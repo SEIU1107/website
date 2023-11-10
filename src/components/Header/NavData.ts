@@ -101,7 +101,7 @@ export const all_dropdowns = [
         content: getInvolved,
     },
     {
-        title: "1107 Updates",
+        title: "Union Updates",
         titleHref: "/posts/news_updates",
         content: updatesPages,
     },
