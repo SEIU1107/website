@@ -1,0 +1,21 @@
+---
+import HeadingTitle from "../components/HeadingTitle.astro";
+import PanelCard from "../components/PanelCard.astro";
+import Layout from "../layouts/Layout.astro";
+---
+
+<Layout
+    title="SEIU 1107 Get Involved"
+    centered="true"
+    backgroundStyling="bg-gradient-to-b from-honey-flower-200 from-20% to-honey-flower-500"
+>
+    <HeadingTitle text="Get Involved!" />
+    <div class="max-w-screen-lg grid grid-cols-1 md:grid-cols-3">
+        <PanelCard
+            title="Events Calendar"
+            bigText="Participate in Community and Labor Events"
+            desc="Stay up to date with Community Events, Steward Trainings, and other ways to participate in your Union."
+            href="/events_calendar"
+        />
+    </div>
+</Layout>

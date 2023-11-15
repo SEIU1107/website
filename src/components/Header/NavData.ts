@@ -13,10 +13,6 @@ const dropdownAboutUs = [
         href: "/staff_page",
     },
     {
-        pageName: "Contact Us",
-        href: "/contact_us/",
-    },
-    {
         pageName: "Careers",
         href: "/careers/",
     },
@@ -101,13 +97,17 @@ export const all_dropdowns = [
     },
     {
         title: "Get Involved",
-        titleHref: "/under_construction",
+        titleHref: "/get_involved",
         content: getInvolved,
     },
     {
         title: "Updates",
         titleHref: "/updates",
         content: updatesPages,
+    },
+    {
+        title: "Contact Us",
+        titleHref: "/contact_us",
     },
     {
         title: "Join Now!",

@@ -1,0 +1,31 @@
+---
+export interface Props {
+    title: string;
+    bigText: string;
+    desc: string;
+    href: string;
+    colorLeft?: string /* Color for the gradient in TailwindCSS class syntax */;
+    colorRight?: string /* Color for the gradient in TailwindCSS class syntax */;
+}
+
+const {
+    title,
+    bigText,
+    desc,
+    href,
+    colorLeft = "honey-flower-900",
+    colorRight = "blue-900",
+} = Astro.props as Props;
+---
+
+<div
+    class={"flex flex-col bg-gradient-to-r from-".concat(
+        colorLeft,
+        " to-",
+        colorRight
+    )}
+>
+    <div class="text-white">{title}</div>
+    <div class="text-white font-bold text-2xl">{bigText}</div>
+    <div class="text-white">{desc}</div>
+</div>
