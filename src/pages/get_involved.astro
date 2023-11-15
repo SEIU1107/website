@@ -2,20 +2,83 @@
 import HeadingTitle from "../components/HeadingTitle.astro";
 import PanelCard from "../components/PanelCard.astro";
 import Layout from "../layouts/Layout.astro";
+
+const gradientOne = "from-orange-700 to-amber-600";
+const gradientTwo = "from-rose-900 to-red-700";
+const buttonStyle =
+    "text-supernova-800 bg-supernova-200 hover:bg-supernova-300 active:bg-supernova-500";
 ---
 
 <Layout
     title="SEIU 1107 Get Involved"
     centered="true"
-    backgroundStyling="bg-gradient-to-b from-honey-flower-200 from-20% to-honey-flower-500"
+    backgroundStyling="bg-gradient-to-b from-supernova-100 from-40% to-supernova-500"
 >
-    <HeadingTitle text="Get Involved!" />
-    <div class="max-w-screen-lg grid grid-cols-1 md:grid-cols-3">
-        <PanelCard
-            title="Events Calendar"
-            bigText="Participate in Community and Labor Events"
-            desc="Stay up to date with Community Events, Steward Trainings, and other ways to participate in your Union."
-            href="/events_calendar"
-        />
+    <div class="flex flex-col m-auto">
+        <HeadingTitle text="Get Involved!" />
+        <div
+            class="max-w-screen-lg py-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+        >
+            <PanelCard
+                gradientColors={gradientOne}
+                buttonStyling={buttonStyle}
+                title="Events Calendar"
+                buttonText="View the Calendar"
+                bigText="Participate in Community and Labor Events"
+                href="/events_calendar"
+            >
+                Stay up to date with member and public events, steward
+                trainings, important union meetings, and other ways to get
+                involved in the community and the labor movement.
+            </PanelCard>
+            <PanelCard
+                gradientColors={gradientTwo}
+                buttonStyling={buttonStyle}
+                title="Know Your Rights"
+                buttonText="Learn More"
+                bigText="What are your rights as a Union Member?"
+                href="/know_your_rights"
+            >
+                The Weingarten rights guarantee an employee the right to Union
+                representation during an investigatory interview. Learn more
+                about your rights as a member of SEIU.
+            </PanelCard>
+            <PanelCard
+                gradientColors={gradientOne}
+                buttonStyling={buttonStyle}
+                title="Power of Politics"
+                buttonText="Button Text"
+                bigText="Placeholder Text for 'Power of Politics'"
+                href="/events_calendar"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+            <PanelCard
+                gradientColors={gradientTwo}
+                buttonStyling={buttonStyle}
+                title="Communities United"
+                buttonText="Learn More"
+                bigText="Communities United: Raising the Stakes"
+                href="/events_calendar"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+            <PanelCard
+                gradientColors={gradientOne}
+                buttonStyling={buttonStyle}
+                title="Home Care Workers United"
+                buttonText="Learn More"
+                bigText="Home Care Workers Are Winning a Better Future!"
+                href="/homecare_workers_united"
+            >
+                By uniting together, caregivers have been able to achieve
+                historic change for themselves, their families and their
+                clients.
+            </PanelCard>
+        </div>
     </div>
 </Layout>
