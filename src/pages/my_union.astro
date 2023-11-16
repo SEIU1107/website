@@ -1,0 +1,96 @@
+---
+import PanelCard from "../components/PanelCard.astro";
+import Layout from "../layouts/Layout.astro";
+
+const altGradient = "from-indigo-800 to-violet-950";
+
+const buttonStyle =
+    "text-honey-flower-800 bg-honey-flower-200 hover:bg-honey-flower-300 active:bg-honey-flower-400";
+---
+
+<Layout
+    title="My Union"
+    centered="true"
+    backgroundStyling="bg-gradient-to-b from-honey-flower-100 from-40% to-honey-flower-500"
+>
+    <div class="flex flex-col m-auto">
+        <h2
+            class="py-4 text-black text-5xl m-auto text-center font-Trebuchet font-bold"
+        >
+            Union Resources for Members
+        </h2>
+
+        <div
+            class="max-w-screen-lg py-5 grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 justify-center"
+        >
+            <PanelCard
+                buttonStyling={buttonStyle}
+                title="My Contract"
+                buttonText="View My Contract"
+                bigText="Placeholder Text for 'My Contract'"
+                href="/under_construction"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+            <PanelCard
+                gradientColors={altGradient}
+                buttonStyling={buttonStyle}
+                title="My Stewards"
+                buttonText="View My Stewards"
+                bigText="Stewards are the backbone of an Effective Union"
+                href="/stewards"
+            >
+                Stewards serve as the bridge between elected union leadership
+                and workers on the job. Reach out to your stewards here.
+            </PanelCard>
+            <PanelCard
+                buttonStyling={buttonStyle}
+                title="My Member Benefits"
+                buttonText="View Member Benefits"
+                bigText="Benefits Tailored to Your Needs"
+                href="/member_benefits"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+            <PanelCard
+                gradientColors={altGradient}
+                buttonStyling={buttonStyle}
+                title="Constitution & Bylaws"
+                buttonText="Learn More"
+                bigText="Read Our Constitution & Bylaws"
+                href="/constitution"
+            >
+                The constitution outlines the fundamental principles of our
+                union. The bylaws establish the specific rules of guidance by
+                which the union functions.
+            </PanelCard>
+            <PanelCard
+                buttonStyling={buttonStyle}
+                title="Committees & Caucuses"
+                buttonText="Learn More"
+                bigText="Placeholder Text for 'Committees and Caucuses'"
+                href="/under_construction"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+            <PanelCard
+                gradientColors={altGradient}
+                buttonStyling={buttonStyle}
+                title="Training & Education"
+                buttonText="Learn More"
+                bigText="Placeholder Text for 'Training and Education'"
+                href="/under_construction"
+            >
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+                auctor, orci eu tempor consequat, felis risus imperdiet turpis,
+                sagittis ultricies est elit sit amet augue.
+            </PanelCard>
+        </div>
+    </div>
+</Layout>

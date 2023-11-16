@@ -22,13 +22,11 @@ const classStyle =
     "flex flex-col rounded-md max-w-xl p-5 bg-gradient-to-r ".concat(
         gradientColors
     );
-
-console.log(classStyle);
 ---
 
 <div class={classStyle}>
     <div class="text-white">{title}</div>
-    <div class="tinyShadow text-white font-bold text-3xl py-3">{bigText}</div>
+    <div class="text-white font-bold text-3xl py-3">{bigText}</div>
     <div class="text-white mt-auto">
         <slot />
     </div>

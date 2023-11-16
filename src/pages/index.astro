@@ -10,61 +10,58 @@ import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
     <main
         class="bg-[url(/src/images/IndexBanner.png)] bg-cover bg-center mx-auto w-full"
     >
-        <div class="max-w-7xl m-auto py-12 lg:py-16">
-            <h1
-                class="shadowClass mx-5 font-bold font-Trebuchet text-left text-supernova-400 text-5xl md:text-6xl drop-shadow-2xl"
-            >
-                Welcome to SEIU Local 1107
-            </h1>
-            <div class="text-white mx-5 pt-2 tinyShadow text-left">
-                2250 S. Rancho Drive #165, Las Vegas, NV 89102
+        <div class="max-w-screen-xl m-auto py-10 lg:py-12">
+            <div class="md:max-w-screen-md">
+                <h1
+                    class="shadowClass mx-5 font-bold font-Trebuchet text-left text-supernova-400 text-4xl md:text-5xl"
+                >
+                    Healthcare, homecare, and public workers united for quality
+                    services.
+                </h1>
             </div>
-            <div class="text-white mx-5 pt-2 tinyShadow text-left">
-                (702) 386 - 8849
+            <div
+                class="text-white mx-5 py-5 tinyShadow text-left text-2xl md:text-3xl md:max-w-screen-md lg:max-w-scre"
+            >
+                We are SEIU Local 1107, a community of members on a mission to
+                unite all working people for future generations by leading the
+                path to improve society with a diverse, effective, political,
+                and <i>Just</i> organization.
             </div>
             <ul
                 role="list"
-                class="pt-2 grid auto-rows-fr sm:grid-cols-2 gap-0 p-0"
+                class="pt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 justify-center"
             >
-                <StartingCard href="/join" title="Join SEIU 1107">
+                <StartingCard href="/join" title="Become A Member">
                     <p>Become a member of SEIU!</p>
                 </StartingCard>
-                <StartingCard href="/under_construction" title="My Union">
+                <StartingCard href="/union_difference" title="Why Join?">
                     <p>
-                        View your member benefits, contact your stewards, and
-                        learn more about your union.
+                        Learn how becoming a member gives you a voice in the
+                        workplace!
                     </p>
                 </StartingCard>
-                <StartingCard href="/get_involved" title="Get Involved">
+                <StartingCard href="/stewards" title="Find My Steward">
+                    <p>Meet the stewards of your workplace!</p>
+                </StartingCard>
+                <StartingCard href="/get_involved" title="Attend An Event">
                     <p>
                         View upcoming events, know your rights, and learn how to
                         get involved with your union and the community.
                     </p>
                 </StartingCard>
-                <StartingCard href="/about_us" title="About Us">
-                    <p>Learn more about SEIU 1107</p>
-                </StartingCard>
             </ul>
         </div>
     </main>
 
-    <div class="bg-gradient-to-b from-honey-flower-50 to-honey-flower-300 pb-4">
-        <LatestNews />
-        <h1
-            class="m-auto font-Trebuchet font-bold text-center text-black pt-5 text-5xl"
-        >
-            Why Join?
-        </h1>
-        <WhyJoinCards />
-    </div>
+    <LatestNews />
+
     <SocialMediaFeeds />
 </Layout>
 
 <style>
     .shadowClass {
-        text-shadow: 5px 5px 2px black;
+        text-shadow: 3px 3px 3px black;
     }
-
     .tinyShadow {
         text-shadow: 3px 3px 2px black;
     }

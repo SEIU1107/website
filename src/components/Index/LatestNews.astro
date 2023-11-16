@@ -10,7 +10,7 @@ export interface Props {
 
 const {
     numPosts = 3,
-    bgColor = "bg-gradient-to-bl from-honey-flower-900 to-honey-flower-500",
+    bgColor = "bg-gradient-to-b from-honey-flower-900 to-honey-flower-500",
 } = Astro.props as Props;
 const updates = await Astro.glob("/src/posts/updates/*.md");
 const articles = await Astro.glob("/src/posts/news articles/*.md");
@@ -30,7 +30,10 @@ const sectionClass = "p-7 ".concat(bgColor);
     >
         Latest in SEIU 1107
     </h1>
-    <UpdatesButtons />
+    <p class="shadowClass font-Roboto text-white text-center pt-2 text-2xl">
+        Find out how we're winning improvements for workers and the Nevadans we
+        serve.
+    </p>
     <NewsGrid
         previews={previews}
         breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
