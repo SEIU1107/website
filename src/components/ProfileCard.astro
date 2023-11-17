@@ -2,6 +2,7 @@
 import Placeholder from "/src/images/PlaceholderProfileImg.png";
 import type { Profile } from "../Profile";
 import { Image } from "astro:assets";
+import LinkText from "./LinkText.astro";
 
 export interface Props {
     person: Profile;
@@ -28,9 +29,9 @@ const { person } = Astro.props as Props;
                 field[0] === "Email" ? (
                     <div>
                         <b>{field[0]}: </b>
-                        <span class="hover:underline active:no-underline">
-                            <a href={`mailto:${field[1]}`}>{field[1]}</a>
-                        </span>
+                        <LinkText href={`mailto:${field[1]}`}>
+                            {field[1]}
+                        </LinkText>
                     </div>
                 ) : (
                     <div>
