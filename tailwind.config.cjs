@@ -6,7 +6,6 @@ module.exports = {
 			fontFamily: {
 				'Roboto': 'Roboto, sans-serif',
 				'Trebuchet': '"Trebuchet MS", serif',
-				'Georgia' : 'Georgia, sans-serif'
 			},
 			colors: {
 				'honey-flower': {

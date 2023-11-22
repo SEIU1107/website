@@ -1,9 +1,9 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LatestNews from "../components/Index/LatestNews.astro";
-import WhyJoinCards from "../components/WhyJoinCards.astro";
 import StartingCard from "../components/Index/StartingCard.astro";
 import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
+import StrongerTogether from "../components/Index/StrongerTogether.astro";
 ---
 
 <Layout>
@@ -27,33 +27,12 @@ import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
                 path to improve society with a diverse, effective, political,
                 and <i>Just</i> organization.
             </div>
-            <ul
-                role="list"
-                class="pt-2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 justify-center"
-            >
-                <StartingCard href="/join" title="Become A Member">
-                    <p>Become a member of SEIU!</p>
-                </StartingCard>
-                <StartingCard href="/union_difference" title="Why Join?">
-                    <p>
-                        Learn how becoming a member gives you a voice in the
-                        workplace!
-                    </p>
-                </StartingCard>
-                <StartingCard href="/stewards" title="Find My Steward">
-                    <p>Meet the stewards of your workplace!</p>
-                </StartingCard>
-                <StartingCard href="/get_involved" title="Attend An Event">
-                    <p>
-                        View upcoming events, know your rights, and learn how to
-                        get involved with your union and the community.
-                    </p>
-                </StartingCard>
-            </ul>
         </div>
     </main>
 
     <LatestNews />
+
+    <StrongerTogether />
 
     <SocialMediaFeeds />
 </Layout>

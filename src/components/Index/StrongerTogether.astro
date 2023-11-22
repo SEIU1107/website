@@ -1,0 +1,46 @@
+---
+import GetInvolvedButtons from "./GetInvolvedButtons.astro";
+const paragraphClass = "text-Roboto py-2.5 text-xl";
+---
+
+<div class="bg-gradient-to-b from-honey-flower-100 to-honey-flower-300">
+    <div
+        class="max-w-screen-xl flex flex-col lg:flex-row justify-center m-auto"
+    >
+        <div class="py-10 max-w-xl mx-10 my-auto">
+            <div
+                class="pb-5 text-4xl lg:text-5xl text-honey-flower-800 font-Trebuchet italic text-left font-bold"
+            >
+                We're Stronger Together
+            </div>
+            <p class={paragraphClass}>
+                SEIU Local 1107 is the largest union of health care and public
+                service employees in Nevada. Together, we're building power to
+                raise standards for all workers and protect quality patient care
+                and quality public services.
+            </p>
+            <p class={paragraphClass}>
+                We're also showing Nevada what a member-driven, diverse and just
+                organization can accomplish when we use our collective voice.
+                Nevada home care workers, who lived in poverty for decades while
+                serving our seniors and most vulnerable residents, recently
+                started joining together through SEIU 1107 and raised their
+                minimum wage to $16 an hour, starting in January 2024.
+            </p>
+            <p class={paragraphClass}>
+                SEIU nurses at HCA hospitals in Las Vegas recently won a
+                standard setting contract, securing 13.75% raises over three
+                years. And soon, our state's public workers will take center
+                stage, protecting the critical public services that all Nevadans
+                count on as we negotiate improvements in 2024.
+            </p>
+        </div>
+
+        <div class="hidden lg:block">
+            <GetInvolvedButtons />
+        </div>
+    </div>
+</div>
+<div class="block lg:hidden">
+    <GetInvolvedButtons />
+</div>

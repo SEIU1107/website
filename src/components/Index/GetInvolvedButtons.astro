@@ -1,0 +1,36 @@
+---
+import StartingCard from "./StartingCard.astro";
+---
+
+<div
+    class="flex flex-col m-auto p-5 max-w-full lg:max-w-md bg-gradient-to-l from-indigo-800 to-blue-950"
+>
+    <div
+        class="py-2.5 text-white font-Roboto font-bold text-3xl lg:text-4xl italic flex text-center m-auto"
+    >
+        Get Involved
+    </div>
+    <ul
+        role="list"
+        class="pt-2 grid md:grid-cols-2 lg:grid-cols-1 gap-0 justify-center"
+    >
+        <StartingCard href="/join" title="Become A Member">
+            Become a member of SEIU!
+        </StartingCard>
+
+        <StartingCard href="/union_difference" title="Why Join?">
+            <p>
+                Learn how becoming a member gives you a voice in the workplace!
+            </p>
+        </StartingCard>
+        <StartingCard href="/stewards" title="Find My Steward">
+            <p>Meet the stewards of your workplace!</p>
+        </StartingCard>
+        <StartingCard href="/get_involved" title="Attend An Event">
+            <p>
+                View upcoming events, know your rights, and learn how to get
+                involved with your union and the community.
+            </p>
+        </StartingCard>
+    </ul>
+</div>
