@@ -21,10 +21,6 @@ const dropdownAboutUs = [
 /* My Union */
 const myUnion = [
     {
-        pageName: "My Contract",
-        href: "/under_construction"
-    },
-    {
         pageName: "My Stewards",
         href: "/stewards",
     },
@@ -56,7 +52,7 @@ const getInvolved = [
         href: "/under_construction",
     },
     {
-        pageName: "Power of Politics",
+        pageName: "Political Action",
         href: "/under_construction",
     },
     {

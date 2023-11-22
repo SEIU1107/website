@@ -216,6 +216,16 @@ export const dataGeneralUnit: Profile[] = [
             ["Email", "edge982@yahoo.com"],
         ],
     },
+    {
+        name: "Richmond Warnke",
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "DA / Criminal Division"],
+            ["Phone", "(702) 448-0219"],
+            ["Email", "remingtonofnevada@yahoo.com"],
+        ],
+    },
 ];
 
 import Saki from "/src/images/stewards/CC/Saki.png";
