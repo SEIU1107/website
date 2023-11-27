@@ -1,8 +1,16 @@
 ---
 import SocialMediaButtons from "../Header/SocialMediaButtons.astro";
+
+export interface Props {
+    bgColor?: string;
+}
+
+const {
+    bgColor = "bg-gradient-to-b from-honey-flower-900 to-honey-flower-500",
+} = Astro.props as Props;
 ---
 
-<div class="bg-gradient-to-b from-honey-flower-900 to-honey-flower-500">
+<div class={bgColor}>
     <h1
         class="tinyShadow py-2 font-bold font-Trebuchet text-center text-supernova-500 text-4xl md:text-5xl drop-shadow-2xl"
     >

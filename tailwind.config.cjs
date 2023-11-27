@@ -5,7 +5,8 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				'Roboto': 'Roboto, sans-serif',
-				'Trebuchet': '"Trebuchet MS", serif',
+				'Trebuchet': '"Trebuchet MS", sans-serif',
+				'Eras': ''
 			},
 			colors: {
 				'honey-flower': {
