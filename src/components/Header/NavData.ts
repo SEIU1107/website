@@ -83,22 +83,18 @@ const updatesPages = [
 export const all_dropdowns = [
     {
         title: "About Us",
-        titleHref: "/about_us",
         content: dropdownAboutUs,
     },
     {
         title: "My Union",
-        titleHref: "/my_union",
         content: myUnion,
     },
     {
         title: "Get Involved",
-        titleHref: "/get_involved",
         content: getInvolved,
     },
     {
         title: "Updates",
-        titleHref: "/updates",
         content: updatesPages,
     },
     {

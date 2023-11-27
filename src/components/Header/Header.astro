@@ -1,10 +1,10 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../../images/seiu-WEBSITE-LOGO-1t.png";
-import Dropdown from "../Header/Dropdown.astro";
+
+import NavBar from "./NavBar/NavBar.svelte";
 import Menu from "./HamburgerMenu/Menu.svelte";
 
-import { all_dropdowns } from "./NavData.ts";
 import SocialMediaButtons from "./SocialMediaButtons.astro";
 ---
 
@@ -23,21 +23,8 @@ import SocialMediaButtons from "./SocialMediaButtons.astro";
                 <SocialMediaButtons />
             </div>
         </div>
-        <nav>
-            <ul class="flex flex-row m-5 font-Trebuchet">
-                {
-                    all_dropdowns.map((dd) => (
-                        <li class="px-2">
-                            <Dropdown
-                                title={dd.title}
-                                content={dd.content ?? null}
-                                titleHref={dd.titleHref ?? null}
-                            />
-                        </li>
-                    ))
-                }
-            </ul>
-        </nav>
+        <!-- Navbar here -->
+        <NavBar client:visible />
     </div>
 </header>
 
