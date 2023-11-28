@@ -60,11 +60,17 @@ const href = type === "News Article" ? url : "/posts/" + url;
     </a>
 
     <div class="flex flex-col px-2.5 pb-2.5">
-        <h2
-            class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 text-ellipsis overflow-hidden"
-        >
-            {title}
-        </h2>
+        {
+            type === "News Article" ? (
+                <h2 class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 text-ellipsis overflow-hidden">
+                    {author.concat(" - ", title)}
+                </h2>
+            ) : (
+                <h2 class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 text-ellipsis overflow-hidden">
+                    {title}
+                </h2>
+            )
+        }
         <div class="flex flex-row font-bold py-1 text-lg">
             <p>
                 {
@@ -76,7 +82,7 @@ const href = type === "News Article" ? url : "/posts/" + url;
             <div class="px-2 text-center">
                 {
                     type === "News Article" ? (
-                        <p class="text-gray-600">Article by {author}</p>
+                        <p class="text-gray-600">News Article</p>
                     ) : type === "Press Release" ? (
                         <p class="text-supernova-600">Press Release</p>
                     ) : (

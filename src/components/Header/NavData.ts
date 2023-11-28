@@ -36,10 +36,6 @@ const myUnion = [
         pageName: "Committees & Caucus",
         href: "/under_construction",
     },
-    {
-        pageName: "Training & Education",
-        href: "/under_construction",
-    },
 ];
 
 const getInvolved = [
