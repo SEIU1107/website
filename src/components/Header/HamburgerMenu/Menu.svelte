@@ -55,12 +55,7 @@
         class="h-12 flex flex-row py-2 my-1 text-2xl w-full font-bold align-middle rounded-md transition-all ease-in-out duration-300 p-2 text-black hover:scale-110 hover:bg-gray-300 active:bg-gray-400 hover:underline active:no-underline">
             <span class="px-2">&larr;</span>Back
         </button>
-        <a class={whiteText} href={dropdown.titleHref}>
-            <button 
-        class="h-12 flex flex-col py-2 my-2 align-middle w-full rounded-md transition-all ease-in-out duration-300 p-2 bg-honey-flower-950 hover:scale-110 hover:bg-honey-flower-800 active:bg-honey-flower-950 hover:underline active:no-underline">
-                {dropdown.title}    
-            </button>
-        </a>
+        
         
         {#if dropdown.content}
         {#each dropdown.content as content}

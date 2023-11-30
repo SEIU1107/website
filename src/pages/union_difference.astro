@@ -7,10 +7,7 @@ import Button from "../components/Button.astro";
 const paragraphClass = "font-Roboto text-md";
 ---
 
-<Layout
-    title="SEIU 1107 - The Union Difference"
-    backgroundStyling="bg-gradient-to-b from-honey-flower-100 to-honey-flower-300"
->
+<Layout title="SEIU 1107 - The Union Difference">
     <div class="flex mx-[2.5vw]">
         <HeadingTitle text="The Union Difference" />
     </div>
@@ -82,23 +79,8 @@ const paragraphClass = "font-Roboto text-md";
             href="https://youtu.be/0KjQpKkYfFQ?feature=shared"
         />
     </div>
-    <div
-        class="flex flex-col max-w-screen-xl align-middle mx-[2.5vw] lg:mx-auto"
-    >
-        <div
-            class="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5 text-5xl"
-        >
-            Why You Should Join a Union
-        </div>
-    </div>
-    <div class="flex m-auto justify-center flex-col max-w-[min(640px,_90vw)]">
-        <Button
-            text="Join Today!"
-            href="/join/"
-            styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
-        />
-    </div>
-    <div class="pb-4">
+    <div class="py-2.5">
+        <HeadingTitle text="Why You Should Join a Union" />
         <WhyJoinCards />
     </div>
 </Layout>

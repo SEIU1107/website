@@ -1,13 +1,15 @@
 ---
+import { Image } from "astro:assets";
 export interface Props {
     title?: string;
+    image?: ImageMetadata;
 }
 
-const { title } = Astro.props as Props;
+const { title, image } = Astro.props as Props;
 ---
 
 <div
-    class="max-w-md bg-white p-5 m-5 rounded-md shadow-sm shadow-black flex flex-col"
+    class="max-w-md bg-white p-5 m-3 rounded-md shadow-sm shadow-black flex flex-col"
 >
     {
         title ? (
@@ -18,5 +20,18 @@ const { title } = Astro.props as Props;
             <div />
         )
     }
-    <slot />
+    {
+        image ? (
+            <Image
+                src={image}
+                alt=""
+                class="rounded-md w-full aspect-[3/2] object-cover my-2.5 "
+            />
+        ) : (
+            <div />
+        )
+    }
+    <div>
+        <slot />
+    </div>
 </div>

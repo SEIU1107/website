@@ -10,7 +10,7 @@ export interface Props {
 const {
     title = "SEIU Local 1107",
     centered = "false",
-    backgroundStyling,
+    backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
 } = Astro.props as Props;
 ---
 
@@ -38,7 +38,7 @@ const {
         <Header />
         {
             centered === "true" ? (
-                <div class="flex flex-col max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl px-3 m-auto">
+                <div class="flex flex-col max-w-screen-sm lg:max-w-screen-lg px-3 m-auto">
                     <slot />
                 </div>
             ) : (

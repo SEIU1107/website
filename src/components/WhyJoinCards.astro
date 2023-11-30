@@ -2,6 +2,7 @@
 import InfoCardGridLayout from "./InfoCardGridLayout.astro";
 import InfoCard from "./InfoCard.astro";
 import Button from "./Button.astro";
+import LinkText from "./LinkText.astro";
 const linkStyling =
     "text-blue-600 no-underline hover:underline active:no-underline";
 const paraStyling = "font-Roboto text-md";
@@ -12,8 +13,8 @@ const paraStyling = "font-Roboto text-md";
 >
     <InfoCard title="Unions Improve Wages">
         <p class={paraStyling}>
-            Data show time and again that unions raise wages for workers. In
-            fact, union workers make an average of nearly $10,000 more than
+            Research shows time and again that unions raise wages for workers.
+            In fact, union workers make an average of nearly $10,000 more than
             non-unionized workers. (Source: <a
                 class={linkStyling}
                 href="https://www.bls.gov/news.release/pdf/union2.pdf"
@@ -45,11 +46,11 @@ const paraStyling = "font-Roboto text-md";
         conditions without listening to the workers. Forming a union will ensure
         that workers have the power to bargain for a fair contract and the
         strength to protect that contract. Collective bargaining also helps
-        close the pay gap between the private and public sectors. (Source: <a
-            class={linkStyling}
+        close the pay gap between the private and public sectors. (Source: <LinkText
             href="https://www.dol.gov/general/workcenter/data"
-            >U.S. Department of Labor</a
-        >)
+        >
+            U.S. Department of Labor
+        </LinkText>)
     </InfoCard>
 
     <InfoCard title="Unions Protect the Marginalized">

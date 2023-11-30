@@ -1,8 +1,13 @@
 ---
+import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
 import HeadingTitle from "../components/HeadingTitle.astro";
 import LinkText from "../components/LinkText.astro";
 import Layout from "../layouts/Layout.astro";
+
+import firstImage from "/src/images/about_us/JAK01345.jpg";
+import secondImage from "/src/images/about_us/Image2.jpg";
+import CollageImage from "../components/CollageImage.astro";
 ---
 
 <Layout title="About SEIU Local 1107" centered="true">
@@ -15,65 +20,65 @@ import Layout from "../layouts/Layout.astro";
         United for good jobs and quality services for all!
     </h2>
 
-    <p class="py-1">
-        SEIU Local 1107 is the largest healthcare and public service union in
-        Nevada, representing nearly 20,000 workers. We're united by our mission
-        to fight for good union jobs, quality services, and a better quality of
-        life for all working Nevadans.
-    </p>
+    <CollageImage src={firstImage} horizontal="right">
+        <p class="py-1">
+            SEIU Local 1107 is the largest healthcare and public service union
+            in Nevada, representing nearly 20,000 workers. We're a member-driven
+            organization united by our mission to fight for good union jobs,
+            quality services, and a better quality of life for all working
+            Nevadans.
+        </p>
+        <p class="py-1">
+            SEIU 1107 members care for hospital patients, protect water quality,
+            assist low-income families, help operate Harry Reid International
+            Airport, support the tourism economy, protect our most vulnerable
+            community members, maintain streets and parks, work with foster
+            children, and provide many other critical services. <b
+                >In short, we keep Nevada running!</b
+            >
+        </p>
+        <p class="py-1">
+            Together, we hold both employers and elected leaders accountable to
+            lift Nevadans out of poverty, ensure quality healthcare for all,
+            advance pro-worker policies, and reduce inequality. For example,
+            recently SEIU 1107 nurses negotiated 13.75% raises over three years,
+            and SEIU members statewide played a central role in raising the
+            minimum wage for all home care workers in our state to $16 an hour.
+        </p>
+    </CollageImage>
 
-    <p class="py-1">
-        We hold both employers and elected leaders accountable for lifting
-        Nevadans out of poverty, ensuring quality healthcare for all, advancing
-        pro-worker policies, and reducing inequality.
-    </p>
-
-    <p class="py-1">
-        Our members care for hospital patients, protect water quality, assist
-        low-income families, help operate Harry Reid International Airport,
-        support the tourism economy, protect our most vulnerable community
-        members, maintain streets and parks, work with foster children, and
-        provide many other critical services.
-    </p>
-
-    <p class="py-1">
-        <b>We keep Nevada running!</b>
-    </p>
-
-    <div class="flex m-auto justify-center flex-col max-w-[min(640px,_90vw)]">
-        <Button
-            text="My Union"
-            href="/my_union/"
-            styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
-        />
-    </div>
+    <!-- #UnionsForAll -->
     <h2
         class="text-honey-flower-800 font-Trebuchet font-bold text-3xl py-5 text-center"
     >
         We Are #UnionsForAll
     </h2>
 
-    <p class="py-2.5">
-        We are part of the
-        <LinkText href="https://seiu.org/">
-            Service Employees International Union
-        </LinkText>, the fastest-growing labor organization in the United States
-        with more than 2 million members.
-    </p>
+    <div class="py-2">
+        <CollageImage src={secondImage}>
+            <p class="py-2.5">
+                We are part of the
+                <LinkText href="https://seiu.org/">
+                    Service Employees International Union
+                </LinkText>, the fastest-growing labor organization in the
+                United States with more than 2 million members.
+            </p>
 
-    <p class="py-2.5">
-        SEIU is building a 21st-century union to ensure that workers — not just
-        corporations, and CEOs — benefit from our global economy. SEIU is
-        working with unions in similar industries around the world to advocate
-        strongly for fair wages and benefits and allow workers in every country
-        the freedom to unionize.
-    </p>
-
-    <div class="flex m-auto justify-center max-w-3xl">
-        <Button
-            text="The Union Difference"
-            href="/union_difference/"
-            styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
-        />
+            <p class="py-2.5">
+                SEIU is building a 21st-century union to ensure that workers —
+                not just corporations, and CEOs — benefit from our global
+                economy. SEIU is working with unions in similar industries
+                around the world to advocate strongly for fair wages and
+                benefits and allow workers in every country the freedom to
+                unionize.
+            </p>
+            <div class="flex m-auto justify-center max-w-3xl">
+                <Button
+                    text="Learn More about the Union Difference"
+                    href="/union_difference/"
+                    styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white"
+                />
+            </div>
+        </CollageImage>
     </div>
 </Layout>

@@ -1,49 +1,24 @@
 ---
+import { Image } from "astro:assets";
+import Placeholder from "/src/images/PlaceholderProfileImg.png";
 export interface Props {
-    title?: string;
-    src: string;
+    src: ImageMetadata;
     alt?: string;
-    pos?: string /* Is the image on the left or right? */;
+    horizontal?: string /* Is the image on the left or right of the slot? */;
+    imageStyle?: string /* TailwindCSS to override the Image component's classes */;
 }
 
 const {
-    title = "Title Text",
     src,
     alt = "",
-    pos = "left",
+    horizontal = "left",
+    imageStyle = "rounded-lg lg:rounded-2xl lg:px-3 m-auto max-w-sm md:max-w-md lg:max-w-lg ".concat(
+        horizontal === "left" ? "lg:float-left" : "lg:float-right"
+    ),
 } = Astro.props as Props;
 ---
 
-<div class="flex flex-row py-2.5">
-    <div
-        class="flex flex-row content-center justify-items-center justify-center m-auto max-w-7xl"
-    >
-        {
-            pos === "left" ? (
-                <>
-                    <div class="px-10">
-                        <img alt={alt} src={src} />
-                    </div>
-                    <div>
-                        <h1 class="font-Trebuchet font-bold text-xl py-2">
-                            {title}
-                        </h1>
-                        <slot />
-                    </div>
-                </>
-            ) : (
-                <>
-                    <div>
-                        <h1 class="font-Trebuchet font-bold text-xl py-2">
-                            {title}
-                        </h1>
-                        <slot />
-                    </div>
-                    <div class="px-10 min-w-[35vh]">
-                        <img alt={alt} src={src} />
-                    </div>
-                </>
-            )
-        }
-    </div>
+<div>
+    <Image src={src} alt={alt} class={imageStyle} />
+    <slot />
 </div>

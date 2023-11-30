@@ -1,6 +1,10 @@
 /* About Us Dropdown */
 const dropdownAboutUs = [
     {
+        pageName: "Who We Are",
+        href: "/about_us/"
+    },
+    {
         pageName: "The Union Difference",
         href: "/union_difference/",
     },
@@ -21,11 +25,11 @@ const dropdownAboutUs = [
 /* My Union */
 const myUnion = [
     {
-        pageName: "My Stewards",
+        pageName: "Find Your Steward",
         href: "/stewards",
     },
     {
-        pageName: "My Member Benefits",
+        pageName: "Member Benefits",
         href: "/member_benefits",
     },
     {
@@ -45,7 +49,7 @@ const getInvolved = [
     },
     {
         pageName: "Know Your Rights",
-        href: "/under_construction",
+        href: "/know_your_rights/",
     },
     {
         pageName: "Political Action",

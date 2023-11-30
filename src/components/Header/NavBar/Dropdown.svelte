@@ -5,7 +5,7 @@
     export let content: {pageName: string, href: string}[] | undefined  = undefined;
 
 
-    export let open = false;
+    let open = false;
 
     export let onClick = (): void => {
       open = !open
@@ -26,15 +26,16 @@
     aria-label={title.concat(" Toggle")}>
         {title}
     </button>
-    {#if open}
-    {#each content as dropdown}
-    <a
-    class="bg-honey-flower-950 text-white p-4 text-base block transition ease-in-out duration-250 hover:underline hover:bg-supernova-500 hover:text-honey-flower-950 active:no-underline"
-    href={dropdown.href}>
-        {dropdown.pageName}
-    </a>
-    {/each}
-    {/if}
+    <div class="hidden absolute text-white bg-honey-flower-950 min-w-[160px] shadow-lg z-1 group-hover:block">
+        {#each content as dropdown}
+        <a
+        class="bg-honey-flower-950 text-white p-4 text-base block transition ease-in-out duration-250 hover:underline hover:bg-supernova-500 hover:text-honey-flower-950 active:no-underline"
+        href={dropdown.href}>
+            {dropdown.pageName}
+        </a>
+        {/each}
+    </div>
+    
     {:else}
     <div class={clickable} >
         NAVBAR_ERROR CHECK NAVDATA.TS

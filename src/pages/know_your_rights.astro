@@ -1,5 +1,36 @@
 ---
-import UnderConstruction from "../pages/under_construction.astro";
+import { Image } from "astro:assets";
+import HeadingTitle from "../components/HeadingTitle.astro";
+import Layout from "../layouts/Layout.astro";
+
+import firstImage from "/src/images/know_your_rights/Image1.jpg";
+import LinkText from "../components/LinkText.astro";
+import CollageImage from "../components/CollageImage.astro";
 ---
 
-<UnderConstruction />
+<Layout title="Know Your Rights" centered="true">
+    <HeadingTitle text="Know Your Rights!" />
+    <div class="py-2">
+        <CollageImage src={firstImage}>
+            <p class="mx-auto md:mt-1 md:pl-2.5">
+                Most Americans know they have the right to an attorney before
+                answering any questions if arrested (your Miranda rights), but
+                many people do not know they have similar rights at work.
+                <br />
+                <br />
+                 Union-represented employees have the right to a union
+                representative during any interview that an employee reasonably
+                believes could lead to a disciplinary action. This protection is
+                known as your Weingarten Rights.
+                <br />
+                <br />
+                 The below information about your Weingarten Rights is from the
+                <LinkText
+                    href="https://www.nlrb.gov/about-nlrb/rights-we-protect/your-rights/weingarten-rights"
+                >
+                    National Labor Relations Board website:
+                </LinkText>
+            </p>
+        </CollageImage>
+    </div>
+</Layout>
