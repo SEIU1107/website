@@ -1,6 +1,8 @@
 ---
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer.astro";
+import { ViewTransitions } from "astro:transitions";
+
 export interface Props {
     title?: string;
     centered?: string;
@@ -26,6 +28,7 @@ const {
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
             rel="stylesheet"
         />
+        <ViewTransitions />
         <title>{title}</title>
     </head>
     <body
@@ -46,13 +49,11 @@ const {
             )
         }
         <Footer />
-    </body>
+    </body><style>
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+    </style>
 </html>
-
-<style>
-    html,
-    body {
-        max-width: 100%;
-        overflow-x: hidden;
-    }
-</style>
