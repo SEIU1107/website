@@ -1,11 +1,14 @@
 ---
+import type { MarkdownInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.astro";
 import NewsGrid from "../../components/NewsGrid.astro";
 import Layout from "../../layouts/Layout.astro";
 
-const posts = await Astro.glob("/src/posts/press releases/*.md");
+const posts: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+    "/src/posts/press releases/*.md"
+);
 
-const years = posts.reduce((acc, post) => {
+const years = posts.reduce((acc: any, post) => {
     acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(
         function (el) {
             return (
@@ -19,7 +22,7 @@ const years = posts.reduce((acc, post) => {
 
 const sorted_years = Object.keys(years)
     .sort((a, b) => (a > b ? 1 : -1))
-    .reduce((obj, key) => {
+    .reduce((obj: any, key) => {
         obj[key] = years[key];
         return obj;
     }, {});
@@ -31,7 +34,7 @@ const sorted_years = Object.keys(years)
         {
             Object.entries(sorted_years)
                 .reverse()
-                .map(([year, posts]) => (
+                .map(([year, posts]: any) => (
                     <>
                         <h1
                             class="
@@ -43,10 +46,16 @@ const sorted_years = Object.keys(years)
                         </h1>
                         {
                             <NewsGrid
-                                previews={posts.sort((a, b) =>
-                                    a.frontmatter.date < b.frontmatter.date
-                                        ? 1
-                                        : -1
+                                previews={posts.sort(
+                                    (
+                                        a: MarkdownInstance<
+                                            Record<string, any>
+                                        >,
+                                        b: MarkdownInstance<Record<string, any>>
+                                    ) =>
+                                        a.frontmatter.date < b.frontmatter.date
+                                            ? 1
+                                            : -1
                                 )}
                                 breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
                             />
