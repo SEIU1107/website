@@ -1,16 +1,18 @@
 ---
-import { Image } from "astro:assets";
 import HeadingTitle from "../components/HeadingTitle.astro";
 import Layout from "../layouts/Layout.astro";
 
 import firstImage from "/src/images/know_your_rights/Image1.jpg";
 import LinkText from "../components/LinkText.astro";
 import CollageImage from "../components/CollageImage.astro";
+
+const paragraphClass = "py-2 text-base";
+const subtitleClass = "font-Trebuchet font-bold text-xl text-center";
 ---
 
 <Layout title="Know Your Rights" centered="true">
     <HeadingTitle text="Know Your Rights!" />
-    <div class="py-2">
+    <div class="py-2 max-w-screen-lg flex m-auto">
         <CollageImage src={firstImage}>
             <p class="mx-auto md:mt-1 md:pl-2.5">
                 Most Americans know they have the right to an attorney before
@@ -32,5 +34,115 @@ import CollageImage from "../components/CollageImage.astro";
                 </LinkText>
             </p>
         </CollageImage>
+    </div>
+    <div class="py-2.5 max-w-screen-lg flex flex-col m-auto">
+        <h2 class={subtitleClass}>
+            The Right to Request Representation During an Investigatory
+            Interview
+        </h2>
+        <p class={paragraphClass}>
+            Section 7 of the National Labor Relations Act (NLRA) protects
+            employees' right to "self-organization, to form, join, or assist
+            labor organizations, to bargain collectively through representatives
+            of their own choosing, and to engage in other concerted activities
+            for the purpose of collective bargaining or other mutual aid and
+            protection"
+        </p>
+        <p class={paragraphClass}>
+            Among the rights protected by Section 7 is the right of
+            union-represented employees, upon request, to have their
+            representative present during an interview that the employee
+            reasonably believes could lead to discipline. This right was first
+            articulated by the Supreme Court in the case, NLRB v. J. Weingarten,
+            Inc. In that case, the Court found that Section 7 of the NLRA
+            protects employees who refuse to submit to certain interviews
+            without a requested representative present.
+        </p>
+        <p class={paragraphClass}>
+            An employee's requested representative, which may be a union
+            steward, business agent or officer, or fellow employee, is often
+            referred to as a “Weingarten representative.” Weingarten
+            representatives are entitled to provide advice and active assistance
+            to employees during investigatory interviews. Employees' right to
+            request their representatives are frequently referred to as
+            “Weingarten rights.”
+        </p>
+        <p class={paragraphClass}>
+            Employers violate the NLRA if they proceed with an investigatory
+            interview while refusing an employee's request or retaliate against
+            them for making the request. Depending on the circumstances of each
+            case, the Board may order that the employer cease and desist, post a
+            remedial notice, require the employer to repeat the interview with a
+            union member present, or rescind and remedy discipline resulting
+            from a Weingarten violation.
+        </p>
+        <h2 class={subtitleClass}>
+            When do employees have a right to request a union representative?
+        </h2>
+        <p class={paragraphClass}>
+            An employee's right to request a representative arises during an
+            investigatory interview. A useful comparison is an individual’s
+            Miranda right to an attorney when questioned by law enforcement.
+            However, unlike the right to counsel in a Miranda setting, employers
+            are not required to inform union members of their rights under
+            Weingarten.
+        </p>
+        <p class="pt-2">
+            Any meeting may be an “investigatory interview” provided that the
+            following occurs:
+        </p>
+        <ul class="list-disc ml-5">
+            <li>
+                A manager, representative of management, or supervisor is
+                seeking to question an employee.
+            </li>
+            <li>
+                The questioning is part of an investigation into the employee’s
+                performance or work conduct. During an investigatory interview,
+                a representative of management may require an employee to
+                defend, explain, or admit misconduct or work performance issues
+                that may form the basis for discipline or discharge.
+            </li>
+            <li>
+                The employee reasonably believes that the investigation may
+                result in discharge, discipline, demotion, or other adverse
+                consequence to their job status or working conditions.
+            </li>
+            <li>
+                The employee requests a union representative. Employers are not
+                required to advise employees of their right to representation
+                and third parties (including union representatives) may not make
+                the request on behalf of the employee.
+            </li>
+        </ul>
+
+        <p class={paragraphClass}>
+            When making a request for a representative, the Board does not
+            require that the employee specify that they need a “Weingarten”
+            representative. Once an employee requests their representative, they
+            are not required to repeat that request.
+        </p>
+
+        <p class={paragraphClass}>
+            At times, it is not clear whether a meeting is investigatory or
+            could lead to discipline. In those cases, the National Labor
+            Relations Board (NLRB) looks to the conduct of the meeting and the
+            surrounding circumstances to determine if there was an investigatory
+            purpose. The Board will consider such factors as the identity/status
+            of the participants, the parties' collective-bargaining agreement
+            and disciplinary practices, whether there was a confrontational tone
+            to the meeting, any notices or warnings issued prior to the meeting,
+            or whether employees had been disciplined for similar misconduct.
+        </p>
+        <h2 class={subtitleClass}>
+            What types of meetings are not covered by the Weingarten rule?
+        </h2>
+        <p class={paragraphClass}>
+            If the above conditions are met, any meeting between an employer and
+            employee could trigger an employee’s Weingarten rights. However, not
+            every meeting or employer questioning satisfies those conditions.
+            For example, employers need not grant an employee’s request for a
+            representative in the following situations:
+        </p>
     </div>
 </Layout>

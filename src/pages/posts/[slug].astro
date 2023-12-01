@@ -1,17 +1,23 @@
 ---
+import type { MarkdownInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.astro";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-    const updates = await Astro.glob("/src/posts/updates/*.md");
-    const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
-    return updates.concat(pressReleases).map((post) => ({
-        params: {
-            slug: post.frontmatter.url,
-        },
-        props: {
-            post,
-        },
-    }));
+    const updates: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+        "/src/posts/updates/*.md"
+    );
+    const pressReleases: MarkdownInstance<Record<string, any>>[] =
+        await Astro.glob("/src/posts/press releases/*.md");
+    return updates
+        .concat(pressReleases)
+        .map((post: MarkdownInstance<Record<string, any>>) => ({
+            params: {
+                slug: post.frontmatter.url,
+            },
+            props: {
+                post,
+            },
+        }));
 }
 
 const { Content, frontmatter } = Astro.props.post;
@@ -20,8 +26,8 @@ const { Content, frontmatter } = Astro.props.post;
 <Layout
     title={frontmatter.title}
     backgroundStyling={frontmatter.type === "Press Release"
-        ? "bg-gradient-to-b from-supernova-200 to-80% to-honey-flower-500"
-        : "bg-gradient-to-b from-honey-flower-600 to-honey-flower-300"}
+        ? "bg-gradient-to-b from-supernova-100 to-supernova-200"
+        : "bg-gradient-to-b from-honey-flower-500 to-honey-flower-200"}
 >
     <div
         class="my-4 max-w-[90vw] md:max-w-screen-md pb-2 px-2 bg-honey-flower-50 shadow-lg shadow-black flex-col mx-auto"
