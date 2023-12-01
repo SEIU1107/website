@@ -1,7 +1,8 @@
 ---
-import { Image } from "astro:assets";
+import { Image, imageConfig } from "astro:assets";
 export interface Props {
     src: ImageMetadata;
+    cutline?: string /* Italicized text under the photo */;
     alt?: string;
     horizontal?: string /* Is the image on the left or right of the slot? */;
     imageStyle?: string /* TailwindCSS to override the Image component's classes */;
@@ -10,16 +11,24 @@ export interface Props {
 const {
     src,
     alt = "",
+    cutline,
     horizontal = "left",
-    imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg ".concat(
-        horizontal === "left"
-            ? "md:float-left md:mr-3"
-            : "md:float-right md:ml-3"
-    ),
+    imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg",
 } = Astro.props as Props;
 ---
 
 <div>
-    <Image src={src} alt={alt} class={imageStyle} />
+    <div
+        class={horizontal === "left"
+            ? "flex flex-col md:float-left md:mr-3"
+            : "flex flex-col md:float-right md:ml-3"}
+    >
+        <Image src={src} alt={alt} class={imageStyle} />
+        <i
+            class={cutline
+                ? "pt-1 pb-2.5 block text-sm max-w-[90vw] sm:max-w-md lg:max-w-lg"
+                : "hidden"}>{cutline}</i
+        >
+    </div>
     <slot />
 </div>

@@ -3,11 +3,16 @@ import Layout from "../layouts/Layout.astro";
 import LatestNews from "../components/Index/LatestNews.astro";
 import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
 import StrongerTogether from "../components/Index/StrongerTogether.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
+import CollageImage from "../components/CollageImage.astro";
+import Button from "../components/Button.astro";
+
+import imgTogether from "/src/images/index/JoinTogether.jpg";
 ---
 
 <Layout>
     <main
-        class="bg-cover bg-top lg:bg-left bg-[url(/src/images/HomecareMobile.png)] lg:bg-[url(/src/images/HomecareGraphic.jpg)] h-full mx-auto w-full"
+        class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
     >
         <div
             class="flex flex-col mx-auto lg:m-0 lg:ml-auto justify-between max-w-md lg:max-w-screen-md py-10 lg:py-12"
@@ -19,7 +24,7 @@ import StrongerTogether from "../components/Index/StrongerTogether.astro";
             </div>
             <div class="lg:max-w-screen-sm m-auto lg:m-0 lg:ml-auto">
                 <h1
-                    class="shadowClass uppercase font-bold mx-5 font-Trebuchet text-center text-supernova-400 text-6xl lg:text-7xl"
+                    class="shadowClass uppercase font-bold mx-5 font-Roboto text-center text-supernova-400 text-6xl lg:text-7xl"
                 >
                     United For Quality Services
                 </h1>
@@ -28,12 +33,33 @@ import StrongerTogether from "../components/Index/StrongerTogether.astro";
     </main>
 
     <StrongerTogether />
-    <LatestNews
-        bgColor="bg-gradient-to-b from-honey-flower-900 to-honey-flower-700"
-    />
-    <SocialMediaFeeds
-        bgColor="bg-gradient-to-b from-honey-flower-700 to-honey-flower-500"
-    />
+    <LatestNews />
+    <div
+        class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-400"
+    >
+        <HeadingTitle text="Why We're Joining Together" />
+        <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+            <CollageImage src={imgTogether}>
+                <p class="py-2">
+                    Public service, home care and health care workers are
+                    joining together to get a real say over our wages, staffing,
+                    retirement, and working conditions. We're united, and we're
+                    building the strength necessary to secure record contracts,
+                    win policy changes in the state legislature and raise
+                    standards for all working people.
+                </p>
+                <p class="py-2 pb-5">
+                    We're standing up to protect the marginalized, fight for the
+                    quality services that Nevada residents and our patients
+                    deserve, and win fair pay increases for everyone—including
+                    chronically underpaid women and people of color—throughout
+                    our state.
+                </p>
+                <Button href="/join" text="Join Us" />
+            </CollageImage>
+        </div>
+    </div>
+    <SocialMediaFeeds />
 </Layout>
 
 <style>
