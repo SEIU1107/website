@@ -4,6 +4,7 @@ featuredImg: '/post_imgs/2023/election-graphic-v4.jpg'
 url: '2023-08-31-Landslide'
 excerpt: In one of the biggest organizing drives in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need.
 date: 2023-08-31
+type: Press Release
 author: SEIU
 ---
 **Las Vegas, Nev.** — In one of the [biggest organizing drives](https://unionelections.org/data/national/) in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need. The series of elections have occurred since March of this year, with margins up to 95% in favor of joining SEIU Local 1107. Hundreds more workers will be heading toward elections in coming months. 
