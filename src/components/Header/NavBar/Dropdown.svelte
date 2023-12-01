@@ -20,13 +20,13 @@
         <div class={clickable}>{title}</div>
     </a>
     {:else if content}
-    <button class="text-honey-flower-800 bg-honey-flower-300 text-center transition ease-in-out duration-250 p-4 text-base border-none cursor-pointer hover:bg-supernova-300" 
+    <button class="shadow-black shadow-md text-honey-flower-800 bg-honey-flower-300 text-center transition ease-in-out duration-250 p-4 text-base border-none cursor-pointer group-hover:bg-supernova-300 group-hover:shadow-none group-hover:translate-y-0.5" 
     on:click={onClick} 
     on:keypress={onClick} 
     aria-label={title.concat(" Toggle")}>
         {title}
     </button>
-    <div class="hidden absolute text-white bg-honey-flower-950 min-w-[160px] shadow-lg z-1 group-hover:block">
+    <div class="hidden absolute shadow-lg shadow-black text-white bg-honey-flower-950 min-w-[160px] z-1 group-hover:block">
         {#each content as dropdown}
         <a
         class="bg-honey-flower-950 text-white p-4 text-base block transition ease-in-out duration-250 hover:underline hover:bg-supernova-500 hover:text-honey-flower-950 active:no-underline"

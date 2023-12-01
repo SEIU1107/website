@@ -7,18 +7,14 @@ import Layout from "../layouts/Layout.astro";
 import firstImage from "/src/images/about_us/JAK01345.jpg";
 import secondImage from "/src/images/about_us/Image2.jpg";
 import CollageImage from "../components/CollageImage.astro";
+import Subtitle from "../components/Subtitle.astro";
 ---
 
 <Layout title="About SEIU Local 1107" centered="true">
     <HeadingTitle
         text="The Largest Movement of Healthcare & Public Workers in Nevada"
     />
-    <h2
-        class="pb-2.5 text-center text-honey-flower-800 italic font-Trebuchet text-3xl"
-    >
-        United for good jobs and quality services for all!
-    </h2>
-
+    <Subtitle text="United for good jobs and quality services for all!" />
     <CollageImage src={firstImage} horizontal="right">
         <p class="py-1">
             SEIU Local 1107 is the largest healthcare and public service union

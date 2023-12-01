@@ -11,8 +11,10 @@ const {
     src,
     alt = "",
     horizontal = "left",
-    imageStyle = "rounded-lg lg:rounded-2xl lg:px-3 m-auto max-w-sm md:max-w-md lg:max-w-lg ".concat(
-        horizontal === "left" ? "lg:float-left" : "lg:float-right"
+    imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg ".concat(
+        horizontal === "left"
+            ? "md:float-left md:mr-3"
+            : "md:float-right md:ml-3"
     ),
 } = Astro.props as Props;
 ---

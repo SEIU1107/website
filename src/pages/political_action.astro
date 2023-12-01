@@ -1,0 +1,44 @@
+---
+import CollageImage from "../components/CollageImage.astro";
+import HeadingTitle from "../components/HeadingTitle.astro";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.astro";
+
+import firstImage from "/src/images/political_action/Image1.jpg";
+---
+
+<Layout title="SEIU 1107 Political Action" centered="true">
+    <HeadingTitle text="What is COPE?" />
+    <div class="py-2 flex m-auto max-w-screen-lg">
+        <CollageImage src={firstImage}>
+            <p>
+                When SEIU members join together, make our voice heard, and hold
+                elected officials accountable, we're able to win real change for
+                working people, protect public services, and stand up for
+                quality health care.
+            </p>
+            <p>
+                That's why contributing to our <b
+                    >Committee on Political Education (COPE)</b
+                > fund is so important. The committee is made up of SEIU
+                members, staff and retirees who contribute monthly to ensure
+                that we have the political power to protect our hard-earned
+                political and legislative victories that improve public services
+                and the lives of working families.
+            </p>
+            <div class="py-2">
+                <Button
+                    href="https://act.seiu.org/a/committee-political-education?emci=dad38a93-decd-ed11-a8e0-00224832e811&emdi=4e865f38-a4ce-ed11-a8e0-00224832e811&ceid=80677448"
+                    text="Join Cope"
+                />
+            </div>
+        </CollageImage>
+    </div>
+</Layout>
+
+<style>
+    p {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+</style>

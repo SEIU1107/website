@@ -9,19 +9,20 @@ import { Image } from "astro:assets";
 import bannerImg from "/src/images/homecare/banner.png";
 
 import Michelly from "/src/images/homecare/Michelly-Franco.jpg";
+import Subtitle from "../components/Subtitle.astro";
 ---
 
 <Layout title="Homecare Workers United!" centered="true">
     <HeadingTitle
         text="Nevada Home Care Workers Are Winning a Better Future!"
     />
-
     <h2
-        class="pb-2.5 text-center text-honey-flower-800 italic font-Trebuchet text-3xl m-auto"
+        class="text-center text-purple-800 text-xl font-Trebuchet max-w-screen-md pb-2.5 flex m-auto"
     >
         By uniting together, caregivers have been able to achieve historic
-        change for themselves, their families and their clients.
+        changes for themselves, their families, and their clients.
     </h2>
+
     <Image
         class="hidden lg:flex m-auto"
         src={bannerImg}

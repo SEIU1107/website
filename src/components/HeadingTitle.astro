@@ -1,17 +1,18 @@
 ---
 export interface Props {
     text?: string;
+    styling?: string /* TailwindCSS class to override style */;
 }
 
-const { text = "Title Text" } = Astro.props as Props;
+const {
+    text = "Title Text",
+    styling = "m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5",
+} = Astro.props as Props;
 
 const size =
     text.length <= 50 ? " text-4xl lg:text-5xl" : " text-3xl lg:text-4xl";
 
-const classStyle =
-    "m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5".concat(
-        size
-    );
+const classStyle = styling.concat(size);
 ---
 
 <h1 class={classStyle}>

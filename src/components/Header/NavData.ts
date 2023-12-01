@@ -36,16 +36,12 @@ const myUnion = [
         pageName: "Constitution & Bylaws",
         href: "/constitution",
     },
-    {
-        pageName: "Committees & Caucus",
-        href: "/under_construction",
-    },
 ];
 
 const getInvolved = [
     {
-        pageName: "Events Calendar",
-        href: "/events_calendar",
+        pageName: "Events",
+        href: "/events",
     },
     {
         pageName: "Know Your Rights",
@@ -53,11 +49,11 @@ const getInvolved = [
     },
     {
         pageName: "Political Action",
-        href: "/under_construction",
+    href: "/political_action",
     },
     {
         pageName: "Communities United",
-        href: "/under_construction",
+        href: "/communities_united/",
     },
     {
         pageName: "Home Care Workers United",
