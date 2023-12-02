@@ -25,6 +25,10 @@ const dropdownAboutUs = [
 /* My Union */
 const myUnion = [
     {
+        pageName: "Know Your Rights",
+        href: "/know_your_rights/",
+    },
+    {
         pageName: "Find Your Steward",
         href: "/stewards",
     },
@@ -36,6 +40,8 @@ const myUnion = [
         pageName: "Constitution & Bylaws",
         href: "/constitution",
     },
+    
+    
 ];
 
 const getInvolved = [
@@ -43,10 +49,7 @@ const getInvolved = [
         pageName: "Events",
         href: "/events",
     },
-    {
-        pageName: "Know Your Rights",
-        href: "/know_your_rights/",
-    },
+    
     {
         pageName: "Political Action",
     href: "/political_action",
@@ -59,6 +62,7 @@ const getInvolved = [
         pageName: "Home Care Workers United",
         href: "/homecare_workers_united",
     },
+    
 ];
 
 const updatesPages = [
