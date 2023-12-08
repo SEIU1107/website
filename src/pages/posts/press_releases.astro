@@ -5,7 +5,7 @@ import NewsGrid from "../../components/NewsGrid.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const posts: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    "/seiu-website/src/posts/press releases/*.md"
+    "/src/posts/press releases/*.md"
 );
 
 const years = posts.reduce((acc: any, post) => {

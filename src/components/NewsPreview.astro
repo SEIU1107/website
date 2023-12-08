@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Button from "../components/Button.astro";
-import Purple from "/seiu-website/src/images/purple_transparent.png";
+import Purple from "/src/images/purple_transparent.png";
 
 export interface Props {
     featuredImg: string /* Picture for the preview */;
@@ -18,12 +18,12 @@ const {
     title = "News Story Title",
     excerpt = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     date = "2023-01-01",
-    url = "/seiu-website/",
+    url = "/",
     type = "Update",
     author = "SEIU",
 } = Astro.props as Props;
 
-const href = type === "News Article" ? url : "/seiu-website/posts/" + url;
+const href = type === "News Article" ? url : "/posts/" + url;
 ---
 
 <div

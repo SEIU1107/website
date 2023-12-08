@@ -1,6 +1,6 @@
 ---
 title: Over 1,000 Nevada Home Care Workers Take Part in Landslide Union Elections in one of the Biggest Organizing Drives in Recent History
-featuredImg: '/seiu-website/post_imgs/2023/election-graphic-v4.jpg'
+featuredImg: '/post_imgs/2023/election-graphic-v4.jpg'
 url: '2023-08-31-Landslide'
 excerpt: In one of the biggest organizing drives in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need.
 date: 2023-08-31
@@ -9,7 +9,7 @@ author: SEIU
 ---
 **Las Vegas, Nev.** — In one of the [biggest organizing drives](https://unionelections.org/data/national/) in recent history, over 1,000 Nevada home care workers have already voted or are taking part in landslide union elections at multiple employers. Workers say they are forming their union to advocate for good jobs and quality care so the rapidly-aging population and people with disabilities get the services they urgently need. The series of elections have occurred since March of this year, with margins up to 95% in favor of joining SEIU Local 1107. Hundreds more workers will be heading toward elections in coming months. 
 
-<img src="/seiu-website/post_imgs/2023/election-graphic-v4.jpg" alt="Election Graphic" width="40%" style="float: left; padding-right: 20px; ">
+<img src="/post_imgs/2023/election-graphic-v4.jpg" alt="Election Graphic" width="40%" style="float: left; padding-right: 20px; ">
 
 The explosion of organizing echoes a national trend in which [67% of Americans now approve of labor unions](https://news.gallup.com/poll/510281/unions-strengthening.aspx), at a time when the middle class is shrinking and workers are struggling with severe inequality, inflation and global economic changes. Tens of thousands of workers – including at corporate giants such as Starbucks, UPS and Amazon – have been standing up and demanding better pay, benefits and working conditions.
 

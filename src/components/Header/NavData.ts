@@ -2,23 +2,23 @@
 const dropdownAboutUs = [
     {
         pageName: "Who We Are",
-        href: "/seiu-website/about_us/"
+        href: "/about_us/"
     },
     {
         pageName: "The Union Difference",
-        href: "/seiu-website/union_difference/",
+        href: "/union_difference/",
     },
     {
         pageName: "Executive Board",
-        href: "/seiu-website/executive_board",
+        href: "/executive_board",
     },
     {
         pageName: "Staff",
-        href: "/seiu-website/staff_page",
+        href: "/staff_page",
     },
     {
         pageName: "Careers",
-        href: "/seiu-website/careers/",
+        href: "/careers/",
     },
 ];
 
@@ -26,19 +26,19 @@ const dropdownAboutUs = [
 const myUnion = [
     {
         pageName: "Know Your Rights",
-        href: "/seiu-website/know_your_rights/",
+        href: "/know_your_rights/",
     },
     {
         pageName: "Find Your Steward",
-        href: "/seiu-website/stewards",
+        href: "/stewards",
     },
     {
         pageName: "Member Benefits",
-        href: "/seiu-website/member_benefits",
+        href: "/member_benefits",
     },
     {
         pageName: "Constitution & Bylaws",
-        href: "/seiu-website/constitution",
+        href: "/constitution",
     },
     
     
@@ -47,20 +47,20 @@ const myUnion = [
 const getInvolved = [
     {
         pageName: "Events",
-        href: "/seiu-website/events",
+        href: "/events",
     },
     
     {
         pageName: "Political Action",
-    href: "/seiu-website/political_action",
+    href: "/political_action",
     },
     {
         pageName: "Communities United",
-        href: "/seiu-website/communities_united/",
+        href: "/communities_united/",
     },
     {
         pageName: "Home Care Workers United",
-        href: "/seiu-website/homecare_workers_united",
+        href: "/homecare_workers_united",
     },
     
 ];
@@ -68,15 +68,15 @@ const getInvolved = [
 const updatesPages = [
     {
         pageName: "Blog",
-        href: "/seiu-website/posts/blog"
+        href: "/posts/blog"
     },
     {
         pageName: "Press Releases",
-        href: "/seiu-website/posts/press_releases",
+        href: "/posts/press_releases",
     },
     {
         pageName: "In The News",
-        href: "/seiu-website/posts/news_articles",
+        href: "/posts/news_articles",
     },
 ];
 
@@ -99,10 +99,10 @@ export const all_dropdowns = [
     },
     {
         title: "Contact Us",
-        titleHref: "/seiu-website/contact_us",
+        titleHref: "/contact_us",
     },
     {
         title: "Join Now!",
-        titleHref: "/seiu-website/join",
+        titleHref: "/join",
     },
 ];
