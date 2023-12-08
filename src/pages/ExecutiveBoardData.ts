@@ -1,10 +1,10 @@
 
 // Big Profiles
-import Yarleny from "/src/images/stewards/UMC/Yarleny-1024x1024.png";
-import Michelle from "/src/images/stewards/CC/Michelle-1-1024x1024.png";
-import Deb from "/src/images/stewards/CC/Debbie-1024x1024.png";
-import Zavia from "/src/images/stewards/Sunrise/Zavia-1024x1024.png";
-import Sam from "/src/images/executive_board/Sam.jpg";
+import Yarleny from "/seiu-website/src/images/stewards/UMC/Yarleny-1024x1024.png";
+import Michelle from "/seiu-website/src/images/stewards/CC/Michelle-1-1024x1024.png";
+import Deb from "/seiu-website/src/images/stewards/CC/Debbie-1024x1024.png";
+import Zavia from "/seiu-website/src/images/stewards/Sunrise/Zavia-1024x1024.png";
+import Sam from "/seiu-website/src/images/executive_board/Sam.jpg";
 
 export const bigProfPeopleData = [
     // Big Profiles
@@ -41,21 +41,21 @@ export const bigProfPeopleData = [
 ];
 
 // Small Profiles
-import Patricia from "/src/images/stewards/CC/Patricia.png";
-import Elizabeth from "/src/images/stewards/UMC/elizabeth bolhouse.png";
-import Joe from "/src/images/stewards/CC/Joe.png";
-import Nicole from "/src/images/executive_board/Nicole.png";
-import Jody from "/src/images/stewards/Sunrise/Jody.png";
-import Saki from "/src/images/stewards/CC/Saki.png";
-import Hodge from "/src/images/stewards/CC/Hodge.png";
-import Pam from "/src/images/executive_board/Pam.png";
-import Audrey from "/src/images/stewards/UMC/Audrey.png";
-import Theresa from "/src/images/stewards/UMC/TheresaKing.png";
-import Karla from "/src/images/executive_board/Karla.png";
-import Rick from "/src/images/stewards/CC/Rick.png";
-import Erika from "/src/images/stewards/Sunrise/Erika.png";
-import Danielle from "/src/images/stewards/RTC/Danielle.jpg";
-import AliciaSmith from "/src/images/stewards/SNRHA/alicia.png";
+import Patricia from "/seiu-website/src/images/stewards/CC/Patricia.png";
+import Elizabeth from "/seiu-website/src/images/stewards/UMC/elizabeth bolhouse.png";
+import Joe from "/seiu-website/src/images/stewards/CC/Joe.png";
+import Nicole from "/seiu-website/src/images/executive_board/Nicole.png";
+import Jody from "/seiu-website/src/images/stewards/Sunrise/Jody.png";
+import Saki from "/seiu-website/src/images/stewards/CC/Saki.png";
+import Hodge from "/seiu-website/src/images/stewards/CC/Hodge.png";
+import Pam from "/seiu-website/src/images/executive_board/Pam.png";
+import Audrey from "/seiu-website/src/images/stewards/UMC/Audrey.png";
+import Theresa from "/seiu-website/src/images/stewards/UMC/TheresaKing.png";
+import Karla from "/seiu-website/src/images/executive_board/Karla.png";
+import Rick from "/seiu-website/src/images/stewards/CC/Rick.png";
+import Erika from "/seiu-website/src/images/stewards/Sunrise/Erika.png";
+import Danielle from "/seiu-website/src/images/stewards/RTC/Danielle.jpg";
+import AliciaSmith from "/seiu-website/src/images/stewards/SNRHA/alicia.png";
 
 export const smallProfPeopleData = [
     {

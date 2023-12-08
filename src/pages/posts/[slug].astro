@@ -4,10 +4,10 @@ import HeadingTitle from "../../components/HeadingTitle.astro";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
     const updates: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-        "/src/posts/updates/*.md"
+        "/seiu-website/src/posts/updates/*.md"
     );
     const pressReleases: MarkdownInstance<Record<string, any>>[] =
-        await Astro.glob("/src/posts/press releases/*.md");
+        await Astro.glob("/seiu-website/src/posts/press releases/*.md");
     return updates
         .concat(pressReleases)
         .map((post: MarkdownInstance<Record<string, any>>) => ({

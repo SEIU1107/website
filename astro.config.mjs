@@ -8,6 +8,7 @@ import mdx from "@astrojs/mdx";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://rezcom.github.io',
+  base: '/seiu-website',
   integrations: [tailwind(), svelte(), mdx()],
 
 });

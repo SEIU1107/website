@@ -5,7 +5,7 @@ import HeadingTitle from "../../components/HeadingTitle.astro";
 import type { MarkdownInstance } from "astro";
 
 const posts: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    "/src/posts/updates/*.md"
+    "/seiu-website/src/posts/updates/*.md"
 );
 
 const years = posts.reduce(
