@@ -9,6 +9,5 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   site: 'https://rezcom.github.io',
   integrations: [tailwind(), svelte(), mdx()],
-  output: "hybrid",
-  adapter: vercel()
+
 });
