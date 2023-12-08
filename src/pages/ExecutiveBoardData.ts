@@ -3,7 +3,7 @@
 import Yarleny from "../images/stewards/UMC/Yarleny-1024x1024.png";
 import Michelle from "../images/stewards/CC/Michelle-1-1024x1024.png";
 import Deb from "../images/stewards/CC/Debbie-1024x1024.png";
-import Zavia from "../images/stewards/Sunrise/Zavia-1024x1024.png";
+import Zavia from "../images/stewards/Sunrise/zavia.png";
 import Sam from "../images/executive_board/Sam.jpg";
 
 export const bigProfPeopleData = [
