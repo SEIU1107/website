@@ -1,15 +1,15 @@
-import Rick from "/src/images/stewards/CC/Rick.png";
-import Alexis from "/src/images/stewards/CC/Alexis.jpg";
-import Patricia from "/src/images/stewards/CC/Patricia.png";
-import Adella from "/src/images/stewards/CC/AdellaLogan.jpg";
-import Anissa from "/src/images/stewards/CC/Anissa.png";
-import FabPavel from "/src/images/stewards/CC/FabPavel.jpg";
-import Joe from "/src/images/stewards/CC/Joe.png";
-import JohnMontgomery from "/src/images/stewards/CC/JohnMontgomery.jpeg";
-import JudyPerillo from "/src/images/stewards/CC/JudyPerillo.jpg";
-import Kevin from "/src/images/stewards/CC/Kevin-Carey-Clark-County-1.jpg";
-import MichelleUpton from "/src/images/stewards/CC/Michelle-Upton-CC.png";
-import Nirvana from "/src/images/stewards/CC/Nirvana-Hamilton.png";
+import Rick from "../../images/stewards/CC/Rick.png";
+import Alexis from "../../images/stewards/CC/Alexis.jpg";
+import Patricia from "../../images/stewards/CC/Patricia.png";
+import Adella from "../../images/stewards/CC/AdellaLogan.jpg";
+import Anissa from "../../images/stewards/CC/Anissa.png";
+import FabPavel from "../../images/stewards/CC/FabPavel.jpg";
+import Joe from "../../images/stewards/CC/Joe.png";
+import JohnMontgomery from "../../images/stewards/CC/JohnMontgomery.jpeg";
+import JudyPerillo from "../../images/stewards/CC/JudyPerillo.jpg";
+import Kevin from "../../images/stewards/CC/Kevin-Carey-Clark-County-1.jpg";
+import MichelleUpton from "../../images/stewards/CC/Michelle-Upton-CC.png";
+import Nirvana from "../../images/stewards/CC/Nirvana-Hamilton.png";
 
 import type { Profile } from "../../Profile";
 
@@ -228,12 +228,12 @@ export const dataGeneralUnit: Profile[] = [
     },
 ];
 
-import Saki from "/src/images/stewards/CC/Saki.png";
-import JohnBishop from "/src/images/stewards/CC/John-Bishop-DOA-non-sup.png";
-import JohnWarthan from "/src/images/stewards/CC/John-W.png";
-import Hodge from "/src/images/stewards/CC/Hodge.png";
-import Sharita from "/src/images/stewards/CC/SharitaTobin.jpeg";
-import TomSharpe from "/src/images/stewards/CC/Tom-Sharpe.png";
+import Saki from "../../images/stewards/CC/Saki.png";
+import JohnBishop from "../../images/stewards/CC/John-Bishop-DOA-non-sup.png";
+import JohnWarthan from "../../images/stewards/CC/John-W.png";
+import Hodge from "../../images/stewards/CC/Hodge.png";
+import Sharita from "../../images/stewards/CC/SharitaTobin.jpeg";
+import TomSharpe from "../../images/stewards/CC/Tom-Sharpe.png";
 export const dataDOA: Profile[] = [
     {
         name: 'Ahsaki "Saki" Hardy',
@@ -342,11 +342,11 @@ export const dataDOA: Profile[] = [
     },
 ];
 
-import EarlBarnes from "/src/images/stewards/CC/EJBarnes.jpg";
-import HowardStone from "/src/images/stewards/CC/HowardStone.jpg";
-import MichelleBrown from "/src/images/stewards/CC/MichelleBrown.jpeg";
-import NicoleMiller from "/src/images/stewards/CC/Nicole-Miller-CC.png";
-import RichardPerez from "/src/images/stewards/CC/RichardPerez.jpg";
+import EarlBarnes from "../../images/stewards/CC/EJBarnes.jpg";
+import HowardStone from "../../images/stewards/CC/HowardStone.jpg";
+import MichelleBrown from "../../images/stewards/CC/MichelleBrown.jpeg";
+import NicoleMiller from "../../images/stewards/CC/Nicole-Miller-CC.png";
+import RichardPerez from "../../images/stewards/CC/RichardPerez.jpg";
 
 export const dataDFSDJJS: Profile[] = [
     {
@@ -406,7 +406,7 @@ export const dataDFSDJJS: Profile[] = [
     },
 ];
 
-import JimCowan from "/src/images/stewards/CC/JimCowan.jpg";
+import JimCowan from "../../images/stewards/CC/JimCowan.jpg";
 export const dataWRD: Profile[] = [
     {
         name: "Jim Cowan",
@@ -481,12 +481,12 @@ export const dataWRD: Profile[] = [
     },
 ];
 
-import MikelleCieri from "/src/images/stewards/CC/mikelle-cieri.png";
-import MarlaMcPherson from "/src/images/stewards/CC/Marla.png";
-import SaraEvans from "/src/images/stewards/CC/Sara-Evans.png";
-import MarkMatthews from "/src/images/stewards/CC/Mark-Matthews.png";
-import Mihanee from "/src/images/stewards/CC/Mihanee-Williams.png";
-import RobinFranklin from "/src/images/stewards/CC/Robin-Franklin-CC.png";
+import MikelleCieri from "../../images/stewards/CC/mikelle-cieri.png";
+import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
+import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
+import MarkMatthews from "../../images/stewards/CC/Mark-Matthews.png";
+import Mihanee from "../../images/stewards/CC/Mihanee-Williams.png";
+import RobinFranklin from "../../images/stewards/CC/Robin-Franklin-CC.png";
 
 export const dataSupervisory: Profile[] = [
     {

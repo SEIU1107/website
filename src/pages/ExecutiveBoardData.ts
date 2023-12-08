@@ -1,10 +1,10 @@
 
 // Big Profiles
-import Yarleny from "/src/images/stewards/UMC/Yarleny-1024x1024.png";
-import Michelle from "/src/images/stewards/CC/Michelle-1-1024x1024.png";
-import Deb from "/src/images/stewards/CC/Debbie-1024x1024.png";
-import Zavia from "/src/images/stewards/Sunrise/Zavia-1024x1024.png";
-import Sam from "/src/images/executive_board/Sam.jpg";
+import Yarleny from "../images/stewards/UMC/Yarleny-1024x1024.png";
+import Michelle from "../images/stewards/CC/Michelle-1-1024x1024.png";
+import Deb from "../images/stewards/CC/Debbie-1024x1024.png";
+import Zavia from "../images/stewards/Sunrise/Zavia-1024x1024.png";
+import Sam from "../images/executive_board/Sam.jpg";
 
 export const bigProfPeopleData = [
     // Big Profiles
@@ -41,21 +41,21 @@ export const bigProfPeopleData = [
 ];
 
 // Small Profiles
-import Patricia from "/src/images/stewards/CC/Patricia.png";
-import Elizabeth from "/src/images/stewards/UMC/elizabeth bolhouse.png";
-import Joe from "/src/images/stewards/CC/Joe.png";
-import Nicole from "/src/images/executive_board/Nicole.png";
-import Jody from "/src/images/stewards/Sunrise/Jody.png";
-import Saki from "/src/images/stewards/CC/Saki.png";
-import Hodge from "/src/images/stewards/CC/Hodge.png";
-import Pam from "/src/images/executive_board/Pam.png";
-import Audrey from "/src/images/stewards/UMC/Audrey.png";
-import Theresa from "/src/images/stewards/UMC/TheresaKing.png";
-import Karla from "/src/images/executive_board/Karla.png";
-import Rick from "/src/images/stewards/CC/Rick.png";
-import Erika from "/src/images/stewards/Sunrise/Erika.png";
-import Danielle from "/src/images/stewards/RTC/Danielle.jpg";
-import AliciaSmith from "/src/images/stewards/SNRHA/alicia.png";
+import Patricia from "../images/stewards/CC/Patricia.png";
+import Elizabeth from "../images/stewards/UMC/elizabeth bolhouse.png";
+import Joe from "../images/stewards/CC/Joe.png";
+import Nicole from "../images/executive_board/Nicole.png";
+import Jody from "../images/stewards/Sunrise/Jody.png";
+import Saki from "../images/stewards/CC/Saki.png";
+import Hodge from "../images/stewards/CC/Hodge.png";
+import Pam from "../images/executive_board/Pam.png";
+import Audrey from "../images/stewards/UMC/Audrey.png";
+import Theresa from "../images/stewards/UMC/TheresaKing.png";
+import Karla from "../images/executive_board/Karla.png";
+import Rick from "../images/stewards/CC/Rick.png";
+import Erika from "../images/stewards/Sunrise/Erika.png";
+import Danielle from "../images/stewards/RTC/Danielle.jpg";
+import AliciaSmith from "../images/stewards/SNRHA/alicia.png";
 
 export const smallProfPeopleData = [
     {

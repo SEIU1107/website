@@ -14,16 +14,16 @@ const {
     centered = "false",
     backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
 } = Astro.props as Props;
+
+/* Favicon */
+
+const appleTouchIcon = "../images/favicon/apple-touch-icon.png";
 ---
 
 <!doctype html>
 <html lang="en">
     <head>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="/src/images/favicon/apple-touch-icon.png"
-        />
+        <link rel="apple-touch-icon" sizes="180x180" href={appleTouchIcon} />
         <link
             rel="icon"
             type="image/png"
@@ -34,7 +34,7 @@ const {
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/src/images/favicon/favicon-16x16.png"
+            href="../images/favicon/favicon-16x16.png"
         />
         <link rel="manifest" href="/src/images/favicon/site.webmanifest" />
         <link

@@ -15,9 +15,9 @@ const {
     titleStyle = "shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold",
     textStyle = "shadowClass font-Roboto text-white",
 } = Astro.props as Props;
-const updates = await Astro.glob("/src/posts/updates/*.md");
-const articles = await Astro.glob("/src/posts/news articles/*.md");
-const pressReleases = await Astro.glob("/src/posts/press releases/*.md");
+const updates = await Astro.glob("../../posts/updates/*.md");
+const articles = await Astro.glob("../../posts/news articles/*.md");
+const pressReleases = await Astro.glob("../../posts/press releases/*.md");
 const previews = updates
     .concat(articles)
     .concat(pressReleases)
