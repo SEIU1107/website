@@ -45,7 +45,7 @@ import Patricia from "../images/stewards/CC/Patricia.png";
 import Elizabeth from "../images/stewards/UMC/elizabeth bolhouse.png";
 import Joe from "../images/stewards/CC/Joe.png";
 import Nicole from "../images/executive_board/Nicole.png";
-import Jody from "../images/stewards/Sunrise/jody.png";
+import Jody from "../images/stewards/Sunrise/Jody.png";
 import Saki from "../images/stewards/CC/Saki.png";
 import Hodge from "../images/stewards/CC/Hodge.png";
 import Pam from "../images/executive_board/Pam.png";
@@ -53,7 +53,7 @@ import Audrey from "../images/stewards/UMC/Audrey.png";
 import Theresa from "../images/stewards/UMC/TheresaKing.png";
 import Karla from "../images/executive_board/Karla.png";
 import Rick from "../images/stewards/CC/Rick.png";
-import Erika from "../images/stewards/Sunrise/erika.png";
+import Erika from "../images/stewards/Sunrise/Erika.png";
 import Danielle from "../images/stewards/RTC/Danielle.jpg";
 import AliciaSmith from "../images/stewards/SNRHA/alicia.png";
 
