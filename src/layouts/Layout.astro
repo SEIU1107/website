@@ -38,10 +38,10 @@ const {
     </head>
     <body
         class={backgroundStyling
-            ? "flex flex-col font-Roboto leading-6 text-base text-neutral-800 ".concat(
+            ? "font-Roboto leading-6 text-base text-neutral-800 ".concat(
                   backgroundStyling
               )
-            : "flex flex-col font-Roboto leading-6 text-base text-neutral-800 bg-honey-flower-100"}
+            : "font-Roboto leading-6 text-base text-neutral-800 bg-honey-flower-100"}
     >
         <Header />
         <div class="min-h-[100vh]">
@@ -56,5 +56,11 @@ const {
             }
         </div>
         <Footer />
+        <style>
+            body {
+                max-width: 100%;
+                overflow-x: hidden;
+            }
+        </style>
     </body>
 </html>
