@@ -7,6 +7,7 @@ import Layout from "../layouts/Layout.astro";
 import imgDragons from "../images/communities_united/Dragons.jpg";
 import imgLoveWins from "../images/communities_united/LoveWins.jpg";
 import imgSinger from "../images/communities_united/Singer.jpg";
+import imgPerformer from "../images/communities_united/Performer.jpg";
 ---
 
 <Layout title="SEIU 1107 Communities United" centered="true">
@@ -26,6 +27,14 @@ import imgSinger from "../images/communities_united/Singer.jpg";
                     civic engagement, voter participation and understanding
                     across racial and identity lines.
                 </p>
+            </CollageImage>
+        </div>
+        <div class="py-2">
+            <CollageImage
+                src={imgPerformer}
+                horizontal="right"
+                imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
+            >
                 <p>
                     Over 100 partners helped to coordinate the festival,
                     including major unions, companies and grassroots
@@ -33,24 +42,24 @@ import imgSinger from "../images/communities_united/Singer.jpg";
                     Pacific Islander; Black; Latino; indigenous and LGBTQ+
                     communities.
                 </p>
+                <p>
+                    The 2023 celebration took on even more urgency as Nevadans
+                    confronted soaring hate crimes, Clark County School District
+                    police brutality against Black students; and increasingly
+                    hostile rhetoric against the rights of women, communities of
+                    color and LGBTQ+ people in recent years.
+                </p>
+                <p>
+                    The 2023 celebration took on even more urgency as Nevadans
+                    confronted soaring hate crimes, Clark County School District
+                    police brutality against Black students; and increasingly
+                    hostile rhetoric against the rights of women, communities of
+                    color and LGBTQ+ people in recent years.
+                </p>
             </CollageImage>
         </div>
         <div class="py-2">
-            <CollageImage src={imgLoveWins} horizontal="right">
-                <p>
-                    The 2023 celebration took on even more urgency as Nevadans
-                    confronted soaring hate crimes, Clark County School District
-                    police brutality against Black students; and increasingly
-                    hostile rhetoric against the rights of women, communities of
-                    color and LGBTQ+ people in recent years.
-                </p>
-                <p>
-                    The 2023 celebration took on even more urgency as Nevadans
-                    confronted soaring hate crimes, Clark County School District
-                    police brutality against Black students; and increasingly
-                    hostile rhetoric against the rights of women, communities of
-                    color and LGBTQ+ people in recent years.
-                </p>
+            <CollageImage src={imgLoveWins}>
                 <p>
                     "We live in a country that celebrates diversity and unity,
                     and it's crucial that we remember that,” said Gloria T.
@@ -69,7 +78,11 @@ import imgSinger from "../images/communities_united/Singer.jpg";
             </CollageImage>
         </div>
         <div class="py-2">
-            <CollageImage src={imgSinger}>
+            <CollageImage
+                src={imgSinger}
+                horizontal="right"
+                imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
+            >
                 <p>
                     Michelle Maese, President of SEIU Local 1107 noted the
                     importance of bringing Nevadans together as the state gears

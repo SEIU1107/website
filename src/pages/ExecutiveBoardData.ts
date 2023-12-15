@@ -18,7 +18,7 @@ export const bigProfPeopleData = [
         profileImg: Michelle,
         name: "Michelle Maese",
         Title: "SEIU 1107 President",
-        desc: "County Department of Family Services (DF). She is Chief Steward for the Clark County Supervisory Unit. She Chairs the SEIU 1107 Political Organizing Committee (POC) and also serves on the Finance and Racial Justice Committees.",
+        desc: "Michelle is a Supervisor for Clark County Child Protective Services and has been a SEIU Local 1107 member for over 15 years. Prior to being elected President, Michelle served as the union’s Secretary-Treasurer and Political Organizing Committee (POC) Chair, and has also served as Clark County Supervisory Unit Chief Steward, and a member of the SEIU Local 1107's Clark County bargaining team.",
     },
     {
         profileImg: Yarleny,

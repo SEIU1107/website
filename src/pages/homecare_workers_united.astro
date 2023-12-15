@@ -9,7 +9,6 @@ import { Image } from "astro:assets";
 import bannerImg from "../images/homecare/banner.png";
 
 import Michelly from "../images/homecare/Michelly-Franco.jpg";
-import Subtitle from "../components/Subtitle.astro";
 ---
 
 <Layout title="Homecare Workers United!" centered="true">
@@ -31,15 +30,25 @@ import Subtitle from "../components/Subtitle.astro";
     <InfoCardGridLayout
         styling="grid grid-cols-1 lg:grid-cols-2 gap-0 py-0 max-auto content-center"
     >
-        <InfoCard>
-            If you're a non-union home care worker and want to join our
-            movement, fill out a union card <LinkText
-                href="https://bit.ly/nvhomecaresignup"
-            >
-                here.
-            </LinkText>
+        <InfoCard title="Join The Movement!">
+            <p>
+                If you're a non-union home care worker and want to join our
+                movement, fill out a union card <LinkText
+                    href="https://bit.ly/nvhomecaresignup"
+                >
+                    here.
+                </LinkText>
+            </p>
+            <p class="py-2">
+                If your workplace is already represented by SEIU 1107, become a
+                union member <LinkText
+                    href="https://act.seiu.org/a/membership-application-home-care"
+                >
+                    here!
+                </LinkText>
+            </p>
         </InfoCard>
-        <InfoCard>
+        <InfoCard title="Get Involved!">
             If you're a home care worker who's a member of our union and want
             more info or to get involved, call our hotline at 702-755-4307.
         </InfoCard>
