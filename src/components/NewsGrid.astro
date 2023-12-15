@@ -9,7 +9,7 @@ export interface Props {
 
 const { previews, breakpoints } = Astro.props as Props;
 
-const gridClass = "mx-7 grid gap-0 justify-center grid-cols-1".concat(
+const gridClass = "grid gap-0 justify-center grid-cols-1".concat(
     breakpoints ?? ""
 );
 ---

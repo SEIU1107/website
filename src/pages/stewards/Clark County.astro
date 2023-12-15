@@ -1,5 +1,5 @@
 ---
-import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 import ButtonGrid from "../../components/ButtonGrid.astro";
 import PurpleSection from "../../components/Stewards/PurpleSection.astro";
@@ -12,14 +12,17 @@ import { dataDOA } from "./Clark County Data.ts";
 import { dataDFSDJJS } from "./Clark County Data.ts";
 import { dataWRD } from "./Clark County Data.ts";
 import { dataSupervisory } from "./Clark County Data.ts";
+import HeadingTitle from "../../components/HeadingTitle.astro";
 ---
 
-<StewardsLayout title="Clark County">
+<Layout title="Clark County Stewards">
+    <HeadingTitle text="Clark County" />
+
     <div class="py-2">
         <ButtonGrid buttons={buttons} />
     </div>
 
-    <LavSection title="NON-SUPERVISORY UNIT">
+    <LavSection title="Non-Supervisory Unit">
         <div id="GENERAL_UNIT"><Separator text="General Unit" /></div>
         <ProfileGrid data={dataGeneralUnit} />
         <div id="DOA"><Separator text="Department of Aviation (DOA)" /></div>
@@ -37,8 +40,8 @@ import { dataSupervisory } from "./Clark County Data.ts";
     </LavSection>
 
     <div id="Supervisory">
-        <PurpleSection title="SUPERVISORY UNIT">
+        <PurpleSection title="Supervisory Unit">
             <ProfileGrid data={dataSupervisory} />
         </PurpleSection>
     </div>
-</StewardsLayout>
+</Layout>

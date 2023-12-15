@@ -1,5 +1,5 @@
 ---
-import StewardsLayout from "../../layouts/StewardsLayout.astro";
+import Layout from "../../layouts/Layout.astro";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 import PurpleSection from "../../components/Stewards/PurpleSection.astro";
 import LavSection from "../../components/Stewards/LavSection.astro";
@@ -103,6 +103,7 @@ const nonSupData: Profile[] = [
 ];
 
 import GenoJahrling from "../../images/stewards/LVCVA/Geno.jpg";
+import HeadingTitle from "../../components/HeadingTitle.astro";
 
 const SupData: Profile[] = [
     {
@@ -129,15 +130,13 @@ const SupData: Profile[] = [
 ];
 ---
 
-<StewardsLayout
-    title="Las Vegas Convention & Visitor Authority (LVCVA)"
-    short_name="LVCVA"
->
-    <LavSection title="AMBASSADOR UNIT">
+<Layout title="LVCVA Stewards">
+    <HeadingTitle text="Las Vegas Convention and Visitors Authority" />
+    <LavSection title="Ambassador Unit">
         <ProfileGrid data={nonSupData} />
     </LavSection>
 
-    <PurpleSection title="SUPERVISORY AMBASSADOR UNIT">
+    <PurpleSection title="Supervisory Ambassador Unit">
         <ProfileGrid data={SupData} />
     </PurpleSection>
-</StewardsLayout>
+</Layout>
