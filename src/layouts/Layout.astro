@@ -12,7 +12,7 @@ export interface Props {
 const {
     title = "SEIU Local 1107",
     centered = "false",
-    backgroundStyling,
+    backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
 } = Astro.props as Props;
 ---
 
@@ -37,11 +37,9 @@ const {
         <title>{title}</title>
     </head>
     <body
-        class={backgroundStyling
-            ? "font-Roboto leading-6 text-base text-neutral-800 ".concat(
-                  backgroundStyling
-              )
-            : "font-Roboto leading-6 text-base text-neutral-800 bg-honey-flower-100"}
+        class={"font-Roboto leading-6 text-base text-neutral-800 ".concat(
+            backgroundStyling
+        )}
     >
         <Header />
         <div class="min-h-[100vh]">
