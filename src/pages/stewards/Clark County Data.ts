@@ -242,7 +242,7 @@ export const dataDOA: Profile[] = [
             ["Title", "Chief Steward / Executive Board Member"],
             ["Unit", "General Unit / DOA"],
             ["Department", "DAFS"],
-            ["Phone", "(614) 710 - 8908"],
+            ["Phone", "(617) 710 - 8908"],
             ["Email", "dkjshardy@gmail.com"],
         ],
     },
@@ -484,7 +484,6 @@ export const dataWRD: Profile[] = [
 import MikelleCieri from "../../images/stewards/CC/mikelle-cieri.png";
 import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
 import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
-import MarkMatthews from "../../images/stewards/CC/Mark-Matthews.png";
 import Mihanee from "../../images/stewards/CC/Mihanee-Williams.png";
 import RobinFranklin from "../../images/stewards/CC/Robin-Franklin-CC.png";
 
@@ -520,17 +519,6 @@ export const dataSupervisory: Profile[] = [
             ["Department", "DFS"],
             ["Phone", "(702) 569 - 9339"],
             ["Email", "sara.evans3214@gmail.com"],
-        ],
-    },
-    {
-        name: "Mark Matthews",
-        profileImg: MarkMatthews,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Supervisory Unit"],
-            ["Department", "IT"],
-            ["Phone", "(702) 455 - 0875"],
-            ["Email", "markmatthews@usa.net"],
         ],
     },
     {
