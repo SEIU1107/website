@@ -10,6 +10,7 @@ import JudyPerillo from "../../images/stewards/CC/JudyPerillo.jpg";
 import Kevin from "../../images/stewards/CC/Kevin-Carey-Clark-County-1.jpg";
 import MichelleUpton from "../../images/stewards/CC/Michelle-Upton-CC.png";
 import Nirvana from "../../images/stewards/CC/Nirvana-Hamilton.png";
+import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
 
 import type { Profile } from "../../Profile";
 
@@ -218,6 +219,7 @@ export const dataGeneralUnit: Profile[] = [
     },
     {
         name: "Richmond Warnke",
+        profileImg: RichmondWarnke,
         data: [
             ["Title", "Steward"],
             ["Unit", "General Unit"],
@@ -528,7 +530,7 @@ export const dataSupervisory: Profile[] = [
             ["Title", "Steward"],
             ["Unit", "Supervisory Unit"],
             ["Department", "DFS"],
-            ["Phone", "(702) 339 - 4145"],
+            ["Phone", "(702) 339 - 4154"],
             ["Email", "mihaneeseiu1107@gmail.com"],
         ],
     },
