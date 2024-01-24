@@ -286,7 +286,7 @@ export const dataDOA: Profile[] = [
         data: [
             ["Title", "Steward"],
             ["Unit", "General Unit"],
-            ["Department", "DOA / Code Enforcement"],
+            ["Department", "DOA / Business Office"],
             ["Phone", "(702) 203 - 5250 "],
             ["Email", "kcarey@seiunv.org"],
         ],
