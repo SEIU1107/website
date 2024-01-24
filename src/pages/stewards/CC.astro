@@ -1,0 +1,47 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ProfileGrid from "../../components/ProfileGrid.astro";
+import ButtonGrid from "../../components/ButtonGrid.astro";
+import PurpleSection from "../../components/Stewards/PurpleSection.astro";
+import LavSection from "../../components/Stewards/LavSection.astro";
+import Separator from "../../components/Stewards/Separator.astro";
+
+import { buttons } from "./Clark County Data.ts";
+import { dataGeneralUnit } from "./Clark County Data.ts";
+import { dataDOA } from "./Clark County Data.ts";
+import { dataDFSDJJS } from "./Clark County Data.ts";
+import { dataWRD } from "./Clark County Data.ts";
+import { dataSupervisory } from "./Clark County Data.ts";
+import HeadingTitle from "../../components/HeadingTitle.astro";
+---
+
+<Layout title="Clark County Stewards" backgroundStyling="bg-honey-flower-100">
+    <HeadingTitle text="Clark County" />
+
+    <div class="py-2">
+        <ButtonGrid buttons={buttons} />
+    </div>
+
+    <LavSection title="Non-Supervisory Unit">
+        <div id="GENERAL_UNIT"><Separator text="General Unit" /></div>
+        <ProfileGrid data={dataGeneralUnit} />
+        <div id="DOA"><Separator text="Department of Aviation (DOA)" /></div>
+        <ProfileGrid data={dataDOA} />
+        <div id="DFS">
+            <Separator
+                text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)"
+            />
+        </div>
+        <ProfileGrid data={dataDFSDJJS} />
+        <div id="WRD">
+            <Separator text="Water Reclamation District (WRD)" />
+        </div>
+        <ProfileGrid data={dataWRD} />
+    </LavSection>
+
+    <div id="Supervisory">
+        <PurpleSection title="Supervisory Unit">
+            <ProfileGrid data={dataSupervisory} />
+        </PurpleSection>
+    </div>
+</Layout>

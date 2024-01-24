@@ -164,17 +164,7 @@ export const dataGeneralUnit: Profile[] = [
             ["Email", "j_perillo@yahoo.com"],
         ],
     },
-    {
-        name: "Kevin Carey",
-        profileImg: Kevin,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "General Unit"],
-            ["Department", "Code Enforcement"],
-            ["Phone", "(702) 592 - 5641"],
-            ["Email", "j_perillo@yahoo.com"],
-        ],
-    },
+
     {
         name: "Matthew Moncayo",
         data: [
@@ -288,6 +278,17 @@ export const dataDOA: Profile[] = [
             ["Department", "DOA"],
             ["Phone", "(702) 492 - 1963"],
             ["Email", "j.warthan@yahoo.com"],
+        ],
+    },
+    {
+        name: "Kevin Carey",
+        profileImg: Kevin,
+        data: [
+            ["Title", "Steward"],
+            ["Unit", "General Unit"],
+            ["Department", "DOA / Code Enforcement"],
+            ["Phone", "(702) 203 - 5250 "],
+            ["Email", "kcarey@seiunv.org"],
         ],
     },
     {
@@ -508,7 +509,7 @@ export const dataSupervisory: Profile[] = [
             ["Title", "Chief Steward"],
             ["Unit", "Supervisory Unit"],
             ["Department", "DOA / Air Trans System"],
-            ["Phone", "(415) 713 - 4952"],
+            ["Phone", "(702) 286 - 9950"],
             ["Email", "Marlamseiu@gmail.com"],
         ],
     },
