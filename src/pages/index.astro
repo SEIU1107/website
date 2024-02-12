@@ -11,6 +11,7 @@ import imgTogether from "../images/index/JoinTogether.jpg";
 ---
 
 <Layout>
+    <!--
     <main
         class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
     >
@@ -30,6 +31,41 @@ import imgTogether from "../images/index/JoinTogether.jpg";
                 </h1>
             </div>
         </div>
+    </main> -->
+
+    <main
+        class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
+    >
+        <div class="flex flex-col lg:flex-row xl:mx-10">
+            <div
+                    class="lg:hidden pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl max-w-screen-sm m-auto"
+                >
+                    Watch SEIU 1107's 2023 Recap!
+                </div>
+            <div class="mx-auto py-5 hidden lg:block lg:pt-20">
+                <iframe width="672" height="378" src="https://www.youtube.com/embed/VEipjl7Pc4U?si=xUQ4S0rhiO8cpzB8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="flex flex-col mx-auto pb-20 lg:m-0 lg:ml-auto justify-between max-w-md lg:max-w-screen-md">
+                <div
+                    class="hidden lg:block pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl lg:text-6xl max-w-screen-sm m-auto"
+                >
+                    SEIU Nevada's 2023 Recap!
+                </div>
+                <h1
+                    class="shadowClass uppercase font-bold mx-5 py-5 font-Roboto text-center text-supernova-400 text-6xl lg:text-7xl"
+                >
+                    When we fight, we win!
+                </h1>
+                <div class="mx-auto lg:max-w-screen-sm pt-10">
+                    <Button
+                        text="Watch on Youtube"
+                        href="https://youtu.be/VEipjl7Pc4U?si=zUoBcD9ZaKm_FHOi"
+                        styling="bg-supernova-400 hover:bg-supernova-500 text-honey-flower-800 scale-125 hover:scale-[145%] lg:scale-150 lg:hover:scale-[160%] active:bg-supernova-600";
+                    />
+                </div>
+            </div>
+        </div>
+        
     </main>
 
     <StrongerTogether />
@@ -71,5 +107,18 @@ import imgTogether from "../images/index/JoinTogether.jpg";
     }
     .tinyShadow {
         text-shadow: 3px 3px 2px black;
+    }
+
+    .video-container {
+        position: relative;
+        height: 0;
+    }
+
+    .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
 </style>
