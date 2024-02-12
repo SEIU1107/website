@@ -15,14 +15,26 @@ const {
     titleStyle = "shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold",
     textStyle = "shadowClass font-Roboto text-white",
 } = Astro.props as Props;
-const updates = await Astro.glob("../../posts/updates/*.md");
-const articles = await Astro.glob("../../posts/news articles/*.md");
-const pressReleases = await Astro.glob("../../posts/press releases/*.md");
+
+const posts = await fetch('https://2z2w2h9ive.execute-api.us-west-2.amazonaws.com/Prod/getPosts');
+console.log("Posts: " + posts);
+
+const updates = posts;
+const articles = {};
+// await Astro.glob("../../posts/news articles/*.md")
+const pressReleases = {};
+// await Astro.glob("../../posts/press releases/*.md")
+
+/* 
 const previews = updates
     .concat(articles)
     .concat(pressReleases)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-    .slice(0, numPosts);
+    .slice(0, numPosts);*/
+
+
+const response = await fetch('https://2z2w2h9ive.execute-api.us-west-2.amazonaws.com/Prod/getPosts');
+
 
 const sectionClass = "py-7 ".concat(bgColor);
 ---
@@ -37,6 +49,7 @@ const sectionClass = "py-7 ".concat(bgColor);
         Find out how we're winning improvements for workers and the Nevadans we
         serve.
     </p>
+    
     <NewsGrid
         previews={previews}
         breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"

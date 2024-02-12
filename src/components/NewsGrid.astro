@@ -1,9 +1,8 @@
 ---
-import type { MarkdownInstance } from "astro";
 import NewsPreview from "./NewsPreview.astro";
 
 export interface Props {
-    previews: MarkdownInstance<Record<string, any>>[];
+    previews: Response;
     breakpoints?: string /* Targeting breakpoints */;
 }
 
