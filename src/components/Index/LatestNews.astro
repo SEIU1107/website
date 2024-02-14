@@ -15,10 +15,10 @@ const {
     titleStyle = "shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold",
     textStyle = "shadowClass font-Roboto text-white",
 } = Astro.props as Props;
-const updates = await Astro.glob("../../posts/updates/*.md");
-const articles = await Astro.glob("../../posts/news articles/*.md");
-const pressReleases = await Astro.glob("../../posts/press releases/*.md");
-const previews = updates
+const blog = await Astro.glob("../../posts/blog/*/*.md");
+const articles = await Astro.glob("../../posts/news articles/*/*.md");
+const pressReleases = await Astro.glob("../../posts/press releases/*/*.md");
+const previews = blog
     .concat(articles)
     .concat(pressReleases)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
