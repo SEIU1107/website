@@ -20,8 +20,8 @@ import { Image } from "astro:assets";
         <p class="text-center text-2xl italic font-bold py-2">
             Let's make this a year like no other for the Labor Movement in Nevada!
         </p>
-        <div class="m-auto max-w-screen-md lg:max-w-screen-lg flex flex-col">
-            <CollageImage src={imgStrengthTraining} imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-md lg:max-w-xl">
+        <div class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col">
+            <CollageImage src={imgStrengthTraining} imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl">
                 <p class="py-2 text-black text-bold text-xl text-left mx-2">
                     Membership Trainings hosted at SEIU 1107 empower members 
                     to become more active in the labor movement! The more workers
@@ -32,8 +32,8 @@ import { Image } from "astro:assets";
                     We are hosting monthly workshops through June. Click below 
                     for more details!
                 </p>
-                <div class="py-5 flex justify-center scale-150">
-                    <Button text="Workshop Dates" href="/strength_training" />
+                <div class="py-5 flex justify-center">
+                    <Button text="Workshop Dates" href="/strength_training" styling="text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest scale-150" />
                 </div>
                 
             </CollageImage>        
