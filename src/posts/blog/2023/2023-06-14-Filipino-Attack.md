@@ -1,11 +1,14 @@
 ---
-title: 'Filipino American Leaders Call for Justice and Proactive Safety Measures for Elderly Man Who Was Attacked, and Urgent Steps to End Asian Hate'
-featuredImg: '/post_imgs/2023/Stop-Asian-Hate-2023.png'
-url: '2023-06-14-Filipino-American-Leaders-Call-for-Justice'
-excerpt: Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes. 
+title: "Filipino American Leaders Call for Justice and Proactive Safety Measures for Elderly Man Who Was Attacked, and Urgent Steps to End Asian Hate"
+featuredImg: "/post_imgs/2023/Stop-Asian-Hate-2023.png"
+url: "2023-06-14-Filipino-American-Leaders-Call-for-Justice"
+excerpt: Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes.
 date: 2023-06-14
 author: SEIU
+tags:
+  - Political Action
 ---
+
 Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes. The elderly Filipino American man, 75-year-old Amadeo Quindara, is living in fear for his life and safety as the attacker was recently released from jail and apparently continues to pose a threat to him. The perpetrator has only been charged with a misdemeanor and not for assault.
 
 The attack comes at a time when there is an alarming surge in hate crimes against Asian Americans nationally, and as Nevada’s Filipino American population is growing rapidly. There was a disturbing [167% increase](https://www.themarshallproject.org/2023/03/25/asian-hate-crime-fbi-black-lgbtq) in anti-Asian hate crimes during the first year of the pandemic alone, according to the FBI. There are now approximately [170,000](https://en.wikipedia.org/wiki/Demographics_of_Filipino_Americans) Filipino Americans in Nevada, who fill vital roles working in the healthcare industry, education, small business, and every profession and cross-section of society. Below are statements from prominent leaders of the Filipino American community:
@@ -16,6 +19,6 @@ The attack comes at a time when there is an alarming surge in hate crimes agains
 
 “The attack on Mr. Quindara is part of the disturbing rise in anti-Asian hate from unprincipled politicians who are trying to scapegoat groups for their own political gain,” said Grace Vergara-Mactal, Executive Director of Nevada’s largest healthcare and public service union, SEIU Local 1107. “What politicians need to realize is that their rhetoric has real-world consequences and causes real pain — both physical and emotional. Our union represents thousands of Asian American, Native Hawaiian and Pacific Islander members who are essential to our communities throughout Nevada and the nation. They work in home care agencies, hospitals, the tourism industry, local government and many other fields. We will not accept being targeted or victimized, and as an anti-racist organization, we will not stand on the sidelines. Along with our community partners, we will redouble our fight for justice and safety for all.”
 
-*The National Federation of Filipino American Associations (NaFFAA) – Nevada represents the over 170,000 Filipinos in the state. Nationally, NaFFAA works on behalf of the 4 million Filipinos across the United States, and their mission is to promote the welfare and well-being of Filipino Americans by amplifying their voices, advocating on behalf of their interests, and providing resources to facilitate their empowerment.*
+_The National Federation of Filipino American Associations (NaFFAA) – Nevada represents the over 170,000 Filipinos in the state. Nationally, NaFFAA works on behalf of the 4 million Filipinos across the United States, and their mission is to promote the welfare and well-being of Filipino Americans by amplifying their voices, advocating on behalf of their interests, and providing resources to facilitate their empowerment._
 
-*SEIU Nevada Local 1107 is the largest healthcare and public service union in the state, representing nearly 20,000 workers. SEIU represents thousands of Asian American, Native Hawaiian and Pacific Islander members whose work is essential for our communities throughout Nevada and the nation. Together, SEIU 1107 members fight for good union jobs, quality services and a better quality of life for all working Nevadans.*
+_SEIU Nevada Local 1107 is the largest healthcare and public service union in the state, representing nearly 20,000 workers. SEIU represents thousands of Asian American, Native Hawaiian and Pacific Islander members whose work is essential for our communities throughout Nevada and the nation. Together, SEIU 1107 members fight for good union jobs, quality services and a better quality of life for all working Nevadans._
