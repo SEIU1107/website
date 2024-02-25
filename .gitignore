@@ -34,7 +34,8 @@ benchmark/results/
 .eslintcache
 .pnpm-store
 
-# ignore github
+# ignore git 
+.git
 .github
 
 # ignore top-level vscode settings
