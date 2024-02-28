@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import NewsGrid from "../../components/NewsGrid.astro";
+import PostsGrid from "../../components/Posts/PostsGrid.astro";
 import HeadingTitle from "../../components/HeadingTitle.astro";
 import type { MarkdownInstance } from "astro";
 
@@ -44,7 +44,7 @@ const sorted_years = Object.keys(years)
                             {year}
                         </h1>
                         {
-                            <NewsGrid
+                            <PostsGrid
                                 previews={posts.sort(
                                     (
                                         a: MarkdownInstance<

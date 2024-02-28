@@ -1,8 +1,9 @@
 ---
-import NewsPreview from "./NewsPreview.astro";
+import type { MarkdownInstance } from "astro";
+import PostPreview from "./PostPreview.svelte";
 
 export interface Props {
-    previews: Response;
+    previews: MarkdownInstance<Record<string, any>>[];
     breakpoints?: string /* Targeting breakpoints */;
 }
 
@@ -17,7 +18,7 @@ const gridClass = "grid gap-0 justify-center grid-cols-1".concat(
     <div class={gridClass}>
         {
             previews.map((post) => (
-                <NewsPreview
+                <PostPreview
                     featuredImg={post.frontmatter.featuredImg}
                     title={post.frontmatter.title}
                     excerpt={post.frontmatter.excerpt}

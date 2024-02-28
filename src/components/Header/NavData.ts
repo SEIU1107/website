@@ -92,7 +92,7 @@ export const all_dropdowns = [
   },
   {
     title: "Updates",
-    content: updatesPages,
+    titleHref: "/updates",
   },
   {
     title: "Contact Us",

@@ -1,16 +1,17 @@
 <script lang="ts">
-  import Button from "./Button.svelte";
+  import Button from "../Button.svelte";
 
   export let featuredImg: string;
-  export let title = "Post Preview Title`";
+  export let title = "Post Title";
   export let excerpt = "Enter Excerpt text here by passing it into the excerpt prop.";
   export let date = "2024-01-01";
   export let url = "/";
   export let author = "SEIU";
   export let type = "blog";
 
-  const href = type === "article" ? url : "/posts/" + url;
-  let purple_src = "../images/purple_transparent.png";
+  const href = type === "News Article" ? url : "/posts/" + url;
+  const purple_transparent = "/assets/purple_transparent.png"
+  
 </script>
 
 <div
@@ -29,7 +30,7 @@
             >
                 <img
                     class="absolute top-0 left-0 rounded-t-lg"
-                    src={purple_src}
+                    src={purple_transparent}
                     alt=""
                 />
             </div>
@@ -66,9 +67,9 @@
                 }
             </p>
             <div class="px-2 text-center">
-              {#if type == "article"}
+              {#if type == "News Article"}
               <p class="text-indigo-600">News Article</p>
-              {:else if type == "press release"}
+              {:else if type == "Press Release"}
               <p class="text-supernova-600">Press Release</p>
               {:else}
               <p class="text-honey-flower-600">Blog Post</p>

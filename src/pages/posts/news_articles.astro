@@ -1,7 +1,7 @@
 ---
 import type { MarkdownInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.astro";
-import NewsGrid from "../../components/NewsGrid.astro";
+import PostsGrid from "../../components/Posts/PostsGrid.astro";
 import Layout from "../../layouts/Layout.astro";
 
 const posts: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
@@ -45,7 +45,7 @@ const sorted_years = Object.keys(years)
                             {year}
                         </h1>
                         {
-                            <NewsGrid
+                            <PostsGrid
                                 previews={posts.sort(
                                     (
                                         a: MarkdownInstance<

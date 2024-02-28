@@ -1,11 +1,18 @@
 ---
-import LatestNews from "../components/Index/LatestNews.astro";
+import PostsGrid from "../components/Posts/PostsGrid.svelte"
+import FilteredPosts from "../components/Posts/FilteredPosts.svelte"
+import FilterInput from "../components/Posts/FilterInput.svelte"
 import Layout from "../layouts/Layout.astro";
+
+const blog = await Astro.glob("../posts/blog/*/*.md");
+const articles = await Astro.glob("../posts/news articles/*/*.md");
+const pressReleases = await Astro.glob("../posts/press releases/*/*.md");
+const allPosts = blog
+    .concat(articles)
+    .concat(pressReleases)
+    .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
 ---
 
-<Layout title="SEIU 1107 Updates">
-    <LatestNews
-        numPosts={6}
-        bgColor="bg-gradient-to-br from-honey-flower-800 to-honey-flower-400"
-    />
+<Layout title="Updates" >
+    <FilteredPosts client:load posts={allPosts} />
 </Layout>

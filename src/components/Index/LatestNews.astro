@@ -1,5 +1,5 @@
 ---
-import NewsGrid from "../NewsGrid.astro";
+import PostsGrid from "../Posts/PostsGrid.astro";
 import UpdatesButtons from "./UpdatesButtons.astro";
 
 export interface Props {
@@ -22,11 +22,7 @@ const previews = blog
     .concat(articles)
     .concat(pressReleases)
     .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-    .slice(0, numPosts);*/
-
-
-const response = await fetch('https://2z2w2h9ive.execute-api.us-west-2.amazonaws.com/Prod/getPosts');
-
+    .slice(0, numPosts);
 
 const sectionClass = "py-7 ".concat(bgColor);
 ---
@@ -42,7 +38,7 @@ const sectionClass = "py-7 ".concat(bgColor);
         serve.
     </p>
     
-    <NewsGrid
+    <PostsGrid
         previews={previews}
         breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     />
