@@ -3,12 +3,12 @@ import type { MarkdownInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.astro";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-    const updates: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-        "../../posts/updates/*.md"
+    const blog: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
+        "../../posts/blog/*/*.md"
     );
     const pressReleases: MarkdownInstance<Record<string, any>>[] =
-        await Astro.glob("../../posts/press releases/*.md");
-    return updates
+        await Astro.glob("../../posts/press releases/*/*.md");
+    return blog
         .concat(pressReleases)
         .map((post: MarkdownInstance<Record<string, any>>) => ({
             params: {
@@ -32,11 +32,8 @@ const { Content, frontmatter } = Astro.props.post;
     <div
         class="my-4 max-w-[90vw] md:max-w-screen-md pb-2 px-2 bg-honey-flower-50 shadow-lg shadow-black flex-col mx-auto"
     >
-        <div
-            class="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 pt-2 text-2xl lg:text-3xl"
-        >
-        </div>
         <HeadingTitle text={frontmatter.title} />
+        
         <div class="flex mx-auto justify-center pb-4">
             <div class="text-center font-bold">
                 {
@@ -55,6 +52,22 @@ const { Content, frontmatter } = Astro.props.post;
                 }
             </div>
         </div>
+
+        
+        {frontmatter.tags && 
+        
+        <div class="flex flex-wrap mx-auto justify-center max-w-screen-sm">
+            
+            <div class="italic text text-sm text-gray-700 font-Roboto">
+                Tags:
+            </div>
+            {frontmatter.tags.map((tag: string) => 
+                <div class="text-gray-500 italic text-sm px-2">
+                {tag}    
+                </div>
+            )}
+        </div>
+        }
         <div
             class="py-2 prose mx-auto prose-a:text-blue-600 prose-a:hover:underline"
         >

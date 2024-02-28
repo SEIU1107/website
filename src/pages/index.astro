@@ -8,9 +8,38 @@ import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.astro";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
+
+import imgStrengthTraining from "../images/strength_training/thumbnail.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout>
+    
+    <div class="bg-gradient-to-b from-supernova-300 to-supernova-500 py-4">
+        <HeadingTitle text="Participate In Our Member Trainings!" />
+        <p class="text-center text-2xl italic font-bold py-2">
+            Let's make this a year like no other for the Labor Movement in Nevada!
+        </p>
+        <div class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col">
+            <CollageImage src={imgStrengthTraining} imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl">
+                <p class="py-2 text-black text-bold text-xl text-left mx-2">
+                    Membership Trainings hosted at SEIU 1107 empower members 
+                    to become more active in the labor movement! The more workers
+                    who get active, the more improvements we can secure to our
+                    wages, benefits, and working conditions.
+                </p>
+                <p class="py-2 text-black text-bold text-xl text-left mx-2">
+                    We are hosting monthly workshops through June. Click below 
+                    for more details!
+                </p>
+                <div class="py-5 flex justify-center">
+                    <Button text="Workshop Dates" href="/strength_training" styling="text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest scale-150" />
+                </div>
+                
+            </CollageImage>        
+        </div>
+        
+    </div>
     <!--
     <main
         class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
