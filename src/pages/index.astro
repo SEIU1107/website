@@ -8,8 +8,9 @@ import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.astro";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
-
 import imgStrengthTraining from "../images/strength_training/thumbnail.jpg";
+import dignity_celebration from "../images/index/dignity_celebration_march.jpg";
+
 import { Image } from "astro:assets";
 ---
 
@@ -62,8 +63,9 @@ import { Image } from "astro:assets";
         </div>
     </main> -->
 
-    <main
-        class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
+    
+        <main
+        class="lg:hidden bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
     >
         <div class="flex flex-col lg:flex-row xl:mx-10">
             <div
@@ -95,6 +97,11 @@ import { Image } from "astro:assets";
             </div>
         </div>
         
+    </main>
+     
+
+    <main class="hidden lg:block h-full bg-gradient-to-bl from-honey-flower-900 to-violet-950">
+        <Image src={dignity_celebration} alt="" class="max-w-screen-lg m-auto px-10 py-5"/>
     </main>
 
     <StrongerTogether />
