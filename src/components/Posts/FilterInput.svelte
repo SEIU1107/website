@@ -1,23 +1,28 @@
 <script>
 
-  import FilterTag from "./FilterTag.svelte";
+  import {generalTags} from "./tags";
+  import {createEventDispatcher} from 'svelte';
 
-  let tags = [];
-  let selectedTags = [];
-  
-  // Initialize selectedTags based on the initial state of tags
-  $: {
-    selectedTags = tags.filter(tag => selectedTags.includes(tag));
+  export let selectedTags = [];
+
+  const dispatch = createEventDispatcher();
+
+  function closeModal() {
+    dispatch('close', selectedTags);
   }
 
-  function handleTagSelection(event) {
-    const tag = event.target.value;
-    if (event.target.checked) {
-      selectedTags = [...selectedTags, tag];
-    } else {
+  function isChecked(tag) {
+    return selectedTags.includes(tag);
+  }
+
+  function toggleCheckbox(tag) {
+    if (isChecked(tag)){
       selectedTags = selectedTags.filter(t => t !== tag);
+    } else {
+      selectedTags = [...selectedTags, tag];
     }
   }
+  
 </script>
 
 <div class="flex flex-col m-auto p-2.5">
@@ -25,10 +30,14 @@
     Filters
   </h2>
   <p class="font-Roboto text-honey-flower-950">
-    Tags:
+    General Tags:
   </p>
-  <div class="grid grid-cols-4">
-    
-    <FilterTag name="Victories" selectedTags={selectedTags} handleTagSelection={handleTagSelection} />
+  <div class="grid grid-cols-3">
+    {#each generalTags as tag}
+    <div class="px-2">
+      <label for={tag}><input type="checkbox" checked="{isChecked(tag)}" on:change={() => toggleCheckbox(tag)} > {tag}</label>
+    </div>
+    {/each}
   </div>
+  <button on:click={() => closeModal()}>CLOSE</button>
  </div>

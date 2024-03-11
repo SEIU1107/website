@@ -8,20 +8,26 @@
   let showFilters = false;
   let filteredPosts = posts;
 
-  let tags = []
+  let selectedTags = []
 
   const dispatch = createEventDispatcher();
   
+  onMount(() => {
+    dispatch('toggleFilters', showFilters);
+  })
+
   function toggleShowFilters() {
     showFilters = !showFilters;
     dispatch('toggleFilters', showFilters);
     event.stopPropagation();
   }
 
-  function closeModal() {
+  function closeModal(event){
     showFilters = false;
-    dispatch('toggleFilters', showFilters);
+    selectedTags = event.detail
+    tags = selectedTags;
   }
+
 
   function filterPosts(tags) {
     if (tags.length === 0){
@@ -52,15 +58,16 @@
     }
   }
 
-  onMount(() => {
-    dispatch('toggleFilters', showFilters);
-  })
+  
 </script>
 
 <button on:click={toggleShowFilters}>
   <div class="inline-block rounded-md px-2 py-2 text-center uppercase tracking-wide focus:outline-none focus:ring focus:ring-offset-white transition duration-200 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest">
     Filters
   </div>
+  <div>
+    Chosen tags: {selectedTags}
+   </div>
 </button>
 
 {#if showFilters}
@@ -69,8 +76,9 @@
   <div class="fixed top-1/4 right-1/2 shadow-lg max-w-screen-lg h-[50vh] rounded-md m-auto bg-gradient-to-br from-supernova-50 to-supernova-100" use:clickOutside={() => {
     closeModal()
    }} >
-     <FilterInput bind:tags on:change={filterPosts} />
+     <FilterInput on:close={closeModal} bind:selectedTags={selectedTags} />
    </div>  
+   
 </div>
 
 {/if}
