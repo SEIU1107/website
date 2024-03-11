@@ -1,52 +1,52 @@
 ---
-import PostsGrid from "../Posts/PostsGrid.astro";
+import PostsGrid from "../Posts/PostsGrid.svelte";
 import UpdatesButtons from "./UpdatesButtons.astro";
 
 export interface Props {
-    numPosts?: number;
-    bgColor?: string;
-    titleStyle?: string;
-    textStyle?: string;
+  numPosts?: number;
+  bgColor?: string;
+  titleStyle?: string;
+  textStyle?: string;
 }
 
 const {
-    numPosts = 3,
-    bgColor = "bg-gradient-to-b from-honey-flower-900 to-honey-flower-500",
-    titleStyle = "shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold",
-    textStyle = "shadowClass font-Roboto text-white",
+  numPosts = 3,
+  bgColor = "bg-gradient-to-b from-honey-flower-900 to-honey-flower-500",
+  titleStyle = "shadowClass text-supernova-500 text-5xl m-auto text-center font-Trebuchet font-bold",
+  textStyle = "shadowClass font-Roboto text-white",
 } = Astro.props as Props;
 const blog = await Astro.glob("../../posts/blog/*/*.md");
 const articles = await Astro.glob("../../posts/news articles/*/*.md");
 const pressReleases = await Astro.glob("../../posts/press releases/*/*.md");
 const previews = blog
-    .concat(articles)
-    .concat(pressReleases)
-    .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
-    .slice(0, numPosts);
+  .concat(articles)
+  .concat(pressReleases)
+  .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
+  .slice(0, numPosts);
 
 const sectionClass = "py-7 ".concat(bgColor);
 ---
 
 <section class={sectionClass}>
-    <h1 class={titleStyle}>Latest in SEIU 1107</h1>
-    <p
-        class={"text-center pt-4 text-2xl max-w-screen-lg m-auto ".concat(
-            textStyle
-        )}
-    >
-        Find out how we're winning improvements for workers and the Nevadans we
-        serve.
-    </p>
-    
-    <PostsGrid
-        previews={previews}
-        breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-    />
-    <UpdatesButtons />
+  <h1 class={titleStyle}>Latest in SEIU 1107</h1>
+  <p
+    class={"text-center pt-4 text-2xl max-w-screen-lg m-auto ".concat(
+      textStyle
+    )}
+  >
+    Find out how we're winning improvements for workers and the Nevadans we
+    serve.
+  </p>
+
+  <PostsGrid
+    previews={previews}
+    breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+  />
+  <UpdatesButtons />
 </section>
 
 <style>
-    .shadowClass {
-        text-shadow: 3px 3px 1px black;
-    }
+  .shadowClass {
+    text-shadow: 3px 3px 1px black;
+  }
 </style>

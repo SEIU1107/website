@@ -1,5 +1,5 @@
 ---
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
 import InfoCard from "../components/InfoCard.astro";
 import LinkText from "../components/LinkText.astro";
@@ -11,87 +11,83 @@ import Michelly from "../images/homecare/Michelly-Franco.jpg";
 ---
 
 <Layout title="Homecare Workers United!" centered="true">
-    <HeadingTitle
-        text="United Together, Nevada Home Care Workers Are Winning a Better Future"
-    />
-    <h2
-        class="text-center text-purple-800 text-xl font-Trebuchet max-w-screen-md pb-2.5 flex m-auto"
-    >
-        We passed the $16 minimum wage and we're building our movement for even more raises, job improvements, funding, and quality care!
-    </h2>
+  <HeadingTitle
+    text="United Together, Nevada Home Care Workers Are Winning a Better Future"
+  />
+  <h2
+    class="text-center text-purple-800 text-xl font-Trebuchet max-w-screen-md pb-2.5 flex m-auto"
+  >
+    We passed the $16 minimum wage and we're building our movement for even more
+    raises, job improvements, funding, and quality care!
+  </h2>
 
-    <Image
-        class="hidden lg:flex m-auto"
-        src={bannerImg}
-        alt="Homecare Workers United!"
-    />
+  <Image
+    class="hidden lg:flex m-auto"
+    src={bannerImg}
+    alt="Homecare Workers United!"
+  />
 
-    <div class="mx-auto">
-        <InfoCard title="Join The Movement!">
-            <p>
-                If you're a non-union home care worker and want to join our
-                movement, fill out a union card <LinkText
-                    href="https://bit.ly/nvhomecaresignup"
-                >
-                    here.
-                </LinkText>
-            </p>
-            <p class="py-2">
-                If your workplace is already represented by SEIU 1107, become a
-                union member <LinkText
-                    href="https://act.seiu.org/a/membership-application-6"
-                >
-                    here!
-                </LinkText>
-            </p>
-            <p class="py-2">
-                For more information, call (702) 755 - 4307.
-            </p>
-        </InfoCard>
+  <div class="mx-auto">
+    <InfoCard title="Join The Movement!">
+      <p>
+        If you're a non-union home care worker and want to join our movement,
+        fill out a union card <LinkText href="https://bit.ly/nvhomecaresignup">
+          here.
+        </LinkText>
+      </p>
+      <p class="py-2">
+        If your workplace is already represented by SEIU 1107, become a union
+        member <LinkText href="https://act.seiu.org/a/membership-application-6">
+          here!
+        </LinkText>
+      </p>
+      <p class="py-2">For more information, call (702) 755 - 4307.</p>
+    </InfoCard>
+  </div>
+
+  <div class="flex flex-col m-auto max-w-screen-lg">
+    <div>
+      <Image
+        src={Michelly}
+        alt="Michelly"
+        class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
+      />
+      <p class="py-2">
+        Through our union, we won the $16 minimum wage for home care workers and
+        42% funding increase in the state legislature. Over 1,000 home care
+        workers have voted by a landslide to join our union and hundreds more
+        are headed toward elections. And we won the first-ever union contract
+        with $17 an hour. Together, we're making sure employers invest the
+        massive state funding increase in workers.
+      </p>
+      <p class="py-2">
+        But we're not going to stop here. We're going to keep advocating
+        powerfully for higher wages, job improvements and more funding. We are
+        transforming the home care industry to win a better future for workers,
+        our families and those we care for!
+      </p>
+    </div>
+  </div>
+  <p class="py-2 flex m-auto text-xl font-bold">Read More</p>
+  <div class="flex flex-row max-w-xl m-auto">
+    <div class="flex flex-col px-2.5">
+      <LinkText
+        href="https://www.reviewjournal.com/business/nevada-workers-in-growing-health-care-industry-are-unionizing-2896793/"
+      >
+        <b>Nevada workers in growing health care industry are unionizing</b>
+      </LinkText>
+      <p>Las Vegas Review-Journal</p>
+      <p>Aug. 31, 2023</p>
     </div>
 
-    <div class="flex flex-col m-auto max-w-screen-lg">
-
-        <div>
-            <Image
-                src={Michelly}
-                alt="Michelly"
-                class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
-            />
-            <p class="py-2">
-                Through our union, we won the $16 minimum wage for home care workers and 42% funding increase in the state legislature. Over 1,000 home care workers have voted by a landslide to join our union and hundreds more are headed toward elections. And we won the first-ever union contract with $17 an hour. Together, we're making sure employers invest the massive state funding increase in workers.
-            </p>
-            <p class="py-2">
-                But we're not going to stop here. We're going to keep advocating powerfully for higher wages, job improvements and more funding. We are transforming the home care industry to win a better future for workers, our families and those we care for!
-            </p>
-        </div>
+    <div class="flex flex-col px-2.5">
+      <LinkText
+        href="https://lasvegassun.com/news/2023/sep/10/celebrate-historic-victories-for-good-jobs-and-qua/"
+      >
+        <b>Celebrate historic victories for good jobs and quality services</b>
+      </LinkText>
+      <p>Las Vegas Sun</p>
+      <p>Sept. 10, 2023</p>
     </div>
-    <p class="py-2 flex m-auto text-xl font-bold">Read More</p>
-    <div class="flex flex-row max-w-xl m-auto">
-        <div class="flex flex-col px-2.5">
-            <LinkText
-                href="https://www.reviewjournal.com/business/nevada-workers-in-growing-health-care-industry-are-unionizing-2896793/"
-            >
-                <b
-                    >Nevada workers in growing health care industry are
-                    unionizing</b
-                >
-            </LinkText>
-            <p>Las Vegas Review-Journal</p>
-            <p>Aug. 31, 2023</p>
-        </div>
-
-        <div class="flex flex-col px-2.5">
-            <LinkText
-                href="https://lasvegassun.com/news/2023/sep/10/celebrate-historic-victories-for-good-jobs-and-qua/"
-            >
-                <b
-                    >Celebrate historic victories for good jobs and quality
-                    services</b
-                >
-            </LinkText>
-            <p>Las Vegas Sun</p>
-            <p>Sept. 10, 2023</p>
-        </div>
-    </div>
+  </div>
 </Layout>

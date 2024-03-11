@@ -1,66 +1,61 @@
 ---
 import Layout from "../../layouts/Layout.astro";
 import PostsGrid from "../../components/Posts/PostsGrid.astro";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 import type { MarkdownInstance } from "astro";
 
 const posts: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    "../../posts/blog/*/*.md"
+  "../../posts/blog/*/*.md"
 );
 
 const years = posts.reduce(
-    (acc: any, post: MarkdownInstance<Record<string, any>>) => {
-        acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(
-            function (el) {
-                return (
-                    new Date(el.frontmatter.date).getFullYear() ===
-                    new Date(post.frontmatter.date).getFullYear()
-                );
-            }
+  (acc: any, post: MarkdownInstance<Record<string, any>>) => {
+    acc[new Date(post.frontmatter.date).getFullYear()] = posts.filter(
+      function (el) {
+        return (
+          new Date(el.frontmatter.date).getFullYear() ===
+          new Date(post.frontmatter.date).getFullYear()
         );
-        return acc;
-    },
-    {}
+      }
+    );
+    return acc;
+  },
+  {}
 );
 
 const sorted_years = Object.keys(years)
-    .sort((a, b) => (a > b ? 1 : -1))
-    .reduce((obj: any, key) => {
-        obj[key] = years[key];
-        return obj;
-    }, {});
+  .sort((a, b) => (a > b ? 1 : -1))
+  .reduce((obj: any, key) => {
+    obj[key] = years[key];
+    return obj;
+  }, {});
 ---
 
 <Layout title="SEIU 1107 Blog">
-    <HeadingTitle text="SEIU 1107 Blog" />
+  <HeadingTitle text="SEIU 1107 Blog" />
 
-    <section class="py-1">
-        {
-            Object.entries(sorted_years)
-                .reverse()
-                .map(([year, posts]: any) => (
-                    <>
-                        <h1 class="m-auto text-honey-flower-800 text-5xl text-center italic font-Trebuchet font-bold">
-                            {year}
-                        </h1>
-                        {
-                            <PostsGrid
-                                previews={posts.sort(
-                                    (
-                                        a: MarkdownInstance<
-                                            Record<string, any>
-                                        >,
-                                        b: MarkdownInstance<Record<string, any>>
-                                    ) =>
-                                        a.frontmatter.date < b.frontmatter.date
-                                            ? 1
-                                            : -1
-                                )}
-                                breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
-                            />
-                        }
-                    </>
-                ))
-        }
-    </section>
+  <section class="py-1">
+    {
+      Object.entries(sorted_years)
+        .reverse()
+        .map(([year, posts]: any) => (
+          <>
+            <h1 class="m-auto text-honey-flower-800 text-5xl text-center italic font-Trebuchet font-bold">
+              {year}
+            </h1>
+            {
+              <PostsGrid
+                previews={posts.sort(
+                  (
+                    a: MarkdownInstance<Record<string, any>>,
+                    b: MarkdownInstance<Record<string, any>>
+                  ) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1)
+                )}
+                breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4"
+              />
+            }
+          </>
+        ))
+    }
+  </section>
 </Layout>

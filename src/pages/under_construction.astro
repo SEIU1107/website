@@ -1,39 +1,38 @@
 ---
 import { Image } from "astro:assets";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 import underConstruction from "../images/under_construction.png";
 ---
 
 <Layout title="Under Construction" centered="true">
-    <div class="max-w-[95vw]">
-        <HeadingTitle text="This Page is Under Construction!" />
-        <div
-            class="flex flex-col justify-center m-auto max-w-screen-sm lg:max-w-screen-lg lg:flex-row"
-        >
-            <Image
-                class="max-w-[90vw] m-auto md:max-w-sm lg:max-w-lg"
-                src={underConstruction}
-                alt="Purple and Yellow hard at work!"
-            />
-            <div
-                class="flex flex-col justify-center max-w-sm md:max-w-md mx-5 my-auto"
-            >
-                <p class="text-2xl font-bold flex m-auto">
-                    SEIU 1107's website is getting an upgrade!
-                </p>
-                <p class="flex max-w-sm py-2">
-                    SEIU 1107 overhauled its' entire website from scratch! As of
-                    right now, this page is currently a work in progress.
-                    However, many other pages are up and running. Check back
-                    again soon for more updates!
-                </p>
-                <div class="max-w-md">
-                    <Button text="Back to Homepage" href="/" />
-                </div>
-            </div>
+  <div class="max-w-[95vw]">
+    <HeadingTitle text="This Page is Under Construction!" />
+    <div
+      class="flex flex-col justify-center m-auto max-w-screen-sm lg:max-w-screen-lg lg:flex-row"
+    >
+      <Image
+        class="max-w-[90vw] m-auto md:max-w-sm lg:max-w-lg"
+        src={underConstruction}
+        alt="Purple and Yellow hard at work!"
+      />
+      <div
+        class="flex flex-col justify-center max-w-sm md:max-w-md mx-5 my-auto"
+      >
+        <p class="text-2xl font-bold flex m-auto">
+          SEIU 1107's website is getting an upgrade!
+        </p>
+        <p class="flex max-w-sm py-2">
+          SEIU 1107 overhauled its' entire website from scratch! As of right
+          now, this page is currently a work in progress. However, many other
+          pages are up and running. Check back again soon for more updates!
+        </p>
+        <div class="max-w-md">
+          <Button text="Back to Homepage" href="/" />
         </div>
+      </div>
     </div>
+  </div>
 </Layout>

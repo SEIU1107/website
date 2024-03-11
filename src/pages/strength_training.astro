@@ -1,28 +1,29 @@
 ---
-import Layout  from "../layouts/Layout.astro"
-import HeadingTitle from "../components/HeadingTitle.astro"
+import Layout from "../layouts/Layout.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 
-import flyer from "../images/strength_training/TWRALLTrainingsFlyer-1.png"
-import trainingFirst from "../images/strength_training/TWR2.24.24Training-1.png"
-import trainingSecond from "../images/strength_training/TWR3.20.24Training-1.png"
-import { Picture } from "astro:assets"
+import flyer from "../images/strength_training/TWRALLTrainingsFlyer-1.png";
+import trainingFirst from "../images/strength_training/TWR2.24.24Training-1.png";
+import trainingSecond from "../images/strength_training/TWR3.20.24Training-1.png";
+import { Picture } from "astro:assets";
 
-const style = "max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl shadow-black shadow-sm rounded-md m-auto"
+const style =
+  "max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl shadow-black shadow-sm rounded-md m-auto";
 ---
 
 <Layout title="Member Strength Training">
-  <HeadingTitle text="Participate In Our Member Trainings!"/>
-    <div class="flex m-auto">
-      <div class="m-auto flex flex-col lg:flex-row flex-wrap">
-        <div class="py-3 mx-5">
-          <Picture class={style} src={flyer} alt="flyer" />
-        </div>
-        <div class="py-3 mx-5">
-          <Picture class={style} src={trainingFirst} alt="february training" />
-        </div>
-        <div class="py-3 mx-5">
-          <Picture class={style} src={trainingSecond} alt="march training" />
-        </div>
+  <HeadingTitle text="Participate In Our Member Trainings!" />
+  <div class="flex m-auto">
+    <div class="m-auto flex flex-col lg:flex-row flex-wrap">
+      <div class="py-3 mx-5">
+        <Picture class={style} src={flyer} alt="flyer" />
+      </div>
+      <div class="py-3 mx-5">
+        <Picture class={style} src={trainingFirst} alt="february training" />
+      </div>
+      <div class="py-3 mx-5">
+        <Picture class={style} src={trainingSecond} alt="march training" />
       </div>
     </div>
+  </div>
 </Layout>

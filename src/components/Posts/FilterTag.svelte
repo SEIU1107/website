@@ -1,8 +1,15 @@
 <script>
-  export let name = "tag";
-  export let handleTagSelection;
-  export let selectedTags;
+  export let tag = "tag";
+  export let toggleCheckbox;
+  export let selectedTags = [];
 </script>
 
-<label for={name}><input type="checkbox" id={name} value={name} on:change={handleTagSelection} checked={selectedTags.includes(name)}> {name}</label>
- 
+<label for={tag} class="hover:cursor-pointer">
+  <input
+    type="checkbox"
+    id={tag}
+    checked={selectedTags.includes(tag)}
+    on:change={() => toggleCheckbox(tag)}
+  />
+  {tag}
+</label>

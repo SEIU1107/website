@@ -1,10 +1,10 @@
 ---
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import InfoCardGridLayout from "../components/InfoCardGridLayout.astro";
 import InfoCard from "../components/InfoCard.astro";
 import Layout from "../layouts/Layout.astro";
 import LinkText from "../components/LinkText.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 import financialImg from "../images/member_benefits/seiu_rewards_card.jpg";
 import insuranceImg from "../images/member_benefits/life_insurance.jpg";
@@ -14,93 +14,90 @@ import educationImg from "../images/member_benefits/education.jpg";
 ---
 
 <Layout title="SEIU 1107 Member Benefits" centered="true">
-    <div class="flex flex-col m-auto max-w-screen-md lg:max-w-screen-lg">
-        <HeadingTitle text="Member Benefits" />
-        <p
-            class="text-black text-center max-w-3xl font-Roboto text-xl lg:text-2xl"
+  <div class="flex flex-col m-auto max-w-screen-md lg:max-w-screen-lg">
+    <HeadingTitle text="Member Benefits" />
+    <p class="text-black text-center max-w-3xl font-Roboto text-xl lg:text-2xl">
+      In addition to the benefits that we win in our contracts by joining
+      together to improve our wages, benefits, and working conditions, SEIU
+      members are also eligible for the following additional benefits:
+    </p>
+  </div>
+  <InfoCardGridLayout
+    styling="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto"
+  >
+    <InfoCard title="Financial Benefits" image={financialImg}>
+      <p>
+        Members have special access to financial services like credit cards,
+        home financing, and financial education. Members may also get legal
+        documents notarized at the 1107 office for free. Contact Patti Curry,
+        our Database and Finance Coordinator, to set up an appointment at <LinkText
+          href="pcurry@seiunv.org"
         >
-            In addition to the benefits that we win in our contracts by joining
-            together to improve our wages, benefits, and working conditions,
-            SEIU members are also eligible for the following additional
-            benefits:
-        </p>
-    </div>
-    <InfoCardGridLayout
-        styling="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto"
-    >
-        <InfoCard title="Financial Benefits" image={financialImg}>
-            <p>
-                Members have special access to financial services like credit
-                cards, home financing, and financial education. Members may also
-                get legal documents notarized at the 1107 office for free.
-                Contact Patti Curry, our Database and Finance Coordinator, to
-                set up an appointment at <LinkText href="pcurry@seiunv.org">
-                    pcurry@seiunv.org
-                </LinkText> or 775-870-0604.
-            </p>
-            <div class="pt-2 mt-auto">
-                <Button
-                    text="Learn More"
-                    href="https://www.seiumb.com/benefits/finance"
-                />
-            </div>
-        </InfoCard>
-        <InfoCard title="Insurance to Protect Your Family" image={insuranceImg}>
-            <p>
-                Members have access to the SEIU group term life insurance
-                program, a special guaranteed issue life insurance program for
-                those under 65 years of age, accidental death and dismemberment
-                insurance, auto and home insurance, accident and injury
-                insurance, and a special legal services program.
-            </p>
-            <div class="pt-2 mt-auto">
-                <Button
-                    text="Learn More"
-                    href="https://www.seiumb.com/benefits/insurance"
-                />
-            </div>
-        </InfoCard>
-        <InfoCard title="Member Discounts" image={discountsImg}>
-            <p>
-                Members have access to special discounts like the SEIU Discount
-                Marketplace, SEIU Discount Tickets Program, SEIU Auto Buying
-                Program, a $30 Costco Shop Card and a discount on AT&T Wireless'
-                Unlimited Premium plan.
-            </p>
-            <div class="pt-2 mt-auto">
-                <Button
-                    text="Learn More"
-                    href="https://www.seiumb.com/benefits/discounts"
-                />
-            </div>
-        </InfoCard>
-        <InfoCard title="Travel Benefits" image={travelImg}>
-            <p>
-                Members can receive flight discounts on flights, car rentals,
-                hotels, resorts, cruises, guided tours and activities like theme
-                parks, zoos, museums and shows.
-            </p>
-            <div class="pt-2 mt-auto">
-                <Button
-                    text="Learn More"
-                    href="https://www.seiumb.com/benefits/travel"
-                />
-            </div>
-        </InfoCard>
-        <InfoCard title="Education" image={educationImg}>
-            <p>
-                Members can receive tuition discounts for online degree and
-                certificate programs and access to the SEIU Undergraduate Loan
-                program, SEIU Graduate Loan Program, SEIU Parent Loan Program,
-                SEIU Student Loan Refinance Program, and SEIU Student Debt
-                Navigator.
-            </p>
-            <div class="pt-2 mt-auto">
-                <Button
-                    text="Learn More"
-                    href="https://www.seiumb.com/benefits/education"
-                />
-            </div>
-        </InfoCard>
-    </InfoCardGridLayout>
+          pcurry@seiunv.org
+        </LinkText> or 775-870-0604.
+      </p>
+      <div class="pt-2 mt-auto">
+        <Button
+          text="Learn More"
+          href="https://www.seiumb.com/benefits/finance"
+        />
+      </div>
+    </InfoCard>
+    <InfoCard title="Insurance to Protect Your Family" image={insuranceImg}>
+      <p>
+        Members have access to the SEIU group term life insurance program, a
+        special guaranteed issue life insurance program for those under 65 years
+        of age, accidental death and dismemberment insurance, auto and home
+        insurance, accident and injury insurance, and a special legal services
+        program.
+      </p>
+      <div class="pt-2 mt-auto">
+        <Button
+          text="Learn More"
+          href="https://www.seiumb.com/benefits/insurance"
+        />
+      </div>
+    </InfoCard>
+    <InfoCard title="Member Discounts" image={discountsImg}>
+      <p>
+        Members have access to special discounts like the SEIU Discount
+        Marketplace, SEIU Discount Tickets Program, SEIU Auto Buying Program, a
+        $30 Costco Shop Card and a discount on AT&T Wireless' Unlimited Premium
+        plan.
+      </p>
+      <div class="pt-2 mt-auto">
+        <Button
+          text="Learn More"
+          href="https://www.seiumb.com/benefits/discounts"
+        />
+      </div>
+    </InfoCard>
+    <InfoCard title="Travel Benefits" image={travelImg}>
+      <p>
+        Members can receive flight discounts on flights, car rentals, hotels,
+        resorts, cruises, guided tours and activities like theme parks, zoos,
+        museums and shows.
+      </p>
+      <div class="pt-2 mt-auto">
+        <Button
+          text="Learn More"
+          href="https://www.seiumb.com/benefits/travel"
+        />
+      </div>
+    </InfoCard>
+    <InfoCard title="Education" image={educationImg}>
+      <p>
+        Members can receive tuition discounts for online degree and certificate
+        programs and access to the SEIU Undergraduate Loan program, SEIU
+        Graduate Loan Program, SEIU Parent Loan Program, SEIU Student Loan
+        Refinance Program, and SEIU Student Debt Navigator.
+      </p>
+      <div class="pt-2 mt-auto">
+        <Button
+          text="Learn More"
+          href="https://www.seiumb.com/benefits/education"
+        />
+      </div>
+    </InfoCard>
+  </InfoCardGridLayout>
 </Layout>

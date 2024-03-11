@@ -1,101 +1,97 @@
 ---
-import Button from "../components/Button.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import JobPosting from "../components/JobPosting.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="SEIU 1107 Careers" centered="true">
-    <HeadingTitle text="Work at SEIU Local 1107!" />
-    <p class="text-center font-Roboto text-black text-lg">
-        <b>
-            Join the largest movement of healthcare and public sector workers in
-            Nevada!
-        </b>
-        <br />
-         We're looking for hard-working people committed to creating real change
-        for working families.
-    </p>
+  <HeadingTitle text="Work at SEIU Local 1107!" />
+  <p class="text-center font-Roboto text-black text-lg">
+    <b>
+      Join the largest movement of healthcare and public sector workers in
+      Nevada!
+    </b>
+    <br />
+    We're looking for hard-working people committed to creating real change for working
+    families.
+  </p>
 
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 pb-4">
-        <JobPosting
-            title="Chief of Staff"
-            jobDesc="/PDFs/Chief of Staff (Rev. 10-02-23).pdf"
-        >
-            <p>
-                The position is responsible for driving SEIU Local 1107's
-                high-priority projects and programs consistent with the union's
-                mission and goals. The Chief of Staff's role is critical in the
-                management of the daily operations and activities of the union
-                and will anticipate, identify, and problem-solve challenges. The
-                position supports organizational and leadership development and
-                operationalizes the union's strategic vision across all programs
-                and departments.
-            </p>
-        </JobPosting>
-        <JobPosting
-            title="Representation Coordinator"
-            jobDesc="/PDFs/Representation Coordinator (Rev. 11-2-23).pdf"
-        >
-            <p>
-                The Representation Coordinator reports directly to the Director
-                of Representation and is responsible for the coordination of
-                activities and programs of the Representation Department. They
-                are responsible for supervising contract representatives,
-                temporary staff, assigned consultants, and interns.
-                Additionally, they are responsible for the recruitment,
-                training, discipline/termination of supervised staff.
-            </p>
-        </JobPosting>
-        <JobPosting
-            title="Communications Specialist"
-            jobDesc="/PDFs/Communications Specialist (Rev. 10-30-23).pdf"
-        >
-            <p>
-                The Communications Specialist will play a vital role in building
-                a powerful program focused on effective, engaging communications
-                strategies that:
-            </p>
-            <div>
-                <ul class="list-disc ml-5">
-                    <li>Informs and mobilizes SEIU Local 1107 members.</li>
-                    <li>
-                        Amplifies the valuable work of our members to the public
-                        through digital and traditional media channels.
-                    </li>
-                    <li>
-                        Positions SEIU Nevada as a leading voice and authority
-                        on economic, racial, immigrant, and environmental
-                        justice issues in our communities.
-                    </li>
-                </ul>
-            </div>
-            <p>
-                The Communications Specialist will primarily focus on delivering
-                timely, frequent publications and digital content to SEIU Nevada
-                members and member leaders, community allies, and elected
-                officials. The position helps develop, manage, and extend a
-                consistent brand for the organization through all work products.
-            </p>
-        </JobPosting>
-        <JobPosting
-            title="Union Organizer"
-            jobDesc="/PDFs/Organizer (Revise 10-30-23).pdf"
-        >
-            <p>
-                The role of SEIU Nevada Organizer is to build a workers'
-                organization of motivated, empowered, and mobilized leaders, who
-                strategically act collectively, and powerfully to protect the
-                rights, and improve the quality of the work lives and the care
-                they provide for the community that is Nevada. The Union
-                Organizer provides effective leadership to carry out the goals
-                of the Union, through training and leadership development, new
-                organizing, internal and external organizing, and political
-                action. The position description is a guide to the critical
-                duties and essential functions of the job and is not an all-
-                inclusive list of responsibilities, qualifications, physical
-                demands, and work environment conditions.
-            </p>
-        </JobPosting>
-    </div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 pb-4">
+    <JobPosting
+      title="Chief of Staff"
+      jobDesc="/PDFs/Chief of Staff (Rev. 10-02-23).pdf"
+    >
+      <p>
+        The position is responsible for driving SEIU Local 1107's high-priority
+        projects and programs consistent with the union's mission and goals. The
+        Chief of Staff's role is critical in the management of the daily
+        operations and activities of the union and will anticipate, identify,
+        and problem-solve challenges. The position supports organizational and
+        leadership development and operationalizes the union's strategic vision
+        across all programs and departments.
+      </p>
+    </JobPosting>
+    <JobPosting
+      title="Representation Coordinator"
+      jobDesc="/PDFs/Representation Coordinator (Rev. 11-2-23).pdf"
+    >
+      <p>
+        The Representation Coordinator reports directly to the Director of
+        Representation and is responsible for the coordination of activities and
+        programs of the Representation Department. They are responsible for
+        supervising contract representatives, temporary staff, assigned
+        consultants, and interns. Additionally, they are responsible for the
+        recruitment, training, discipline/termination of supervised staff.
+      </p>
+    </JobPosting>
+    <JobPosting
+      title="Communications Specialist"
+      jobDesc="/PDFs/Communications Specialist (Rev. 10-30-23).pdf"
+    >
+      <p>
+        The Communications Specialist will play a vital role in building a
+        powerful program focused on effective, engaging communications
+        strategies that:
+      </p>
+      <div>
+        <ul class="list-disc ml-5">
+          <li>Informs and mobilizes SEIU Local 1107 members.</li>
+          <li>
+            Amplifies the valuable work of our members to the public through
+            digital and traditional media channels.
+          </li>
+          <li>
+            Positions SEIU Nevada as a leading voice and authority on economic,
+            racial, immigrant, and environmental justice issues in our
+            communities.
+          </li>
+        </ul>
+      </div>
+      <p>
+        The Communications Specialist will primarily focus on delivering timely,
+        frequent publications and digital content to SEIU Nevada members and
+        member leaders, community allies, and elected officials. The position
+        helps develop, manage, and extend a consistent brand for the
+        organization through all work products.
+      </p>
+    </JobPosting>
+    <JobPosting
+      title="Union Organizer"
+      jobDesc="/PDFs/Organizer (Revise 10-30-23).pdf"
+    >
+      <p>
+        The role of SEIU Nevada Organizer is to build a workers' organization of
+        motivated, empowered, and mobilized leaders, who strategically act
+        collectively, and powerfully to protect the rights, and improve the
+        quality of the work lives and the care they provide for the community
+        that is Nevada. The Union Organizer provides effective leadership to
+        carry out the goals of the Union, through training and leadership
+        development, new organizing, internal and external organizing, and
+        political action. The position description is a guide to the critical
+        duties and essential functions of the job and is not an all- inclusive
+        list of responsibilities, qualifications, physical demands, and work
+        environment conditions.
+      </p>
+    </JobPosting>
+  </div>
 </Layout>

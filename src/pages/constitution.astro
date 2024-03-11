@@ -1,20 +1,18 @@
 ---
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import LinkText from "../components/LinkText.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="SEIU 1107 Constitution & Bylaws" centered="true">
-    <HeadingTitle text="SEIU 1107 Constitution and Bylaws" />
-    <div class="flex m-auto text-2xl font-bold">
-        <LinkText href="/PDFs/238653_SEIU-Bylaw-Books_PROOF.pdf">
-            Click to Download PDF
-        </LinkText>
-    </div>
-    <div class="flex m-auto text-center text-xl font-bold">
-        Browser Preview:
-    </div>
-    <iframe
-        src="/PDFs/238653_SEIU-Bylaw-Books_PROOF.pdf"
-        class="py-2.5 max-w-full h-screen"></iframe>
+  <HeadingTitle text="SEIU 1107 Constitution and Bylaws" />
+  <div class="flex m-auto text-2xl font-bold">
+    <LinkText href="/PDFs/238653_SEIU-Bylaw-Books_PROOF.pdf">
+      Click to Download PDF
+    </LinkText>
+  </div>
+  <div class="flex m-auto text-center text-xl font-bold">Browser Preview:</div>
+  <iframe
+    src="/PDFs/238653_SEIU-Bylaw-Books_PROOF.pdf"
+    class="py-2.5 max-w-full h-screen"></iframe>
 </Layout>

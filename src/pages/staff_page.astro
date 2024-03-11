@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import ProfileGrid from "../components/ProfileGrid.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 
 import type { Profile } from "../Profile";
 
@@ -22,226 +22,226 @@ import Nilda from "../images/staff/Nilda.jpg";
 import Gersam from "../images/staff/Gersam.jpg";
 import Patti from "../images/staff/Patti.jpg";
 import Nathan from "../images/staff/Nathan.jpg";
+
 import LinkText from "../components/LinkText.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 const profileData: Profile[] = [
-    {
-        name: "Jason Klumb",
-        profileImg: JasonK,
-        data: [
-            ["Title", "Representation Director"],
-            ["Cell", "702-533-6077"],
-            ["Email", "jklumb@seiunv.org"],
-        ],
-    },
-    {
-        name: "Jocelyn White",
-        profileImg: Jocelyn,
-        data: [
-            ["Title", "Contract Representative"],
-            ["Cell", "702-296-6416"],
-            ["Email", "jwhite@seiunv.org"],
-        ],
-    },
-    {
-        name: "Brenda Marzan",
-        profileImg: Brenda,
-        data: [
-            ["Title", "Contract Representative"],
-            ["Cell", "702-296-6470"],
-            ["Email", "bmarzan@seiunv.org"],
-        ],
-    },
-    {
-        name: "Tony Green",
-        data: [
-            ["Title", "Contract Representative"],
-            ["Cell", "702-378-0030"],
-            ["Email", "tgreen@seiunv.org"],
-        ],
-    },
-    {
-        name: "Fabiola Morales",
-        profileImg: Fabiola,
-        data: [
-            ["Title", "Organizing Director"],
-            ["Cell", "702-378-7768"],
-            ["Email", "fmorales@seiunv.org"],
-        ],
-    },
-    {
-        name: "Patrick O'Connor",
-        profileImg: Patrick,
-        data: [
-            ["Title", "Organizing Coordinator"],
-            ["Assignment", "Southern Hills"],
-            ["Cell", "702-934-4961"],
-            ["Email", "poconnor@seiunv.org"],
-        ],
-    },
-    {
-        name: "Salah El-Amin",
-        profileImg: Salah,
-        data: [
-            ["Title", "Organizer"],
-            ["Assignment", "DOA & CC General Unit"],
-            ["Cell", "702-793-7057"],
-            ["Email", "selamin@seiunv.org"],
-        ],
-    },
-    {
-        name: "Quentinn Macklin",
-        profileImg: Quentinn,
-        data: [
-            ["Title", "Organizer"],
-            ["Cell", "702-296-6409"],
-            ["Email", "qmacklin@seiunv.org"],
-        ],
-    },
-    {
-        name: "Gloria Madrid",
-        profileImg: GloriaM,
-        data: [
-            ["Title", "Organizer"],
-            ["Assignment", "Home Care"],
-            ["Cell", "702-506-3082"],
-            ["Email", "gmadrid@seiunv.org"],
-        ],
-    },
-    {
-        name: "Marcus Osuigwe",
-        profileImg: Marcus,
-        data: [
-            ["Title", "Organizer"],
-            ["Cell", "702-849-2308"],
-            ["Email", "mosuigwe@seiunv.org"],
-        ],
-    },
-    {
-        name: "Rosy Salinas",
-        profileImg: Rosy,
-        data: [
-            ["Title", "Organizer"],
-            ["Assignment", "Renown, NNRH, CC-GU, SNHD, SNRHA"],
-            ["Cell", "702-274-3171"],
-            ["Email", "rsalinas@seiunv.org"],
-        ],
-    },
-    {
-        name: "Paloma Aguilar",
-        data: [
-            ["Title", "Organizer"],
-            ["Cell", "702-849-8876"],
-            ["Email", "paguilar@seiunv.org"],
-        ],
-    },
-    {
-        name: "Krystal Velez",
-        profileImg: Krystal,
-        data: [
-            ["Title", "Organizer-In-Training"],
-            ["Cell", "702-935-1541"],
-            ["Email", "kvelez@seiunv.org"],
-        ],
-    },
-    {
-        name: "Felipe Danglapin",
-        data: [
-            ["Title", "Director, Finance & Administration"],
-            ["Cell", "702-278-5509"],
-            ["Email", "fdanglapin@seiunv.org"],
-        ],
-    },
-    {
-        name: "Patti Curry",
-        profileImg: Patti,
-        data: [
-            ["Title", "Database and Finance Coordinator"],
-            ["Cell", "775-870-0604"],
-            ["Email", "pcurry@seiunv.org"],
-        ],
-    },
-    {
-        name: "Nilda Mason",
-        profileImg: Nilda,
-        data: [
-            ["Title", "Executive Assistant"],
-            ["Cell", "702-715-8592"],
-            ["Email", "nmason@seiunv.org"],
-        ],
-    },
-    {
-        name: "Gersam Lopez",
-        profileImg: Gersam,
-        data: [
-            ["Title", "IT Support Specialist"],
-            ["Cell", "702-849-2831"],
-            ["Email", "glopez@seiunv.org"],
-        ],
-    },
-    {
-        name: "Nathan Mactal",
-        profileImg: Nathan,
-        data: [
-            ["Title", "Data & Technology Specialist"],
-            ["Cell", "702-757-7191"],
-            ["Email", "nmactal@seiunv.org"],
-        ],
-    },
-    {
-        name: "Cody Hoskins",
-        profileImg: Cody,
-        data: [
-            ["Title", "Political Director"],
-            ["Cell", "702-296-6414"],
-            ["Email", "choskins@seiunv.org"],
-        ],
-    },
-    {
-        name: "Christopher Hilton",
-        profileImg: Chris,
-        data: [
-            ["Title", "Political Organizer"],
-            ["Cell", "702-690-8046"],
-            ["Email", "chilton@seiunv.org"],
-        ],
-    },
-    {
-        name: "Kathleen Flores",
-        data: [
-            ["Title", "Civic Engagement"],
-            ["Cell", "702-695-0454"],
-            ["Email", "kflores@seiunv.org"],
-        ],
-    },
-    {
-        name: "Alicia Baker",
-        data: [
-            ["Title", "Regional Coordinator, Education Fund"],
-            ["Cell", "(323) 363-4632"],
-            ["Email", "abaker@theedfund.org"],
-        ],
-    },
+  {
+    name: "Jason Klumb",
+    profileImg: JasonK,
+    data: [
+      ["Title", "Representation Director"],
+      ["Cell", "702-533-6077"],
+      ["Email", "jklumb@seiunv.org"],
+    ],
+  },
+  {
+    name: "Jocelyn White",
+    profileImg: Jocelyn,
+    data: [
+      ["Title", "Contract Representative"],
+      ["Cell", "702-296-6416"],
+      ["Email", "jwhite@seiunv.org"],
+    ],
+  },
+  {
+    name: "Brenda Marzan",
+    profileImg: Brenda,
+    data: [
+      ["Title", "Contract Representative"],
+      ["Cell", "702-296-6470"],
+      ["Email", "bmarzan@seiunv.org"],
+    ],
+  },
+  {
+    name: "Tony Green",
+    data: [
+      ["Title", "Contract Representative"],
+      ["Cell", "702-378-0030"],
+      ["Email", "tgreen@seiunv.org"],
+    ],
+  },
+  {
+    name: "Fabiola Morales",
+    profileImg: Fabiola,
+    data: [
+      ["Title", "Organizing Director"],
+      ["Cell", "702-378-7768"],
+      ["Email", "fmorales@seiunv.org"],
+    ],
+  },
+  {
+    name: "Patrick O'Connor",
+    profileImg: Patrick,
+    data: [
+      ["Title", "Organizing Coordinator"],
+      ["Assignment", "Southern Hills"],
+      ["Cell", "702-934-4961"],
+      ["Email", "poconnor@seiunv.org"],
+    ],
+  },
+  {
+    name: "Salah El-Amin",
+    profileImg: Salah,
+    data: [
+      ["Title", "Organizer"],
+      ["Assignment", "DOA & CC General Unit"],
+      ["Cell", "702-793-7057"],
+      ["Email", "selamin@seiunv.org"],
+    ],
+  },
+  {
+    name: "Quentinn Macklin",
+    profileImg: Quentinn,
+    data: [
+      ["Title", "Organizer"],
+      ["Cell", "702-296-6409"],
+      ["Email", "qmacklin@seiunv.org"],
+    ],
+  },
+  {
+    name: "Gloria Madrid",
+    profileImg: GloriaM,
+    data: [
+      ["Title", "Organizer"],
+      ["Assignment", "Home Care"],
+      ["Cell", "702-506-3082"],
+      ["Email", "gmadrid@seiunv.org"],
+    ],
+  },
+  {
+    name: "Marcus Osuigwe",
+    profileImg: Marcus,
+    data: [
+      ["Title", "Organizer"],
+      ["Cell", "702-849-2308"],
+      ["Email", "mosuigwe@seiunv.org"],
+    ],
+  },
+  {
+    name: "Rosy Salinas",
+    profileImg: Rosy,
+    data: [
+      ["Title", "Organizer"],
+      ["Assignment", "Renown, NNRH, CC-GU, SNHD, SNRHA"],
+      ["Cell", "702-274-3171"],
+      ["Email", "rsalinas@seiunv.org"],
+    ],
+  },
+  {
+    name: "Paloma Aguilar",
+    data: [
+      ["Title", "Organizer"],
+      ["Cell", "702-849-8876"],
+      ["Email", "paguilar@seiunv.org"],
+    ],
+  },
+  {
+    name: "Krystal Velez",
+    profileImg: Krystal,
+    data: [
+      ["Title", "Organizer-In-Training"],
+      ["Cell", "702-935-1541"],
+      ["Email", "kvelez@seiunv.org"],
+    ],
+  },
+  {
+    name: "Felipe Danglapin",
+    data: [
+      ["Title", "Director, Finance & Administration"],
+      ["Cell", "702-278-5509"],
+      ["Email", "fdanglapin@seiunv.org"],
+    ],
+  },
+  {
+    name: "Patti Curry",
+    profileImg: Patti,
+    data: [
+      ["Title", "Database and Finance Coordinator"],
+      ["Cell", "775-870-0604"],
+      ["Email", "pcurry@seiunv.org"],
+    ],
+  },
+  {
+    name: "Nilda Mason",
+    profileImg: Nilda,
+    data: [
+      ["Title", "Executive Assistant"],
+      ["Cell", "702-715-8592"],
+      ["Email", "nmason@seiunv.org"],
+    ],
+  },
+  {
+    name: "Gersam Lopez",
+    profileImg: Gersam,
+    data: [
+      ["Title", "IT Support Specialist"],
+      ["Cell", "702-849-2831"],
+      ["Email", "glopez@seiunv.org"],
+    ],
+  },
+  {
+    name: "Nathan Mactal",
+    profileImg: Nathan,
+    data: [
+      ["Title", "Data & Technology Specialist"],
+      ["Cell", "702-757-7191"],
+      ["Email", "nmactal@seiunv.org"],
+    ],
+  },
+  {
+    name: "Cody Hoskins",
+    profileImg: Cody,
+    data: [
+      ["Title", "Political Director"],
+      ["Cell", "702-296-6414"],
+      ["Email", "choskins@seiunv.org"],
+    ],
+  },
+  {
+    name: "Christopher Hilton",
+    profileImg: Chris,
+    data: [
+      ["Title", "Political Organizer"],
+      ["Cell", "702-690-8046"],
+      ["Email", "chilton@seiunv.org"],
+    ],
+  },
+  {
+    name: "Kathleen Flores",
+    data: [
+      ["Title", "Civic Engagement"],
+      ["Cell", "702-695-0454"],
+      ["Email", "kflores@seiunv.org"],
+    ],
+  },
+  {
+    name: "Alicia Baker",
+    data: [
+      ["Title", "Regional Coordinator, Education Fund"],
+      ["Cell", "(323) 363-4632"],
+      ["Email", "abaker@theedfund.org"],
+    ],
+  },
 ];
 ---
 
 <Layout title="SEIU Local 1107 Staff" centered="true">
-    <HeadingTitle text="SEIU Local 1107 Staff" />
-    <div class="py-2.5 m-auto max-w-7xl">
-        <p class="text-center text-lg">
-            SEIU Local 1107 employs experts in organizing, contracts,
-            bargaining, worker representation, and other crucial areas.
-            Employees are dedicated to the mission of the union, solving
-            problems on the job, and our other needs as members. Not sure who to
-            contact?
-            <LinkText href="/contact_us">
-                Reach out to the union hall directly!
-            </LinkText>
-        </p>
-    </div>
-    <div class="max-w-lg flex m-auto justify-center">
-        <Button href="/careers" text="View Careers" />
-    </div>
-    <ProfileGrid data={profileData} />
+  <HeadingTitle text="SEIU Local 1107 Staff" />
+  <div class="py-2.5 m-auto max-w-7xl">
+    <p class="text-center text-lg">
+      SEIU Local 1107 employs experts in organizing, contracts, bargaining,
+      worker representation, and other crucial areas. Employees are dedicated to
+      the mission of the union, solving problems on the job, and our other needs
+      as members. Not sure who to contact?
+      <LinkText href="/contact_us">
+        Reach out to the union hall directly!
+      </LinkText>
+    </p>
+  </div>
+  <div class="max-w-lg flex m-auto justify-center">
+    <Button href="/careers" text="View Careers" />
+  </div>
+  <ProfileGrid data={profileData} />
 </Layout>

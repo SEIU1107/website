@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 
 import type { Profile } from "../../Profile";
@@ -15,128 +15,128 @@ import ReinaGuzman from "../../images/stewards/Sunrise/reina.png";
 import SharonDubreus from "../../images/stewards/Sunrise/sharon.png";
 
 const profileData: Profile[] = [
-    {
-        name: "Erika Watanabe",
-        profileImg: Erika,
-        data: [
-            ["Title", "Chief Steward / Executive Board Member"],
-            ["Unit", "Ancillary"],
-            ["Department", "Surgery"],
-            ["Phone", "(702) 275 - 5304"],
-            ["Email", "ewatanabe2@mac.com"],
-        ],
-    },
-    {
-        name: "Ralaya Allen",
-        profileImg: Ralaya,
-        data: [
-            ["Title", "Chief Steward"],
-            ["Unit", "Nursing"],
-            ["Department", "Emergency Room (ER)"],
-            ["Phone", "(702) 493 - 2099"],
-            ["Email", "ralaya@gmail.com"],
-        ],
-    },
-    {
-        name: "Mariela Castellanos",
-        profileImg: MarielaCastellanos,
-        data: [
-            ["Title", "Steward / Bargaining Unit VP"],
-            ["Unit", "Ancillary"],
-            ["Department", "Housekeeping"],
-            ["Phone", "(702) 200 - 9299"],
-            ["Email", "marielacastellanos014@gmail.com"],
-        ],
-    },
-    {
-        name: "Mike Forson",
-        profileImg: MikeForson,
-        data: [
-            ["Title", "Steward / Bargaining Unit"],
-            ["Unit", "Nursing"],
-            ["Department", "PICU"],
-            ["Phone", "(702) 497 - 7490"],
-            ["Email", "mforson@embarqmail.com"],
-        ],
-    },
-    {
-        name: "Jody Domineck",
-        profileImg: Jody,
-        data: [
-            ["Title", "Steward / Executive Board Member"],
-            ["Unit", "Nursing"],
-            ["Department", "Registered Nurse (RN)"],
-            ["Phone", "(702) 812 - 1528"],
-            ["Email", "jodydomineck@gmail.com"],
-        ],
-    },
-    {
-        name: "Ana Esquivel",
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "EVS"],
-            ["Phone", "(702) 691 - 8100"],
-            ["Email", "anaesquivel762@gmail.com"],
-        ],
-    },
-    {
-        name: "Brandi Giles",
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "Surgery"],
-            ["Phone", "(702) 832 - 6789"],
-            ["Email", "bgiles96@yahoo.com"],
-        ],
-    },
-    {
-        name: "Bridgett Hollis",
-        profileImg: Bridgett,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "Admitting"],
-            ["Phone", "(702) 813 - 7482"],
-            ["Email", "hollisbridgett@yahoo.com"],
-        ],
-    },
-    {
-        name: "Lili Tovar",
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "Food & Nutrition"],
-            ["Phone", "(702) 335 - 7205"],
-            ["Email", "Tovarlili10@gmail.com"],
-        ],
-    },
-    {
-        name: "Reina Guzman",
-        profileImg: ReinaGuzman,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "EVS"],
-            ["Phone", "(702) 985 - 9761"],
-            ["Email", "five.angels32@hotmail.com"],
-        ],
-    },
-    {
-        name: "Sharon Dubreus",
-        profileImg: SharonDubreus,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Ancillary"],
-            ["Department", "EVS"],
-            ["Phone", "(702) 467 - 9470"],
-            ["Email", "sharonrene73@yahoo.com"],
-        ],
-    },
+  {
+    name: "Erika Watanabe",
+    profileImg: Erika,
+    data: [
+      ["Title", "Chief Steward / Executive Board Member"],
+      ["Unit", "Ancillary"],
+      ["Department", "Surgery"],
+      ["Phone", "(702) 275 - 5304"],
+      ["Email", "ewatanabe2@mac.com"],
+    ],
+  },
+  {
+    name: "Ralaya Allen",
+    profileImg: Ralaya,
+    data: [
+      ["Title", "Chief Steward"],
+      ["Unit", "Nursing"],
+      ["Department", "Emergency Room (ER)"],
+      ["Phone", "(702) 493 - 2099"],
+      ["Email", "ralaya@gmail.com"],
+    ],
+  },
+  {
+    name: "Mariela Castellanos",
+    profileImg: MarielaCastellanos,
+    data: [
+      ["Title", "Steward / Bargaining Unit VP"],
+      ["Unit", "Ancillary"],
+      ["Department", "Housekeeping"],
+      ["Phone", "(702) 200 - 9299"],
+      ["Email", "marielacastellanos014@gmail.com"],
+    ],
+  },
+  {
+    name: "Mike Forson",
+    profileImg: MikeForson,
+    data: [
+      ["Title", "Steward / Bargaining Unit"],
+      ["Unit", "Nursing"],
+      ["Department", "PICU"],
+      ["Phone", "(702) 497 - 7490"],
+      ["Email", "mforson@embarqmail.com"],
+    ],
+  },
+  {
+    name: "Jody Domineck",
+    profileImg: Jody,
+    data: [
+      ["Title", "Steward / Executive Board Member"],
+      ["Unit", "Nursing"],
+      ["Department", "Registered Nurse (RN)"],
+      ["Phone", "(702) 812 - 1528"],
+      ["Email", "jodydomineck@gmail.com"],
+    ],
+  },
+  {
+    name: "Ana Esquivel",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "EVS"],
+      ["Phone", "(702) 691 - 8100"],
+      ["Email", "anaesquivel762@gmail.com"],
+    ],
+  },
+  {
+    name: "Brandi Giles",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "Surgery"],
+      ["Phone", "(702) 832 - 6789"],
+      ["Email", "bgiles96@yahoo.com"],
+    ],
+  },
+  {
+    name: "Bridgett Hollis",
+    profileImg: Bridgett,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "Admitting"],
+      ["Phone", "(702) 813 - 7482"],
+      ["Email", "hollisbridgett@yahoo.com"],
+    ],
+  },
+  {
+    name: "Lili Tovar",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "Food & Nutrition"],
+      ["Phone", "(702) 335 - 7205"],
+      ["Email", "Tovarlili10@gmail.com"],
+    ],
+  },
+  {
+    name: "Reina Guzman",
+    profileImg: ReinaGuzman,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "EVS"],
+      ["Phone", "(702) 985 - 9761"],
+      ["Email", "five.angels32@hotmail.com"],
+    ],
+  },
+  {
+    name: "Sharon Dubreus",
+    profileImg: SharonDubreus,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Ancillary"],
+      ["Department", "EVS"],
+      ["Phone", "(702) 467 - 9470"],
+      ["Email", "sharonrene73@yahoo.com"],
+    ],
+  },
 ];
 ---
 
 <Layout title="Sunrise Stewards">
-    <HeadingTitle text="Sunrise Hospital" />
-    <ProfileGrid data={profileData} />
+  <HeadingTitle text="Sunrise Hospital" />
+  <ProfileGrid data={profileData} />
 </Layout>

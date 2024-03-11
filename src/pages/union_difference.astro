@@ -1,86 +1,77 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import WhyJoinCards from "../components/WhyJoinCards.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 const paragraphClass = "font-Roboto text-md";
 ---
 
 <Layout title="SEIU 1107 The Union Difference">
-    <div class="flex mx-[2.5vw]">
-        <HeadingTitle text="The Union Difference" />
-    </div>
-    <div
-        class="flex flex-col max-w-screen-xl align-middle mx-[2.5vw] lg:mx-auto"
-    >
+  <div class="flex mx-[2.5vw]">
+    <HeadingTitle text="The Union Difference" />
+  </div>
+  <div class="flex flex-col max-w-screen-xl align-middle mx-[2.5vw] lg:mx-auto">
+    <p class={paragraphClass}>
+      When workers stand together, the direction of our lives changes
+      dramatically for the better. From wages to paid leave, from safety to
+      retirement, studies prove over and over how much of a difference unions
+      make for workers who raise their voices as one.
+      <br />
+      <br />
+      The key difference is that when workers have a union, we are able to share
+      decision making power with our employer and are able to negotiate a contract
+      that spells out all our wages, benefits and working conditions. But without
+      a union, the employer maintains all the power and we have little say in our
+      jobs.
+      <br />
+      <br />
+    </p>
+    <div class="flex flex-row">
+      <div class="hidden md:inline-block max-w-screen-md px-2.5">
+        <iframe
+          width="560"
+          height="315"
+          src="https://www.youtube.com/embed/0KjQpKkYfFQ?si=W3AKbz7Z80BmUBaQ"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div class="justify-end px-2.5">
         <p class={paragraphClass}>
-            When workers stand together, the direction of our lives changes
-            dramatically for the better. From wages to paid leave, from safety
-            to retirement, studies prove over and over how much of a difference
-            unions make for workers who raise their voices as one.
-            <br />
-            <br />
-             The key difference is that when workers have a union, we are able
-            to share decision making power with our employer and are able to
-            negotiate a contract that spells out all our wages, benefits and
-            working conditions. But without a union, the employer maintains all
-            the power and we have little say in our jobs.
-            <br />
-            <br />
+          <b
+            >SEIU Local 1107 members have shown over and over again that we can
+            win contracts with the highest standards, including:</b
+          >
         </p>
-        <div class="flex flex-row">
-            <div class="hidden md:inline-block max-w-screen-md px-2.5">
-                <iframe
-                    width="560"
-                    height="315"
-                    src="https://www.youtube.com/embed/0KjQpKkYfFQ?si=W3AKbz7Z80BmUBaQ"
-                    title="YouTube video player"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowfullscreen></iframe>
-            </div>
-            <div class="justify-end px-2.5">
-                <p class={paragraphClass}>
-                    <b
-                        >SEIU Local 1107 members have shown over and over again
-                        that we can win contracts with the highest standards,
-                        including:</b
-                    >
-                </p>
-                <ul class="list-disc pl-4">
-                    <li>Fair wages with guaranteed yearly raises.</li>
-                    <li>
-                        Pay scales with step increases that reward years of
-                        experience.
-                    </li>
-                    <li>
-                        Affordable healthcare or ourselves and our families.
-                    </li>
-                    <li>Substantial paid time off and holiday pay.</li>
-                    <li>Retirement with dignity.</li>
-                    <li>Job training and career advancement opportunities.</li>
-                    <li>
-                        Pay differentials for different shifts asnd
-                        certifications.
-                    </li>
-                    <li>Health and safety at work.</li>
-                    <li>
-                        A fair disciplinary process with a neutral arbitrator to
-                        make final decisions.
-                    </li>
-                    <li>A real voice on the job!</li>
-                </ul>
-            </div>
-        </div>
+        <ul class="list-disc pl-4">
+          <li>Fair wages with guaranteed yearly raises.</li>
+          <li>
+            Pay scales with step increases that reward years of experience.
+          </li>
+          <li>Affordable healthcare or ourselves and our families.</li>
+          <li>Substantial paid time off and holiday pay.</li>
+          <li>Retirement with dignity.</li>
+          <li>Job training and career advancement opportunities.</li>
+          <li>Pay differentials for different shifts asnd certifications.</li>
+          <li>Health and safety at work.</li>
+          <li>
+            A fair disciplinary process with a neutral arbitrator to make final
+            decisions.
+          </li>
+          <li>A real voice on the job!</li>
+        </ul>
+      </div>
     </div>
-    <div class="flex m-auto py-1.5 justify-center md:hidden">
-        <Button
-            text="Learn More On Youtube"
-            href="https://youtu.be/0KjQpKkYfFQ?feature=shared"
-        />
-    </div>
-    <div class="py-2.5">
-        <HeadingTitle text="Why You Should Join a Union" />
-        <WhyJoinCards />
-    </div>
+  </div>
+  <div class="flex m-auto py-1.5 justify-center md:hidden">
+    <Button
+      text="Learn More On Youtube"
+      href="https://youtu.be/0KjQpKkYfFQ?feature=shared"
+    />
+  </div>
+  <div class="py-2.5">
+    <HeadingTitle text="Why You Should Join a Union" />
+    <WhyJoinCards />
+  </div>
 </Layout>

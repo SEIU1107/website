@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 
 import type { Profile } from "../../Profile";
@@ -11,52 +11,52 @@ import ShanitaTunstall from "../../images/stewards/SNRHA/ShanitaTunstall.jpg";
 import AliciaSmith from "../../images/stewards/SNRHA/alicia.png";
 
 const profileData: Profile[] = [
-    {
-        name: "Alicia Smith",
-        profileImg: AliciaSmith,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
-            ["Department", "Housing Program"],
-            ["Phone", "(702) 750 - 5656"],
-            ["Email", "asmith.seiu@gmail.com"],
-        ],
-    },
-    {
-        name: "Brandy Foreman",
-        profileImg: BrandyForeman,
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "Non-Supervisory"],
-            ["Department", "Eligibility"],
-            ["Phone", "(702) 334 - 5112"],
-            ["Email", "bforeman84@gmail.com"],
-        ],
-    },
-    {
-        name: "Stephanie Hughes",
-        profileImg: StephanieHughes,
-        data: [
-            ["Title", "Steward"],
-            ["Department", "Occupancy Specialist"],
-            ["Phone", "510-704-3286"],
-            ["Email", "stephaniehughes702@gmail.com"],
-        ],
-    },
-    {
-        name: "Shanita Tunstall",
-        profileImg: ShanitaTunstall,
-        data: [
-            ["Title", "Steward"],
-            ["Department", "Occupancy Specialist"],
-            ["Phone", "510-704-3286"],
-            ["Email", "stephaniehughes702@gmail.com"],
-        ],
-    },
+  {
+    name: "Alicia Smith",
+    profileImg: AliciaSmith,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Non-Supervisory"],
+      ["Department", "Housing Program"],
+      ["Phone", "(702) 750 - 5656"],
+      ["Email", "asmith.seiu@gmail.com"],
+    ],
+  },
+  {
+    name: "Brandy Foreman",
+    profileImg: BrandyForeman,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "Non-Supervisory"],
+      ["Department", "Eligibility"],
+      ["Phone", "(702) 334 - 5112"],
+      ["Email", "bforeman84@gmail.com"],
+    ],
+  },
+  {
+    name: "Stephanie Hughes",
+    profileImg: StephanieHughes,
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Occupancy Specialist"],
+      ["Phone", "510-704-3286"],
+      ["Email", "stephaniehughes702@gmail.com"],
+    ],
+  },
+  {
+    name: "Shanita Tunstall",
+    profileImg: ShanitaTunstall,
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Occupancy Specialist"],
+      ["Phone", "510-704-3286"],
+      ["Email", "stephaniehughes702@gmail.com"],
+    ],
+  },
 ];
 ---
 
 <Layout title="SNRHA Stewards">
-    <HeadingTitle text="Southern Nevada Regional Housing Authority (SNRHA)" />
-    <ProfileGrid data={profileData} />
+  <HeadingTitle text="Southern Nevada Regional Housing Authority (SNRHA)" />
+  <ProfileGrid data={profileData} />
 </Layout>

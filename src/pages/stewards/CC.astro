@@ -12,36 +12,36 @@ import { dataDOA } from "./Clark County Data.ts";
 import { dataDFSDJJS } from "./Clark County Data.ts";
 import { dataWRD } from "./Clark County Data.ts";
 import { dataSupervisory } from "./Clark County Data.ts";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 ---
 
 <Layout title="Clark County Stewards" backgroundStyling="bg-honey-flower-100">
-    <HeadingTitle text="Clark County" />
+  <HeadingTitle text="Clark County" />
 
-    <div class="py-2">
-        <ButtonGrid buttons={buttons} />
+  <div class="py-2">
+    <ButtonGrid buttons={buttons} />
+  </div>
+
+  <LavSection title="Non-Supervisory Unit">
+    <div id="GENERAL_UNIT"><Separator text="General Unit" /></div>
+    <ProfileGrid data={dataGeneralUnit} />
+    <div id="DOA"><Separator text="Department of Aviation (DOA)" /></div>
+    <ProfileGrid data={dataDOA} />
+    <div id="DFS">
+      <Separator
+        text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)"
+      />
     </div>
-
-    <LavSection title="Non-Supervisory Unit">
-        <div id="GENERAL_UNIT"><Separator text="General Unit" /></div>
-        <ProfileGrid data={dataGeneralUnit} />
-        <div id="DOA"><Separator text="Department of Aviation (DOA)" /></div>
-        <ProfileGrid data={dataDOA} />
-        <div id="DFS">
-            <Separator
-                text="Department of Family Services / Department of Juvenile Justice (DFS/DJJS)"
-            />
-        </div>
-        <ProfileGrid data={dataDFSDJJS} />
-        <div id="WRD">
-            <Separator text="Water Reclamation District (WRD)" />
-        </div>
-        <ProfileGrid data={dataWRD} />
-    </LavSection>
-
-    <div id="Supervisory">
-        <PurpleSection title="Supervisory Unit">
-            <ProfileGrid data={dataSupervisory} />
-        </PurpleSection>
+    <ProfileGrid data={dataDFSDJJS} />
+    <div id="WRD">
+      <Separator text="Water Reclamation District (WRD)" />
     </div>
+    <ProfileGrid data={dataWRD} />
+  </LavSection>
+
+  <div id="Supervisory">
+    <PurpleSection title="Supervisory Unit">
+      <ProfileGrid data={dataSupervisory} />
+    </PurpleSection>
+  </div>
 </Layout>

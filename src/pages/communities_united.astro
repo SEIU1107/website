@@ -1,6 +1,6 @@
 ---
 import CollageImage from "../components/CollageImage.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import Subtitle from "../components/Subtitle.astro";
 import Layout from "../layouts/Layout.astro";
 
@@ -11,218 +11,205 @@ import imgPerformer from "../images/communities_united/Performer.jpg";
 ---
 
 <Layout title="SEIU 1107 Communities United" centered="true">
-    <HeadingTitle text="Communities United" />
-    <Subtitle text="Raising The Stakes" />
-    <div class="max-w-screen-lg flex flex-col m-auto py-2">
-        <div class="py-2">
-            <CollageImage src={imgDragons}>
-                <p>
-                    Delivering a powerful rebuke to the alarming rise in hate
-                    crimes and divisive rhetoric in recent years, SEIU 1107
-                    hosted the 2023 <b
-                        >“Communities United Multicultural Festival”</b
-                    >
-                     to celebrate diversity and the right to vote. The event was
-                    held as part of our union's ongoing commitment to diversity,
-                    civic engagement, voter participation and understanding
-                    across racial and identity lines.
-                </p>
-            </CollageImage>
-        </div>
-        <div class="py-2">
-            <CollageImage
-                src={imgPerformer}
-                horizontal="right"
-                imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
-            >
-                <p>
-                    Over 100 partners helped to coordinate the festival,
-                    including major unions, companies and grassroots
-                    organizations from the Asian American, Native Hawaiian and
-                    Pacific Islander; Black; Latino; indigenous and LGBTQ+
-                    communities.
-                </p>
-                <p>
-                    The 2023 celebration took on even more urgency as Nevadans
-                    confronted soaring hate crimes, Clark County School District
-                    police brutality against Black students; and increasingly
-                    hostile rhetoric against the rights of women, communities of
-                    color and LGBTQ+ people in recent years.
-                </p>
-                <p>
-                    The 2023 celebration took on even more urgency as Nevadans
-                    confronted soaring hate crimes, Clark County School District
-                    police brutality against Black students; and increasingly
-                    hostile rhetoric against the rights of women, communities of
-                    color and LGBTQ+ people in recent years.
-                </p>
-            </CollageImage>
-        </div>
-        <div class="py-2">
-            <CollageImage src={imgLoveWins}>
-                <p>
-                    "We live in a country that celebrates diversity and unity,
-                    and it's crucial that we remember that,” said Gloria T.
-                    Caoile, co-founder of the National Federation of Filipino
-                    American Associations. “America's strength lies in its open
-                    arms that welcome people from all walks of life. Our unique
-                    stories and backgrounds only add to the rich tapestry of our
-                    nation. People of color, immigrants, and LGBTQ+ individuals
-                    are integral threads in the fabric of our communities,
-                    weaving in their contributions every day to help Nevada
-                    flourish. Our Communities United Multicultural Festival
-                    serves as a beacon of recognition and respect for these
-                    diverse contributions, sending a resounding message of
-                    unity."
-                </p>
-            </CollageImage>
-        </div>
-        <div class="py-2">
-            <CollageImage
-                src={imgSinger}
-                horizontal="right"
-                imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
-            >
-                <p>
-                    Michelle Maese, President of SEIU Local 1107 noted the
-                    importance of bringing Nevadans together as the state gears
-                    up for another important election in 2024.
-                </p>
-                <p>
-                    Our Communities United Multicultural Festival is occurring
-                    one year out from historic elections and intends to motivate
-                    people to vote at unprecedented levels, especially union
-                    members, youth and people of color,” said Maese. “Nevada is
-                    one of the most critical battleground states in the nation,
-                    with elections next year for Congressional offices, State
-                    Senate and Assembly, the courts, school board, Board of
-                    Regents, mayor and city council, in addition to the
-                    presidency and multiple ballot measures. We're declaring
-                    that Nevadans refuse to fall for the politics of division
-                    and are instead uniting around our shared values.”
-                </p>
-            </CollageImage>
-        </div>
-        <div class="bg-white shadow-md shadow-black flex flex-col p-5 m-auto">
-            <div
-                class="text-black font-Trebuchet text-center font-bold text-3xl py-3"
-            >
-                List of Event Partners
-            </div>
-            <ul class="ml-5 list-disc grid gap-5 grid-cols-1 md:grid-cols-2">
-                <li>African Chamber of Commerce and Tourism</li>
-                <li>African Diaspora of Las Vegas (ADOLV)</li>
-                <li>All Voting is Local</li>
-                <li>American Civil Liberties Union of Nevada (ACLU NV)</li>
-                <li>Angels of Las Vegas</li>
-                <li>Asian Community Resource Center (ACRC)</li>
-                <li>Balayan Las Vegas Association</li>
-                <li>Bamboo Bridges</li>
-                <li>Battle Born Progress</li>
-                <li>Be Smart for Kids</li>
-                <li>Bikolnon Association</li>
-                <li>Black Joy Consulting</li>
-                <li>Black Leadership Collective</li>
-                <li>Blue Cross Blue Shield Nevada</li>
-                <li>Carpenters Union</li>
-                <li>Cavite Association of Nevada</li>
-                <li>Chilean American Association of Nevada</li>
-                <li>Chispa Nevada</li>
-                <li>Clark County Education Association (CCEA)</li>
-                <li>Common Tree LV</li>
-                <li>Community Services of Nevada (CSNV)</li>
-                <li>Culinary Union Local 226</li>
-                <li>Culinary Academy of Las Vegas</li>
-                <li>Democratic Socialist of America Las Vegas</li>
-                <li>Department of Family Services</li>
-                <li>Echo</li>
-                <li>Ecube</li>
-                <li>Emerge Nevada</li>
-                <li>Everytown Survivor Network</li>
-                <li>Faith Organizing Alliance</li>
-                <li>
-                    Filipino-American Scholarship Foundation and Outreach
-                    Services (FASFOS)
-                </li>
-                <li>
-                    Filipino American Chamber of Commerce of Greater Nevada
-                    (FACCGN)
-                </li>
-                <li>Filipino American Educators</li>
-                <li>Foodie Fest</li>
-                <li>For Our Future</li>
-                <li>Hispanics in Politics</li>
-                <li>Humana</li>
-                <li>
-                    International Alliance of Theatrical Stage Employees (IATSE)
-                </li>
-                <li>IndigenousAF</li>
-                <li>Ilocano American Association of Nevada</li>
-                <li>Kids Corner</li>
-                <li>Labor Council For Latin American Advancement (LCLAA)</li>
-                <li>Las Vegas Expo</li>
-                <li>Lovee Inc.</li>
-                <li>Make The Road</li>
-                <li>Mass Liberation</li>
-                <li>Mi Familia Vota</li>
-                <li>Moms Demand Action</li>
-                <li>NAACP</li>
-                <li>
-                    National Federation of Filipino American Associations
-                    (NaFFAA) NV
-                </li>
-                <li>National Action Network (NAN)</li>
-                <li>National Domestic Workers Alliance</li>
-                <li>National Juneteenth Observance Foundation</li>
-                <li>Native Voters Alliance</li>
-                <li>Nehemiah Ministries</li>
-                <li>Nevada Conservation League</li>
-                <li>Nevada Esports Education League</li>
-                <li>Nevada Health Link</li>
-                <li>Nevada State AFL-CIO</li>
-                <li>Nevada Women in Trades</li>
-                <li>No Racism in Schools</li>
-                <li>National Organization for Women (NOW)</li>
-                <li>The Obodo Collective</li>
-                <li>One APIA Nevada</li>
-                <li>Outreach Service Nevada</li>
-                <li>Palm Mortuaries</li>
-                <li>Plumbers and Pipefitters Local 525</li>
-                <li>Power Portraits</li>
-                <li>Progressive Leadership Alliance of Nevada (PLAN)</li>
-                <li>Promotoras Las Vegas</li>
-                <li>
-                    Rising Asian Pacific Americans Coalition for Diversity
-                    (RAPACD)
-                </li>
-                <li>Red Desert Collective</li>
-                <li>Red Rock Vegas Times</li>
-                <li>Santa Maria Ilocos Sur Association of Nevada (SMISAN)</li>
-                <li>Seek Jesus First Minister</li>
-                <li>SEIU AAPI Caucus</li>
-                <li>SEIU Local 1107</li>
-                <li>Seven Lakes International</li>
-                <li>Silver State Equality</li>
-                <li>Silver State Health</li>
-                <li>Sing Out For Autism</li>
-                <li>Spring Valley High School Key Club</li>
-                <li>Tamaitai Polenisia Samora LV (Heart of Polynesian)</li>
-                <li>Teamsters Local 986</li>
-                <li>Teriyaki Boy</li>
-                <li>The Stretch for Change Foundation</li>
-                <li>The Wealthy Place Ministries LV</li>
-                <li>Transport Workers Union</li>
-                <li>Vegas +</li>
-                <li>Vegas FAB</li>
-                <li>Vietnamese American Community of Las Vegas</li>
-                <li>Youth Voice of Nevada</li>
-            </ul>
-        </div>
+  <HeadingTitle text="Communities United" />
+  <Subtitle text="Raising The Stakes" />
+  <div class="max-w-screen-lg flex flex-col m-auto py-2">
+    <div class="py-2">
+      <CollageImage src={imgDragons}>
+        <p>
+          Delivering a powerful rebuke to the alarming rise in hate crimes and
+          divisive rhetoric in recent years, SEIU 1107 hosted the 2023 <b
+            >“Communities United Multicultural Festival”</b
+          >
+          to celebrate diversity and the right to vote. The event was held as part
+          of our union's ongoing commitment to diversity, civic engagement, voter
+          participation and understanding across racial and identity lines.
+        </p>
+      </CollageImage>
     </div>
+    <div class="py-2">
+      <CollageImage
+        src={imgPerformer}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
+      >
+        <p>
+          Over 100 partners helped to coordinate the festival, including major
+          unions, companies and grassroots organizations from the Asian
+          American, Native Hawaiian and Pacific Islander; Black; Latino;
+          indigenous and LGBTQ+ communities.
+        </p>
+        <p>
+          The 2023 celebration took on even more urgency as Nevadans confronted
+          soaring hate crimes, Clark County School District police brutality
+          against Black students; and increasingly hostile rhetoric against the
+          rights of women, communities of color and LGBTQ+ people in recent
+          years.
+        </p>
+        <p>
+          The 2023 celebration took on even more urgency as Nevadans confronted
+          soaring hate crimes, Clark County School District police brutality
+          against Black students; and increasingly hostile rhetoric against the
+          rights of women, communities of color and LGBTQ+ people in recent
+          years.
+        </p>
+      </CollageImage>
+    </div>
+    <div class="py-2">
+      <CollageImage src={imgLoveWins}>
+        <p>
+          "We live in a country that celebrates diversity and unity, and it's
+          crucial that we remember that,” said Gloria T. Caoile, co-founder of
+          the National Federation of Filipino American Associations. “America's
+          strength lies in its open arms that welcome people from all walks of
+          life. Our unique stories and backgrounds only add to the rich tapestry
+          of our nation. People of color, immigrants, and LGBTQ+ individuals are
+          integral threads in the fabric of our communities, weaving in their
+          contributions every day to help Nevada flourish. Our Communities
+          United Multicultural Festival serves as a beacon of recognition and
+          respect for these diverse contributions, sending a resounding message
+          of unity."
+        </p>
+      </CollageImage>
+    </div>
+    <div class="py-2">
+      <CollageImage
+        src={imgSinger}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-md"
+      >
+        <p>
+          Michelle Maese, President of SEIU Local 1107 noted the importance of
+          bringing Nevadans together as the state gears up for another important
+          election in 2024.
+        </p>
+        <p>
+          Our Communities United Multicultural Festival is occurring one year
+          out from historic elections and intends to motivate people to vote at
+          unprecedented levels, especially union members, youth and people of
+          color,” said Maese. “Nevada is one of the most critical battleground
+          states in the nation, with elections next year for Congressional
+          offices, State Senate and Assembly, the courts, school board, Board of
+          Regents, mayor and city council, in addition to the presidency and
+          multiple ballot measures. We're declaring that Nevadans refuse to fall
+          for the politics of division and are instead uniting around our shared
+          values.”
+        </p>
+      </CollageImage>
+    </div>
+    <div class="bg-white shadow-md shadow-black flex flex-col p-5 m-auto">
+      <div
+        class="text-black font-Trebuchet text-center font-bold text-3xl py-3"
+      >
+        List of Event Partners
+      </div>
+      <ul class="ml-5 list-disc grid gap-5 grid-cols-1 md:grid-cols-2">
+        <li>African Chamber of Commerce and Tourism</li>
+        <li>African Diaspora of Las Vegas (ADOLV)</li>
+        <li>All Voting is Local</li>
+        <li>American Civil Liberties Union of Nevada (ACLU NV)</li>
+        <li>Angels of Las Vegas</li>
+        <li>Asian Community Resource Center (ACRC)</li>
+        <li>Balayan Las Vegas Association</li>
+        <li>Bamboo Bridges</li>
+        <li>Battle Born Progress</li>
+        <li>Be Smart for Kids</li>
+        <li>Bikolnon Association</li>
+        <li>Black Joy Consulting</li>
+        <li>Black Leadership Collective</li>
+        <li>Blue Cross Blue Shield Nevada</li>
+        <li>Carpenters Union</li>
+        <li>Cavite Association of Nevada</li>
+        <li>Chilean American Association of Nevada</li>
+        <li>Chispa Nevada</li>
+        <li>Clark County Education Association (CCEA)</li>
+        <li>Common Tree LV</li>
+        <li>Community Services of Nevada (CSNV)</li>
+        <li>Culinary Union Local 226</li>
+        <li>Culinary Academy of Las Vegas</li>
+        <li>Democratic Socialist of America Las Vegas</li>
+        <li>Department of Family Services</li>
+        <li>Echo</li>
+        <li>Ecube</li>
+        <li>Emerge Nevada</li>
+        <li>Everytown Survivor Network</li>
+        <li>Faith Organizing Alliance</li>
+        <li>
+          Filipino-American Scholarship Foundation and Outreach Services
+          (FASFOS)
+        </li>
+        <li>
+          Filipino American Chamber of Commerce of Greater Nevada (FACCGN)
+        </li>
+        <li>Filipino American Educators</li>
+        <li>Foodie Fest</li>
+        <li>For Our Future</li>
+        <li>Hispanics in Politics</li>
+        <li>Humana</li>
+        <li>International Alliance of Theatrical Stage Employees (IATSE)</li>
+        <li>IndigenousAF</li>
+        <li>Ilocano American Association of Nevada</li>
+        <li>Kids Corner</li>
+        <li>Labor Council For Latin American Advancement (LCLAA)</li>
+        <li>Las Vegas Expo</li>
+        <li>Lovee Inc.</li>
+        <li>Make The Road</li>
+        <li>Mass Liberation</li>
+        <li>Mi Familia Vota</li>
+        <li>Moms Demand Action</li>
+        <li>NAACP</li>
+        <li>
+          National Federation of Filipino American Associations (NaFFAA) NV
+        </li>
+        <li>National Action Network (NAN)</li>
+        <li>National Domestic Workers Alliance</li>
+        <li>National Juneteenth Observance Foundation</li>
+        <li>Native Voters Alliance</li>
+        <li>Nehemiah Ministries</li>
+        <li>Nevada Conservation League</li>
+        <li>Nevada Esports Education League</li>
+        <li>Nevada Health Link</li>
+        <li>Nevada State AFL-CIO</li>
+        <li>Nevada Women in Trades</li>
+        <li>No Racism in Schools</li>
+        <li>National Organization for Women (NOW)</li>
+        <li>The Obodo Collective</li>
+        <li>One APIA Nevada</li>
+        <li>Outreach Service Nevada</li>
+        <li>Palm Mortuaries</li>
+        <li>Plumbers and Pipefitters Local 525</li>
+        <li>Power Portraits</li>
+        <li>Progressive Leadership Alliance of Nevada (PLAN)</li>
+        <li>Promotoras Las Vegas</li>
+        <li>Rising Asian Pacific Americans Coalition for Diversity (RAPACD)</li>
+        <li>Red Desert Collective</li>
+        <li>Red Rock Vegas Times</li>
+        <li>Santa Maria Ilocos Sur Association of Nevada (SMISAN)</li>
+        <li>Seek Jesus First Minister</li>
+        <li>SEIU AAPI Caucus</li>
+        <li>SEIU Local 1107</li>
+        <li>Seven Lakes International</li>
+        <li>Silver State Equality</li>
+        <li>Silver State Health</li>
+        <li>Sing Out For Autism</li>
+        <li>Spring Valley High School Key Club</li>
+        <li>Tamaitai Polenisia Samora LV (Heart of Polynesian)</li>
+        <li>Teamsters Local 986</li>
+        <li>Teriyaki Boy</li>
+        <li>The Stretch for Change Foundation</li>
+        <li>The Wealthy Place Ministries LV</li>
+        <li>Transport Workers Union</li>
+        <li>Vegas +</li>
+        <li>Vegas FAB</li>
+        <li>Vietnamese American Community of Las Vegas</li>
+        <li>Youth Voice of Nevada</li>
+      </ul>
+    </div>
+  </div>
 </Layout>
 <style>
-    p {
-        padding-top: 4px;
-        padding-bottom: 4px;
-    }
+  p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 </style>

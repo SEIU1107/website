@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 import PurpleSection from "../../components/Stewards/PurpleSection.astro";
 import LavSection from "../../components/Stewards/LavSection.astro";
@@ -11,61 +11,61 @@ import RegenaEllis from "../../images/stewards/SNHD/Regena.jpg";
 import MalloryJettEdwards from "../../images/stewards/SNHD/MalloryJett.jpg";
 
 const nonSupData: Profile[] = [
-    {
-        name: "Regena Ellis",
-        profileImg: RegenaEllis,
-        data: [
-            ["Title", "Bargaining Unit VP / Executive Board Member"],
-            ["Unit", "General Unit"],
-            ["Department", "Tuberculosis Clinic"],
-            ["Phone", "(708) 299 - 5623"],
-            ["Email", "regena.m.ellis@gmail.com"],
-        ],
-    },
-    {
-        name: "Mallory Jett-Edwards",
-        profileImg: MalloryJettEdwards,
-        data: [
-            ["Title", "Steward"],
-            ["Department", "Solid Waste"],
-            ["Phone", "(702) 759 - 0656"],
-            ["Email", "jett-edwards@snhd.org"],
-        ],
-    },
-    {
-        name: "Rosemary Ensign",
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "General Unit"],
-            ["Department", "Food Handler Cards Training Program"],
-            ["Phone", "(702) 759 - 1000"],
-            ["Email", "ensign@snhd.org"],
-        ],
-    },
+  {
+    name: "Regena Ellis",
+    profileImg: RegenaEllis,
+    data: [
+      ["Title", "Bargaining Unit VP / Executive Board Member"],
+      ["Unit", "General Unit"],
+      ["Department", "Tuberculosis Clinic"],
+      ["Phone", "(708) 299 - 5623"],
+      ["Email", "regena.m.ellis@gmail.com"],
+    ],
+  },
+  {
+    name: "Mallory Jett-Edwards",
+    profileImg: MalloryJettEdwards,
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Solid Waste"],
+      ["Phone", "(702) 759 - 0656"],
+      ["Email", "jett-edwards@snhd.org"],
+    ],
+  },
+  {
+    name: "Rosemary Ensign",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Food Handler Cards Training Program"],
+      ["Phone", "(702) 759 - 1000"],
+      ["Email", "ensign@snhd.org"],
+    ],
+  },
 ];
 
 const supData: Profile[] = [
-    {
-        name: "Jennifer Bowers",
-        data: [
-            ["Title", "Steward"],
-            ["Unit", "General Unit"],
-            ["Department", "Community Health ODES"],
-            ["Phone", "(702) 759 - 0675"],
-            ["Mobile", "702-460-2105"],
-            ["Email", "jenndbowers@gmail.com"],
-        ],
-    },
+  {
+    name: "Jennifer Bowers",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Community Health ODES"],
+      ["Phone", "(702) 759 - 0675"],
+      ["Mobile", "702-460-2105"],
+      ["Email", "jenndbowers@gmail.com"],
+    ],
+  },
 ];
 ---
 
 <Layout title="SNHD Stewards" backgroundStyling="bg-honey-flower-100">
-    <HeadingTitle text="Southern Nevada Health District (SNHD)" />
-    <LavSection title="Non-Supervisory Unit">
-        <ProfileGrid data={nonSupData} />
-    </LavSection>
+  <HeadingTitle text="Southern Nevada Health District (SNHD)" />
+  <LavSection title="Non-Supervisory Unit">
+    <ProfileGrid data={nonSupData} />
+  </LavSection>
 
-    <PurpleSection title="Supervisory Unit">
-        <ProfileGrid data={supData} />
-    </PurpleSection>
+  <PurpleSection title="Supervisory Unit">
+    <ProfileGrid data={supData} />
+  </PurpleSection>
 </Layout>

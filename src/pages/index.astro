@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import LatestNews from "../components/Index/LatestNews.astro";
 import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
 import StrongerTogether from "../components/Index/StrongerTogether.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgStrengthTraining from "../images/strength_training/thumbnail.jpg";
@@ -15,33 +15,39 @@ import { Image } from "astro:assets";
 ---
 
 <Layout>
-    
-    <div class="bg-gradient-to-b from-supernova-300 to-supernova-500 py-4">
-        <HeadingTitle text="Participate In Our Member Trainings!" />
-        <p class="text-center text-2xl italic font-bold py-2">
-            Let's make this a year like no other for the Labor Movement in Nevada!
+  <div class="bg-gradient-to-b from-supernova-300 to-supernova-500 py-4">
+    <HeadingTitle text="Participate In Our Member Trainings!" />
+    <p class="text-center text-2xl italic font-bold py-2">
+      Let's make this a year like no other for the Labor Movement in Nevada!
+    </p>
+    <div
+      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+    >
+      <CollageImage
+        src={imgStrengthTraining}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
+      >
+        <p class="py-2 text-black text-bold text-xl text-left mx-2">
+          Membership Trainings hosted at SEIU 1107 empower members to become
+          more active in the labor movement! The more workers who get active,
+          the more improvements we can secure to our wages, benefits, and
+          working conditions.
         </p>
-        <div class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col">
-            <CollageImage src={imgStrengthTraining} imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl">
-                <p class="py-2 text-black text-bold text-xl text-left mx-2">
-                    Membership Trainings hosted at SEIU 1107 empower members 
-                    to become more active in the labor movement! The more workers
-                    who get active, the more improvements we can secure to our
-                    wages, benefits, and working conditions.
-                </p>
-                <p class="py-2 text-black text-bold text-xl text-left mx-2">
-                    We are hosting monthly workshops through June. Click below 
-                    for more details!
-                </p>
-                <div class="py-5 flex justify-center">
-                    <Button text="Workshop Dates" href="/strength_training" styling="text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest scale-150" />
-                </div>
-                
-            </CollageImage>        
+        <p class="py-2 text-black text-bold text-xl text-left mx-2">
+          We are hosting monthly workshops through June. Click below for more
+          details!
+        </p>
+        <div class="py-5 flex justify-center">
+          <Button
+            text="Workshop Dates"
+            href="/strength_training"
+            styling="text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest scale-150"
+          />
         </div>
-        
+      </CollageImage>
     </div>
-    <!--
+  </div>
+  <!--
     <main
         class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
     >
@@ -63,98 +69,106 @@ import { Image } from "astro:assets";
         </div>
     </main> -->
 
-    
-        <main
-        class="lg:hidden bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
-    >
-        <div class="flex flex-col lg:flex-row xl:mx-10">
-            <div
-                    class="lg:hidden pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl max-w-screen-sm m-auto"
-                >
-                    Watch SEIU 1107's 2023 Recap!
-                </div>
-            <div class="mx-auto py-5 hidden lg:block lg:pt-20">
-                <iframe width="672" height="378" src="https://www.youtube.com/embed/VEipjl7Pc4U?si=xUQ4S0rhiO8cpzB8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-            </div>
-            <div class="flex flex-col mx-auto pb-20 lg:m-0 lg:ml-auto justify-between max-w-md lg:max-w-screen-md">
-                <div
-                    class="hidden lg:block pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl lg:text-6xl max-w-screen-sm m-auto"
-                >
-                    SEIU Nevada's 2023 Recap!
-                </div>
-                <h1
-                    class="shadowClass uppercase font-bold mx-5 py-5 font-Roboto text-center text-supernova-400 text-6xl lg:text-7xl"
-                >
-                    When we fight, we win!
-                </h1>
-                <div class="mx-auto lg:max-w-screen-sm pt-10">
-                    <Button
-                        text="Watch on Youtube"
-                        href="https://youtu.be/VEipjl7Pc4U?si=zUoBcD9ZaKm_FHOi"
-                        styling="bg-supernova-400 hover:bg-supernova-500 text-honey-flower-800 scale-125 hover:scale-[145%] lg:scale-150 lg:hover:scale-[160%] active:bg-supernova-600";
-                    />
-                </div>
-            </div>
+  <main
+    class="lg:hidden bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
+  >
+    <div class="flex flex-col lg:flex-row xl:mx-10">
+      <div
+        class="lg:hidden pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl max-w-screen-sm m-auto"
+      >
+        Watch SEIU 1107's 2023 Recap!
+      </div>
+      <div class="mx-auto py-5 hidden lg:block lg:pt-20">
+        <iframe
+          width="672"
+          height="378"
+          src="https://www.youtube.com/embed/VEipjl7Pc4U?si=xUQ4S0rhiO8cpzB8"
+          title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen></iframe>
+      </div>
+      <div
+        class="flex flex-col mx-auto pb-20 lg:m-0 lg:ml-auto justify-between max-w-md lg:max-w-screen-md"
+      >
+        <div
+          class="hidden lg:block pt-5 text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-5xl lg:text-6xl max-w-screen-sm m-auto"
+        >
+          SEIU Nevada's 2023 Recap!
         </div>
-        
-    </main>
-     
-
-    <main class="hidden lg:block h-full bg-gradient-to-bl from-honey-flower-900 to-violet-950">
-        <Image src={dignity_celebration} alt="" class="max-w-screen-lg m-auto px-10 py-5"/>
-    </main>
-
-    <StrongerTogether />
-    <LatestNews />
-    <div
-        class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300"
-    >
-        <HeadingTitle text="Why We're Joining Together" />
-        <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
-            <CollageImage src={imgTogether}>
-                <div class="text-md lg:text-lg">
-                    <p class="py-2">
-                        Public service, home care and health care workers are
-                        joining together to get a real say over our wages,
-                        staffing, retirement, and working conditions. We're
-                        united, and we're building the strength necessary to
-                        secure record contracts, win policy changes in the state
-                        legislature and raise standards for all working people.
-                    </p>
-                    <p class="py-2 pb-5">
-                        We're standing up to protect the marginalized, fight for
-                        the quality services that Nevada residents and our
-                        patients deserve, and win fair pay increases for
-                        everyone—including chronically underpaid women and
-                        people of color—throughout our state.
-                    </p>
-                </div>
-                <Button href="/join" text="Join Us" />
-            </CollageImage>
+        <h1
+          class="shadowClass uppercase font-bold mx-5 py-5 font-Roboto text-center text-supernova-400 text-6xl lg:text-7xl"
+        >
+          When we fight, we win!
+        </h1>
+        <div class="mx-auto lg:max-w-screen-sm pt-10">
+          <Button
+            text="Watch on Youtube"
+            href="https://youtu.be/VEipjl7Pc4U?si=zUoBcD9ZaKm_FHOi"
+            styling="bg-supernova-400 hover:bg-supernova-500 text-honey-flower-800 scale-125 hover:scale-[145%] lg:scale-150 lg:hover:scale-[160%] active:bg-supernova-600"
+            ;
+          />
         </div>
+      </div>
     </div>
+  </main>
 
-    <SocialMediaFeeds />
+  <main
+    class="hidden lg:block h-full bg-gradient-to-bl from-honey-flower-900 to-violet-950"
+  >
+    <Image
+      src={dignity_celebration}
+      alt=""
+      class="max-w-screen-lg m-auto px-10 py-5"
+    />
+  </main>
+
+  <StrongerTogether />
+  <LatestNews />
+  <div class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300">
+    <HeadingTitle text="Why We're Joining Together" />
+    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+      <CollageImage src={imgTogether}>
+        <div class="text-md lg:text-lg">
+          <p class="py-2">
+            Public service, home care and health care workers are joining
+            together to get a real say over our wages, staffing, retirement, and
+            working conditions. We're united, and we're building the strength
+            necessary to secure record contracts, win policy changes in the
+            state legislature and raise standards for all working people.
+          </p>
+          <p class="py-2 pb-5">
+            We're standing up to protect the marginalized, fight for the quality
+            services that Nevada residents and our patients deserve, and win
+            fair pay increases for everyone—including chronically underpaid
+            women and people of color—throughout our state.
+          </p>
+        </div>
+        <Button href="/join" text="Join Us" />
+      </CollageImage>
+    </div>
+  </div>
+
+  <SocialMediaFeeds />
 </Layout>
 
 <style>
-    .shadowClass {
-        text-shadow: 3px 3px 3px black;
-    }
-    .tinyShadow {
-        text-shadow: 3px 3px 2px black;
-    }
+  .shadowClass {
+    text-shadow: 3px 3px 3px black;
+  }
+  .tinyShadow {
+    text-shadow: 3px 3px 2px black;
+  }
 
-    .video-container {
-        position: relative;
-        height: 0;
-    }
+  .video-container {
+    position: relative;
+    height: 0;
+  }
 
-    .video-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
+  .video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 </style>

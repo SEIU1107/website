@@ -1,8 +1,8 @@
 ---
 import CollageImage from "../components/CollageImage.astro";
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.astro";
+import Button from "../components/Button.svelte";
 
 import firstImage from "../images/political_action/Image1.jpg";
 import imgLobbyDay from "../images/political_action/imgLobbyDay.jpg";
@@ -10,94 +10,87 @@ import LinkText from "../components/LinkText.astro";
 ---
 
 <Layout title="SEIU 1107 Political Action" centered="true">
-    <HeadingTitle text="What is COPE?" />
-    <div class="flex flex-col m-auto max-w-screen-lg">
-        <div class="py-2">
-            <CollageImage
-                src={firstImage}
-                cutline="Former Gov. Steve Sisolak signs SEIU-backed legislation giving home care workers and their clients a voice. The victory enabled SEIU 1107 members to later win a $16 per hour minimum wage for all Nevada home care workers."
-            >
-                <p>
-                    Political decisions affect our jobs every day. Whether a
-                    department at Clark County has enough funding to do our job,
-                    or if there's regulations to ensure the safety of our
-                    patients at a hospital, often comes down to decisions by
-                    elected officials. SEIU members' voices are heard at every
-                    level of government thanks to SEIU 1107's <b
-                        >Committee on Political Education (COPE)</b
-                    >.
-                </p>
-                <p>
-                    Our <b>COPE</b> engages elected officials from the school
-                    board, to the Nevada State Legislature to Congress and
-                    everything in between. When SEIU members join together, we
-                    can stand up to big corporations and ensure that those
-                    elected are looking out for hard working Nevadans and their
-                    families.
-                </p>
-                <p>
-                    That's why contributing to our <b>COPE</b> fund is so
-                    important. The committee ensures that we have the political
-                    power to protect our hard-earned political and legislative
-                    victories that improve public services and the lives of
-                    working families.
-                </p>
-            </CollageImage>
-        </div>
-        <div class="pb-4 flex m-auto">
-            <Button
-                text="Join Cope Today"
-                href="https://act.seiu.org/a/committee-political-education?emci=dad38a93-decd-ed11-a8e0-00224832e811&emdi=4e865f38-a4ce-ed11-a8e0-00224832e811&ceid=80677448"
-                styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white w-[min(420px,_90vw)]"
-            />
-        </div>
-        <div class="py-2">
-            <CollageImage src={imgLobbyDay} horizontal="right">
-                <div class="font-Trebuchet font-bold text-xl">
-                    2023 Legislative Accomplishments
-                </div>
-                <p>
-                    Nevada's State Legislature meets one time for 120 days every
-                    2 years. The short legislative session makes it vital that
-                    SEIU 1107 members are present and clear about worker
-                    priorities. This year, SEIU members made the trip to Carson
-                    City and met with Senators and Assemblymembers to discuss
-                    our priorities.
-                    <br />
-                     This session we were able to accomplish the following
-                    priorities:
-                </p>
-                <ul class="list-disc ml-5">
-                    <li>
-                        Established Juneteenth as a State Holiday. <LinkText
-                            href="https://nmaahc.si.edu/explore/stories/historical-legacy-juneteenth"
-                        >
-                            Learn more about Juneteenth.
-                        </LinkText>
-                    </li>
-                    <li>
-                        Raise the Medicaid reimbursement rate for the first time
-                        in over 20 years. Raising it from $17 to $25/ hour and
-                        guaranteeing homecare workers make no less than $16 an
-                        hour.
-                    </li>
-                    <li>
-                        Secured $10 million for the Southern Nevada Health
-                        District for our community and members.
-                    </li>
-                    <li>
-                        Protected Nevada nurses and patients by preventing
-                        passage of the Nurse Licensure Compact.
-                    </li>
-                </ul>
-            </CollageImage>
-        </div>
+  <HeadingTitle text="What is COPE?" />
+  <div class="flex flex-col m-auto max-w-screen-lg">
+    <div class="py-2">
+      <CollageImage
+        src={firstImage}
+        cutline="Former Gov. Steve Sisolak signs SEIU-backed legislation giving home care workers and their clients a voice. The victory enabled SEIU 1107 members to later win a $16 per hour minimum wage for all Nevada home care workers."
+      >
+        <p>
+          Political decisions affect our jobs every day. Whether a department at
+          Clark County has enough funding to do our job, or if there's
+          regulations to ensure the safety of our patients at a hospital, often
+          comes down to decisions by elected officials. SEIU members' voices are
+          heard at every level of government thanks to SEIU 1107's <b
+            >Committee on Political Education (COPE)</b
+          >.
+        </p>
+        <p>
+          Our <b>COPE</b> engages elected officials from the school board, to the
+          Nevada State Legislature to Congress and everything in between. When SEIU
+          members join together, we can stand up to big corporations and ensure that
+          those elected are looking out for hard working Nevadans and their families.
+        </p>
+        <p>
+          That's why contributing to our <b>COPE</b> fund is so important. The committee
+          ensures that we have the political power to protect our hard-earned political
+          and legislative victories that improve public services and the lives of
+          working families.
+        </p>
+      </CollageImage>
     </div>
+    <div class="pb-4 flex m-auto">
+      <Button
+        text="Join Cope Today"
+        href="https://act.seiu.org/a/committee-political-education?emci=dad38a93-decd-ed11-a8e0-00224832e811&emdi=4e865f38-a4ce-ed11-a8e0-00224832e811&ceid=80677448"
+        styling="bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest text-white w-[min(420px,_90vw)]"
+      />
+    </div>
+    <div class="py-2">
+      <CollageImage src={imgLobbyDay} horizontal="right">
+        <div class="font-Trebuchet font-bold text-xl">
+          2023 Legislative Accomplishments
+        </div>
+        <p>
+          Nevada's State Legislature meets one time for 120 days every 2 years.
+          The short legislative session makes it vital that SEIU 1107 members
+          are present and clear about worker priorities. This year, SEIU members
+          made the trip to Carson City and met with Senators and Assemblymembers
+          to discuss our priorities.
+          <br />
+          This session we were able to accomplish the following priorities:
+        </p>
+        <ul class="list-disc ml-5">
+          <li>
+            Established Juneteenth as a State Holiday. <LinkText
+              href="https://nmaahc.si.edu/explore/stories/historical-legacy-juneteenth"
+            >
+              Learn more about Juneteenth.
+            </LinkText>
+          </li>
+          <li>
+            Raise the Medicaid reimbursement rate for the first time in over 20
+            years. Raising it from $17 to $25/ hour and guaranteeing homecare
+            workers make no less than $16 an hour.
+          </li>
+          <li>
+            Secured $10 million for the Southern Nevada Health District for our
+            community and members.
+          </li>
+          <li>
+            Protected Nevada nurses and patients by preventing passage of the
+            Nurse Licensure Compact.
+          </li>
+        </ul>
+      </CollageImage>
+    </div>
+  </div>
 </Layout>
 
 <style>
-    p {
-        padding-top: 4px;
-        padding-bottom: 4px;
-    }
+  p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
 </style>

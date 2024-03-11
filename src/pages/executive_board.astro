@@ -1,5 +1,5 @@
 ---
-import HeadingTitle from "../components/HeadingTitle.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
 import ProfileCardBig from "../components/ExecutiveBoard/ExecutiveBoardProfileCardBig.astro";
 import ProfileCardSmall from "../components/ExecutiveBoard/ExecutiveBoardProfileCardSmall.astro";
@@ -10,90 +10,87 @@ import { bigProfPeopleData, smallProfPeopleData } from "./ExecutiveBoardData";
 ---
 
 <Layout title="SEIU Local 1107 Executive Board" centered="true">
-    <HeadingTitle text="Meet the Local 1107 Executive Board" />
-    <div class="py-2 m-auto max-w-screen-lg">
-        <p class="text-center font-Roboto text-black text-xl py-2">
-            SEIU Local 1107 is committed to democracy both inside and outside of
-            our union. Our Executive Board is elected by fellow union members,
-            and their role is to carry out the mission and work of our union.
-        </p>
-        <p class="text-center font-Roboto text-black text-xl py-2">
-            <b>Our Mission</b>
-            <br />
-            <i
-                >We are SEIU 1107, a community of members on a mission to unite
-                all working people for future generations by leading the path to
-                improve society with a diverse, effective, political, and just
-                organization.</i
-            >
-        </p>
-    </div>
-    <div class="flex justify-center content-center m-auto max-w-screen-xl">
-        <div
-            class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
-        >
-            {
-                bigProfPeopleData.map((person) => (
-                    <ProfileCardBig
-                        profileImg={person.profileImg}
-                        name={person.name}
-                        title={person.Title}
-                        desc={person.desc}
-                    />
-                ))
-            }
-        </div>
-    </div>
-    <div class="flex justify-center content-center m-auto max-w-screen-xl">
-        <div
-            class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-        >
-            {
-                smallProfPeopleData.map((person) => (
-                    <ProfileCardSmall
-                        profileImg={person.profileImg ?? PlaceholderProfileImg}
-                        name={person.name}
-                        shop={person.shop}
-                    />
-                ))
-            }
-        </div>
-    </div>
-    <p
-        class="text-center font-Roboto text-black text-md max-w-screen-lg m-auto"
-    >
-        Board members are elected to three-year terms, and the process is
-        outlined in Article VII of our union
-        <LinkText href="/constitution/">
-            <b>Constitution & Bylaws</b>
-        </LinkText>. The board has five officers: Executive Director, President,
-        Secretary-Treasurer, Vice President Public Sector, and Vice President
-        Private Sector. At-large members are elected based on workplace, with
-        every area earning at least one spot and larger workplaces earning more.
+  <HeadingTitle text="Meet the Local 1107 Executive Board" />
+  <div class="py-2 m-auto max-w-screen-lg">
+    <p class="text-center font-Roboto text-black text-xl py-2">
+      SEIU Local 1107 is committed to democracy both inside and outside of our
+      union. Our Executive Board is elected by fellow union members, and their
+      role is to carry out the mission and work of our union.
     </p>
+    <p class="text-center font-Roboto text-black text-xl py-2">
+      <b>Our Mission</b>
+      <br />
+      <i
+        >We are SEIU 1107, a community of members on a mission to unite all
+        working people for future generations by leading the path to improve
+        society with a diverse, effective, political, and just organization.</i
+      >
+    </p>
+  </div>
+  <div class="flex justify-center content-center m-auto max-w-screen-xl">
+    <div
+      class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+    >
+      {
+        bigProfPeopleData.map((person) => (
+          <ProfileCardBig
+            profileImg={person.profileImg}
+            name={person.name}
+            title={person.Title}
+            desc={person.desc}
+          />
+        ))
+      }
+    </div>
+  </div>
+  <div class="flex justify-center content-center m-auto max-w-screen-xl">
+    <div
+      class="mx-7 grid gap-4 grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+    >
+      {
+        smallProfPeopleData.map((person) => (
+          <ProfileCardSmall
+            profileImg={person.profileImg ?? PlaceholderProfileImg}
+            name={person.name}
+            shop={person.shop}
+          />
+        ))
+      }
+    </div>
+  </div>
+  <p class="text-center font-Roboto text-black text-md max-w-screen-lg m-auto">
+    Board members are elected to three-year terms, and the process is outlined
+    in Article VII of our union
+    <LinkText href="/constitution/">
+      <b>Constitution & Bylaws</b>
+    </LinkText>. The board has five officers: Executive Director, President,
+    Secretary-Treasurer, Vice President Public Sector, and Vice President
+    Private Sector. At-large members are elected based on workplace, with every
+    area earning at least one spot and larger workplaces earning more.
+  </p>
 </Layout>
 
 <style>
+  .grid .container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 0;
+    margin: auto;
+  }
+
+  .small-grid .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-column-gap: 0;
+    margin: auto;
+  }
+
+  @media (max-width: 800px) {
     .grid .container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: 0;
-        margin: auto;
+      grid-template-columns: 1fr;
     }
-
     .small-grid .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        grid-column-gap: 0;
-        margin: auto;
+      grid-template-columns: 1fr;
     }
-
-    @media (max-width: 800px) {
-        .grid .container {
-            grid-template-columns: 1fr;
-        }
-        .small-grid .container {
-            grid-template-columns: 1fr;
-        }
-    }
+  }
 </style>

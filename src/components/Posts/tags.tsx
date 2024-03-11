@@ -22,3 +22,5 @@ export const shopTags = [
   "Home Care",
   "SNHD",
 ];
+
+export const postTypes = ["Blog Post", "Press Release", "News Article"];

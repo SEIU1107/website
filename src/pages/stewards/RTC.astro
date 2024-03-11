@@ -1,6 +1,6 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import HeadingTitle from "../../components/HeadingTitle.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 
 import type { Profile } from "../../Profile";
@@ -10,41 +10,41 @@ import DeitraAtkinson from "../../images/stewards/RTC/Deitra.png";
 import AlbertRuvalcaba from "../../images/stewards/RTC/Albert.jpg";
 
 const profileData: Profile[] = [
-    {
-        name: "Danielle Leland",
-        profileImg: DanielleLeland,
-        data: [
-            ["Title", "Chief Steward / Executive Board Member"],
-            ["Department", "Call Center"],
-            ["Phone", "(702) 981 - 1939"],
-            ["Email", "danielleleland@gmail.com"],
-        ],
-    },
-    {
-        name: "Deitra Atkinson",
-        profileImg: DeitraAtkinson,
-        data: [
-            ["Title", "Bargaining Unit VP"],
-            ["Department", "Fixed Route Transit Service"],
-            ["Phone", "(702) 301 - 9805"],
-            ["Email", "deitra@centurylink.com"],
-        ],
-    },
+  {
+    name: "Danielle Leland",
+    profileImg: DanielleLeland,
+    data: [
+      ["Title", "Chief Steward / Executive Board Member"],
+      ["Department", "Call Center"],
+      ["Phone", "(702) 981 - 1939"],
+      ["Email", "danielleleland@gmail.com"],
+    ],
+  },
+  {
+    name: "Deitra Atkinson",
+    profileImg: DeitraAtkinson,
+    data: [
+      ["Title", "Bargaining Unit VP"],
+      ["Department", "Fixed Route Transit Service"],
+      ["Phone", "(702) 301 - 9805"],
+      ["Email", "deitra@centurylink.com"],
+    ],
+  },
 
-    {
-        name: "Albert Ruvalcaba",
-        profileImg: AlbertRuvalcaba,
-        data: [
-            ["Title", "Steward"],
-            ["Department", "Admin Building"],
-            ["Phone", "(702) 355 - 1776"],
-            ["Email", "sfmission24@yahoo.com"],
-        ],
-    },
+  {
+    name: "Albert Ruvalcaba",
+    profileImg: AlbertRuvalcaba,
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Admin Building"],
+      ["Phone", "(702) 355 - 1776"],
+      ["Email", "sfmission24@yahoo.com"],
+    ],
+  },
 ];
 ---
 
 <Layout title="RTC Stewards">
-    <HeadingTitle text="Regional Transportation Commission (RTC)" />
-    <ProfileGrid data={profileData} />
+  <HeadingTitle text="Regional Transportation Commission (RTC)" />
+  <ProfileGrid data={profileData} />
 </Layout>
