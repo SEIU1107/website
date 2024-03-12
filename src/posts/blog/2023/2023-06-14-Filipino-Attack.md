@@ -7,6 +7,7 @@ date: 2023-06-14
 author: SEIU
 tags:
   - Political Action
+  - Solidarity
 ---
 
 Prominent leaders of the Filipino American community are calling for justice and proactive safety measures for the elderly man who was attacked on May 30, as well as urgent steps to end the alarming rise in Asian hate crimes. The elderly Filipino American man, 75-year-old Amadeo Quindara, is living in fear for his life and safety as the attacker was recently released from jail and apparently continues to pose a threat to him. The perpetrator has only been charged with a misdemeanor and not for assault.
