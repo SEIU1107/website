@@ -6,6 +6,7 @@
   import Button from "../Button.svelte";
   import PostsGrid from "./PostsGrid.svelte";
   import HeadingTitle from "../HeadingTitle.svelte";
+  import OtherPosts from "./OtherPosts.svelte";
 
   export let posts;
 
@@ -14,6 +15,8 @@
 
   let selectedTags = [];
   let selectedPostTypes = [];
+  let latestFourPosts = getLatestFour(posts); // Latest four previews
+  let olderPosts = getFifthOnwards(posts); // Fifth and onwards, if any
 
   const dispatch = createEventDispatcher();
 
@@ -25,6 +28,20 @@
     showFilters = !showFilters;
     dispatch("toggleFilters", showFilters);
     event.stopPropagation();
+  }
+
+  function getLatestFour(arr) {
+    arr.sort(
+      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+    );
+    return arr.slice(0, 4);
+  }
+
+  function getFifthOnwards(arr) {
+    arr.sort(
+      (a, b) => new Date(b.frontmatter.date) - new Date(a.frontmatter.date)
+    );
+    return arr.slice(4);
   }
 
   function closeModal(event) {
@@ -58,6 +75,9 @@
         return false; // Exclude posts that don't match the specified type or "Blog Post"
       });
     }
+
+    latestFourPosts = getLatestFour(filteredPosts);
+    olderPosts = getFifthOnwards(filteredPosts);
   }
 
   function clearFilters() {
@@ -108,14 +128,7 @@
 {/if}
 
 <div class="flex flex-col">
-  <HeadingTitle
-    text={"Latest from SEIU".concat(
-      selectedTags.length > 0 ||
-        (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
-        ? " (Filtered)"
-        : ""
-    )}
-  />
+  <HeadingTitle text="SEIU 1107 Updates" />
   <div class="py-0.5 flex flex-wrap mx-auto justify-center max-w-screen-sm">
     <div class="font-bold text text-lg text-gray-700 font-Roboto">Show:</div>
     {#if selectedPostTypes.length === 0 || selectedPostTypes.length === 3}
@@ -130,7 +143,7 @@
   </div>
   <div class="py-2 flex flex-wrap mx-auto justify-center max-w-screen-sm">
     {#if selectedTags.length > 0}
-      <div class="font-bold italic text text-lg text-gray-700 font-Roboto">
+      <div class="font-bold text text-lg text-gray-700 font-Roboto">
         Filtered By:
       </div>
       {#each selectedTags as tag}
@@ -154,10 +167,34 @@
     </div>
   </div>
 
+  <HeadingTitle
+    text={"Latest from SEIU".concat(
+      selectedTags.length > 0 ||
+        (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
+        ? " (Filtered)"
+        : ""
+    )}
+  />
+
   <div class="max-w-screen-2xl m-auto">
     <PostsGrid
-      bind:previews={filteredPosts}
+      bind:previews={latestFourPosts}
       breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
     />
   </div>
+
+  {#if olderPosts.length > 0}
+    <HeadingTitle
+      text={"Older Posts".concat(
+        selectedTags.length > 0 ||
+          (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
+          ? " (Filtered)"
+          : ""
+      )}
+    />
+
+    <div class="flex m-auto">
+      <OtherPosts bind:olderPosts />
+    </div>
+  {/if}
 </div>
