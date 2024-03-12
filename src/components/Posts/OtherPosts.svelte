@@ -27,7 +27,7 @@
   <div class="flex flex-col max-w-screen-md">
     {#each olderPosts as post}
       <button
-        class={"grid gap-0 grid-cols-3 md:grid-cols-6 py-2 my-2 mx-8 md:px-4 rounded-md hover:cursor-pointer ".concat(
+        class={"grid gap-0 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-2 my-2 mx-8 md:px-4 rounded-md hover:cursor-pointer ".concat(
           post === selectedPost
             ? "bg-supernova-300 hover:bg-supernova-400"
             : "bg-honey-flower-900 group hover:bg-honey-flower-950"
@@ -35,7 +35,7 @@
         on:click={() => setPreview(post)}
       >
         <div
-          class="col-span-2 md:col-span-4 px-2 flex flex-nowrap overflow-hidden whitespace-nowrap"
+          class="col-span-2 md:col-span-2 lg:col-span-4 px-2 flex flex-nowrap overflow-hidden whitespace-nowrap"
         >
           <div
             class={"truncate ".concat(
@@ -85,7 +85,7 @@
     {/each}
   </div>
 
-  <div class="max-h-min">
+  <div class="hidden md:block max-h-min">
     {#if selectedPost}
       <PostPreview
         featuredImg={selectedPost.frontmatter.featuredImg}
