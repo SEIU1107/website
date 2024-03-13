@@ -192,7 +192,14 @@
           : ""
       )}
     />
-
+    <div class="py-1">
+      <div class="hidden md:block text-center text-gray-600 italic text-lg">
+        Click to select, or double click to navigate to a post.
+      </div>
+      <div class="block md:hidden text-center text-gray-600 italic text-lg">
+        Double click to navigate to a post.
+      </div>
+    </div>
     <div class="flex m-auto">
       <OtherPosts bind:olderPosts />
     </div>
