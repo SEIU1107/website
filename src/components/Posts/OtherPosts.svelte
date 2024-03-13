@@ -25,7 +25,7 @@
 
 <div class="flex flex-row">
   <div class="flex flex-col max-w-screen-md">
-    {#each olderPosts as post}
+    {#each olderPosts as post (post.frontmatter.url)}
       <button
         class={"grid gap-0 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-2 my-2 mx-8 md:px-4 rounded-md hover:cursor-pointer ".concat(
           post === selectedPost
@@ -96,7 +96,6 @@
         type={selectedPost.frontmatter.type}
         author={selectedPost.frontmatter.author}
       />
-      {selectedPost?.frontmatter.url}
     {:else}
       <div class="hidden md:block">PREVIEW</div>
     {/if}
