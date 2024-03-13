@@ -62,21 +62,6 @@ const getInvolved = [
   },
 ];
 
-const updatesPages = [
-  {
-    pageName: "Blog",
-    href: "/posts/blog",
-  },
-  {
-    pageName: "Press Releases",
-    href: "/posts/press_releases",
-  },
-  {
-    pageName: "In The News",
-    href: "/posts/news_articles",
-  },
-];
-
 export const all_dropdowns = [
   {
     title: "About Us",

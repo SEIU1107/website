@@ -1,18 +1,16 @@
 ---
-import PostsGrid from "../components/Posts/PostsGrid.svelte"
-import FilteredPosts from "../components/Posts/FilteredPosts.svelte"
-import FilterInput from "../components/Posts/FilterInput.svelte"
+import FilteredPosts from "../components/Posts/FilteredPosts.svelte";
 import Layout from "../layouts/Layout.astro";
 
 const blog = await Astro.glob("../posts/blog/*/*.md");
 const articles = await Astro.glob("../posts/news articles/*/*.md");
 const pressReleases = await Astro.glob("../posts/press releases/*/*.md");
 const allPosts = blog
-    .concat(articles)
-    .concat(pressReleases)
-    .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
+  .concat(articles)
+  .concat(pressReleases)
+  .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
 ---
 
-<Layout title="Updates" >
-    <FilteredPosts client:load posts={allPosts} />
+<Layout title="Updates">
+  <FilteredPosts client:load posts={allPosts} />
 </Layout>
