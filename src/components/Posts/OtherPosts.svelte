@@ -103,7 +103,7 @@
         <div
           class="text-center font-bold text-3xl italic font-Trebuchet text-gray-400"
         >
-          Select a post on the right to continue
+          Select a post on the left to continue
         </div>
       </div>
     {/if}
