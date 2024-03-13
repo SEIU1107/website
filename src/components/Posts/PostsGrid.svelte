@@ -11,7 +11,7 @@
 
 <div class="flex justify-center content-center m-auto">
   <div class={gridClass}>
-    {#each previews as post}
+    {#each previews as post (post.frontmatter.url)}
       <PostPreview
         featuredImg={post.frontmatter.featuredImg}
         title={post.frontmatter.title}
