@@ -97,7 +97,15 @@
         author={selectedPost.frontmatter.author}
       />
     {:else}
-      <div class="hidden md:block">PREVIEW</div>
+      <div
+        class="hidden md:flex flex-col max-w-[min(420px,_90vw)] p-28 bg-white rounded-lg shadow-black shadow-md m-5"
+      >
+        <div
+          class="text-center font-bold text-3xl italic font-Trebuchet text-gray-400"
+        >
+          Select a post on the right to continue
+        </div>
+      </div>
     {/if}
   </div>
 </div>
