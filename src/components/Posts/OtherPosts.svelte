@@ -27,7 +27,7 @@
   <div class="flex flex-col max-w-screen-md">
     {#each olderPosts as post (post.frontmatter.url)}
       <button
-        class={"grid gap-0 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-2 my-2 mx-8 md:px-4 rounded-md hover:cursor-pointer transition-all ease-in-out duration-200 ".concat(
+        class={"grid gap-0 grid-cols-3 md:grid-cols-4 lg:grid-cols-6 py-2 my-1 mx-8 md:px-4 rounded-md hover:cursor-pointer transition-all ease-in-out duration-200 ".concat(
           post === selectedPost
             ? "bg-supernova-300 hover:bg-supernova-400"
             : "bg-honey-flower-900 group hover:bg-honey-flower-950"
