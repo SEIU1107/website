@@ -64,7 +64,7 @@
   });
 </script>
 
-<div class="flex flex-row min-h-[90dvh]">
+<div class="flex flex-row mb-4">
   <div class="flex flex-col">
     <div class="flex flex-row mx-auto">
       <div
