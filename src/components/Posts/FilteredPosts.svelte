@@ -2,6 +2,7 @@
   import { createEventDispatcher, onMount } from "svelte";
   import { fade } from "svelte/transition";
 
+  import FilterOutlined from "svelte-ant-design-icons/FilterOutlined.svelte";
   import FilterInput from "./FilterInput.svelte";
   import Button from "../Button.svelte";
   import PostsGrid from "./PostsGrid.svelte";
@@ -128,7 +129,14 @@
 {/if}
 
 <div class="flex flex-col">
-  <HeadingTitle text="SEIU 1107 Updates" />
+  <HeadingTitle
+    text={"Latest from SEIU".concat(
+      selectedTags.length > 0 ||
+        (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
+        ? " (Filtered)"
+        : ""
+    )}
+  />
   <div class="py-0.5 flex flex-wrap mx-auto justify-center max-w-screen-sm">
     <div class="font-bold text text-lg text-gray-700 font-Roboto">Show:</div>
     {#if selectedPostTypes.length === 0 || selectedPostTypes.length === 3}
@@ -158,7 +166,12 @@
   </div>
   <div class="flex flex-row m-auto">
     <div class="px-2">
-      <Button text="Set Filters" onClick={toggleShowFilters} />
+      <Button onClick={toggleShowFilters}>
+        <div class="flex flex-row">
+          <div class="pr-2">Filters</div>
+          <FilterOutlined />
+        </div>
+      </Button>
     </div>
     <div class="px-2">
       {#if selectedTags.length > 0 || (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)}
@@ -166,15 +179,6 @@
       {/if}
     </div>
   </div>
-
-  <HeadingTitle
-    text={"Latest from SEIU".concat(
-      selectedTags.length > 0 ||
-        (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
-        ? " (Filtered)"
-        : ""
-    )}
-  />
 
   <div class="max-w-screen-2xl m-auto">
     <PostsGrid

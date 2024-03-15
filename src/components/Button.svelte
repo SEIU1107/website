@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { MouseEventHandler } from "svelte/elements";
 
-  export let text = "Enter text";
+  export let text: string | undefined = undefined;
   export let onClick: MouseEventHandler<HTMLButtonElement> | undefined =
     undefined;
   export let href: string | undefined = undefined;
@@ -16,7 +16,17 @@
 </script>
 
 {#if href}
-  <a {href} class={classString} {target}>{text}</a>
+  <a {href} class={classString} {target}>
+    <slot />
+    {#if text}
+      {text}
+    {/if}
+  </a>
 {:else if onClick}
-  <button on:click={onClick} class={classString}>{text}</button>
+  <button on:click={onClick} class={classString}>
+    <slot />
+    {#if text}
+      {text}
+    {/if}
+  </button>
 {/if}
