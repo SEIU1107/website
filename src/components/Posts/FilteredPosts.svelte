@@ -184,24 +184,8 @@
   </div>
 
   {#if olderPosts.length > 0}
-    <HeadingTitle
-      text={"Older Posts".concat(
-        selectedTags.length > 0 ||
-          (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
-          ? " (Filtered)"
-          : ""
-      )}
-    />
-    <div class="py-1">
-      <div class="hidden md:block text-center text-gray-600 italic text-lg">
-        Click to select, or double click to navigate to a post.
-      </div>
-      <div class="block md:hidden text-center text-gray-600 italic text-lg">
-        Double click to navigate to a post.
-      </div>
-    </div>
     <div class="flex m-auto">
-      <OtherPosts bind:olderPosts />
+      <OtherPosts bind:olderPosts {toggleShowFilters} />
     </div>
   {/if}
 </div>
