@@ -184,6 +184,7 @@
     <PostsGrid
       bind:previews={latestFourPosts}
       truncate_title={60}
+      truncate_excerpt={240}
       breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4"
     />
   </div>
