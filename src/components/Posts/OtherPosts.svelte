@@ -163,7 +163,7 @@
     </div>
 
     <!-- Pagination section -->
-    <div class="flex items-center justify-center mt-4 mb-24">
+    <div class="flex items-center justify-center mt-4 md:mb-24">
       {#if totalPages > 0}
         {#each Array(totalPages) as _, index}
           <button
