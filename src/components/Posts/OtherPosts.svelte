@@ -163,7 +163,7 @@
     </div>
 
     <!-- Pagination section -->
-    <div class="flex items-center justify-center mt-4">
+    <div class="flex items-center justify-center mt-4 mb-24">
       {#if totalPages > 0}
         {#each Array(totalPages) as _, index}
           <button
@@ -198,6 +198,8 @@
         url={selectedPost.frontmatter.url}
         type={selectedPost.frontmatter.type}
         author={selectedPost.frontmatter.author}
+        truncate_title={80}
+        truncate_excerpt={370}
         show_readmore_button={false}
       />
     {:else}
