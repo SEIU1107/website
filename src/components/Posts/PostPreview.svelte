@@ -10,7 +10,33 @@
   export let author = "SEIU";
   export let type = "blog";
 
+  // Optional parameters
+  // Show the "Read More" Button
+  export let show_readmore_button = true;
+
+  // Truncate title this many characters (No truncation if 0)
+  export let truncate_title = 0;
+
+  // Truncate excerpt this many characters (No truncation if 0)
+  export let truncate_excerpt = 0;
+
   const purple_transparent = "/assets/purple_transparent.png";
+
+  // Truncate string to make sure it's not too long
+  function truncateString(input_string: string, maxLength: number) {
+    if (input_string.length <= maxLength) {
+      return input_string;
+    }
+    let truncated = input_string.slice(0, maxLength);
+    const lastSpaceIndex = truncated.lastIndexOf(" ");
+    const print_bool =
+      lastSpaceIndex !== -1 && lastSpaceIndex !== truncated.length - 1;
+    if (lastSpaceIndex !== -1 && lastSpaceIndex !== truncated.length - 1) {
+      truncated = truncated.slice(0, lastSpaceIndex) + "...";
+    }
+
+    return truncated;
+  }
 </script>
 
 <div
@@ -50,19 +76,15 @@
   </a>
 
   <div class="flex flex-col px-2.5 pb-2.5">
-    {#if type == "article"}
-      <h2
-        class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 text-ellipsis overflow-hidden"
-      >
-        {author.concat(" - ", title)}
-      </h2>
-    {:else}
-      <h2
-        class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 text-ellipsis overflow-hidden"
-      >
+    <h2
+      class="font-Trebuchet text-honey-flower-800 font-bold text-lg lg:text-xl py-2 overflow-hidden"
+    >
+      {#if truncate_title}
+        {truncateString(title, truncate_title)}
+      {:else}
         {title}
-      </h2>
-    {/if}
+      {/if}
+    </h2>
     <div class="flex flex-row font-bold py-1 text-lg">
       <p>
         {new Date(date).toLocaleDateString("en-US", {
@@ -79,20 +101,28 @@
         {/if}
       </div>
     </div>
-    <p class="py-1 font-Roboto">{excerpt}</p>
+    <p class="py-1 font-Roboto">
+      {#if truncate_excerpt}
+      {truncateString(excerpt, truncate_excerpt)}
+      {:else}
+      {excerpt}
+      {/if}
+    </p>
   </div>
-  <div class="p-2.5 mt-auto">
-    {#if type == "News Article"}
-      <Button
-        text={"Read More at ".concat(author)}
-        href={url}
-        target="_blank"
-      />
-    {:else}
-      <Button
-        text="Read More"
-        href={type === "News Article" ? url : "/posts/" + url}
-      />
-    {/if}
-  </div>
+  {#if show_readmore_button}
+    <div class="p-2.5 mt-auto">
+      {#if type == "News Article"}
+        <Button
+          text={"Read More at ".concat(author)}
+          href={url}
+          target="_blank"
+        />
+      {:else}
+        <Button
+          text="Read More"
+          href={type === "News Article" ? url : "/posts/" + url}
+        />
+      {/if}
+    </div>
+  {/if}
 </div>

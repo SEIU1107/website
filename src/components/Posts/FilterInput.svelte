@@ -50,10 +50,20 @@
 
 <div class="flex flex-col m-auto p-1.5">
   <h2
-    class="m-auto font-Trebuchet italic font-bold text-center text-honey-flower-800 py-5 text-3xl md:text-4xl lg:text-5xl"
+    class="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 mt-2 text-3xl md:text-4xl lg:text-5xl"
   >
     Filters
   </h2>
+  <div class="flex m-auto scale-75">
+    <Button
+      onClick={() => {
+        deselectAllTags(generalTags);
+        deselectAllTags(shopTags);
+        selectedPostTypes = [];
+      }}
+      text="Clear All"
+    />
+  </div>
   <div class="grid grid-cols-3">
     {#each postTypes as tag}
       <div class="px-2 font-bold">
