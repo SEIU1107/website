@@ -6,10 +6,10 @@ import StrongerTogether from "../components/Index/StrongerTogether.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.svelte";
+import TownHall from "../components/Index/TownHall.svelte"
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgStrengthTraining from "../images/strength_training/thumbnail.jpg";
-import dignity_celebration from "../images/index/dignity_celebration_march.jpg";
 
 import { Image } from "astro:assets";
 ---
@@ -115,11 +115,13 @@ import { Image } from "astro:assets";
   <main
     class="hidden lg:block h-full bg-gradient-to-bl from-honey-flower-900 to-violet-950"
   >
-    <Image
-      src={dignity_celebration}
-      alt=""
-      class="max-w-screen-lg m-auto px-10 py-5"
-    />
+    <div
+      class="text-supernova-500 font-Roboto font-bold text-5xl pt-6 pb-3 text-center italic"
+    >
+      Come Attend to our Home Care Town Hall!
+    </div>
+    <TownHall client:visible />
+
   </main>
 
   <StrongerTogether />
