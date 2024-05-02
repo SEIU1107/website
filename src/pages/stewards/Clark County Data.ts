@@ -170,7 +170,7 @@ export const dataGeneralUnit: Profile[] = [
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "Air Quality"],
+      ["Department", "Environmental and Sustainability"],
       ["Phone", "(702) 366 - 0396"],
       ["Email", "matthewmoncayo@aol.com"],
     ],
