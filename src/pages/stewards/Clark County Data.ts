@@ -171,7 +171,7 @@ export const dataGeneralUnit: Profile[] = [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
       ["Department", "Environmental and Sustainability"],
-      ["Phone", "(702) 366 - 0396"],
+      ["Phone", "(702) 466 - 0396"],
       ["Email", "matthewmoncayo@aol.com"],
     ],
   },
