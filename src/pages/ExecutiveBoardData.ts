@@ -42,7 +42,7 @@ export const bigProfPeopleData = [
 // Small Profiles
 import Elizabeth from "../images/stewards/UMC/elizabeth bolhouse.png";
 import Joe from "../images/stewards/CC/Joe.png";
-import Nicole from "../images/executive_board,/Nicole.png";
+import Nicole from "../images/executive_board/Nicole.png";
 import Jody from "../images/stewards/Sunrise/Jody.png";
 import Saki from "../images/stewards/CC/Saki.png";
 import Hodge from "../images/stewards/CC/Hodge.png";
@@ -53,7 +53,7 @@ import Karla from "../images/executive_board/Karla.png";
 import Rick from "../images/stewards/CC/Rick.png";
 import Erika from "../images/stewards/Sunrise/Erika.png";
 import Danielle from "../images/stewards/RTC/Danielle.jpg";
-import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
+import SaraEvans from "../images/stewards/CC/Sara-Evans.png";
 import AliciaSmith from "../images/stewards/SNRHA/alicia.png";
 
 export const smallProfPeopleData = [
