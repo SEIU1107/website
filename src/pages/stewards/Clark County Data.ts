@@ -9,6 +9,8 @@ import Kevin from "../../images/stewards/CC/Kevin-Carey-Clark-County-1.jpg";
 import MichelleUpton from "../../images/stewards/CC/Michelle-Upton-CC.png";
 import Nirvana from "../../images/stewards/CC/Nirvana-Hamilton.png";
 import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
+import ArturoEspino from "../../images/stewards/CC/ArturoEspino.jpg";
+import MatthewMoncayo from "../../images/stewards/CC/MatthewMoncayo.jpg";
 
 import type { Profile } from "../../Profile";
 
@@ -68,6 +70,7 @@ export const dataGeneralUnit: Profile[] = [
   },
   {
     name: "Arturo Espino",
+    profileImg: ArturoEspino,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
@@ -133,6 +136,7 @@ export const dataGeneralUnit: Profile[] = [
 
   {
     name: "Matthew Moncayo",
+    profileImg: MatthewMoncayo,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
@@ -425,6 +429,7 @@ import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
 import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
 import Mihanee from "../../images/stewards/CC/Mihanee-Williams.png";
 import RobinFranklin from "../../images/stewards/CC/Robin-Franklin-CC.png";
+import BrianLenihan from "../../images/stewards/CC/BrianLenihan.jpg";
 
 export const dataSupervisory: Profile[] = [
   {
@@ -473,6 +478,7 @@ export const dataSupervisory: Profile[] = [
   },
   {
     name: "Brian Lenihan",
+    profileImg: BrianLenihan,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
