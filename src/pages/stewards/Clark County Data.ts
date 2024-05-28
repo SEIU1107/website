@@ -1,8 +1,6 @@
 import Rick from "../../images/stewards/CC/Rick.png";
 import Alexis from "../../images/stewards/CC/Alexis.jpg";
-import Patricia from "../../images/stewards/CC/Patricia.png";
 import Adella from "../../images/stewards/CC/AdellaLogan.jpg";
-import Anissa from "../../images/stewards/CC/Anissa.png";
 import FabPavel from "../../images/stewards/CC/FabPavel.jpg";
 import Joe from "../../images/stewards/CC/Joe.png";
 import JohnMontgomery from "../../images/stewards/CC/JohnMontgomery.jpeg";
@@ -48,17 +46,6 @@ export const dataGeneralUnit: Profile[] = [
     ],
   },
   {
-    name: "Patricia Armstrong",
-    profileImg: Patricia,
-    data: [
-      ["Title", "Bargaining Unit VP / Steward / Executive Board Member"],
-      ["Unit", "General Unit"],
-      ["Department", "Fire / Building & Permit"],
-      ["Phone", "(702) 372 - 6999"],
-      ["Email", "armstropa@yahoo.com"],
-    ],
-  },
-  {
     name: "Adella Logan",
     profileImg: Adella,
     data: [
@@ -80,17 +67,6 @@ export const dataGeneralUnit: Profile[] = [
     ],
   },
   {
-    name: "Anissa Simmons",
-    profileImg: Anissa,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Bldg. & Safety"],
-      ["Phone", "(702) 488 - 5989"],
-      ["Email", "anissa88@hotmail.com"],
-    ],
-  },
-  {
     name: "Arturo Espino",
     data: [
       ["Title", "Steward"],
@@ -98,16 +74,6 @@ export const dataGeneralUnit: Profile[] = [
       ["Department", "Facilities"],
       ["Phone", "(702) 624 - 0892"],
       ["Email", "arturoeg10@gmail.com"],
-    ],
-  },
-  {
-    name: "Brian Lenihan",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Building & Fire Prevention IT"],
-      ["Phone", "(702) 285-2579"],
-      ["Email", "brianlenihanpe@gmail.com"],
     ],
   },
   {
@@ -314,16 +280,6 @@ export const dataDOA: Profile[] = [
     ],
   },
   {
-    name: "Sheila Grain",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "DOA / Business Office"],
-      ["Phone", "(310) 890 - 5785"],
-      ["Email", "shgrain@hotmail.com"],
-    ],
-  },
-  {
     name: "Tom Sharpe",
     profileImg: TomSharpe,
     data: [
@@ -337,7 +293,6 @@ export const dataDOA: Profile[] = [
 ];
 
 import EarlBarnes from "../../images/stewards/CC/EJBarnes.jpg";
-import HowardStone from "../../images/stewards/CC/HowardStone.jpg";
 import MichelleBrown from "../../images/stewards/CC/MichelleBrown.jpeg";
 import NicoleMiller from "../../images/stewards/CC/Nicole-Miller-CC.png";
 import RichardPerez from "../../images/stewards/CC/RichardPerez.jpg";
@@ -352,17 +307,6 @@ export const dataDFSDJJS: Profile[] = [
       ["Department", "Emergency Response Team"],
       ["Phone", "(562) 271 - 2192"],
       ["Email", "earlbrns@yahoo.com"],
-    ],
-  },
-  {
-    name: "Howard Stone",
-    profileImg: HowardStone,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Juvenile Justice Detention"],
-      ["Phone", "(702) 204 - 5373"],
-      ["Email", "stonehoward@yahoo.com"],
     ],
   },
   {
@@ -475,6 +419,7 @@ export const dataWRD: Profile[] = [
   },
 ];
 
+import Anissa from "../../images/stewards/CC/Anissa.png";
 import MikelleCieri from "../../images/stewards/CC/mikelle-cieri.png";
 import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
 import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
@@ -513,6 +458,27 @@ export const dataSupervisory: Profile[] = [
       ["Department", "DFS"],
       ["Phone", "(702) 569 - 9339"],
       ["Email", "sara.evans3214@gmail.com"],
+    ],
+  },
+  {
+    name: "Anissa Simmons",
+    profileImg: Anissa,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Bldg. & Safety"],
+      ["Phone", "(702) 488 - 5989"],
+      ["Email", "anissa88@hotmail.com"],
+    ],
+  },
+  {
+    name: "Brian Lenihan",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Building & Fire Prevention IT"],
+      ["Phone", "(702) 285-2579"],
+      ["Email", "brianlenihanpe@gmail.com"],
     ],
   },
   {
