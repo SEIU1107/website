@@ -1,8 +1,23 @@
 ---
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
+import imgEndorsements from "../images/endorsements/Full Endorsement Slate.jpg";
+import { Image } from "astro:assets";
 ---
 
 <Layout title="SEIU 1107 Endorsements" centered="true">
   <HeadingTitle text="SEIU 1107 Political Endorsements" />
+  <p class="text-center text-2xl italic font-bold py-2">
+    SEIU 1107 Supports Cadidates that WIN for Us! Vote today!
+  </p>
+  <div class="pt-5 flex flex-col m-auto pb-10">
+    <p class="text-xl text-black font-Roboto pb-4 max-w-screen-lg">
+      SEIU Local 1107 represents 19,000 workers and their families in the health
+      care field and the public sector across Nevada. Together, SEIU Local 1107
+      members fight for better wages, benefits, social justice, and a better way
+      of life for all working Nevadans. It is with great honor that SEIU Local
+      1107 is endorsing the following candidates for the 2024 election cycle.
+    </p>
+    <Image src={imgEndorsements} alt="Endorsements" class="max-w-screen-md m-auto" />
+  </div>
 </Layout>
