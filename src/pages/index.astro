@@ -8,10 +8,7 @@ import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
-import JackyRosen from "../images/endorsements/Jacky.jpg";
-
-import LinkText from "../components/LinkText.astro";
-import HomeCareTownHall from "../images/index/Homecare Town Hall.jpg";
+import ElectionOffice from "../images/index/Election Office.png"
 ---
 
 <Layout>
@@ -59,29 +56,35 @@ import HomeCareTownHall from "../images/index/Homecare Town Hall.jpg";
   </main>
 
   <div class="bg-gradient-to-bl from-supernova-300 to-supernova-600 py-4">
-    <HeadingTitle
-      text="Lawmakers and Advocates Host First-of-its-Kind Town Hall for Home Care Workers!"
-    />
+    <HeadingTitle text="STATEMENT ON PRIMARY ELECTIONS FROM SEIU 1107" />
 
     <div
       class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
     >
       <CollageImage
-        src={HomeCareTownHall}
+        src={ElectionOffice}
         horizontal="right"
         imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
       >
         <div class="flex flex-col">
           <p class="py-2 text-black text-bold text-xl text-left mx-2">
-            At our Home Care Legislative Town Hall we launched our policy
-            proposals to ensure quality care and good jobs, including:
+            The below statement was issued on behalf of Michelle Maese,
+            President of SEIU 1107, and Sam Shaw, Executive Director of SEIU
+            1107:
           </p>
-          <ul class="list-disc italic text-black text-xl font-Roboto ml-10">
-            <li>Higher wages that recruit and retain</li>
-            <li>Expanded funding</li>
-            <li>Increased service hours for clients</li>
-            <li>Better training</li>
-          </ul>
+          <p class="py-2 text-black text-bold text-xl text-left mx-2">
+            The June 11 primary election was filled with victories by pro-worker
+            candidates up and down the ballot. We are committed to ensuring that
+            our endorsed candidates win in the primary and general election to
+            secure a better future for working families in our communities.
+          </p>
+          <p class="py-2 text-black text-bold text-xl text-left mx-2">
+            So much is at stake for working families that we must have elected
+            leaders who are ready to meet the moment. Workers are struggling.
+            The cost for food, gas and housing are out of control and
+            fundamental challenges remain to address racial and economic
+            inequalities in our communities.
+          </p>
           <Button
             text="Learn More"
             styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
