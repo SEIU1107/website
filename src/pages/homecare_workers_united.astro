@@ -7,12 +7,12 @@ import { Image } from "astro:assets";
 
 import bannerImg from "../images/homecare/banner.png";
 
-import Michelly from "../images/homecare/Michelly-Franco.jpg";
+import Irma from "../images/homecare/Irma.jpg";
 ---
 
 <Layout title="Homecare Workers United!" centered="true">
   <HeadingTitle
-    text="United Together, Nevada Home Care Workers Are Winning a Better Future"
+    text="Join Our Growing Union Movement to Win $20 an Hour and Quality Home Care!"
   />
   <h2
     class="text-center text-purple-800 text-xl font-Trebuchet max-w-screen-md pb-2.5 flex m-auto"
@@ -31,40 +31,64 @@ import Michelly from "../images/homecare/Michelly-Franco.jpg";
     <InfoCard title="Join The Movement!">
       <p>
         If you're a non-union home care worker and want to join our movement,
-        fill out a union card <LinkText href="https://bit.ly/nvhomecaresignup">
-          here.
-        </LinkText>
+        fill out a union card <LinkText
+          target="_blank"
+          href="https://secure.everyaction.com/fHjNlIRtd0aJc9SexCJCow2"
+          >here</LinkText
+        >.
       </p>
       <p class="py-2">
-        If your workplace is already represented by SEIU 1107, become a union
-        member <LinkText href="https://act.seiu.org/a/membership-application-6">
-          here!
-        </LinkText>
+        If your agency is already represented by SEIU 1107, become a union
+        member <LinkText
+          target="_blank"
+          href="https://act.seiu.org/a/membership-application-6">here</LinkText
+        > and contribute to our political action fund <LinkText
+          href="https://seiunv.org/political_action/">here</LinkText
+        >.
       </p>
-      <p class="py-2">For more information, call (702) 755 - 4307.</p>
+      <p class="py-2">
+        To get involved or for more info, contact 702-755-4307 or
+        <LinkText href="mailto:homecare@seiunv.org"
+          >homecare@seiunv.org</LinkText
+        >
+      </p>
     </InfoCard>
   </div>
 
   <div class="flex flex-col m-auto max-w-screen-lg">
     <div>
       <Image
-        src={Michelly}
-        alt="Michelly"
+        src={Irma}
+        alt=""
         class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
       />
-      <p class="py-2">
-        Through our union, we won the $16 minimum wage for home care workers and
-        42% funding increase in the state legislature. Over 1,000 home care
-        workers have voted by a landslide to join our union and hundreds more
-        are headed toward elections. And we won the first-ever union contract
-        with $17 an hour. Together, we're making sure employers invest the
-        massive state funding increase in workers.
+      <p class="py-2 text-xl">
+        Through our united action, home care workers won the historic $16
+        minimum wage and funding increase. Over 1,000 caregivers have voted by a
+        landslide to join SEIU 1107 and hundreds have achieved strong union
+        contracts.
       </p>
-      <p class="py-2">
-        But we're not going to stop here. We're going to keep advocating
-        powerfully for higher wages, job improvements and more funding. We are
-        transforming the home care industry to win a better future for workers,
-        our families and those we care for!
+      <p class="py-2 text-xl">
+        But we can't stop here. We urgently need to build on this foundation and
+        keep making more progress toward a better future for our clients, our
+        families and ourselves. That's why we're advocating powerfully for our
+        “Silver State Home Care Standards” in the legislature:
+      </p>
+      <ul class="list-disc pl-3 text-xl">
+        <li>$20 minimum wage</li>
+        <li>Increased funding</li>
+        <li>More client hours</li>
+        <li>Professional training</li>
+        <li>Reduced red tape</li>
+      </ul>
+      <p class="py-2 text-lg">
+        “Providing loving care to others is my God-given life's purpose. An
+        essential part of that mission is speaking out for our clients through
+        our union. Over 1,000 home care workers, including me, have voted to
+        join our union and hundreds more are on their way. There's strength in
+        numbers - the more who join our movement, the more we can win!” <i
+          >- Malu Lopez, Nevada home care worker</i
+        >
       </p>
     </div>
   </div>
