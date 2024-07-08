@@ -9,6 +9,7 @@ import Button from "../components/Button.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import ElectionOffice from "../images/index/Election Office.png";
+import LinkText from "../components/LinkText.astro";
 ---
 
 <Layout>
@@ -54,9 +55,72 @@ import ElectionOffice from "../images/index/Election Office.png";
       </div>
     </div>
   </main>
-
   <div class="bg-gradient-to-bl from-supernova-300 to-supernova-600 py-4">
-    <HeadingTitle text="STATEMENT ON PRIMARY ELECTIONS FROM SEIU 1107" />
+    <HeadingTitle
+      text="FOR MEMBERS - Apply for the SEIU 1107 Academic Scholarship!"
+    />
+
+    <div
+      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+    >
+      <div class="flex flex-col"></div>
+      <p class="py-2 text-black text-bold text-xl text-left mx-2">
+        To apply for the SEIU Local 1107 2024-2025 Academic Scholarship, please
+        complete the application and submit all required materials via email to
+        <LinkText href="mailto:scholarship@seiunv.org"
+          >scholarship@seiunv.org</LinkText
+        >
+        <b>on or before 5 p.m. July 26, 2024. </b> No applications will be considered
+        after that date. Six (6) scholarship winners will be notified the week of
+        July 29, 2024, by the Scholarship Committee Chair.
+      </p>
+      <p class="py-2 text-black text-bold text-xl text-left mx-2">
+        Verification of college enrollment/training program will be required
+        before the award is mailed to the college, university or training
+        institution. Scholarship funds must be applied toward tuition, fees and
+        other appropriate educational expenses.
+      </p>
+      <p class="py-2 text-black text-bold text-xl text-left mx-2">
+        Scholarship winners will be acknowledged on <b>August 3, 2024</b>, at
+        our <LinkText
+          href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Njk0aHNwaDZpaWc5czZldHB2YjY5YTVmc28gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+          target="_blank"><b>Back-To-School & Scholarship Event</b></LinkText
+        >, at our union hall, located at 2250 S. Rancho Drive, Suite 165, Las
+        Vegas, NV 89102.
+      </p>
+      <div class="flex flex-col md:flex-row mx-auto">
+        <div class="md:mx-1.5 m-auto my-1.5">
+          <Button
+            target="_blank"
+            text="Download Application PDF"
+            class="mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="/PDFs/2024 SEIU1107 Scholarship Application and Essay.pdf"
+          />
+        </div>
+        <div class="md:mx-1.5 m-auto my-1.5">
+          <Button
+            target="_blank"
+            text="View Policy"
+            class="mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="/PDFs/2024 SEIU1107 Scholarship Policy.pdf"
+          />
+        </div>
+        <div class="md:mx-1.5 m-auto my-1.5">
+          <Button
+            target="_blank"
+            text="Scholarship Event (Google Calendar)"
+            class="mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=Njk0aHNwaDZpaWc5czZldHB2YjY5YTVmc28gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4">
+    <HeadingTitle
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5"
+      text="STATEMENT ON PRIMARY ELECTIONS FROM SEIU 1107"
+    />
 
     <div
       class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
@@ -67,18 +131,18 @@ import ElectionOffice from "../images/index/Election Office.png";
         imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
       >
         <div class="flex flex-col">
-          <p class="py-2 text-black text-bold text-xl text-left mx-2">
+          <p class="py-2 text-white text-xl text-left mx-2">
             The below statement was issued on behalf of Michelle Maese,
             President of SEIU 1107, and Sam Shaw, Executive Director of SEIU
             1107:
           </p>
-          <p class="py-2 text-black text-bold text-xl text-left mx-2">
+          <p class="py-2 text-white text-xl text-left mx-2">
             The June 11 primary election was filled with victories by pro-worker
             candidates up and down the ballot. We are committed to ensuring that
             our endorsed candidates win in the primary and general election to
             secure a better future for working families in our communities.
           </p>
-          <p class="py-2 text-black text-bold text-xl text-left mx-2">
+          <p class="py-2 text-white text-xl text-left mx-2">
             So much is at stake for working families that we must have elected
             leaders who are ready to meet the moment. Workers are struggling.
             The cost for food, gas and housing are out of control and
@@ -87,7 +151,7 @@ import ElectionOffice from "../images/index/Election Office.png";
           </p>
           <Button
             text="Learn More"
-            styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            styling="mt-5 mx-auto text-honey-flower-800 scale-125 hover:scale-[140%] bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
             href="/posts/STATEMENT%20ON%20PRIMARY%20ELECTIONS%20FROM%20SEIU%201107%20%E2%80%93%20NEVADA%E2%80%99S%20LARGEST%20UNION%20OF%20PUBLIC%20SERVICE%20AND%20HEALTH%20CARE%20WORKERS"
           />
         </div>
