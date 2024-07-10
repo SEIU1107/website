@@ -40,6 +40,10 @@ const myUnion = [
     pageName: "Constitution & Bylaws",
     href: "/constitution",
   },
+  {
+    pageName: "AFRAM Caucus",
+    href: "/caucuses",
+  },
 ];
 
 const getInvolved = [
