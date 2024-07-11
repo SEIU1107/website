@@ -4,7 +4,9 @@
     "m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5";
 
   let size =
-    text.length <= 50 ? " text-4xl lg:text-5xl" : " text-3xl lg:text-4xl";
+    text.length <= 50
+      ? " text-4xl lg:text-5xl xl:text-6xl"
+      : " text-3xl lg:text-4xl xl:texl-5xl";
   let classStyle = styling.concat(size);
 </script>
 

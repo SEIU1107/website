@@ -1,16 +1,103 @@
 ---
 import { Image } from "astro:assets";
 import Layout from "../layouts/Layout.astro";
-import AFRAMFlyer from "../images/caucuses/AFRAM Flyer 2024.png";
 import Button from "../components/Button.svelte";
+import HeadingTitle from "../components/HeadingTitle.svelte";
+import CollageImage from "../components/CollageImage.astro";
+import InfoCardGridLayout from "../components/InfoCardGridLayout.astro";
+import InfoCard from "../components/InfoCard.astro";
+
+import groupPhoto from "../images/caucuses/Group Photo.jpeg";
+import AFRAMFlyer from "../images/caucuses/AFRAM Flyer 2024.png";
+import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
+
+const paragraphStyling = "text-slate-200 font-Roboto text-2xl py-1.5";
+const headingTwoStyling =
+  "text-supernova-200 text-center lg:text-left text-4xl font-Trebuchet py-1.5";
 ---
 
 <Layout
-  title="SEIU AFRAM Caucus"
+  title="SEIU 1107 Caucuses"
   centered="true"
-  backgroundStyling="bg-[#E3BB18]"
+  backgroundStyling="bg-gradient-to-bl from-honey-flower-800 to-indigo-900"
 >
   <div class="flex flex-col">
+    <HeadingTitle
+      text="SEIU 1107 Caucuses"
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-200 py-5"
+    />
+    <h2 class={headingTwoStyling}>What are Caucuses?</h2>
+    <CollageImage
+      src={groupPhoto}
+      horizontal="right"
+      imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-xl lg:max-w-2xl"
+    >
+      <p class={paragraphStyling}>
+        SEIU Local 1107 recognizes that SEIU national, regional and area
+        caucuses have proven to be an important means of support, advocacy,
+        information exchange, and leadership development. The following is
+        intended to provide guidance in establishing and supporting Local 1107
+        member caucuses.
+      </p>
+      <p class={paragraphStyling}>
+        Caucuses create a safe and meaningful space to facilitate the sharing of
+        experiences, issues, and activities of our union's diverse
+        constituencies. Additionally, caucuses can be an effective means to
+        build member strength, share our union's vision and priorities, and
+        create partnership in the communities we live and serve. Caucuses can be
+        a voice for member constituencies and help SEIU Local 1107 evaluate
+        strategic priorities and programs.
+      </p>
+      <p class={paragraphStyling}>
+        SEIU Local 1107 recognizes that the goals of national, regional and
+        area/local caucuses includes, but is not limited to:
+      </p>
+      <ul class="list-disc ml-5 text-slate-200 font-Roboto text-2xl py-1.5">
+        <li>
+          Advancing diversity in SEIU membership as a source of strength through
+          the principles of unionism, inclusiveness, empowerment and self
+          determination;
+        </li>
+        <li>
+          Developing, advocating and monitoring issues identified by
+          constituents and work with the Local 1107 through education;
+        </li>
+        <li>
+          Serve as a resource to Local 1107 in organizing, political action and
+          community involvement;
+        </li>
+        <li>
+          Promote and advance leadership development and training on all levels
+          of Union representation.
+        </li>
+      </ul>
+    </CollageImage>
+    <h2 class={headingTwoStyling}>Our Caucuses</h2>
+    <InfoCardGridLayout
+      styling="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto"
+    >
+      <InfoCard title="African American Caucus (AFRAM)" image={AFRAMLogo}>
+        <p>
+          The National African American Caucus of the Service Employees
+          International Union (SEIU) is committed to enhancing opportunities for
+          education, training mentor-ship, leadership development and networking
+          for SEIU members and staff of African descent.
+        </p>
+        <p class="mt-2">
+          We further engage to promote social, economic and political justice
+          within our workplace, our communities, our nation and within our
+          union.
+        </p>
+        <p class="mt-2">
+          We shall further encourage our members to actively engage in efforts
+          to organize the unorganized and to fully participate in the
+          development and implementation of labor's political agenda and
+          programs.
+        </p>
+      </InfoCard>
+    </InfoCardGridLayout>
+    <div class="flex flex-col xl:grid xl:grid-cols-3 gap-0 py-2"></div>
+
     <Image class="object-contain h-[90vh]" src={AFRAMFlyer} alt="AFRAM" />
     <div class="mt-5 mx-auto">
       <Button
