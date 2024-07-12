@@ -11,7 +11,7 @@ const buttonStyle =
   "m-auto lg:mx-1.5 my-1.5 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest";
 const h2Style =
   "text-honey-flower-800 text-3xl lg:text-4xl font-Roboto font-bold ";
-const paraStyle = "text-lg mt-2";
+const paraStyle = "text-md mt-2";
 ---
 
 <Layout
@@ -23,63 +23,68 @@ const paraStyle = "text-lg mt-2";
     <h2 class={h2Style.concat("text-center lg:text-left")}>
       Welcome to AFRAM!
     </h2>
-    <CollageImage src={AFRAMLogo2} horizontal="right">
-      <p class={paraStyle}>
-        Welcome to the home of opportunity, engagement, accountability, and
-        fellowship. As we begin to navigate our way in a post-pandemic new
-        normal, we must not assume that racism and inequity have ceased nor
-        desisted. The new "reckoning" looks different but is still grounded in
-        systemic and institutional disparities and challenges. AFRAM continues
-        to raise awareness and promote social change within our union.
-      </p>
-      <p class={paraStyle}>
-        No one person can win the fight against social, racial, wage, or
-        disability injustices. WE NEED EACH OTHER. As we coalesce to bring forth
-        a powerful and transformative movement within our union, we want each of
-        you to feel inspired, empowered, and optimistic about the work that our
-        caucus is doing.
-      </p>
-      <div class="flex flex-col py-2.5">
-        <div class="flex flex-col md:flex-row mx-auto">
-          <Button
-            styling={buttonStyle}
-            text="Download Constitution & Bylaws (PDF)"
-            href="/PDFs/caucuses/AFRAM C&B.pdf"
-            target="_blank"
-          />
-        </div>
+    <div class="flex flex-col">
+      <div>
+        <CollageImage src={AFRAMLogo2} horizontal="right">
+          <p class={paraStyle}>
+            Welcome to the home of opportunity, engagement, accountability, and
+            fellowship. As we begin to navigate our way in a post-pandemic new
+            normal, we must not assume that racism and inequity have ceased nor
+            desisted. The new "reckoning" looks different but is still grounded
+            in systemic and institutional disparities and challenges. AFRAM
+            continues to raise awareness and promote social change within our
+            union.
+          </p>
+          <p class={paraStyle}>
+            No one person can win the fight against social, racial, wage, or
+            disability injustices. WE NEED EACH OTHER. As we coalesce to bring
+            forth a powerful and transformative movement within our union, we
+            want each of you to feel inspired, empowered, and optimistic about
+            the work that our caucus is doing.
+          </p>
+          <div class="flex flex-col py-2.5">
+            <div class="flex flex-col md:flex-row mx-auto">
+              <Button
+                styling={buttonStyle}
+                text="Download Constitution & Bylaws (PDF)"
+                href="/PDFs/caucuses/AFRAM C&B.pdf"
+                target="_blank"
+              />
+            </div>
+          </div>
+        </CollageImage>
       </div>
-    </CollageImage>
-    <div class="mt-5">
-      <h2 class={h2Style.concat("text-center mb-2.5 block lg:hidden")}>
-        Join the Membership Meetings!
-      </h2>
-      <CollageImage
-        src={AFRAMFlyer}
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-xl"
-      >
-        <h2 class={h2Style.concat("text-right hidden lg:block")}>
+      <div class="mt-5">
+        <h2 class={h2Style.concat("text-center mb-2.5 block lg:hidden")}>
           Join the Membership Meetings!
         </h2>
-        <p class={paraStyle}>
-          Your membership is more than signing an application. It is your
-          commitment to possessing good intentions when the caucus addresses
-          perpetuated injustice and the racial heirarchy in our communities,
-          states, nation, and even within our union. Your dedication to
-          achieving racial equity among our labor membership and staff is
-          imperative to the core and success of our caucus!
-        </p>
-        <div class="flex flex-col py-2.5">
-          <div class="mx-auto">
-            <Button
-              styling={buttonStyle}
-              text="Meeting Dates Flyer (PDF)"
-              href="/PDFs/caucuses/AFRAM FLYER 6 months 2024.pdf"
-              target="_blank"
-            />
+        <CollageImage
+          src={AFRAMFlyer}
+          imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-sm lg:max-w-xl"
+        >
+          <h2 class={h2Style.concat("text-right hidden lg:block")}>
+            Join the Membership Meetings!
+          </h2>
+          <p class={paraStyle}>
+            Your membership is more than signing an application. It is your
+            commitment to possessing good intentions when the caucus addresses
+            perpetuated injustice and the racial heirarchy in our communities,
+            states, nation, and even within our union. Your dedication to
+            achieving racial equity among our labor membership and staff is
+            imperative to the core and success of our caucus!
+          </p>
+          <div class="flex flex-col py-2.5">
+            <div class="mx-auto">
+              <Button
+                styling={buttonStyle}
+                text="Meeting Dates Flyer (PDF)"
+                href="/PDFs/caucuses/AFRAM FLYER 6 months 2024.pdf"
+                target="_blank"
+              />
+            </div>
           </div>
-        </div>
-      </CollageImage>
+        </CollageImage>
+      </div>
     </div>
   </div>
 </Layout>
