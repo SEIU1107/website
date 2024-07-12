@@ -5,7 +5,7 @@ import Button from "./Button.svelte";
 import LinkText from "./LinkText.astro";
 const linkStyling =
     "text-blue-600 no-underline hover:underline active:no-underline";
-const paraStyling = "font-Roboto text-md";
+const paraStyling = "font-Roboto text-lg";
 ---
 
 <InfoCardGridLayout
@@ -23,7 +23,8 @@ const paraStyling = "font-Roboto text-md";
         </p>
     </InfoCard>
     <InfoCard title="Unions Improve Benefits and Working Conditions">
-        Working together, union members have the strength to win affordable
+        <p class={paraStyling}>
+            Working together, union members have the strength to win affordable
         health care, a secure retirement, and safer workplaces. The “union
         advantage” is substantial. Union workers are far more likely to have
         workplace benefits like retirement plans and health insurance. Union
@@ -38,6 +39,7 @@ const paraStyling = "font-Roboto text-md";
             href="https://www.fissuredworkplace.net/assets/Weil.Enforcing-OSHA-Role-of-Unions.IR.1991.pdf"
             >OSHA</a
         >)
+        </p>
     </InfoCard>
 
     <InfoCard title="We Have Power Together">

@@ -66,6 +66,7 @@ const headingTwoStyling =
           Serve as a resource to Local 1107 in organizing, political action and
           community involvement;
         </li>
+        
         <li>
           Promote and advance leadership development and training on all levels
           of Union representation.
@@ -74,7 +75,7 @@ const headingTwoStyling =
     </CollageImage>
     <h2 class={headingTwoStyling}>Our Caucuses</h2>
     <InfoCardGridLayout
-      styling="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 py-0 px-5 my-7 mx-auto"
+      styling="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0 my-4 mx-auto"
     >
       <InfoCard title="African American Caucus (AFRAM)" image={AFRAMLogo}>
         <p>
@@ -94,18 +95,8 @@ const headingTwoStyling =
           development and implementation of labor's political agenda and
           programs.
         </p>
+        <Button text="Learn More" href="/caucuses/afram" />
       </InfoCard>
     </InfoCardGridLayout>
-    <div class="flex flex-col xl:grid xl:grid-cols-3 gap-0 py-2"></div>
-
-    <Image class="object-contain h-[90vh]" src={AFRAMFlyer} alt="AFRAM" />
-    <div class="mt-5 mx-auto">
-      <Button
-        styling="text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest scale-125"
-        text="Download Constitution & Bylaws (PDF)"
-        href="/PDFs/AFRAM C&B.pdf"
-        target="_blank"
-      />
-    </div>
   </div>
 </Layout>
