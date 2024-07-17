@@ -4,7 +4,7 @@ import Layout from "../../layouts/Layout.astro";
 import CollageImage from "../../components/CollageImage.astro";
 import Button from "../../components/Button.svelte";
 
-import AFRAMLogo2 from "../../images/caucuses/AFRAM Logo2.png";
+import groupPhoto from "../../images/caucuses/Group Photo.jpeg";
 import AFRAMFlyer from "../../images/caucuses/AFRAM Flyer 2024.png";
 
 const buttonStyle =
@@ -25,7 +25,11 @@ const paraStyle = "text-md mt-2";
     </h2>
     <div class="flex flex-col">
       <div>
-        <CollageImage src={AFRAMLogo2} horizontal="right">
+        <CollageImage
+          src={groupPhoto}
+          horizontal="right"
+          imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-xl lg:max-w-2xl"
+        >
           <p class={paraStyle}>
             Welcome to the home of opportunity, engagement, accountability, and
             fellowship. As we begin to navigate our way in a post-pandemic new

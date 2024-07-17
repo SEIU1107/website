@@ -41,7 +41,7 @@ const myUnion = [
     href: "/constitution",
   },
   {
-    pageName: "AFRAM Caucus",
+    pageName: "Caucuses",
     href: "/caucuses",
   },
 ];
