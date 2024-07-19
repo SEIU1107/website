@@ -8,7 +8,8 @@ import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
-import AFRAMLogo from "../images/caucuses/AFRAM Logo.png"
+import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
+import imgTraining from "../images/strength_training/BigRoom.jpg";
 import LinkText from "../components/LinkText.astro";
 ---
 
@@ -157,7 +158,8 @@ import LinkText from "../components/LinkText.astro";
     </div>
   </div>
 
-  <main
+  <!-- 
+    <main
     class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
   >
     <div
@@ -177,7 +179,46 @@ import LinkText from "../components/LinkText.astro";
       </div>
     </div>
   </main>
+   -->
 
+  <div class="bg-gradient-to-bl from-supernova-300 to-supernova-500 py-4">
+    <HeadingTitle text="Participate in our Member Strength Trainings!" />
+
+    <div
+      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+    >
+      <CollageImage
+        src={imgTraining}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm sm:max-wd-md md:max-w-lg lg:max-w-xl"
+      >
+        <p class="py-2 text-black text-xl text-left mx-2">
+          The more of us who participate, the more improvements we can make to
+          our wages, benefits, and working conditions! Attend one of the
+          upcoming trainings and start making an impact on your workplace.
+        </p>
+        <p class="py-2 text-black text-xl text-left mx-2">
+          There's strength in numbers, so become a proud union member today and
+          ask ALL your coworkers to <LinkText href="/join">sign up</LinkText>!
+          For more info, talk to a member of the bargaining team or contact Rosy
+          Salinas at <LinkText href="mailto:rsalinas@seiunv.org"
+            >rsalinas@seiunv.org</LinkText
+          >.
+        </p>
+        <p class="py-2 text-black font-bold text-xl text-left mx-2">
+          <i>All trainings are on Saturdays from 10am - 2pm PST.</i>
+        </p>
+        <div class="flex flex-col md:flex-row mx-auto">
+          <div class="md:mx-1.5 m-auto my-1.5">
+            <Button
+              text="View Dates"
+              class="mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+              href="/strength_training"
+            />
+          </div>
+        </div>
+      </CollageImage>
+    </div>
+  </div>
   <StrongerTogether />
   <LatestNews />
   <div class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300">

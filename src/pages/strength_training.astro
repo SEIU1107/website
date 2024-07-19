@@ -2,27 +2,111 @@
 import Layout from "../layouts/Layout.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 
-import flyer from "../images/strength_training/TWRALLTrainingsFlyer-1.png";
-import trainingFirst from "../images/strength_training/TWR2.24.24Training-1.png";
-import trainingSecond from "../images/strength_training/TWR3.20.24Training-1.png";
 import { Picture } from "astro:assets";
+import LinkText from "../components/LinkText.astro";
+import CollageImage from "../components/CollageImage.astro";
 
-const style =
+import flyer from "../images/strength_training/Flyer.png";
+import imgBigRoom from "../images/strength_training/BigRoom.jpg";
+
+const pictureStyle =
   "max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl shadow-black shadow-sm rounded-md m-auto";
 ---
 
 <Layout title="Member Strength Training">
   <HeadingTitle text="Participate In Our Member Trainings!" />
-  <div class="flex m-auto">
+  <div class="flex flex-col m-auto max-w-screen-lg">
+    <div class="my-5 mx-auto">
+      <CollageImage src={imgBigRoom}>
+        <p class="py-2 text-black text-xl font-bold text-left mx-2">
+          <i>Together We Rise - Member Strength Squad!</i>
+        </p>
+        <p class="py-2 text-black text-left mx-2">
+          Join SEIU Local 1107 for a day of strategy and union power! We're
+          coming together to share best practices for building a powerful labor
+          movement and keeping our union strong.
+        </p>
+        <p class="py-2 text-black text-left mx-2">
+          In order to keep our union strong - so that we can win better
+          contracts, make breakthroughs in organizing, and build a more just and
+          equitable society - we have to focus on improving our member strength
+          like our very existence depends on it (because it does!).
+        </p>
+      </CollageImage>
+    </div>
+
+    <div
+      class="m-auto bg-white rounded-md p-5 shadow-sm shadow-black flex flex-col max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg"
+    >
+      <p class="py-2 text-black text-bold text-lg text-center">
+        <i>All trainings are on Saturdays from 10am - 2pm PST.</i>
+        <br />
+        <i>Sign up via Mobilize below.</i>
+      </p>
+      <div class="text-black text-bold text-lg text-left">
+        <p class="py-2">
+          Session 1 - July 27, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643042/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #1: The Structured Conversation
+            and the Story of I</LinkText
+          >
+        </p>
+        <p class="py-2">
+          Session 2 - August 31st, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643044/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #2: Assessing your Workplace,
+            Charting and List Work</LinkText
+          >
+        </p>
+        <p class="py-2">
+          Session 3 - September 28th, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643045/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #3: AAR "Affirm, Answer, Redirect"</LinkText
+          >
+        </p>
+        <p class="py-2">
+          Session 4 - October 26, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643046/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #4: Work Site Issues,
+            Conversations, Mobilization</LinkText
+          >
+        </p>
+        <p class="py-2">
+          Session 5 - November 30th, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643049/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #5: Recruiting/Developing your
+            Team of Coworkers</LinkText
+          >
+        </p>
+        <p class="py-2">
+          Session 6 - December 14th, 2024
+          <br />
+          <LinkText
+            href="https://www.mobilize.us/seiunevada/event/643051/?nvep=&hmac=&emci=6ae1980f-6644-ef11-86c3-6045bdd9e096&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+            >Member Strength Training Session #6: Leading Leaders</LinkText
+          >
+        </p>
+      </div>
+    </div>
     <div class="m-auto flex flex-col lg:flex-row flex-wrap">
       <div class="py-3 mx-5">
-        <Picture class={style} src={flyer} alt="flyer" />
-      </div>
-      <div class="py-3 mx-5">
-        <Picture class={style} src={trainingFirst} alt="february training" />
-      </div>
-      <div class="py-3 mx-5">
-        <Picture class={style} src={trainingSecond} alt="march training" />
+        <Picture class={pictureStyle} src={flyer} alt="flyer" />
       </div>
     </div>
   </div>
