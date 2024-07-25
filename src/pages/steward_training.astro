@@ -6,7 +6,7 @@ import { Picture } from "astro:assets";
 import LinkText from "../components/LinkText.astro";
 import CollageImage from "../components/CollageImage.astro";
 
-import flyer from "../images/strength_training/Flyer.png";
+import flyer from "../images/strength_training/steward_flyer.jpg";
 import imgTraining from "../images/strength_training/StewardsTraining.jpg";
 import StringCycle from "../components/StringCycle.svelte";
 
@@ -17,16 +17,16 @@ const pictureStyle =
 <Layout title="Member Strength Training">
   <HeadingTitle text="Steward Trainings" />
   <div class="flex flex-col m-auto">
-    <div class="my-5 mx-auto max-w-screen-lg">
+    <div class="my-5 mx-auto max-w-screen-md lg:max-w-screen-lg">
       <CollageImage src={imgTraining}>
-        <p class="py-2 text-black text-left text-xl mx-2">
+        <p class="py-2 text-black text-left text-md md:text-lg lg:text-xl mx-2">
           It's time for you to <b><u>join the movement</u></b> and learn how to build
           power! The more workers who get active, the more improvements we can secure
           to our wages, benefits, and working conditions!
         </p>
         <StringCycle
           client:visible
-          textStyle="py-2 text-black text-left text-xl mx-2"
+          textStyle="py-2 text-black text-left italic text-md lg:text-lg mx-2"
           items={[
             '"Attending a steward training is important because it equips you with the knowledge and skills to effectively advocate for workers\' rights, ensuring a workplace that values dignity, equity, and respect for all." — Alexis Esparza, DAFS, Clark County',
             '"I took the steward training course because I was looking for the tools to help protect and represent my coworkers to make our workplace better overall." — Stephen Nolan, custodian, LVCVA',
@@ -45,7 +45,7 @@ const pictureStyle =
         <br />
         <i><b>2250 S. Rancho Dr. Ste 165 Las Vegas, NV 89102</b></i>
         <br />
-        <i>Sign up via Mobilize below.</i>
+        <i class="text-xl font-bold">Sign up via Mobilize below.</i>
       </p>
       <div class="flex flex-col lg:grid lg:grid-cols-3">
         <!-- 1 -->
@@ -119,8 +119,59 @@ const pictureStyle =
               target="_blank">Aug. 28th 9:30am - 12:00pm</LinkText
             >
           </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M203N3ByanU1a2RmMG9vMWE1amptN2pzamMgYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Sept. 25th 9:30am - 12:00pm</LinkText
+            >
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=M2Y0ODJxcm1iaWNlODUyZDFzZGw5MDJuMDMgYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Oct. 16th 12:30pm - 4:00pm</LinkText
+            >
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NDd1ZjF0Z29jMHV0NWF0bGNwbTl0amwxdW0gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Nov. 13th 9:30am - 12:00pm</LinkText
+            >
+          </div>
         </div>
         <!-- 3 -->
+        <div class="my-2 mx-5 p-2 bg-honey-flower-100 rounded-md">
+          <div
+            class="text-black font-bold text-lg sm:text-xl text-left lg:text-center"
+          >
+            Advanced Training
+            <br class="block sm:hidden lg:block" />
+            (<LinkText
+              href="https://www.mobilize.us/seiunevada/event/570935/"
+              target="_blank">Sign up on Mobilize</LinkText
+            >)
+          </div>
+          <ul class="list-disc ml-10 text-md sm:text-lg my-2">
+            <li>Arbitration and How it Works</li>
+            <li>Advocacy Skills</li>
+            <li>Contract Interpretation</li>
+            <li>Preparing for Step 2 Meetings and Arbitration Council</li>
+          </ul>
+          <div class="text-md font-bold italic py-2">
+            Click below dates for Google Calendar link.
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MzJ0bnMwb3JqYmwybWZ2N2JmNjJlZ2UydmQgYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Sept. 25th 12:30pm - 5:00pm</LinkText
+            >
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MDgxajc1azFyMjhqMTh2OG85OGdzb3R2NG8gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Oct. 23rd 9:30am - 2:30pm</LinkText
+            >
+          </div>
+        </div>
       </div>
     </div>
     <div class="m-auto flex flex-col lg:flex-row flex-wrap">
