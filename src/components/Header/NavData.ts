@@ -56,6 +56,10 @@ const getInvolved = [
     href: "/strength_training",
   },
   {
+    pageName: "Steward Trainings",
+    href: "/steward_training",
+  },
+  {
     pageName: "Political Action",
     href: "/political_action",
   },

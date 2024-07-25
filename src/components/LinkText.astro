@@ -1,16 +1,17 @@
 ---
 export interface Props {
-    href: string;
-    target?: string;
+  href: string;
+  target?: string;
+  color?: string;
 }
 
-const { href, target } = Astro.props as Props;
+const { href, target, color = "text-blue-600" } = Astro.props as Props;
 ---
 
 <a
-    href={href}
-    target={target}
-    class="inline-block text-blue-600 hover:underline active:no-underline"
+  href={href}
+  target={target}
+  class={"inline-block hover:underline active:no-underline".concat(" ", color)}
 >
-    <slot />
+  <slot />
 </a>

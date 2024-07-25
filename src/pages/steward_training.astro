@@ -1,0 +1,132 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
+
+import { Picture } from "astro:assets";
+import LinkText from "../components/LinkText.astro";
+import CollageImage from "../components/CollageImage.astro";
+
+import flyer from "../images/strength_training/Flyer.png";
+import imgTraining from "../images/strength_training/StewardsTraining.jpg";
+import StringCycle from "../components/StringCycle.svelte";
+
+const pictureStyle =
+  "max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl shadow-black shadow-sm rounded-md m-auto";
+---
+
+<Layout title="Member Strength Training">
+  <HeadingTitle text="Steward Trainings" />
+  <div class="flex flex-col m-auto">
+    <div class="my-5 mx-auto max-w-screen-lg">
+      <CollageImage src={imgTraining}>
+        <p class="py-2 text-black text-left text-xl mx-2">
+          It's time for you to <b><u>join the movement</u></b> and learn how to build
+          power! The more workers who get active, the more improvements we can secure
+          to our wages, benefits, and working conditions!
+        </p>
+        <StringCycle
+          client:visible
+          textStyle="py-2 text-black text-left text-xl mx-2"
+          items={[
+            '"Attending a steward training is important because it equips you with the knowledge and skills to effectively advocate for workers\' rights, ensuring a workplace that values dignity, equity, and respect for all." — Alexis Esparza, DAFS, Clark County',
+            '"I took the steward training course because I was looking for the tools to help protect and represent my coworkers to make our workplace better overall." — Stephen Nolan, custodian, LVCVA',
+            "\"I've been a union member for 14 years, and I became a steward to help all employees receive fair representation and answer all their questions. It's important to be involved and stay involved.\" — Marisela Sandoval, Patient Access, UMC",
+          ]}
+          duration={10000}
+        />
+      </CollageImage>
+    </div>
+
+    <div
+      class="m-auto bg-white rounded-md p-5 shadow-sm shadow-black flex flex-col max-w-[90vw] md:max-w-screen-md lg:max-w-screen-xl"
+    >
+      <p class="py-2 text-black text-lg text-center">
+        <i>All trainings are hosted at SEIU Local 1107</i>
+        <br />
+        <i><b>2250 S. Rancho Dr. Ste 165 Las Vegas, NV 89102</b></i>
+        <br />
+        <i>Sign up via Mobilize below.</i>
+      </p>
+      <div class="flex flex-col lg:grid lg:grid-cols-3">
+        <!-- 1 -->
+        <div class="my-2 mx-5 p-2 bg-honey-flower-100 rounded-md">
+          <div
+            class="text-black font-bold text-lg sm:text-xl text-left lg:text-center"
+          >
+            Beginning Training
+            <br class="block sm:hidden lg:block" />
+            (<LinkText
+              href="https://www.mobilize.us/seiunevada/event/617265/"
+              target="_blank">Sign up on Mobilize</LinkText
+            >)
+          </div>
+          <ul class="list-disc ml-10 text-md sm:text-lg my-2">
+            <li>Introduction to SEIU 1107</li>
+            <li>Role of the Steward</li>
+            <li>Legal rights of the Steward</li>
+            <li>Weingarten/Investigatory meetings</li>
+            <li>Practice an investigatory meeting</li>
+          </ul>
+          <div class="text-md font-bold italic py-2">
+            Click below dates for Google Calendar link.
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NGxvODc3azZ1bGRiNzk4dnE1aWFnMG45bmggYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Sept. 17th 5:30pm - 8:00pm</LinkText
+            >
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NmxqMHBtYmdtbmxrcG1sZ2JiNG9ocXQ0dm0gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Oct. 16th 9:30am - 12:00pm</LinkText
+            >
+          </div>
+        </div>
+        <!-- 2 -->
+        <div class="my-2 mx-5 p-2 bg-supernova-100 rounded-md">
+          <div
+            class="text-black font-bold text-lg sm:text-xl text-left lg:text-center"
+          >
+            Intermediate Training
+            <br class="block sm:hidden lg:block" />
+            (<LinkText
+              href="https://www.mobilize.us/seiunevada/event/653581/"
+              target="_blank">Sign up on Mobilize</LinkText
+            >)
+          </div>
+          <ul class="list-disc ml-10 text-md sm:text-lg my-2">
+            <li>Beginning Grievance Writing</li>
+            <li>7 Steps of Just Cause</li>
+            <li>Disparate Treatment</li>
+            <li>Practice writing and presenting a grievance</li>
+          </ul>
+          <div class="text-md py-0.5 underline text-center">
+            This course is <b>required</b> for all stewards.
+          </div>
+          <div class="text-md font-bold italic py-2">
+            Click below dates for Google Calendar link.
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=MTJrYTBoaHAyZHU4djNkbzl1MnJvOWJlcm8gYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Aug. 22nd 5:30pm - 8:00pm</LinkText
+            >
+          </div>
+          <div class="text-md">
+            <LinkText
+              href="https://calendar.google.com/calendar/event?action=TEMPLATE&tmeid=NjZuazRrYTZ2ZzU0dXU1MWJ1N21hZmR1ajUgYTNhMzQxOGM1ODNiNDdlNDQzYmU2ODFhNmIxYzU1YjM1OThiOGVjZDQ2YzhlYmNjNzQzMmY2MDc5MWEzZmQ0OEBn&tmsrc=a3a3418c583b47e443be681a6b1c55b3598b8ecd46c8ebcc7432f60791a3fd48%40group.calendar.google.com"
+              target="_blank">Aug. 28th 9:30am - 12:00pm</LinkText
+            >
+          </div>
+        </div>
+        <!-- 3 -->
+      </div>
+    </div>
+    <div class="m-auto flex flex-col lg:flex-row flex-wrap">
+      <div class="py-3 mx-5">
+        <Picture class={pictureStyle} src={flyer} alt="flyer" />
+      </div>
+    </div>
+  </div>
+</Layout>

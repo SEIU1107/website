@@ -6,10 +6,12 @@ import StrongerTogether from "../components/Index/StrongerTogether.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
 import Button from "../components/Button.svelte";
+import StringCycle from "../components/StringCycle.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
+import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
 import LinkText from "../components/LinkText.astro";
 ---
 
@@ -116,47 +118,6 @@ import LinkText from "../components/LinkText.astro";
       </div>
     </div>
   </div>
-  <div class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4">
-    <HeadingTitle
-      styling="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5"
-      text="Attend our SEIU African American Caucus Membership Meetings!"
-    />
-
-    <div
-      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
-    >
-      <CollageImage
-        src={AFRAMLogo}
-        horizontal="right"
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
-      >
-        <div class="flex flex-col">
-          <p class="py-2 text-white text-xl text-left mx-2">
-            The National African American Caucus of the Service Employees
-            International Union (SEIU) is committed to enhancing opportunities
-            for education, training mentor-ship, leadership development and
-            networking for SEIU members and staff of African descent.
-          </p>
-          <p class="py-2 text-white text-xl text-left mx-2">
-            We further engage to promote social, economic and political justice
-            within our workplace, our communities, our nation and within our
-            union.
-          </p>
-          <p class="py-2 text-white text-xl text-left mx-2">
-            We shall further encourage our members to actively engage in efforts
-            to organize the unorganized and to fully participate in the
-            development and implementation of labor's political agenda and
-            programs.
-          </p>
-          <Button
-            text="Meeting Dates"
-            styling="mt-5 mx-auto text-honey-flower-800 scale-125 hover:scale-[140%] bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
-            href="/caucuses/afram"
-          />
-        </div>
-      </CollageImage>
-    </div>
-  </div>
 
   <!-- 
     <main
@@ -181,44 +142,162 @@ import LinkText from "../components/LinkText.astro";
   </main>
    -->
 
+  <div
+    class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4 flex flex-col m-auto"
+  >
+    <HeadingTitle
+      text="Get Involved! Attend Our Trainings!"
+      styling="hidden lg:block m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5"
+    />
+    <div class="flex flex-col lg:flex-row">
+      <div class="m-auto">
+        <h2
+          class="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5 text-3xl lg:text-4xl max-w-lg"
+        >
+          MEMBERS - Participate in our Member Strength Trainings!
+        </h2>
+
+        <div
+          class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+        >
+          <CollageImage
+            src={imgTraining}
+            imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+            float={false}
+          >
+            <div class="flex flex-col max-w-screen-sm lg:max-w-screen-md">
+              <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
+                The more of us who participate, the more improvements we can
+                make to our wages, benefits, and working conditions! Attend one
+                of the upcoming trainings and start making an impact on your
+                workplace.
+              </p>
+              <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
+                There's strength in numbers, so become a proud union member
+                today and ask ALL your coworkers to <LinkText
+                  color="text-blue-300"
+                  href="/join">sign up</LinkText
+                >! For more info, talk to a member of the bargaining team or
+                contact Rosy Salinas at <LinkText
+                  color="text-blue-300"
+                  href="mailto:rsalinas@seiunv.org"
+                  >rsalinas@seiunv.org</LinkText
+                >.
+              </p>
+              <p
+                class="py-2 text-honey-flower-50 font-bold text-xl text-left mx-2"
+              >
+                <i>All trainings are on Saturdays from 10am - 2pm PST.</i>
+              </p>
+              <div class="flex flex-col md:flex-row mx-auto">
+                <div class="md:mx-1.5 m-auto my-1.5">
+                  <Button
+                    text="View Dates"
+                    styling="mt-5 mx-auto text-honey-flower-800 hover:scale-110 bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
+                    href="/strength_training"
+                  />
+                </div>
+              </div>
+            </div>
+          </CollageImage>
+        </div>
+      </div>
+      <div class="m-auto">
+        <h2
+          class="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5 text-3xl lg:text-4xl max-w-lg"
+        >
+          STEWARDS - Sign up for Stewards Training Today!
+        </h2>
+
+        <div
+          class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+        >
+          <CollageImage
+            src={imgStewardsTraining}
+            imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
+            float={false}
+          >
+            <div class="max-w-screen-sm m-auto lg:max-w-screen-md">
+              <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
+                SEIU 1107 supports union leaders all year long, including
+                courses designed to bolster shop steward knowledge! Trainings
+                available for all experience levels.
+              </p>
+              <StringCycle
+                client:visible
+                items={[
+                  '"Attending a steward training is important because it equips you with the knowledge and skills to effectively advocate for workers\' rights, ensuring a workplace that values dignity, equity, and respect for all." — Alexis Esparza, DAFS, Clark County',
+                  '"I took the steward training course because I was looking for the tools to help protect and represent my coworkers to make our workplace better overall." — Stephen Nolan, custodian, LVCVA',
+                  "\"I've been a union member for 14 years, and I became a steward to help all employees receive fair representation and answer all their questions. It's important to be involved and stay involved.\" — Marisela Sandoval, Patient Access, UMC",
+                ]}
+                textStyle={"py-2 text-honey-flower-50 text-xl text-left mx-2 italic"}
+                duration={10000}
+              />
+              <p
+                class="py-2 text-honey-flower-50 font-bold text-xl text-left mx-2"
+              >
+                <i
+                  >All trainings at SEIU Local 1107 - 2250 S Rancho Dr. Ste 165
+                  Las Vegas, NV 89102</i
+                >
+              </p>
+              <div class="flex flex-col md:flex-row mx-auto">
+                <div class="mx-auto my-1.5">
+                  <Button
+                    text="View Dates"
+                    styling="mt-5 mx-auto text-honey-flower-800 hover:scale-110 bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
+                    href="/strength_training"
+                  />
+                </div>
+              </div>
+            </div>
+          </CollageImage>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="bg-gradient-to-bl from-supernova-300 to-supernova-500 py-4">
-    <HeadingTitle text="Participate in our Member Strength Trainings!" />
+    <HeadingTitle
+      text="Attend our SEIU African American Caucus Membership Meetings!"
+    />
 
     <div
       class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
     >
       <CollageImage
-        src={imgTraining}
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm sm:max-wd-md md:max-w-lg lg:max-w-xl"
+        src={AFRAMLogo}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
       >
-        <p class="py-2 text-black text-xl text-left mx-2">
-          The more of us who participate, the more improvements we can make to
-          our wages, benefits, and working conditions! Attend one of the
-          upcoming trainings and start making an impact on your workplace.
-        </p>
-        <p class="py-2 text-black text-xl text-left mx-2">
-          There's strength in numbers, so become a proud union member today and
-          ask ALL your coworkers to <LinkText href="/join">sign up</LinkText>!
-          For more info, talk to a member of the bargaining team or contact Rosy
-          Salinas at <LinkText href="mailto:rsalinas@seiunv.org"
-            >rsalinas@seiunv.org</LinkText
-          >.
-        </p>
-        <p class="py-2 text-black font-bold text-xl text-left mx-2">
-          <i>All trainings are on Saturdays from 10am - 2pm PST.</i>
-        </p>
-        <div class="flex flex-col md:flex-row mx-auto">
-          <div class="md:mx-1.5 m-auto my-1.5">
-            <Button
-              text="View Dates"
-              class="mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-              href="/strength_training"
-            />
-          </div>
+        <div class="flex flex-col">
+          <p class="py-2 text-black text-xl text-left mx-2">
+            The National African American Caucus of the Service Employees
+            International Union (SEIU) is committed to enhancing opportunities
+            for education, training mentor-ship, leadership development and
+            networking for SEIU members and staff of African descent.
+          </p>
+          <p class="py-2 text-black text-xl text-left mx-2">
+            We further engage to promote social, economic and political justice
+            within our workplace, our communities, our nation and within our
+            union.
+          </p>
+          <p class="py-2 text-black text-xl text-left mx-2">
+            We shall further encourage our members to actively engage in efforts
+            to organize the unorganized and to fully participate in the
+            development and implementation of labor's political agenda and
+            programs.
+          </p>
+          <Button
+            text="Meeting Dates"
+            styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="/caucuses/afram"
+          />
         </div>
       </CollageImage>
     </div>
   </div>
+
   <StrongerTogether />
   <LatestNews />
   <div class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300">
