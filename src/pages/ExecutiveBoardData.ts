@@ -47,7 +47,6 @@ import Jody from "../images/stewards/Sunrise/Jody.png";
 import Saki from "../images/stewards/CC/Saki.png";
 import Hodge from "../images/stewards/CC/Hodge.png";
 import Pam from "../images/executive_board/Pam.png";
-import Audrey from "../images/stewards/UMC/Audrey.png";
 import Theresa from "../images/stewards/UMC/TheresaKing.png";
 import Karla from "../images/executive_board/Karla.png";
 import Rick from "../images/stewards/CC/Rick.png";
@@ -96,11 +95,6 @@ export const smallProfPeopleData = [
     profileImg: Pam,
     name: "Pam Jahan",
     shop: "Dignity Health",
-  },
-  {
-    profileImg: Audrey,
-    name: "Audrey Johnson",
-    shop: "University Medical Center",
   },
   {
     profileImg: Theresa,

@@ -3,6 +3,7 @@ import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
 import InfoCard from "../components/InfoCard.astro";
 import LinkText from "../components/LinkText.astro";
+import Button from "../components/Button.svelte";
 import { Image } from "astro:assets";
 
 import bannerImg from "../images/homecare/banner.png";
@@ -15,100 +16,195 @@ import Irma from "../images/homecare/Irma.jpg";
     text="Join Our Growing Union Movement to Win $20 an Hour and Quality Home Care!"
   />
 
-  <Image
-    class="hidden lg:flex m-auto"
-    src={bannerImg}
-    alt="Homecare Workers United!"
+  <Button
+    text="Español abajo"
+    styling="my-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+    href="#SPANISH_SECTION"
   />
 
-  <div class="mx-auto">
-    <InfoCard>
-      <div class="text-lg">
-        <p>
-          If you're a non-union home care worker and want to join our movement,
-          fill out a union card <LinkText
-            target="_blank"
-            href="https://secure.everyaction.com/fHjNlIRtd0aJc9SexCJCow2"
-            >here</LinkText
-          >.
+  <div id="ENGLISH_SECTION" class="flex flex-col">
+    <Image
+      class="hidden lg:flex m-auto"
+      src={bannerImg}
+      alt="Homecare Workers United!"
+    />
+
+    <div class="mx-auto">
+      <InfoCard>
+        <div class="text-lg">
+          <p>
+            If you're a non-union home care worker and want to join our
+            movement, fill out a union card <LinkText
+              target="_blank"
+              href="https://secure.everyaction.com/fHjNlIRtd0aJc9SexCJCow2"
+              >here</LinkText
+            >.
+          </p>
+          <p class="py-2">
+            If your agency is already represented by SEIU 1107, become a union
+            member <LinkText
+              target="_blank"
+              href="https://act.seiu.org/a/membership-application-6"
+              >here</LinkText
+            > and contribute to our political action fund <LinkText
+              target="_blank"
+              href="https://seiunv.org/political_action/">here</LinkText
+            >.
+          </p>
+          <p class="py-2">
+            To get involved or for more info, contact 702-755-4307 or
+            <LinkText href="mailto:homecare@seiunv.org"
+              >homecare@seiunv.org</LinkText
+            >
+          </p>
+        </div>
+      </InfoCard>
+    </div>
+
+    <div class="flex flex-col m-auto max-w-screen-lg">
+      <div>
+        <Image
+          src={Irma}
+          alt=""
+          class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
+        />
+        <p class="py-2 text-xl">
+          Through our united action, home care workers won the historic $16
+          minimum wage and funding increase. Over 1,000 caregivers have voted by
+          a landslide to join SEIU 1107 and hundreds have achieved strong union
+          contracts.
         </p>
-        <p class="py-2">
-          If your agency is already represented by SEIU 1107, become a union
-          member <LinkText
-            target="_blank"
-            href="https://act.seiu.org/a/membership-application-6"
-            >here</LinkText
-          > and contribute to our political action fund <LinkText
-            href="https://seiunv.org/political_action/">here</LinkText
-          >.
+        <p class="py-2 text-xl">
+          But we can't stop here. We urgently need to build on this foundation
+          and keep making more progress toward a better future for our clients,
+          our families and ourselves. That's why we're advocating powerfully for
+          our “Silver State Home Care Standards” in the legislature:
         </p>
-        <p class="py-2">
-          To get involved or for more info, contact 702-755-4307 or
-          <LinkText href="mailto:homecare@seiunv.org"
-            >homecare@seiunv.org</LinkText
+        <ul class="list-disc pl-3 text-xl">
+          <li>$20 minimum wage</li>
+          <li>Increased funding</li>
+          <li>More client hours</li>
+          <li>Professional training</li>
+          <li>Reduced red tape</li>
+        </ul>
+        <p class="py-2 text-lg">
+          “Providing loving care to others is my God-given life's purpose. An
+          essential part of that mission is speaking out for our clients through
+          our union. Over 1,000 home care workers, including me, have voted to
+          join our union and hundreds more are on their way. There's strength in
+          numbers - the more who join our movement, the more we can win!” <i
+            >- Malu Lopez, Nevada home care worker</i
           >
         </p>
       </div>
-    </InfoCard>
-  </div>
-
-  <div class="flex flex-col m-auto max-w-screen-lg">
-    <div>
-      <Image
-        src={Irma}
-        alt=""
-        class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
-      />
-      <p class="py-2 text-xl">
-        Through our united action, home care workers won the historic $16
-        minimum wage and funding increase. Over 1,000 caregivers have voted by a
-        landslide to join SEIU 1107 and hundreds have achieved strong union
-        contracts.
-      </p>
-      <p class="py-2 text-xl">
-        But we can't stop here. We urgently need to build on this foundation and
-        keep making more progress toward a better future for our clients, our
-        families and ourselves. That's why we're advocating powerfully for our
-        “Silver State Home Care Standards” in the legislature:
-      </p>
-      <ul class="list-disc pl-3 text-xl">
-        <li>$20 minimum wage</li>
-        <li>Increased funding</li>
-        <li>More client hours</li>
-        <li>Professional training</li>
-        <li>Reduced red tape</li>
-      </ul>
-      <p class="py-2 text-lg">
-        “Providing loving care to others is my God-given life's purpose. An
-        essential part of that mission is speaking out for our clients through
-        our union. Over 1,000 home care workers, including me, have voted to
-        join our union and hundreds more are on their way. There's strength in
-        numbers - the more who join our movement, the more we can win!” <i
-          >- Malu Lopez, Nevada home care worker</i
+    </div>
+    <p class="py-2 flex m-auto text-xl font-bold">Read More</p>
+    <div class="flex flex-row max-w-xl m-auto">
+      <div class="flex flex-col px-2.5">
+        <LinkText
+          href="https://www.reviewjournal.com/business/nevada-workers-in-growing-health-care-industry-are-unionizing-2896793/"
+          target="_blank"
         >
-      </p>
+          <b>Nevada workers in growing health care industry are unionizing</b>
+        </LinkText>
+        <p>Las Vegas Review-Journal</p>
+        <p>Aug. 31, 2023</p>
+      </div>
+
+      <div class="flex flex-col px-2.5">
+        <LinkText
+          href="https://lasvegassun.com/news/2023/sep/10/celebrate-historic-victories-for-good-jobs-and-qua/"
+          target="_blank"
+        >
+          <b>Celebrate historic victories for good jobs and quality services</b>
+        </LinkText>
+        <p>Las Vegas Sun</p>
+        <p>Sept. 10, 2023</p>
+      </div>
     </div>
   </div>
-  <p class="py-2 flex m-auto text-xl font-bold">Read More</p>
-  <div class="flex flex-row max-w-xl m-auto">
-    <div class="flex flex-col px-2.5">
-      <LinkText
-        href="https://www.reviewjournal.com/business/nevada-workers-in-growing-health-care-industry-are-unionizing-2896793/"
-      >
-        <b>Nevada workers in growing health care industry are unionizing</b>
-      </LinkText>
-      <p>Las Vegas Review-Journal</p>
-      <p>Aug. 31, 2023</p>
+  <div id="SPANISH_SECTION" class="flex flex-col">
+    <HeadingTitle
+      text="¡Únase a nuestro creciente movimiento de la unión para ganar $20 la hora y cuidado en el hogar de calidad!"
+    />
+    <Image
+      class="hidden lg:flex m-auto"
+      src={bannerImg}
+      alt="Homecare Workers United!"
+    />
+
+    <div class="mx-auto">
+      <InfoCard>
+        <div class="text-lg">
+          <p>
+            Si no está afiliado a ninguna unión y quiere unirse a nuestro
+            movimiento, rellene <LinkText
+              target="_blank"
+              href="https://secure.everyaction.com/fHjNlIRtd0aJc9SexCJCow2"
+              >aquí</LinkText
+            > el formulario de afiliación.
+          </p>
+          <p class="py-2">
+            Si su agencia ya está representada por SEIU 1107, hágase miembro de
+            la unión <LinkText
+              target="_blank"
+              href="https://act.seiu.org/a/membership-application-6"
+              >aquí</LinkText
+            > y contribuya a nuestro fondo de acción política <LinkText
+              target="_blank"
+              href="https://seiunv.org/political_action/">aquí</LinkText
+            >.
+          </p>
+          <p class="py-2">
+            Si desea participar o más información, póngase en contacto llamando
+            al 702-755- 4307 o escribiendo a <LinkText
+              href="mailto:homecare@seiunv.org">homecare@seiunv.org</LinkText
+            >
+          </p>
+        </div>
+      </InfoCard>
     </div>
 
-    <div class="flex flex-col px-2.5">
-      <LinkText
-        href="https://lasvegassun.com/news/2023/sep/10/celebrate-historic-victories-for-good-jobs-and-qua/"
-      >
-        <b>Celebrate historic victories for good jobs and quality services</b>
-      </LinkText>
-      <p>Las Vegas Sun</p>
-      <p>Sept. 10, 2023</p>
+    <div class="flex flex-col m-auto max-w-screen-lg">
+      <div>
+        <Image
+          src={Irma}
+          alt=""
+          class="rounded-lg lg:rounded-2xl lg:p-3 m-auto max-w-xs lg:max-w-md lg:float-right"
+        />
+        <p class="py-2 text-xl">
+          Gracias a nuestra acción unida, los trabajadores de cuidados en el
+          hogar consiguieron el histórico salario mínimo de $16 y un aumento de
+          la financiación. Más de 1.000 cuidadores han votado mayoritariamente a
+          favor de afiliarse al SEIU 1107 y cientos han conseguido contratos de
+          uniones sólidas.
+        </p>
+        <p class="py-2 text-xl">
+          Pero no podemos detenernos aquí. Necesitamos urgentemente construir
+          sobre esta base y seguir avanzando hacia un futuro mejor para nuestros
+          clientes, nuestras familias y nosotros mismos. Por eso estamos
+          defendiendo enérgicamente en la legislatura nuestros “Estándares de
+          cuidado en el hogar de Silver State”:
+        </p>
+        <ul class="list-disc pl-3 text-xl">
+          <li>Salario mínimo de $20</li>
+          <li>Aumento de la financiación</li>
+          <li>Más horas de atención al cliente</li>
+          <li>Capacitación profesional</li>
+          <li>Reducción de la burocracia</li>
+        </ul>
+        <p class="py-2 text-lg">
+          "Proporcionar cuidados amorosos a los demás es el propósito de mi vida
+          que me ha dado Dios. Una parte esencial de esa misión es hablar en
+          nombre de nuestros clientes a través de nuestra unión. Más de 1.000
+          cuidadores en el hogar, entre los que me incluyo, han votado para
+          afiliarse a nuestro sindicato y cientos más están en camino. La unión
+          hace la fuerza: cuantos más se unan a nuestro movimiento, ¡más
+          podremos ganar!" <i
+            >- Malu López, trabajadora de cuidado en el hogar de Nevada</i
+          >
+        </p>
+      </div>
     </div>
   </div>
 </Layout>
