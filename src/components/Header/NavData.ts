@@ -60,8 +60,8 @@ const getInvolved = [
     href: "/political_action",
   },
   {
-    pageName: "Communities United",
-    href: "/communities_united/",
+    pageName: "Communities United 2023",
+    href: "/communities_united_2023/",
   },
   {
     pageName: "Home Care Workers United",

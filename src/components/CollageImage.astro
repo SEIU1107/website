@@ -1,38 +1,70 @@
 ---
 import { Image } from "astro:assets";
+import ImageCycle from "./ImageCycle.svelte";
+
+/* Shows an image, or cycle of images, next to a slot */
+
 export interface Props {
-    src: ImageMetadata;
-    cutline?: string /* Italicized text under the photo */;
-    alt?: string;
-    horizontal?: string /* Is the image on the left or right of the slot? */;
-    imageStyle?: string /* TailwindCSS to override the Image component's classes */;
-    float?: boolean /* If text should float left or right on smaller screens (false means text under) */
+  src?: ImageMetadata;
+  srcList?: ImageMetadata[] /* If there are multiple images instead */;
+  cutline?: string /* Italicized text under the photo */;
+  alt?: string;
+  horizontal?: string /* Is the image on the left or right of the slot? */;
+  imageStyle?: string /* TailwindCSS to override the Image component's classes */;
+  float?: boolean /* If text should float left or right on smaller screens (false means text under) */;
+  duration?: number /* How long each image should appear in the case it's a list of images */
 }
 
 const {
-    src,
-    alt = "",
-    cutline,
-    horizontal = "left",
-    imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg",
-    float = true,
+  src,
+  srcList = null,
+  duration = 2000,
+  alt = "",
+  cutline,
+  horizontal = "left",
+  imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg",
+  float = true,
 } = Astro.props as Props;
 ---
 
-<div>
-    <div
-        class={horizontal === "left"
-            ? "flex flex-col md:mr-3".concat(' ', float ? "md:float-left" : '')
-            : "flex flex-col md:float-right md:ml-3"}
-    >
+<div class="min-h-80">
+  <div
+    class={horizontal === "left"
+      ? "flex flex-col md:mr-3".concat(" ", float ? "md:float-left" : "")
+      : "flex flex-col md:float-right md:ml-3"}
+  >
+    {
+      src && !srcList && (
         <div class="flex flex-col m-auto">
-            <Image src={src} alt={alt} class={imageStyle} />
-            <i
-                class={cutline
-                    ? "pt-1 pb-2.5 block text-sm max-w-[90vw] sm:max-w-md lg:max-w-lg"
-                    : "hidden"}>{cutline}</i
-            >
+          <Image src={src} alt={alt} class={imageStyle} />
+          <i
+            class={
+              cutline
+                ? "pt-1 pb-2.5 block text-sm max-w-[90vw] sm:max-w-md lg:max-w-lg"
+                : "hidden"
+            }
+          >
+            {cutline}
+          </i>
         </div>
-    </div>
-    <slot />
+      )
+    }
+    {
+      !src && srcList && (
+        <div class="flex flex-col m-auto">
+          <ImageCycle images={srcList} alt={alt} imageStyle={imageStyle} duration={duration} client:visible />
+            <i
+            class={
+              cutline
+                ? "pt-1 pb-2.5 block text-sm max-w-[90vw] sm:max-w-md lg:max-w-lg"
+                : "hidden"
+            }
+          >
+            {cutline}
+          </i>
+        </div>
+      )
+    }
+  </div>
+  <slot />
 </div>

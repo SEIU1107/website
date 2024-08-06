@@ -5,6 +5,7 @@ import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
 import StrongerTogether from "../components/Index/StrongerTogether.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
+import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
 import StringCycle from "../components/StringCycle.svelte";
 
@@ -12,7 +13,6 @@ import imgTogether from "../images/index/JoinTogether.jpg";
 import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
-import LinkText from "../components/LinkText.astro";
 ---
 
 <Layout>
@@ -81,6 +81,51 @@ import LinkText from "../components/LinkText.astro";
     </div>
   </main>
    -->
+
+  <div class="bg-gradient-to-bl from-supernova-300 to-supernova-500 py-4">
+    <HeadingTitle text="Communities United 2024 - RSVP Today!" />
+    <h2
+      class="font-Roboto text-black text-3xl lg:text-4xl font-bold text-center italic my-2"
+    >
+      Raising The Stakes!
+    </h2>
+
+    <div
+      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+    >
+      <CollageImage
+        srcList={[AFRAMLogo, imgTogether, imgTraining]}
+        duration={2000}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-xs sm:max-wd-sm md:max-w-md lg:max-w-xl"
+      >
+        <div class="flex flex-col">
+          <p class="py-2 text-black text-xl text-left mx-2">
+            The National African American Caucus of the Service Employees
+            International Union (SEIU) is committed to enhancing opportunities
+            for education, training mentor-ship, leadership development and
+            networking for SEIU members and staff of African descent.
+          </p>
+          <p class="py-2 text-black text-xl text-left mx-2">
+            We further engage to promote social, economic and political justice
+            within our workplace, our communities, our nation and within our
+            union.
+          </p>
+          <p class="py-2 text-black text-xl text-left mx-2">
+            We shall further encourage our members to actively engage in efforts
+            to organize the unorganized and to fully participate in the
+            development and implementation of labor's political agenda and
+            programs.
+          </p>
+          <Button
+            text="Meeting Dates"
+            styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="/caucuses/afram"
+          />
+        </div>
+      </CollageImage>
+    </div>
+  </div>
 
   <div
     class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4 flex flex-col m-auto"
