@@ -12,6 +12,7 @@
 
   let current = 0;
   let visible = true;
+  let maxHeight = 0;
 
   function next() {
     visible = false;
@@ -21,14 +22,57 @@
     }, 500); // This delay should match the fade duration
   }
 
-  // Start the cycling effect when the component is mounted
+  // Measure the height of each image and determine the maximum height
+  function measureImageHeights() {
+    const hiddenContainer = document.createElement("div");
+    hiddenContainer.style.visibility = "hidden";
+    hiddenContainer.style.position = "absolute";
+    hiddenContainer.style.top = "-9999px";
+    document.body.appendChild(hiddenContainer);
+
+    const imageElements = images.map((img) => {
+      const image = new Image();
+      image.src = img.src;
+      image.className = imageStyle;
+      hiddenContainer.appendChild(image);
+      return image;
+    });
+
+    Promise.all(
+      imageElements.map(
+        (img) =>
+          new Promise<number>((resolve) => {
+            img.onload = () => resolve(img.height);
+          })
+      )
+    ).then((heights: number[]) => {
+      maxHeight = Math.max(...heights);
+      document.body.removeChild(hiddenContainer);
+    });
+  }
+
   onMount(() => {
+    // Measure the maximum height of this component based on the
+    // largest image in the list
+    measureImageHeights();
+
+    // Re-measure the height if the window size changes
+    window.addEventListener("resize", measureImageHeights);
+
+    // Start the cycling effect when the component is mounted
     const interval = setInterval(next, duration);
-    return () => clearInterval(interval);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("resize", measureImageHeights);
+    };
   });
 </script>
 
-<div>
+<div
+  class="image-container flex justify-center items-center md:items-start"
+  style={`--max-height: ${maxHeight}px;`}
+>
   {#each images as item, i}
     {#if i === current && visible}
       <div in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
@@ -37,3 +81,9 @@
     {/if}
   {/each}
 </div>
+
+<style>
+  .image-container {
+    height: var(--max-height);
+  }
+</style>
