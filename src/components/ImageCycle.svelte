@@ -10,7 +10,7 @@
   export let duration = 2000; // Time each string is displayed (in milliseconds)
   export let imageStyle: string = "";
 
-  export let fadeDuration = 1000; // How long (in ms) the fade should be
+  export let fadeDuration = 750; // How long (in ms) the fade should be
 
   let current = 0;
   let visible = true;
