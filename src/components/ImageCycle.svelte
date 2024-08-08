@@ -73,7 +73,7 @@
 
 <div
   class="image-container flex justify-center items-center md:items-start"
-  style={`--max-height: ${maxHeight}px;`}
+  style={`--max-height: ${maxHeight !== 0 ? maxHeight : 90}${maxHeight !== 0 ? "px" : "vh"}};`}
 >
   {#each images as item, i}
     {#if i === current && visible}
