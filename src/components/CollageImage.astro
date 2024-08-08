@@ -7,20 +7,22 @@ import ImageCycle from "./ImageCycle.svelte";
 export interface Props {
   src?: ImageMetadata;
   srcList?: ImageMetadata[] /* If there are multiple images instead */;
+  duration?: number /* How long each image should appear in the case it's a list of images */;
+  fadeDuration?: number /* How long the fade between images should be (in the case it's a list of images) */;
   cutline?: string /* Italicized text under the photo */;
   alt?: string;
   horizontal?: string /* Is the image on the left or right of the slot? */;
   imageStyle?: string /* TailwindCSS to override the Image component's classes */;
   float?: boolean /* If text should float left or right on smaller screens (false means text under) */;
-  duration?: number /* How long each image should appear in the case it's a list of images */
 }
 
 const {
   src,
   srcList = null,
   duration = 2000,
-  alt = "",
+  fadeDuration = 750,
   cutline,
+  alt = "",
   horizontal = "left",
   imageStyle = "shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg",
   float = true,
@@ -52,8 +54,15 @@ const {
     {
       !src && srcList && (
         <div class="flex flex-col m-auto">
-          <ImageCycle images={srcList} alt={alt} imageStyle={imageStyle} duration={duration} client:load />
-            <i
+          <ImageCycle
+            images={srcList}
+            alt={alt}
+            imageStyle={imageStyle}
+            duration={duration}
+            fadeDuration={fadeDuration}
+            client:load
+          />
+          <i
             class={
               cutline
                 ? "pt-1 pb-2.5 block text-sm max-w-[90vw] sm:max-w-md lg:max-w-lg"

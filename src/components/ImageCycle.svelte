@@ -10,6 +10,8 @@
   export let duration = 2000; // Time each string is displayed (in milliseconds)
   export let imageStyle: string = "";
 
+  export let fadeDuration = 750; // How long (in ms) the fade should be
+
   let current = 0;
   let visible = true;
   let maxHeight = 0;
@@ -19,7 +21,7 @@
     setTimeout(() => {
       current = (current + 1) % images.length;
       visible = true;
-    }, 500); // This delay should match the fade duration
+    }, fadeDuration); // This delay should match the fade duration
   }
 
   // Measure the height of each image and determine the maximum height
@@ -75,7 +77,10 @@
 >
   {#each images as item, i}
     {#if i === current && visible}
-      <div in:fade={{ duration: 500 }} out:fade={{ duration: 500 }}>
+      <div
+        in:fade={{ duration: fadeDuration }}
+        out:fade={{ duration: fadeDuration }}
+      >
         <img class={imageStyle} src={item.src} alt="" />
       </div>
     {/if}
