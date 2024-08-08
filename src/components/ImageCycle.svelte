@@ -54,7 +54,18 @@
     console.log(`Max height calculated: ${maxHeight}px`);
   }
 
+  // Preload all images
+  function preloadImages() {
+    images.forEach((img) => {
+      const image = new Image();
+      image.src = img.src;
+    });
+  }
+
   onMount(() => {
+    // Preload images on component mount
+    preloadImages();
+
     // Measure the maximum height of this component based on the
     // largest image in the list
     measureImageHeights();
