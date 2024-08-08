@@ -10,11 +10,11 @@
   export let duration = 2000; // Time each string is displayed (in milliseconds)
   export let imageStyle: string = "";
 
-  export let fadeDuration = 750; // How long (in ms) the fade should be
+  export let fadeDuration = 1000; // How long (in ms) the fade should be
 
   let current = 0;
   let visible = true;
-  let maxHeight = 0;
+  let maxHeight = 500;
 
   function next() {
     visible = false;
@@ -51,6 +51,7 @@
       maxHeight = Math.max(...heights);
       document.body.removeChild(hiddenContainer);
     });
+    console.log(`Max height calculated: ${maxHeight}px`);
   }
 
   onMount(() => {
@@ -73,7 +74,7 @@
 
 <div
   class="image-container flex justify-center items-center md:items-start"
-  style={`--max-height: ${maxHeight !== 0 ? maxHeight : 90}${maxHeight !== 0 ? "px" : "vh"}};`}
+  style={`--max-height: ${maxHeight}px;`}
 >
   {#each images as item, i}
     {#if i === current && visible}
