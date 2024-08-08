@@ -103,7 +103,7 @@
     {/each}
   </div>
 {:else}
-  <div class="font-bold text-xl text-center h-[50vh]">Loading Images...</div>
+  <div class="font-bold text-7xl text-center h-[50vh]">Loading Images...</div>
 {/if}
 
 <style>
