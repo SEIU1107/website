@@ -15,6 +15,7 @@
   let current = 0;
   let visible = true;
   let maxHeight = 500;
+  let preloadedImages: HTMLImageElement[] = [];
 
   function next() {
     visible = false;
@@ -22,6 +23,16 @@
       current = (current + 1) % images.length;
       visible = true;
     }, fadeDuration); // This delay should match the fade duration
+  }
+
+  // Preload all images
+  function preloadImages() {
+    preloadedImages = images.map((img) => {
+      const image = new Image();
+      image.src = img.src;
+      image.className = imageStyle;
+      return image;
+    });
   }
 
   // Measure the height of each image and determine the maximum height
@@ -32,7 +43,7 @@
     hiddenContainer.style.top = "-9999px";
     document.body.appendChild(hiddenContainer);
 
-    const imageElements = images.map((img) => {
+    const imageElements = preloadedImages.map((img) => {
       const image = new Image();
       image.src = img.src;
       image.className = imageStyle;
@@ -52,14 +63,6 @@
       document.body.removeChild(hiddenContainer);
     });
     console.log(`Max height calculated: ${maxHeight}px`);
-  }
-
-  // Preload all images
-  function preloadImages() {
-    images.forEach((img) => {
-      const image = new Image();
-      image.src = img.src;
-    });
   }
 
   onMount(() => {
@@ -83,21 +86,25 @@
   });
 </script>
 
-<div
-  class="image-container flex justify-center items-center md:items-start"
-  style={`--max-height: ${maxHeight}px;`}
->
-  {#each images as item, i}
-    {#if i === current && visible}
-      <div
-        in:fade={{ duration: fadeDuration }}
-        out:fade={{ duration: fadeDuration }}
-      >
-        <img class={imageStyle} src={item.src} alt="" />
-      </div>
-    {/if}
-  {/each}
-</div>
+{#if preloadedImages}
+  <div
+    class="image-container flex justify-center items-center md:items-start"
+    style={`--max-height: ${maxHeight}px;`}
+  >
+    {#each preloadedImages as item, i}
+      {#if i === current && visible}
+        <div
+          in:fade={{ duration: fadeDuration }}
+          out:fade={{ duration: fadeDuration }}
+        >
+          <img class={imageStyle} src={item.src} alt="" />
+        </div>
+      {/if}
+    {/each}
+  </div>
+{:else}
+  <div class="font-bold text-xl text-center h-[50vh]">Loading Images...</div>
+{/if}
 
 <style>
   .image-container {
