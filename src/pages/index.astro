@@ -10,9 +10,12 @@ import Button from "../components/Button.svelte";
 import StringCycle from "../components/StringCycle.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
-import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
+
+// Banners
+import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
+import imgKamala from "../images/index/Kamala.png";
 
 // Communities United
 import imgOverview from "../images/communities_united/2023/Overview.jpg";
@@ -95,6 +98,75 @@ import imgJewelry from "../images/communities_united/2023/Jewelry.jpg";
     </div>
   </main>
    -->
+
+  <div
+    class="bg-gradient-to-br from-red-200 via-white to-blue-200 py-4 flex flex-col m-auto"
+  >
+    <HeadingTitle
+      text="Take Action! Pro-Labor Candidates Need YOU!"
+      styling="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5"
+    />
+    <div class="m-auto max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
+      <CollageImage
+        src={imgKamala}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-md lg:max-w-lg"
+      >
+        <div
+          class="flex flex-col max-w-screen-sm lg:max-w-screen-md text-black text-left mx-2"
+        >
+          <p class="py-2 text-xl font-bold">Dear SEIU 1107 Members,</p>
+          <p class="py-2">
+            This election is crucial, and we need <b><u>you</u></b> to help elect
+            pro-labor candidates like Kamala Harris and Jacky Rosen. We invite you
+            to join our canvassing and phone banking efforts to reach voters and
+            emphasize the importance of voting for candidates who support workers'
+            rights.
+          </p>
+          <p class="py-2">
+            <span class="text-xl"><i><b>Phonebank Events</b></i></span>
+            <br />
+            Join SEIU 1107 as we call Nevada voters about the upcoming election.
+            Training is provided, and you can join virtually or in-person at any
+            time during the shift.
+          </p>
+          <Button
+            text="Sign Up for Phone Banking"
+            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://www.mobilize.us/seiunevada/event/658670/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+          />
+          <p class="py-2">
+            <span class="text-xl"><i><b>Door Knocking Events</b></i></span>
+            <br />
+            Help us knock on doors and talk to voters about the importance of this
+            election. Training is provided before every shift. You can join at any
+            time and bring a friend!
+          </p>
+          <Button
+            text="Sign Up for Door Knocking"
+            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://www.mobilize.us/seiunevada/event/658676/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+          />
+        </div>
+      </CollageImage>
+      <div class="flex flex-col">
+        <h2 class="text-2xl md:text-3xl font-bold text-center py-3">
+          Contribute to COPE
+        </h2>
+        <p class="text-center text-lg">
+          Help our union hold elected officials accountable in this year's
+          elections! Contribute to SEIU 1107's COPE fund today!
+        </p>
+        <Button
+          text="Contribute"
+          styling="mx-auto mt-2 hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+          href="https://act.seiu.org/a/committee-political-education?emci=dad38a93-decd-ed11-a8e0-00224832e811&emdi=4e865f38-a4ce-ed11-a8e0-00224832e811&ceid=80677448&nvep=&hmac=&nvep=&hmac="
+          target="_blank"
+        />
+      </div>
+    </div>
+  </div>
 
   <div class="bg-gradient-to-bl from-supernova-300 to-supernova-500 py-4">
     <HeadingTitle text="Communities United 2024: A Multicultural Festival" />
@@ -196,7 +268,7 @@ import imgJewelry from "../images/communities_united/2023/Jewelry.jpg";
           </h2>
 
           <div
-            class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
+            class="m-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
           >
             <CollageImage
               src={imgTraining}
