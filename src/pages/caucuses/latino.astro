@@ -1,0 +1,212 @@
+---
+import CollageImage from "../../components/CollageImage.astro";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
+import Subtitle from "../../components/Subtitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import Button from "../../components/Button.svelte";
+import InfoCard from "../../components/InfoCard.astro";
+import InfoCardGridLayout from "../../components/InfoCardGridLayout.astro";
+
+// Images
+import imgInternational from "../../images/caucuses/Latino/International.jpg";
+import imgLogoTransparent from "../../images/caucuses/Latino/TransparentLogo.png";
+import { Image } from "astro:assets";
+
+// Const
+const buttonStyle =
+  "m-auto lg:mx-1.5 my-1.5 text-white bg-orange-700 hover:bg-orange-800 active:bg-orange-900 hover:scale-110";
+
+const h2Style = "text-orange-300 text-3xl lg:text-4xl font-Roboto font-bold";
+const paraStyle = "text-md mt-2 text-big-stone-100";
+---
+
+<Layout
+  centered="true"
+  backgroundStyling="bg-gradient-to-br from-big-stone-900 to-big-stone-950"
+>
+  <HeadingTitle
+    text="SEIU 1107 Latino Caucus"
+    styling="m-auto font-Trebuchet font-bold text-center text-big-stone-300 py-5"
+  />
+  <Subtitle
+    text="Empowering Latino Workers for a Better Future!"
+    styling="text-xl font-Trebuchet lg:text-2xl italic text-center text-big-stone-100"
+  />
+  <div class="my-5">
+    <h2 class={h2Style.concat(" ", "text-center lg:text-left")}>#Esta Unión</h2>
+    <div class="flex flex-col m-auto">
+      <CollageImage
+        src={imgInternational}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md my-2.5 mx-auto max-w-[85vw] md:max-w-md lg:max-w-lg xl:max-w-xl"
+      >
+        <p class={paraStyle}>
+          The Latino Caucus at SEIU 1107 aims to advocate for Latino workers'
+          rights, interests, and well-being within the union and the broader
+          community. The caucus serves as a platform for Latino members to come
+          together, share experiences, and address the unique challenges the
+          Latino workforce faces.
+        </p>
+        <p class={paraStyle}>
+          Our Latino Caucus is newly established, but we proudly follow in the
+          footsteps of our International Union Latino Caucus. Inspired by their
+          legacy, we aim to build on their work and continue advocating for our
+          community. Founded to address the unique needs and challenges faced by
+          Latinos in our union, our caucus is dedicated to promoting cultural
+          pride, economic empowerment, and social justice.
+        </p>
+        <p class={paraStyle}>
+          We honor the trailblazers who came before us and strive to uphold
+          their commitment to unity and progress. As we begin this journey, we
+          are driven by their example and motivated to create a brighter future
+          for all.
+        </p>
+        <p class="text-big-stone-100 text-2xl mt-2 font-bold italic">
+          ¡Adelante!
+        </p>
+        <div class="flex flex-col py-2.5">
+          <div class="flex flex-col lg:flex-row mx-auto">
+            <Button
+              styling={buttonStyle}
+              text="Become a Member"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfoUkvDu--PA3VphXG4evxMCr3hJWGq33WInCHk8yWQVEL8_w/viewform"
+              target="_blank"
+            />
+            <Button
+              styling={buttonStyle}
+              text="Visit Website"
+              href="https://sites.google.com/view/seiu1107latinos/home"
+              target="_blank"
+            />
+          </div>
+          <div class="flex m-auto">
+            <Button
+              styling={buttonStyle}
+              text="Download Constitution & Bylaws (PDF)"
+              href="/PDFs/caucuses/Latino C&B.pdf"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </CollageImage>
+    </div>
+    <div class="hidden lg:block py-5">
+      <HeadingTitle
+        text="¡La lucha sigue!"
+        styling="m-auto font-Trebuchet font-bold text-center text-big-stone-100 py-5"
+      />
+    </div>
+    <div class="hidden lg:block">
+      <CollageImage
+        src={imgLogoTransparent}
+        imageStyle="my-2.5 mx-auto max-w-xs md:max-w-sm lg:max-w-md"
+      >
+        <h2 class={h2Style.concat(" ", "text-center")}>Why You Should Join</h2>
+        <div class="flex flex-col">
+          <div class="ml-auto max-w-fit">
+            <InfoCardGridLayout
+              styling="grid grid-cols-2 gap-0 py-0 px-5 my-7 mx-auto max-w-5xl"
+            >
+              <InfoCard
+                title="Advocacy"
+                titleColor="text-black"
+                cardColor="bg-big-stone-200"
+              >
+                Stand with us as we fight for fair wages, better working
+                conditions, and equal opportunities for Latino workers.
+              </InfoCard>
+              <InfoCard
+                title="Community"
+                titleColor="text-black"
+                cardColor="bg-big-stone-200"
+              >
+                Be a part of a supportive network that celebrates our heritage
+                and promotes unity among Latino workers.
+              </InfoCard>
+              <InfoCard
+                title="Representation"
+                titleColor="text-black"
+                cardColor="bg-big-stone-200"
+              >
+                Ensure that our community's needs and concerns are addressed at
+                the local and state levels.
+              </InfoCard>
+              <InfoCard
+                title="Education"
+                titleColor="text-black"
+                cardColor="bg-big-stone-200"
+              >
+                Gain access to resources and training that can help you grow
+                personally and professionally.
+              </InfoCard>
+            </InfoCardGridLayout>
+          </div>
+          <div class="flex m-auto">
+            <Button
+              styling={buttonStyle}
+              text="Become a Member"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfoUkvDu--PA3VphXG4evxMCr3hJWGq33WInCHk8yWQVEL8_w/viewform"
+              target="_blank"
+            />
+          </div>
+        </div>
+      </CollageImage>
+    </div>
+    <div class="flex flex-col lg:hidden">
+      <h2 class={h2Style.concat(" ", "text-center")}>Why You Should Join</h2>
+      <Image
+        src={imgLogoTransparent}
+        alt="When we fight we win!"
+        class="my-2.5 mx-auto max-w-xs md:max-w-sm"
+      />
+      <div class="py-1.5">
+        <Subtitle
+          styling="pb-2 text-center text-big-stone-100 italic font-Trebuchet"
+          text="¡La lucha sigue!"
+        />
+      </div>
+      <div class="m-auto grid grid-cols-1 md:grid-cols-2">
+        <InfoCard
+          title="Advocacy"
+          titleColor="text-black"
+          cardColor="bg-big-stone-200"
+        >
+          Stand with us as we fight for fair wages, better working conditions,
+          and equal opportunities for Latino workers.
+        </InfoCard>
+        <InfoCard
+          title="Community"
+          titleColor="text-black"
+          cardColor="bg-big-stone-200"
+        >
+          Be a part of a supportive network that celebrates our heritage and
+          promotes unity among Latino workers.
+        </InfoCard>
+        <InfoCard
+          title="Representation"
+          titleColor="text-black"
+          cardColor="bg-big-stone-200"
+        >
+          Ensure that our community's needs and concerns are addressed at the
+          local and state levels.
+        </InfoCard>
+        <InfoCard
+          title="Education"
+          titleColor="text-black"
+          cardColor="bg-big-stone-200"
+        >
+          Gain access to resources and training that can help you grow
+          personally and professionally.
+        </InfoCard>
+      </div>
+      <div class="flex m-auto">
+        <Button
+          styling={buttonStyle}
+          text="Become a Member"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSfoUkvDu--PA3VphXG4evxMCr3hJWGq33WInCHk8yWQVEL8_w/viewform"
+          target="_blank"
+        />
+      </div>
+    </div>
+  </div>
+</Layout>

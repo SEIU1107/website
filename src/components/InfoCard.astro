@@ -1,37 +1,39 @@
 ---
 import { Image } from "astro:assets";
 export interface Props {
-    title?: string;
-    image?: ImageMetadata;
+  title?: string;
+  titleColor?: string;
+  cardColor?: string;
+  image?: ImageMetadata;
 }
 
-const { title, image } = Astro.props as Props;
+const { title, image, cardColor = "bg-white", titleColor = "text-honey-flower-800" } = Astro.props as Props;
 ---
 
 <div
-    class="max-w-md bg-white p-5 m-3 rounded-md shadow-sm shadow-black flex flex-col"
+  class={"max-w-md p-5 m-3 rounded-md shadow-sm shadow-black flex flex-col".concat(" ", cardColor)}
 >
-    {
-        title ? (
-            <h1 class="text-honey-flower-800 text-xl pb-1.5 font-bold font-Trebuchet">
-                {title}
-            </h1>
-        ) : (
-            <div />
-        )
-    }
-    {
-        image ? (
-            <Image
-                src={image}
-                alt=""
-                class="rounded-md w-full aspect-[3/2] object-cover my-2.5 "
-            />
-        ) : (
-            <div />
-        )
-    }
-    <div>
-        <slot />
-    </div>
+  {
+    title ? (
+      <h1 class={"text-xl pb-1.5 font-bold font-Trebuchet".concat(" ", titleColor)}>
+        {title}
+      </h1>
+    ) : (
+      <div />
+    )
+  }
+  {
+    image ? (
+      <Image
+        src={image}
+        alt=""
+        class="rounded-md w-full aspect-[3/2] object-cover my-2.5 "
+      />
+    ) : (
+      <div />
+    )
+  }
+  <div>
+    <slot />
+  </div>
 </div>

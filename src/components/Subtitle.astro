@@ -1,18 +1,17 @@
 ---
 export interface Props {
-    text: string;
+  text: string;
+  styling?: string;
 }
 
-const { text } = Astro.props as Props;
+const {
+  text,
+  styling = "pb-2 text-center text-honey-flower-800 italic font-Trebuchet",
+} = Astro.props as Props;
 
 const size = text.length <= 50 ? "text-2xl lg:text-3xl" : "text-xl";
-const classStyle =
-    "pb-2 text-center text-honey-flower-800 italic font-Trebuchet".concat(
-        " ",
-        size
-    );
 ---
 
-<h1 class={classStyle}>
-    {text}
+<h1 class={styling.concat(" ", size)}>
+  {text}
 </h1>
