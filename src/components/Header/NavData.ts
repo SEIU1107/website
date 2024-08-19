@@ -64,6 +64,10 @@ const getInvolved = [
     href: "/communities_united_2023/",
   },
   {
+    pageName: "Communities United 2024",
+    href: "/communities_united_2024/",
+  },
+  {
     pageName: "Home Care Workers United",
     href: "/homecare_workers_united",
   },

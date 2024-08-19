@@ -1,0 +1,110 @@
+---
+import CollageImage from "../components/CollageImage.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
+import Layout from "../layouts/Layout.astro";
+import Button from "../components/Button.svelte";
+
+import imgMask from "../images/communities_united/2023/Mask.jpg";
+import imgSoaps from "../images/communities_united/2023/Soaps.jpg";
+import imgLeisure from "../images/communities_united/2023/Leisure.jpg";
+import imgDJs from "../images/communities_united/2023/DJs.jpg";
+import imgCarpenters from "../images/communities_united/2023/Carpenters.jpg";
+import imgWilliam from "../images/communities_united/2023/William.jpg";
+import imgVote from "../images/communities_united/2023/Vote.jpg";
+import imgTitus from "../images/communities_united/2023/Titus.jpg";
+---
+
+<Layout title="SEIU Communities United 2024" centered="true">
+  <HeadingTitle text="Communities United: Raising The Stakes 2024" />
+  <h2
+    class="text-center font-bold text-xl lg:text-2xl font-Roboto text-black italic my-1.5"
+  >
+    FREE ADMISSION! Food, Music, Art, Markets, Live Performance, and More!
+  </h2>
+  <div class="max-w-screen-lg flex flex-col m-auto py-2">
+    <div class="py-2">
+      <CollageImage
+        srcList={[imgMask, imgCarpenters, imgSoaps, imgLeisure, imgDJs]}
+        duration={6700}
+        horizontal="right"
+        ><p class="py-2">
+          SEIU Local 1107 is proud to announce the return of the highly
+          anticipated <b
+            >"Communities United: Raising the Stakes Multicultural Festival"</b
+          > on <b>Saturday, September 21, from 3-8pm</b> at the <b
+            >Clark County Government Center Amphitheater.</b
+          > This year marks the festival's third year, with thousands expected to
+          join in celebrating our community's rich cultural diversity, inspiring
+          civic engagement, and fostering unity.
+        </p>
+        <p class="py-2">
+          Bring your friends and family for a day filled with fun, festivities,
+          and meaningful connections. Together, let's celebrate our diversity
+          and work towards a brighter, more united future!
+        </p>
+        <div class="pt-2">
+          <ul class="list-disc pl-4">
+            <li>
+              <b>Date and Time:</b> Saturday, September 21, 3-8pm
+            </li>
+            <li>
+              <b>Location:</b> Clark County Government Center Amphitheater, 500 S
+              Grand Central Pkwy
+            </li>
+          </ul>
+        </div>
+        <p class="font-bold text-lg font-Roboto text-black italic">
+          ATTENDEES, PARTNERS, VENDORS, and PERFORMERS! RVSP and Sign Up on
+          Mobilize Today:
+        </p>
+        <div class="flex flex-col">
+          <Button
+            text="RSVP on Mobilize"
+            styling="my-1.5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://www.mobilize.us/seiunevada/event/643057/"
+            target="_blank"
+          />
+        </div>
+      </CollageImage>
+    </div>
+    <div class="py-2">
+      <CollageImage srcList={[imgWilliam, imgVote, imgTitus]} duration={7650}>
+        <p>
+          The 2024 Communities United Festival holds significance as Nevada is a
+          crucial battleground state in the upcoming election. The event aims to
+          mobilize voters - in particular union members, youth, and communities
+          of color - through voter registration and education initiatives.
+          Attendees will have the opportunity to engage with various
+          organizations dedicated to encouraging unprecedented voter
+          participation in this pivotal election.
+        </p>
+        <p class="py-2">
+          "This festival is about more than just celebrating our diverse
+          cultures; it's about harnessing our collective power to make a
+          difference," said Michelle Maese, President of SEIU Local 1107.
+          "Communities United aims to inspire and mobilize our community to take
+          action. We anticipate our biggest turnout ever this year, as the
+          enthusiasm and support from past years continue to grow. Don't miss
+          your chance to be part of this year's festivities!"
+        </p>
+      </CollageImage>
+    </div>
+    <div class="bg-white shadow-md shadow-black flex flex-col p-5 m-auto">
+      <div
+        class="text-black font-Trebuchet text-center font-bold text-3xl py-3"
+      >
+        List of Event Partners
+      </div>
+      <div class="text-center italic">
+        As we confirm more partners, they will be added to the list here.
+      </div>
+      <ul class="ml-5 list-disc grid gap-5 grid-cols-1 md:grid-cols-2"></ul>
+    </div>
+  </div>
+</Layout>
+<style>
+  p {
+    padding-top: 4px;
+    padding-bottom: 4px;
+  }
+</style>
