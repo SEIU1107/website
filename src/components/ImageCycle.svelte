@@ -9,6 +9,7 @@
   export let images: ImageMetadata[] = []; // List of strings to display
   export let duration = 2000; // Time each string is displayed (in milliseconds)
   export let imageStyle: string = "";
+  export let alt: string = "";
 
   export let fadeDuration = 750; // How long (in ms) the fade should be
 
@@ -61,8 +62,8 @@
     ).then((heights: number[]) => {
       maxHeight = Math.max(...heights);
       document.body.removeChild(hiddenContainer);
+      console.log(`Max height calculated: ${maxHeight}px`);
     });
-    console.log(`Max height calculated: ${maxHeight}px`);
   }
 
   onMount(() => {
@@ -97,7 +98,7 @@
           in:fade={{ duration: fadeDuration }}
           out:fade={{ duration: fadeDuration }}
         >
-          <img class={imageStyle} src={item.src} alt="" />
+          <img class={imageStyle} src={item.src} {alt} />
         </div>
       {/if}
     {/each}
