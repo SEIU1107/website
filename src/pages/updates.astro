@@ -2,9 +2,9 @@
 import FilteredPosts from "../components/Posts/FilteredPosts.svelte";
 import Layout from "../layouts/Layout.astro";
 
-const blog = await Astro.glob("../posts/blog/*/*.md");
-const articles = await Astro.glob("../posts/news articles/*/*.md");
-const pressReleases = await Astro.glob("../posts/press releases/*/*.md");
+const blog = await Astro.glob("../posts/blog/*/*.mdx");
+const articles = await Astro.glob("../posts/news articles/*/*.mdx");
+const pressReleases = await Astro.glob("../posts/press releases/*/*.mdx");
 const allPosts = blog
   .concat(articles)
   .concat(pressReleases)

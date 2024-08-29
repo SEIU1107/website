@@ -1,16 +1,17 @@
 ---
-import type { MarkdownInstance } from "astro";
+import type { MDXInstance, MarkdownInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-  const blog: MarkdownInstance<Record<string, any>>[] = await Astro.glob(
-    "../../posts/blog/*/*.md"
+  const blog: MDXInstance<Record<string, any>>[] = await Astro.glob(
+    "../../posts/blog/*/*.mdx"
   );
-  const pressReleases: MarkdownInstance<Record<string, any>>[] =
-    await Astro.glob("../../posts/press releases/*/*.md");
+  const pressReleases: MDXInstance<Record<string, any>>[] = await Astro.glob(
+    "../../posts/press releases/*/*.mdx"
+  );
   return blog
     .concat(pressReleases)
-    .map((post: MarkdownInstance<Record<string, any>>) => ({
+    .map((post: MDXInstance<Record<string, any>>) => ({
       params: {
         slug: post.frontmatter.url,
       },
