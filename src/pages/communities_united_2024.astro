@@ -3,6 +3,7 @@ import CollageImage from "../components/CollageImage.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
 import Button from "../components/Button.svelte";
+import { Image } from "astro:assets";
 
 import imgMask from "../images/communities_united/2023/Mask.jpg";
 import imgSoaps from "../images/communities_united/2023/Soaps.jpg";
@@ -12,6 +13,16 @@ import imgCarpenters from "../images/communities_united/2023/Carpenters.jpg";
 import imgWilliam from "../images/communities_united/2023/William.jpg";
 import imgVote from "../images/communities_united/2023/Vote.jpg";
 import imgTitus from "../images/communities_united/2023/Titus.jpg";
+
+// Confirmed Partner Logos
+import logoAfricanDevelopmentCenter from "../images/communities_united/2024/logos/AfricanDevelopmentCenter.png";
+import logoAfricanDiaspora from "../images/communities_united/2024/logos/AfricanDiaspora.png";
+import logoForOurFutureNV from "../images/communities_united/2024/logos/ForOurFutureNV.png";
+import logoHRC from "../images/communities_united/2024/logos/HRCLogo.png";
+import logoECube from "../images/communities_united/2024/logos/ECube.png";
+import logoFACCGN from "../images/communities_united/2024/logos/FACCGN.png";
+import logoLVFSFF from "../images/communities_united/2024/logos/LVFSFF.png";
+import logoPhilippineTimes from "../images/communities_united/2024/logos/PhilippineTimes.png";
 ---
 
 <Layout title="SEIU Communities United 2024" centered="true">
@@ -106,7 +117,16 @@ import imgTitus from "../images/communities_united/2023/Titus.jpg";
       <div class="text-center italic">
         As we confirm partners, they will be added to the list here.
       </div>
-      <ul class="ml-5 list-disc grid gap-5 grid-cols-1 md:grid-cols-2"></ul>
+      <ul class="ml-5 list-disc grid gap-5 grid-cols-1 md:grid-cols-2">
+        <Image src={logoAfricanDevelopmentCenter} alt="" />
+        <div class="row-span-2"><Image src={logoAfricanDiaspora} alt="" /></div>
+        <div class="row-span-3"><Image src={logoECube} alt="" /></div>
+        <Image src={logoFACCGN} alt="" />
+        <Image src={logoForOurFutureNV} alt="" />
+        <Image src={logoHRC} alt="" />
+        <Image src={logoLVFSFF} alt="" />
+        <Image src={logoPhilippineTimes} alt="" />
+      </ul>
     </div>
   </div>
 </Layout>
