@@ -11,6 +11,7 @@ import Nirvana from "../../images/stewards/CC/Nirvana-Hamilton.png";
 import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
 import ArturoEspino from "../../images/stewards/CC/ArturoEspino.jpg";
 import MatthewMoncayo from "../../images/stewards/CC/MatthewMoncayo.jpg";
+import Sharita from "../../images/stewards/CC/SharitaTobin.jpeg";
 
 import type { Profile } from "../../Profile";
 
@@ -188,13 +189,21 @@ export const dataGeneralUnit: Profile[] = [
       ["Email", "remingtonofnevada@yahoo.com"],
     ],
   },
+  {
+    name: "Sharita Tobin",
+    profileImg: Sharita,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "RPM Housekeeping"],
+      ["Phone", "(725) 248-1341"],
+      ["Email", "sharitatobin2424@gmail.com"],
+    ],
+  },
 ];
 
 import Saki from "../../images/stewards/CC/Saki.png";
 import JohnBishop from "../../images/stewards/CC/John-Bishop-DOA-non-sup.png";
-import JohnWarthan from "../../images/stewards/CC/John-W.png";
-import Hodge from "../../images/stewards/CC/Hodge.png";
-import Sharita from "../../images/stewards/CC/SharitaTobin.jpeg";
 import TomSharpe from "../../images/stewards/CC/Tom-Sharpe.png";
 export const dataDOA: Profile[] = [
   {
@@ -240,17 +249,6 @@ export const dataDOA: Profile[] = [
     ],
   },
   {
-    name: "John Warthan",
-    profileImg: JohnWarthan,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "DOA"],
-      ["Phone", "(702) 492 - 1963"],
-      ["Email", "j.warthan@yahoo.com"],
-    ],
-  },
-  {
     name: "Kevin Carey",
     profileImg: Kevin,
     data: [
@@ -259,28 +257,6 @@ export const dataDOA: Profile[] = [
       ["Department", "DOA / Business Office"],
       ["Phone", "(702) 203 - 5250 "],
       ["Email", "kcarey@seiunv.org"],
-    ],
-  },
-  {
-    name: 'Richard "Hodge" Hodgson',
-    profileImg: Hodge,
-    data: [
-      ["Title", "Steward / Executive Board Member"],
-      ["Unit", "General Unit"],
-      ["Department", "Facilities / DOA"],
-      ["Phone", "(702) 810 - 8947"],
-      ["Email", "rhodgson@seiunv.org"],
-    ],
-  },
-  {
-    name: "Sharita Tobin",
-    profileImg: Sharita,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "RPM Housekeeping"],
-      ["Phone", "(725) 248-1341"],
-      ["Email", "sharitatobin2424@gmail.com"],
     ],
   },
   {
