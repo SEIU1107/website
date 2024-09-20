@@ -1,8 +1,3 @@
-<script lang="ts">
-  import Subtitle from "./Subtitle.svelte";
-</script>
-
-<Subtitle text="Find Your Voting Location!" />
 <div
   class="civicengine-address"
   data-input-email="required"

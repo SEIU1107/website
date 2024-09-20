@@ -4,6 +4,7 @@ import Layout from "../layouts/Layout.astro";
 import imgEndorsements from "../images/endorsements/Endorsements.png";
 import { Image } from "astro:assets";
 import BallotReady from "../components/BallotReady.svelte";
+import Subtitle from "../components/Subtitle.svelte";
 ---
 
 <Layout title="SEIU 1107 Endorsements" centered="true">
@@ -16,7 +17,9 @@ import BallotReady from "../components/BallotReady.svelte";
     members fight for better wages, benefits, social justice, and a better way
     of life for all working Nevadans.
   </p>
-  <div class="flex flex-col m-auto pb-10 lg:grid lg:grid-cols-6 xl:grid-cols-12">
+  <div
+    class="flex flex-col m-auto pb-10 lg:grid lg:grid-cols-6 xl:grid-cols-12"
+  >
     <div class="flex flex-col m-auto pb-5 lg:col-span-5 xl:col-span-9">
       <p class="text-center text-2xl italic font-bold py-2">
         SEIU 1107 Supports Candidates that WIN for Us! Vote today!
@@ -29,7 +32,7 @@ import BallotReady from "../components/BallotReady.svelte";
       />
     </div>
     <div class="flex flex-col m-auto max-w-sm lg:col-span-1 xl:col-span-3">
-      
+      <Subtitle text="Find Your Voting Location!" />
       <BallotReady />
     </div>
   </div>
