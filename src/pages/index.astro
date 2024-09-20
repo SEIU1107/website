@@ -15,8 +15,12 @@ import imgTraining from "../images/strength_training/BigRoom.jpg";
 // Banners
 import imgLatinoLogo from "../images/caucuses/Latino/TransparentLogo.png";
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
+
+// Political
 import imgKamala from "../images/index/Kamala.png";
-import imgJacky from "../images/endorsements/Jacky.jpg";
+import imgHorsford from "../images/endorsements/Horsford.jpg";
+import imgLee from "../images/endorsements/Lee.jpg";
+import imgTitus from "../images/endorsements/Titus.jpg";
 
 // Communities United
 import imgOverview from "../images/communities_united/2023/Overview.jpg";
@@ -186,27 +190,28 @@ import BallotReady from "../components/BallotReady.svelte";
       styling="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5"
     />
     <div class="m-auto py-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
-      <Subtitle text="Find your voting location today!" />
       <div class="flex flex-col py-2">
-        <h2 class="text-2xl md:text-3xl font-bold text-center py-3">
-          View SEIU-Endorsed Candidates
-        </h2>
-
         <Button
-          text="Endorsements"
-          styling="mx-auto mt-2 hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+          text="View Endorsements"
+          styling="mx-auto mt-2 scale-125 hover:scale-[140%] text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
           href="/endorsements"
         />
       </div>
 
+      <Subtitle text="Find your voting location today!" />
       <CollageImage
-        src={imgJacky}
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-md lg:max-w-lg"
+        srcList={[imgHorsford, imgLee, imgTitus]}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-screen-sm"
         horizontal="right"
+        duration={5000}
+        cutline="Our union-endorsed candidates have voted to protect our jobs, pay our teachers, protect accessible healthcare for our families, and more!"
       >
         <div
           class="flex flex-col max-w-screen-sm lg:max-w-screen-md text-black text-left mx-2"
         >
+          <p class="italic text-black text-lg text-center m-auto">
+            If the widget fails to load, refresh the page
+          </p>
           <BallotReady />
         </div>
       </CollageImage>
