@@ -30,6 +30,7 @@ import imgQueens from "../images/communities_united/2023/Queens.jpg";
 import imgFoodTruck from "../images/communities_united/2023/FoodTruck.jpg";
 import imgHenna from "../images/communities_united/2023/Henna.jpg";
 import imgJewelry from "../images/communities_united/2023/Jewelry.jpg";
+import Subtitle from "../components/Subtitle.svelte";
 ---
 
 <Layout>
@@ -179,10 +180,70 @@ import imgJewelry from "../images/communities_united/2023/Jewelry.jpg";
     class="bg-gradient-to-br from-red-200 via-white to-blue-200 py-4 flex flex-col m-auto"
   >
     <HeadingTitle
-      text="Take Action! Pro-Labor Candidates Need YOU!"
+      text="SEIU 1107 Supports Cadidates that WIN for Us!"
       styling="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5"
     />
+    <div class="m-auto py-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
+      <Subtitle text="Find your voting location today!" />
+      <CollageImage
+        src={imgKamala}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-md lg:max-w-lg"
+        horizontal="right"
+      >
+        <div
+          class="flex flex-col max-w-screen-sm lg:max-w-screen-md text-black text-left mx-2"
+        >
+          <p class="pb-1">
+            <span class="text-xl font-bold">Dear SEIU 1107 Members,</span>
+            <br />
+            This election is crucial, and we need <b><u>you</u></b> to help elect
+            pro-labor candidates like Kamala Harris and Jacky Rosen. We invite you
+            to join our canvassing and phone banking efforts to reach voters and
+            emphasize the importance of voting for candidates who support workers'
+            rights.
+          </p>
+          <p class="py-1">
+            <span class="text-xl"><i><b>Phonebank Events</b></i></span>
+            <br />
+            Join SEIU 1107 as we call Nevada voters about the upcoming election.
+            Training is provided, and you can join virtually or in-person at any
+            time during the shift.
+          </p>
+          <Button
+            text="Sign Up for Phone Banking"
+            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://www.mobilize.us/seiunevada/event/658670/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+          />
+          <p class="py-1">
+            <span class="text-xl"><i><b>Door Knocking Events</b></i></span>
+            <br />
+            Help us knock on doors and talk to voters about the importance of this
+            election. Training is provided before every shift. You can join at any
+            time and bring a friend!
+          </p>
+          <Button
+            text="Sign Up for Door Knocking"
+            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+            href="https://www.mobilize.us/seiunevada/event/658676/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
+            target="_blank"
+          />
+        </div>
+      </CollageImage>
+      <div class="flex flex-col">
+        <h2 class="text-2xl md:text-3xl font-bold text-center py-3">
+          View SEIU-Endorsed Candidates
+        </h2>
+        
+        <Button
+          text="Endorsements"
+          styling="mx-auto mt-2 hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
+          href="/endorsements"
+        />
+      </div>
+    </div>
     <div class="m-auto max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
+      <Subtitle text="Take Action! Pro-Labor Candidates Need YOU!" />
       <CollageImage
         src={imgKamala}
         imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-md lg:max-w-lg"

@@ -4,61 +4,68 @@ import Footer from "../components/Footer.astro";
 import { ViewTransitions } from "astro:transitions";
 
 export interface Props {
-    title?: string;
-    centered?: string;
-    backgroundStyling?: string /* Background styling via TailwindCSS */;
+  title?: string;
+  centered?: string;
+  backgroundStyling?: string /* Background styling via TailwindCSS */;
 }
 
 const {
-    title = "SEIU Local 1107",
-    centered = "false",
-    backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
+  title = "SEIU Local 1107",
+  centered = "false",
+  backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
 } = Astro.props as Props;
 ---
 
 <!doctype html>
 <html lang="en">
-    <head>
-        <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico" />
+  <head>
+    <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico" />
 
-        <meta name="msapplication-TileColor" content="#da532c" />
-        <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
 
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
-            rel="stylesheet"
-        />
-        <ViewTransitions />
-        <title>{title}</title>
-    </head>
-    <body
-        class={"font-Roboto leading-6 text-base text-neutral-800 ".concat(
-            backgroundStyling
-        )}
-    >
-        <Header />
-        <div class="min-h-[100vh]">
-            {
-                centered === "true" ? (
-                    <div class="flex flex-col max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl px-3 m-auto">
-                        <slot />
-                    </div>
-                ) : (
-                    <slot />
-                )
-            }
-        </div>
-        <Footer />
-        <style>
-            body {
-                max-width: 100%;
-                overflow-x: hidden;
-            }
-        </style>
-    </body>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <ViewTransitions />
+    <script src="https://app.seiu.civicengine.com/embed.js" async defer
+    ></script>
+    <link
+      rel="stylesheet"
+      media="screen"
+      href="https://app.seiu.civicengine.com/embed.css"
+    />
+    <title>{title}</title>
+  </head>
+  <body
+    class={"font-Roboto leading-6 text-base text-neutral-800 ".concat(
+      backgroundStyling
+    )}
+  >
+    <Header />
+    <div class="min-h-[100vh]">
+      {
+        centered === "true" ? (
+          <div class="flex flex-col max-w-screen-sm lg:max-w-screen-lg xl:max-w-screen-xl px-3 m-auto">
+            <slot />
+          </div>
+        ) : (
+          <slot />
+        )
+      }
+    </div>
+    <Footer />
+    <style>
+      body {
+        max-width: 100%;
+        overflow-x: hidden;
+      }
+    </style>
+  </body>
 </html>
