@@ -7,12 +7,14 @@ export interface Props {
   title?: string;
   centered?: string;
   backgroundStyling?: string /* Background styling via TailwindCSS */;
+  viewTransition?: boolean
 }
 
 const {
   title = "SEIU Local 1107",
   centered = "false",
   backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
+  viewTransition = true
 } = Astro.props as Props;
 ---
 
@@ -33,7 +35,7 @@ const {
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
       rel="stylesheet"
     />
-    <ViewTransitions />
+    {viewTransition && <ViewTransitions />}
     <script src="https://app.seiu.civicengine.com/embed.js" async defer
     ></script>
     <link

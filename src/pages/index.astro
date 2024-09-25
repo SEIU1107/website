@@ -22,24 +22,11 @@ import imgHorsford from "../images/endorsements/Horsford.jpg";
 import imgLee from "../images/endorsements/Lee.jpg";
 import imgTitus from "../images/endorsements/Titus.jpg";
 
-// Communities United
-import imgOverview from "../images/communities_united/2023/Overview.jpg";
-import imgGold from "../images/communities_united/2023/Gold.jpg";
-import imgCups from "../images/communities_united/2023/Cups.jpg";
-import imgPolynesian from "../images/communities_united/2023/Polynesian.jpg";
-import imgTaiko from "../images/communities_united/2023/Taiko.jpg";
-import imgTea from "../images/communities_united/2023/Tea.jpg";
-import imgFeather from "../images/communities_united/2023/Feather.jpg";
-import imgViolin from "../images/communities_united/2023/Violin.jpg";
-import imgQueens from "../images/communities_united/2023/Queens.jpg";
-import imgFoodTruck from "../images/communities_united/2023/FoodTruck.jpg";
-import imgHenna from "../images/communities_united/2023/Henna.jpg";
-import imgJewelry from "../images/communities_united/2023/Jewelry.jpg";
 import Subtitle from "../components/Subtitle.svelte";
-import BallotReady from "../components/BallotReady.svelte";
+import BallotReady from "../components/BallotReady.astro";
 ---
 
-<Layout>
+<Layout viewTransition={false}>
   <main
     class="hidden lg:hidden bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
   >
@@ -106,82 +93,6 @@ import BallotReady from "../components/BallotReady.svelte";
   </main>
    -->
 
-  <div class="bg-gradient-to-bl from-supernova-300 to-supernova-500 py-4">
-    <HeadingTitle text="Communities United 2024: A Multicultural Festival" />
-    <h2
-      class="text-center font-bold text-3xl lg:text-4xl font-Roboto text-black italic my-1.5"
-    >
-      FREE ADMISSION! Food, Music, Art, Markets, Live Performance, and More!
-    </h2>
-    <div
-      class="mx-auto md:pt-5 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
-    >
-      <CollageImage
-        srcList={[
-          imgOverview,
-          imgTaiko,
-          imgGold,
-          imgViolin,
-          imgFeather,
-          imgFoodTruck,
-          imgTea,
-          imgHenna,
-          imgCups,
-          imgQueens,
-          imgJewelry,
-          imgPolynesian,
-        ]}
-        duration={8000}
-        fadeDuration={1000}
-        horizontal="right"
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-lg lg:max-w-2xl"
-      >
-        <div class="flex flex-col text-black text-left text-lg">
-          <p class="py-2">
-            Communities United: Raising The Stakes is back for 2024!
-          </p>
-          <p class="py-2">
-            SEIU Local 1107 is proudly hosting the Communities United
-            Multicultural Festival, which celebrates the state's diversity and
-            encourages civic engagement, voter participation, and understanding
-            across racial and identity lines.
-          </p>
-          <p class="py-2">
-            The festival will feature thrilling live performances, music, art,
-            children's activities, food, and vendors from many diverse cultures
-            and communities!
-          </p>
-          <p class="py-2">
-            The festival will take place on <b>Saturday, September 21st</b> from
-            <b>3pm - 8pm</b> at the <b
-              >Clark County Government Center Ampitheater.</b
-            >
-          </p>
-        </div>
-      </CollageImage>
-      <h2 class="text-2xl md:text-3xl font-bold text-center py-3">
-        SAVE THE DATE! RSVP on Mobilize today!
-      </h2>
-      <div class="flex flex-col md:flex-row content-center">
-        <Button
-          text="RSVP on Mobilize"
-          styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-          href="https://www.mobilize.us/seiunevada/event/643057/"
-          target="_blank"
-        />
-        <Button
-          text="2024 Page"
-          styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-          href="/communities_united_2024"
-        />
-        <Button
-          text="2023 Festival Recap"
-          styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-          href="/communities_united_2023"
-        />
-      </div>
-    </div>
-  </div>
   <div
     class="bg-gradient-to-br from-red-200 via-white to-blue-200 py-4 flex flex-col m-auto"
   >
