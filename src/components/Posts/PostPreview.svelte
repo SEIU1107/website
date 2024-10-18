@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import Button from "../Button.svelte";
 
   export let featuredImg: string;
@@ -29,23 +30,29 @@
     }
     let truncated = input_string.slice(0, maxLength);
     const lastSpaceIndex = truncated.lastIndexOf(" ");
-    const print_bool =
-      lastSpaceIndex !== -1 && lastSpaceIndex !== truncated.length - 1;
     if (lastSpaceIndex !== -1 && lastSpaceIndex !== truncated.length - 1) {
       truncated = truncated.slice(0, lastSpaceIndex) + "...";
     }
 
     return truncated;
   }
+
+  // Post URL if news article
+  // Otherwise, use the title
+  let urlToUse: string;
+
+  onMount(() => {
+    urlToUse =
+      type === "News Article" && url
+        ? url
+        : "/posts/" + url.replaceAll(" ", "-");
+  });
 </script>
 
 <div
   class="relative flex flex-col max-w-[min(420px,_90vw)] bg-white rounded-lg shadow-black shadow-md m-5"
 >
-  <a
-    href={type === "News Article" ? url : "/posts/" + url}
-    target={type === "News Article" ? "_blank" : ""}
-  >
+  <a href={urlToUse} target={type === "News Article" ? "_blank" : ""}>
     <div class="relative group rounded-lg z-6">
       <img
         src={featuredImg}
@@ -103,9 +110,9 @@
     </div>
     <p class="py-1 font-Roboto">
       {#if truncate_excerpt}
-      {truncateString(excerpt, truncate_excerpt)}
+        {truncateString(excerpt, truncate_excerpt)}
       {:else}
-      {excerpt}
+        {excerpt}
       {/if}
     </p>
   </div>
@@ -114,14 +121,11 @@
       {#if type == "News Article"}
         <Button
           text={"Read More at ".concat(author)}
-          href={url}
+          href={urlToUse}
           target="_blank"
         />
       {:else}
-        <Button
-          text="Read More"
-          href={type === "News Article" ? url : "/posts/" + url}
-        />
+        <Button text="Read More" href={urlToUse} />
       {/if}
     </div>
   {/if}

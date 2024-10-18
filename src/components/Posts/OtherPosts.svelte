@@ -88,15 +88,14 @@
               : "bg-honey-flower-900"
           )}
           on:mouseenter={() => {
-            console.log("HEllo!");
             setPreview(post);
           }}
           on:click={() => {
-            console.log("Clicked");
             if (post.frontmatter.type === "News Article") {
               window.open(post.frontmatter.url, "_blank");
             } else {
-              window.location.href = "/posts/" + post.frontmatter.url;
+              window.location.href =
+                "/posts/" + post.frontmatter.url.replaceAll(" ", "-");
             }
           }}
         >

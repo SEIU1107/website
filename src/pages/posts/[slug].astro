@@ -13,7 +13,7 @@ export async function getStaticPaths() {
     .concat(pressReleases)
     .map((post: MDXInstance<Record<string, any>>) => ({
       params: {
-        slug: post.frontmatter.url,
+        slug: post.frontmatter.url.replaceAll(' ', '-'),
       },
       props: {
         post,

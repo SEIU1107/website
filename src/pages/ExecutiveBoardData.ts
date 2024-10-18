@@ -11,19 +11,19 @@ export const bigProfPeopleData = [
     profileImg: Sam,
     name: "Sam Shaw",
     Title: "SEIU 1107 Executive Director",
-    desc: "Sam has a deep passion for organizing working people to fight for good union jobs, quality services and justice for all. Over the past 25 years, he’s worked for many grassroots organizations and has 17 years of service with SEIU. He started with Local 1107 in 2017 and has held leadership positions throughout the union. Sam is the son of an immigrant mother from Korea who taught him the value of hard work at an early age. He is proud and honored to help lead SEIU Local 1107 to new heights and build a better future for working Nevadans.",
+    desc: "Sam has a deep passion for organizing working people to fight for good union jobs, quality services and justice for all. Over the past 25 years, he's worked for many grassroots organizations and has 17 years of service with SEIU. He started with Local 1107 in 2017 and has held leadership positions throughout the union. Sam is the son of an immigrant mother from Korea who taught him the value of hard work at an early age. He is proud and honored to help lead SEIU Local 1107 to new heights and build a better future for working Nevadans.",
   },
   {
     profileImg: Michelle,
     name: "Michelle Maese",
     Title: "SEIU 1107 President",
-    desc: "Michelle is a Supervisor for Clark County Child Protective Services and has been a SEIU Local 1107 member for over 15 years. Prior to being elected President, Michelle served as the union’s Secretary-Treasurer and Political Organizing Committee (POC) Chair, and has also served as Clark County Supervisory Unit Chief Steward, and a member of the SEIU Local 1107's Clark County bargaining team.",
+    desc: "Michelle is a Supervisor for Clark County Child Protective Services and has been a SEIU Local 1107 member for over 15 years. Prior to being elected President, Michelle served as the union's Secretary-Treasurer and Political Organizing Committee (POC) Chair, and has also served as Clark County Supervisory Unit Chief Steward, and a member of the SEIU Local 1107's Clark County bargaining team.",
   },
   {
     profileImg: Yarleny,
     name: "Yarleny Roa-Dugan",
     Title: "SEIU 1107 Secretary-Treasurer",
-    desc: "Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor’s Steve Sisolak’s Patient Protection Commission as a Patient Advocate.",
+    desc: "Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor's Steve Sisolak's Patient Protection Commission as a Patient Advocate.",
   },
   {
     profileImg: Deb,
