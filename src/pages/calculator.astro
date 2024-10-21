@@ -1,0 +1,9 @@
+---
+import Layout from "../layouts/Layout.astro";
+import WageCalculator from "../components/WageCalculator/WageCalculator.svelte";
+import HeadingTitle from "../components/HeadingTitle.svelte";
+---
+
+<Layout title="Calculator">
+  <WageCalculator client:only="svelte" />
+</Layout>
