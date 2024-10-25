@@ -1,0 +1,58 @@
+---
+import type { Profile } from "../../Profile";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
+import ProfileGrid from "../../components/ProfileGrid.astro";
+import Layout from "../../layouts/Layout.astro";
+const profileData: Profile[] = [
+  {
+    name: "Andrew Nelson",
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Collections"],
+      ["Phone", "(702) 413 - 3813"],
+      ["Email", "nellywise123@yahoo.com"],
+    ],
+  },
+  {
+    name: '"Donald" Scott Moden',
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Collections"],
+      ["Phone", "(702) 290 - 5937"],
+      ["Email", "dwandrr@gmail.com"],
+    ],
+  },
+  {
+    name: "Tanner Spendlove",
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Soilds Handling"],
+      ["Phone", "(702) 573 - 5969"],
+      ["Email", "tanner.tiffanispendlove@gmail.com"],
+    ],
+  },
+  {
+    name: "Thomas Crawford",
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Plant Operations"],
+      ["Phone", "(702) 523 - 9035"],
+      ["Email", "tcrawford82@outlook.com"],
+    ],
+  },
+  {
+    name: 'William "Bill" Supple',
+    data: [
+      ["Title", "Steward"],
+      ["Department", "Operations Tech 1"],
+      ["Phone", "(516) 639 - 5605"],
+      ["Email", "WilliamSupple@rocketmail.com"],
+    ],
+  },
+];
+---
+
+<Layout title="WRD Stewards">
+  <HeadingTitle text="Water Reclamation District (WRD)" />
+  <ProfileGrid data={profileData} />
+</Layout>

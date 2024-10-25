@@ -10,7 +10,6 @@ import { buttons } from "./Clark County Data.ts";
 import { dataGeneralUnit } from "./Clark County Data.ts";
 import { dataDOA } from "./Clark County Data.ts";
 import { dataDFSDJJS } from "./Clark County Data.ts";
-import { dataWRD } from "./Clark County Data.ts";
 import { dataSupervisory } from "./Clark County Data.ts";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 ---
@@ -33,10 +32,6 @@ import HeadingTitle from "../../components/HeadingTitle.svelte";
       />
     </div>
     <ProfileGrid data={dataDFSDJJS} />
-    <div id="WRD">
-      <Separator text="Water Reclamation District (WRD)" />
-    </div>
-    <ProfileGrid data={dataWRD} />
   </LavSection>
 
   <div id="Supervisory">

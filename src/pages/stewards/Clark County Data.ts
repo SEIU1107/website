@@ -6,7 +6,6 @@ import Joe from "../../images/stewards/CC/Joe.png";
 import JohnMontgomery from "../../images/stewards/CC/JohnMontgomery.jpeg";
 import JudyPerillo from "../../images/stewards/CC/JudyPerillo.jpg";
 import Kevin from "../../images/stewards/CC/Kevin-Carey-Clark-County-1.jpg";
-import MichelleUpton from "../../images/stewards/CC/Michelle-Upton-CC.png";
 import Nirvana from "../../images/stewards/CC/Nirvana-Hamilton.png";
 import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
 import ArturoEspino from "../../images/stewards/CC/ArturoEspino.jpg";
@@ -154,17 +153,6 @@ export const dataGeneralUnit: Profile[] = [
       ["Department", "Juvenile Prosecution"],
       ["Phone", "(702) 343 - 4045"],
       ["Email", "melindaregules@gmail.com"],
-    ],
-  },
-  {
-    name: "Michelle Upton",
-    profileImg: MichelleUpton,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Social Services"],
-      ["Phone", "(925) 783 - 1149"],
-      ["Email", "mechelle0518@gmail.com"],
     ],
   },
   {
@@ -324,81 +312,6 @@ export const dataDFSDJJS: Profile[] = [
   },
 ];
 
-import JimCowan from "../../images/stewards/CC/JimCowan.jpg";
-export const dataWRD: Profile[] = [
-  {
-    name: "Jim Cowan",
-    profileImg: JimCowan,
-    data: [
-      ["Title", "Chief Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Developer Inspectors"],
-      ["Phone", "(702) 292 - 8451"],
-      ["Email", "jimcowan@seiunv.org"],
-    ],
-  },
-  {
-    name: '"Donald" Scott Moden',
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD / Collections"],
-      ["Phone", "(702) 290 - 5937"],
-      ["Email", "dwandrr@gmail.com"],
-    ],
-  },
-  {
-    name: "James Piccinetti",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD / Collections"],
-      ["Phone", "(702) 672 - 9947"],
-      ["Email", "piccinettijc@gmail.com"],
-    ],
-  },
-  {
-    name: "Oscar Blanco",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD / Design & Construction"],
-      ["Phone", "(602) 640 - 6797"],
-      ["Email", "chino.drafting@gmail.com"],
-    ],
-  },
-  {
-    name: "Tanner Spendlove",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD / Soilds Handling"],
-      ["Phone", "(702) 573 - 5969"],
-      ["Email", "tanner.tiffanispendlove@gmail.com"],
-    ],
-  },
-  {
-    name: "Thomas Crawford",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD / Plant Operations"],
-      ["Phone", "(702) 523 - 9035"],
-      ["Email", "tcrawford82@outlook.com"],
-    ],
-  },
-  {
-    name: 'William "Bill" Supple',
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "WRD"],
-      ["Phone", "(516) 639 - 5605"],
-      ["Email", "WilliamSupple@rocketmail.com"],
-    ],
-  },
-];
-
 import Anissa from "../../images/stewards/CC/Anissa.png";
 import MikelleCieri from "../../images/stewards/CC/mikelle-cieri.png";
 import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
@@ -499,10 +412,6 @@ export const buttons = [
   {
     text: "DFS / DJJS",
     href: "#DFS",
-  },
-  {
-    text: "WRD",
-    href: "#WRD",
   },
   {
     text: "Supervisory",
