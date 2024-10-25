@@ -1,3 +1,5 @@
+import type { Profile } from "../../Profile";
+
 import Rick from "../../images/stewards/CC/Rick.png";
 import Alexis from "../../images/stewards/CC/Alexis.jpg";
 import Adella from "../../images/stewards/CC/AdellaLogan.jpg";
@@ -11,8 +13,6 @@ import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
 import ArturoEspino from "../../images/stewards/CC/ArturoEspino.jpg";
 import MatthewMoncayo from "../../images/stewards/CC/MatthewMoncayo.jpg";
 import Sharita from "../../images/stewards/CC/SharitaTobin.jpeg";
-
-import type { Profile } from "../../Profile";
 
 export const dataGeneralUnit: Profile[] = [
   {
