@@ -65,12 +65,7 @@ const { Content, frontmatter } = Astro.props.post;
       )
     }
     <div
-      class={"py-2 prose flex flex-col mx-auto".concat(
-        " ",
-        frontmatter.imgOverride
-          ? ""
-          : "prose-img:rounded-md prose-img:shadow-md prose-img:shadow-black"
-      )}
+      class={"py-2 prose flex flex-col mx-auto"}
     >
       <Content />
     </div>

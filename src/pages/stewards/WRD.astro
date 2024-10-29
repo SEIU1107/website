@@ -3,9 +3,16 @@ import type { Profile } from "../../Profile";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 import ProfileGrid from "../../components/ProfileGrid.astro";
 import Layout from "../../layouts/Layout.astro";
+
+import BillSupple from "../../images/stewards/WRD/Bill Supple.png";
+import ScottModen from "../../images/stewards/WRD/Scott Moden.png";
+import ThomasCrawford from "../../images/stewards/WRD/Thomas Crawford.png";
+import AndrewNelson from "../../images/stewards/WRD/Andrew Nelson.png";
+
 const profileData: Profile[] = [
   {
     name: "Andrew Nelson",
+    profileImg: AndrewNelson,
     data: [
       ["Title", "Steward"],
       ["Department", "Collections"],
@@ -15,6 +22,7 @@ const profileData: Profile[] = [
   },
   {
     name: '"Donald" Scott Moden',
+    profileImg: ScottModen,
     data: [
       ["Title", "Steward"],
       ["Department", "Collections"],
@@ -33,6 +41,7 @@ const profileData: Profile[] = [
   },
   {
     name: "Thomas Crawford",
+    profileImg: ThomasCrawford,
     data: [
       ["Title", "Steward"],
       ["Department", "Plant Operations"],
@@ -42,6 +51,7 @@ const profileData: Profile[] = [
   },
   {
     name: 'William "Bill" Supple',
+    profileImg: BillSupple,
     data: [
       ["Title", "Steward"],
       ["Department", "Operations Tech 1"],
