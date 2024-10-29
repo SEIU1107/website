@@ -192,7 +192,9 @@ export const dataGeneralUnit: Profile[] = [
 
 import Saki from "../../images/stewards/CC/Saki.png";
 import JohnBishop from "../../images/stewards/CC/John-Bishop-DOA-non-sup.png";
-import TomSharpe from "../../images/stewards/CC/Tom-Sharpe.png";
+import WilliamDonald from "../../images/stewards/CC/William Donald.png";
+import CindyMcDuffie from "../../images/stewards/CC/Cindy McDuffie.png";
+
 export const dataDOA: Profile[] = [
   {
     name: 'Ahsaki "Saki" Hardy',
@@ -200,7 +202,7 @@ export const dataDOA: Profile[] = [
     data: [
       ["Title", "Chief Steward / Executive Board Member"],
       ["Unit", "General Unit / DOA"],
-      ["Department", "DAFS"],
+      ["Department", "DOA / DAFS"],
       ["Phone", "(617) 710 - 8908"],
       ["Email", "dkjshardy@gmail.com"],
     ],
@@ -210,9 +212,30 @@ export const dataDOA: Profile[] = [
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "DAFS"],
+      ["Department", "Custodial"],
       ["Phone", "(702) 332 - 7177"],
       ["Email", "alicia.james.aj.aj@gmail.com"],
+    ],
+  },
+  {
+    name: "Barbra Calahan",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Custodial"],
+      ["Phone", "(702) 245 - 3547"],
+      ["Email", "bcal6512@gmail.com"],
+    ],
+  },
+  {
+    name: "Cindy McDuffie",
+    profileImg: CindyMcDuffie,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Ground Tranportation"],
+      ["Phone", "(702) 261 - 5279"],
+      ["Email", "cmcduffie02@gmail.com"],
     ],
   },
   {
@@ -220,7 +243,7 @@ export const dataDOA: Profile[] = [
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "DOA / Custodian"],
+      ["Department", "Custodial"],
       ["Phone", "(702) 423 - 6015"],
       ["Email", "gggdog5000@yahoo.com"],
     ],
@@ -231,7 +254,7 @@ export const dataDOA: Profile[] = [
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "DOA / BHS"],
+      ["Department", "BHS"],
       ["Phone", "(702) 622 - 5280"],
       ["Email", "jhnhbshp@gmail.com"],
     ],
@@ -242,20 +265,20 @@ export const dataDOA: Profile[] = [
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "DOA / Business Office"],
-      ["Phone", "(702) 203 - 5250 "],
+      ["Department", "Business Office"],
+      ["Phone", "(702) 203 - 5250"],
       ["Email", "kcarey@seiunv.org"],
     ],
   },
   {
-    name: "Tom Sharpe",
-    profileImg: TomSharpe,
+    name: "William Donald",
+    profileImg: WilliamDonald,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
-      ["Department", "DOA / Finance"],
-      ["Phone", "(702) 539 - 8017"],
-      ["Email", "tsharpe.seiunv@gmail.com"],
+      ["Department", "Parking"],
+      ["Phone", "(702) 557 - 6253"],
+      ["Email", "lilq4u@yahoo.com"],
     ],
   },
 ];
