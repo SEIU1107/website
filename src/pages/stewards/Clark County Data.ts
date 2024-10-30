@@ -13,10 +13,14 @@ import RichmondWarnke from "../../images/stewards/CC/richmond.jpg";
 import ArturoEspino from "../../images/stewards/CC/ArturoEspino.jpg";
 import MatthewMoncayo from "../../images/stewards/CC/MatthewMoncayo.jpg";
 import Sharita from "../../images/stewards/CC/SharitaTobin.jpeg";
+import BrittanyRandall from "../../images/stewards/CC/Brittany Randall.png";
+import BrentMiller from "../../images/stewards/CC/Brent Miller.png";
+import RichardPerez from "../../images/stewards/CC/RichardPerez.jpg";
 
 export const dataGeneralUnit: Profile[] = [
   {
     name: "Brent Miller",
+    profileImg: BrentMiller,
     data: [
       ["Title", "Chief Steward"],
       ["Unit", "General Unit"],
@@ -81,6 +85,7 @@ export const dataGeneralUnit: Profile[] = [
   },
   {
     name: "Brittany Randall",
+    profileImg: BrittanyRandall,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
@@ -164,6 +169,17 @@ export const dataGeneralUnit: Profile[] = [
       ["Department", "DA / Administration / DAFS"],
       ["Phone", "(702) 326 - 8326"],
       ["Email", "edge982@yahoo.com"],
+    ],
+  },
+  {
+    name: "Richard Perez",
+    profileImg: RichardPerez,
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Justice Court"],
+      ["Phone", "(702) 604 - 6624"],
+      ["Email", "nmiller474@gmail.com"],
     ],
   },
   {
@@ -286,7 +302,6 @@ export const dataDOA: Profile[] = [
 import EarlBarnes from "../../images/stewards/CC/EJBarnes.jpg";
 import MichelleBrown from "../../images/stewards/CC/MichelleBrown.jpeg";
 import NicoleMiller from "../../images/stewards/CC/Nicole-Miller-CC.png";
-import RichardPerez from "../../images/stewards/CC/RichardPerez.jpg";
 
 export const dataDFSDJJS: Profile[] = [
   {
@@ -322,21 +337,9 @@ export const dataDFSDJJS: Profile[] = [
       ["Email", "nmiller474@gmail.com"],
     ],
   },
-  {
-    name: "Richard Perez",
-    profileImg: RichardPerez,
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Child Haven / DFS"],
-      ["Phone", "(702) 604 - 6624"],
-      ["Email", "nmiller474@gmail.com"],
-    ],
-  },
 ];
 
 import Anissa from "../../images/stewards/CC/Anissa.png";
-import MikelleCieri from "../../images/stewards/CC/mikelle-cieri.png";
 import MarlaMcPherson from "../../images/stewards/CC/Marla.png";
 import SaraEvans from "../../images/stewards/CC/Sara-Evans.png";
 import Mihanee from "../../images/stewards/CC/Mihanee-Williams.png";
@@ -344,17 +347,6 @@ import RobinFranklin from "../../images/stewards/CC/Robin-Franklin-CC.png";
 import BrianLenihan from "../../images/stewards/CC/BrianLenihan.jpg";
 
 export const dataSupervisory: Profile[] = [
-  {
-    name: "Mikelle Cieri",
-    profileImg: MikelleCieri,
-    data: [
-      ["Title", "Chief Steward"],
-      ["Unit", "Supervisory Unit"],
-      ["Department", "DFS / Permanency"],
-      ["Phone", "(702) 328 - 5354"],
-      ["Email", "heymikelle@gmail.com"],
-    ],
-  },
   {
     name: "Marla McPherson",
     profileImg: MarlaMcPherson,
@@ -382,8 +374,8 @@ export const dataSupervisory: Profile[] = [
     profileImg: Anissa,
     data: [
       ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Bldg. & Safety"],
+      ["Unit", "Supervisory Unit"],
+      ["Department", "IT Operations"],
       ["Phone", "(702) 488 - 5989"],
       ["Email", "anissa88@hotmail.com"],
     ],
@@ -393,8 +385,8 @@ export const dataSupervisory: Profile[] = [
     profileImg: BrianLenihan,
     data: [
       ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Building & Fire Prevention IT"],
+      ["Unit", "Supervisory Unit"],
+      ["Department", "Building & Safety"],
       ["Phone", "(702) 285-2579"],
       ["Email", "brianlenihanpe@gmail.com"],
     ],
