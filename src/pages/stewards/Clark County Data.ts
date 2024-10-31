@@ -210,6 +210,7 @@ import Saki from "../../images/stewards/CC/Saki.png";
 import JohnBishop from "../../images/stewards/CC/John-Bishop-DOA-non-sup.png";
 import WilliamDonald from "../../images/stewards/CC/William Donald.png";
 import CindyMcDuffie from "../../images/stewards/CC/Cindy McDuffie.png";
+import BarbCalahan from "../../images/stewards/CC/Barb Calahan.png";
 
 export const dataDOA: Profile[] = [
   {
@@ -235,6 +236,7 @@ export const dataDOA: Profile[] = [
   },
   {
     name: "Barbra Calahan",
+    profileImg: BarbCalahan,
     data: [
       ["Title", "Steward"],
       ["Unit", "General Unit"],
