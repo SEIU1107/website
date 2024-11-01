@@ -20,6 +20,10 @@ import Nilda from "../images/staff/Nilda.jpg";
 import Gersam from "../images/staff/Gersam.jpg";
 import Patti from "../images/staff/Patti.jpg";
 import Nathan from "../images/staff/Nathan.jpg";
+import Carla from "../images/staff/Carla.png";
+import TonyGreen from "../images/staff/Tony Green.png";
+import TashiaHairston from "../images/staff/Tashia.png";
+import ReginaToney from "../images/staff/Regina.png";
 
 import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
@@ -63,6 +67,7 @@ const profileData: Profile[] = [
   },
   {
     name: "Tony Green",
+    profileImg: TonyGreen,
     data: [
       ["Title", "Contract Representative"],
       ["Cell", "702-378-0030"],
@@ -77,6 +82,15 @@ const profileData: Profile[] = [
       ["Assignment", "Southern Hills"],
       ["Cell", "702-934-4961"],
       ["Email", "poconnor@seiunv.org"],
+    ],
+  },
+  {
+    name: "Carla Long",
+    profileImg: Carla,
+    data: [
+      ["Title", "Organizer"],
+      ["Cell", "(702) 296-6409"],
+      ["Email", "clong@seiunv.org"],
     ],
   },
   {
@@ -198,6 +212,7 @@ const profileData: Profile[] = [
   },
   {
     name: "Tashia Hairston",
+    profileImg: TashiaHairston,
     data: [
       ["Title", "Finance & HR Assistant"],
       ["Cell", "702-374-6406"],
@@ -231,11 +246,12 @@ const profileData: Profile[] = [
     ],
   },
   {
-    name: "Paula Pecorella",
+    name: "Regina Toney",
+    profileImg: ReginaToney,
     data: [
-      ["Title", "Communication Coordinator"],
+      ["Title", "Communications Director"],
       ["Cell", "702-348-0496"],
-      ["Email", "ppecorella@seiunv.org"],
+      ["Email", "rtoney@seiunv.org "],
     ],
   },
   {
@@ -289,7 +305,7 @@ const profileData: Profile[] = [
       ["Cell", "702-339-4628"],
       ["Email", "pwoods@seiunv.org"],
     ],
-  }
+  },
 ];
 ---
 
