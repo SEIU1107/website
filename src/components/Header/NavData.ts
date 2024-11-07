@@ -48,10 +48,6 @@ const myUnion = [
 
 const getInvolved = [
   {
-    pageName: "SEIU-Endorsed Election Candidates",
-    href: "/endorsements",
-  },
-  {
     pageName: "Events",
     href: "/events",
   },
