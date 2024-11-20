@@ -130,7 +130,7 @@
 
 <div class="flex flex-col">
   <HeadingTitle
-    text={"Latest from SEIU".concat(
+    text={"Latest from SEIU 1107".concat(
       selectedTags.length > 0 ||
         (selectedPostTypes.length > 0 && selectedPostTypes.length !== 3)
         ? " (Filtered)"

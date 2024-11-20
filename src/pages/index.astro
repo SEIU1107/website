@@ -13,17 +13,7 @@ import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
 
 // Banners
-import imgLatinoLogo from "../images/caucuses/Latino/TransparentLogo.png";
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
-
-// Political
-import imgKamala from "../images/index/Kamala.png";
-import imgHorsford from "../images/endorsements/Horsford.jpg";
-import imgLee from "../images/endorsements/Lee.jpg";
-import imgTitus from "../images/endorsements/Titus.jpg";
-
-import Subtitle from "../components/Subtitle.svelte";
-import BallotReady from "../components/BallotReady.astro";
 ---
 
 <Layout viewTransition={false}>
@@ -70,8 +60,7 @@ import BallotReady from "../components/BallotReady.astro";
     </div>
   </main>
 
-  <!-- 
-    <main
+  <main
     class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
   >
     <div
@@ -91,7 +80,8 @@ import BallotReady from "../components/BallotReady.astro";
       </div>
     </div>
   </main>
-   -->
+
+  <LatestNews />
 
   <div
     class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4 flex flex-col m-auto"
@@ -217,12 +207,15 @@ import BallotReady from "../components/BallotReady.astro";
     />
   </div>
   <StrongerTogether />
-  <LatestNews />
-  <div class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300">
-    <HeadingTitle text="Why We're Joining Together" />
+  <div class="py-4 bg-gradient-to-b from-honey-flower-900 to-honey-flower-700">
+    <div
+      class="tinyShadow py-2 font-bold font-Trebuchet text-center text-supernova-500 text-4xl md:text-5xl drop-shadow-2xl"
+    >
+      Why We're Joining Together
+    </div>
     <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
       <CollageImage src={imgTogether}>
-        <div class="text-md lg:text-lg">
+        <div class="text-xl text-white">
           <p class="py-2">
             Public service, home care and health care workers are joining
             together to get a real say over our wages, staffing, retirement, and
@@ -236,8 +229,12 @@ import BallotReady from "../components/BallotReady.astro";
             fair pay increases for everyone—including chronically underpaid
             women and people of color—throughout our state.
           </p>
+          <Button
+            href="/join"
+            text="Join Us"
+            styling="mx-auto text-honey-flower-800 hover:scale-105c bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
+          />
         </div>
-        <Button href="/join" text="Join Us" />
       </CollageImage>
     </div>
   </div>

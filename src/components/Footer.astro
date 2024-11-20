@@ -1,21 +1,26 @@
 ---
-
+import SocialMediaButtons from "./Header/SocialMediaButtons.astro";
 ---
 
-<footer class="bg-supernova-500 w-full h-40 mt-auto">
+<footer class="bg-supernova-500 w-full h-40 mt-auto flex justify-end">
+  <div class="grid grid-cols-2 gap-0 mr-auto">
     <div
-        class="flex flex-col text-black align-middle justify-between h-full p-5"
+      class="flex flex-col mr-auto text-black align-middle justify-between h-full p-5"
     >
-        <p>
-            2250 S. Rancho Drive #165<br />
-             Las Vegas, NV 89102 <br />
-            <b>Telephone:</b> 702-386-8849 <br />
-            <b>Email:</b>
-            <span class="hover:underline active:no-underline">
-                <a href="mailto:Memberaction@seiunv.org"></a>
-                 memberaction@seiunv.org</span
-            >
-        </p>
-        <span><b>Fax:</b> 702-386-4883</span>
+      <p>
+        2250 S. Rancho Drive #165<br />
+        Las Vegas, NV 89102 <br />
+        <b>Telephone:</b> 702-386-8849 <br />
+        <b>Email:</b>
+        <span class="hover:underline active:no-underline">
+          <a href="mailto:Memberaction@seiunv.org"></a>
+          memberaction@seiunv.org</span
+        >
+      </p>
+      <span><b>Fax:</b> 702-386-4883</span>
     </div>
+    <div class="flex mt-5 justify-center max-w-sm">
+      <SocialMediaButtons />
+    </div>
+  </div>
 </footer>
