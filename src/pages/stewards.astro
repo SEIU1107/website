@@ -31,6 +31,9 @@ import SunriseFront from "../images/shop_imgs/Sunrise-Solid-Button.png";
 import UMCBack from "../images/shop_imgs/UMC-Button.png";
 import UMCFront from "../images/shop_imgs/UMC-Solid-Button.png";
 
+import WRDBack from "../images/shop_imgs/WRD Transparent.png";
+import WRDFront from "../images/shop_imgs/WRD Solid.png";
+
 const shopCardData = [
   {
     backImg: CCBack,
@@ -77,6 +80,11 @@ const shopCardData = [
     frontImg: UMCFront,
     urlDest: "/stewards/UMC",
   }, // UMC
+  {
+    backImg: WRDBack,
+    frontImg: WRDFront,
+    urlDest: "/stewards/WRD"
+  }, // WRD
 ];
 ---
 
@@ -87,18 +95,16 @@ const shopCardData = [
     representation@seiunv.org or (702) 386 - 8849
   </p>
   <section class="flex justify-center">
-    <section class="shopGrid">
-      <div class="container">
-        {
-          shopCardData.map((shop) => (
-            <ShopCard
-              backImg={shop.backImg}
-              frontImg={shop.frontImg}
-              urlDest={shop.urlDest}
-            />
-          ))
-        }
-      </div>
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5">
+      {
+        shopCardData.map((shop) => (
+          <ShopCard
+            backImg={shop.backImg}
+            frontImg={shop.frontImg}
+            urlDest={shop.urlDest}
+          />
+        ))
+      }
     </section>
   </section>
 </Layout>
@@ -107,7 +113,7 @@ const shopCardData = [
   .shopGrid .container {
     vertical-align: center;
     display: grid;
-    grid-template-columns: repeat(3, 3fr);
+    grid-template-columns: repeat(5, 4fr);
     margin: auto;
   }
 

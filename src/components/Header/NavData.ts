@@ -40,10 +40,6 @@ const myUnion = [
     pageName: "Constitution & Bylaws",
     href: "/constitution",
   },
-  {
-    pageName: "Caucuses",
-    href: "/caucuses",
-  },
 ];
 
 const getInvolved = [
@@ -60,12 +56,8 @@ const getInvolved = [
     href: "/political_action",
   },
   {
-    pageName: "Communities United 2023",
-    href: "/communities_united_2023/",
-  },
-  {
-    pageName: "Communities United 2024",
-    href: "/communities_united_2024/",
+    pageName: "Caucuses",
+    href: "/caucuses",
   },
   {
     pageName: "Home Care Workers United",
@@ -87,7 +79,7 @@ export const all_dropdowns = [
     content: getInvolved,
   },
   {
-    title: "Updates",
+    title: "Union Stories",
     titleHref: "/updates",
   },
   {

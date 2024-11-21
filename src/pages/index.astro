@@ -13,17 +13,7 @@ import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
 
 // Banners
-import imgLatinoLogo from "../images/caucuses/Latino/TransparentLogo.png";
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
-
-// Political
-import imgKamala from "../images/index/Kamala.png";
-import imgHorsford from "../images/endorsements/Horsford.jpg";
-import imgLee from "../images/endorsements/Lee.jpg";
-import imgTitus from "../images/endorsements/Titus.jpg";
-
-import Subtitle from "../components/Subtitle.svelte";
-import BallotReady from "../components/BallotReady.astro";
 ---
 
 <Layout viewTransition={false}>
@@ -70,8 +60,7 @@ import BallotReady from "../components/BallotReady.astro";
     </div>
   </main>
 
-  <!-- 
-    <main
+  <main
     class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
   >
     <div
@@ -91,107 +80,9 @@ import BallotReady from "../components/BallotReady.astro";
       </div>
     </div>
   </main>
-   -->
 
-  <div
-    class="bg-gradient-to-br from-red-200 via-white to-blue-200 py-4 flex flex-col m-auto"
-  >
-    <HeadingTitle
-      text="SEIU 1107 Supports Candidates that WIN for Us!"
-      styling="m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5"
-    />
-    <div class="m-auto py-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
-      <div class="flex flex-col py-2">
-        <Button
-          text="View Endorsements"
-          styling="mx-auto mt-2 scale-125 hover:scale-[140%] text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-          href="/endorsements"
-        />
-      </div>
+  <LatestNews />
 
-      <h2 class="text-3xl text-black italic font-bold text-center m-auto py-5">
-        Don't waste your vote! Find your voting location today!
-      </h2>
-      <CollageImage
-        srcList={[imgHorsford, imgLee, imgTitus]}
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-screen-sm"
-        horizontal="right"
-        duration={5000}
-        cutline="Our union-endorsed candidates have voted to protect our jobs, pay our teachers, protect accessible healthcare for our families, and more!"
-      >
-        <div
-          class="flex flex-col max-w-screen-sm lg:max-w-screen-md text-black text-left mx-2"
-        >
-          <p class="italic text-black text-lg text-center m-auto">
-            If the widget fails to load, refresh the page
-          </p>
-          <BallotReady />
-        </div>
-      </CollageImage>
-    </div>
-    <div class="m-auto max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg">
-      <Subtitle text="Take Action! Pro-Labor Candidates Need YOU!" />
-      <CollageImage
-        src={imgKamala}
-        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] md:max-w-md lg:max-w-lg"
-      >
-        <div
-          class="flex flex-col max-w-screen-sm lg:max-w-screen-md text-black text-left mx-2"
-        >
-          <p class="pb-1">
-            <span class="text-xl font-bold">Dear SEIU 1107 Members,</span>
-            <br />
-            This election is crucial, and we need <b><u>you</u></b> to help elect
-            pro-labor candidates like Kamala Harris and Jacky Rosen. We invite you
-            to join our canvassing and phone banking efforts to reach voters and
-            emphasize the importance of voting for candidates who support workers'
-            rights.
-          </p>
-          <p class="py-1">
-            <span class="text-xl"><i><b>Phonebank Events</b></i></span>
-            <br />
-            Join SEIU 1107 as we call Nevada voters about the upcoming election.
-            Training is provided, and you can join virtually or in-person at any
-            time during the shift.
-          </p>
-          <Button
-            text="Sign Up for Phone Banking"
-            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-            href="https://www.mobilize.us/seiunevada/event/658670/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
-            target="_blank"
-          />
-          <p class="py-1">
-            <span class="text-xl"><i><b>Door Knocking Events</b></i></span>
-            <br />
-            Help us knock on doors and talk to voters about the importance of this
-            election. Training is provided before every shift. You can join at any
-            time and bring a friend!
-          </p>
-          <Button
-            text="Sign Up for Door Knocking"
-            styling="mx-auto hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-            href="https://www.mobilize.us/seiunevada/event/658676/?nvep=&hmac=&emci=9002ee53-4154-ef11-991a-6045bddbfc4b&emdi=ea000000-0000-0000-0000-000000000001&ceid="
-            target="_blank"
-          />
-        </div>
-      </CollageImage>
-      <div class="flex flex-col">
-        <h2 class="text-2xl md:text-3xl font-bold text-center py-3">
-          Contribute to COPE
-        </h2>
-        <p class="text-center text-lg">
-          Help our union hold elected officials accountable in this year's
-          elections! Contribute to SEIU 1107's COPE fund today!
-        </p>
-        <Button
-          text="Contribute"
-          styling="mx-auto mt-2 hover:scale-110 text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest"
-          href="https://act.seiu.org/a/committee-political-education?emci=dad38a93-decd-ed11-a8e0-00224832e811&emdi=4e865f38-a4ce-ed11-a8e0-00224832e811&ceid=80677448&nvep=&hmac=&nvep=&hmac="
-          target="_blank"
-        />
-      </div>
-    </div>
-  </div>
   <div
     class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4 flex flex-col m-auto"
   >
@@ -315,58 +206,16 @@ import BallotReady from "../components/BallotReady.astro";
       href="/membership_trainings"
     />
   </div>
-  <div class="bg-gradient-to-bl from-big-stone-700 to-big-stone-950 py-4">
-    <HeadingTitle
-      text="¡La lucha sigue! Join the Latino Caucus at SEIU 1107 Today!"
-      styling="m-auto font-Trebuchet font-bold text-center text-big-stone-200 py-5"
-    />
-
-    <div
-      class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
-    >
-      <CollageImage
-        src={imgLatinoLogo}
-        horizontal="right"
-        imageStyle="m-auto max-w-xs sm:max-wd-sm md:max-w-md"
-      >
-        <div class="flex flex-col text-big-stone-100 text-xl text-left mx-2">
-          <p class="py-2">
-            Our Latino Caucus is newly established, but we proudly follow in the
-            footsteps of our International Union Latino Caucus. Inspired by
-            their legacy, we aim to build on their work and continue advocating
-            for our community.
-          </p>
-          <p class="py-2">
-            Founded to address the unique needs and challenges faced by Latinos
-            in our union, our caucus is dedicated to promoting cultural pride,
-            economic empowerment, and social justice. We honor the trailblazers
-            who came before us and strive to uphold their commitment to unity
-            and progress.
-          </p>
-          <p class="py-2">
-            Our vision is to create an inclusive society where Latino workers
-            are valued, respected, and have equal opportunities, free from
-            discrimination and barriers.
-          </p>
-          <p class="text-big-stone-100 text-2xl pt-2 font-bold italic">
-            ¡Adelante!
-          </p>
-          <Button
-            text="Learn More"
-            styling="mt-5 mx-auto text-white scale-125 hover:scale-[140%] bg-orange-600 hover:bg-orange-700 active:bg-orange-800"
-            href="/caucuses/latino"
-          />
-        </div>
-      </CollageImage>
-    </div>
-  </div>
   <StrongerTogether />
-  <LatestNews />
-  <div class="py-4 bg-gradient-to-b from-honey-flower-200 to-honey-flower-300">
-    <HeadingTitle text="Why We're Joining Together" />
+  <div class="py-4 bg-gradient-to-b from-honey-flower-900 to-honey-flower-700">
+    <div
+      class="tinyShadow py-2 font-bold font-Trebuchet text-center text-supernova-500 text-4xl md:text-5xl drop-shadow-2xl"
+    >
+      Why We're Joining Together
+    </div>
     <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
       <CollageImage src={imgTogether}>
-        <div class="text-md lg:text-lg">
+        <div class="text-xl text-white">
           <p class="py-2">
             Public service, home care and health care workers are joining
             together to get a real say over our wages, staffing, retirement, and
@@ -380,8 +229,12 @@ import BallotReady from "../components/BallotReady.astro";
             fair pay increases for everyone—including chronically underpaid
             women and people of color—throughout our state.
           </p>
+          <Button
+            href="/join"
+            text="Join Us"
+            styling="mx-auto text-honey-flower-800 hover:scale-105c bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
+          />
         </div>
-        <Button href="/join" text="Join Us" />
       </CollageImage>
     </div>
   </div>

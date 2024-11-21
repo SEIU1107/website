@@ -20,7 +20,10 @@ import Nilda from "../images/staff/Nilda.jpg";
 import Gersam from "../images/staff/Gersam.jpg";
 import Patti from "../images/staff/Patti.jpg";
 import Nathan from "../images/staff/Nathan.jpg";
-import AliciaBaker from "../images/staff/AliciaBaker.jpg";
+import Carla from "../images/staff/Carla.png";
+import TonyGreen from "../images/staff/Tony Green.png";
+import TashiaHairston from "../images/staff/Tashia.png";
+import ReginaToney from "../images/staff/Regina.png";
 
 import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
@@ -32,7 +35,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Chief of Staff"],
       ["Cell", "702-533-6077"],
-      ["Email", "jklumb@seiunv.org"],
     ],
   },
   {
@@ -41,7 +43,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Deputy Chief of Staff"],
       ["Cell", "702-378-7768"],
-      ["Email", "fmorales@seiunv.org"],
     ],
   },
   {
@@ -50,7 +51,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Contract Representative"],
       ["Cell", "702-296-6416"],
-      ["Email", "jwhite@seiunv.org"],
     ],
   },
   {
@@ -59,15 +59,14 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Contract Representative"],
       ["Cell", "702-296-6470"],
-      ["Email", "bmarzan@seiunv.org"],
     ],
   },
   {
     name: "Tony Green",
+    profileImg: TonyGreen,
     data: [
       ["Title", "Contract Representative"],
       ["Cell", "702-378-0030"],
-      ["Email", "tgreen@seiunv.org"],
     ],
   },
   {
@@ -77,7 +76,14 @@ const profileData: Profile[] = [
       ["Title", "Organizing Coordinator"],
       ["Assignment", "Southern Hills"],
       ["Cell", "702-934-4961"],
-      ["Email", "poconnor@seiunv.org"],
+    ],
+  },
+  {
+    name: "Carla Long",
+    profileImg: Carla,
+    data: [
+      ["Title", "Organizer"],
+      ["Cell", "(702) 296-6409"],
     ],
   },
   {
@@ -85,7 +91,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Organizer"],
       ["Cell", "(702) 348-2081"],
-      ["Email", "dsantiago@seiunv.org"],
     ],
   },
   {
@@ -93,7 +98,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Organizer"],
       ["Cell", "702-849-8876"],
-      ["Email", "jsalas@seiunv.org"],
     ],
   },
   {
@@ -102,7 +106,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Organizer"],
       ["Cell", "702-849-2308"],
-      ["Email", "mosuigwe@seiunv.org"],
     ],
   },
   {
@@ -112,7 +115,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Renown, NNRH, CC-GU, SNHD, SNRHA"],
       ["Cell", "702-274-3171"],
-      ["Email", "rsalinas@seiunv.org"],
     ],
   },
   {
@@ -122,15 +124,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "DOA & CC General Unit"],
       ["Cell", "702-793-7057"],
-      ["Email", "selamin@seiunv.org"],
-    ],
-  },
-  {
-    name: "Sylvia Sharpe",
-    data: [
-      ["Title", "Organizer"],
-      ["Cell", "(702) 348-2831"],
-      ["Email", "ssharpe@seiunv.org"],
     ],
   },
   {
@@ -140,7 +133,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "702-506-3082"],
-      ["Email", "gmadrid@seiunv.org"],
     ],
   },
   {
@@ -149,7 +141,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "725-293-7466"],
-      ["Email", "icooper@seiunv.org"],
     ],
   },
   {
@@ -158,7 +149,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "702-491-2642"],
-      ["Email", "jparker@seiunv.org"],
     ],
   },
   {
@@ -167,7 +157,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "702 591-1277"],
-      ["Email", "sabdulrahim@seiunv.org"],
     ],
   },
   {
@@ -176,16 +165,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "702-661-6559"],
-      ["Email", "scooper@seiunv.org"],
-    ],
-  },
-  {
-    name: "Sharie Denton",
-    data: [
-      ["Title", "Organizer"],
-      ["Assignment", "Home Care"],
-      ["Cell", "702-721-2411"],
-      ["Email", "sdenton@seiunv.org"],
     ],
   },
   {
@@ -194,7 +173,6 @@ const profileData: Profile[] = [
       ["Title", "Organizer"],
       ["Assignment", "Home Care"],
       ["Cell", "702-906-3950"],
-      ["Email", "tsmith@seiunv.org"],
     ],
   },
   {
@@ -202,15 +180,14 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Chief Operating Officer"],
       ["Cell", "702-278-5509"],
-      ["Email", "fdanglapin@seiunv.org"],
     ],
   },
   {
     name: "Tashia Hairston",
+    profileImg: TashiaHairston,
     data: [
       ["Title", "Finance & HR Assistant"],
       ["Cell", "702-374-6406"],
-      ["Email", "thairston@seiunv.org"],
     ],
   },
   {
@@ -218,7 +195,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Admin Assistant"],
       ["Cell", "702-491-2711"],
-      ["Email", "slong@seiung.org"],
     ],
   },
   {
@@ -227,7 +203,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Database and Finance Coordinator"],
       ["Cell", "775-870-0604"],
-      ["Email", "pcurry@seiunv.org"],
     ],
   },
   {
@@ -236,15 +211,14 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Executive Assistant"],
       ["Cell", "702-715-8592"],
-      ["Email", "nmason@seiunv.org"],
     ],
   },
   {
-    name: "Paula Pecorella",
+    name: "Regina Toney",
+    profileImg: ReginaToney,
     data: [
-      ["Title", "Communication Coordinator"],
+      ["Title", "Communications Director"],
       ["Cell", "702-348-0496"],
-      ["Email", "ppecorella@seiunv.org"],
     ],
   },
   {
@@ -253,7 +227,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "IT Support Specialist"],
       ["Cell", "702-849-2831"],
-      ["Email", "glopez@seiunv.org"],
     ],
   },
   {
@@ -262,7 +235,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Data & Technology Specialist"],
       ["Cell", "702-757-7191"],
-      ["Email", "nmactal@seiunv.org"],
     ],
   },
   {
@@ -271,7 +243,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Political Director"],
       ["Cell", "702-296-6414"],
-      ["Email", "choskins@seiunv.org"],
     ],
   },
   {
@@ -280,7 +251,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Political Organizer"],
       ["Cell", "702-690-8046"],
-      ["Email", "chilton@seiunv.org"],
     ],
   },
   {
@@ -288,7 +258,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Civic Engagement"],
       ["Cell", "702-695-0454"],
-      ["Email", "kflores@seiunv.org"],
     ],
   },
   {
@@ -296,16 +265,6 @@ const profileData: Profile[] = [
     data: [
       ["Title", "Senior Advisor to the Executive Director"],
       ["Cell", "702-339-4628"],
-      ["Email", "pwoods@seiunv.org"],
-    ],
-  },
-  {
-    name: "Alicia Baker",
-    profileImg: AliciaBaker,
-    data: [
-      ["Title", "Regional Coordinator, Education Fund"],
-      ["Cell", "(323) 363-4632"],
-      ["Email", "abaker@theedfund.org"],
     ],
   },
 ];
