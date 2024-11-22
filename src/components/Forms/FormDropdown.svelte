@@ -16,6 +16,7 @@
   export let color = "bg-honey-flower-800";
   export let hoverColor = "bg-honey-flower-900";
   export let minWidth = "min-w-full";
+  export let textSize = "text-md";
 
   let dropdownOpen = false;
   let currOption: string | null = null;
@@ -45,7 +46,7 @@
       on:mouseenter={() => {
         dropdownOpen = true;
       }}
-      class={`flex ${color} ${textColor} ${minWidth} focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-t-lg text-md px-5 py-2.5 text-center items-center `.concat(
+      class={`flex ${textSize} ${color} ${textColor} ${minWidth} focus:ring-4 focus:outline-none focus:ring-blue-300 rounded-t-lg px-5 py-2.5 text-center items-center `.concat(
         dropdownOpen ? `rounded-br-lg ${hoverColor}` : "rounded-b-lg"
       )}
       type="button"
@@ -79,7 +80,7 @@
         class={`${hoverColor} ${minWidth} absolute z-10 rounded-b-lg rounded-tr-lg shadow-2xl`}
       >
         <ul
-          class={`py-2 text-md ${textColor}`}
+          class={`py-2 ${textSize} ${textColor}`}
           aria-labelledby="dropdownHoverButton"
         >
           {#each dropdownOptions as dropdownOption}

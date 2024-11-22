@@ -2,7 +2,12 @@
   import FormDropdown from "../Forms/FormDropdown.svelte";
   import Table from "../Forms/Table.svelte";
   import Subtitle from "../Subtitle.svelte";
-  import { formatPercentage, formatCurrency } from "../util";
+  import WageHourlyInput from "./WageHourlyInput.svelte";
+  import {
+    formatPercentage,
+    formatCurrency,
+    getMeritIncreaseValue,
+  } from "../util";
   let wage: number = 0;
   let hours: number = 40;
 
@@ -39,7 +44,7 @@
 
   function calculate() {
     const meritIncreaseValue =
-      getMeritIncreaseValue() +
+      getMeritIncreaseValue(meritIncreasesString) +
       (meritIncreasesString !== "Topped Out" && attendaceMerit ? 0.005 : 0);
     const yearlyHours = hours * 52;
 
@@ -69,77 +74,28 @@
     // 2027 / 2028
     const fourthHourlyLowVal = thirdHourlyLowVal * 1.02 * meritIncreaseValue;
     const fourthHourlyHighVal = thirdHourlyHighVal * 1.03 * meritIncreaseValue;
-    fourthHourlyLow = formatCurrency(fourthHourlyHighVal);
+    fourthHourlyLow = formatCurrency(fourthHourlyLowVal);
     fourthHourlyHigh = formatCurrency(fourthHourlyHighVal);
     fourthGrossLow = formatCurrency(fourthHourlyLowVal * yearlyHours);
     fourthGrossHigh = formatCurrency(fourthHourlyHighVal * yearlyHours);
-  }
-
-  function updateWage(event: Event) {
-    const target = event.target as HTMLInputElement;
-    wage = target ? Math.max(Number(target.value), 0) : 0;
-    calculate();
-  }
-
-  function updateHours(event: Event) {
-    const target = event.target as HTMLInputElement;
-    hours = target ? Math.max(Number(target.value), 0) : 0;
-    calculate();
-  }
-
-  function getMeritIncreaseValue(): number {
-    switch (meritIncreasesString) {
-      case "3.4%":
-        return 1.034;
-      case "2.5%":
-        return 1.025;
-      case "1.5%":
-        return 1.015;
-    }
-    return 1;
   }
 </script>
 
 <div class="flex flex-col">
   <form class="mx-auto">
-    <div class="flex flex-col lg:grid lg:grid-cols-2 mr-auto">
-      <div class="lg:mr-2">
-        <label
-          for="number-input"
-          class="block mb-2 text-lg text-honey-flower-900 font-bold"
-          >Enter Your Hourly Wage</label
-        >
-
-        <input
-          on:input={updateWage}
-          type="number"
-          id="number-input"
-          aria-describedby="helper-text-explanation"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          placeholder="Enter Your Wage"
-          required
-        />
-      </div>
-      <div class="lg:ml-2">
-        <label
-          for="number-input"
-          class="block mb-2 text-lg text-honey-flower-900 font-bold"
-          >Enter Your Weekly Hours</label
-        >
-        <input
-          on:input={updateHours}
-          type="number"
-          id="number-input"
-          aria-describedby="helper-text-explanation"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-          placeholder="40"
-          required
-        />
-      </div>
-    </div>
+    <WageHourlyInput
+      on:hoursUpdate={(e) => {
+        hours = e.detail.value;
+        calculate();
+      }}
+      on:wageUpdate={(e) => {
+        wage = e.detail.value;
+        calculate();
+      }}
+    />
     <div class="pt-5 grid grid-cols-2">
       <div class="px-1">
-        <div class="text-black font-bold text-lg italic">Merit Increase</div>
+        <div class="text-black font-bold text-lg">Merit Increase</div>
         <FormDropdown
           on:update={(e) => {
             meritIncreasesString = e.detail.value;
@@ -153,9 +109,7 @@
       </div>
       {#if meritIncreasesString !== "Topped Out"}
         <div class="px-1">
-          <div class="text-black font-bold text-lg italic">
-            Attendance Merit?
-          </div>
+          <div class="text-black font-bold text-lg">Attendance Merit?</div>
           <FormDropdown
             on:update={(e) => {
               attendaceMerit = e.detail.value === "Yes";
@@ -174,6 +128,10 @@
           totalMerit - 1
         )}</span
       >
+    {:else}
+      <span class="font-bold font-italic text-md"
+        >No Merit Increases Applied</span
+      >
     {/if}
     <Table
       headers={[
@@ -183,22 +141,22 @@
         "New Annual Gross",
       ]}
       rows={[
-        ["2024 / 2025", "4.5% Increase", firstHourlyString, firstGrossString],
+        ["2024 / 2025", "4.5%", firstHourlyString, firstGrossString],
         [
           "2025 / 2026",
-          "2.5% - 3.5% Increase",
+          "2.5% - 3.5%",
           `${secondHourlyLow} - ${secondHourlyHigh}`,
           `${secondGrossLow} - ${secondGrossHigh}`,
         ],
         [
           "2026 / 2027",
-          "2% - 3% Increase",
+          "2% - 3%",
           `${thirdHourlyLow} - ${thirdHourlyHigh}`,
           `${thirdGrossLow} - ${thirdGrossHigh}`,
         ],
         [
           "2027 / 2028",
-          "2% - 3% Increase",
+          "2% - 3%",
           `${fourthHourlyLow} - ${fourthHourlyHigh}`,
           `${fourthGrossLow} - ${fourthGrossHigh}`,
         ],
