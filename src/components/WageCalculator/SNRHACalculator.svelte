@@ -17,7 +17,7 @@
   let firstGrossString: string;
 
   // 2025 / 2026
-  let secondMeritIncrease;
+  let secondMeritIncrease: string;
   let secondHourlyString: string;
   let secondGrossString: string;
 
@@ -27,9 +27,9 @@
   let thirdGrossString: string;
 
   // Totals
-  let totalIncreasePercentage: number;
-  let totalIncreaseHourly: number;
-  let totalIncreaseGross: number;
+  let totalIncreasePercentage: string;
+  let totalIncreaseHourly: string;
+  let totalIncreaseGross: string;
   function calculate() {
     const yearlyHours = hours * 52;
 
@@ -149,7 +149,7 @@
               hoverColor: "bg-supernova-500",
               minWidth: "min-w-32 md:min-w-full",
               "on:update": (e) => {
-                secondMeritIncrease = e.detail.value;
+                thirdMeritIncrease = e.detail.value;
                 calculate();
               },
             },

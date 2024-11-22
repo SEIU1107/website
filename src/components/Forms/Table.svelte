@@ -1,12 +1,13 @@
 <script lang="ts">
+  import { SvelteComponent } from "svelte";
+
+  type TableCell =
+    | string
+    | { html: string }
+    | { component: typeof SvelteComponent; props?: Record<string, any> };
+
   export let headers: string[] = [""];
-  export let rows: Array<
-    Array<
-      | string
-      | HTMLElement
-      | { component: typeof SvelteComponent; props?: Record<string, any> }
-    >
-  > = [[]];
+  export let rows: Array<Array<TableCell>> = [[]];
   // Styling
   export let headerTextSize = "text-sm md:text-md lg:text-lg";
   export let headerTextColor = "text-supernova-300";
