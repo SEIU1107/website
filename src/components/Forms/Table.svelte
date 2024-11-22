@@ -21,10 +21,10 @@
   export let borderColor = "border-supernova-500";
 </script>
 
-<div class="relative overflow-x-auto shadow-md rounded-lg">
-  <table
-    class={`${headerColor} max-w-[95vw] md:max-w-full text-center md:text-left`}
-  >
+<div
+  class="relative overflow-x-scroll max-w-[95vw] md:max-w-full text-center md:text-left shadow-md rounded-lg"
+>
+  <table class={`${headerColor}`}>
     <thead
       class={`${headerColor} ${headerTextSize} ${headerTextColor} uppercase`}
     >
