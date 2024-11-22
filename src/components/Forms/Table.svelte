@@ -22,7 +22,7 @@
 </script>
 
 <div
-  class="relative overflow-x-scroll max-w-[95vw] md:max-w-full text-center md:text-left shadow-md rounded-lg"
+  class="relative overflow-x-auto max-w-[95vw] md:max-w-full text-center md:text-left shadow-md rounded-lg"
 >
   <table class={`${headerColor}`}>
     <thead

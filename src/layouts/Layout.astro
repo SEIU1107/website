@@ -46,7 +46,7 @@ const {
     <title>{title}</title>
   </head>
   <body
-    class={"font-Roboto leading-6 text-base text-neutral-800 ".concat(
+    class={"font-Roboto overflow-x-hidden leading-6 text-base text-neutral-800 ".concat(
       backgroundStyling
     )}
   >
@@ -61,9 +61,8 @@ const {
           <slot />
         )
       }
-      <Footer />
     </div>
-
+    <Footer />
     <style>
       body {
         max-width: 100%;
