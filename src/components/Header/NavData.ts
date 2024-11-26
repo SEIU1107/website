@@ -37,10 +37,6 @@ const myUnion = [
     href: "/member_benefits",
   },
   {
-    pageName: "Wage Calculator",
-    href: "/calculator",
-  },
-  {
     pageName: "Constitution & Bylaws",
     href: "/constitution",
   },

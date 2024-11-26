@@ -1,0 +1,12 @@
+---
+import HeadingTitle from "../../components/HeadingTitle.svelte";
+import SNRHACalculator from "../../components/WageCalculator/SNRHACalculator.svelte";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="SRNHA Wage Calculator" centered="true">
+  <HeadingTitle text="SRNHA Wage Calculator" />
+  <div class="mx-auto">
+    <SNRHACalculator client:load />
+  </div>
+</Layout>

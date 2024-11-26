@@ -1,0 +1,13 @@
+---
+import HeadingTitle from "../../components/HeadingTitle.svelte";
+import SNHDCalculator from "../../components/WageCalculator/SNHDCalculator.svelte";
+
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="SNHD Wage Calculator" centered="true">
+  <HeadingTitle text="SNHD Wage Calculator" />
+  <div class="mx-auto">
+    <SNHDCalculator client:load />
+  </div>
+</Layout>

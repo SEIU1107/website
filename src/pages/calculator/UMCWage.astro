@@ -1,0 +1,10 @@
+---
+import HeadingTitle from "../../components/HeadingTitle.svelte";
+import UMCCalculator from "../../components/WageCalculator/UMCCalculator.svelte";
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="UMC Wage Calculator" centered="true">
+  <HeadingTitle text="UMC Wage Calculator" />
+  <div class="mx-auto"><UMCCalculator client:load /></div>
+</Layout>
