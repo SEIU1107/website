@@ -63,16 +63,6 @@ export const dataGeneralUnit: Profile[] = [
     ],
   },
   {
-    name: "Andra Johnson",
-    data: [
-      ["Title", "Steward"],
-      ["Unit", "General Unit"],
-      ["Department", "Treasurer's Office"],
-      ["Phone", "(702) 455 - 2109"],
-      ["Email", "andra.johnson2019@gmail.com"],
-    ],
-  },
-  {
     name: "Arturo Espino",
     profileImg: ArturoEspino,
     data: [
@@ -301,20 +291,18 @@ export const dataDOA: Profile[] = [
   },
 ];
 
-import EarlBarnes from "../../images/stewards/CC/EJBarnes.jpg";
 import MichelleBrown from "../../images/stewards/CC/MichelleBrown.jpeg";
 import NicoleMiller from "../../images/stewards/CC/Nicole-Miller-CC.png";
 
 export const dataDFSDJJS: Profile[] = [
   {
-    name: 'Earl "EJ" Barnes',
-    profileImg: EarlBarnes,
+    name: "Andra Johnson",
     data: [
       ["Title", "Steward"],
-      ["Unit", "DFS"],
-      ["Department", "Emergency Response Team"],
-      ["Phone", "(562) 271 - 2192"],
-      ["Email", "earlbrns@yahoo.com"],
+      ["Unit", "General Unit"],
+      ["Department", "Family Services"],
+      ["Phone", "(702) 455 - 2109"],
+      ["Email", "andra.johnson2019@gmail.com"],
     ],
   },
   {

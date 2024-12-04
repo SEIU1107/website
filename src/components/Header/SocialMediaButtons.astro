@@ -1,45 +1,56 @@
 ---
 import HoverIcon from "./HoverIcon.astro";
-import FacebookLogo from "../../images/icons/Facebook.png";
+
+import FacebookLogoDark from "../../images/icons/FacebookDark.png";
+import FacebookLogoLight from "../../images/icons/FacebookLight.png";
 import FacebookHover from "../../images/icons/FacebookHover.png";
 
-import TwitterLogo from "../../images/icons/Twitter.png";
+import TwitterLogoDark from "../../images/icons/TwitterDark.png";
+import TwitterLogoLight from "../../images/icons/TwitterLight.png";
 import TwitterHover from "../../images/icons/TwitterHover.png";
 
-import InstaLogo from "../../images/icons/Insta.png";
+import InstaLogoDark from "../../images/icons/InstaDark.png";
+import InstaLogoLight from "../../images/icons/InstaLight.png";
 import InstaHover from "../../images/icons/InstaHover.png";
 
-import TikTok from "../../images/icons/TikTok.png";
+import TikTokDark from "../../images/icons/TikTokDark.png";
+import TikTokLight from "../../images/icons/TikTokLight.png";
 import TikTokHover from "../../images/icons/TikTokHover.png";
+
+export interface Props {
+  header?: boolean; // If true, use the light icons instead of dark
+}
+
+const { header } = Astro.props as Props;
 ---
 
 <div class="flex flex-row justify-between">
-    <HoverIcon
-        baseImg={FacebookLogo}
-        hoverImg={FacebookHover}
-        sizing="w-8"
-        href="https://www.facebook.com/SEIU1107/"
-        aStyling="align-middle px-5"
-    />
-    <HoverIcon
-        baseImg={TwitterLogo}
-        hoverImg={TwitterHover}
-        sizing="w-8"
-        href="https://twitter.com/seiu1107/"
-        aStyling="align-middle py-1 px-5"
-    />
-    <HoverIcon
-        baseImg={InstaLogo}
-        hoverImg={InstaHover}
-        sizing="w-7"
-        href="https://www.instagram.com/seiu1107/"
-        aStyling="align-middle py-0.5 px-5"
-    />
-    <HoverIcon
-        baseImg={TikTok}
-        hoverImg={TikTokHover}
-        sizing="w-7"
-        href="https://www.tiktok.com/@seiu1107"
-        aStyling="align-middle py-0 px-4"
-    />
+  <HoverIcon
+    baseImg={header ? FacebookLogoLight : FacebookLogoDark}
+    hoverImg={FacebookHover}
+    sizing="w-8"
+    href="https://www.facebook.com/SEIU1107/"
+    aStyling="align-middle px-5"
+  />
+  <HoverIcon
+    baseImg={header ? TwitterLogoLight : TwitterLogoDark}
+    hoverImg={TwitterHover}
+    sizing="w-8"
+    href="https://twitter.com/seiu1107/"
+    aStyling="align-middle py-1 px-5"
+  />
+  <HoverIcon
+    baseImg={header ? InstaLogoLight : InstaLogoDark}
+    hoverImg={InstaHover}
+    sizing="w-7"
+    href="https://www.instagram.com/seiu1107/"
+    aStyling="align-middle py-0.5 px-5"
+  />
+  <HoverIcon
+    baseImg={header ? TikTokLight : TikTokDark}
+    hoverImg={TikTokHover}
+    sizing="w-7"
+    href="https://www.tiktok.com/@seiu1107"
+    aStyling="align-middle py-0 px-4"
+  />
 </div>

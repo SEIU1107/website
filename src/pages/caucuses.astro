@@ -9,6 +9,7 @@ import InfoCard from "../components/InfoCard.astro";
 import groupPhoto from "../images/caucuses/Group Photo.jpeg";
 import AFRAMLogo from "../images/caucuses/AFRAM Logo.png";
 import LatinoLogo from "../images/caucuses/Latino/Logo.png";
+import AAPILogo from "../images/caucuses/AAPI/Logo.png";
 
 const paragraphStyling = "text-slate-200 font-Roboto text-lg py-1.5";
 const headingTwoStyling =
@@ -113,9 +114,9 @@ const headingTwoStyling =
           Latino workforce faces.
         </p>
         <p class="mt-2">
-          We work to ensure that Latino voices are heard and represented in the workplace,
-          in our communities, and in the political arena. Our goal is to empower
-          Latino members through education, advocacy, and solidarity.
+          We work to ensure that Latino voices are heard and represented in the
+          workplace, in our communities, and in the political arena. Our goal is
+          to empower Latino members through education, advocacy, and solidarity.
         </p>
         <p class="mt-2">
           <b><i>¡Adelante!</i></b>
@@ -123,6 +124,21 @@ const headingTwoStyling =
         <div class="mt-2">
           <Button text="Learn More" href="/caucuses/latino" />
         </div>
+      </InfoCard>
+      <InfoCard title="Asian Pacific Islanders" image={AAPILogo}>
+        <p>
+          The SEIU Nevada 1107 API Caucus aims to collaborate with community
+          organizations to address social, economic, racial, housing, working
+          conditions, climate, health and other issues of concern to the API
+          community.
+        </p>
+        <p class="mt-2">
+          We also aim to identify and develop API leaders within the labor
+          movement and in the community.
+        </p>
+        <p class="mt-2">
+          <b><i>More Information Coming Soon</i></b>
+        </p>
       </InfoCard>
     </InfoCardGridLayout>
   </div>
