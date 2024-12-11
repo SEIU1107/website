@@ -194,6 +194,36 @@ export const dataGeneralUnit: Profile[] = [
       ["Email", "sharitatobin2424@gmail.com"],
     ],
   },
+  {
+    name: "Tanya Russell",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Fire Department"],
+      ["Phone", "(702) 769 - 9815"],
+      ["Email", "tanyaR@clarkcountynv.gov"],
+    ],
+  },
+  {
+    name: "Ulises Ambrosio",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Public Works"],
+      ["Phone", "(702) 238 - 5582"],
+      ["Email", "ulisesambrosio71@gmail.com"],
+    ],
+  },
+  {
+    name: "Wendy Mercado",
+    data: [
+      ["Title", "Steward"],
+      ["Unit", "General Unit"],
+      ["Department", "Public Works"],
+      ["Phone", "(702) 290 - 2382"],
+      ["Email", "wendy160381@gmail.com"],
+    ],
+  },
 ];
 
 import Saki from "../../images/stewards/CC/Saki.png";
