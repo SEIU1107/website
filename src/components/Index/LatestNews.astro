@@ -1,4 +1,5 @@
 ---
+import type { MDXInstance } from "astro";
 import Button from "../Button.svelte";
 import PostsGrid from "../Posts/PostsGrid.svelte";
 
@@ -15,12 +16,13 @@ const {
   titleStyle = "text-honey-flower-800 text-5xl m-auto text-center font-Trebuchet font-bold",
   textStyle = "font-Roboto text-black",
 } = Astro.props as Props;
-const blog = await Astro.glob("../../posts/blog/*/*.mdx");
-const articles = await Astro.glob("../../posts/news articles/*/*.mdx");
-const pressReleases = await Astro.glob("../../posts/press releases/*/*.mdx");
-const previews = blog
-  .concat(articles)
-  .concat(pressReleases)
+const previewsMatches = import.meta.glob<MDXInstance<Record<string, any>>>([
+  "../../posts/blog/*/*.mdx",
+  "../../posts/news articles/*/*.mdx",
+  "../../posts/press releases/*/*.mdx",
+], {eager: true});
+
+const previews = Object.values(previewsMatches)
   .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
   .slice(0, numPosts);
 

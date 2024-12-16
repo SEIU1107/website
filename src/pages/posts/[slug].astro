@@ -1,24 +1,23 @@
 ---
-import type { MDXInstance, MarkdownInstance } from "astro";
+import type { MDXInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-  const blog: MDXInstance<Record<string, any>>[] = await Astro.glob(
-    "../../posts/blog/*/*.mdx"
+
+  const postsMatches = import.meta.glob<MDXInstance<Record<string, any>>>(
+    ["../../posts/blog/*/*.mdx", "../../posts/press releases/*/*.mdx"],
+    { eager: true }
   );
-  const pressReleases: MDXInstance<Record<string, any>>[] = await Astro.glob(
-    "../../posts/press releases/*/*.mdx"
-  );
-  return blog
-    .concat(pressReleases)
-    .map((post: MDXInstance<Record<string, any>>) => ({
-      params: {
-        slug: post.frontmatter.url.replaceAll(' ', '-'),
-      },
-      props: {
-        post,
-      },
-    }));
+
+  const posts = Object.values(postsMatches);
+  return posts.map((post) => ({
+    params: {
+      slug: post.frontmatter.url.replaceAll(" ", "-"),
+    },
+    props: {
+      post,
+    },
+  }));
 }
 
 const { Content, frontmatter } = Astro.props.post;
@@ -64,9 +63,7 @@ const { Content, frontmatter } = Astro.props.post;
         </div>
       )
     }
-    <div
-      class={"py-2 prose flex flex-col mx-auto"}
-    >
+    <div class={"py-2 prose flex flex-col mx-auto"}>
       <Content />
     </div>
   </div>

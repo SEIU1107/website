@@ -1,14 +1,20 @@
 ---
+import type { MDXInstance } from "astro";
 import FilteredPosts from "../components/Posts/FilteredPosts.svelte";
 import Layout from "../layouts/Layout.astro";
+const postsMatches =
+  import.meta.glob <MDXInstance<Record<string, any>>>(
+    [
+      "../posts/blog/*/*.mdx",
+      "../posts/news articles/*/*.mdx",
+      "../posts/press releases/*/*.mdx",
+    ],
+    { eager: true }
+  );
 
-const blog = await Astro.glob("../posts/blog/*/*.mdx");
-const articles = await Astro.glob("../posts/news articles/*/*.mdx");
-const pressReleases = await Astro.glob("../posts/press releases/*/*.mdx");
-const allPosts = blog
-  .concat(articles)
-  .concat(pressReleases)
-  .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1));
+const allPosts = Object.values(postsMatches).sort((a, b) =>
+  a.frontmatter.date < b.frontmatter.date ? 1 : -1
+);
 ---
 
 <Layout title="Updates">
