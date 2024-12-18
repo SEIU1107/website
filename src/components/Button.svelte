@@ -1,13 +1,21 @@
 <script lang="ts">
-  import type { MouseEventHandler } from "svelte/elements";
+  const {
+    // Button Label
+    text = null,
 
-  export let text: string | undefined = undefined;
-  export let onClick: MouseEventHandler<HTMLButtonElement> | undefined =
-    undefined;
-  export let href: string | undefined = undefined;
-  export let styling =
-    "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest";
-  export let target: string | undefined = undefined;
+    // For when the button simply leads to another page
+    href = null,
+    target = null,
+
+    // function to run upon clicking, if href is not used
+    onClick = null,
+
+    // Style options
+    styling = "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
+
+    // Children for rendering in the button (above text)
+    children = null,
+  } = $props();
 
   const classString =
     "inline-block rounded-md px-2 py-2 text-center uppercase tracking-wide focus:outline-none focus:ring focus:ring-offset-white transition duration-200".concat(
@@ -17,14 +25,14 @@
 
 {#if href}
   <a {href} class={classString} {target}>
-    <slot />
+    {@render children?.()}
     {#if text}
       {text}
     {/if}
   </a>
 {:else if onClick}
-  <button on:click={onClick} class={classString}>
-    <slot />
+  <button onclick={onClick} class={classString}>
+    {@render children?.()}
     {#if text}
       {text}
     {/if}

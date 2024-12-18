@@ -12,6 +12,14 @@
   let phoneInputValue = "";
   let employerInputValue = "";
 
+  // Error Messages
+  let errorMessage = false;
+  let nameMissing = false;
+  let emailMissing = false;
+  let emailInvalid = false;
+  let phoneMissing = false;
+  let messageMissing = false;
+
   // https://quilljs.com/
   let quill: Quill;
   onMount(() => {
@@ -20,15 +28,7 @@
       theme: "snow",
 
       // Determines what's allowed, in particular, NO LINKS!
-      formats: [
-        "bold",
-        "italic",
-        "underline",
-        "header",
-        "list",
-        "strike",
-        "align",
-      ],
+      formats: ["bold", "italic", "underline", "header", "list", "strike"],
 
       // Defines the toolbar options
       modules: {
@@ -36,11 +36,59 @@
           [{ header: [1, 2, 3, false] }],
           ["bold", "italic", "underline", "strike"],
           [{ list: "ordered" }, { list: "bullet" }],
-          [{ align: [] }],
         ],
       },
     });
   });
+
+  function verifyFormSubmission(): boolean {
+    // Returns true if the form was successfully filled out
+    // Otherwise, sets the proper error messages to true.
+
+    // Clear error messages
+    errorMessage = false;
+    nameMissing = false;
+    emailMissing = false;
+    emailInvalid = false;
+    phoneMissing = false;
+    messageMissing = false;
+
+    // Check required fields are satisfied
+
+    // Name
+    if (!nameInputValue) {
+      errorMessage = true;
+      nameMissing = true;
+    }
+
+    // Email
+    if (!emailInputValue) {
+      errorMessage = true;
+      emailMissing = true;
+    } else if (!isValidEmail(emailInputValue)) {
+      errorMessage = true;
+      emailInvalid = true;
+    }
+
+    // Phone
+    if (!phoneInputValue) {
+      errorMessage = true;
+      phoneMissing = true;
+    }
+
+    // Message Text
+    if (quill.getLength() <= 2) {
+      errorMessage = true;
+      messageMissing = true;
+    }
+    return !errorMessage;
+  }
+
+  function isValidEmail(email: string): boolean {
+    // Regular expression for validating email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  }
 
   const formLabelStyling = "block mb-2 text-lg text-honey-flower-900 font-bold";
   const textInputStyling =
@@ -62,6 +110,9 @@
           }}
           styling={textInputStyling}
         />
+        {#if nameMissing}
+          <span class="text-red-600 text-sm">Name is required.</span>
+        {/if}
       </div>
       <div class="mt-2.5 md:my-0 md:ml-1">
         <div class={formLabelStyling}>
@@ -74,6 +125,13 @@
           }}
           styling={textInputStyling}
         />
+        {#if emailMissing}
+          <span class="text-red-600 text-sm">Email is required.</span>
+        {:else if emailInvalid}
+          <span class="text-red-600 text-sm"
+            >Email is not correctly formatted.</span
+          >
+        {/if}
       </div>
     </div>
     <div class="py-2.5 flex flex-col md:flex-row">
@@ -88,6 +146,9 @@
           }}
           styling={textInputStyling}
         />
+        {#if phoneMissing}
+          <span class="text-red-600 text-sm">Phone Number is required.</span>
+        {/if}
       </div>
       <div class="my-2.5 md:my-0 md:ml-1">
         <div class={formLabelStyling}>Employer</div>
@@ -122,13 +183,23 @@
       <div class="bg-honey-flower-50">
         <div class="" id="editor"></div>
       </div>
+      {#if messageMissing}
+        <span class="text-red-600 text-sm">Message cannot be empty</span>
+      {/if}
     </div>
   </div>
   <Button
-    text="Fuck"
+    text="Submit"
     onClick={() => {
       console.log(quill.getSemanticHTML());
       console.log(quill.getLength());
+      verifyFormSubmission();
     }}
   />
+  {#if errorMessage}
+    <div class="py-2 text-red-600">
+      Please ensure all required (*) fields are filled out correctly before
+      submitting.
+    </div>
+  {/if}
 </div>
