@@ -97,8 +97,8 @@
       <div class="px-1">
         <div class="text-black font-bold text-lg">Merit Increase</div>
         <FormDropdown
-          on:update={(e) => {
-            meritIncreasesString = e.detail.value;
+          update={(val: string) => {
+            meritIncreasesString = val;
             if (meritIncreasesString === "Topped Out") {
               attendaceMerit = false;
             }
@@ -111,8 +111,8 @@
         <div class="px-1">
           <div class="text-black font-bold text-lg">Attendance Merit?</div>
           <FormDropdown
-            on:update={(e) => {
-              attendaceMerit = e.detail.value === "Yes";
+            update={(val: string) => {
+              attendaceMerit = val === "Yes";
               calculate();
             }}
             dropdownOptions={["No", "Yes"]}

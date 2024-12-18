@@ -4,7 +4,7 @@ import UMCCalculator from "../../components/WageCalculator/UMCCalculator.svelte"
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="UMC Wage Calculator" centered="true">
+<Layout title="UMC Wage Calculator" centered={true}>
   <HeadingTitle text="UMC Wage Calculator" />
-  <div class="mx-auto"><UMCCalculator client:load /></div>
+  <div class="mx-auto"><UMCCalculator client:only /></div>
 </Layout>

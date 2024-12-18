@@ -102,8 +102,8 @@
               color: "bg-supernova-400",
               hoverColor: "bg-supernova-500",
               minWidth: "min-w-32 md:min-w-full",
-              "on:update": (e) => {
-                firstMeritIncrease = e.detail.value;
+              update: (val: string) => {
+                firstMeritIncrease = val;
                 calculate();
               },
             },
@@ -125,8 +125,8 @@
               color: "bg-supernova-400",
               hoverColor: "bg-supernova-500",
               minWidth: "min-w-32 md:min-w-full",
-              "on:update": (e) => {
-                secondMeritIncrease = e.detail.value;
+              update: (val: string) => {
+                secondMeritIncrease = val;
                 calculate();
               },
             },
@@ -148,8 +148,8 @@
               color: "bg-supernova-400",
               hoverColor: "bg-supernova-500",
               minWidth: "min-w-32 md:min-w-full",
-              "on:update": (e) => {
-                thirdMeritIncrease = e.detail.value;
+              update: (val: string) => {
+                thirdMeritIncrease = val;
                 calculate();
               },
             },

@@ -5,9 +5,9 @@ import SNHDCalculator from "../../components/WageCalculator/SNHDCalculator.svelt
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="SNHD Wage Calculator" centered="true">
+<Layout title="SNHD Wage Calculator" centered={true}>
   <HeadingTitle text="SNHD Wage Calculator" />
   <div class="mx-auto">
-    <SNHDCalculator client:load />
+    <SNHDCalculator client:only />
   </div>
 </Layout>

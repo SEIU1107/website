@@ -4,9 +4,9 @@ import SNRHACalculator from "../../components/WageCalculator/SNRHACalculator.sve
 import Layout from "../../layouts/Layout.astro";
 ---
 
-<Layout title="SNRHA Wage Calculator" centered="true">
+<Layout title="SNRHA Wage Calculator" centered={true}>
   <HeadingTitle text="SNRHA Wage Calculator" />
   <div class="mx-auto">
-    <SNRHACalculator client:load />
+    <SNRHACalculator client:only />
   </div>
 </Layout>

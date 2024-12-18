@@ -1,10 +1,8 @@
 <script lang="ts">
-  import { SvelteComponent } from "svelte";
-
   type TableCell =
     | string
     | { html: string }
-    | { component: typeof SvelteComponent; props?: Record<string, any> };
+    | { component: any; props?: Record<string, any> };
 
   export let headers: string[] = [""];
   export let rows: Array<Array<TableCell>> = [[]];
@@ -20,6 +18,15 @@
   export let evenBg = "even:bg-honey-flower-900";
 
   export let borderColor = "border-supernova-500";
+
+  // Type guards for TableCell
+  const isHtmlCell = (cell: TableCell): cell is { html: string } =>
+    typeof cell === "object" && "html" in cell;
+
+  const isComponentCell = (
+    cell: TableCell
+  ): cell is { component: any; props?: Record<string, any> } =>
+    typeof cell === "object" && "component" in cell;
 </script>
 
 <div
@@ -45,14 +52,14 @@
             <td class="px-2 sm:px-4 py-4 lg:py-6">
               {#if typeof cell == "string"}
                 {cell}
-              {:else if cell?.html}
+              {:else if isHtmlCell(cell)}
                 {@html cell.html}
-              {:else if cell?.component}
+              {:else if isComponentCell(cell)}
                 <svelte:component
                   this={cell.component}
-                  on:update={(e) => {
-                    if (cell.props?.["on:update"]) {
-                      cell.props["on:update"](e);
+                  update={(e: any) => {
+                    if (cell.props?.["update"]) {
+                      cell.props["update"](e);
                     }
                   }}
                   {...cell.props}

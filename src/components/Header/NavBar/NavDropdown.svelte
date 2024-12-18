@@ -1,12 +1,13 @@
 <script lang="ts">
-  export let title = "Dropdown"; /* Name of the Dropdown */
-  export let titleHref: string | undefined = undefined;
-  export let content: { pageName: string; href: string }[] | undefined =
-    undefined;
+  const {
+    title = "Dropdown",
+    titleHref = undefined,
+    content = undefined,
+  } = $props();
 
   let open = false;
 
-  export let onClick = (): void => {
+  const onClick = (): void => {
     open = !open;
   };
 
@@ -27,8 +28,8 @@
   {:else if content}
     <button
       class="shadow-black shadow-md text-honey-flower-800 bg-honey-flower-300 text-center transition ease-in-out duration-250 p-4 text-base border-none cursor-pointer group-hover:bg-supernova-300 group-hover:shadow-none group-hover:translate-y-0.5"
-      on:click={onClick}
-      on:keypress={onClick}
+      onclick={onClick}
+      onkeypress={onClick}
       aria-label={title.concat(" Toggle")}
     >
       {title}

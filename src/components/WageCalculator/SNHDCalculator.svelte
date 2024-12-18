@@ -54,8 +54,8 @@
       </div>
       <div class="md:mr-auto">
         <FormDropdown
-          on:update={(e) => {
-            meritIncreasesString = e.detail.value;
+          update={(val: string) => {
+            meritIncreasesString = val;
             calculate();
           }}
           dropdownOptions={["Topped Out", "2.5%"]}
