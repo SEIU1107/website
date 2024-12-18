@@ -1,6 +1,6 @@
 <script lang="ts">
   import WageHourlyInput from "./WageHourlyInput.svelte";
-  import FormDropdown from "../Forms/FormDropdown.svelte";
+  import DropdownInput from "../Forms/DropdownInput.svelte";
   import Table from "../Forms/Table.svelte";
   import {
     getMeritIncreaseValue,
@@ -92,7 +92,7 @@
           "2024 / 2025",
           "5%",
           {
-            component: FormDropdown,
+            component: DropdownInput,
             props: {
               dropdownHoverStyle:
                 "px-4 w-full py-1 hover:bg-supernova-100 hover:text-honey-flower-800 cursor-pointer",
@@ -115,7 +115,7 @@
           "2025 / 2026",
           "3%",
           {
-            component: FormDropdown,
+            component: DropdownInput,
             props: {
               dropdownHoverStyle:
                 "px-4 w-full py-1 hover:bg-supernova-100 hover:text-honey-flower-800 cursor-pointer",
@@ -138,7 +138,7 @@
           "2026 / 2027",
           "2.5%",
           {
-            component: FormDropdown,
+            component: DropdownInput,
             props: {
               dropdownHoverStyle:
                 "px-4 w-full py-1 hover:bg-supernova-100 hover:text-honey-flower-800 cursor-pointer",

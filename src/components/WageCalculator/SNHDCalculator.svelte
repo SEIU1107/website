@@ -1,5 +1,5 @@
 <script lang="ts">
-  import FormDropdown from "../Forms/FormDropdown.svelte";
+  import DropdownInput from "../Forms/DropdownInput.svelte";
   import Table from "../Forms/Table.svelte";
   import WageHourlyInput from "./WageHourlyInput.svelte";
   import {
@@ -53,7 +53,7 @@
         Include Merit Increases?
       </div>
       <div class="md:mr-auto">
-        <FormDropdown
+        <DropdownInput
           update={(val: string) => {
             meritIncreasesString = val;
             calculate();

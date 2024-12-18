@@ -1,16 +1,35 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import HeadingTitle from "../components/HeadingTitle.svelte";
-  import Quill from "quill";
+  import Quill, { Delta } from "quill";
   import Button from "./Button.svelte";
   import TextInput from "./Forms/TextInput.svelte";
-  import FormDropdown from "./Forms/FormDropdown.svelte";
+  import DropdownInput from "./Forms/DropdownInput.svelte";
+  import { saveContactFormInputs } from "./util";
+
+  // Saved Inputs - Load them from local storage
+
+  // Key for saved inputs in local storage
+  const formInputsLocalStorageKey = "contactFormInputs";
+  const savedInputs = JSON.parse(
+    localStorage.getItem(formInputsLocalStorageKey) || "{}"
+  );
 
   // Inputs
-  let nameInputValue = "";
-  let emailInputValue = "";
-  let phoneInputValue = "";
-  let employerInputValue = "";
+  let nameInputValue: string = savedInputs.nameInputValue || "";
+  let emailInputValue: string = savedInputs.emailInputValue || "";
+  let phoneInputValue: string = savedInputs.phoneInputValue || "";
+  let employerInputValue: string = savedInputs.employerInputValue || "";
+  let inquiryTypeInputValue: string = savedInputs.inquiryTypeInputValue || "";
+
+  // Quill likes to save rich text as a "Delta". We will use this for saved inputs
+  // and re-entering them for when the user comes back.
+  let messageDelta: Delta = savedInputs.messageDelta || "";
+
+  // For sending to back end, but we use the Delta to save to localStorage
+  // as Quill has no way of setting an initial value in the message box
+  // off semantic HTML. We have to use the Delta form of the text.
+  let messageSemanticHTML: string;
 
   // Error Messages
   let errorMessage = false;
@@ -20,9 +39,19 @@
   let phoneMissing = false;
   let messageMissing = false;
 
+  // Styling Constants
+  const formLabelStyling = "block mb-2 text-lg text-honey-flower-900 font-bold";
+  const textInputStyling =
+    "bg-gray-50 min-w-[90vw] md:min-w-72 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5";
+
   // https://quilljs.com/
   let quill: Quill;
+
+  // Keeps track of if the form was initialized
+  let initialized = false;
+
   onMount(() => {
+    // Create the Quill editor for the message box
     quill = new Quill("#editor", {
       placeholder: "Enter Message Here...",
       theme: "snow",
@@ -39,7 +68,13 @@
         ],
       },
     });
+
+    // Render saved message input if one exists (using Quill's Delta; there is no method for semantic HTML)
+    quill.setContents(messageDelta);
+    initialized = true;
   });
+
+  function onSubmit() {}
 
   function verifyFormSubmission(): boolean {
     // Returns true if the form was successfully filled out
@@ -90,9 +125,15 @@
     return emailRegex.test(email);
   }
 
-  const formLabelStyling = "block mb-2 text-lg text-honey-flower-900 font-bold";
-  const textInputStyling =
-    "bg-gray-50 min-w-[90vw] md:min-w-72 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5";
+  $: saveContactFormInputs(
+    formInputsLocalStorageKey,
+    nameInputValue,
+    emailInputValue,
+    phoneInputValue,
+    employerInputValue,
+    inquiryTypeInputValue,
+    messageDelta
+  );
 </script>
 
 <div class="flex flex-col items-center m-auto py-2">
@@ -104,6 +145,7 @@
           Name <span class="text-red-600">*</span>
         </div>
         <TextInput
+          initialValue={nameInputValue}
           placeholder="Enter Name *"
           update={(value: string) => {
             nameInputValue = value;
@@ -119,6 +161,7 @@
           Email <span class="text-red-600">*</span>
         </div>
         <TextInput
+          initialValue={emailInputValue}
           placeholder="Enter Email *"
           update={(value: string) => {
             emailInputValue = value;
@@ -140,6 +183,7 @@
           Phone Number <span class="text-red-600">*</span>
         </div>
         <TextInput
+          initialValue={phoneInputValue}
           placeholder="Enter Phone Number *"
           update={(value: string) => {
             phoneInputValue = value;
@@ -152,10 +196,12 @@
       </div>
       <div class="my-2.5 md:my-0 md:ml-1">
         <div class={formLabelStyling}>Employer</div>
-        <FormDropdown
+        <DropdownInput
+          initialValue={employerInputValue}
           update={(value: string) => {
             employerInputValue = value;
           }}
+          minWidth="min-w-[90vw] md:min-w-72"
           dropdownOptions={[
             "N/A",
             "Clark County",
@@ -174,6 +220,25 @@
         />
       </div>
     </div>
+    <div>
+      <div class={formLabelStyling}>Purpose of Inquiry</div>
+      <DropdownInput
+        initialValue={inquiryTypeInputValue}
+        update={(value: string) => {
+          inquiryTypeInputValue = value;
+        }}
+        minWidth="min-w-[90vw] md:min-w-72"
+        dropdownOptions={[
+          "General",
+          "Representation and Collective Bargaining Agreements",
+          "Organizing and Membership",
+          "Media Inquiries",
+          "Political and Community Organizing",
+          "Administration and Human Resources",
+          "Election Committee",
+        ]}
+      />
+    </div>
   </div>
   <div class="flex flex-col min-w-full max-w-screen-sm md:max-w-screen-md">
     <div class="mx-2.5 my-2.5">
@@ -181,18 +246,25 @@
         Message <span class="text-red-600">*</span>
       </div>
       <div class="bg-honey-flower-50">
-        <div class="" id="editor"></div>
+        <div
+          oninput={() => {
+            // Need to set both the semantic HTML for sending to the back end,
+            // as well as the Delta form of the message for saving into local storage
+            messageSemanticHTML = quill.getSemanticHTML();
+            messageDelta = quill.getContents();
+          }}
+          class=""
+          id="editor"
+        ></div>
       </div>
       {#if messageMissing}
-        <span class="text-red-600 text-sm">Message cannot be empty</span>
+        <span class="text-red-600 text-sm">Message cannot be empty.</span>
       {/if}
     </div>
   </div>
   <Button
     text="Submit"
     onClick={() => {
-      console.log(quill.getSemanticHTML());
-      console.log(quill.getLength());
       verifyFormSubmission();
     }}
   />

@@ -1,7 +1,6 @@
 <script lang="ts">
-  import FormDropdown from "../Forms/FormDropdown.svelte";
+  import DropdownInput from "../Forms/DropdownInput.svelte";
   import Table from "../Forms/Table.svelte";
-  import Subtitle from "../Subtitle.svelte";
   import WageHourlyInput from "./WageHourlyInput.svelte";
   import {
     formatPercentage,
@@ -96,7 +95,7 @@
     <div class="pt-5 grid grid-cols-2">
       <div class="px-1">
         <div class="text-black font-bold text-lg">Merit Increase</div>
-        <FormDropdown
+        <DropdownInput
           update={(val: string) => {
             meritIncreasesString = val;
             if (meritIncreasesString === "Topped Out") {
@@ -110,7 +109,7 @@
       {#if meritIncreasesString !== "Topped Out"}
         <div class="px-1">
           <div class="text-black font-bold text-lg">Attendance Merit?</div>
-          <FormDropdown
+          <DropdownInput
             update={(val: string) => {
               attendaceMerit = val === "Yes";
               calculate();

@@ -2,23 +2,28 @@
   import { onMount } from "svelte";
 
   let {
-    // When true, the placeholder is the initial value, otherwise the initial value is ''
-    usePlaceholderAsDefault = false,
+    // Initial value, if any, which will already be present in the text box upon mounting
+    initialValue = "",
 
     // If Rows > 0, create a text area large text input instead.
     rows = 0,
 
-    // Placeholder to put in the text box
+    // Placeholder to put in the text box when empty
     placeholder = "",
+
+    // When true, the placeholder is the initial value sent via update(), WITHOUT a value present in the text box.
+    // Otherwise, the initial value is used
+    usePlaceholderAsDefault = false,
+
     maxlength = 500,
     styling = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5",
-    update, // Handles the current value of the input
+    update, // Signals to parent component the current value.
   } = $props();
 
-  let value = $state("");
+  let value = $state(initialValue);
 
   onMount(() => {
-    update(usePlaceholderAsDefault ? placeholder : "");
+    update(usePlaceholderAsDefault ? placeholder : initialValue);
   });
 </script>
 
