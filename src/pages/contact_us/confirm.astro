@@ -1,0 +1,10 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import ContactFormConfirmation from "../../components/ContactForm/ContactFormConfirmation.svelte"
+import HeadingTitle from "../../components/HeadingTitle.svelte"
+---
+
+<Layout title="SEIU 1107 Confirm Submission" centered={true}>
+	<HeadingTitle text="Confirm Submission" />
+	<ContactFormConfirmation client:only />
+</Layout>

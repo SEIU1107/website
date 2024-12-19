@@ -32,9 +32,6 @@
   }
 
   onMount(() => {
-    console.log(
-      `dropdown ${dropdownOptions[0]} onmount initialValue: ${initialValue}`
-    );
     // Initially set the current option to the first one
     if (initialValue) {
       // Dev wants an initial value...

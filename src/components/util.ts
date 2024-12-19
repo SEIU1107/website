@@ -27,9 +27,11 @@ export function getMeritIncreaseValue(meritIncreaseString: string): number {
   return 1;
 }
 
+// Key for saved inputs in local and session storage
+export const formInputsStorageKey = "contactFormInputs";
+
 export function saveContactFormInputs(
-  // Key in local storage holding the contact form inputs
-  formInputsLocalStorageKey: string,
+  // Saves the contact form inputs in localStorage.
 
   // Contact Form inputs
   nameInputValue: string,
@@ -39,7 +41,6 @@ export function saveContactFormInputs(
   inquiryTypeInputValue: string,
   messageDelta: Delta
 ) {
-  console.log("saveContactFormInputs called");
   // Saves form inputs for later when user leaves page
   const inputsToSave = {
     nameInputValue,
@@ -49,5 +50,5 @@ export function saveContactFormInputs(
     inquiryTypeInputValue,
     messageDelta,
   };
-  localStorage.setItem(formInputsLocalStorageKey, JSON.stringify(inputsToSave));
+  localStorage.setItem(formInputsStorageKey, JSON.stringify(inputsToSave));
 }

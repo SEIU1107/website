@@ -1,18 +1,16 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import HeadingTitle from "../components/HeadingTitle.svelte";
+  import HeadingTitle from "../HeadingTitle.svelte";
   import Quill, { Delta } from "quill";
-  import Button from "./Button.svelte";
-  import TextInput from "./Forms/TextInput.svelte";
-  import DropdownInput from "./Forms/DropdownInput.svelte";
-  import { saveContactFormInputs } from "./util";
+  import Button from "../Button.svelte";
+  import TextInput from "../Forms/TextInput.svelte";
+  import DropdownInput from "../Forms/DropdownInput.svelte";
+  import { formInputsStorageKey, saveContactFormInputs } from "../util";
 
-  // Saved Inputs - Load them from local storage
+  // Saved Inputs - Load them from local storage if they exist
 
-  // Key for saved inputs in local storage
-  const formInputsLocalStorageKey = "contactFormInputs";
   const savedInputs = JSON.parse(
-    localStorage.getItem(formInputsLocalStorageKey) || "{}"
+    localStorage.getItem(formInputsStorageKey) || "{}"
   );
 
   // Inputs
@@ -71,10 +69,11 @@
 
     // Render saved message input if one exists (using Quill's Delta; there is no method for semantic HTML)
     quill.setContents(messageDelta);
+
+    // Remove sessionStorage info to prevent strange behavior with the confirmation page.
+    sessionStorage.removeItem(formInputsStorageKey);
     initialized = true;
   });
-
-  function onSubmit() {}
 
   function verifyFormSubmission(): boolean {
     // Returns true if the form was successfully filled out
@@ -125,8 +124,34 @@
     return emailRegex.test(email);
   }
 
+  function onSubmit() {
+    if (verifyFormSubmission()) {
+      // Save inputs to sessionStorage
+      // This is more temporary and scoped only to the tab
+
+      messageSemanticHTML = quill.getSemanticHTML();
+
+      const inputsToSave = {
+        nameInputValue,
+        emailInputValue,
+        phoneInputValue,
+        employerInputValue,
+        inquiryTypeInputValue,
+
+        // Save semantic HTML of message now to send to back end
+        messageSemanticHTML,
+      };
+
+      sessionStorage.setItem(
+        formInputsStorageKey,
+        JSON.stringify(inputsToSave)
+      );
+
+      window.location.href = "/contact_us/confirm";
+    }
+  }
+
   $: saveContactFormInputs(
-    formInputsLocalStorageKey,
     nameInputValue,
     emailInputValue,
     phoneInputValue,
@@ -242,7 +267,7 @@
   </div>
   <div class="flex flex-col min-w-full max-w-screen-sm md:max-w-screen-md">
     <div class="mx-2.5 my-2.5">
-      <div class={formLabelStyling.concat(" md:text-center")}>
+      <div class={formLabelStyling}>
         Message <span class="text-red-600">*</span>
       </div>
       <div class="bg-honey-flower-50">
@@ -262,12 +287,7 @@
       {/if}
     </div>
   </div>
-  <Button
-    text="Submit"
-    onClick={() => {
-      verifyFormSubmission();
-    }}
-  />
+  <Button text="Submit" onClick={onSubmit} />
   {#if errorMessage}
     <div class="py-2 text-red-600">
       Please ensure all required (*) fields are filled out correctly before
