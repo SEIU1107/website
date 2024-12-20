@@ -73,7 +73,6 @@
       errorToast(
         "Website connection to back end is broken. It is currently undergoing maintenance. Please try again later."
       );
-      window.location.href = "/contact_us";
     }
   }
   contactFormStatusCodeKey;
