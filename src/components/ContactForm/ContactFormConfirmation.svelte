@@ -32,7 +32,7 @@
         inquiry: confirmationData?.inquiryTypeInputValue,
       };
 
-      const response = false
+      const response = import.meta.env.DEV
         ? { status: 200 }
         : await fetch(import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT, {
             method: "POST",
