@@ -6,21 +6,26 @@ import PostsGrid from "../Posts/PostsGrid.svelte";
 export interface Props {
   numPosts?: number;
   bgColor?: string;
-  titleStyle?: string;
+  titleColor?: string;
   textStyle?: string;
+  buttonStyle?: string;
 }
 
 const {
   numPosts = 3,
   bgColor = "bg-gradient-to-b from-honey-flower-200 to-honey-flower-300",
-  titleStyle = "text-honey-flower-800 text-5xl m-auto text-center font-Trebuchet font-bold",
+  titleColor = "text-honey-flower-800",
   textStyle = "font-Roboto text-black",
+  buttonStyle = "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
 } = Astro.props as Props;
-const previewsMatches = import.meta.glob<MDXInstance<Record<string, any>>>([
-  "../../posts/blog/*/*.mdx",
-  "../../posts/news articles/*/*.mdx",
-  "../../posts/press releases/*/*.mdx",
-], {eager: true});
+const previewsMatches = import.meta.glob<MDXInstance<Record<string, any>>>(
+  [
+    "../../posts/blog/*/*.mdx",
+    "../../posts/news articles/*/*.mdx",
+    "../../posts/press releases/*/*.mdx",
+  ],
+  { eager: true }
+);
 
 const previews = Object.values(previewsMatches)
   .sort((a, b) => (a.frontmatter.date < b.frontmatter.date ? 1 : -1))
@@ -30,7 +35,11 @@ const sectionClass = "py-7 ".concat(bgColor);
 ---
 
 <section class={sectionClass}>
-  <h1 class={titleStyle}>Latest in SEIU 1107</h1>
+  <h1
+    class=`text-5xl m-auto text-center font-Trebuchet font-bold ${titleColor} `
+  >
+    Latest in SEIU 1107
+  </h1>
   <p
     class={"text-center pt-4 text-2xl max-w-screen-lg m-auto ".concat(
       textStyle
@@ -45,16 +54,15 @@ const sectionClass = "py-7 ".concat(bgColor);
     breakpoints="sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
     client:load
   />
-  <p
-    class="font-bold font-Roboto text-honey-flower-950 text-center pt-2 text-3xl"
-  >
+  <p class=`font-bold text-center pt-2 text-3xl ${titleColor}`>
     Read More Union Stories:
   </p>
   <div class="p-2 flex justify-center">
     <Button
       text="Union Stories"
       href="/updates/"
-      class="scale-125 hover:scale-150"
+      class="scale-125 hover:scale-150 ${}"
+      styling={buttonStyle}
     />
   </div>
 </section>

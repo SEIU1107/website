@@ -81,135 +81,17 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
     </div>
   </main>
 
-  <LatestNews />
+  <LatestNews
+    bgColor="bg-gradient-to-b from-honey-flower-900 to-honey-flower-700"
+    titleColor="text-supernova-400 shadowClass"
+    textStyle="font-Roboto text-honey-flower-50"
+    buttonStyle="bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600 text-honey-flower-800 hover:scale-125"
+  />
 
-  <div
-    class="bg-gradient-to-b from-honey-flower-800 to-honey-flower-900 py-4 flex flex-col m-auto"
-  >
-    <HeadingTitle
-      text="Join the Movement! Attend Our Trainings!"
-      styling="hidden lg:block m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5"
-    />
-    <div class="text-honey-flower-800 bg-supernova-500 py-3">
-      <h2
-        class="text-center m-auto font-bold text-2xl lg:text-3xl font-Roboto max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
-      >
-        Attention Stewards! Attending BOTH Member Strength Trainings and
-        Intermediate Steward Training is <a
-          href="/membership_trainings#STEWARD_TRAININGS"
-          class="underline hover:cursor-pointer hover:no-underline">MANDATORY</a
-        >! Sign up <a
-          href="/membership_trainings#STEWARD_TRAININGS"
-          class="underline hover:cursor-pointer hover:no-underline">HERE</a
-        > today!
-      </h2>
-    </div>
-
-    <div class="max-w-screen-xl m-auto">
-      <div class="flex flex-col lg:flex-row">
-        <div class="m-auto">
-          <h2
-            class="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5 text-3xl lg:text-4xl max-w-lg"
-          >
-            Participate in our Member Strength Trainings!
-          </h2>
-
-          <div
-            class="m-auto sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
-          >
-            <CollageImage
-              src={imgTraining}
-              imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
-              float={false}
-            >
-              <div class="flex flex-col max-w-screen-sm lg:max-w-screen-md">
-                <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
-                  The more of us who participate, the more improvements we can
-                  make to our wages, benefits, and working conditions! Attend
-                  one of the upcoming trainings and start making an impact on
-                  your workplace.
-                </p>
-                <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
-                  There's strength in numbers, so become a proud union member
-                  today and ask ALL your coworkers to <LinkText
-                    color="text-blue-300"
-                    href="/join">sign up</LinkText
-                  >! For more info, talk to a member of the bargaining team or
-                  contact Rosy Salinas at <LinkText
-                    color="text-blue-300"
-                    href="mailto:rsalinas@seiunv.org"
-                    >rsalinas@seiunv.org</LinkText
-                  >.
-                </p>
-                <p
-                  class="py-2 text-honey-flower-50 font-bold text-xl text-left mx-2"
-                >
-                  <i>Weekend trainings are on Saturdays from 10am - 2pm PST.</i>
-                  <br />
-                  <i
-                    >Weekday trainings are split between Tuesdays and Wedensdays
-                    from 6pm - 8pm PST.</i
-                  >
-                </p>
-              </div>
-            </CollageImage>
-          </div>
-        </div>
-        <div class="m-auto">
-          <h2
-            class="m-auto font-Trebuchet font-bold text-center text-supernova-400 py-5 text-3xl lg:text-4xl max-w-lg"
-          >
-            Sign up for Stewards Training Today!
-          </h2>
-
-          <div
-            class="m-auto max-w-screen-xs sm:max-w-screen-sm md:max-w-screen-md lg:max-w-screen-lg flex flex-col"
-          >
-            <CollageImage
-              src={imgStewardsTraining}
-              imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl"
-              float={false}
-            >
-              <div class="max-w-screen-sm m-auto lg:max-w-screen-md">
-                <p class="py-2 text-honey-flower-50 text-xl text-left mx-2">
-                  SEIU 1107 supports union leaders all year long, including
-                  courses designed to bolster shop steward knowledge! Trainings
-                  available for all experience levels.
-                </p>
-                <StringCycle
-                  client:visible
-                  items={[
-                    '"Attending a steward training is important because it equips you with the knowledge and skills to effectively advocate for workers\' rights, ensuring a workplace that values dignity, equity, and respect for all." — Alexis Esparza, DAFS, Clark County',
-                    '"I took the steward training course because I was looking for the tools to help protect and represent my coworkers to make our workplace better overall." — Stephen Nolan, custodian, LVCVA',
-                    "\"I've been a union member for 14 years, and I became a steward to help all employees receive fair representation and answer all their questions. It's important to be involved and stay involved.\" — Marisela Sandoval, Patient Access, UMC",
-                  ]}
-                  textStyle={"py-2 text-honey-flower-50 text-xl text-left mx-2 italic"}
-                  duration={10000}
-                />
-                <p
-                  class="py-2 text-honey-flower-50 font-bold text-xl text-left mx-2"
-                >
-                  <i
-                    >All trainings at SEIU Local 1107 - 2250 S Rancho Dr. Ste
-                    165 Las Vegas, NV 89102</i
-                  >
-                </p>
-              </div>
-            </CollageImage>
-          </div>
-        </div>
-      </div>
-    </div>
-    <Button
-      text="Sign Up for a Training!"
-      styling="mt-5 mx-auto text-honey-flower-800 scale-125 hover:scale-150 bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
-      href="/membership_trainings"
-    />
-  </div>
   <StrongerTogether />
   <div class="py-4 bg-gradient-to-b from-honey-flower-900 to-honey-flower-700">
     <div
-      class="tinyShadow py-2 font-bold font-Trebuchet text-center text-supernova-500 text-4xl md:text-5xl drop-shadow-2xl"
+      class="tinyShadow py-2 font-bold font-Trebuchet text-center text-supernova-400 text-4xl md:text-5xl drop-shadow-2xl"
     >
       Why We're Joining Together
     </div>
@@ -232,7 +114,7 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
           <Button
             href="/join"
             text="Join Us"
-            styling="mx-auto text-honey-flower-800 hover:scale-105c bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
+            styling="mx-auto text-honey-flower-800 hover:scale-105 bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600"
           />
         </div>
       </CollageImage>
