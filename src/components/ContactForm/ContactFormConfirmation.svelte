@@ -7,7 +7,6 @@
   } from "../util";
   import Button from "../Button.svelte";
   import MailOutlined from "svelte-ant-design-icons/MailOutlined.svelte";
-  let statusMessage = "default";
   let confirmationData: {
     nameInputValue: string;
     emailInputValue: string;
@@ -23,8 +22,6 @@
         console.log(
           "submitToBackend() called. Contact form status code will use dummy response."
         );
-      } else {
-        console.log("Sending message to back end...");
       }
       const requestBody = {
         name: confirmationData?.nameInputValue,
@@ -35,8 +32,6 @@
         inquiry: confirmationData?.inquiryTypeInputValue,
       };
 
-      console.log(`env: ${import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT}`);
-      console.log({ requestBody });
       const response = false
         ? { status: 200 }
         : await fetch(import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT, {
@@ -47,31 +42,19 @@
             body: JSON.stringify(requestBody),
           });
 
-      console.log({ response });
       const statusCode = response.status;
-
-      switch (statusCode) {
-        case 200:
-          statusMessage = "Success!";
-
-          // Successful submission, we can remove the data from storage now
-          localStorage.removeItem(formInputsStorageKey);
-          sessionStorage.removeItem(formInputsStorageKey);
-          break;
-        case 400:
-          statusMessage = "400 message, fields missing?";
-          break;
-        case 500:
-          statusMessage = "500 message. server is down?";
+      if (statusCode) {
+        // Successful submission, we can remove the data from storage now
+        localStorage.removeItem(formInputsStorageKey);
+        sessionStorage.removeItem(formInputsStorageKey);
       }
-      console.log(`switch case resolved, status code ${statusCode}`);
 
       sessionStorage.setItem(
         contactFormStatusCodeKey,
         JSON.stringify({ statusCode })
       );
 
-      // window.location.href = "/contact_us";
+      window.location.href = "/contact_us";
     } catch (error) {
       console.error("Error while submitting form:", error);
       errorToast(
@@ -132,6 +115,4 @@
       </Button>
     </div>
   </div>
-
-  <div>{statusMessage}</div>
 </div>
