@@ -43,7 +43,7 @@
           });
 
       const statusCode = response.status;
-      if (statusCode) {
+      if (statusCode === 200) {
         // Successful submission, we can remove the data from storage now
         localStorage.removeItem(formInputsStorageKey);
         sessionStorage.removeItem(formInputsStorageKey);
