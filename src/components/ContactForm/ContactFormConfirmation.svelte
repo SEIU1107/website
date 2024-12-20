@@ -34,16 +34,13 @@
       };
       const response = import.meta.env.DEV
         ? { status: 200 }
-        : await fetch(
-            "https://5194mm66i0.execute-api.us-west-2.amazonaws.com/Prod/contact",
-            {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify(requestBody),
-            }
-          );
+        : await fetch(import.meta.env.CONTACT_FORM_ENDPOINT, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(requestBody),
+          });
 
       const statusCode = response.status;
 
