@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { formInputsStorageKey } from "../util";
+  import { formInputsStorageKey, contactFormStatusCodeKey } from "../util";
   import Button from "../Button.svelte";
   import MailOutlined from "svelte-ant-design-icons/MailOutlined.svelte";
   let statusMessage = "default";
@@ -15,25 +15,31 @@
 
   async function submitToBackend() {
     try {
-      console.log("submission attempted");
-      const response = await fetch(
-        "https://5194mm66i0.execute-api.us-west-2.amazonaws.com/Prod/contact",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name: confirmationData?.nameInputValue,
-            email: confirmationData?.emailInputValue,
-            phone: confirmationData?.phoneInputValue,
-            employer: confirmationData?.employerInputValue,
-            message: confirmationData?.messageSemanticHTML,
-            inquiry: confirmationData?.inquiryTypeInputValue,
-          }),
-        }
-      );
-      console.log("got a response");
+      if (import.meta.env.DEV) {
+        console.log(
+          "submitToBackend() called. Contact form status code will use dummy response."
+        );
+      }
+      const requestBody = {
+        name: confirmationData?.nameInputValue,
+        email: confirmationData?.emailInputValue,
+        phone: confirmationData?.phoneInputValue,
+        employer: confirmationData?.employerInputValue,
+        message: confirmationData?.messageSemanticHTML,
+        inquiry: confirmationData?.inquiryTypeInputValue,
+      };
+      const response = import.meta.env.DEV
+        ? { status: 200 }
+        : await fetch(
+            "https://5194mm66i0.execute-api.us-west-2.amazonaws.com/Prod/contact",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(requestBody),
+            }
+          );
 
       const statusCode = response.status;
 
@@ -51,10 +57,19 @@
         case 500:
           statusMessage = "500 message. server is down?";
       }
+
+      sessionStorage.setItem(
+        contactFormStatusCodeKey,
+        JSON.stringify({ statusCode })
+      );
+
+      window.location.href = "/contact_us";
     } catch (error) {
       console.error("Error while submitting form:", error);
+      window.location.href = "/contact_us";
     }
   }
+  contactFormStatusCodeKey;
 
   onMount(() => {
     const storedData = sessionStorage.getItem(formInputsStorageKey);

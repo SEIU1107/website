@@ -2,6 +2,7 @@
 import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
+import { SvelteToast } from "@zerodevx/svelte-toast";
 
 export interface Props {
   title?: string;
@@ -54,6 +55,13 @@ const {
       backgroundStyling
     )}
   >
+    <div class="toast">
+      <SvelteToast
+        target="new"
+        options={{ initial: 0, intro: { y: -128 } }}
+        client:load
+      />
+    </div>
     <Header />
     <div class="min-h-[100vh]">
       {
@@ -68,6 +76,24 @@ const {
     </div>
     <Footer />
     <style>
+      .toast {
+        --toastContainerTop: 5%;
+        --toastContainerRight: 0.5rem;
+        --toastContainerBottom: 0.5rem;
+        --toastContainerLeft: 0.5rem;
+        --toastWidth: 100%;
+        --toastMinHeight: 2rem;
+        --toastPadding: 0 0.5rem;
+        --toastBorderRadius: 0.375rem; 
+        font-size: 0.875rem;
+      }
+      @media (min-width: 40rem) {
+        .toast {
+          --toastContainerRight: auto;
+          --toastContainerLeft: calc(50vw - 20rem);
+          --toastWidth: 40rem;
+        }
+      }
       body {
         max-width: 100%;
         overflow-x: hidden;

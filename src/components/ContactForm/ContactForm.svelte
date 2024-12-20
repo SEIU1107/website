@@ -5,13 +5,25 @@
   import Button from "../Button.svelte";
   import TextInput from "../Forms/TextInput.svelte";
   import DropdownInput from "../Forms/DropdownInput.svelte";
-  import { formInputsStorageKey, saveContactFormInputs } from "../util";
+  import {
+    formInputsStorageKey,
+    saveContactFormInputs,
+    contactFormStatusCodeKey,
+    successToast,
+    errorToast,
+    warningToast,
+  } from "../util";
+  import { toast, SvelteToast } from "@zerodevx/svelte-toast";
 
   // Saved Inputs - Load them from local storage if they exist
 
   const savedInputs = JSON.parse(
     localStorage.getItem(formInputsStorageKey) || "{}"
   );
+
+  const statusCode: number | null = JSON.parse(
+    sessionStorage.getItem(contactFormStatusCodeKey) || "{}"
+  ).statusCode;
 
   // Inputs
   let nameInputValue: string = savedInputs.nameInputValue || "";
@@ -70,8 +82,27 @@
     // Render saved message input if one exists (using Quill's Delta; there is no method for semantic HTML)
     quill.setContents(messageDelta);
 
+    // Check for status code. The user is redirected here after a submission attempt.
+    // Inform them on the status of the submission.
+    switch (statusCode) {
+      case 200:
+        successToast("Message successfully sent!");
+        break;
+      case 400:
+        warningToast(
+          "The form was formatted incorrectly. Check your submission and try again."
+        );
+        break;
+      case 500:
+        errorToast(
+          "Server is broken; our team will fix it soon. Please try again later."
+        );
+        break;
+    }
+
     // Remove sessionStorage info to prevent strange behavior with the confirmation page.
     sessionStorage.removeItem(formInputsStorageKey);
+    sessionStorage.removeItem(contactFormStatusCodeKey);
     initialized = true;
   });
 
@@ -114,6 +145,12 @@
     if (quill.getLength() <= 2) {
       errorMessage = true;
       messageMissing = true;
+    }
+
+    if (errorMessage) {
+      errorToast(
+        "Please ensure all required (*) fields are filled out correctly before submitting."
+      );
     }
     return !errorMessage;
   }
@@ -288,10 +325,4 @@
     </div>
   </div>
   <Button text="Submit" onClick={onSubmit} />
-  {#if errorMessage}
-    <div class="py-2 text-red-600">
-      Please ensure all required (*) fields are filled out correctly before
-      submitting.
-    </div>
-  {/if}
 </div>
