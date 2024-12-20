@@ -23,6 +23,8 @@
         console.log(
           "submitToBackend() called. Contact form status code will use dummy response."
         );
+      } else {
+        console.log("Sending message to back end...");
       }
       const requestBody = {
         name: confirmationData?.nameInputValue,
@@ -32,9 +34,12 @@
         message: confirmationData?.messageSemanticHTML,
         inquiry: confirmationData?.inquiryTypeInputValue,
       };
-      const response = import.meta.env.DEV
+
+      console.log(`env: ${import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT}`);
+      console.log({ requestBody });
+      const response = false
         ? { status: 200 }
-        : await fetch(import.meta.env.CONTACT_FORM_ENDPOINT, {
+        : await fetch(import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -42,6 +47,7 @@
             body: JSON.stringify(requestBody),
           });
 
+      console.log({ response });
       const statusCode = response.status;
 
       switch (statusCode) {
@@ -58,13 +64,14 @@
         case 500:
           statusMessage = "500 message. server is down?";
       }
+      console.log(`switch case resolved, status code ${statusCode}`);
 
       sessionStorage.setItem(
         contactFormStatusCodeKey,
         JSON.stringify({ statusCode })
       );
 
-      window.location.href = "/contact_us";
+      // window.location.href = "/contact_us";
     } catch (error) {
       console.error("Error while submitting form:", error);
       errorToast(
