@@ -1,6 +1,10 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { formInputsStorageKey, contactFormStatusCodeKey } from "../util";
+  import {
+    formInputsStorageKey,
+    contactFormStatusCodeKey,
+    errorToast,
+  } from "../util";
   import Button from "../Button.svelte";
   import MailOutlined from "svelte-ant-design-icons/MailOutlined.svelte";
   let statusMessage = "default";
@@ -66,6 +70,9 @@
       window.location.href = "/contact_us";
     } catch (error) {
       console.error("Error while submitting form:", error);
+      errorToast(
+        "Website connection to back end is broken. It is currently undergoing maintenance. Please try again later."
+      );
       window.location.href = "/contact_us";
     }
   }
