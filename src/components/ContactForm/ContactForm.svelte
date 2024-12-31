@@ -13,7 +13,6 @@
     errorToast,
     warningToast,
   } from "../util";
-  import { toast, SvelteToast } from "@zerodevx/svelte-toast";
 
   // Saved Inputs - Load them from local storage if they exist
 

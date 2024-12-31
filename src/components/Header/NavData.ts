@@ -48,6 +48,10 @@ const getInvolved = [
     href: "/events",
   },
   {
+    pageName: "Membership Trainings",
+    href: "/membership_trainings",
+  },
+  {
     pageName: "Political Action",
     href: "/political_action",
   },

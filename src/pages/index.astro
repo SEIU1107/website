@@ -17,6 +17,8 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
 ---
 
 <Layout>
+  <!-- Video Recap -->
+  <!--
   <main
     class="hidden lg:hidden bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] h-full mx-auto w-full"
   >
@@ -59,7 +61,10 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
       </div>
     </div>
   </main>
+   -->
 
+  <!-- Hero Banner -->
+  <!--
   <main
     class="bg-cover bg-top lg:bg-left bg-[url(/src/images/index/HomecareMobile.png)] lg:bg-[url(/src/images/index/HomecareGraphic.jpg)] h-full mx-auto w-full"
   >
@@ -78,6 +83,34 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
           United For Quality Services
         </h1>
       </div>
+    </div>
+  </main>
+   -->
+
+  <main
+    class="bg-gradient-to-br from-supernova-400 to-supernova-500 flex flex-col m-auto"
+  >
+    <HeadingTitle text="Together We Rise! Attend Our Membership Trainings!" />
+    <div class="py-5 max-w-[90vw] md:max-w-screen-lg m-auto">
+      <CollageImage src={imgTraining}>
+        <p class="py-2 text-black text-xl font-bold text-left mx-2">
+          The time to get involved is <i>NOW!</i>
+        </p>
+        <p class="text-md py-2">
+          Join SEIU Local 1107 for a day of strategy and union power!
+        </p>
+        <p class="text-md py-2">
+          We're coming together to share best practices for building a powerful
+          labor movement and keeping our union strong.
+        </p>
+        <p class="text-md py-2">
+          In order to keep our union strong - so that we can win better
+          contracts, make breakthroughs in organizing, and build a more just and
+          equitable society - we have to focus on improving our member strength
+          like our very existence depends on it (because it does!).
+        </p>
+        <Button href="/membership_trainings" text="Attend A Training" />
+      </CollageImage>
     </div>
   </main>
 

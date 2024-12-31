@@ -4,6 +4,7 @@
     formInputsStorageKey,
     contactFormStatusCodeKey,
     errorToast,
+    warningToast,
   } from "../util";
   import Button from "../Button.svelte";
   import MailOutlined from "svelte-ant-design-icons/MailOutlined.svelte";
@@ -17,12 +18,8 @@
   } | null = null;
 
   async function submitToBackend() {
+    warningToast("Sending Message, please wait...");
     try {
-      if (import.meta.env.DEV) {
-        console.log(
-          "submitToBackend() called. Contact form status code will use dummy response."
-        );
-      }
       const requestBody = {
         name: confirmationData?.nameInputValue,
         email: confirmationData?.emailInputValue,
@@ -31,6 +28,13 @@
         message: confirmationData?.messageSemanticHTML,
         inquiry: confirmationData?.inquiryTypeInputValue,
       };
+
+      if (import.meta.env.DEV) {
+        console.log(
+          "submitToBackend() called. Contact form status code will use dummy response."
+        );
+        console.log({ requestBody });
+      }
 
       const response = import.meta.env.DEV
         ? { status: 200 }
