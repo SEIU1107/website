@@ -11,7 +11,7 @@
     onClick = null,
 
     // Style options
-    styling = "text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
+    styling = "no-underline not-prose text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest",
 
     // Children for rendering in the button (above text)
     children = null,
