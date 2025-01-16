@@ -11,10 +11,11 @@ import StringCycle from "../components/StringCycle.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
-import imgNewYear from "../images/index/NewYear.png"
+import imgNewYear from "../images/index/NewYear.png";
 
 // Banners
 import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
+import imgUHWDonation from "../images/index/UHWDonation.png";
 ---
 
 <Layout>
@@ -87,7 +88,47 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
     </div>
   </main>
    -->
-  <div class="py-4 bg-gradient-to-br from-honey-flower-200 to-honey-flower-300">
+  <div
+    class="m-auto bg-gradient-to-br from-big-stone-900 to-big-stone-950 py-2"
+  >
+    <HeadingTitle
+      text="UHW's Latino Caucus Presents Donation Drive for LA Fires!"
+      styling="m-auto font-Trebuchet font-bold text-center text-orange-400 py-5"
+    />
+    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+      <CollageImage src={imgUHWDonation}>
+        
+      <div class="text-md text-white">
+        <p class="py-2">
+          In collaboration with UHW's Latino Caucus, we are collecting items
+          to be distributed to <LinkText
+            href="https://www.instagram.com/seiulatino">@seiulatino</LinkText
+          > members in Southern California who have been affected by recent wildfire
+          disasters.
+        </p>
+        <p class="py-2">
+          Drop Off Locations: San Diego, Los Angeles, Fresno, San Jose,
+          Stockton, Sacramento, and Oakland.
+        <p>
+        <p class="py-2">Drop Off Dates: January 15-17 & January 21-23</p>
+          <p class="py-2">
+            Weekend Drop Off: January 18-19 <b>(By appointment only)</b>
+          </p>
+          <p class="py-2">
+            All items will be distributed to members and to the Antelope
+            Valley YMCA who is supporting affected families in Altadena.
+          </p>
+          <p class="py-2">
+            Scan QR code or click <LinkText
+              href="https://www.amazon.com/hz/wishlist/ls/KT2AUCU794SW?ref_=wl_share"
+              >here</LinkText
+            > to find items needed.
+          </p>
+        </div>
+      </CollageImage>
+    </div>
+  </div>
+  <div class="py-2 bg-gradient-to-br from-honey-flower-200 to-honey-flower-300">
     <HeadingTitle text="Happy New Year 1107 Members!" />
     <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
       <CollageImage src={imgNewYear}>
@@ -107,7 +148,9 @@ import imgStewardsTraining from "../images/strength_training/StewardsTraining.jp
             Makeover Reveal! Check out our refreshed union office space and
             learn more about our 2024 victories and our plans for 2025!
           </p>
-          <p class="font-bold py-1.5">Join us for our Open House & Office Makeover Reveal!</p>
+          <p class="font-bold py-1.5">
+            Join us for our Open House & Office Makeover Reveal!
+          </p>
           <p class="py-1.5 text-lg">
             Sign up for the <b>Virtual Event</b> via Mobilize below!
           </p>
