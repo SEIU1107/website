@@ -14,7 +14,7 @@ import imgTraining from "../images/strength_training/BigRoom.jpg";
 import imgNewYear from "../images/index/NewYear.png";
 
 // Banners
-import imgStewardsTraining from "../images/strength_training/StewardsTraining.jpg";
+import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
 import imgUHWDonation from "../images/index/UHWDonation.png";
 ---
 
@@ -88,35 +88,32 @@ import imgUHWDonation from "../images/index/UHWDonation.png";
     </div>
   </main>
    -->
-  <div
-    class="m-auto bg-gradient-to-br from-big-stone-900 to-big-stone-950 py-2"
-  >
+  <div class="m-auto bg-gradient-to-br from-big-stone-900 to-big-stone-950">
     <HeadingTitle
       text="UHW's Latino Caucus Presents Donation Drive for LA Fires!"
       styling="m-auto font-Trebuchet font-bold text-center text-orange-400 py-5"
     />
     <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
       <CollageImage src={imgUHWDonation}>
-        
-      <div class="text-md text-white">
-        <p class="py-2">
-          In collaboration with UHW's Latino Caucus, we are collecting items
-          to be distributed to <LinkText
-            href="https://www.instagram.com/seiulatino">@seiulatino</LinkText
-          > members in Southern California who have been affected by recent wildfire
-          disasters.
-        </p>
-        <p class="py-2">
-          Drop Off Locations: San Diego, Los Angeles, Fresno, San Jose,
-          Stockton, Sacramento, and Oakland.
-        <p>
-        <p class="py-2">Drop Off Dates: January 15-17 & January 21-23</p>
+        <div class="text-md text-white">
+          <p class="py-2">
+            In collaboration with UHW's Latino Caucus, we are collecting items
+            to be distributed to <LinkText
+              href="https://www.instagram.com/seiulatino">@seiulatino</LinkText
+            > members in Southern California who have been affected by recent wildfire
+            disasters.
+          </p>
+          <p class="py-2">
+            Drop Off Locations: San Diego, Los Angeles, Fresno, San Jose,
+            Stockton, Sacramento, and Oakland.
+          </p>
+          <p class="py-2">Drop Off Dates: January 15-17 & January 21-23</p>
           <p class="py-2">
             Weekend Drop Off: January 18-19 <b>(By appointment only)</b>
           </p>
           <p class="py-2">
-            All items will be distributed to members and to the Antelope
-            Valley YMCA who is supporting affected families in Altadena.
+            All items will be distributed to members and to the Antelope Valley
+            YMCA who is supporting affected families in Altadena.
           </p>
           <p class="py-2">
             Scan QR code or click <LinkText
@@ -124,6 +121,44 @@ import imgUHWDonation from "../images/index/UHWDonation.png";
               >here</LinkText
             > to find items needed.
           </p>
+        </div>
+      </CollageImage>
+    </div>
+  </div>
+  <div
+    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-700 py-2"
+  >
+    <HeadingTitle
+      text="Attend SEIU 1107's AFRAM Meetings!"
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+    />
+    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+      <CollageImage
+        src={imgAFRAM}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-md lg:max-w-lg"
+      >
+        <div class="text-white text-md">
+          <p class="py-1.5">
+            We encourage you to attend SEIU 1107's African American Caucus
+            Meetings! The National African American Caucus of SEIU is committed
+            to enhancing opportunities for education, training mentor-ship,
+            leadership development and networking for SEIU members and staff of
+            African descent.
+          </p>
+          <p class="py-1.5">
+            No one person can win the fight against social, racial, wage, or
+            disability injustices. WE NEED EACH OTHER. As we coalesce to bring
+            forth a powerful and transformative movement within our union, we
+            want each of you to feel inspired, empowered, and optimistic about
+            the work that our caucus is doing.
+          </p>
+          <Button
+            text="Meeting Dates Flyer (PDF)"
+            href="/PDFs/caucuses/AFRAM 2025 Meetings.pdf"
+            target="_blank"
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-500 hover:scale-110 active:supernova-600"
+          />
         </div>
       </CollageImage>
     </div>
