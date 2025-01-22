@@ -7,7 +7,6 @@ import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
 import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
-import StringCycle from "../components/StringCycle.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
@@ -16,6 +15,10 @@ import imgNewYear from "../images/index/NewYear.png";
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
 import imgUHWDonation from "../images/index/UHWDonation.png";
+
+// Constants
+const execBoardButtonStyle =
+  "mx-2 no-underline not-prose text-white bg-honey-flower-800 hover:scale-110 hover:bg-honey-flower-950 active:bg-purple-darkest";
 ---
 
 <Layout>
@@ -88,6 +91,66 @@ import imgUHWDonation from "../images/index/UHWDonation.png";
     </div>
   </main>
    -->
+  <div class="m-auto bg-gradient-to-br from-supernova-400 to-supernova-500">
+    <div
+      class="flex flex-col text-lg font-Roboto max-w-[90vw] sm:max-w-screen-md m-auto"
+    >
+      <HeadingTitle
+        text="Nominations for the Election of Executive Board Members and Officers Are Now Open!"
+      />
+      <div class="py-1.5 flex flex-col sm:flex-row">
+        <p class="sm:mr-4 pb-4 sm:py-0">
+          To nominate yourself or another member of SEIU Local 1107, <b
+            ><LinkText
+              target="_blank"
+              href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
+              >CLICK HERE</LinkText
+            ></b
+          > to download the individual nomination petition form.
+        </p>
+        <p class="sm:ml-4">
+          The nominee must also complete the <b>Nomination Acceptance Form</b>. <b
+            ><LinkText
+              href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
+              target="_blank">CLICK HERE</LinkText
+            ></b
+          > to download the form.
+        </p>
+      </div>
+      <p class="py-1.5 sm:text-center">
+        For slate nominations, please contact Felipe Danglapin at <b
+          ><LinkText href="mailto:fdanglapin@seiunv.org"
+            >fdanglapin@seiunv.org
+          </LinkText></b
+        > to request the appropriate petition forms.
+      </p>
+      <div class="bg-slate-700 max-w-full h-0.5"></div>
+      <p class="py-1.5">
+        <b>Important:</b> All petitions and completed forms must be received at SEIU
+        Local 1107, 2250 S. Rancho Drive, Suite 165, Las Vegas, NV 89102, <b
+          >by 5:00 p.m. on February 12, 2025</b
+        >. Petitions may be mailed or hand-delivered.
+      </p>
+    </div>
+    <p class="font-bold text-xl text-center">Downloads:</p>
+    <div class="flex flex-col py-2.5">
+      <div class="flex flex-col md:flex-row mx-auto">
+        <Button
+          styling={execBoardButtonStyle}
+          text="Individual Nomination Form (PDF)"
+          href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
+          target="_blank"
+        />
+        <Button
+          styling={execBoardButtonStyle}
+          text="Nomination Acceptance Form"
+          href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
+          target="_blank"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- -->
   <div class="m-auto bg-gradient-to-br from-big-stone-900 to-big-stone-950">
     <HeadingTitle
       text="UHW's Latino Caucus Presents Donation Drive for LA Fires!"
