@@ -16,6 +16,6 @@ const { title, jobDesc } = Astro.props as Props;
         <slot />
     </div>
     <div class="max-w-lg flex justify-center m-auto">
-        <Button text="View Full Job Description" href={jobDesc} />
+        <Button text="View Full Job Description" href={jobDesc} target="_blank" />
     </div>
 </div>
