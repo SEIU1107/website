@@ -10,11 +10,9 @@ import Button from "../components/Button.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
-import imgNewYear from "../images/index/NewYear.png";
 
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
-import imgUHWDonation from "../images/index/UHWDonation.png";
 
 // Constants
 const execBoardButtonStyle =
@@ -151,43 +149,42 @@ const execBoardButtonStyle =
     </div>
   </div>
   <!-- -->
-  <div class="m-auto bg-gradient-to-br from-big-stone-900 to-big-stone-950">
-    <HeadingTitle
-      text="UHW's Latino Caucus Presents Donation Drive for LA Fires!"
-      styling="m-auto font-Trebuchet font-bold text-center text-orange-400 py-5"
-    />
-    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
-      <CollageImage src={imgUHWDonation}>
-        <div class="text-md text-white">
-          <p class="py-2">
-            In collaboration with UHW's Latino Caucus, we are collecting items
-            to be distributed to <LinkText
-              href="https://www.instagram.com/seiulatino">@seiulatino</LinkText
-            > members in Southern California who have been affected by recent wildfire
-            disasters.
-          </p>
-          <p class="py-2">
-            Drop Off Locations: San Diego, Los Angeles, Fresno, San Jose,
-            Stockton, Sacramento, and Oakland.
-          </p>
-          <p class="py-2">Drop Off Dates: January 15-17 & January 21-23</p>
-          <p class="py-2">
-            Weekend Drop Off: January 18-19 <b>(By appointment only)</b>
-          </p>
-          <p class="py-2">
-            All items will be distributed to members and to the Antelope Valley
-            YMCA who is supporting affected families in Altadena.
-          </p>
-          <p class="py-2">
-            Scan QR code or click <LinkText
-              href="https://www.amazon.com/hz/wishlist/ls/KT2AUCU794SW?ref_=wl_share"
-              >here</LinkText
-            > to find items needed.
-          </p>
-        </div>
+
+  <main class="flex flex-col m-auto">
+    <HeadingTitle text="Together We Rise! Attend Our Membership Trainings!" />
+    <div class="bg-supernova-500 p-4">
+      <p
+        class="font-Trebuchet font-bold text-center text-honey-flower-800 text-5xl"
+      >
+        Attention Stewards! Attend a Steward Training <LinkText href="/membership_trainings#STEWARDS"
+          >Here</LinkText
+        >!
+      </p>
+    </div>
+    <div class="py-5 max-w-[90vw] md:max-w-screen-lg m-auto">
+      <CollageImage src={imgTraining}>
+        <p class="py-2 text-black text-xl font-bold text-left mx-2">
+          The time to get involved is <i>NOW!</i>
+        </p>
+        <p class="text-md py-2">
+          Join SEIU Local 1107 for a day of strategy and union power!
+        </p>
+        <p class="text-md py-2">
+          We're coming together to share best practices for building a powerful
+          labor movement and keeping our union strong.
+        </p>
+        <p class="text-md py-2">
+          In order to keep our union strong - so that we can win better
+          contracts, make breakthroughs in organizing, and build a more just and
+          equitable society - we have to focus on improving our member strength
+          like our very existence depends on it (because it does!).
+        </p>
+        <Button href="/membership_trainings" text="Attend A Training" />
       </CollageImage>
     </div>
-  </div>
+  </main>
+
+  <!-- -->
   <div
     class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-700 py-2"
   >
@@ -226,73 +223,6 @@ const execBoardButtonStyle =
       </CollageImage>
     </div>
   </div>
-  <div class="py-2 bg-gradient-to-br from-honey-flower-200 to-honey-flower-300">
-    <HeadingTitle text="Happy New Year 1107 Members!" />
-    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
-      <CollageImage src={imgNewYear}>
-        <div class="text-black font-Roboto">
-          <p class="py-1.5">
-            As we welcome the new year, we want to take a moment to appreciate
-            the unwavering commitment of our union members to improving the
-            lives of working people. Our members accomplished so much in 2024 -
-            from historic contract wins, to electing labor champions across all
-            levels of government, to uniting our communities and standing up for
-            racial and social justice.
-          </p>
-          <p class="py-1.5">
-            In 2025, we'll continue to advance a bold agenda that strengthens
-            our union, our working conditions and uplifts the communities we
-            live and serve. Join us for our 2025 SEIU 1107 Open House and Office
-            Makeover Reveal! Check out our refreshed union office space and
-            learn more about our 2024 victories and our plans for 2025!
-          </p>
-          <p class="font-bold py-1.5">
-            Join us for our Open House & Office Makeover Reveal!
-          </p>
-          <p class="py-1.5 text-lg">
-            Sign up for the <b>Virtual Event</b> via Mobilize below!
-          </p>
-          <div class="font-bold text-lg flex flex-col">
-            <LinkText
-              href="https://www.mobilize.us/seiunevada/event/747893/"
-              target="_blank">Thursday, January 23rd from 3-7 PM</LinkText
-            >
-            <LinkText
-              href="https://www.mobilize.us/seiunevada/event/747895/"
-              target="_blank">Saturday, January 25th from 12-2 PM</LinkText
-            >
-          </div>
-        </div>
-      </CollageImage>
-    </div>
-  </div>
-
-  <main
-    class="bg-gradient-to-br from-supernova-400 to-supernova-500 flex flex-col m-auto"
-  >
-    <HeadingTitle text="Together We Rise! Attend Our Membership Trainings!" />
-    <div class="py-5 max-w-[90vw] md:max-w-screen-lg m-auto">
-      <CollageImage src={imgTraining}>
-        <p class="py-2 text-black text-xl font-bold text-left mx-2">
-          The time to get involved is <i>NOW!</i>
-        </p>
-        <p class="text-md py-2">
-          Join SEIU Local 1107 for a day of strategy and union power!
-        </p>
-        <p class="text-md py-2">
-          We're coming together to share best practices for building a powerful
-          labor movement and keeping our union strong.
-        </p>
-        <p class="text-md py-2">
-          In order to keep our union strong - so that we can win better
-          contracts, make breakthroughs in organizing, and build a more just and
-          equitable society - we have to focus on improving our member strength
-          like our very existence depends on it (because it does!).
-        </p>
-        <Button href="/membership_trainings" text="Attend A Training" />
-      </CollageImage>
-    </div>
-  </main>
 
   <LatestNews
     bgColor="bg-gradient-to-b from-honey-flower-900 to-honey-flower-700"
