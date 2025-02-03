@@ -37,6 +37,10 @@ const myUnion = [
     href: "/member_benefits",
   },
   {
+    pageName: "Immigration Resources",
+    href: "/immigration_resources",
+  },
+  {
     pageName: "Constitution & Bylaws",
     href: "/constitution",
   },
