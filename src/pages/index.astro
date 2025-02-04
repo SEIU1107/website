@@ -7,9 +7,20 @@ import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
 import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
+import Subtitle from "../components/Subtitle.svelte";
+import ImageCycle from "../components/ImageCycle.svelte";
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
+
+// Immigration Workshop
+import imgImmigration1 from "/public/post_imgs/2024/ImmigrationWorkshop/img1.png";
+import imgImmigration2 from "/public/post_imgs/2024/ImmigrationWorkshop/img2.png";
+import imgImmigration3 from "/public/post_imgs/2024/ImmigrationWorkshop/img3.png";
+import imgImmigration4 from "/public/post_imgs/2024/ImmigrationWorkshop/img4.png";
+import imgImmigration5 from "/public/post_imgs/2024/ImmigrationWorkshop/img5.png";
+import imgImmigration6 from "/public/post_imgs/2024/ImmigrationWorkshop/img6.png";
+import imgImmigration7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png";
 
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
@@ -149,6 +160,60 @@ const execBoardButtonStyle =
     </div>
   </div>
   <!-- -->
+  <div
+    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-800 flex flex-col"
+  >
+    <HeadingTitle
+      text="Know Your Rights!"
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+    />
+    <Subtitle
+      text="Resources for Immigrants"
+      styling="pb-2 text-center text-supernova-500 italic font-Trebuchet"
+    />
+    <div
+      class="mt-2 flex flex-col md:grid md:grid-cols-2 gap-2 max-w-screen-lg mx-auto px-2"
+    >
+      <div class="md:col-span-1">
+        <ImageCycle
+          duration={5000}
+          images={[
+            imgImmigration1,
+            imgImmigration2,
+            imgImmigration3,
+            imgImmigration4,
+            imgImmigration5,
+            imgImmigration6,
+            imgImmigration7,
+          ]}
+          alt=""
+          imageStyle="shadow-black shadow-md rounded-md m-auto max-w-full"
+          client:load
+        />
+      </div>
+      <div class="md:col-span-1 mt-0.5 text-honey-flower-100 flex flex-col">
+        <p class="pb-2">
+          SEIU Local 1107 is united for ALL workers. No matter where we come
+          from, working people share the same vision for a just society, livable
+          wages, quality healthcare, and a better future for all. We defend
+          everyone's right to a fair job and safe workplace in Nevada and across
+          our nation.
+        </p>
+        <p class="py-2">
+          The U.S. Constitution protects ALL of us who reside in the U.S., no
+          matter our race, gender or immigration status. Explore resources and
+          support from trusted organizations dedicated to protecting immigrant
+          rights and providing guidance.
+        </p>
+        <Button
+          text="View Resources"
+          styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+          href="/immigration_resources"
+        />
+      </div>
+    </div>
+  </div>
+  <!-- -->
 
   <main class="flex flex-col m-auto">
     <HeadingTitle text="Together We Rise! Attend Our Membership Trainings!" />
@@ -215,7 +280,7 @@ const execBoardButtonStyle =
             text="Meeting Dates Flyer (PDF)"
             href="/PDFs/caucuses/AFRAM 2025 Meetings.pdf"
             target="_blank"
-            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-500 hover:scale-110 active:supernova-600"
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
           />
         </div>
       </CollageImage>
