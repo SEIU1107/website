@@ -3,6 +3,11 @@
 
   const {
     // Options for the dropdown
+
+    // Can accept string[] such as ["A", "B", "C"]
+
+    // OR accepts an object array with keys "label" and "value"
+    // such as [{label: "English", value: "en"}, {label: "Spanish", value: "es"}]
     dropdownOptions = [""],
 
     // Initial value, if any, to already be selected
@@ -22,22 +27,32 @@
     update,
   } = $props();
 
-  let dropdownOpen = $state(false);
-  let currOption: string | null = $state(null);
+  interface MappedDropdownOption {
+    label: string;
+    value: string;
+  }
 
-  function updateOption(option: string | null) {
+  let dropdownOpen = $state(false);
+  let currOption: string | MappedDropdownOption | null = $state(null);
+
+  function updateOption(option: string | MappedDropdownOption | null) {
     currOption = option;
     dropdownOpen = false;
-    update(option);
+    update(typeof option === "string" ? option : option?.value);
   }
 
   onMount(() => {
     // Initially set the current option to the first one
     if (initialValue) {
       // Dev wants an initial value...
-      if (dropdownOptions.find((val) => initialValue === val)) {
+      const initialOption = dropdownOptions.find(
+        (option) =>
+          initialValue === (typeof option === "string" ? option : option.value)
+      );
+
+      if (initialOption[0]) {
         // And it's provided in dropdownOptions! Hurray!
-        currOption = initialValue;
+        currOption = initialOption[0];
       } else {
         // ... but it's not available. Default to first value.
         currOption = dropdownOptions[0];
@@ -71,7 +86,7 @@
       )}
       type="button"
     >
-      {currOption}
+      {typeof currOption === "string" ? currOption : currOption?.label}
 
       <!-- Down Arrow -->
       <div class="ml-auto">
@@ -111,7 +126,9 @@
                 }}
                 class={dropdownHoverStyle}
               >
-                {dropdownOption}
+                {typeof dropdownOption === "string"
+                  ? dropdownOption
+                  : dropdownOption.label}
               </button>
             </li>
           {/each}
