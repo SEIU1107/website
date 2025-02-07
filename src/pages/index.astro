@@ -24,6 +24,7 @@ import imgImmigration7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png
 
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
+import imgScholarship from "/public/post_imgs/2024/BackToSchool/img10.jpg";
 
 // Constants
 const execBoardButtonStyle =
@@ -157,6 +158,41 @@ const execBoardButtonStyle =
           target="_blank"
         />
       </div>
+    </div>
+  </div>
+  <!-- -->
+  <div class="m-auto min-w-[90vw] flex flex-col">
+    <HeadingTitle text="Apply for the 2025-2026 Academic Scholarship!" />
+    <div class="py-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg m-auto">
+      <CollageImage
+        src={imgScholarship}
+        horizontal="right"
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg xl:max-w-xl"
+      >
+        <p class="py-2">
+          To apply for the <b>SEIU Local 1107 2025-2026 Academic Scholarship</b
+          >, please complete the application and submit all required materials
+          via email to <LinkText href="mailto:scholarship@seiunv.org"
+            >scholarship@seiunv.org</LinkText
+          >
+          <b>on or before 5 p.m. May 31, 2025</b>. No applications will be
+          considered after that date. Six (6) scholarship winners will be
+          notified the week of July 19, 2025, by the Scholarship Committee
+          Chair.
+        </p>
+        <div class="py-2"><b>Deadline:</b> 5:00pm May 31, 2025</div>
+        <span class="py-2 font-bold underline text-lg">Requirements</span>
+        <ul class="pt-2 list-disc pl-4">
+          <li>All SEIU Local 1107 Members and Dependents</li>
+          <li>Scholarships are limited to one per household.</li> 
+          <li>Eligibility - 1 year or more membership in good standing.</li>
+          <li>Current GPA of at least 2.0. <b>Please attach your most current unofficial transcript with your essay.</b></li>
+          <li>No transcript needed for continuing education.</li>
+        </ul>
+        <div class="py-2">
+          <Button href="/PDFs/2025/scholarship/ScholarshipApplication.pdf" target="_blank" text="Download Application PDF" />
+        </div>
+      </CollageImage>
     </div>
   </div>
   <!-- -->
