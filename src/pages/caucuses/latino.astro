@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import CollageImage from "../../components/CollageImage.astro";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 import Subtitle from "../../components/Subtitle.svelte";
@@ -10,7 +11,7 @@ import InfoCardGridLayout from "../../components/InfoCardGridLayout.astro";
 // Images
 import imgInternational from "../../images/caucuses/Latino/International.jpg";
 import imgLogoTransparent from "../../images/caucuses/Latino/TransparentLogo.png";
-import { Image } from "astro:assets";
+import imgMeetingDates from "../../images/caucuses/Latino/2025 Flyer.png";
 
 // Const
 const buttonStyle =
@@ -31,6 +32,11 @@ const paraStyle = "text-md mt-2 text-big-stone-100";
   <Subtitle
     text="Empowering Latino Workers for a Better Future!"
     styling="text-xl font-Trebuchet lg:text-2xl italic text-center text-big-stone-100"
+  />
+  <Image
+    src={imgMeetingDates}
+    alt=""
+    class="my-2.5 mx-auto max-w-[90vw] md:max-w-lg rounded-md shadow-md shadow-black"
   />
   <div class="my-5">
     <h2 class={h2Style.concat(" ", "text-center lg:text-left")}>#Esta Unión</h2>
@@ -85,7 +91,13 @@ const paraStyle = "text-md mt-2 text-big-stone-100";
               target="_blank"
             />
           </div>
-          <div class="flex m-auto">
+          <div class="flex flex-col lg:flex-row mx-auto">
+            <Button
+              styling={buttonStyle}
+              text="Pay Membership Dues"
+              href="https://www.zeffy.com/ticketing/d269d3f2-6363-42a5-800e-f6f8421f73c7"
+              target="_blank"
+            />
             <Button
               styling={buttonStyle}
               text="Download Constitution & Bylaws (PDF)"

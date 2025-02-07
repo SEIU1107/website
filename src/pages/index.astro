@@ -24,6 +24,7 @@ import imgImmigration7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png
 
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
+import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
 import imgScholarship from "/public/post_imgs/2024/BackToSchool/img10.jpg";
 
 // Constants
@@ -101,75 +102,135 @@ const execBoardButtonStyle =
     </div>
   </main>
    -->
-  <div class="m-auto bg-gradient-to-br from-supernova-400 to-supernova-500">
+  <div class="flex flex-col lg:grid lg:grid-cols-2 m-auto">
+    <div class="bg-gradient-to-br px-5 from-supernova-400 to-supernova-500">
+      <div
+        class="max-w-[90vw] lg:max-w-full flex flex-col text-lg font-Roboto m-auto"
+      >
+        <HeadingTitle
+          text="Nominations for the Election of Executive Board Members and Officers Are Now Open!"
+        />
+        <div class="py-1.5 flex flex-col sm:flex-row">
+          <p class="sm:mr-4 pb-4 sm:py-0">
+            To nominate yourself or another member of SEIU Local 1107, <b
+              ><LinkText
+                target="_blank"
+                href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
+                >CLICK HERE</LinkText
+              ></b
+            > to download the individual nomination petition form.
+          </p>
+          <p class="sm:ml-4">
+            The nominee must also complete the <b>Nomination Acceptance Form</b
+            >. <b
+              ><LinkText
+                href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
+                target="_blank">CLICK HERE</LinkText
+              ></b
+            > to download the form.
+          </p>
+        </div>
+        <p class="py-1.5 sm:text-center">
+          For slate nominations, please contact Felipe Danglapin at <b
+            ><LinkText href="mailto:fdanglapin@seiunv.org"
+              >fdanglapin@seiunv.org
+            </LinkText></b
+          > to request the appropriate petition forms.
+        </p>
+        <div class="bg-slate-700 max-w-full h-0.5"></div>
+        <p class="py-1.5">
+          <b>Important:</b> All petitions and completed forms must be received at
+          SEIU Local 1107, 2250 S. Rancho Drive, Suite 165, Las Vegas, NV 89102,
+          <b>by 5:00 p.m. on February 12, 2025</b>. Petitions may be mailed or
+          hand-delivered.
+        </p>
+      </div>
+      <p class="font-bold text-xl text-center">PDF Downloads:</p>
+      <div class="flex flex-col py-2.5">
+        <div class="flex flex-col md:flex-row mx-auto">
+          <Button
+            styling={execBoardButtonStyle}
+            text="Individual Nomination Form"
+            href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
+            target="_blank"
+          />
+          <Button
+            styling={execBoardButtonStyle}
+            text="Nomination Acceptance Form"
+            href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
+            target="_blank"
+          />
+        </div>
+      </div>
+    </div>
+    <!-- end item1 -->
     <div
-      class="flex flex-col text-lg font-Roboto max-w-[90vw] sm:max-w-screen-md m-auto"
+      class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
     >
       <HeadingTitle
-        text="Nominations for the Election of Executive Board Members and Officers Are Now Open!"
+        text="Know Your Rights!"
+        styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
       />
-      <div class="py-1.5 flex flex-col sm:flex-row">
-        <p class="sm:mr-4 pb-4 sm:py-0">
-          To nominate yourself or another member of SEIU Local 1107, <b
-            ><LinkText
-              target="_blank"
-              href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
-              >CLICK HERE</LinkText
-            ></b
-          > to download the individual nomination petition form.
-        </p>
-        <p class="sm:ml-4">
-          The nominee must also complete the <b>Nomination Acceptance Form</b>. <b
-            ><LinkText
-              href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
-              target="_blank">CLICK HERE</LinkText
-            ></b
-          > to download the form.
-        </p>
-      </div>
-      <p class="py-1.5 sm:text-center">
-        For slate nominations, please contact Felipe Danglapin at <b
-          ><LinkText href="mailto:fdanglapin@seiunv.org"
-            >fdanglapin@seiunv.org
-          </LinkText></b
-        > to request the appropriate petition forms.
-      </p>
-      <div class="bg-slate-700 max-w-full h-0.5"></div>
-      <p class="py-1.5">
-        <b>Important:</b> All petitions and completed forms must be received at SEIU
-        Local 1107, 2250 S. Rancho Drive, Suite 165, Las Vegas, NV 89102, <b
-          >by 5:00 p.m. on February 12, 2025</b
-        >. Petitions may be mailed or hand-delivered.
-      </p>
-    </div>
-    <p class="font-bold text-xl text-center">PDF Downloads:</p>
-    <div class="flex flex-col py-2.5">
-      <div class="flex flex-col md:flex-row mx-auto">
-        <Button
-          styling={execBoardButtonStyle}
-          text="Individual Nomination Form"
-          href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
-          target="_blank"
-        />
-        <Button
-          styling={execBoardButtonStyle}
-          text="Nomination Acceptance Form"
-          href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
-          target="_blank"
-        />
+      <Subtitle
+        text="Resources for Immigrants"
+        styling="pb-2 text-center text-supernova-500 italic font-Trebuchet"
+      />
+      <div
+        class="mt-2 flex flex-col md:grid md:grid-cols-2 gap-2 max-w-screen-lg mx-auto px-2"
+      >
+        <div class="md:col-span-1">
+          <ImageCycle
+            duration={5000}
+            images={[
+              imgImmigration1,
+              imgImmigration2,
+              imgImmigration3,
+              imgImmigration4,
+              imgImmigration5,
+              imgImmigration6,
+              imgImmigration7,
+            ]}
+            alt=""
+            imageStyle="shadow-black shadow-md rounded-md m-auto max-w-full"
+            client:load
+          />
+        </div>
+        <div class="md:col-span-1 mt-0.5 text-honey-flower-100 flex flex-col">
+          <p class="pb-2">
+            SEIU Local 1107 is united for ALL workers. No matter where we come
+            from, working people share the same vision for a just society,
+            livable wages, quality healthcare, and a better future for all. We
+            defend everyone's right to a fair job and safe workplace in Nevada
+            and across our nation.
+          </p>
+          <p class="py-2">
+            The U.S. Constitution protects ALL of us who reside in the U.S., no
+            matter our race, gender or immigration status. Explore resources and
+            support from trusted organizations dedicated to protecting immigrant
+            rights and providing guidance.
+          </p>
+          <Button
+            text="View Resources"
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+            href="/immigration_resources"
+          />
+        </div>
       </div>
     </div>
+    <!-- end item2 -->
   </div>
   <!-- -->
-  <div class="m-auto min-w-[90vw] flex flex-col">
+  <div class="m-auto flex flex-col max-w-[90vw]">
     <HeadingTitle text="Apply for the 2025-2026 Academic Scholarship!" />
-    <div class="py-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg m-auto">
+    <div
+      class="max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg m-auto flex flex-col"
+    >
       <CollageImage
         src={imgScholarship}
         horizontal="right"
         imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-md lg:max-w-lg xl:max-w-xl"
       >
-        <p class="py-2">
+        <p>
           To apply for the <b>SEIU Local 1107 2025-2026 Academic Scholarship</b
           >, please complete the application and submit all required materials
           via email to <LinkText href="mailto:scholarship@seiunv.org"
@@ -184,78 +245,39 @@ const execBoardButtonStyle =
         <span class="py-2 font-bold underline text-lg">Requirements</span>
         <ul class="pt-2 list-disc pl-4">
           <li>All SEIU Local 1107 Members and Dependents</li>
-          <li>Scholarships are limited to one per household.</li> 
+          <li>Scholarships are limited to one per household.</li>
           <li>Eligibility - 1 year or more membership in good standing.</li>
-          <li>Current GPA of at least 2.0. <b>Please attach your most current unofficial transcript with your essay.</b></li>
+          <li>
+            Current GPA of at least 2.0. <b
+              >Please attach your most current unofficial transcript with your
+              essay.</b
+            >
+          </li>
           <li>No transcript needed for continuing education.</li>
         </ul>
         <div class="py-2">
-          <Button href="/PDFs/2025/scholarship/ScholarshipApplication.pdf" target="_blank" text="Download Application PDF" />
+          <Button
+            href="/PDFs/2025/scholarship/ScholarshipApplication.pdf"
+            target="_blank"
+            text="Download Application PDF"
+          />
         </div>
       </CollageImage>
     </div>
   </div>
   <!-- -->
-  <div
-    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-800 flex flex-col"
-  >
-    <HeadingTitle
-      text="Know Your Rights!"
-      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
-    />
-    <Subtitle
-      text="Resources for Immigrants"
-      styling="pb-2 text-center text-supernova-500 italic font-Trebuchet"
-    />
-    <div
-      class="mt-2 flex flex-col md:grid md:grid-cols-2 gap-2 max-w-screen-lg mx-auto px-2"
-    >
-      <div class="md:col-span-1">
-        <ImageCycle
-          duration={5000}
-          images={[
-            imgImmigration1,
-            imgImmigration2,
-            imgImmigration3,
-            imgImmigration4,
-            imgImmigration5,
-            imgImmigration6,
-            imgImmigration7,
-          ]}
-          alt=""
-          imageStyle="shadow-black shadow-md rounded-md m-auto max-w-full"
-          client:load
-        />
-      </div>
-      <div class="md:col-span-1 mt-0.5 text-honey-flower-100 flex flex-col">
-        <p class="pb-2">
-          SEIU Local 1107 is united for ALL workers. No matter where we come
-          from, working people share the same vision for a just society, livable
-          wages, quality healthcare, and a better future for all. We defend
-          everyone's right to a fair job and safe workplace in Nevada and across
-          our nation.
-        </p>
-        <p class="py-2">
-          The U.S. Constitution protects ALL of us who reside in the U.S., no
-          matter our race, gender or immigration status. Explore resources and
-          support from trusted organizations dedicated to protecting immigrant
-          rights and providing guidance.
-        </p>
-        <Button
-          text="View Resources"
-          styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
-          href="/immigration_resources"
-        />
-      </div>
-    </div>
-  </div>
+
   <!-- -->
 
-  <main class="flex flex-col m-auto">
+  <!-- -->
+
+  <main
+    class="flex flex-col m-auto bg-gradient-to-br from-supernova-400 to-supernova-500"
+  >
     <HeadingTitle text="Together We Rise! Attend Our Membership Trainings!" />
-    <div class="bg-supernova-500 p-2">
+    <div class="bg-honey-flower-900 p-2">
       <p
-        class="font-Trebuchet font-bold text-center text-honey-flower-800 text-4xl"
+        class="font-Trebuchet font-bold text-center text-supernova-500 text-4xl"
       >
         Attention Stewards! Sign Up for a Stewards Training on this page!
       </p>
@@ -283,45 +305,118 @@ const execBoardButtonStyle =
     </div>
   </main>
 
-  <!-- -->
-  <div
-    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-700 py-2"
-  >
-    <HeadingTitle
-      text="Attend SEIU 1107's AFRAM Meetings!"
-      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
-    />
-    <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
-      <CollageImage
-        src={imgAFRAM}
-        horizontal="right"
-        imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-md lg:max-w-lg"
-      >
-        <div class="text-white text-md">
-          <p class="py-1.5">
-            We encourage you to attend SEIU 1107's African American Caucus
-            Meetings! The National African American Caucus of SEIU is committed
-            to enhancing opportunities for education, training mentor-ship,
-            leadership development and networking for SEIU members and staff of
-            African descent.
-          </p>
-          <p class="py-1.5">
-            No one person can win the fight against social, racial, wage, or
-            disability injustices. WE NEED EACH OTHER. As we coalesce to bring
-            forth a powerful and transformative movement within our union, we
-            want each of you to feel inspired, empowered, and optimistic about
-            the work that our caucus is doing.
-          </p>
-          <Button
-            text="Meeting Dates Flyer (PDF)"
-            href="/PDFs/caucuses/AFRAM 2025 Meetings.pdf"
-            target="_blank"
-            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
-          />
-        </div>
-      </CollageImage>
+  <!-- start grid2 -->
+  <div class="flex flex-col lg:grid lg:grid-cols-2 m-auto">
+    <div
+      class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-700 py-2 px-4 h-full"
+    >
+      <HeadingTitle
+        text="SEIU 1107's AFRAM Caucus Meetings"
+        styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+      />
+      <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+        <CollageImage
+          src={imgAFRAM}
+          horizontal="right"
+          imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-md lg:max-w-lg"
+        >
+          <div class="text-white text-md">
+            <p class="py-1.5">
+              We encourage you to attend SEIU 1107's African American Caucus
+              Meetings! The National African American Caucus of SEIU is
+              committed to enhancing opportunities for education, training
+              mentor-ship, leadership development and networking for SEIU
+              members and staff of African descent.
+            </p>
+            <p class="py-1.5">
+              No one person can win the fight against social, racial, wage, or
+              disability injustices. WE NEED EACH OTHER. As we coalesce to bring
+              forth a powerful and transformative movement within our union, we
+              want each of you to feel inspired, empowered, and optimistic about
+              the work that our caucus is doing.
+            </p>
+            <div class="py-1.5">
+              <Button
+                text="Meeting Dates Flyer (PDF)"
+                href="/PDFs/caucuses/AFRAM 2025 Meetings.pdf"
+                target="_blank"
+                styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+              />
+            </div>
+            <div class="py-1.5">
+              <Button
+                text="Visit Caucus Page"
+                href="/caucuses/afram"
+                styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+              />
+            </div>
+          </div>
+        </CollageImage>
+      </div>
+    </div>
+    <!-- end item1 -->
+    <div
+      class="bg-gradient-to-br from-big-stone-900 to-big-stone-950 m-auto py-2 px-4 h-full"
+    >
+      <HeadingTitle
+        text="SEIU 1107's Latino Caucus Meetings"
+        styling="m-auto font-Trebuchet font-bold text-center text-big-stone-300 py-5"
+      />
+      <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
+        <CollageImage
+          src={imgLatino}
+          horizontal="right"
+          imageStyle="shadow-black shadow-sm rounded-md my-2.5 max-w-[90vw] sm:max-w-md lg:max-w-lg"
+        >
+          <div class="text-white text-md">
+            <p class="py-1.5">
+              The Latino Caucus at SEIU 1107 aims to advocate for Latino
+              workers' rights, interests, and well-being within the union and
+              the broader community. The caucus serves as a platform for Latino
+              members to come together, share experiences, and address the
+              unique challenges the Latino workforce faces.
+            </p>
+            <p class="py-1.5">
+              Founded to address the unique needs and challenges faced by
+              Latinos in our union, our caucus is dedicated to promoting
+              cultural pride, economic empowerment, and social justice. We honor
+              the trailblazers who came before us and strive to uphold their
+              commitment to unity and progress.
+            </p>
+            <p class="py-1.5">
+              Ready to make a difference? Start your journey by becoming a
+              member now!
+            </p>
+            <div class="py-1">
+              <Button
+                text="Meeting Dates Flyer (PDF)"
+                href="/PDFs/caucuses/Latino 2025 Meetings.pdf"
+                target="_blank"
+                styling="m-auto my-1.5 text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 hover:scale-110"
+              />
+            </div>
+            <div class="py-1">
+              <Button
+                text="Become a Member"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfoUkvDu--PA3VphXG4evxMCr3hJWGq33WInCHk8yWQVEL8_w/viewform"
+                target="_blank"
+                styling="m-auto my-1.5 text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 hover:scale-110"
+              />
+            </div>
+            <div class="py-1">
+              <Button
+                text="Visit Caucus Page"
+                href="/caucuses/latino"
+                styling="m-auto my-1.5 text-white bg-orange-600 hover:bg-orange-700 active:bg-orange-800 hover:scale-110"
+              />
+            </div>
+          </div>
+        </CollageImage>
+      </div>
     </div>
   </div>
+
+  <!-- -->
 
   <!--
   LatestNews if bg is dark purple
