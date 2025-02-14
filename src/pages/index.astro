@@ -102,122 +102,78 @@ const execBoardButtonStyle =
     </div>
   </main>
    -->
-  <div class="flex flex-col lg:grid lg:grid-cols-2 m-auto">
-    <div class="bg-gradient-to-br px-5 from-supernova-400 to-supernova-500">
-      <div
-        class="max-w-[90vw] lg:max-w-full flex flex-col text-lg font-Roboto m-auto"
-      >
-        <HeadingTitle
-          text="Nominations for the Election of Executive Board Members and Officers Are Now Open!"
-        />
-        <div class="py-1.5 flex flex-col sm:flex-row">
-          <p class="sm:mr-4 pb-4 sm:py-0">
-            To nominate yourself or another member of SEIU Local 1107, <b
-              ><LinkText
-                target="_blank"
-                href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
-                >CLICK HERE</LinkText
-              ></b
-            > to download the individual nomination petition form.
-          </p>
-          <p class="sm:ml-4">
-            The nominee must also complete the <b>Nomination Acceptance Form</b
-            >. <b
-              ><LinkText
-                href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
-                target="_blank">CLICK HERE</LinkText
-              ></b
-            > to download the form.
-          </p>
-        </div>
-        <p class="py-1.5 sm:text-center">
-          For slate nominations, please contact Felipe Danglapin at <b
-            ><LinkText href="mailto:fdanglapin@seiunv.org"
-              >fdanglapin@seiunv.org
-            </LinkText></b
-          > to request the appropriate petition forms.
-        </p>
-        <div class="bg-slate-700 max-w-full h-0.5"></div>
-        <p class="py-1.5">
-          <b>Important:</b> All petitions and completed forms must be received at
-          SEIU Local 1107, 2250 S. Rancho Drive, Suite 165, Las Vegas, NV 89102,
-          <b>by 5:00 p.m. on February 12, 2025</b>. Petitions may be mailed or
-          hand-delivered.
-        </p>
-      </div>
-      <p class="font-bold text-xl text-center">PDF Downloads:</p>
-      <div class="flex flex-col py-2.5">
-        <div class="flex flex-col md:flex-row mx-auto">
-          <Button
-            styling={execBoardButtonStyle}
-            text="Individual Nomination Form"
-            href="/PDFs/2025/eboard/SEIU Local 1107 E-Board Election Nomination (Individual Candidate).pdf"
-            target="_blank"
-          />
-          <Button
-            styling={execBoardButtonStyle}
-            text="Nomination Acceptance Form"
-            href="/PDFs/2025/eboard/Nomination Acceptance Form.pdf"
-            target="_blank"
-          />
-        </div>
-      </div>
-    </div>
-    <!-- end item1 -->
+  <!-- -->
+  <div
+    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
+  >
+    <HeadingTitle
+      text='Attend our "Know Your Rights" Workshop!'
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+    />
+    <Subtitle
+      text="Immigration Resources"
+      styling="pb-2 text-center text-supernova-500 italic font-Trebuchet"
+    />
     <div
-      class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
+      class="mt-2 flex flex-col md:grid md:grid-cols-2 gap-2 max-w-screen-lg mx-auto px-2"
     >
-      <HeadingTitle
-        text="Know Your Rights!"
-        styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
-      />
-      <Subtitle
-        text="Immigration Resources"
-        styling="pb-2 text-center text-supernova-500 italic font-Trebuchet"
-      />
-      <div
-        class="mt-2 flex flex-col md:grid md:grid-cols-2 gap-2 max-w-screen-lg mx-auto px-2"
-      >
-        <div class="md:col-span-1">
-          <ImageCycle
-            duration={5000}
-            images={[
-              imgImmigration1,
-              imgImmigration2,
-              imgImmigration3,
-              imgImmigration4,
-              imgImmigration5,
-              imgImmigration6,
-              imgImmigration7,
-            ]}
-            alt=""
-            imageStyle="shadow-black shadow-md rounded-md m-auto max-w-full"
-            client:load
-          />
-        </div>
-        <div class="md:col-span-1 mt-0.5 text-honey-flower-100 flex flex-col">
-          <p class="pb-2">
-            SEIU Local 1107 is united for ALL workers. No matter where we come
-            from, working people share the same vision for a just society,
-            livable wages, quality healthcare, and a better future for all. We
-            defend everyone's right to a fair job and safe workplace in Nevada
-            and across our nation.
-          </p>
-          <p class="py-2">
-            The U.S. Constitution protects ALL of us who reside in the U.S., no
-            matter our race, gender or immigration status. Explore resources and
-            support from trusted organizations dedicated to protecting immigrant
-            rights and providing guidance.
-          </p>
-          <Button
-            text="View Resources"
-            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
-            href="/immigration_resources"
-          />
+      <div class="md:col-span-1">
+        <ImageCycle
+          duration={5000}
+          images={[
+            imgImmigration1,
+            imgImmigration2,
+            imgImmigration3,
+            imgImmigration4,
+            imgImmigration5,
+            imgImmigration6,
+            imgImmigration7,
+          ]}
+          alt=""
+          imageStyle="shadow-black shadow-md rounded-md m-auto max-w-full"
+          client:load
+        />
+      </div>
+      <div class="md:col-span-1 mt-0.5 text-honey-flower-100 flex flex-col">
+        <p class="pb-2">
+          SEIU Local 1107 is united for ALL workers. No matter where we come
+          from, working people share the same vision for a just society, livable
+          wages, quality healthcare, and a better future for all. We defend
+          everyone's right to a fair job and safe workplace in Nevada and across
+          our nation.
+        </p>
+        <p class="py-2">
+          The U.S. Constitution protects ALL of us who reside in the U.S., no
+          matter our race, gender or immigration status. Explore resources and
+          support from trusted organizations dedicated to protecting immigrant
+          rights and providing guidance.
+        </p>
+        <p class="py-2 text-lg">
+          <ul>
+            <li><b>When: </b>Wednesday, March 26th at 6:00pm</li>
+            <li><b>Where: </b>2250 S Rancho Dr ste 165 Las Vegas, NV 89102</li>
+          </ul>
+        </p>
+        <p class="py-2 text-lg">RSVP on Mobilize Today!</p>
+        <div class="flex flex-row m-auto">
+          <div class="mx-2">
+            <Button
+              text="RSVP For Workshop"
+              target="_blank"
+              styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+              href="https://www.mobilize.us/seiunevada/event/755677/"
+            />
+          </div>
+          <div class="mx-2">
+            <Button
+              text="View Resources"
+              styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+              href="/immigration_resources"
+            />
+          </div>
         </div>
       </div>
     </div>
-    <!-- end item2 -->
   </div>
   <!-- -->
   <div class="m-auto flex flex-col max-w-[90vw]">

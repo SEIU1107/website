@@ -17,9 +17,14 @@ import img7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png";
 const imageStyle = "shadow-black shadow-md rounded-md m-auto max-w-[90vw]";
 ---
 
-<Layout title="Immigration Resources" centered={true}>
+<Layout title="Immigration Resources">
   <HeadingTitle text="Immigration Resources" />
-  <div class="m-auto flex flex-col">
+  <div
+    class="bg-honey-flower-800 text-5xl text-center p-2 font-Trebuchet m-auto font-bold text-supernova-500"
+  >
+    Attend Our "Know Your Rights" Workshop!
+  </div>
+  <div class="m-auto flex flex-col mt-5">
     <ImageCycle
       duration={5000}
       images={[img1, img2, img5, img6]}
@@ -27,8 +32,20 @@ const imageStyle = "shadow-black shadow-md rounded-md m-auto max-w-[90vw]";
       {imageStyle}
       client:load
     />
-    <div class="font-Roboto py-4 max-w-screen-md">
-      <p class="pb-2">
+    <div class="font-Roboto max-w-screen-md m-auto">
+      <p class="py-1.5 font-bold text-lg">
+        RSVP for the "Know Your Rights" Workshop today!
+      </p>
+      <ul class="py-0.5">
+        <li><b>When: </b>Wednesday, March 26th at 6:00pm</li>
+        <li><b>Where: </b>2250 S Rancho Dr ste 165 Las Vegas, NV 89102</li>
+      </ul>
+      <Button
+        text="RSVP For Workshop"
+        href="https://www.mobilize.us/seiunevada/event/755677/"
+        target="_blank"
+      />
+      <p class="py-2">
         SEIU Local 1107 is united for ALL workers. No matter where we come from,
         working people share the same vision for a just society, livable wages,
         quality healthcare, and a better future for all. We defend everyone's
@@ -47,166 +64,166 @@ const imageStyle = "shadow-black shadow-md rounded-md m-auto max-w-[90vw]";
       />
     </div>
   </div>
-  <div
-    class="m-auto flex flex-col my-4 max-w-[90vw] md:max-w-screen-md bg-white p-5 rounded-md shadow-sm shadow-black"
-  >
-    <Subtitle text="Resources" />
-    <p class="py-2">
-      <b>Immigrants' Rights - </b>Regardless of your immigration status, you
-      have guaranteed rights under the Constitution. <span class="font-bold"
-        ><LinkText
-          href="https://www.aclu.org/know-your-rights/immigrants-rights"
-          target="_blank"
-          >Learn more about your rights as an immigrant from the ACLU and how to
-          express them.</LinkText
-        ></span
-      >
-    </p>
-    <p class="py-2">
-      Visit <span class="font-bold"
-        ><LinkText href="">https://www.wehaverights.us</LinkText></span
-      > to watch videos for more information.
-    </p>
-    <span class="bg-gray-400 h-0.5"></span>
-    <p class="py-2">
-      <b
-        >Know Your Rights - <LinkText
-          href="https://iamerica.org/know-your-rights/"
-        >
-          iAmerica Know Your Rights by Scenario
-        </LinkText> -
-      </b>Ensure you know your rights if you are approached by police or ICE.
-      Review the information from iAmerica to help you understand your rights
-      and what to do in different situations.
-    </p>
-    <span class="bg-gray-400 h-0.5"></span>
-    <p class="py-2">
-      <b
-        >Red Cards - <LinkText
-          href="https://www.ilrc.org/red-cards-tarjetas-rojas"
-        >
-          ILRC's RED Cards
-        </LinkText> -
-      </b>The free, downloadable Immigrant Legal Resource Center (ILRC) Red
-      Cards help people assert their rights and defend themselves in many
-      situations, such as when ICE agents go to a home.
-    </p>
-    <span class="bg-gray-400 h-0.5"></span>
-    <span class="py-4"
-      ><Subtitle text="Additional Support and Information" /></span
-    >
-    <p class="py-2">
-      SEIU Local 1107 is a proud partner of the Nevada Immigrant Coalition
-      (NIC). Visit these state organizations for support and information:
-    </p>
-    <ul class="list-disc pl-5">
-      <li>
-        ALCU Nevada: <b
-          ><LinkText href="https://www.aclunv.org" target="_blank"
-            >https://www.aclunv.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Consulmex Las Vegas: <b
-          ><LinkText
-            href="https://consulmex.sre.gob.mx/lasvegas/"
-            target="_blank">https://consulmex.sre.gob.mx/lasvegas/</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        UNLV Immigration Clinic: <b
-          ><LinkText
-            href="https://law.unlv.edu/clinics/immigration"
-            target="_blank">https://law.unlv.edu/clinics/immigration</LinkText
-          ><b></b>
-        </b>
-      </li>
-      <li>
-        Legal Aid Center of Southern Nevada: <b
-          ><LinkText href="https://www.lacsn.org" target="_blank"
-            >https://www.lacsn.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Progressive Leadership Alliance of Nevada:
-        <b
-          ><LinkText href="https://planevada.org/immigration/" target="_blank"
-            >https://planevada.org/immigration/</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        African Diaspora of Las Vegas: <b
-          ><LinkText href="https://africandiasporalv.org" target="_blank"
-            >https://africandiasporalv.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Asian Community Development Council: <b
-          ><LinkText href="https://acdcnv.org" target="_blank"
-            >https://acdcnv.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Make the Road Nevada: <b
-          ><LinkText href="https://maketheroadnv.org" target="_blank"
-            >https://maketheroadnv.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        The Immigrant Home Foundation: <b
-          ><LinkText href="https://www.immigrantfoundation.org" target="_blank"
-            >https://www.immigrantfoundation.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Nevadans for the Common Good: <b
-          ><LinkText
-            href="https://www.nevadansforthecommongood.org"
-            target="_blank">https://www.nevadansforthecommongood.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Immigration Center for Women and Children: <b
-          ><LinkText href="https://www.icwclaw.org" target="_blank"
-            >https://www.icwclaw.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Arriba Las Vegas: <b
-          ><LinkText href="https://www.arribalasvegas.org" target="_blank"
-            >https://www.arribalasvegas.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Fuente de Vida Mental Health Services: <b
-          ><LinkText href="https://www.fuentedevidanv.org" target="_blank"
-            >https://www.fuentedevidanv.org</LinkText
-          ></b
-        >
-      </li>
-      <li>
-        Catholic Charities of Southern Nevada: <b
-          ><LinkText href="LinkText" target="_blank">
-            https://www.catholiccharities.com
-          </LinkText></b
-        >
-      </li>
-    </ul>
-    <div class="py-2">
-      For more information, <b
-        ><LinkText target="_blank" href="/contact_us">contact SEIU 1107</LinkText></b
-      >.
-    </div>
-  </div></Layout
+</Layout>
+<div
+  class="m-auto flex flex-col my-4 max-w-[90vw] md:max-w-screen-md bg-white p-5 rounded-md shadow-sm shadow-black"
 >
+  <Subtitle text="Resources" />
+  <p class="py-2">
+    <b>Immigrants' Rights - </b>Regardless of your immigration status, you have
+    guaranteed rights under the Constitution. <span class="font-bold"
+      ><LinkText
+        href="https://www.aclu.org/know-your-rights/immigrants-rights"
+        target="_blank"
+        >Learn more about your rights as an immigrant from the ACLU and how to
+        express them.</LinkText
+      ></span
+    >
+  </p>
+  <p class="py-2">
+    Visit <span class="font-bold"
+      ><LinkText href="">https://www.wehaverights.us</LinkText></span
+    > to watch videos for more information.
+  </p>
+  <span class="bg-gray-400 h-0.5"></span>
+  <p class="py-2">
+    <b
+      >Know Your Rights - <LinkText
+        href="https://iamerica.org/know-your-rights/"
+      >
+        iAmerica Know Your Rights by Scenario
+      </LinkText> -
+    </b>Ensure you know your rights if you are approached by police or ICE.
+    Review the information from iAmerica to help you understand your rights and
+    what to do in different situations.
+  </p>
+  <span class="bg-gray-400 h-0.5"></span>
+  <p class="py-2">
+    <b
+      >Red Cards - <LinkText
+        href="https://www.ilrc.org/red-cards-tarjetas-rojas"
+      >
+        ILRC's RED Cards
+      </LinkText> -
+    </b>The free, downloadable Immigrant Legal Resource Center (ILRC) Red Cards
+    help people assert their rights and defend themselves in many situations,
+    such as when ICE agents go to a home.
+  </p>
+  <span class="bg-gray-400 h-0.5"></span>
+  <span class="py-4"
+    ><Subtitle text="Additional Support and Information" /></span
+  >
+  <p class="py-2">
+    SEIU Local 1107 is a proud partner of the Nevada Immigrant Coalition (NIC).
+    Visit these state organizations for support and information:
+  </p>
+  <ul class="list-disc pl-5">
+    <li>
+      ALCU Nevada: <b
+        ><LinkText href="https://www.aclunv.org" target="_blank"
+          >https://www.aclunv.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Consulmex Las Vegas: <b
+        ><LinkText href="https://consulmex.sre.gob.mx/lasvegas/" target="_blank"
+          >https://consulmex.sre.gob.mx/lasvegas/</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      UNLV Immigration Clinic: <b
+        ><LinkText
+          href="https://law.unlv.edu/clinics/immigration"
+          target="_blank">https://law.unlv.edu/clinics/immigration</LinkText
+        ><b></b>
+      </b>
+    </li>
+    <li>
+      Legal Aid Center of Southern Nevada: <b
+        ><LinkText href="https://www.lacsn.org" target="_blank"
+          >https://www.lacsn.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Progressive Leadership Alliance of Nevada:
+      <b
+        ><LinkText href="https://planevada.org/immigration/" target="_blank"
+          >https://planevada.org/immigration/</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      African Diaspora of Las Vegas: <b
+        ><LinkText href="https://africandiasporalv.org" target="_blank"
+          >https://africandiasporalv.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Asian Community Development Council: <b
+        ><LinkText href="https://acdcnv.org" target="_blank"
+          >https://acdcnv.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Make the Road Nevada: <b
+        ><LinkText href="https://maketheroadnv.org" target="_blank"
+          >https://maketheroadnv.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      The Immigrant Home Foundation: <b
+        ><LinkText href="https://www.immigrantfoundation.org" target="_blank"
+          >https://www.immigrantfoundation.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Nevadans for the Common Good: <b
+        ><LinkText
+          href="https://www.nevadansforthecommongood.org"
+          target="_blank">https://www.nevadansforthecommongood.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Immigration Center for Women and Children: <b
+        ><LinkText href="https://www.icwclaw.org" target="_blank"
+          >https://www.icwclaw.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Arriba Las Vegas: <b
+        ><LinkText href="https://www.arribalasvegas.org" target="_blank"
+          >https://www.arribalasvegas.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Fuente de Vida Mental Health Services: <b
+        ><LinkText href="https://www.fuentedevidanv.org" target="_blank"
+          >https://www.fuentedevidanv.org</LinkText
+        ></b
+      >
+    </li>
+    <li>
+      Catholic Charities of Southern Nevada: <b
+        ><LinkText href="LinkText" target="_blank">
+          https://www.catholiccharities.com
+        </LinkText></b
+      >
+    </li>
+  </ul>
+  <div class="py-2">
+    For more information, <b
+      ><LinkText target="_blank" href="/contact_us">contact SEIU 1107</LinkText
+      ></b
+    >.
+  </div>
+</div>
