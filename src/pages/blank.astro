@@ -1,0 +1,11 @@
+---
+import Carousel from "../components/Carousel.svelte";
+import Layout from "../layouts/Layout.astro";
+import imgMask from "../images/communities_united/2023/Mask.jpg";
+import imgSoaps from "../images/communities_united/2023/Soaps.jpg";
+import imgLeisure from "../images/communities_united/2023/Leisure.jpg";
+---
+
+<Layout>
+  <Carousel images={[imgMask, imgSoaps, imgLeisure]} height="h-96" showSliderIndicators={false} duration={2000} clickablePages={false} client:load />
+</Layout>

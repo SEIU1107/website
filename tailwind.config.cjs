@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  content: [
+    "./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}",
+    "./node_modules/flowbite/**/*.js",
+  ],
   theme: {
     extend: {
       fontFamily: {
@@ -22,18 +25,18 @@ module.exports = {
           900: "#582c83",
           950: "#361259",
         },
-        'supernova': {
-        '50': '#fffee7',
-        '100': '#fffec1',
-        '200': '#fff986',
-        '300': '#ffee41',
-        '400': '#ffdd0d',
-        '500': '#ffce00',
-        '600': '#d19700',
-        '700': '#a66b02',
-        '800': '#89540a',
-        '900': '#74440f',
-        '950': '#442304',
+        supernova: {
+          50: "#fffee7",
+          100: "#fffec1",
+          200: "#fff986",
+          300: "#ffee41",
+          400: "#ffdd0d",
+          500: "#ffce00",
+          600: "#d19700",
+          700: "#a66b02",
+          800: "#89540a",
+          900: "#74440f",
+          950: "#442304",
         },
         "big-stone": {
           50: "#f2f9fd",
@@ -55,5 +58,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("flowbite/plugin")],
 };

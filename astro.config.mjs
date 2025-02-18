@@ -8,9 +8,7 @@ import svelte from "@astrojs/svelte";
 export default defineConfig({
   integrations: [tailwind(), svelte(), mdx()],
   outDir: "../html",
-  redirects: {
-    '/communities_united': '/communities_united_2023'
-  },
+  redirects: {},
   vite: {
     plugins: [mkcert()],
     server: {

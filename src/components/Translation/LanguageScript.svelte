@@ -10,6 +10,9 @@
   ): Promise<string> {
     // console.log(`Translating ${text} to ${targetLang}`);
     if (!text.trim()) return text; // Skip empty text
+    if (targetLang == "en") {
+      return text;
+    }
 
     // if (translations[text]) return translations[text]; // Use cached translation
 
@@ -52,12 +55,12 @@
           const textNode = node as Text;
           (textNode as any).originalText =
             (textNode as any).originalText || textNode.nodeValue;
-          console.log(`before: ${textNode.nodeValue}`);
+          // console.log(`before: ${textNode.nodeValue}`);
           textNode.nodeValue = await translateText(
             (textNode as any).originalText,
             selectedLang
           );
-          console.log(`after: ${textNode.nodeValue}`);
+          // console.log(`after: ${textNode.nodeValue}`);
         }
       }
     }
@@ -66,7 +69,7 @@
 
 <DropdownInput
   dropdownOptions={[
-    { label: "English", value: "en" },
+    { label: "Default", value: "en" },
     { label: "Spanish", value: "es" },
     { label: "Tagalog", value: "tl" },
   ]}
@@ -77,9 +80,7 @@
   hoverColor="bg-supernova-500"
   update={(val: string) => {
     selectedLang = val;
-    console.log({ selectedLang });
-    if (selectedLang !== "en") {
-      translatePage();
-    }
+    // console.log({ selectedLang });
+    translatePage();
   }}
 />

@@ -62,7 +62,7 @@
     ).then((heights: number[]) => {
       maxHeight = Math.max(...heights);
       document.body.removeChild(hiddenContainer);
-      console.log(`Max height calculated: ${maxHeight}px`);
+      // console.log(`Max height calculated: ${maxHeight}px`);
     });
   }
 

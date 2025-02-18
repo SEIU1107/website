@@ -2,7 +2,8 @@
 import CollageImage from "../components/CollageImage.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import Layout from "../layouts/Layout.astro";
-import Button from "../components/Button.svelte";
+import Subtitle from "../components/Subtitle.svelte";
+import Carousel from "../components/Carousel.svelte";
 import { Image } from "astro:assets";
 
 import imgMask from "../images/communities_united/2023/Mask.jpg";
@@ -82,11 +83,12 @@ import logoWeDecide from "../images/communities_united/2024/logos/We Decide.png"
 ---
 
 <Layout title="SEIU Communities United 2024" centered={true}>
-  <HeadingTitle text="Communities United: Raising the Stakes 2024" />
+
+  <HeadingTitle text="Communities United: Raising the Stakes" />
   <h2
     class="text-center font-bold text-xl lg:text-2xl font-Roboto text-black italic my-1.5"
   >
-    A Multicultural Festival
+    An Annual Multicultural Festival
   </h2>
   <div class="max-w-screen-lg flex flex-col m-auto py-2">
     <div class="py-2">
@@ -94,29 +96,15 @@ import logoWeDecide from "../images/communities_united/2024/logos/We Decide.png"
         srcList={[imgMask, imgCarpenters, imgSoaps, imgLeisure, imgDJs]}
         duration={6700}
         horizontal="right"
-        ><p class="py-2">
-          SEIU Local 1107 is proud to announce the return of the highly
-          anticipated <b
-            >"Communities United: Raising the Stakes Multicultural Festival"</b
-          > on <b>Saturday, September 21, from 3-8pm</b> at the <b
-            >Clark County Government Center Amphitheater.</b
-          > This year marks the festival's third year, with thousands expected to
-          join in celebrating our community's rich cultural diversity, inspiring
-          civic engagement, and fostering unity.
-        </p>
-        <div class="pt-2">
-          <ul class="list-disc pl-4">
-            <li>
-              <b>Date and Time:</b> Saturday, September 21, 3-8pm
-            </li>
-            <li>
-              <b>Location:</b> Clark County Government Center Amphitheater, 500 S
-              Grand Central Pkwy
-            </li>
-          </ul>
-        </div>
-        <p class="font-bold text-lg font-Roboto text-black italic">
-          THANK YOU TO ALL ATTENDEES, PARTNERS, VENDORS, and PERFORMERS!
+      >
+        <Subtitle text="What is Communities United?" />
+        <p>
+          Delivering a powerful rebuke to the alarming rise in hate crimes and
+          divisive rhetoric in recent years, SEIU 1107 is proud to host the
+          annual <b>“Communities United Multicultural Festival”</b>
+          to celebrate diversity and the right to vote. The event is held as part
+          of our union's ongoing commitment to diversity, civic engagement, voter
+          participation and understanding across racial and identity lines.
         </p>
       </CollageImage>
     </div>
@@ -155,7 +143,9 @@ import logoWeDecide from "../images/communities_united/2024/logos/We Decide.png"
         class="ml-5 list-disc grid gap-5 grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6"
       >
         <Image src={logoAfricanDevelopmentCenter} alt="" />
-        <div class="row-span-2"><Image src={logoAfricanDiaspora} alt="" /></div>
+        <div class="row-span-2">
+          <Image src={logoAfricanDiaspora} alt="" />
+        </div>
         <div class="row-span-2"><Image src={logoECube} alt="" /></div>
         <Image src={logoFACCGN} alt="" />
         <Image src={logoForOurFutureNV} alt="" />
