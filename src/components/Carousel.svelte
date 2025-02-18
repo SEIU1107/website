@@ -7,10 +7,20 @@
 
   interface CarouselProps {
     // List of image metadata's OR strings
-    images: ImageMetadata[] | string[];
+    images: (ImageMetadata | string)[];
 
     // Whether or not the user can click to move the carousel pages.
     clickablePages?: boolean;
+
+    // Duration for auto-slide, if any
+    // 0 Indicates none
+    duration?: number;
+
+    // How fast should the page switch? (as a TailwindCSS class)
+    animationSpeed?: string;
+
+    // Pause on mouse hover
+    pauseOnHover?: boolean;
 
     // Default Page index
     defaultPage?: number;
@@ -18,15 +28,23 @@
     // Show Slider Indicators
     showSliderIndicators?: boolean;
 
-    // Should the images be rounded?
-    roundedImages?: boolean;
+    // Image Options (see interface below)
+    imageOptions?: ImageOptions;
 
     // Carousel Height (as a TailwindCSS class)
     height?: string;
 
-    // Duration for auto-slide, if any
-    // 0 Indicates none
-    duration?: number;
+    // Carousel Bg Color (as a TailwindCSS class)
+    bgColor?: string;
+  }
+
+  interface ImageOptions {
+    // Should the images be rounded?
+    rounded?: boolean;
+
+    // Should the image have a custom object-cover? (as a TailwindCSS class)
+    // e.g. "object-right", "object-left-top", etc.
+    alignment?: string;
   }
 
   const {
@@ -34,9 +52,15 @@
     clickablePages = true,
     defaultPage = 0,
     showSliderIndicators = true,
-    roundedImages = false,
+    animationSpeed = "duration-700",
+    imageOptions = {
+      rounded: false,
+      alignment: "",
+    },
     height = "h-80",
+    bgColor = "bg-honey-flower-800",
     duration = 0,
+    pauseOnHover = true,
   }: CarouselProps = $props();
 
   let isMouseHovering = $state(false);
@@ -112,7 +136,6 @@
               item !== null
           ),
       },
-      ...(duration > 0 && { interval: duration }),
     };
 
     // Initialize the carousel
@@ -128,9 +151,11 @@
 
 <menu
   id="default-carousel"
-  class="relative w-full"
+  class="relative w-full {bgColor}"
   onmouseenter={() => {
-    isMouseHovering = true;
+    if (pauseOnHover) {
+      isMouseHovering = true;
+    }
   }}
   onmouseleave={() => {
     isMouseHovering = false;
@@ -138,20 +163,23 @@
 >
   <!-- Carousel wrapper -->
   <div
-    class="relative overflow-hidden {height} {roundedImages
+    class="relative overflow-hidden {height} {imageOptions.rounded
       ? 'rounded-md'
       : ''}"
   >
     <!-- Items -->
     {#each images as srcObject, i}
-      <div class="hidden ease-in-out" id="carousel-item-{i}">
+      <div
+        class="hidden {animationSpeed} ease-in-out w-full h-full"
+        id="carousel-item-{i}"
+      >
         <img
           src={typeof srcObject === "object" &&
           srcObject !== null &&
           "src" in srcObject
             ? srcObject.src
             : srcObject}
-          class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+          class="absolute block w-full h-full object-cover {imageOptions.alignment}"
           alt=""
         />
       </div>
