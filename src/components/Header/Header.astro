@@ -9,7 +9,7 @@ import SocialMediaButtons from "./SocialMediaButtons.astro";
 ---
 
 <!-- Non-Mobile (Desktop, larger screens) -->
-<header class="h-20 bg-honey-flower-900 hidden lg:block">
+<header class="h-20 bg-honey-flower-900 hidden lg:block z-50">
   <div class="h-full flex items-center justify-between py-5">
     <div class="flex flex-row justify-center align-middle">
       <a href="/" class="align-middle m-5"
@@ -29,7 +29,7 @@ import SocialMediaButtons from "./SocialMediaButtons.astro";
 </header>
 
 <!-- Mobile (smaller screens) -->
-<header class="h-32 bg-honey-flower-900 flex flex-row m-auto lg:hidden">
+<header class="h-32 bg-honey-flower-900 flex flex-row m-auto lg:hidden z-50">
   <div class="absolute w-screen">
     <a href="/"
       ><Image class="pt-10 w-24 m-auto" src={logo} alt="SEIU Local 1107" /></a
