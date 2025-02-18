@@ -9,6 +9,9 @@
     // List of image metadata's OR strings
     images: (ImageMetadata | string)[];
 
+    // Carousel ID to make it unique
+    carouselID?: number;
+
     // Whether or not the user can click to move the carousel pages.
     clickablePages?: boolean;
 
@@ -49,6 +52,7 @@
 
   const {
     images = [],
+    carouselID = 0,
     clickablePages = true,
     defaultPage = 0,
     showSliderIndicators = true,
@@ -101,16 +105,20 @@
   }
 
   onMount(() => {
-    const carouselElement = document.getElementById("default-carousel");
+    const carouselElement = document.getElementById(
+      `default-carousel-${carouselID}`
+    );
 
     // Indicate carousel-item-ids
     const items = images
       .map((item, i) => {
-        const el = document.getElementById(`carousel-item-${i}`);
+        const el = document.getElementById(`carousel-item-${carouselID}-${i}`);
         if (el) {
           return { position: i, el };
         }
-        console.warn(`Element with ID carousel-item-${i} not found.`);
+        console.warn(
+          `Element with ID carousel-item-${carouselID}-${i} not found.`
+        );
         return null;
       })
       .filter(
@@ -124,11 +132,15 @@
         activeClasses: "bg-white",
         items: images
           .map((item, i) => {
-            const el = document.getElementById(`carousel-indicator-${i}`);
+            const el = document.getElementById(
+              `carousel-indicator-${carouselID}-${i}`
+            );
             if (el) {
               return { position: i, el };
             }
-            console.warn(`Element with ID carousel-indicator-${i} not found.`);
+            console.warn(
+              `Element with ID carousel-indicator-${carouselID}-${i} not found.`
+            );
             return null;
           })
           .filter(
@@ -150,7 +162,7 @@
 </script>
 
 <menu
-  id="default-carousel"
+  id="default-carousel-{carouselID}"
   class="relative w-full {bgColor}"
   onmouseenter={() => {
     if (pauseOnHover) {
@@ -171,7 +183,7 @@
     {#each images as srcObject, i}
       <div
         class="hidden {animationSpeed} ease-in-out w-full h-full"
-        id="carousel-item-{i}"
+        id="carousel-item-{carouselID}-{i}"
       >
         <img
           src={typeof srcObject === "object" &&
@@ -192,7 +204,7 @@
     >
       {#each images as item, index}
         <button
-          id="carousel-indicator-{index}"
+          id="carousel-indicator-{carouselID}-{index}"
           type="button"
           class="w-3 h-3 rounded-full"
           aria-current="true"

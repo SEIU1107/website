@@ -11,11 +11,19 @@ import Subtitle from "../components/Subtitle.svelte";
 import ImageCycle from "../components/ImageCycle.svelte";
 import Carousel from "../components/Carousel.svelte";
 
+import BannerText from "../components/Index/Banner/BannerText.astro";
+
 // Banners
 import HomecareGraphic from "../images/index/HomecareGraphic.jpg";
 import DOAGraphic from "../images/index/DOAGraphic.png";
-import CCGraphic from "../images/index/CCGraphic.png"
-import StRoseGraphic from "../images/index/StRoseGraphic.png"
+import CCGraphic from "../images/index/CCGraphic.png";
+import StRoseGraphic from "../images/index/StRoseGraphic.png";
+
+// Mobile Banners
+import HomecareMobile from "../images/index/CCMobile.png";
+import CCMobile from "../images/index/CCMobile.png";
+import StRoseMobile from "../images/index/StRoseMobile.png"
+import DOAMobile from "../images/index/DOAMobile.png"
 
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
@@ -87,48 +95,47 @@ const execBoardButtonStyle =
    -->
 
   <!-- Hero Banner -->
-  <!-- -->
-  <main class="relative overflow-hidden h-max">
-    <div class="absolute top-0 inset-0 -z-10">
+  <main class="hidden lg:block relative overflow-hidden h-max">
+    <div class="absolute top-0 inset-0 -z-30">
       <Carousel
         images={[CCGraphic, StRoseGraphic, DOAGraphic, HomecareGraphic]}
         height="h-[500px]"
-        duration={8000}
+        duration={5500}
         clickablePages={false}
         showSliderIndicators={false}
         pauseOnHover={false}
         imageOptions={{
-          alignment: 'object-left'
+          alignment: "object-left",
         }}
-        client:load
+        client:visible
       />
     </div>
-
-    <div
-      class="relative z-20 flex flex-col justify-center items-center text-center lg:items-end lg:text-right h-96 lg:h-[500px] p-4"
-    >
-      <div class="max-w-screen-sm">
-        <div
-          class="text-white tinyShadow font-Trebuchet font-bold uppercase py-5 text-center text-3xl lg:text-4xl"
-        >
-          Nevada's Health Care, Home Care, and Public Workers
-        </div>
-        <h1
-          class="shadowClass uppercase font-bold font-Roboto text-supernova-400 text-center text-5xl lg:text-7xl mt-4 lg:mt-2"
-        >
-          United For Quality Services
-        </h1>
-      </div>
-    </div>
+    <BannerText />
   </main>
 
+  <!-- Mobile Hero Banner -->
+  <main class="block lg:hidden relative overflow-hidden h-max">
+    <div class="absolute top-0 inset-0 -z-20">
+      <Carousel
+        images={[CCMobile, StRoseMobile, DOAMobile, HomecareMobile]}
+        carouselID={1}
+        height="h-[500px]"
+        duration={4000}
+        clickablePages={false}
+        showSliderIndicators={false}
+        pauseOnHover={false}
+        client:visible
+      />
+    </div>
+    <BannerText />
+  </main>
   <!-- -->
   <div
     class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
   >
     <HeadingTitle
       text='Attend our "Know Your Rights" Workshop!'
-      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5 shadowClass"
     />
     <Subtitle
       text="Immigration Resources"
@@ -288,7 +295,7 @@ const execBoardButtonStyle =
     >
       <HeadingTitle
         text="SEIU 1107's AFRAM Caucus Meetings"
-        styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5"
+        styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5 shadowClass"
       />
       <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
         <CollageImage
@@ -336,7 +343,7 @@ const execBoardButtonStyle =
     >
       <HeadingTitle
         text="SEIU 1107's Latino Caucus Meetings"
-        styling="m-auto font-Trebuchet font-bold text-center text-big-stone-300 py-5"
+        styling="m-auto font-Trebuchet font-bold text-center text-big-stone-300 py-5 shadowClass"
       />
       <div class="flex m-auto max-w-[90vw] lg:max-w-screen-lg">
         <CollageImage
