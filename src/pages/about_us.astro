@@ -4,10 +4,19 @@ import HeadingTitle from "../components/HeadingTitle.svelte";
 import LinkText from "../components/LinkText.astro";
 import Layout from "../layouts/Layout.astro";
 
-import firstImage from "../images/about_us/JAK01345.jpg";
-import secondImage from "../images/about_us/Image2.jpg";
 import CollageImage from "../components/CollageImage.astro";
 import Subtitle from "../components/Subtitle.svelte";
+
+import img1 from "../images/about_us/img1.png";
+import img2 from "../images/about_us/img2.png";
+import img3 from "../images/about_us/img3.png";
+import img4 from "../images/about_us/img4.png";
+import img5 from "../images/about_us/img5.png";
+import img6 from "../images/about_us/img6.png";
+import img7 from "../images/about_us/img7.png";
+import img8 from "../images/about_us/img8.png";
+import img9 from "../images/about_us/img9.png";
+import img10 from "../images/about_us/img10.png";
 ---
 
 <Layout title="SEIU Local 1107 About Us" centered={true}>
@@ -16,7 +25,12 @@ import Subtitle from "../components/Subtitle.svelte";
       text="The Largest Movement of Healthcare & Public Workers in Nevada"
     />
     <Subtitle text="United for good jobs and quality services for all!" />
-    <CollageImage src={firstImage} horizontal="right">
+    <CollageImage
+      srcList={[img3, img1, img5, img7, img9]}
+      horizontal="right"
+      duration={7000}
+      imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-lg lg:max-w-xl"
+    >
       <p class="py-1">
         SEIU Local 1107 is the largest healthcare and public service union in
         Nevada, representing nearly 20,000 workers. We're a member-driven
@@ -50,7 +64,11 @@ import Subtitle from "../components/Subtitle.svelte";
     </h2>
 
     <div class="py-2">
-      <CollageImage src={secondImage}>
+      <CollageImage
+        srcList={[img8, img4, img6, img10, img2]}
+        duration={7000}
+        imageStyle="shadow-black shadow-sm rounded-md m-auto max-w-[90vw] sm:max-w-lg lg:max-w-xl"
+      >
         <p class="py-2.5">
           We are part of the
           <LinkText href="https://seiu.org/">
