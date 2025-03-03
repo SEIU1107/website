@@ -4,6 +4,8 @@ import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import { SvelteToast } from "@zerodevx/svelte-toast";
 
+const isProduction = import.meta.env.PROD;
+
 export interface Props {
   title?: string;
   centered?: boolean;
@@ -17,11 +19,27 @@ const {
   backgroundStyling = "bg-gradient-to-b from-honey-flower-100 to-honey-flower-300",
   viewTransition = true,
 } = Astro.props as Props;
+
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <!-- Google tag (gtag.js) -->
+    {
+      isProduction && (
+        <>
+        <script is:inline src="https://www.googletagmanager.com/gtag/js?id=G-5RSK2GL3Q8"></script>
+        <script data-type="application/javascript" is:inline>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-5RSK2GL3Q8');
+        </script>
+        </>
+      )
+    }
     <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico" />
 
     <meta name="msapplication-TileColor" content="#da532c" />
