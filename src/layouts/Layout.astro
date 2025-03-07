@@ -10,6 +10,8 @@ export interface Props {
   viewTransition?: boolean;
 }
 
+const isProd = import.meta.env.PROD
+
 const {
   title = "SEIU Local 1107",
   centered = false,
@@ -22,7 +24,8 @@ const {
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-    <script
+    {isProd && (
+      <script
       is:inline
       src="https://www.googletagmanager.com/gtag/js?id=G-5RSK2GL3Q8"></script>
     <script is:inline>
@@ -33,7 +36,9 @@ const {
       gtag("js", new Date());
 
       gtag("config", "G-5RSK2GL3Q8");
+      console.log(`Tracking ${title} page.`)
     </script>
+    )}
     <link rel="icon" type="image/x-icon" href="/src/images/favicon.ico" />
 
     <meta name="msapplication-TileColor" content="#da532c" />
