@@ -33,7 +33,7 @@ import imgTraining from "../images/strength_training/BigRoom.jpg";
 const titleStyle = "sm:text-lg font-bold text-honey-flower-800";
 const nameStyle = "text-black";
 const execBoardShopsStyle =
-  "pb-2 text-center text-honey-flower-800 italic font-Trebuchet text-lg font-bold";
+  "pb-2 text-center text-honey-flower-800 italic font-Trebuchet md:text-lg font-bold";
 
 // Immigration Workshop
 import imgImmigration1 from "/public/post_imgs/2024/ImmigrationWorkshop/img1.png";
@@ -131,7 +131,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     </div>
     <BannerText />
   </main>
-  <!-- -->
+  <!-- Executive Board Election Results -->
   <div
     class="flex flex-col m-auto bg-gradient-to-br from-supernova-400 to-supernova-500"
   >
@@ -161,6 +161,9 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
           continued growth and success of our union under the leadership of the
           new Executive Board.
         </p>
+        <div class="mx-auto">
+          <Button text="Executive Board Page" href="/executive_board" />
+        </div>
       </div>
       <div class="flex flex-col">
         <ul class="grid grid-cols-2 auto-rows-fr gap-0 text-center">
@@ -195,7 +198,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
           </li>
         </ul>
         <div class="py-2"><Subtitle text="Executive Board Members" /></div>
-        <div class="py-2 grid grid-cols-3">
+        <div class="py-2 grid grid-cols-2 md:grid-cols-3">
           <!-- Clark County -->
           <div class="flex flex-col">
             <span class={execBoardShopsStyle}>Clark County</span>
@@ -264,7 +267,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
             <span class={execBoardShopsStyle}
               >Southern Nevada Health District</span
             >
-            <ul class="text-center">
+            <ul class="text-center m-auto">
               <li>Regena Ellis</li>
             </ul>
           </div>
@@ -287,6 +290,27 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
           <!-- Educare -->
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Educare</span>
+            <ul class="text-center">
+              <li class="text-red-600 font-bold">Open Position</li>
+            </ul>
+          </div>
+          <!-- MountainView -->
+          <div class="flex flex-col pt-2">
+            <span class={execBoardShopsStyle}>Mountain View Hospital</span>
+            <ul class="text-center">
+              <li class="text-red-600 font-bold">Open Position</li>
+            </ul>
+          </div>
+          <!-- Southern Hills -->
+          <div class="flex flex-col pt-2">
+            <span class={execBoardShopsStyle}>Southern Hills Hospital</span>
+            <ul class="text-center">
+              <li class="text-red-600 font-bold">Open Position</li>
+            </ul>
+          </div>
+          <!-- Northern Nevada -->
+          <div class="flex flex-col pt-2">
+            <span class={execBoardShopsStyle}>Northern Nevada</span>
             <ul class="text-center">
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>

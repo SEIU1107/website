@@ -4,7 +4,7 @@ export interface Props {
     profileImg: ImageMetadata; // Image of the portrait; a square
     name: string;
     title: string;
-    desc: string; // Text description
+    desc?: string; // Text description
 }
 
 const { profileImg, name, title, desc } = Astro.props as Props;
