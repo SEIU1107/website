@@ -2,13 +2,14 @@
   import DropdownInput from "../Forms/DropdownInput.svelte";
 
   let selectedLang: string = "en";
-  let translations: Record<string, Record<string, string>> = {}; // Cache translations
+  // let charCount: number = 0;
 
   async function translateText(
     text: string,
     targetLang: string
   ): Promise<string> {
     if (!text.trim()) return text; // Skip empty text
+    // charCount = charCount + text.length;
     if (targetLang == "en") {
       return text;
     }
@@ -23,7 +24,7 @@
       return cachedTranslations[targetLang][text];
     }
 
-    console.log(`Translating ${text} to ${targetLang}`);
+    // return text;
 
     const response = await fetch(
       `https://translation.googleapis.com/language/translate/v2?key=AIzaSyCZ8sDU_5IgKmtfTECHlWgGUGk_Himn-ec&q=${encodeURIComponent(
@@ -49,8 +50,6 @@
       "*:not(script):not(style):not(meta):not(link):not([data-no-translate] *)"
     );
 
-    console.log({ elements });
-
     for (const el of elements) {
       for (const node of el.childNodes) {
         if (node.nodeType === 3 && node.nodeValue?.trim()) {
@@ -67,6 +66,7 @@
         }
       }
     }
+    // console.log(`Char count: ${charCount}`);
   }
 </script>
 
