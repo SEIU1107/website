@@ -29,7 +29,8 @@
   let emailInputValue: string = savedInputs.emailInputValue || "";
   let phoneInputValue: string = savedInputs.phoneInputValue || "";
   let employerInputValue: string = savedInputs.employerInputValue || "";
-  let inquiryTypeInputValue: string = savedInputs.inquiryTypeInputValue || "";
+  let inquiryTypeInputValue: string =
+    savedInputs.inquiryTypeInputValue || "General";
 
   // Quill likes to save rich text as a "Delta". We will use this for saved inputs
   // and re-entering them for when the user comes back.
@@ -51,7 +52,7 @@
   // Styling Constants
   const formLabelStyling = "block mb-2 text-lg text-honey-flower-900 font-bold";
   const textInputStyling =
-    "bg-gray-50 min-w-[90vw] md:min-w-72 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5";
+    "bg-gray-50 min-w-[90vw] md:min-w-72 border border-gray-300 text-black placeholder:text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5";
 
   // https://quilljs.com/
   let quill: Quill;

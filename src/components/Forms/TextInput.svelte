@@ -16,7 +16,7 @@
     usePlaceholderAsDefault = false,
 
     maxlength = 500,
-    styling = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5",
+    styling = "bg-gray-50 border border-gray-300 text-black placeholder:text-gray-600 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5",
     update, // Signals to parent component the current value.
   } = $props();
 
