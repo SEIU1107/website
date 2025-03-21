@@ -7,10 +7,39 @@ import Button from "../components/Button.svelte";
 import firstImage from "../images/political_action/Image1.jpg";
 import imgLobbyDay from "../images/political_action/imgLobbyDay.jpg";
 import LinkText from "../components/LinkText.astro";
+
+import imgCare1 from "../images/political_action/CARE 2025/CARE-1.png";
+import imgCare2 from "../images/political_action/CARE 2025/CARE-2.png";
+import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="SEIU 1107 Political Action" centered={true}>
   <HeadingTitle text="What is COPE?" />
+  <div class="m-auto flex flex-col py-2">
+    <div class="text-center lg:text-lg font-bold max-w-screen-md pb-1">
+      <i>ATTENTION!</i> SEIU 1107 is calling on the Nevada Legislature to stand with
+      Nevada workers and their families and support SEIU's CARE agenda!
+    </div>
+    <div class="m-auto">
+      <Button
+        text="Download Our CARE Agenda (PDF)"
+        href="/PDFs/2025/CARE.pdf"
+        target="_blank"
+      />
+    </div>
+  </div>
+  <div class="flex flex-col lg:grid lg:grid-cols-2 py-2 lg:gap-3">
+    <Image
+      src={imgCare1}
+      alt=""
+      class="rounded-md shadow-md shadow-black m-2"
+    />
+    <Image
+      src={imgCare2}
+      alt=""
+      class="rounded-md shadow-md shadow-black m-2"
+    />
+  </div>
   <div class="flex flex-col m-auto max-w-screen-lg">
     <div class="py-2">
       <CollageImage
