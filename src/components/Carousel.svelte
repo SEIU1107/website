@@ -21,6 +21,10 @@
     // 0 Indicates none
     duration?: number;
 
+    // Height override (as a TailwindCSS class)
+    // When true, the div is set to this height rather than determined by images
+    heightOverride?: string;
+
     // How fast should the page switch? (as a TailwindCSS class)
     animationSpeed?: string;
 
@@ -49,10 +53,6 @@
 
     // Move the image slightly up within the wrapping div? (Stupid Flowbite bug)
     translateUp?: boolean;
-
-    // Should the image have a custom object-cover? (as a TailwindCSS class)
-    // e.g. "object-right", "object-left-top", etc.
-    alignment?: string;
   }
 
   const {
@@ -62,11 +62,11 @@
     defaultPage = 0,
     showSliderIndicators = true,
     animationSpeed = "duration-700",
+    heightOverride = "",
     imageOptions = {
       rounded: false,
       translateUp: false,
       height: "h-full",
-      alignment: "",
     },
     bgColor = "bg-honey-flower-800",
     duration = 0,
@@ -193,8 +193,8 @@
 >
   <!-- Carousel wrapper -->
   <div
-    class="relative top-0 {bgColor} overflow-hidden"
-    style="height: {maxHeight}px;"
+    class={`relative top-0 ${bgColor} overflow-hidden ${heightOverride ?? ""}`}
+    style={heightOverride ? "" : `height: ${maxHeight}px;`}
   >
     <!-- Items -->
     {#each images as srcObject, i}
@@ -208,7 +208,7 @@
           "src" in srcObject
             ? srcObject.src
             : srcObject}
-          class={`w-full ${imageOptions.height} object-cover object-top ${imageOptions.rounded ? "rounded-md" : ""}`}
+          class={`w-full ${imageOptions.height} object-cover ${imageOptions.rounded ? "rounded-md" : ""}`}
           style={imageOptions.translateUp
             ? "transform: translateY(-8.5%);"
             : ""}
