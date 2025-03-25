@@ -21,6 +21,7 @@ export const shopTags = [
   "Renown",
   "Home Care",
   "SNHD",
+  "WRD",
 ];
 
 export const postTypes = ["Blog Post", "Press Release", "News Article"];

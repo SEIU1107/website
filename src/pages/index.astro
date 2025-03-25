@@ -26,8 +26,6 @@ import CCMobile from "../images/index/CCMobile.png";
 import StRoseMobile from "../images/index/StRoseMobile.png";
 import DOAMobile from "../images/index/DOAMobile.png";
 
-import imgLobbyDayFlyer from "../images/index/Lobby Day Flyer.jpg";
-
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
 
@@ -103,7 +101,6 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     <div class="absolute top-0 inset-0 -z-30">
       <Carousel
         images={[CCGraphic, StRoseGraphic, DOAGraphic, HomecareGraphic]}
-        height="h-[500px]"
         duration={5500}
         clickablePages={false}
         showSliderIndicators={false}
@@ -163,6 +160,15 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
           continued growth and success of our union under the leadership of the
           new Executive Board.
         </p>
+        <div class="mx-auto my-2">
+          <Button text="Executive Board Page" href="/executive_board" />
+        </div>
+        <div class="mx-auto my-2">
+          <Button
+            text="Read Blog Post"
+            href="/posts/Introducing-SEIU-Local-1107's-Newly-Elected-Executive-Board:-A-New-Era-of-Leadership"
+          />
+        </div>
       </div>
       <div class="flex flex-col">
         <ul class="grid grid-cols-2 auto-rows-fr gap-0 text-center">
@@ -193,7 +199,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               >Executive Vice President Private Sector</span
             >
             <br />
-            <span class={nameStyle}>Sharon Savoy-Durisseau</span>
+            <span class={nameStyle}>Sharon Savoy</span>
           </li>
         </ul>
         <div class="py-2"><Subtitle text="Executive Board Members" /></div>

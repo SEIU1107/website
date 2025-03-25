@@ -3,7 +3,6 @@ import type { MDXInstance } from "astro";
 import HeadingTitle from "../../components/HeadingTitle.svelte";
 import Layout from "../../layouts/Layout.astro";
 export async function getStaticPaths() {
-
   const postsMatches = import.meta.glob<MDXInstance<Record<string, any>>>(
     ["../../posts/blog/*/*.mdx", "../../posts/press releases/*/*.mdx"],
     { eager: true }
@@ -63,7 +62,14 @@ const { Content, frontmatter } = Astro.props.post;
         </div>
       )
     }
-    <div class={"py-2 prose flex flex-col mx-auto prose-a:text-blue-600 prose-img:rounded-md prose-img:shadow-md prose-img:shadow-black"}>
+    <div
+      class={"py-2 prose flex flex-col mx-auto prose-a:text-blue-600".concat(
+        " ",
+        frontmatter.imageOverride
+          ? ""
+          : "prose-img:rounded-md prose-img:shadow-md prose-img:shadow-black"
+      )}
+    >
       <Content />
     </div>
   </div>

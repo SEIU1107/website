@@ -1,9 +1,9 @@
 // Big Profiles
-import Yarleny from "../images/stewards/UMC/Yarleny-1024x1024.png";
 import Michelle from "../images/stewards/CC/Michelle-1-1024x1024.png";
-import Deb from "../images/stewards/CC/Debbie-1024x1024.png";
-import Zavia from "../images/stewards/Sunrise/zavia.png";
+import Jody from "../images/stewards/Sunrise/Jody.png";
+import Sharon from "../images/stewards/StRose/Sharon.png";
 import Sam from "../images/executive_board/Sam.jpg";
+import Hodge from "../images/stewards/CC/Hodge.png";
 
 export const bigProfPeopleData = [
   // Big Profiles
@@ -20,45 +20,65 @@ export const bigProfPeopleData = [
     desc: "Michelle is a Supervisor for Clark County Child Protective Services and has been a SEIU Local 1107 member for over 15 years. Prior to being elected President, Michelle served as the union's Secretary-Treasurer and Political Organizing Committee (POC) Chair, and has also served as Clark County Supervisory Unit Chief Steward, and a member of the SEIU Local 1107's Clark County bargaining team.",
   },
   {
-    profileImg: Yarleny,
-    name: "Yarleny Roa-Dugan",
+    profileImg: Jody,
+    name: "Jody Domineck",
     Title: "SEIU 1107 Secretary-Treasurer",
-    desc: "Yarleny is a registered nurse at UMC and an SEIU member for the last eight years. She has been an active member and leader in the union, serving as a Steward at Southern Hills Hospital and UMC. She is also a Board member of Governor's Steve Sisolak's Patient Protection Commission as a Patient Advocate.",
   },
   {
-    profileImg: Deb,
-    name: "Deb Springer",
+    profileImg: Hodge,
+    name: "Richard Hodgson",
     Title: "SEIU 1107 Vice President Public Sector",
-    desc: "Debbie works at Clark County District Attorney Family Support (DAFS). She is Co-Chair of the Political Organizing Committee (POC).",
   },
   {
-    profileImg: Zavia,
-    name: "Zavia Norman",
+    profileImg: Sharon,
+    name: "Sharon Savoy",
     Title: "SEIU 1107 Vice President Private Sector",
-    desc: "Zavia is a Respiratory Therapist at Sunrise Hospital. She is also Co-Chair of the Political Organizing Committee. ",
   },
 ];
 
 // Small Profiles
 import Elizabeth from "../images/stewards/UMC/elizabeth bolhouse.png";
 import Joe from "../images/stewards/CC/Joe.png";
-import Nicole from "../images/executive_board/Nicole.png";
-import Jody from "../images/stewards/Sunrise/Jody.png";
+import Phyllis from "../images/stewards/UMC/phyllis.png";
 import Saki from "../images/stewards/CC/Saki.png";
-import Hodge from "../images/stewards/CC/Hodge.png";
-import Pam from "../images/executive_board/Pam.png";
-import Theresa from "../images/stewards/UMC/TheresaKing.png";
-import Karla from "../images/executive_board/Karla.png";
+import TheresaMcGowan from "../images/stewards/UMC/Theresa-McGowan-UMC.png";
+import Marisela from "../images/stewards/UMC/Marisela Sandoval.png";
 import Rick from "../images/stewards/CC/Rick.png";
-import Erika from "../images/stewards/Sunrise/Erika.png";
 import Danielle from "../images/stewards/RTC/Danielle.jpg";
 import SaraEvans from "../images/stewards/CC/Sara-Evans.png";
-import AliciaSmith from "../images/stewards/SNRHA/alicia.png";
+import Deb from "../images/stewards/CC/Debbie-1024x1024.png";
+import Ralaya from "../images/stewards/Sunrise/Ralaya.png";
+import Zavia from "../images/stewards/Sunrise/zavia.png";
+import Olga from "../images/stewards/StRose/Olga.png";
+import WilliamSupple from "../images/stewards/WRD/Bill Supple.png";
+import StephenNolan from "../images/stewards/LVCVA/stephen.jpg";
+import Regena from "../images/stewards/SNHD/Regena.jpg";
+import StephanieHughes from "../images/stewards/SNRHA/StephanieHughes.jpg";
 
 export const smallProfPeopleData = [
   {
+    profileImg: Joe,
+    name: "Joseph Campbell",
+    shop: "Clark County",
+  },
+  {
     profileImg: SaraEvans,
     name: "Sara Evans",
+    shop: "Clark County",
+  },
+  {
+    profileImg: Saki,
+    name: 'Ashaki "Saki" Hardy',
+    shop: "Clark County District Attorney Family Support (DAFS)",
+  },
+  {
+    profileImg: Rick,
+    name: "Rick Prieto",
+    shop: "Clark County",
+  },
+  {
+    profileImg: Deb,
+    name: "Debra Springer",
     shop: "Clark County",
   },
   {
@@ -67,39 +87,44 @@ export const smallProfPeopleData = [
     shop: "University Medical Center",
   },
   {
-    profileImg: Joe,
-    name: "Joe Campbell",
-    shop: "Clark County",
+    profileImg: Phyllis,
+    name: "Phyllis Mallory-Edmonson",
+    shop: "University Medical Center",
   },
   {
-    profileImg: Nicole,
-    name: "Nicole Courts-Wolf",
-    shop: "Renown Medical/NNRH",
+    profileImg: TheresaMcGowan,
+    name: "Theresa McGowan",
+    shop: "University Medical Center",
   },
   {
-    profileImg: Jody,
-    name: "Jody Domineck",
+    profileImg: Marisela,
+    name: "Marisela Sandoval",
+    shop: "University Medical Center",
+  },
+  {
+    profileImg: Ralaya,
+    name: "Ralaya Allen",
     shop: "Sunrise Hospital",
   },
   {
-    profileImg: Saki,
-    name: 'Ashaki "Saki" Hardy',
-    shop: "Clark County District Attorney Family Support (DAFS)",
+    profileImg: Zavia,
+    name: "Zavia Norman",
+    shop: "Sunrise Hospital",
   },
   {
-    profileImg: Hodge,
-    name: "Richard Hodgson",
-    shop: "Clark County",
+    profileImg: Olga,
+    name: "Olga Bradley",
+    shop: "Dignity St. Rose",
   },
   {
-    profileImg: Pam,
-    name: "Pam Jahan",
-    shop: "Dignity Health",
+    profileImg: WilliamSupple,
+    name: "William Supple",
+    shop: "Water Reclamation District",
   },
   {
-    profileImg: Theresa,
-    name: "Theresa King",
-    shop: "University Medical Center",
+    profileImg: StephenNolan,
+    name: "Stephen Nolan",
+    shop: "Las Vegas Convention and Visitors Authority",
   },
   {
     profileImg: Danielle,
@@ -107,27 +132,17 @@ export const smallProfPeopleData = [
     shop: "Regional Transportation Commission",
   },
   {
-    profileImg: Karla,
-    name: "Karla Nolan",
-    shop: "Las Vegas Convention and Visitors Authority (LVCVA)",
+    profileImg: Regena,
+    name: "Regena Ellis",
+    shop: "Southern Nevada Health District",
   },
   {
-    profileImg: Rick,
-    name: "Rick Prieto",
-    shop: "Clark County",
-  },
-  {
-    profileImg: AliciaSmith,
-    name: "Alicia Smith",
+    profileImg: StephanieHughes,
+    name: "Stephanie Hughes",
     shop: "Southern Nevada Regional Housing Authority",
   },
   {
-    name: "Lisa Villasenor",
-    shop: "Educare",
-  },
-  {
-    profileImg: Erika,
-    name: "Erika Watanabe",
-    shop: "Sunrise Hospital",
+    name: "Dawn Ralenkotter",
+    shop: "Home Care",
   },
 ];

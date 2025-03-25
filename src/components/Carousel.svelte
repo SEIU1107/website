@@ -5,6 +5,8 @@
 
   let carousel: Carousel | null = null;
 
+  let maxHeight = $state(0);
+
   interface CarouselProps {
     // List of image metadata's OR strings
     images: (ImageMetadata | string)[];
@@ -34,9 +36,6 @@
     // Image Options (see interface below)
     imageOptions?: ImageOptions;
 
-    // Carousel Height (as a TailwindCSS class)
-    height?: string;
-
     // Carousel Bg Color (as a TailwindCSS class)
     bgColor?: string;
   }
@@ -44,6 +43,12 @@
   interface ImageOptions {
     // Should the images be rounded?
     rounded?: boolean;
+
+    // Image's height as a TailwindCSS class
+    height?: string;
+
+    // Move the image slightly up within the wrapping div? (Stupid Flowbite bug)
+    translateUp?: boolean;
 
     // Should the image have a custom object-cover? (as a TailwindCSS class)
     // e.g. "object-right", "object-left-top", etc.
@@ -59,9 +64,10 @@
     animationSpeed = "duration-700",
     imageOptions = {
       rounded: false,
+      translateUp: false,
+      height: "h-full",
       alignment: "",
     },
-    height = "h-80",
     bgColor = "bg-honey-flower-800",
     duration = 0,
     pauseOnHover = true,
@@ -102,6 +108,18 @@
 
   function stopAutoPlay() {
     clearInterval(interval);
+  }
+
+  function updateHeight(event: Event) {
+    const target = event.target as HTMLImageElement;
+
+    // Ensure styles are applied before measuring
+    requestAnimationFrame(() => {
+      const rect = target.getBoundingClientRect();
+      if (rect.height > maxHeight) {
+        maxHeight = rect.height;
+      }
+    });
   }
 
   onMount(() => {
@@ -163,7 +181,7 @@
 
 <menu
   id="default-carousel-{carouselID}"
-  class="relative w-full {bgColor}"
+  class="relative w-full"
   onmouseenter={() => {
     if (pauseOnHover) {
       isMouseHovering = true;
@@ -175,14 +193,13 @@
 >
   <!-- Carousel wrapper -->
   <div
-    class="relative overflow-hidden {height} {imageOptions.rounded
-      ? 'rounded-md'
-      : ''}"
+    class="relative top-0 {bgColor} overflow-hidden"
+    style="height: {maxHeight}px;"
   >
     <!-- Items -->
     {#each images as srcObject, i}
       <div
-        class="hidden {animationSpeed} ease-in-out w-full h-full"
+        class="{animationSpeed} ease-in-out w-full h-full"
         id="carousel-item-{carouselID}-{i}"
       >
         <img
@@ -191,8 +208,12 @@
           "src" in srcObject
             ? srcObject.src
             : srcObject}
-          class="absolute block w-full h-full object-cover {imageOptions.alignment}"
+          class={`w-full ${imageOptions.height} object-cover object-top ${imageOptions.rounded ? "rounded-md" : ""}`}
+          style={imageOptions.translateUp
+            ? "transform: translateY(-8.5%);"
+            : ""}
           alt=""
+          onload={updateHeight}
         />
       </div>
     {/each}
@@ -221,11 +242,17 @@
       class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
       onclick={previousPage}
     >
+      <div
+        class={"absolute inset-0 bg-gradient-to-r from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300".concat(
+          " ",
+          imageOptions.rounded ? "rounded-l-md" : ""
+        )}
+      ></div>
       <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        class="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 opacity-0 group-hover:opacity-100 group-focus:ring-4 group-focus:ring-white group-focus:outline-none transition-opacity duration-300"
       >
         <svg
-          class="w-4 h-4 text-white rtl:rotate-180"
+          class="w-4 h-4 text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -247,11 +274,17 @@
       class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
       onclick={nextPage}
     >
+      <div
+        class={"absolute inset-0 bg-gradient-to-l from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300".concat(
+          " ",
+          imageOptions.rounded ? "rounded-r-md" : ""
+        )}
+      ></div>
       <span
-        class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none"
+        class="relative inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 opacity-0 group-hover:opacity-100 group-focus:ring-4 group-focus:ring-white group-focus:outline-none transition-opacity duration-300"
       >
         <svg
-          class="w-4 h-4 text-white rtl:rotate-180"
+          class="w-4 h-4 text-white"
           aria-hidden="true"
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
