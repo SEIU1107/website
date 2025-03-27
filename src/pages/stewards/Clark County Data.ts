@@ -99,7 +99,7 @@ export const dataGeneralUnit: Profile[] = [
     name: "Joe Campbell",
     profileImg: Joe,
     data: [
-      ["Title", "Steward / Executive Board Member"],
+      ["Title", "Steward"],
       ["Unit", "General Unit"],
       ["Department", "Road Department"],
       ["Phone", "(702) 768 - 7007"],
@@ -382,7 +382,7 @@ export const dataSupervisory: Profile[] = [
     name: "Sara Evans",
     profileImg: SaraEvans,
     data: [
-      ["Title", "Bargaining Unit VP"],
+      ["Title", "Bargaining Unit VP / Executive Board Member"],
       ["Unit", "Supervisory Unit"],
       ["Department", "DFS"],
       ["Phone", "(702) 569 - 9339"],

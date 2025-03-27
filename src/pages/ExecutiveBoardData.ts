@@ -54,6 +54,7 @@ import WilliamSupple from "../images/stewards/WRD/Bill Supple.png";
 import StephenNolan from "../images/stewards/LVCVA/stephen.jpg";
 import Regena from "../images/stewards/SNHD/Regena.jpg";
 import StephanieHughes from "../images/stewards/SNRHA/StephanieHughes.jpg";
+import Dawn from "../images/executive_board/Dawn Ralenkotter.png";
 
 export const smallProfPeopleData = [
   {
@@ -142,6 +143,7 @@ export const smallProfPeopleData = [
     shop: "Southern Nevada Regional Housing Authority",
   },
   {
+    profileImg: Dawn,
     name: "Dawn Ralenkotter",
     shop: "Home Care",
   },
