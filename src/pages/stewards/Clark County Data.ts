@@ -241,7 +241,7 @@ export const dataDOA: Profile[] = [
       ["Unit", "General Unit / DOA"],
       ["Department", "DOA / DAFS"],
       ["Phone", "(617) 710 - 8908"],
-      ["Email", "dkjshardy@gmail.com"],
+      ["Email", " ahardy.seiunv@gmail.com"],
     ],
   },
   {
