@@ -75,6 +75,7 @@
 
   let isMouseHovering = $state(false);
   let interval: ReturnType<typeof setInterval> | undefined = undefined;
+  let preloadedImages: HTMLImageElement[] = [];
 
   function nextPage() {
     if (carousel) {
@@ -108,18 +109,6 @@
 
   function stopAutoPlay() {
     clearInterval(interval);
-  }
-
-  function updateHeight(event: Event) {
-    const target = event.target as HTMLImageElement;
-
-    // Ensure styles are applied before measuring
-    requestAnimationFrame(() => {
-      const rect = target.getBoundingClientRect();
-      if (rect.height > maxHeight) {
-        maxHeight = rect.height;
-      }
-    });
   }
 
   onMount(() => {
@@ -197,26 +186,29 @@
     style={heightOverride ? "" : `height: ${maxHeight}px;`}
   >
     <!-- Items -->
-    {#each images as srcObject, i}
-      <div
-        class="{animationSpeed} ease-in-out w-full h-full"
-        id="carousel-item-{carouselID}-{i}"
-      >
-        <img
-          src={typeof srcObject === "object" &&
-          srcObject !== null &&
-          "src" in srcObject
-            ? srcObject.src
-            : srcObject}
-          class={`w-full ${imageOptions.height} object-cover ${imageOptions.rounded ? "rounded-md" : ""}`}
-          style={imageOptions.translateUp
-            ? "transform: translateY(-8.5%);"
-            : ""}
-          alt=""
-          onload={updateHeight}
-        />
-      </div>
-    {/each}
+    {#if preloadedImages}
+      {#each images as srcObject, i}
+        <div
+          class="{animationSpeed} ease-in-out w-full h-full"
+          id="carousel-item-{carouselID}-{i}"
+        >
+          <img
+            src={typeof srcObject === "object" &&
+            srcObject !== null &&
+            "src" in srcObject
+              ? srcObject.src
+              : srcObject}
+            class={`w-full ${imageOptions.height ?? "h-full"} object-cover ${(imageOptions.rounded ?? false) ? "rounded-md" : ""}`}
+            style={(imageOptions.translateUp ?? false)
+              ? "transform: translateY(-8.5%);"
+              : ""}
+            alt=""
+          />
+        </div>
+      {/each}
+    {:else}
+    <span class="font-bold italic">Loading Images Carousel...</span>
+    {/if}
   </div>
   <!-- Slider indicators -->
   {#if showSliderIndicators}

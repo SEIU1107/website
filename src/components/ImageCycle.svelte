@@ -5,6 +5,7 @@
   import { fade } from "svelte/transition";
   import { onMount } from "svelte";
   import type { ImageMetadata } from "astro";
+  import { preloadImages, measureImageHeights } from "../components/util";
 
   export let images: ImageMetadata[] = []; // List of strings to display
   export let duration = 2000; // Time each string is displayed (in milliseconds)
@@ -26,63 +27,34 @@
     }, fadeDuration); // This delay should match the fade duration
   }
 
-  // Preload all images
-  function preloadImages() {
-    preloadedImages = images.map((img) => {
-      const image = new Image();
-      image.src = img.src;
-      image.className = imageStyle;
-      return image;
-    });
-  }
-
-  // Measure the height of each image and determine the maximum height
-  function measureImageHeights() {
-    const hiddenContainer = document.createElement("div");
-    hiddenContainer.style.visibility = "hidden";
-    hiddenContainer.style.position = "absolute";
-    hiddenContainer.style.top = "-9999px";
-    document.body.appendChild(hiddenContainer);
-
-    const imageElements = preloadedImages.map((img) => {
-      const image = new Image();
-      image.src = img.src;
-      image.className = imageStyle;
-      hiddenContainer.appendChild(image);
-      return image;
-    });
-
-    Promise.all(
-      imageElements.map(
-        (img) =>
-          new Promise<number>((resolve) => {
-            img.onload = () => resolve(img.height);
-          })
-      )
-    ).then((heights: number[]) => {
-      maxHeight = Math.max(...heights);
-      document.body.removeChild(hiddenContainer);
-      // console.log(`Max height calculated: ${maxHeight}px`);
-    });
-  }
+  let interval: ReturnType<typeof setInterval>;
+  let resizeHandler: () => void;
 
   onMount(() => {
-    // Preload images on component mount
-    preloadImages();
+    async function setup() {
+      // Preload images
+      preloadedImages = preloadImages(images, imageStyle);
 
-    // Measure the maximum height of this component based on the
-    // largest image in the list
-    measureImageHeights();
+      // Measure and set max height after images load
+      maxHeight = await measureImageHeights(preloadedImages, imageStyle);
 
-    // Re-measure the height if the window size changes
-    window.addEventListener("resize", measureImageHeights);
+      // Start image cycling
+      interval = setInterval(next, duration);
 
-    // Start the cycling effect when the component is mounted
-    const interval = setInterval(next, duration);
+      // Setup resize handler
+      resizeHandler = async () => {
+        maxHeight = await measureImageHeights(preloadedImages, imageStyle);
+      };
 
+      window.addEventListener("resize", resizeHandler);
+    }
+
+    setup(); // Trigger the async logic
+
+    // Cleanup logic (non-async)
     return () => {
       clearInterval(interval);
-      window.removeEventListener("resize", measureImageHeights);
+      window.removeEventListener("resize", resizeHandler);
     };
   });
 </script>

@@ -1,6 +1,60 @@
 import type { Delta } from "quill";
 import { toast } from "@zerodevx/svelte-toast";
 
+// === Image Util ===
+
+// Given an ImageMetadata or a string representing an image, returns the source
+export function getImageSource(
+  image: HTMLImageElement | ImageMetadata | string
+): string {
+  return typeof image === "object" && "src" in image ? image.src : image;
+}
+
+// Returns a list of image objects given a list of ImageMetadatas / image sources
+export function preloadImages(
+  images: (ImageMetadata | string)[],
+  imageClass?: string
+): HTMLImageElement[] {
+  return images.map((img) => {
+    const image = new Image();
+    image.src = getImageSource(img);
+    image.className = imageClass ?? "";
+    return image;
+  });
+}
+
+// Measure the height of each image and determine the maximum height
+export async function measureImageHeights(
+  imageElements: HTMLImageElement[],
+  imageStyle?: string
+): Promise<number> {
+  const hiddenContainer = document.createElement("div");
+  hiddenContainer.style.visibility = "hidden";
+  hiddenContainer.style.position = "absolute";
+  hiddenContainer.style.top = "-9999px";
+  document.body.appendChild(hiddenContainer);
+
+  const imageObjects = imageElements.map((img) => {
+    const image = new Image();
+    image.src = getImageSource(img);
+    image.className = imageStyle ?? "";
+    hiddenContainer.appendChild(image);
+    return image;
+  });
+
+  const heights = await Promise.all(
+    imageObjects.map(
+      (img) =>
+        new Promise<number>((resolve) => {
+          img.onload = () => resolve(img.height);
+        })
+    )
+  );
+
+  document.body.removeChild(hiddenContainer);
+  return Math.max(...heights);
+}
+
 // === Toast Notifications ===
 export const successToast = (m: any, isComponent: boolean = false) => {
   // m could be a string, number, or component.
