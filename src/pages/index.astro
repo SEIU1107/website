@@ -5,7 +5,6 @@ import SocialMediaFeeds from "../components/Index/SocialMediaFeeds.astro";
 import StrongerTogether from "../components/Index/StrongerTogether.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import CollageImage from "../components/CollageImage.astro";
-import LinkText from "../components/LinkText.astro";
 import Button from "../components/Button.svelte";
 import Subtitle from "../components/Subtitle.svelte";
 import ImageCycle from "../components/ImageCycle.svelte";
@@ -128,8 +127,27 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     </div>
     <BannerText />
   </main>
+
+  <!--
+  LatestNews if bg is dark purple
+  
+  bgColor="bg-gradient-to-b from-honey-flower-900 to-honey-flower-700"
+  titleColor="text-supernova-400 shadowClass"
+  textStyle="font-Roboto text-honey-flower-50"
+  buttonStyle="bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600 text-honey-flower-800 hover:scale-125"
+
+  if bg is yellow
+  -->
+
+  <LatestNews
+    bgColor="bg-gradient-to-b from-supernova-300 to-supernova-400"
+    titleColor="text-honey-flower-800"
+    textStyle="font-Roboto text-black"
+  />
+
   <!-- Executive Board Election Results -->
-  <div
+
+  <!-- <div
     class="flex flex-col m-auto bg-gradient-to-br from-supernova-400 to-supernova-500"
   >
     <HeadingTitle text="Executive Board Election Results" />
@@ -202,7 +220,6 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
         </ul>
         <div class="py-2"><Subtitle text="Executive Board Members" /></div>
         <div class="py-2 grid grid-cols-2 md:grid-cols-3">
-          <!-- Clark County -->
           <div class="flex flex-col">
             <span class={execBoardShopsStyle}>Clark County</span>
             <ul class="text-center">
@@ -213,7 +230,6 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Debra Springer</li>
             </ul>
           </div>
-          <!-- University Medical Center -->
           <div class="flex flex-col">
             <span class={execBoardShopsStyle}>University Medical Center</span>
             <ul class="text-center">
@@ -223,7 +239,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Marisela Sandoval</li>
             </ul>
           </div>
-          <!-- Sunrise -->
+
           <div class="flex flex-col">
             <span class={execBoardShopsStyle}>Sunrise Hospital</span>
             <ul class="text-center">
@@ -232,7 +248,6 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>
           </div>
-          <!-- Dignity -->
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Dignity Health</span>
             <ul class="text-center">
@@ -240,14 +255,14 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>
           </div>
-          <!-- WRD -->
+        
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Water Reclamation District</span>
             <ul class="text-center">
               <li>William Supple</li>
             </ul>
           </div>
-          <!-- LVCVA -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}
               >Las Vegas Convention and Visitors Authority</span
@@ -256,7 +271,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Stephen Nolan</li>
             </ul>
           </div>
-          <!-- RTC -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}
               >Regional Transportation Commission</span
@@ -265,7 +280,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Danielle Leland</li>
             </ul>
           </div>
-          <!-- SNHD -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}
               >Southern Nevada Health District</span
@@ -274,7 +289,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Regena Ellis</li>
             </ul>
           </div>
-          <!-- SNRHA -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}
               >Southern Nevada Regional Housing Authority</span
@@ -283,35 +298,35 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
               <li>Stephanie Hughes</li>
             </ul>
           </div>
-          <!-- Home Care -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Home Care</span>
             <ul class="text-center">
               <li>Dawn Ralenkotter</li>
             </ul>
           </div>
-          <!-- Educare -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Educare</span>
             <ul class="text-center">
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>
           </div>
-          <!-- MountainView -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Mountain View Hospital</span>
             <ul class="text-center">
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>
           </div>
-          <!-- Southern Hills -->
+
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Southern Hills Hospital</span>
             <ul class="text-center">
               <li class="text-red-600 font-bold">Open Position</li>
             </ul>
           </div>
-          <!-- Northern Nevada -->
+          
           <div class="flex flex-col pt-2">
             <span class={execBoardShopsStyle}>Northern Nevada</span>
             <ul class="text-center">
@@ -321,38 +336,14 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
         </div>
       </div>
     </div>
-  </div>
-  <!-- Lobby Day Flyer -->
-  <!-- 
-  <div class="m-auto flex flex-col max-w-[90vw]">
-    <HeadingTitle text="SEIU 1107 Lobby Day 2025" />
-    <div
-      class="max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg m-auto flex flex-col py-2"
-    >
-      <CollageImage src={imgLobbyDayFlyer} horizontal="right">
-        <div class="text-xl text-black"></div>
-        <p class="pt-2 lg:pb-2 lg:pt-0">Join SEIU Local 1107 in Carson City for Lobby Day!</p>
-        <p class="py-2">
-          SEIU Local 1107 will meet with most if not all legislators to discuss
-          our CARE agenda and how it will impact our members and community.
-        </p>
-        <div class="py-2">
-          <Button
-            text="RSVP on Mobilize"
-            target="_blank"
-            href="https://www.mobilize.us/seiunevada/event/756943/"
-          />
-        </div>
-      </CollageImage>
-    </div>
-  </div>
-   -->
+  </div> -->
+
   <!-- -->
   <div
     class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
   >
     <HeadingTitle
-      text='Know Your Rights!'
+      text="Know Your Rights!"
       styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5 shadowClass"
     />
     <Subtitle
@@ -395,10 +386,10 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
         </p>
         <div class="mx-auto">
           <Button
-              text="View Resources"
-              styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
-              href="/immigration_resources"
-            />
+            text="View Resources"
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+            href="/immigration_resources"
+          />
         </div>
       </div>
     </div>
@@ -553,23 +544,6 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
   </div>
 
   <!-- -->
-
-  <!--
-  LatestNews if bg is dark purple
-  
-  bgColor="bg-gradient-to-b from-honey-flower-900 to-honey-flower-700"
-  titleColor="text-supernova-400 shadowClass"
-  textStyle="font-Roboto text-honey-flower-50"
-  buttonStyle="bg-supernova-400 hover:bg-supernova-500 active:bg-supernova-600 text-honey-flower-800 hover:scale-125"
-
-  if bg is yellow
-  -->
-
-  <LatestNews
-    bgColor="bg-gradient-to-b from-supernova-300 to-supernova-400"
-    titleColor="text-honey-flower-800"
-    textStyle="font-Roboto text-black"
-  />
 
   <StrongerTogether />
   <div class="py-4 bg-gradient-to-b from-honey-flower-900 to-honey-flower-700">
