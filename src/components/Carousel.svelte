@@ -2,6 +2,7 @@
   import type { ImageMetadata } from "astro";
   import { Carousel } from "flowbite";
   import { onDestroy, onMount } from "svelte";
+  import { measureImageHeights, preloadImages } from "./util";
 
   let carousel: Carousel | null = null;
 
@@ -75,7 +76,7 @@
 
   let isMouseHovering = $state(false);
   let interval: ReturnType<typeof setInterval> | undefined = undefined;
-  let preloadedImages: HTMLImageElement[] = [];
+  let preloadedImages: HTMLImageElement[] = $state([]);
 
   function nextPage() {
     if (carousel) {
@@ -112,55 +113,74 @@
   }
 
   onMount(() => {
+    async function setup() {
+      // Preload images
+      preloadedImages = preloadImages(images);
+
+      // Measure and set max height after images load
+      maxHeight = await measureImageHeights(preloadedImages);
+
+      // Indicate carousel-item-ids
+      const items = preloadedImages
+        .map((item, i) => {
+          const el = document.getElementById(
+            `carousel-item-${carouselID}-${i}`
+          );
+          if (el) {
+            return { position: i, el };
+          }
+          console.warn(
+            `Element with ID carousel-item-${carouselID}-${i} not found.`
+          );
+          return null;
+        })
+        .filter(
+          (item): item is { position: number; el: HTMLElement } => item !== null
+        );
+
+      // Indicate the options which outline the indicator ids
+      const options = {
+        defaultPosition: defaultPage,
+        indicators: {
+          activeClasses: "bg-white",
+          items: preloadedImages
+            .map((item, i) => {
+              const el = document.getElementById(
+                `carousel-indicator-${carouselID}-${i}`
+              );
+              if (el) {
+                return { position: i, el };
+              }
+              console.warn(
+                `Element with ID carousel-indicator-${carouselID}-${i} not found.`
+              );
+              return null;
+            })
+            .filter(
+              (item): item is { position: number; el: HTMLElement } =>
+                item !== null
+            ),
+        },
+      };
+
+      // Handle resizes
+      const resizeHandler = async () => {
+        maxHeight = await measureImageHeights(preloadedImages);
+      };
+
+      window.addEventListener("resize", resizeHandler);
+
+      // Initialize the carousel
+      carousel = new Carousel(carouselElement, items, options);
+
+      startAutoPlay(carousel);
+    }
+
     const carouselElement = document.getElementById(
       `default-carousel-${carouselID}`
     );
 
-    // Indicate carousel-item-ids
-    const items = images
-      .map((item, i) => {
-        const el = document.getElementById(`carousel-item-${carouselID}-${i}`);
-        if (el) {
-          return { position: i, el };
-        }
-        console.warn(
-          `Element with ID carousel-item-${carouselID}-${i} not found.`
-        );
-        return null;
-      })
-      .filter(
-        (item): item is { position: number; el: HTMLElement } => item !== null
-      );
-
-    // Indicate the options which outline the indicator ids
-    const options = {
-      defaultPosition: defaultPage,
-      indicators: {
-        activeClasses: "bg-white",
-        items: images
-          .map((item, i) => {
-            const el = document.getElementById(
-              `carousel-indicator-${carouselID}-${i}`
-            );
-            if (el) {
-              return { position: i, el };
-            }
-            console.warn(
-              `Element with ID carousel-indicator-${carouselID}-${i} not found.`
-            );
-            return null;
-          })
-          .filter(
-            (item): item is { position: number; el: HTMLElement } =>
-              item !== null
-          ),
-      },
-    };
-
-    // Initialize the carousel
-    carousel = new Carousel(carouselElement, items, options);
-
-    startAutoPlay(carousel);
+    setup();
   });
 
   onDestroy(() => {
@@ -187,7 +207,7 @@
   >
     <!-- Items -->
     {#if preloadedImages}
-      {#each images as srcObject, i}
+      {#each preloadedImages as srcObject, i}
         <div
           class="{animationSpeed} ease-in-out w-full h-full"
           id="carousel-item-{carouselID}-{i}"
@@ -200,14 +220,14 @@
               : srcObject}
             class={`w-full ${imageOptions.height ?? "h-full"} object-cover ${(imageOptions.rounded ?? false) ? "rounded-md" : ""}`}
             style={(imageOptions.translateUp ?? false)
-              ? "transform: translateY(-8.5%);"
+              ? "transform: translateY(-7%);"
               : ""}
             alt=""
           />
         </div>
       {/each}
     {:else}
-    <span class="font-bold italic">Loading Images Carousel...</span>
+      <span class="font-bold italic">Loading Images Carousel...</span>
     {/if}
   </div>
   <!-- Slider indicators -->
