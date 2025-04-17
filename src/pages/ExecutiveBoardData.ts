@@ -1,5 +1,5 @@
 // Big Profiles
-import Michelle from "../images/stewards/CC/Michelle-1-1024x1024.png";
+import Michelle from "../images/executive_board/Michelle.png";
 import Jody from "../images/stewards/Sunrise/Jody.png";
 import Sharon from "../images/stewards/StRose/Sharon.png";
 import Sam from "../images/executive_board/Sam.jpg";
