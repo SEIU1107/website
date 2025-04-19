@@ -43,6 +43,9 @@
 
     // Carousel Bg Color (as a TailwindCSS class)
     bgColor?: string;
+
+    // Object property (as a TailwindCSS class such as "object-cover")
+    object?: string;
   }
 
   interface ImageOptions {
@@ -64,6 +67,7 @@
     showSliderIndicators = true,
     animationSpeed = "duration-700",
     heightOverride = "",
+    object = "object-cover",
     imageOptions = {
       rounded: false,
       translateUp: false,
@@ -218,7 +222,7 @@
             "src" in srcObject
               ? srcObject.src
               : srcObject}
-            class={`w-full ${imageOptions.height ?? "h-full"} object-cover ${(imageOptions.rounded ?? false) ? "rounded-md" : ""}`}
+            class={`w-full ${imageOptions.height ?? "h-full"} ${object} ${(imageOptions.rounded ?? false) ? "rounded-md" : ""}`}
             style={(imageOptions.translateUp ?? false)
               ? "transform: translateY(-7%);"
               : ""}
