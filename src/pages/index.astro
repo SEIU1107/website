@@ -28,12 +28,6 @@ import DOAMobile from "../images/index/DOAMobile.png";
 import imgTogether from "../images/index/JoinTogether.jpg";
 import imgTraining from "../images/strength_training/BigRoom.jpg";
 
-// Executive Board Election Results
-const titleStyle = "sm:text-lg font-bold text-honey-flower-800";
-const nameStyle = "text-black";
-const execBoardShopsStyle =
-  "pb-2 text-center text-honey-flower-800 italic font-Trebuchet md:text-lg font-bold";
-
 // Immigration Workshop
 import imgImmigration1 from "/public/post_imgs/2024/ImmigrationWorkshop/img1.png";
 import imgImmigration2 from "/public/post_imgs/2024/ImmigrationWorkshop/img2.png";
@@ -42,6 +36,14 @@ import imgImmigration4 from "/public/post_imgs/2024/ImmigrationWorkshop/img4.png
 import imgImmigration5 from "/public/post_imgs/2024/ImmigrationWorkshop/img5.png";
 import imgImmigration6 from "/public/post_imgs/2024/ImmigrationWorkshop/img6.png";
 import imgImmigration7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png";
+
+// Lobby Day
+import imgLobbyDay1 from "/public/post_imgs/2025/LobbyDay/img2.png";
+import imgLobbyDay2 from "/public/post_imgs/2025/LobbyDay/img13.png";
+import imgLobbyDay3 from "/public/post_imgs/2025/LobbyDay/img8.png";
+import imgLobbyDay4 from "/public/post_imgs/2025/LobbyDay/img16.png";
+import imgLobbyDay5 from "/public/post_imgs/2025/LobbyDay/img17.png";
+import imgLobbyDay6 from "/public/post_imgs/2025/LobbyDay/img4.png";
 
 // Banners
 import imgAFRAM from "../images/caucuses/AFRAM/2025 Flyer.png";
@@ -128,6 +130,49 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     <BannerText />
   </main>
   <!-- -->
+  <main
+    class="flex flex-col m-auto bg-gradient-to-br from-supernova-400 to-supernova-500"
+  >
+    <HeadingTitle text="Lobby Day 2025" />
+    <div class="m-auto max-w-[95vw] lg:max-w-screen-lg py-4">
+      <CollageImage
+        duration={4000}
+        srcList={[
+          imgLobbyDay1,
+          imgLobbyDay2,
+          imgLobbyDay3,
+          imgLobbyDay4,
+          imgLobbyDay5,
+          imgLobbyDay6,
+        ]}
+      >
+        <p class="py-2 md:pb-2 md:py-0">
+          Nevada's State Legislature meets one time for 120 days, every 2 years.
+          In 2025, the session began on February 3rd and ends June 2nd. This
+          means the session moves extremely fast and we have only four months to
+          advocate for laws that impact our members, our workplaces, and our
+          community. If we don't, the Legislature won't convene again until
+          2027.
+        </p>
+        <p class="py-2">
+          The Nevada Legislative Session has less than 50 days left! This means
+          one thing, deadlines, deadlines, deadlines. Many of the remaining
+          weeks will hold a deadline that bills must meet. Whether it's a
+          committee vote or a floor vote by the entire Senate or Assembly, if a
+          bill does not pass by the deadline, it is considered “dead” by failing
+          to meet the deadline.
+        </p>
+        <div class="mx-auto">
+          <Button text="View Tracked Bills" href="/lobby_day" />
+          <Button
+            text="Lobby Day 2025 Blog Post"
+            href="/posts/SEIU-Local-1107's-Lobby-Day-in-Carson-City:-A-Bold-Stand-for-the-CARE-Agenda/"
+          />
+        </div>
+      </CollageImage>
+    </div>
+  </main>
+  <!-- -->
   <LatestNews />
   <!-- -->
   <div
@@ -146,7 +191,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     >
       <div class="md:col-span-1">
         <ImageCycle
-          duration={5000}
+          duration={4000}
           images={[
             imgImmigration1,
             imgImmigration2,
