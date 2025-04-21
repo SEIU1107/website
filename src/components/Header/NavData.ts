@@ -63,12 +63,10 @@ const getInvolved = [
     pageName: "Political Action",
     href: "/political_action",
   },
-  /* 
   {
-    pageName: "Lobby Day",
+    pageName: "Lobby Day 2025",
     href: "/lobby_day",
   },
-  */
   {
     pageName: "Caucuses",
     href: "/caucuses",

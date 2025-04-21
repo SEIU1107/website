@@ -5,6 +5,256 @@ import HeadingTitle from "../components/HeadingTitle.svelte";
 
 import CareAgenda1 from "../images/lobby_day/CARE Agenda 2025-1.png";
 import CareAgenda2 from "../images/lobby_day/CARE Agenda 2025-2.png";
+import LinkText from "../components/LinkText.astro";
+
+interface Bill {
+  name: string;
+  desc: string;
+  url: string;
+}
+
+const otherBillsData: Bill[] = [
+  {
+    name: "Assembly Bill 82 (AB 82)",
+    desc: "Requiring the Governor to annually proclaim certain days to be “Diwali Day,” “Eid al-Fitr Day,” “Vaisakhi Day” and “Vesak Day”",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11903/Overview",
+  },
+  {
+    name: "Assembly Bill 98 (AB 98)",
+    desc: "Creates a day of observance for labor leader, Dolores Huerta.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11980/Overview",
+  },
+  {
+    name: "Assembly Bill 112 (AB 112)",
+    desc: "Allows employees, including those under a CBA, to use sick leave to care for a family member.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12013/Overview",
+  },
+  {
+    name: "Assembly Bill 144 (AB 144)",
+    desc: "Establishes the observance of “Indigenous Peoples Day” in Nevada.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12070/Overview",
+  },
+  {
+    name: "Assembly Bill 176 (AB 176)",
+    desc: "Right to Reproductive Care Act.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12130/Overview",
+  },
+  {
+    name: "Assembly Bill 197 (AB 197)",
+    desc: "Protect donor and members of nonprofit organizations confidentiality.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12167/Overview",
+  },
+  {
+    name: "Assembly Bill 217 (AB 217)",
+    desc: "Prohibits ICE from school campuses without a warrant.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12219/Overview",
+  },
+  {
+    name: "Assembly Bill 238 (AB 238)",
+    desc: "Enacts the Nevada Studio Infrastructure Jobs and Workforce Training Act.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12258/Overview",
+  },
+  {
+    name: "Assembly Bill 259 (AB 259)",
+    desc: "Caps certain prescription drug prices.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12296/Overview",
+  },
+  {
+    name: "Assembly Bill 268 (AB 268)",
+    desc: "Makes an appropriation for universal free breakfast and lunch for Nevada pupils.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12315/Overview",
+  },
+  {
+    name: "Assembly Bill 278 (AB 278)",
+    desc: "Designates the month of July as Muslim American Heritage Month.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12329/Overview",
+  },
+  {
+    name: "Assembly Bill 280 (AB 280)",
+    desc: "Requires rental applications fees to be returned if a background check isn't performed and also prohibits collecting certain fees for tenants that are minors.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12333/Overview",
+  },
+  {
+    name: "Assembly Bill 283 (AB 283)",
+    desc: "Modernizes Nevada's summary evictions process to give tenants due process and fairness.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12338/Overview",
+  },
+  {
+    name: "Assembly Bill 290 (AB 290)",
+    desc: "Prohibiting insurers from denying due to, or requiring, prior authorization to perform emergency services.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12346/Overview",
+  },
+  {
+    name: "Assembly Bill 326 (AB 326)",
+    desc: "Revises provisions relating to the designation of hospitals as centers for the treatment of trauma.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12418/Overview",
+  },
+  {
+    name: "Assembly Bill 328 (AB 328)",
+    desc: "Establishes the Commission on Racial Equity and Social Justice.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12420/Overview",
+  },
+  {
+    name: "Assembly Bill 343 (AB 343)",
+    desc: "	Creates hospital billing transparency.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12437/Overview",
+  },
+  {
+    name: "Assembly Bill 346 (AB 346)",
+    desc: "Death with dignity.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12440/Overview",
+  },
+  {
+    name: "Assembly Bill 388 (AB 388)",
+    desc: "Establishes Paid Family Medical Leave for Nevada workers.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12544/Overview",
+  },
+  {
+    name: "Assembly Bill 395 (AB 395)",
+    desc: "Requires health facilities to provide services for those deaf or hard hearing.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12560/Overview",
+  },
+  {
+    name: "Assembly Bill 428 (AB 428)",
+    desc: "Requires certain health plans to include coverage for fertility preservation services.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12625/Overview",
+  },
+  {
+    name: "Assembly Bill 463 (AB 463)",
+    desc: "Revises provisions relating to prior authorization.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12708/Overview",
+  },
+  {
+    name: "Assembly Bill 482 (AB 482)",
+    desc: "Expands Medicaid to cover certain contraception and provide language translation to patients.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12742/Overview",
+  },
+  {
+    name: "Assembly Bill 518 (AB 518)",
+    desc: "Updates the Child Placement Interstate Compact.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12809/Overview",
+  },
+  {
+    name: "Assembly Bill 540 (AB 540)",
+    desc: "Governor Lombardo's Housing Bill",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12839/Overview",
+  },
+  {
+    name: "AJR 1",
+    desc: "Proposes to amend the Nevada Constitution to revise certain provisions relating to property taxes.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12005/Overview",
+  },
+  {
+    name: "AJR 11",
+    desc: "Urges Congress to enact the Protecting the Right to Organize Act.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12592/Overview",
+  },
+  {
+    name: "Senate Bill 4 (SB 4)",
+    desc: "Caseworkers can attest to adoptions.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11741/Overview",
+  },
+  {
+    name: "Senate Bill 54 (SB 54)",
+    desc: "Expands Medicaid to offer medical respite care to those that are unhoused.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11846/Overview",
+  },
+  {
+    name: "Senate Bill 91 (SB 91)",
+    desc: "Require IDs and health records to include diacritical marks.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11968/Overview",
+  },
+  {
+    name: "Senate Bill 138 (SB 138)",
+    desc: "Automatic enrollment of infants that are admitted to the NICU in Medicaid.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12083/Overview",
+  },
+  {
+    name: "Senate Bill 140 (SB 140)",
+    desc: "Adds additional neurobehaviors besides autism to the JJS court treatments.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12085/Overview",
+  },
+  {
+    name: "Senate Bill 165 (SB 165)",
+    desc: "Behavioral health practitioners compact.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12183/Overview",
+  },
+  {
+    name: "Senate Bill 171 (SB 171)",
+    desc: "Enacts a shield law to protect the transgender community.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12189/Overview",
+  },
+  {
+    name: "Senate Bill 172 (SB 172)",
+    desc: "Farmworkers Bill of Rights.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12190/Overview",
+  },
+  {
+    name: "Senate Bill 187 (SB 187)",
+    desc: "Establish a timeline for child welfare services to receive consent for medical or mental health treatments.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12206/Overview",
+  },
+  {
+    name: "Senate Bill 188 (SB 188)",
+    desc: "Require the health district to provide a translator and multi-language resources.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12207/Overview",
+  },
+  {
+    name: "Senate Bill 193 (SB 193)",
+    desc: "Establishes a pilot program to reduce interest rates on mortgage loans to certain eligible families.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12237/Overview",
+  },
+  {
+    name: "Senate Bill 217 (SB 217)",
+    desc: "Protects providers of assisted reproductive care.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12292/Overview",
+  },
+  {
+    name: "Senate Bill 234 (SB 234)",
+    desc: "Requires certain emergency medical services regardless of immigration status.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12347/Overview",
+  },
+  {
+    name: "Senate Bill 246 (SB 246)",
+    desc: "Revises provisions relating to health insurance coverage for gynecological or obstetrical services.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12370/Overview",
+  },
+  {
+    name: "Senate Bill 269 (SB 269)",
+    desc: "Provides a credit against the modified business tax for certain donations to support graduate medical education.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12454/Overview",
+  },
+  {
+    name: "Senate Bill 295 (SB 295)",
+    desc: "Revises regulations regarding food vendors.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12507/Overview",
+  },
+  {
+    name: "Senate Bill 300 (SB 300)",
+    desc: "Requires FQHCs to cover mental health treatment.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12513/Overview",
+  },
+  {
+    name: "Senate Bill 408 (SB 408)",
+    desc: "Allows hospital governing boards to hire residents and fellows.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12731/Overview",
+  },
+  {
+    name: "Senate Bill 423 (SB 423)",
+    desc: "Establishes permanent additional funding for SNHD.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12769/Overview",
+  },
+  {
+    name: "Senate Bill 427 (SB 427)",
+    desc: "Makes appropriations to the University of Nevada, Las Vegas, and the University of Nevada, Reno, for planning, upgrades and construction for certain buildings.",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12774/Overview",
+  },
+  {
+    name: "Senate Bill 431 (SB 431)",
+    desc: "Revises Live Entertainment Taxes to fund public transit",
+    url: "https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12779/Overview",
+  },
+];
 ---
 
 <Layout title="2025 Lobby Day SEIU 1107">
@@ -26,7 +276,9 @@ import CareAgenda2 from "../images/lobby_day/CARE Agenda 2025-2.png";
       </div>
     </div>
   </main>
-  <div class="max-w-[85vw] md:max-w-screen-sm m-auto flex flex-col xl:flex-row justify-center">
+  <div
+    class="max-w-[85vw] md:max-w-screen-sm m-auto flex flex-col xl:flex-row justify-center"
+  >
     <Image
       src={CareAgenda1}
       alt=""
@@ -39,16 +291,135 @@ import CareAgenda2 from "../images/lobby_day/CARE Agenda 2025-2.png";
     />
   </div>
   <HeadingTitle text="Our 2025 Priorities" />
-  <div class="py-3 m-auto flex flex-col lg:grid lg:grid-cols-2">
-    <div></div>
+  <div
+    class="m-auto flex flex-col lg:grid lg:grid-cols-2 lg:gap-2 max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl"
+  >
+    <div class="py-1.5">
+      <span class="text-xl font-bold"
+        ><LinkText
+          href="https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/11877/Text"
+          target="_blank">Assembly Bill 68 (AB 68)</LinkText
+        > Positive Credit for Rent</span
+      >
+      <ul class="pt-1 list-disc pl-4">
+        <li>
+          Would allow renters to opt-in to positive credit reporting every time
+          they pay rent on time.
+        </li>
+        <li>
+          This would help the nearly half a million Nevadans who are not
+          currently receiving credit for paying their rent and build their
+          credit.
+        </li>
+        <li>
+          <b>Update:</b> AB 68 did not pass Friday's committee deadline; however,
+          it is going to be amended into another housing bill.
+        </li>
+      </ul>
+    </div>
+    <div class="py-1.5">
+      <span class="text-xl font-bold"
+        ><LinkText
+          href="https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12200/Text"
+          target="_blank">Senate Bill 182 (SB 182)</LinkText
+        > Healthcare Staffing Ratios</span
+      >
+      <ul class="pt-1 list-disc pl-4">
+        <li>
+          Would place safe patient to staff ratios into law to ensure safe
+          working conditions and better outcomes for hospital patients.
+        </li>
+        <li>SB 182 will save money, save jobs, and save lives.</li>
+        <li>
+          <b>Update:</b> SB 182 passed out of the Senate Health & Human Services
+          on a party line vote of 3-2 with Democratic Senators Doñate, Lange, and
+          Taylor voting yes, and Republican Senators Titus and Stone voting no.
+        </li>
+        <li>
+          <b>Update:</b> SB 182 is likely onto the Senate Finance committee to review
+          the fiscal impact of the bill before being voted on by the entirety of
+          the State Senate.
+        </li>
+      </ul>
+    </div>
+    <div class="py-1.5">
+      <span class="text-xl font-bold"
+        ><LinkText
+          href="https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12201/Text"
+          target="_blank">Senate Bill 183 (SB 183)</LinkText
+        > Child and Family Case Worker Ratios</span
+      >
+      <ul class="pt-1 list-disc pl-4">
+        <li>
+          Will establish a ratio for the maximum number of children a case
+          worker may have assigned to them at 30 children to 1 case worker.
+        </li>
+        <li>
+          <b>Update:</b> SB 183 passed out of the Senate Health & Human Services
+          Committee unanimously.
+        </li>
+        <li>
+          <b>Next Steps:</b> SB 183 is sent to the Senate Floor to be voted on by
+          the entire State Senate. This must be done by April 22nd.
+        </li>
+      </ul>
+    </div>
+    <div class="py-1.5">
+      <span class="text-xl font-bold"
+        ><LinkText
+          href="https://www.leg.state.nv.us/App/NELIS/REL/83rd2025/Bill/12528/Text"
+          target="_blank">Senate Bill 306 (SB 306)</LinkText
+        > No Eject. No Reject.</span
+      >
+      <ul class="pt-1 list-disc pl-4">
+        <li>
+          Requires the State of Nevada to place children in proper mental health
+          facilities rather than temporary shelters like Child Haven.
+        </li>
+        <li>
+          Requires any child that is being transferred out of a facility to have
+          a discharge plan with certain requirements.
+        </li>
+        <li>
+          <b>Update:</b> SB 306 passed out of the Senate Health & Human Services
+          Committee unanimously.
+        </li>
+        <li>
+          <b>Next Steps:</b> SB 306 is sent to the Senate Floor to be voted on by
+          the entire State Senate. This must be done by April 22nd.
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <style>
-    .shadowClass {
-      text-shadow: 3px 3px 3px black;
-    }
-    .tinyShadow {
-      text-shadow: 3px 3px 2px black;
-    }
-  </style>
+  <div class="flex flex-col my-4 m-auto">
+    <HeadingTitle text="Other Bills We're Tracking" />
+    <div
+      class="h-[60vh] py-4 overflow-y-auto max-w-[95vw] lg:max-w-screen-lg xl:max-w-screen-xl m-auto bg-white shadow-md shadow-black p-4"
+    >
+      <div class="m-auto grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        {
+          otherBillsData.map((bill) => (
+            <div>
+              <b class="lg:text-lg">
+                <LinkText href={bill.url} target="_blank">
+                  {bill.name}
+                </LinkText>
+              </b>
+              <br />
+              {bill.desc}
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
 </Layout>
+
+<style>
+  .shadowClass {
+    text-shadow: 3px 3px 3px black;
+  }
+  .tinyShadow {
+    text-shadow: 3px 3px 2px black;
+  }
+</style>
