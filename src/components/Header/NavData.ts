@@ -64,8 +64,8 @@ const getInvolved = [
     href: "/political_action",
   },
   {
-    pageName: "Lobby Day 2025",
-    href: "/lobby_day",
+    pageName: "Legislative Session 2025",
+    href: "/legislative_session/2025",
   },
   {
     pageName: "Caucuses",

@@ -14,22 +14,29 @@ import Image from "astro/components/Image.astro";
 ---
 
 <Layout title="SEIU 1107 Political Action" centered={true}>
-  <HeadingTitle text="Lobby Day 2025" />
+  <HeadingTitle text="Legislative Session 2025" />
   <div class="m-auto flex flex-col py-2">
     <div class="text-center lg:text-lg font-bold max-w-screen-md pb-1">
       <i>ATTENTION!</i> SEIU 1107 is calling on the Nevada Legislature to stand with
       Nevada workers and their families and support SEIU's CARE agenda!
     </div>
-    <div class="m-auto">
-      <Button
-        text="Download Our CARE Agenda (PDF)"
-        href="/PDFs/2025/CARE.pdf"
-        target="_blank"
-      />
-      <Button
-        text="Our Priorities for 2025"
-        href="/lobby_day"
-      />
+    <div class="m-auto flex flex-col md:flex-row">
+      <span class="my-1 mx-auto md:mx-1"
+        ><Button
+          text="Download Our CARE Agenda (PDF)"
+          href="/PDFs/2025/CARE.pdf"
+          target="_blank"
+        /></span
+      >
+      <span class="my-1 mx-auto md:mx-1"
+        ><Button text="Our Priorities for 2025" href="/legislative_session/2025" /></span
+      >
+      <span class="my-1 mx-auto md:mx-1"
+        ><Button
+          text="Read About Lobby Day 2025"
+          href="/posts/SEIU-Local-1107's-Lobby-Day-in-Carson-City:-A-Bold-Stand-for-the-CARE-Agenda/"
+        /></span
+      >
     </div>
   </div>
   <div class="flex flex-col lg:grid lg:grid-cols-2 py-2 lg:gap-3">

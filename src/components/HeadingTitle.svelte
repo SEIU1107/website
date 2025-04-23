@@ -1,7 +1,8 @@
 <script>
-  export let text = "text";
-  export let styling =
-    "m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5";
+  const {
+    text = "text",
+    styling = "m-auto font-Trebuchet font-bold text-center text-honey-flower-800 py-5",
+  } = $props();
 
   let size =
     text.length <= 50

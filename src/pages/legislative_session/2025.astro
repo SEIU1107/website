@@ -1,13 +1,13 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 import { Image } from "astro:assets";
-import HeadingTitle from "../components/HeadingTitle.svelte";
+import HeadingTitle from "../../components/HeadingTitle.svelte";
 
-import CareAgenda1 from "../images/lobby_day/CARE Agenda 2025-1.png";
-import CareAgenda2 from "../images/lobby_day/CARE Agenda 2025-2.png";
-import LinkText from "../components/LinkText.astro";
-
-import bannerImg from "../images/lobby_day/BannerImage.png";
+import CareAgenda1 from "../../images/lobby_day/CARE Agenda 2025-1.png";
+import CareAgenda2 from "../../images/lobby_day/CARE Agenda 2025-2.png";
+import LinkText from "../../components/LinkText.astro";
+import Button from "../../components/Button.svelte";
+import bannerImg from "../../images/lobby_day/BannerImage.png";
 
 interface Bill {
   name: string;
@@ -259,7 +259,7 @@ const otherBillsData: Bill[] = [
 ];
 ---
 
-<Layout title="2025 Lobby Day SEIU 1107">
+<Layout title="2025 Legislative Session SEIU 1107">
   <main class="block relative overflow-hidden h-max">
     <div class="absolute top-0 inset-0 -z-30">
       <Image src={bannerImg} alt="" class="w-[100vw] h-full object-cover" />
@@ -275,8 +275,15 @@ const otherBillsData: Bill[] = [
       <h1
         class="shadowClass uppercase font-bold font-Roboto text-supernova-400 text-center text-7xl lg:text-9xl mt-4 lg:mt-2"
       >
-        Lobby Day 2025
+        Legislative Session 2025
       </h1>
+      <div class="mt-4 scale-125">
+        <Button
+          text="Read More About Lobby Day 2025"
+          href="/posts/SEIU-Local-1107's-Lobby-Day-in-Carson-City:-A-Bold-Stand-for-the-CARE-Agenda"
+          styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+        />
+      </div>
     </div>
   </main>
   <div
