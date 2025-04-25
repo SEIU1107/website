@@ -41,12 +41,18 @@
   // Otherwise, use the title
   let urlToUse: string;
 
-  onMount(() => {
+  function updateUrlToUse(url: string) {
     urlToUse =
       type === "News Article" && url
         ? url
         : "/posts/" + url.replaceAll(" ", "-");
+  }
+
+  onMount(() => {
+    updateUrlToUse(url);
   });
+
+  $: updateUrlToUse(url);
 </script>
 
 <div

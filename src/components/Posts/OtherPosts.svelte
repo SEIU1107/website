@@ -40,6 +40,7 @@
   function setPreview(post) {
     dispatch("setPost", post);
     selectedPost = post;
+    // console.log(`${selectedPost.frontmatter.url}`);
   }
 
   function getTotalPages(length) {
