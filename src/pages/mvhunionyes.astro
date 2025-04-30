@@ -1,0 +1,41 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeadingTitle from "../components/HeadingTitle.svelte";
+import { Image } from "astro:assets";
+import Button from "../components/Button.svelte";
+
+import bannerImg from "../images/mvhcampaign/Banner.png";
+---
+
+<Layout title="MVH Union Yes!">
+  
+  <main class="block relative overflow-hidden h-max">
+    <div class="absolute top-0 inset-0 -z-30">
+      <Image src={bannerImg} alt="" class="w-[100vw] h-full object-cover" />
+    </div>
+    <div
+      class="relative z-0 flex flex-col justify-center items-center text-center h-96 lg:h-[500px] p-4"
+    >
+      <div
+        class="text-white tinyShadow font-Trebuchet font-bold uppercase text-center text-4xl lg:text-5xl"
+      >
+        MountainView Hospital Dietary and EVS Workers are
+      </div>
+      <h1
+        class="shadowClass uppercase font-bold font-Roboto text-supernova-400 text-center text-6xl lg:text-7xl mt-4 lg:mt-2"
+      >
+        Uniting for a Union!
+      </h1>
+      
+    </div>
+  </main>
+</Layout>
+
+<style>
+  .shadowClass {
+    text-shadow: 3px 3px 3px black;
+  }
+  .tinyShadow {
+    text-shadow: 3px 3px 2px black;
+  }
+</style>
