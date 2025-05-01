@@ -76,6 +76,7 @@
       { label: "Default", value: "en" },
       { label: "Spanish", value: "es" },
       { label: "Tagalog", value: "tl" },
+      { label: "Amharic", value: "am" },
     ]}
     dropdownHoverStyle="px-4 w-full py-1 hover:bg-supernova-100 hover:text-honey-flower-800 cursor-pointer"
     textSize="text-xs sm:text-sm"
