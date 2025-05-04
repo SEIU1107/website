@@ -94,6 +94,11 @@
           "The form was formatted incorrectly. Check your submission and try again."
         );
         break;
+      case 404:
+        errorToast(
+          "The connection to the back end is broken; our team will fix it soon. Please try again later."
+        );
+        break;
       case 500:
         errorToast(
           "Server is broken; our team will fix it soon. Please try again later."

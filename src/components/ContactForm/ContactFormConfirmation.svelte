@@ -36,6 +36,7 @@
         console.log({ requestBody });
       }
 
+      /*
       const response = import.meta.env.DEV
         ? { status: 200 }
         : await fetch(import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT, {
@@ -45,6 +46,20 @@
             },
             body: JSON.stringify(requestBody),
           });
+      */
+
+      console.log(import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT);
+
+      const response = await fetch(
+        import.meta.env.PUBLIC_CONTACT_FORM_ENDPOINT,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(requestBody),
+        }
+      );
 
       const statusCode = response.status;
       if (statusCode === 200) {
