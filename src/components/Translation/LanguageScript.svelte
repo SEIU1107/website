@@ -45,35 +45,31 @@
   }
 
   async function translatePage(): Promise<void> {
-    // console.log(`Translating to ${selectedLang}`);
-    const elements: NodeListOf<HTMLElement> = document.querySelectorAll(
-      "*:not(script):not(style):not(meta):not(link):not([data-no-translate] *)"
+    // Grab every element on the page
+    const elements = Array.from(
+      document.querySelectorAll(
+        "*:not(script):not(style):not(meta):not(link):not([data-no-translate] *)"
+      )
+    ) as HTMLElement[];
+
+    // Grab the tokens for translation
+    const tokens = elements.flatMap((el) =>
+      Array.from(el.childNodes)
+        .filter((node) => node.nodeType === 3 && node.nodeValue?.trim())
+        .map((node) => {
+          const textNode = node as Text;
+          return (textNode as any).originalText || textNode.nodeValue;
+        })
     );
 
-    for (const el of elements) {
-      for (const node of el.childNodes) {
-        if (node.nodeType === 3 && node.nodeValue?.trim()) {
-          // Only translate text nodes
-          const textNode = node as Text;
-          (textNode as any).originalText =
-            (textNode as any).originalText || textNode.nodeValue;
-          // console.log(`before: ${textNode.nodeValue}`);
-          textNode.nodeValue = await translateText(
-            (textNode as any).originalText,
-            selectedLang
-          );
-          // console.log(`after: ${textNode.nodeValue}`);
-        }
-      }
-    }
-    // console.log(`Char count: ${charCount}`);
+    console.log({ tokens });
   }
 </script>
 
 <div data-no-translate>
   <DropdownInput
     dropdownOptions={[
-      { label: "Default", value: "en" },
+      { label: "English", value: "en" },
       { label: "Spanish", value: "es" },
       { label: "Tagalog", value: "tl" },
       { label: "Amharic", value: "am" },
