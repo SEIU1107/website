@@ -84,6 +84,7 @@
 
     // Check for status code. The user is redirected here after a submission attempt.
     // Inform them on the status of the submission.
+    console.log({ statusCode });
     switch (statusCode) {
       case 200:
         successToast("Message successfully sent!");

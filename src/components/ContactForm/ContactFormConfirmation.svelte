@@ -51,8 +51,6 @@
         // Successful submission, we can remove the data from storage now
         localStorage.removeItem(formInputsStorageKey);
         sessionStorage.removeItem(formInputsStorageKey);
-      } else {
-        errorToast(`An error occured. Status Code ${statusCode}`);
       }
 
       sessionStorage.setItem(
