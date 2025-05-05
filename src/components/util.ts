@@ -49,15 +49,17 @@ export function preloadImages(
   });
 }
 
-// Measure the height of each image and determine the maximum height
+// Measure the height and aspect ratio of each image as it would be rendered
 export async function measureImageHeights(
   imageElements: HTMLImageElement[],
   imageStyle?: string
-): Promise<number> {
+): Promise<{ height: number; ratio: number }> {
   const hiddenContainer = document.createElement("div");
   hiddenContainer.style.visibility = "hidden";
   hiddenContainer.style.position = "absolute";
   hiddenContainer.style.top = "-9999px";
+  hiddenContainer.style.left = "-9999px";
+  hiddenContainer.style.width = "1000px"; // simulate real layout width
   document.body.appendChild(hiddenContainer);
 
   const imageObjects = imageElements.map((img) => {
@@ -68,17 +70,32 @@ export async function measureImageHeights(
     return image;
   });
 
-  const heights = await Promise.all(
+  // Wait until all images load and can be measured
+  await Promise.all(
     imageObjects.map(
       (img) =>
-        new Promise<number>((resolve) => {
-          img.onload = () => resolve(img.height);
+        new Promise<void>((resolve) => {
+          img.onload = () => resolve();
         })
     )
   );
 
+  let maxHeight = 0;
+  let bestRatio = 1;
+
+  for (const img of imageObjects) {
+    const height = img.offsetHeight;
+    const width = img.offsetWidth;
+    const ratio = width / height;
+
+    if (height > maxHeight) {
+      maxHeight = height;
+      bestRatio = ratio;
+    }
+  }
+
   document.body.removeChild(hiddenContainer);
-  return Math.max(...heights);
+  return { height: maxHeight, ratio: bestRatio };
 }
 
 // === Toast Notifications ===

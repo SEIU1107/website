@@ -36,14 +36,19 @@
       preloadedImages = preloadImages(images, imageStyle);
 
       // Measure and set max height after images load
-      maxHeight = await measureImageHeights(preloadedImages, imageStyle);
+      const imageSize = await measureImageHeights(preloadedImages, imageStyle);
+      maxHeight = imageSize.height;
 
       // Start image cycling
       interval = setInterval(next, duration);
 
       // Setup resize handler
       resizeHandler = async () => {
-        maxHeight = await measureImageHeights(preloadedImages, imageStyle);
+        const imageSize = await measureImageHeights(
+          preloadedImages,
+          imageStyle
+        );
+        maxHeight = imageSize.height;
       };
 
       window.addEventListener("resize", resizeHandler);
