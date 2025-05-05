@@ -29,6 +29,9 @@
     // Pause on mouse hover
     pauseOnHover?: boolean;
 
+    // Override the height with a TailwindCSS class
+    heightOverride?: string;
+
     // Default Page index
     defaultPage?: number;
 
@@ -64,6 +67,7 @@
     showSliderIndicators = true,
     animationSpeed = "duration-700",
     object = "object-cover",
+    heightOverride,
     imageOptions = {
       rounded: false,
       height: "h-full",
@@ -193,8 +197,8 @@
 
 <menu
   id="default-carousel-{carouselID}"
-  class="relative w-full"
-  style={`aspect-ratio: ${aspectRatio}; max-height: ${maxHeight}px;`}
+  class={`relative top-0 ${bgColor} overflow-hidden ${heightOverride ? heightOverride : ""}`}
+  style={!heightOverride && maxHeight ? `aspect-ratio: ${aspectRatio}` : ""}
   onmouseenter={() => {
     if (pauseOnHover) {
       isMouseHovering = true;
@@ -222,8 +226,8 @@
             "src" in srcObject
               ? srcObject.src
               : srcObject}
-            class={`w-auto mx-auto ${imageOptions.rounded ? "rounded-md" : ""} ${object ?? "object-contain"}`}
-            style={`max-height: ${maxHeight}px; max-width: 100%`}
+            class={`w-full h-full ${imageOptions.rounded ? "rounded-md" : ""} ${object ?? "object-contain"}`}
+            style={heightOverride ? "" : `aspect-ratio: ${aspectRatio};`}
           />
         </div>
       {/each}

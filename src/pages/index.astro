@@ -37,6 +37,9 @@ import imgImmigration5 from "/public/post_imgs/2024/ImmigrationWorkshop/img5.png
 import imgImmigration6 from "/public/post_imgs/2024/ImmigrationWorkshop/img6.png";
 import imgImmigration7 from "/public/post_imgs/2024/ImmigrationWorkshop/img7.png";
 
+// MVH Campaign
+import imgMVHFlyer from "../images/mvhcampaign/Flyer.png";
+
 // Lobby Day
 import imgLobbyDay1 from "/public/post_imgs/2025/LobbyDay/img2.png";
 import imgLobbyDay2 from "/public/post_imgs/2025/LobbyDay/img13.png";
@@ -120,6 +123,7 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
         images={[CCMobile, StRoseMobile, DOAMobile, HomecareMobile]}
         carouselID={1}
         heightOverride="h-[500px]"
+        object="object-cover"
         duration={4000}
         clickablePages={false}
         showSliderIndicators={false}
@@ -129,6 +133,57 @@ import imgLatino from "../images/caucuses/Latino/2025 Flyer.png";
     </div>
     <BannerText />
   </main>
+  <!-- -->
+  <div
+    class="m-auto bg-gradient-to-b from-honey-flower-900 to-honey-flower-950 flex flex-col px-3"
+  >
+    <HeadingTitle
+      text="MountainView Hospital Dietary and EVS Workers are Uniting for a Union!"
+      styling="m-auto font-Trebuchet font-bold text-center text-supernova-500 py-5 shadowClass"
+    />
+    <div class="m-auto max-w-[95vw] lg:max-w-screen-lg py-4">
+      <CollageImage src={imgMVHFlyer}>
+        <div class="text-white py-1 md:pb-1 md:py-0">
+          Recently, a strong majority of Nutrition and EVS workers at
+          MountainView Hospital have signed union cards saying we want to join
+          with your co-workers at MountainView, Sunrise, and Southern Hills who
+          are members of SEIU Local 1107!
+        </div>
+        <div class="text-white py-1">
+          As dedicated workers, it is absolutely essential that we have a voice
+          in our jobs, including the ability to negotiate for better wages,
+          benefits, staffing, and working conditions.
+        </div>
+        <div class="text-white py-1 italic">
+          "<span class="bold underline">A Union will give us power!</span> I align
+          with having a union due to excessive workloads, safety, and fairness. With
+          a union there is a chance to negotiate a contract that allows better wages,
+          improved working conditions, and farness."
+        </div>
+        <div class="text-white py-1 font-bold text-xl italic">
+          I vote YES for our union.
+        </div>
+        <div class="text-white py-1 text-lg italic">
+          - Veronica Bautista
+        </div>
+        <div class="text-white py-1 italic">
+          MountainView Hospital - Food & Nutritional Services
+        </div>
+        <div class="mx-auto">
+          <Button
+            text="Learn More"
+            href="/mvhunionyes"
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+          />
+          <Button
+            styling="m-auto my-1.5 text-honey-flower-900 bg-supernova-500 hover:bg-supernova-600 hover:scale-110 active:supernova-600"
+            text="Join the Union"
+            href="/join_us"
+          />
+        </div>
+      </CollageImage>
+    </div>
+  </div>
   <!-- -->
   <main
     class="flex flex-col m-auto bg-gradient-to-br from-supernova-400 to-supernova-500"
