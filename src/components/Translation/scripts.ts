@@ -25,6 +25,8 @@ export interface CachedTranslationData {
   };
 }
 
+let isTranslating = false;
+
 export async function translatePage(selectedLang: string): Promise<void> {
   /* 
     
@@ -33,65 +35,75 @@ export async function translatePage(selectedLang: string): Promise<void> {
     Checks if the user has the most up-to-date translations already stored.
 
     If not, will call our API endpoint to grab the translations.
-    */
+  */
 
-  // Update the page name
-  const currentPage = getPageKey();
+  if (isTranslating) {
+    // Re-entry guard to prevent multiple calls to the function at once
 
-  // Grab every element on the page
-  const elements = Array.from(
-    document.querySelectorAll(
-      "*:not(script):not(style):not(meta):not(link):not([data-no-translate] *)"
-    )
-  );
-
-  if (selectedLang === "en") {
-    revertPage(elements);
     return;
   }
 
-  // Grab the tokens for translation
-  const allTokens = new Set(
-    elements.flatMap((el) =>
-      Array.from(el.childNodes)
-        .filter((node) => node.nodeType === 3 && node.nodeValue?.trim())
-        .map((node) => {
+  isTranslating = true;
+
+  try {
+    // Update the page name
+    const currentPage = getPageKey();
+
+    // Grab every element on the page
+    const elements = Array.from(
+      document.querySelectorAll(
+        "*:not(script):not(style):not(meta):not(link):not([data-no-translate] *)"
+      )
+    );
+
+    if (selectedLang === "en") {
+      revertPage(elements);
+      return;
+    }
+
+    // Grab the tokens for translation
+    const allTokens = new Set(
+      elements.flatMap((el) =>
+        Array.from(el.childNodes)
+          .filter((node) => node.nodeType === 3 && node.nodeValue?.trim())
+          .map((node) => {
+            const textNode = node as Text;
+            return (textNode as any).originalText || textNode.nodeValue;
+          })
+      )
+    );
+
+    // Grab tokens from the Layout (so we don't re-translate them)
+    const layoutTokens = new Set(
+      all_dropdowns.flatMap((dropdown) => {
+        const titles = [dropdown.title];
+        const pages = dropdown.content?.map((item) => item.pageName) ?? [];
+        return [...titles, ...pages];
+      })
+    );
+
+    // Get the translation data from the cache or endpoint.
+    const translationData = await getTranslationData(
+      allTokens,
+      layoutTokens,
+      selectedLang,
+      currentPage
+    );
+
+    // Apply Translations from the data
+    for (const el of elements) {
+      for (const node of el.childNodes) {
+        if (node.nodeType === 3 && node.nodeValue?.trim()) {
+          // Only translate text nodes
           const textNode = node as Text;
-          return (textNode as any).originalText || textNode.nodeValue;
-        })
-    )
-  );
-
-  // Grab tokens from the Layout (so we don't re-translate them)
-  const layoutTokens = new Set(
-    all_dropdowns.flatMap((dropdown) => {
-      const titles = [dropdown.title];
-      const pages = dropdown.content?.map((item) => item.pageName) ?? [];
-      return [...titles, ...pages];
-    })
-  );
-
-  console.log({ layoutTokens });
-
-  // Get the translation data from the cache or endpoint.
-  const translationData = await getTranslationData(
-    allTokens,
-    layoutTokens,
-    selectedLang,
-    currentPage
-  );
-
-  // Apply Translations from the data
-  for (const el of elements) {
-    for (const node of el.childNodes) {
-      if (node.nodeType === 3 && node.nodeValue?.trim()) {
-        // Only translate text nodes
-        const textNode = node as Text;
-        (textNode as any).originalText =
-          (textNode as any).originalText || textNode.nodeValue;
-        textNode.nodeValue = translationData[(textNode as any).originalText];
+          (textNode as any).originalText =
+            (textNode as any).originalText || textNode.nodeValue;
+          textNode.nodeValue = translationData[(textNode as any).originalText];
+        }
       }
     }
+  } finally {
+    isTranslating = false;
   }
 }
 
@@ -160,9 +172,6 @@ async function getTranslationData(
   ) {
     // Up-to-date translation of this page into the selected language
     // is cached, just grab the translations from there.
-    const cachedLayout =
-      cachedTranslationData[selectedLang][currentPage].translatedLayoutTokens;
-    console.log({ cachedLayout });
     return {
       ...cachedTranslationData[selectedLang][currentPage].translatedTokens,
       ...cachedTranslationData[selectedLang][currentPage]
@@ -172,11 +181,15 @@ async function getTranslationData(
 
   // Send a toast message for the user since it might take some time
   // to grab the translation data from the endpoint.
-  warningToast(`Translating to ${languageCodes[selectedLang]}...`, false, {
-    initial: 0,
-    next: 1,
-    duration: 6000,
-  });
+  warningToast(
+    `Translating to ${languageCodes[selectedLang]}, please wait...`,
+    false,
+    {
+      initial: 0,
+      next: 1,
+      duration: 3000,
+    }
+  );
 
   // Otherwise, use API endpoint and cache the translations for the future.
   // Build request for API call
