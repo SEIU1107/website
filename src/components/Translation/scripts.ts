@@ -181,6 +181,7 @@ async function getTranslationData(
 
   // Send a toast message for the user since it might take some time
   // to grab the translation data from the endpoint.
+  /*
   warningToast(
     `Translating to ${languageCodes[selectedLang]}, please wait...`,
     false,
@@ -190,6 +191,7 @@ async function getTranslationData(
       duration: 3000,
     }
   );
+  */
 
   // Otherwise, use API endpoint and cache the translations for the future.
   // Build request for API call
