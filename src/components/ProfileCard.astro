@@ -29,7 +29,7 @@ const { person } = Astro.props as Props;
                 field[0] === "Email" ? (
                     <div>
                         <b>{field[0]}: </b>
-                        <LinkText href={`mailto:${field[1]}`}>
+                        <LinkText data-no-translate href={`mailto:${field[1]}`}>
                             {field[1]}
                         </LinkText>
                     </div>

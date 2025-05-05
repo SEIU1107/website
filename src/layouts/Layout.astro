@@ -3,6 +3,8 @@ import Header from "../components/Header/Header.astro";
 import Footer from "../components/Footer.astro";
 import { ClientRouter } from "astro:transitions";
 import { SvelteToast } from "@zerodevx/svelte-toast";
+import TranslationScript from "../components/Translation/TranslationScript.svelte"
+
 export interface Props {
   title?: string;
   centered?: boolean;
@@ -72,6 +74,7 @@ const {
       backgroundStyling
     )}
   >
+    <TranslationScript client:load />
     <div class="toast">
       <SvelteToast
         target="new"
@@ -91,6 +94,22 @@ const {
         )
       }
     </div>
+    <!--
+    <script type="module" is:inline>
+      const runTranslation = async () => {
+        const lang = localStorage.getItem("selectedLang") || "en";
+        console.log(`Translating to ${lang} because of inline script`);
+        const { translatePage } = await import("/src/components/Translation/scripts.ts");
+        translatePage(lang);
+      };
+
+      // Run initially
+      runTranslation();
+
+      // Re-run on navigation if you're using view transitions
+      document.addEventListener("astro:after-swap", runTranslation);
+    </script> -->
+
     <Footer />
     <style>
       .toast {
