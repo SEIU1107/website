@@ -82,8 +82,17 @@ export async function translatePage(selectedLang: string): Promise<void> {
       })
     );
 
+    // Separate the non-layout tokens from the layout ones.
+    // Since layout tokens are present in every page, we don't need to keep re-translating them.
+    const tokens = new Set(
+      Array.from(allTokens).filter((item) => !layoutTokens.has(item))
+    );
+
+    // TODO: Change the back end to only take in 1 tokens list
+    // and just pass in "layout" as a page, so you're calling it twice lol
+
     // Get the translation data from the cache or endpoint.
-    const translationData = await getTranslationData(
+    const translationData = await getPageTranslationData(
       allTokens,
       layoutTokens,
       selectedLang,
@@ -134,16 +143,15 @@ function revertPage(elements: Element[]) {
   }
 }
 
-async function getTranslationData(
-  allTokens: Set<string>,
-  layoutTokens: Set<string>,
+async function getPageTranslationData(
+  tokens: Set<string>,
   selectedLang: string,
   currentPage: string
 ): Promise<Record<string, string>> {
   /*
 
     Determines if the user already has an up-to-date cached translation for
-    the page in local storage, and returns it.
+    the page in local storage, and returns it. 
 
     If not, calls the endpoint for the translations and caches it.
 
@@ -154,17 +162,10 @@ async function getTranslationData(
     localStorage.getItem("translations") || "{}"
   );
 
-  // Separate the non-layout tokens from the layout ones.
-  // Since layout tokens are present in every page, we don't need to keep re-translating them.
-  const tokens = new Set(
-    Array.from(allTokens).filter((item) => !layoutTokens.has(item))
-  );
-
   // Determine if local storage already has the tokens
   if (
     isTranslationCached(
       cachedTranslationData,
-      layoutTokens,
       tokens,
       selectedLang,
       currentPage
@@ -258,7 +259,6 @@ function cacheTranslations(
 
 function isTranslationCached(
   cachedTranslationData: CachedTranslationData,
-  layoutTokens: Set<string>,
   tokens: Set<string>,
   selectedLang: string,
   currentPage: string
