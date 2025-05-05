@@ -91,6 +91,14 @@ const {
         )
       }
     </div>
+    <script type="module">
+      document.addEventListener("DOMContentLoaded", () => {
+        const lang = localStorage.getItem("selectedLang") || "en";
+        import("/src/components/Translation/scripts.ts").then(({ translatePage }) => {
+          translatePage(lang);
+        });
+      });
+    </script>
     <Footer />
     <style>
       .toast {

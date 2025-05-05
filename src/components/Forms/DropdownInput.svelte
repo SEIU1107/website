@@ -50,9 +50,13 @@
           initialValue === (typeof option === "string" ? option : option.value)
       );
 
-      if (initialOption[0]) {
+      const foundOption = Array.isArray(initialOption)
+        ? initialOption[0]
+        : initialOption;
+
+      if (foundOption) {
         // And it's provided in dropdownOptions! Hurray!
-        currOption = initialOption[0];
+        currOption = foundOption;
       } else {
         // ... but it's not available. Default to first value.
         currOption = dropdownOptions[0];

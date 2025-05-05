@@ -1,6 +1,32 @@
 import type { Delta } from "quill";
 import { toast } from "@zerodevx/svelte-toast";
 
+// == General Util ==
+export function haveIdenticalKeys(
+  obj1: Record<string, string>,
+  obj2: Record<string, string>
+): boolean {
+  const keys1 = Object.keys(obj1);
+  const keys2 = Object.keys(obj2);
+
+  if (keys1.length !== keys2.length) return false;
+
+  return keys1.every((key) => obj2.hasOwnProperty(key));
+}
+
+export function keysMatchSet(
+  keys: Set<string>,
+  obj: Record<string, unknown>
+): boolean {
+  /* Determines if a Set of strings matches the keys of an object */
+
+  const objKeys = Object.keys(obj);
+
+  if (keys.size !== objKeys.length) return false;
+
+  return objKeys.every((key) => keys.has(key));
+}
+
 // === Image Util ===
 
 // Given an ImageMetadata or a string representing an image, returns the source
@@ -56,7 +82,11 @@ export async function measureImageHeights(
 }
 
 // === Toast Notifications ===
-export const successToast = (m: any, isComponent: boolean = false) => {
+export const successToast = (
+  m: any,
+  isComponent: boolean = false,
+  duration: number = 0
+) => {
   // m could be a string, number, or component.
   toast.push(!isComponent ? m : null, {
     component: isComponent ? m : null,
@@ -65,22 +95,33 @@ export const successToast = (m: any, isComponent: boolean = false) => {
       "--toastColor": "white",
     },
     target: "new",
+    ...(duration !== 0 ? { duration } : {}),
   });
 };
 
-export const warningToast = (m: any, isComponent: boolean = false) => {
+export const warningToast = (
+  m: any,
+  isComponent: boolean = false,
+  options: object = {}
+) => {
   // m could be a string, number, or component.
   toast.push(!isComponent ? m : null, {
     component: isComponent ? m : null,
     theme: {
       "--toastBackground": "#f59e0b",
+      "--toastBarBackground": "#f59e0b",
       "--toastColor": "white",
     },
     target: "new",
+    ...options,
   });
 };
 
-export const errorToast = (m: any, isComponent: boolean = false) => {
+export const errorToast = (
+  m: any,
+  isComponent: boolean = false,
+  duration: number = 0
+) => {
   // m could be a string, number, or component.
   toast.push(!isComponent ? m : null, {
     component: isComponent ? m : null,
@@ -89,6 +130,7 @@ export const errorToast = (m: any, isComponent: boolean = false) => {
       "--toastColor": "white",
     },
     target: "new",
+    ...(duration !== 0 ? { duration } : {}),
   });
 };
 
