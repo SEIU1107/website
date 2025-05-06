@@ -1,5 +1,5 @@
 import { all_dropdowns } from "../Header/NavData";
-import { keysMatchSet, warningToast } from "../util";
+import { keysMatchSet } from "../util";
 
 // == Scripts for Translation Feature ==
 
@@ -13,7 +13,6 @@ export const languageCodes: Record<string, string> = {
 // Response type expected from our endpoint containing translated terms.
 // Keys are the original text. Values are the translated versions.
 type TranslateResponseData = {
-  translatedLayoutTokens: Record<string, string>;
   translatedTokens: Record<string, string>;
 };
 
@@ -46,9 +45,6 @@ export async function translatePage(selectedLang: string): Promise<void> {
   isTranslating = true;
 
   try {
-    // Update the page name
-    const currentPage = getPageKey();
-
     // Grab every element on the page
     const elements = Array.from(
       document.querySelectorAll(
@@ -92,12 +88,22 @@ export async function translatePage(selectedLang: string): Promise<void> {
     // and just pass in "layout" as a page, so you're calling it twice lol
 
     // Get the translation data from the cache or endpoint.
-    const translationData = await getPageTranslationData(
-      allTokens,
+    // Do it for layout tokens
+    const layoutTranslations = await getPageTranslationData(
       layoutTokens,
       selectedLang,
-      currentPage
+      "layout" // "layout" is the key
     );
+
+    // Do it for tokens not associated with the layout, and rather
+    // associated with the page
+    const pageTranslations = await getPageTranslationData(
+      tokens,
+      selectedLang,
+      getPageKey()
+    );
+
+    const translationData = { ...layoutTranslations, ...pageTranslations };
 
     // Apply Translations from the data
     for (const el of elements) {
@@ -146,7 +152,7 @@ function revertPage(elements: Element[]) {
 async function getPageTranslationData(
   tokens: Set<string>,
   selectedLang: string,
-  currentPage: string
+  pageKey: string
 ): Promise<Record<string, string>> {
   /*
 
@@ -158,26 +164,17 @@ async function getPageTranslationData(
     */
 
   // Retrieve cached translations from localStorage
-  const cachedTranslationData = JSON.parse(
+  const cachedTranslationData: CachedTranslationData = JSON.parse(
     localStorage.getItem("translations") || "{}"
   );
 
   // Determine if local storage already has the tokens
   if (
-    isTranslationCached(
-      cachedTranslationData,
-      tokens,
-      selectedLang,
-      currentPage
-    )
+    isTranslationCached(cachedTranslationData, tokens, selectedLang, pageKey)
   ) {
     // Up-to-date translation of this page into the selected language
     // is cached, just grab the translations from there.
-    return {
-      ...cachedTranslationData[selectedLang][currentPage].translatedTokens,
-      ...cachedTranslationData[selectedLang][currentPage]
-        .translatedLayoutTokens,
-    };
+    return cachedTranslationData[selectedLang][pageKey].translatedTokens;
   }
 
   // Send a toast message for the user since it might take some time
@@ -198,11 +195,13 @@ async function getPageTranslationData(
   // Build request for API call
   const requestBody = {
     language: selectedLang,
-    page: currentPage,
-    layoutTokens: [...layoutTokens],
+    page: pageKey,
     tokens: [...tokens],
   };
 
+  console.log({ requestBody });
+
+  return;
   // Call endpoint
   const response = await fetch(import.meta.env.PUBLIC_TRANSLATE_ENDPOINT, {
     method: "POST",
@@ -214,27 +213,24 @@ async function getPageTranslationData(
 
   const data: TranslateResponseData = await response.json();
 
-  const translatedLayoutTokens = data.translatedLayoutTokens;
   const translatedTokens = data.translatedTokens;
 
   // Cache the translations in the user's local storage for future use
   cacheTranslations(
     cachedTranslationData,
-    translatedLayoutTokens,
     translatedTokens,
     selectedLang,
-    currentPage
+    pageKey
   );
 
-  return { ...translatedLayoutTokens, ...translatedTokens };
+  return translatedTokens;
 }
 
 function cacheTranslations(
   cachedTranslationData: CachedTranslationData,
-  translatedLayoutTokens: Record<string, string>,
   translatedTokens: Record<string, string>,
   selectedLang: string,
-  currentPage: string
+  pageKey: string
 ) {
   /*
     
@@ -246,13 +242,10 @@ function cacheTranslations(
   // Create new objects if needed
   cachedTranslationData[selectedLang] =
     cachedTranslationData[selectedLang] || {};
-  cachedTranslationData[selectedLang][currentPage] =
-    cachedTranslationData[selectedLang][currentPage] || {};
+  cachedTranslationData[selectedLang][pageKey] =
+    cachedTranslationData[selectedLang][pageKey] || {};
 
-  cachedTranslationData[selectedLang][currentPage] = {
-    translatedLayoutTokens,
-    translatedTokens,
-  };
+  cachedTranslationData[selectedLang][pageKey] = { translatedTokens };
 
   localStorage.setItem("translations", JSON.stringify(cachedTranslationData));
 }
@@ -261,7 +254,7 @@ function isTranslationCached(
   cachedTranslationData: CachedTranslationData,
   tokens: Set<string>,
   selectedLang: string,
-  currentPage: string
+  pageKey: string
 ): boolean {
   /*
     Determines of the cached translation data has the most up-to-date
@@ -272,25 +265,18 @@ function isTranslationCached(
   if (
     !cachedTranslationData ||
     !cachedTranslationData[selectedLang] ||
-    !cachedTranslationData[selectedLang][currentPage]
+    !cachedTranslationData[selectedLang][pageKey]
   ) {
     return false;
   }
 
-  const pageTranslationEntry = cachedTranslationData[selectedLang][currentPage];
+  const pageTranslationEntry = cachedTranslationData[selectedLang][pageKey];
 
   // If it's missing either the layout tokens or non-layout tokens entry, return false.
-  if (
-    !pageTranslationEntry.translatedLayoutTokens ||
-    !pageTranslationEntry.translatedTokens
-  ) {
+  if (!pageTranslationEntry.translatedTokens) {
     return false;
   }
 
-  const cachedLayoutTokens = pageTranslationEntry.translatedLayoutTokens;
   const cachedTokens = pageTranslationEntry.translatedTokens;
-  return (
-    keysMatchSet(layoutTokens, cachedLayoutTokens) &&
-    keysMatchSet(tokens, cachedTokens)
-  );
+  return keysMatchSet(tokens, cachedTokens);
 }
