@@ -271,6 +271,7 @@ async function getPageTranslationData(
       page: pageKey,
       tokens: [...missingTokens],
     };
+
     // Call endpoint
     const response = await fetch(import.meta.env.PUBLIC_TRANSLATE_ENDPOINT, {
       method: "POST",
@@ -282,8 +283,6 @@ async function getPageTranslationData(
 
     // Get the translations from the endpoint
     const data: TranslateResponseData = await response.json();
-
-    console.log({ data });
 
     // Add it to the cache data
     const existingData = cachedTranslationData[selectedLang][pageKey];
