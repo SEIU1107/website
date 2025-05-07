@@ -34,12 +34,12 @@
     // Initial run
     previousPathname = window.location.pathname;
     lastLang = localStorage.getItem("selectedLang") || "en";
-    runTranslation();
+    // runTranslation();
 
-    window.addEventListener("astro:after-swap", handleNavigation);
+    // window.addEventListener("astro:after-swap", handleNavigation);
 
     return () => {
-      window.removeEventListener("astro:after-swap", handleNavigation);
+      // window.removeEventListener("astro:after-swap", handleNavigation);
     };
   });
 

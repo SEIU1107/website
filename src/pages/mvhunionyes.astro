@@ -3,12 +3,18 @@ import Layout from "../layouts/Layout.astro";
 import HeadingTitle from "../components/HeadingTitle.svelte";
 import { Image } from "astro:assets";
 import Button from "../components/Button.svelte";
+import CollageImage from "../components/CollageImage.astro";
+import Subtitle from "../components/Subtitle.svelte";
+import Carousel from "../components/Carousel.svelte";
 
 import bannerImg from "../images/mvhcampaign/Banner.png";
+import imgFlyer from "../images/mvhcampaign/Flyer.png";
+import imgSocialVeronica from "../images/mvhcampaign/MVH_social_veronica.png";
+import imgSocialYareli from "../images/mvhcampaign/MVH_social_yareli.png";
+import imgSocialMoney from "../images/mvhcampaign/MVH_social_money.png";
 ---
 
 <Layout title="MVH Union Yes!">
-  
   <main class="block relative overflow-hidden h-max">
     <div class="absolute top-0 inset-0 -z-30">
       <Image src={bannerImg} alt="" class="w-[100vw] h-full object-cover" />
@@ -26,9 +32,136 @@ import bannerImg from "../images/mvhcampaign/Banner.png";
       >
         Uniting for a Union!
       </h1>
-      
     </div>
   </main>
+  <div
+    class="max-w-[90vw] md:max-w-screen-md lg:max-w-screen-lg xl:max-w-screen-xl m-auto flex flex-col"
+  >
+    <HeadingTitle
+      text="At MountainView Hospital, WORKERS in the Dietary and EVS Departments have ORGANIZED and filed a petition to UNIONIZE with SEIU Local 1107! "
+    />
+    <div class="my-5 mx-auto flex">
+      <CollageImage src={imgFlyer}>
+        <div class="mt-3 md:mt-0 flex flex-col">
+          <Subtitle
+            text="WHY DO WORKERS WANT A UNION?"
+            styling="pb-2 text-center text-honey-flower-800 italic font-Trebuchet font-bold"
+          />
+          <p class="pb-2 text-black md:text-lg">
+            As Dietary and EVS workers, we want to see change in our hospital -
+            equality, respect, fair pay and better working conditions. We've
+            raised our issues to department heads, managers, and Human
+            Resources, but nothing has changed.
+          </p>
+          <p class="py-2 text-black md:text-lg font-bold">
+            United together in our union, we will have THE POWER and VOICE to
+            demand the respect with deserve!
+          </p>
+          <p class="py-2 text-black md:text-lg">
+            Workers are going forward together and WILL WIN together! The
+            majority of employees across MVH already have a union and a contract
+            with MountainView Hospital.
+          </p>
+          <p class="py-2 text-black md:text-lg font-bold">
+            Now, EVS & FNS are saying: No one should be left out! We want a
+            UNION!
+          </p>
+          <span class="mt-4 mx-auto scale-125">
+            <Button
+              text="SIGN UP TODAY!"
+              href="https://act.seiu.org/onlineactions/KvGLQqa-D0GMiYvWpNKxEA2"
+              target="_blank"
+              styling="no-underline not-prose text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest hover:scale-110"
+            />
+          </span>
+          <div class="flex flex-col my-3 mx-auto">
+            <span class="text-black text-2xl text-center font-bold">
+              Download PDF Flyers
+            </span>
+            <div class="flex flex-row mx-auto">
+              <span class="mx-1.5 my-1">
+                <Button
+                  text="English"
+                  href="/PDFs/2025/mvh/HCA_English.pdf"
+                  target="_blank"
+                />
+              </span>
+              <span class="mx-1.5 my-1">
+                <Button
+                  text="Spanish"
+                  href="/PDFs/2025/mvh/HCA_Spanish.pdf"
+                  target="_blank"
+                />
+              </span>
+              <span class="mx-1.5 my-1">
+                <Button
+                  text="Tagalog"
+                  href="/PDFs/2025/mvh/HCA_Tagalog.pdf"
+                  target="_blank"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </CollageImage>
+    </div>
+    <!-- -->
+
+    <!-- -->
+    <div class="flex flex-col md:gap-5 md:grid md:grid-cols-12 m-auto my-5">
+      <div class="max-w-[90vw] md:col-span-5">
+        <Subtitle
+          text="JOIN TOGETHER WITH US!"
+          styling="pb-2 text-center text-honey-flower-800 italic font-Trebuchet font-bold"
+        />
+        <p class="py-1 text-black">
+          As dedicated workers, it is absolutely essential that we have a voice
+          in our jobs, including the ability to negotiate for better wages,
+          benefits, staffing, and working conditions.
+        </p>
+        <p class="py-1 text-black">
+          SEIU 1107 members won a historic union contract which includes a
+          13.75% raise over three years and other wage increases. We believe we
+          deserve the same seat at the table to gain urgent improvements. In
+          today's uncertain economy and healthcare industry, we can't afford to
+          be alone without union protections. SEIU is the largest, strongest,
+          and most effective healthcare union in America, representing thousands
+          of healthcare workers.
+        </p>
+        <p class="py-1 text-black">
+          Sign a union card and ask ALL your Nutrition and EVS co-workers to
+          sign as well!
+        </p>
+        <p class="py-2 text-black md:text-lg font-bold">
+          UNITED TOGETHER, WE CAN ENSURE THE VERY BEST JOBS AND QUALITY CARE FOR
+          PATIENTS!
+        </p>
+        <span class="m-auto"
+          ><Button
+            text="SIGN UP"
+            href="https://act.seiu.org/onlineactions/KvGLQqa-D0GMiYvWpNKxEA2"
+            target="_blank"
+            styling="no-underline not-prose text-white bg-honey-flower-800 hover:bg-honey-flower-950 active:bg-purple-darkest hover:scale-110"
+          /></span
+        >
+      </div>
+      <div class="md:col-span-7 md:px-5 w-[90vw] md:max-w-full m-auto">
+        <Carousel
+          images={[imgSocialVeronica, imgSocialYareli, imgSocialMoney]}
+          carouselID={0}
+          clickablePages={true}
+          showPageArrows={true}
+          imageOptions={{
+            rounded: true,
+            translateUp: false,
+          }}
+          duration={7500}
+          pauseOnHover={true}
+          client:load
+        />
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <style>

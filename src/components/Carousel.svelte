@@ -7,6 +7,7 @@
   let carousel: Carousel | null = null;
 
   let maxHeight = $state(0);
+  let aspectRatio = $state(1);
 
   interface CarouselProps {
     // List of image metadata's OR strings
@@ -22,15 +23,14 @@
     // 0 Indicates none
     duration?: number;
 
-    // Height override (as a TailwindCSS class)
-    // When true, the div is set to this height rather than determined by images
-    heightOverride?: string;
-
     // How fast should the page switch? (as a TailwindCSS class)
     animationSpeed?: string;
 
     // Pause on mouse hover
     pauseOnHover?: boolean;
+
+    // Override the height with a TailwindCSS class
+    heightOverride?: string;
 
     // Default Page index
     defaultPage?: number;
@@ -66,11 +66,10 @@
     defaultPage = 0,
     showSliderIndicators = true,
     animationSpeed = "duration-700",
-    heightOverride = "",
     object = "object-cover",
+    heightOverride,
     imageOptions = {
       rounded: false,
-      translateUp: false,
       height: "h-full",
     },
     bgColor = "bg-honey-flower-800",
@@ -122,7 +121,9 @@
       preloadedImages = preloadImages(images);
 
       // Measure and set max height after images load
-      maxHeight = await measureImageHeights(preloadedImages);
+      const { height, ratio } = await measureImageHeights(preloadedImages);
+      maxHeight = height;
+      aspectRatio = ratio;
 
       // Indicate carousel-item-ids
       const items = preloadedImages
@@ -169,7 +170,9 @@
 
       // Handle resizes
       const resizeHandler = async () => {
-        maxHeight = await measureImageHeights(preloadedImages);
+        const { height, ratio } = await measureImageHeights(preloadedImages);
+        maxHeight = height;
+        aspectRatio = ratio;
       };
 
       window.addEventListener("resize", resizeHandler);
@@ -194,7 +197,8 @@
 
 <menu
   id="default-carousel-{carouselID}"
-  class="relative w-full"
+  class={`relative top-0 ${bgColor} overflow-hidden ${heightOverride ? heightOverride : ""}`}
+  style={!heightOverride && maxHeight ? `aspect-ratio: ${aspectRatio}` : ""}
   onmouseenter={() => {
     if (pauseOnHover) {
       isMouseHovering = true;
@@ -206,27 +210,24 @@
 >
   <!-- Carousel wrapper -->
   <div
-    class={`relative top-0 ${bgColor} overflow-hidden ${heightOverride ?? ""}`}
-    style={heightOverride ? "" : `height: ${maxHeight}px;`}
+    class={`relative w-full h-full overflow-hidden ${bgColor} ${imageOptions.rounded ? "rounded-md" : ""}`}
   >
     <!-- Items -->
     {#if preloadedImages}
       {#each preloadedImages as srcObject, i}
         <div
-          class="{animationSpeed} ease-in-out w-full h-full"
+          class="{animationSpeed} ease-in-out w-full h-full flex justify-center items-center"
           id="carousel-item-{carouselID}-{i}"
         >
           <img
+            alt=""
             src={typeof srcObject === "object" &&
             srcObject !== null &&
             "src" in srcObject
               ? srcObject.src
               : srcObject}
-            class={`w-full ${imageOptions.height ?? "h-full"} ${object} ${(imageOptions.rounded ?? false) ? "rounded-md" : ""}`}
-            style={(imageOptions.translateUp ?? false)
-              ? "transform: translateY(-7%);"
-              : ""}
-            alt=""
+            class={`w-full h-full ${imageOptions.rounded ? "rounded-md" : ""} ${object ?? "object-contain"}`}
+            style={heightOverride ? "" : `aspect-ratio: ${aspectRatio};`}
           />
         </div>
       {/each}

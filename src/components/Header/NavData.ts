@@ -68,6 +68,10 @@ const getInvolved = [
     href: "/legislative_session/2025",
   },
   {
+    pageName: "MountainView Hospital Union YES!",
+    href: "/mvhunionyes",
+  },
+  {
     pageName: "Caucuses",
     href: "/caucuses",
   },
