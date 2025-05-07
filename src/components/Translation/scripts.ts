@@ -1,5 +1,8 @@
 import { all_dropdowns } from "../Header/NavData";
-import { warningToast } from "../util";
+import { warningToast, errorToast } from "../util";
+
+// Latest Version of the Translate Feature
+const versionNumber = 1.1;
 
 // Supported Languages
 export const languageCodes: Record<string, string> = {
@@ -33,13 +36,38 @@ let isTranslating = false;
 
 // == Scripts for Translation Feature ==
 
-function verifyCacheExists(
-  cachedTranslationData: CachedTranslationData,
+function verifyTranslateVersion() {
+  /*
+  
+  Grab the user's version number they're using for the translate feature
+  If it's outdated, it deletes their "translations" key as the shape may
+  be out of date and unusable.
+
+  The key is under "translationsVersion"
+  
+  */
+
+  const translationVersion = parseFloat(
+    localStorage.getItem("translationVersion") || "0"
+  );
+
+  // If the shape is out of date, remove the "translations" key
+  // from the user's localStorage to reset it.
+  if (translationVersion < versionNumber) {
+    localStorage.removeItem("translations");
+  }
+
+  localStorage.setItem("translationVersion", versionNumber.toString());
+}
+
+function getCacheData(
   selectedLang: string,
   pageKey: string,
   today: Date // ISO string that corresponds to today
-): void {
+): CachedTranslationData {
   /*
+
+  Grabs the cached translations.
 
   Ensures the object extracted from the user's localStorage has
   all the necessary keys in place initialized, to avoid any index errors
@@ -48,6 +76,10 @@ function verifyCacheExists(
   Also sets the "date last accessed" attribute for the page in question to today.
 
   */
+
+  const cachedTranslationData: CachedTranslationData = JSON.parse(
+    localStorage.getItem("translations") || "{}"
+  );
 
   const todayString = today.toISOString();
 
@@ -75,6 +107,8 @@ function verifyCacheExists(
     ...cachedTranslationData[selectedLang][pageKey],
     dateLastAccessed: todayString,
   };
+
+  return cachedTranslationData;
 }
 
 export async function translatePage(selectedLang: string): Promise<void> {
@@ -93,6 +127,10 @@ export async function translatePage(selectedLang: string): Promise<void> {
   }
 
   isTranslating = true;
+
+  // Verify the version of the cache the user is using for this feature.
+  // Need to reset it if it's outdated, as the shape will be unusable.
+  verifyTranslateVersion();
 
   try {
     // Grab every element on the page
@@ -174,6 +212,17 @@ export async function translatePage(selectedLang: string): Promise<void> {
         }
       }
     }
+  } catch {
+    localStorage.setItem("selectedLang", "en");
+    errorToast(
+      `Failed to translate to ${languageCodes[selectedLang]}. We are fixing as soon as we can! Try again later`,
+      false,
+      {
+        initial: 0,
+        next: 1,
+        duration: 3000,
+      }
+    );
   } finally {
     isTranslating = false;
   }
@@ -220,16 +269,10 @@ async function getPageTranslationData(
 
     If not, calls the endpoint for the translations and caches it.
 
-    */
+  */
 
   // Retrieve cached translations from localStorage
-  const cachedTranslationData: CachedTranslationData = JSON.parse(
-    localStorage.getItem("translations") || "{}"
-  );
-
-  // Verify the shape of the cached translations are initialized properly
-  // before performing any further operations
-  verifyCacheExists(cachedTranslationData, selectedLang, pageKey, today);
+  const cachedTranslationData = getCacheData(selectedLang, pageKey, today);
 
   // Grab translations already present in local storage
   const cachedTranslations = updateAndPruneCachedTranslations(
@@ -280,6 +323,14 @@ async function getPageTranslationData(
       },
       body: JSON.stringify(requestBody),
     });
+
+    // If server error, swap to English and raise an error.
+    if (response.status !== 200) {
+      const responseDetails = await response.json();
+      console.error("Response was not 200");
+      console.error({ responseDetails });
+      throw new Error();
+    }
 
     // Get the translations from the endpoint
     const data: TranslateResponseData = await response.json();

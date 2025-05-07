@@ -111,17 +111,18 @@ export const warningToast = (
 export const errorToast = (
   m: any,
   isComponent: boolean = false,
-  duration: number = 0
+  options: object = {}
 ) => {
   // m could be a string, number, or component.
   toast.push(!isComponent ? m : null, {
     component: isComponent ? m : null,
     theme: {
       "--toastBackground": "#dc2626",
+      "--toastBarBackground": "#dc2626",
       "--toastColor": "white",
     },
     target: "new",
-    ...(duration !== 0 ? { duration } : {}),
+    ...options,
   });
 };
 
