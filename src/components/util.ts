@@ -1,32 +1,6 @@
 import type { Delta } from "quill";
 import { toast } from "@zerodevx/svelte-toast";
 
-// == General Util ==
-export function haveIdenticalKeys(
-  obj1: Record<string, string>,
-  obj2: Record<string, string>
-): boolean {
-  const keys1 = Object.keys(obj1);
-  const keys2 = Object.keys(obj2);
-
-  if (keys1.length !== keys2.length) return false;
-
-  return keys1.every((key) => obj2.hasOwnProperty(key));
-}
-
-export function keysMatchSet(
-  keys: Set<string>,
-  obj: Record<string, unknown>
-): boolean {
-  /* Determines if a Set of strings matches the keys of an object */
-
-  const objKeys = Object.keys(obj);
-
-  if (keys.size !== objKeys.length) return false;
-
-  return objKeys.every((key) => keys.has(key));
-}
-
 // === Image Util ===
 
 // Given an ImageMetadata or a string representing an image, returns the source
