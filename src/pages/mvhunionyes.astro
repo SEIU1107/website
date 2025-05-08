@@ -12,6 +12,14 @@ import imgFlyer from "../images/mvhcampaign/Flyer.png";
 import imgSocialVeronica from "../images/mvhcampaign/MVH_social_veronica.png";
 import imgSocialYareli from "../images/mvhcampaign/MVH_social_yareli.png";
 import imgSocialMoney from "../images/mvhcampaign/MVH_social_money.png";
+
+import imgAna from "../images/mvhcampaign/MVH_social_ana.png";
+import imgMarilu from "../images/mvhcampaign/MVH_social_marilu.png";
+import imgBeni from "../images/mvhcampaign/MVH_social_beni.png";
+import imgLawrence from "../images/mvhcampaign/MVH_social_lawrence.png";
+import imgNick from "../images/mvhcampaign/MVH_social_nick.png";
+
+import factsFlyer from "../images/mvhcampaign/facts.png";
 ---
 
 <Layout title="MVH Union Yes!">
@@ -105,11 +113,12 @@ import imgSocialMoney from "../images/mvhcampaign/MVH_social_money.png";
         </div>
       </CollageImage>
     </div>
-    <!-- -->
 
     <!-- -->
-    <div class="flex flex-col md:gap-5 md:grid md:grid-cols-12 m-auto my-5">
-      <div class="max-w-[90vw] md:col-span-5">
+    <div
+      class="flex flex-col md:gap-5 md:grid md:grid-cols-12 m-auto my-5 pb-5"
+    >
+      <div class="max-w-[90vw] md:col-span-5 pb-2">
         <Subtitle
           text="JOIN TOGETHER WITH US!"
           styling="pb-2 text-center text-honey-flower-800 italic font-Trebuchet font-bold"
@@ -145,9 +154,9 @@ import imgSocialMoney from "../images/mvhcampaign/MVH_social_money.png";
           /></span
         >
       </div>
-      <div class="md:col-span-7 md:px-5 w-[90vw] md:max-w-full m-auto">
+      <div class="md:col-span-7 md:px-5 w-[90vw] md:max-w-full m-auto ">
         <Carousel
-          images={[imgSocialVeronica, imgSocialYareli, imgSocialMoney]}
+          images={[imgSocialVeronica, imgSocialYareli, imgSocialMoney, imgLawrence]}
           carouselID={0}
           clickablePages={true}
           showPageArrows={true}
@@ -155,10 +164,42 @@ import imgSocialMoney from "../images/mvhcampaign/MVH_social_money.png";
             rounded: true,
             translateUp: false,
           }}
-          duration={7500}
+          duration={6000}
           pauseOnHover={true}
           client:load
         />
+      </div>
+    </div>
+    <!-- -->
+    <div class="flex flex-col py-4">
+      <Subtitle
+        text="Joining SEIU 1107"
+        styling="pb-2 text-center text-honey-flower-800 italic font-Trebuchet font-bold"
+      />
+
+      <div class="flex flex-col md:gap-5 md:grid md:grid-cols-12 m-auto">
+        <div class="mb-5 md:col-span-6 lg:col-span-5">
+          <Image
+            src={factsFlyer}
+            alt=""
+            class="rounded-md shadow-md shadow-black"
+          />
+        </div>
+        <div class="md:col-span-6 lg:col-span-7 shadow-md shadow-black">
+          <Carousel
+            images={[imgAna, imgBeni, imgMarilu, imgNick]}
+            carouselID={1}
+            clickablePages={true}
+            showPageArrows={true}
+            imageOptions={{
+              rounded: true,
+              translateUp: false,
+            }}
+            duration={6000}
+            pauseOnHover={true}
+            client:load
+          />
+        </div>
       </div>
     </div>
   </div>

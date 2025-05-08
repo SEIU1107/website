@@ -10,6 +10,10 @@ export interface Props {
   centered?: boolean;
   backgroundStyling?: string /* Background styling via TailwindCSS */;
   viewTransition?: boolean;
+
+  // Any translation overrides { language: { original token key: translation} }
+  // e.g { "es": {"union": "sindicato"} }
+  translations?: Record<string, Record<string,string>> 
 }
 
 const isProd = import.meta.env.PROD
